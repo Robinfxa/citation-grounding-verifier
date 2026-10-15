@@ -1,0 +1,101 @@
+{
+  "approaches": [
+    "heuristic",
+    "minimal",
+    "optimized"
+  ],
+  "bootstrap_samples": 10000,
+  "case_ids": [
+    "yarro-relay",
+    "bellune-map",
+    "senva-clock",
+    "omri-index",
+    "pavri-meter",
+    "nuvali-reader",
+    "ivaro-frame",
+    "sorrel-timer",
+    "tevrin-access",
+    "lumek-sync",
+    "falune-pool",
+    "kavri-valve",
+    "rovani-link",
+    "nembri-cache",
+    "ulavo-sort",
+    "ceruni-ledger",
+    "virel-scan",
+    "talori-queue",
+    "thalen-route",
+    "axori-switch",
+    "pelda-tokens",
+    "iskra-nodes",
+    "merin-access",
+    "corva-release"
+  ],
+  "created_at": "2026-10-15T08:49:53.285038+00:00",
+  "dataset_sha256": "c9a30acf3ddb3093514a89831f7ae1d2be336f02df1d7b9143b1a01719aec1be",
+  "execution": {
+    "cache": "none",
+    "concurrency": 1,
+    "lifecycle": "one_verifier_per_approach; no_warmup",
+    "order": "seeded_job_shuffle"
+  },
+  "fingerprints": {
+    "code_sha256": "dc994c353d2301ad4607c09dde8ee4c86ce2e6dd3700d581dc213354eda3aad6",
+    "files": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "faf7ac16a89b5d4c0f2f5617a303297d4617cdae37e453413e2a3ca1cfb2bb26",
+      "grounding/contracts.py": "d19981261f14fc9bb358daa1dd4b3d471d48d5aa5bcd683e29c0ab07eee08244",
+      "grounding/diagnostics.py": "03b88fb52aafc74655c8c2162b858edfe4ca75b79669c29826c2aa71e7bc5083",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "159c7c3cb020b7ee7076c5e732b130964b524f48fe9ea7f3ec54f0aabc03df0c",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/cli.py": "76b96c6faa9c5ff09d3e15c00f36d15b578f42f1a22a4da0987d971c2013c079",
+      "grounding_eval/dataset.py": "64eb8072ce8a15177ecd5c340965179c134544f23844fd8f581740c107f700b1",
+      "grounding_eval/diagnostics.py": "99083a8fd0c76ca915d5db1e21839602804c80a1c5ca50f519f52de39df93150",
+      "grounding_eval/reporting.py": "ffd4263512a674f6b73452b2cb25a90c333f9ff26714342e138d5e17b79701d7",
+      "grounding_eval/runner.py": "a394b659c18590b25249824a3aab58de6d949e02e93538b526bccbd6690c2835",
+      "grounding_eval/scoring.py": "c07adb41aba7ad0ef3ecbc80908a38bd3167aa1eadceba2a467a7c716ef38d97",
+      "grounding_eval/uncertainty.py": "05e5fc2b548299fcf92ad01ededd9d64dbf02c740125d4c4000f8d3e30395752"
+    },
+    "prompt_files": {
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59"
+    }
+  },
+  "format_version": 1,
+  "measurement_kind": "actual_verifier",
+  "prices": null,
+  "request_id": "1314976374f94c2491713d2eea150a82",
+  "runtime": {
+    "packages": {
+      "fastapi": "0.143.1",
+      "httpx": "0.28.1",
+      "pydantic": "2.14.1"
+    },
+    "python": "3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]"
+  },
+  "seed": 20261015,
+  "selected_cases_sha256": "250bd2176963da17ee4b7f905a8781d21f7c1c06b1a308fcb5ab690a85d32601",
+  "settings": {
+    "diagnostics": true,
+    "endpoint_sha256": "d9617135d6fdd0a2cde722d637a1dfcc3da37515708b3ea5d66ae607c8ac785e",
+    "max_output_tokens": 8192,
+    "max_provider_attempts": 6,
+    "model": "gpt-6.1-sol",
+    "operation_timeout": 60.0,
+    "provider": "codex",
+    "provider_timeout": 30.0,
+    "retry_delay": 0.25,
+    "transport_retries": 1
+  },
+  "split": "test",
+  "tracks": [
+    "oracle",
+    "end-to-end"
+  ]
+}

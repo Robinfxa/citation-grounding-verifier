@@ -128,8 +128,10 @@ uv run --frozen python tests/provider/offline_probe.py --output .multi-subflow/p
 
 触发上述恢复时，日志会在同一个 request ID 下增加一条固定的 `auth_login` / `progress` / `reauthorizing` 记录；之后会出现第二组回调与交换结果。它表示一次新的浏览器授权，旧授权码不会再次发送。
 
-当前实现面向 macOS/Linux，使用标准库 `fcntl`；Windows 不在已验证范围。真实登录、套餐权限及模型目录已验证。2026-10-15，正常 CodexProvider 在 reasoning 可选状态增量之前，已用 `gpt-6.1-sol` 完成一次真实严格 schema 请求，返回同一模型，耗时 2584.839ms，实际 usage 为 input 52 / output 14 / cached 0，计量完整。该结果只确认当时版本、本次账号、模型和最小 schema 的真实兼容性。后续发现的 reasoning 可选状态兼容和完成响应的错误计量保留均已修复，137 项受影响检查及本地成功/失败/恢复探针通过，新版真实 verifier 复验仍待完成；此前评测中的 unknown 记录保持原样。实际 `/verify`、其他 schema 与整批评测仍须分别验收，不能据此推定核验质量、整体时延或套餐余量。
+当前实现面向 macOS/Linux，使用标准库 `fcntl`；Windows 不在已验证范围。真实登录、套餐权限及模型目录已验证。2026-10-15，较早版本已完成最小严格 schema smoke 和真实 HTTP `/verify` WAL smoke（HTTP 200）。reasoning 可选状态与错误计量修复后的普通 minimal/oracle Zelko 复验也已通过：`gpt-6.1-sol` 返回的两个标签均正确，1 次调用、0 重试/修复，usage 为 input 409 / output 149 / cached 0 且完整，耗时 9917.471ms。这些单次观察不代表整体时延。
 
-真实登录首次交换即成功，未触发 `invalid_grant` 后的新授权恢复；该恢复分支仍只有离线证据。新增诊断、登录恢复、目录预算与 SSE 兼容增量尚未完成独立审阅。
+同日的[开发集 v2 报告](../reports/2026-10-15/development-v2/summary.json)包含 heuristic、minimal、optimized 的两条 track，六组共 **48/48 请求为 OK**，无错误、重试、修复或未知统计/用量，运行期间源码未变。请求完成率不等于核验准确率；结论限于已测开发集、账号和模型，不外推 heldout、其他 schema 或所有模型，也不能推算套餐剩余额度。此前开发集 v1 的错误与 unknown 记录保持原样。
+
+真实登录首次交换即成功，未触发 `invalid_grant` 后的新授权恢复；该恢复分支仍只有离线证据。新增诊断、登录恢复、目录预算与 SSE/reasoning 兼容增量的独立审阅被平台风险检查中止，尚未完成。
 
 模型目录的响应最多读取 1 MiB；超限会明确失败并关闭响应。认证端点的 discovery、公钥和 token 响应仍分别使用原有的 128 KiB 上限。

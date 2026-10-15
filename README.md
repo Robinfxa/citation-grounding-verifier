@@ -4,7 +4,7 @@ An HTTP service that splits an answer into factual claims, checks them against s
 
 The repository includes three approaches—an inexpensive deterministic heuristic, a minimal single-call LLM verifier, and an optimized decomposition/judgment pipeline—and an independent evaluation harness.
 
-> Implementation and verification are in progress. The final measured comparison will be added after the frozen dataset, provider integration and independent reviews are complete. No simulated output is presented as a live LLM result.
+The implementation passes 410 offline tests. Real ChatGPT-plan sign-in, strict structured inference and the HTTP example have been exercised. The [recorded experiments](reports/2026-10-15/README.md) include the development iteration and a completed frozen held-out comparison. The larger pipeline did **not** demonstrate an overall advantage over minimal prompting.
 
 ## Run locally
 
@@ -77,7 +77,7 @@ uv run grounding-eval run --approaches heuristic,minimal,optimized \
 uv run grounding-eval report reports/runs/held-out
 ```
 
-The main benchmark contains 32 original fictional systems cases across supported answers, subtle distortions, extrinsic hallucinations and genuine multi-passage inference. Development and held-out test families are disjoint. Separate diagnostic cases cover edge conditions. The [dataset card](datasets/README.md) records annotation provenance, split composition and limitations.
+The main benchmark contains 32 original fictional systems cases and 68 gold claims across supported answers, subtle distortions, extrinsic hallucinations and genuine multi-passage inference. Development (8 cases / 18 claims) and held-out test (24 cases / 50 claims) families are disjoint, with equal case counts per category in each split. Separate diagnostic cases cover edge conditions. The [dataset card](datasets/README.md) records annotation provenance, split composition and limitations.
 
 Two tracks prevent extraction quality from disappearing inside a single score:
 
@@ -90,7 +90,34 @@ Runs retain per-case results, safe errors, dataset/prompt/code fingerprints, set
 
 ## Measured results and iteration
 
-Pending final integrated runs. The final report will distinguish engineering tests, heuristic measurements and live LLM measurements, and retain unsuccessful requests. Missing authentication or model access will be recorded as a limitation, not replaced with mock scores. Optimized is a design label, not a claim of an observed win.
+Measured on **2026-10-15**, using real Codex / `gpt-6.1-sol` calls, sequential seeded execution, and the frozen **24-case / 50-claim held-out set**. All 144 case/approach/track jobs succeeded, with no retry, repair, unknown usage or source change. Both LLMs used the same model and settings. These are single observed trials on agent-authored synthetic English data.
+
+| End-to-end approach | Joint label F1 | Three-class macro F1 | Gold evidence coverage | Exact cases |
+| --- | ---: | ---: | ---: | ---: |
+| Heuristic | 0.3299 | 0.2162 | 2/35 | 6/24 |
+| Minimal LLM | **0.9800** | **0.9778** | 34/35 | 22/24 |
+| Optimized LLM | 0.9600 | 0.9667 | 33/35 | **23/24** |
+
+Joint label F1 counts correctly aligned and labeled claims against **all gold and predicted claims**. Evidence coverage uses the 35 non-UNSUPPORTED gold claims; it also depends on successful text alignment. Exact cases additionally require every claim and citation to satisfy the frozen evidence proxy. Both LLMs had joint label-plus-evidence F1 **0.9600**. Every returned citation was an exact source substring, including those attached to a wrong verdict or insufficient evidence.
+
+| End-to-end approach, 24 requests | Median / p95 ms | Provider calls | Input / output tokens |
+| --- | ---: | ---: | ---: |
+| Heuristic | 0.604 / 1.248 | 0 | 0 / 0 |
+| Minimal LLM | **4,497 / 8,271** | 24 | 8,972 / 3,614 |
+| Optimized LLM | 7,822 / 10,022 | 48 | 26,293 / 5,198 |
+
+All token counts above are complete and cached-input counts are zero. Codex uses the authorized ChatGPT-plan allocation, so **dollar cost is unknown (`null`), not zero**, and no remaining-quota estimate is inferred. The heuristic makes no paid inference calls; local compute cost is excluded. Latency includes the complete verification operation. The optimized path used about 1.74× the median latency and 2.93× the input tokens of minimal prompting in this run.
+
+With **oracle claims**, minimal and optimized each correctly labeled **50/50** claims and covered **35/35** evidence sets; the heuristic labeled **17/50** correctly. This isolates judging from extraction, but does not establish production accuracy. The paired end-to-end joint-label F1 difference, optimized minus minimal, was **−0.0200**, with a 95% family-bootstrap interval **[−0.1200, +0.0577]**. The interval spans zero; a larger pipeline is not a demonstrated quality win here. Use `GROUNDING_APPROACH=minimal` to run the faster measured LLM option.
+
+The main failure cases explain why these metrics differ:
+
+- **Minimal / Ceruni:** marked an unrecorded replication state as contradicting “disabled.” The source leaves the state unknown; the correct verdict is UNSUPPORTED. A real quotation did not make the judgment correct.
+- **Minimal / Tevrin:** correctly refuted the role permissions, but its first quotation omitted the system-name prefix required by the full gold span. A separate review found the substantive counterevidence correct; the conservative span metric still counts a miss.
+- **Optimized / Nuvali:** extracted “accepts amber formats” and “accepts violet formats,” which match neither the frozen singular claim texts nor their aliases. Both claims become unmatched. The plural wording may also broaden scope, so this is not automatically dismissed as a harmless metric artifact. No test-derived aliases or rescoring were added.
+- **Heuristic:** classified all 15 gold contradictions as unsupported, including explicit interval boundaries and named counterexamples. Its lexical rules are too conservative for these relations.
+
+Development v1 exposed incomplete antecedent quotations, a transport defect and two omitted causal-premise annotations. After a general judge-prompt revision, bounded transport repair and independently reviewed annotation correction, development v2 reached 8/8 optimized exact cases. The unchanged frozen system then produced the held-out results above. The versions are preserved separately; **this was not a controlled prompt-only A/B experiment**. See the [full experiment report, confidence intervals and immutable request records](reports/2026-10-15/README.md) and [dataset history](docs/dataset-review.md).
 
 ## Development and design
 
@@ -102,5 +129,7 @@ uv run ruff check .
 The design is documented in [architecture.md](docs/architecture.md). The small shared contract sits in `src/grounding/contracts.py`; provider failures, model judgments and deterministic citation integrity have separate boundaries. The evaluator imports the public verification seam and does not share verdict logic or gold labels with implementations.
 
 Research inspected original papers, source code and author documentation for [FActScore, RAGAS, ALCE, SAFE and Claimify](docs/research/grounding/sources.md), [benchmark methods](docs/research/evaluation/sources.md), [structured API behavior](docs/research/structured-api/README.md), and [Hermes/Codex providers](docs/research/codex-provider/sources-and-probes.md). Patterns are adapted to this closed-context task; peer retrieval systems and permissive citation parsers are not imported.
+
+Verification covers deterministic invariants, actual local HTTP/CLI consumers, malformed outputs, cancellation, bounded retry/repair, authentication fixtures and safe diagnostics. Service, evaluator and dataset received separate agent reviews. New provider authentication/streaming increments have author regression tests and live acceptance, but their independent review was stopped by a platform risk check; no independent approval is claimed for those increments. OpenAI API-key inference has offline transport coverage and was not measured live in this run. See [verification evidence](openspec/changes/citation-grounding/verification.md).
 
 No vector database, web retrieval, server-side conversation state or external telemetry is needed. Deterministic guards do not guarantee semantic accuracy, extraction completeness or resistance to every prompt injection. See the measured failure analysis before using the service for consequential decisions.

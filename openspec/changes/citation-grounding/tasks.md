@@ -15,7 +15,8 @@
 
 ## 4. Empirical comparison and delivery
 - [x] 4.1 Run a real provider smoke test and all three approaches on development cases, retain failures, and justify any optimized revision with measured evidence.
-- [ ] 4.2 Freeze prompts and run the held-out benchmark; report quality, resource use, paired uncertainty and concrete failure cases without tuning on test outputs.
+- [x] 4.2 Freeze prompts and run the held-out benchmark; report quality, resource use, paired uncertainty and concrete failure cases without tuning on test outputs.
 - [ ] 4.3 Complete independent implementation/diagnostic review and necessary repairs; pass lint, full tests and HTTP/CLI integration checks on the final code.
-- [ ] 4.4 Write concise run instructions and measured README report; verify commands, links, artifact fingerprints and repository hygiene.
+  - Functional checks passed: 410 tests, lint, HTTP/CLI acceptance and immutable saved-report reproduction. Service/evaluator/dataset independent checks passed. The new provider increment's independent review was stopped by a platform risk check and remains incomplete; no bypass or replacement PASS is claimed.
+- [x] 4.4 Write concise run instructions and measured README report; verify commands, links, artifact fingerprints and repository hygiene.
 - [ ] 4.5 Prepare a reviewable local submission; after required publication authorization, create/push the public GitHub repository and verify the remote contents.
