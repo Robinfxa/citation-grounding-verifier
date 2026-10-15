@@ -11,6 +11,11 @@ The benchmark SHALL contain at least 32 original labeled cases with balanced cov
 - **WHEN** a case has an invalid citation, unsupported claim with evidence, duplicate identifier or family crossing the dev/test partition
 - **THEN** dataset validation fails before the benchmark starts
 
+#### Scenario: Explicit diagnostic execution
+- **WHEN** the CLI runs `datasets/diagnostic.jsonl` with `--split diagnostic`
+- **THEN** it executes the diagnostic cases through the requested approaches and tracks and saves a separately identified diagnostic report
+- **AND** `--split all` continues to select only dev/test cases; diagnostic cases never enter the main quality comparison implicitly
+
 ### Requirement: Three comparable implementations
 The runner SHALL compare a deterministic non-LLM heuristic, a minimal single-call structured LLM approach and an optimized decomposition/evidence-verification approach. LLM variants SHALL use the same explicitly configured model, provider, dataset and operational limits. Tests with scripted responses SHALL be labeled offline tests and MUST NOT be reported as real LLM quality measurements.
 
@@ -34,6 +39,11 @@ Reports SHALL include claim-level per-label precision/recall/F1 and macro F1, en
 
 ### Requirement: Reproducible resource and iteration records
 The runner SHALL save configuration, dataset and prompt/code fingerprints, per-case results, wall-clock latency and provider usage when available. Costs SHALL be reported only from explicitly recorded prices and measured token usage; unavailable usage or prices SHALL remain unknown. Existing run artifacts SHALL not be overwritten accidentally. Development failure analysis and prompt changes SHALL be traceable; unmeasured expected improvements MUST NOT be presented as observed hill climbing.
+
+#### Scenario: Requested output limit is not applied
+- **WHEN** a run requests an output-token limit that the configured provider adapter does not apply
+- **THEN** new run metadata distinguishes the requested limit from an unknown effective limit and explicitly marks it not applied
+- **AND** it does not imply a token cap from the operation-time, response-byte or attempt bounds; historical saved reports remain reproducible without rewriting their records
 
 #### Scenario: Live measurement blocked
 - **WHEN** model credentials are absent or a live run is incomplete

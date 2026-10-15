@@ -15,6 +15,8 @@ Non-goals: external truth retrieval, vector storage, a user interface, productio
 - Validate exact quotes in a pure function and judge evidence jointly. ALCE supports the latter distinction; no fuzzy citation library is imported.
 - Define one single-attempt structured provider seam, with shared deadline/retry/repair budgets outside the adapter. OpenAI Responses uses HTTPX directly; the user-requested Codex adapter follows the separately documented transport investigation before implementation.
 - Evaluate fixed gold claims separately from complete-answer extraction. Frozen strict aliases make alignment auditable; their conservative limitation is disclosed. Failure denominators, evidence sets and paired case bootstrap prevent common inflated scores.
+- The final delivery review adds explicit diagnostic selection while preserving `all` as dev/test only. Diagnostic artifacts are separate from the frozen quality comparison. New resource metadata distinguishes requested and applied output limits; the Codex preview adapter continues to omit its unsupported token-limit parameter.
+- Default to minimal after the frozen experiment found no clear overall optimized benefit, with materially lower measured latency and token use. These delivery corrections do not change prompts, datasets, aliases, scoring or historical run artifacts.
 
 ## Risks / Trade-offs
 
@@ -27,3 +29,5 @@ Non-goals: external truth retrieval, vector storage, a user interface, productio
 ## Migration Plan
 
 No existing consumer migration is needed. Deliver a locked local package, HTTP/CLI examples, offline tests and live-run commands. Public repository creation and deployment remain separate final actions.
+
+Final acceptance uses a clean clone and a new environment with frozen dependency installation, offline tests, a running HTTP example, separate live diagnostic records, and a source-only submission archive. A prompt-only development ablation remains optional future work and is not a delivery gate.

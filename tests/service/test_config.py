@@ -8,6 +8,31 @@ from grounding.contracts import VerificationError
 from grounding.verifiers import build_verifier
 
 
+def test_direct_settings_default_to_minimal():
+    assert Settings().approach == "minimal"
+
+
+@pytest.mark.parametrize("dotenv_enabled", [False, True], ids=["no-dotenv", "dotenv-without-approach"])
+def test_unconfigured_env_defaults_to_minimal(dotenv_enabled, tmp_path, monkeypatch):
+    monkeypatch.delenv("GROUNDING_APPROACH", raising=False)
+    path = tmp_path / ".env"
+    path.write_text("GROUNDING_MODEL=fixture-model\n")
+    settings = Settings.from_env(dotenv_path=path if dotenv_enabled else None)
+    assert settings.approach == "minimal"
+
+
+@pytest.mark.parametrize("approach", ["minimal", "optimized", "heuristic"])
+def test_explicit_approach_overrides_default_and_dotenv(approach, tmp_path, monkeypatch):
+    assert Settings(approach=approach).approach == approach
+    monkeypatch.delenv("GROUNDING_APPROACH", raising=False)
+    path = tmp_path / ".env"
+    path.write_text(f"GROUNDING_APPROACH={approach}\n")
+    assert Settings.from_env(dotenv_path=path).approach == approach
+    path.write_text("GROUNDING_APPROACH=minimal\n")
+    monkeypatch.setenv("GROUNDING_APPROACH", approach)
+    assert Settings.from_env(dotenv_path=path).approach == approach
+
+
 def test_env_loading_is_explicit_nonmutating_and_respects_precedence(tmp_path, monkeypatch):
     for key in ("GROUNDING_PROVIDER", "GROUNDING_MODEL", "OPENAI_MODEL", "OPENAI_API_KEY",
                 "GROUNDING_AUTH_PROFILE", "GROUNDING_AUTH_DIR", "GROUNDING_APPROACH"):

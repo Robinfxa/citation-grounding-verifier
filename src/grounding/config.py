@@ -14,7 +14,7 @@ from grounding.contracts import VerificationError
 
 @dataclass(frozen=True)
 class Settings:
-    approach: str = "optimized"
+    approach: str = "minimal"
     provider: str = "openai"
     model: str | None = None
     api_key: str | None = field(default=None, repr=False)
@@ -68,7 +68,7 @@ class Settings:
             if diagnostics not in {"true", "false", "1", "0"}:
                 raise ValueError
             return cls(
-                approach=values.get("GROUNDING_APPROACH", "optimized"),
+                approach=values.get("GROUNDING_APPROACH", "minimal"),
                 provider=values.get("GROUNDING_PROVIDER", "openai"),
                 model=values.get("GROUNDING_MODEL") or values.get("OPENAI_MODEL") or None,
                 api_key=values.get("OPENAI_API_KEY") or None,

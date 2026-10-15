@@ -4,6 +4,14 @@ Provide an auditable context-only factual verification report whose quotations a
 
 ## ADDED Requirements
 
+### Requirement: Measured default approach
+The service SHALL default to the minimal LLM approach when no approach is configured. The example environment SHALL use the same default, while heuristic and optimized remain explicit choices. This decision reflects the measured latency and token trade-off without claiming statistically established accuracy superiority.
+
+#### Scenario: Unspecified approach
+- **WHEN** settings are constructed directly or loaded without `GROUNDING_APPROACH`
+- **THEN** the selected approach is minimal
+- **AND** explicitly configured optimized and heuristic choices remain effective
+
 ### Requirement: Context-only atomic judgments
 The service SHALL expose POST /verify with context_passages and generated_answer, and return claims containing claim_text, verdict, reasoning and citations. Factual content SHALL be decomposed into independently assessable claims while retaining numbers, conditions, attribution, modality and causal qualifications. SUPPORTED SHALL mean fully entailed by the provided evidence; CONTRADICTED SHALL mean directly refuted; UNSUPPORTED SHALL mean not verifiable from the provided context alone. Unresolved mutually conflicting passages SHALL yield UNSUPPORTED with a brief conflict explanation. External knowledge SHALL NOT supply missing evidence.
 

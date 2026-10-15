@@ -14,7 +14,7 @@ from grounding.contracts import (
     VerificationReport,
     VerificationRun,
 )
-from grounding_eval.dataset import load_dataset
+from grounding_eval.dataset import DEFAULT_DATASET, file_hash, load_dataset
 from grounding_eval.runner import EvaluationError, regenerate_report, run_benchmark
 
 
@@ -176,6 +176,75 @@ def cli(*args, **kwargs):
     return subprocess.run([sys.executable, '-m', 'grounding_eval', *map(str,args)],
                           env=env, stdout=subprocess.PIPE, stderr=kwargs.pop('stderr', subprocess.PIPE),
                           text=True, timeout=30, **kwargs)
+
+
+def test_actual_cli_diagnostic_split_saves_only_separate_diagnostics(tmp_path):
+    path = DEFAULT_DATASET.with_name('diagnostic.jsonl')
+    output = tmp_path/'diagnostic'
+    result = cli('run', '--dataset', path, '--approaches', 'heuristic', '--split', 'diagnostic',
+                 '--track', 'both', '--output', output, '--bootstrap-samples', '10')
+    assert result.returncode == 0, result.stdout+result.stderr
+    summary = json.loads(result.stdout)
+    assert summary['split'] == 'diagnostic'
+    assert summary['completion']['record_count'] == 12
+    assert all(g['requested_cases'] == 6 for g in summary['groups'].values())
+    assert {c.id for c in load_dataset(output/'cases.jsonl')} == {c.id for c in load_dataset(path)}
+    assert all(c.split == 'diagnostic' for c in load_dataset(output/'cases.jsonl'))
+    assert json.loads((output/'config.json').read_text())['split'] == 'diagnostic'
+    before = (output/'summary.json').read_bytes()
+    replay = cli('report', output)
+    assert replay.returncode == 0 and json.loads(replay.stdout) == summary
+    assert (output/'summary.json').read_bytes() == before
+
+
+def test_actual_cli_all_split_excludes_diagnostics_from_mixed_dataset(tmp_path):
+    main = load_dataset()
+    selected = [next(c for c in main if c.split == split) for split in ('dev', 'test')]
+    diagnostic = load_dataset(DEFAULT_DATASET.with_name('diagnostic.jsonl'))[0]
+    path = tmp_path/'mixed.jsonl'
+    path.write_text(''.join(json.dumps(c.model_dump())+'\n' for c in [*selected, diagnostic]))
+    output = tmp_path/'all'
+    result = cli('run', '--dataset', path, '--approaches', 'heuristic', '--split', 'all',
+                 '--track', 'both', '--output', output, '--bootstrap-samples', '10')
+    assert result.returncode == 0, result.stdout+result.stderr
+    summary = json.loads(result.stdout)
+    assert summary['split'] == 'all' and summary['completion']['record_count'] == 4
+    assert {c.id for c in load_dataset(output/'cases.jsonl')} == {c.id for c in selected}
+    assert all(g['requested_cases'] == 2 for g in summary['groups'].values())
+
+
+@pytest.mark.parametrize('provider,effective,application', [
+    ('openai', 1234, 'applied'),
+    ('codex', None, 'not_applied'),
+])
+async def test_saved_output_limit_distinguishes_adapter_application_and_replays_legacy_scalar(
+        tmp_path, fixture, provider, effective, application):
+    case, path = fixture
+    output = tmp_path/'limit'
+    summary = await run_benchmark(dataset_path=path, output=output, approaches=['minimal'],
+                                  split='dev', track='oracle', bootstrap_samples=10,
+                                  settings=settings(provider=provider, max_output_tokens=1234),
+                                  verifiers={'minimal': MemoryVerifier(case)})
+    config_path, completion_path = output/'config.json', output/'completion.json'
+    config = json.loads(config_path.read_text())
+    assert config['settings']['max_output_tokens'] == {
+        'requested': 1234, 'effective': effective, 'application': application}
+    before = (output/'summary.json').read_bytes()
+    assert regenerate_report(output) == summary
+    assert (output/'summary.json').read_bytes() == before
+
+    # Legacy scalar settings describe a request; replay must not rewrite or reinterpret them.
+    config['settings']['max_output_tokens'] = 1234
+    config_path.write_text(json.dumps(config))
+    completion = json.loads(completion_path.read_text())
+    completion['config_sha256'] = file_hash(config_path)
+    completion_path.write_text(json.dumps(completion))
+    saved = {name: (output/name).read_bytes()
+             for name in ('config.json', 'cases.jsonl', 'records.jsonl', 'completion.json')}
+    replay = regenerate_report(output)
+    assert replay['groups'] == summary['groups']
+    assert replay['paired_optimized_minus_minimal'] == summary['paired_optimized_minus_minimal']
+    assert all((output/name).read_bytes() == value for name, value in saved.items())
 
 
 def test_actual_cli_validate_failure_recovery_and_read_only_stderr(tmp_path, fixture):

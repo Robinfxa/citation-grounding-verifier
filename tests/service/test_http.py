@@ -1,9 +1,10 @@
 import asyncio
 import json
+import os
 
 import httpx
 import pytest
-from test_verifiers import REQUEST, ScriptedProvider, report
+from test_verifiers import REQUEST, ScriptedProvider, extraction, judgment, report
 
 from grounding.app import create_app
 from grounding.config import Settings
@@ -16,6 +17,47 @@ def client_for(provider, *, name="minimal", **changes):
     verifier = build_verifier(name, settings=settings, provider=provider)
     app = create_app(verifier=verifier, settings=settings)
     return httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://service.test")
+
+
+@pytest.mark.parametrize("settings_source", ["direct", "env"])
+@pytest.mark.parametrize("approach,expected,schemas", [
+    (None, "minimal", ["verification_report"]),
+    ("optimized", "optimized", ["atomic_claims", "claim_judgments"]),
+    ("heuristic", "heuristic", []),
+])
+async def test_http_selects_default_or_explicit_approach(
+    settings_source, approach, expected, schemas, tmp_path, monkeypatch,
+):
+    monkeypatch.chdir(tmp_path)
+    for key in list(os.environ):
+        if key.startswith(("GROUNDING_", "OPENAI_")):
+            monkeypatch.delenv(key)
+    monkeypatch.setenv("GROUNDING_MODEL", "fixed-model")
+    monkeypatch.setenv("GROUNDING_DIAGNOSTICS", "false")
+    responses = (
+        [extraction(REQUEST.generated_answer), {"judgments": [judgment()]}]
+        if expected == "optimized" else [report()]
+    )
+    provider = ScriptedProvider(*responses)
+    monkeypatch.setattr("grounding.verifiers.OpenAIProvider", lambda **_kwargs: provider)
+    if settings_source == "direct":
+        options = {"approach": approach} if approach is not None else {}
+        app = create_app(settings=Settings(model="fixed-model", diagnostics=False, **options))
+    else:
+        if approach is not None:
+            monkeypatch.setenv("GROUNDING_APPROACH", approach)
+        app = create_app()
+    async with app.router.lifespan_context(app):
+        async with httpx.AsyncClient(
+            transport=httpx.ASGITransport(app=app), base_url="http://service.test",
+        ) as client:
+            response = await client.post("/verify", json=REQUEST.model_dump())
+    assert response.status_code == 200
+    assert app.state.verifier.name == expected
+    assert response.json()["claims"][0]["claim_text"] == REQUEST.generated_answer
+    assert response.json()["claims"][0]["verdict"] == "SUPPORTED"
+    assert [request.schema_name for request in provider.requests] == schemas
+    assert provider.closed is bool(schemas)
 
 
 async def test_http_only_returns_public_report_and_internal_request_id():

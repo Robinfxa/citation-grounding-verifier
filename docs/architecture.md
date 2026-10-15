@@ -8,6 +8,8 @@ The design follows four completed research dossiers: [grounding algorithms](rese
 
 ## Request path and boundaries
 
+The optional optimized flow is shown below; the default minimal flow produces the complete claim report in one structured model call before the same validation gate.
+
 ```mermaid
 flowchart LR
   A[POST /verify] --> B[Strict input and size limits]
@@ -19,7 +21,7 @@ flowchart LR
   G --> E
 ```
 
-Python 3.11+, FastAPI and Pydantic v2 provide a small typed service. One provider interface returns structured text and measured usage. The default optimized path uses two logical calls: extraction sees only the answer, and verification sees the fixed extracted claims plus the original indexed passages. Extracted claims preserve negation, numbers, units, attribution, conditions, modality and scope. A quoted answer anchor must occur verbatim in the answer, but anchors are not a proof of full extraction coverage.
+Python 3.11+, FastAPI and Pydantic v2 provide a small typed service. One provider interface returns structured text and measured usage. The optional optimized path uses two logical calls: extraction sees only the answer, and verification sees the fixed extracted claims plus the original indexed passages. Extracted claims preserve negation, numbers, units, attribution, conditions, modality and scope. A quoted answer anchor must occur verbatim in the answer, but anchors are not a proof of full extraction coverage.
 
 The judge returns stable claim IDs, not rewritten claim text. The service verifies exact ID coverage, rejects duplicates and reconstructs the public report from the original claims. One bad item invalidates the entire attempt. A failed model call never causes a claim to disappear from a successful report.
 
@@ -36,6 +38,8 @@ Multiple quotations can jointly support or refute one claim. A true quotation wi
 | `optimized` | Answer-only decomposition, then refined evidence judgment; finite defect repair | The same refined judge, skipping extraction |
 
 The heuristic is intentionally inexpensive, not a semantic guarantee. It has no access to gold labels or benchmark IDs. Minimal and optimized share the provider, model, output gate, transport retry policy and deadlines. Optimized's extra calls and repairs are counted as part of its cost and latency, not hidden as pure prompting gains.
+
+The frozen held-out comparison did not show a clear overall optimized advantage, while minimal used less latency and fewer tokens. The final delivery therefore defaults to minimal and retains optimized as an explicit option; this is not a claim of statistically established accuracy superiority.
 
 Both consumers use `Verifier.verify(VerifyRequest) -> VerificationRun` and `Verifier.verify_claims(context_passages, claims) -> VerificationRun`. The latter preserves claim identity/cardinality and is an internal evaluation seam, not a new HTTP endpoint. `VerificationRun` contains the report and operational statistics; only the report is returned by `/verify`.
 
@@ -77,7 +81,7 @@ Primary quality views are separate:
 
 Gold quote coverage is an auditable conservative proxy, not an independent NLI verdict. Returning a different sufficient paraphrase or evidence span may be undercounted; unmatched output is retained for review. No fuzzy match silently changes the headline score. Operational errors retain their gold facts and requests in denominators. Case/family bootstrap intervals and paired deltas use a fixed seed and state their limited small-sample interpretation.
 
-The runner persists dataset/prompt/code fingerprints, settings, per-case records and summary in a new run directory, refuses accidental overwrite and provides saved-result reporting. Development failures justify prompt revisions; held-out outputs are not used to add aliases or tune prompts. If live inference is unavailable, results say NOT_RUN. Offline scripted-provider tests never substitute for live quality, latency or cost measurements.
+The runner persists dataset/prompt/code fingerprints, settings, per-case records and summary in a new run directory, refuses accidental overwrite and provides saved-result reporting. New settings distinguish the requested output-token limit from the effective limit: OpenAI receives the parameter, while Codex records an unknown effective limit and explicitly marks the cap not applied. Legacy configurations retain their original bytes; their single `max_output_tokens` value describes a request, not proof of enforcement. `--split diagnostic` runs edge cases separately; `--split all` remains dev/test only. Development failures justify prompt revisions; held-out outputs are not used to add aliases or tune prompts. If live inference is unavailable, results say NOT_RUN. Offline scripted-provider tests never substitute for live quality, latency or cost measurements.
 
 ## Deliberate scope and residual risks
 

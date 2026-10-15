@@ -9,6 +9,7 @@ An LLM answer may mix grounded facts, direct contradictions, and plausible facts
 - Implement a deterministic heuristic, a minimal single-call LLM verifier and an optimized LLM verifier behind one evaluation interface.
 - Author a balanced benchmark with more than 20 labeled cases and fixed development/test partitions.
 - Provide reproducible evaluation, transparent metrics, measured latency/usage, failure analysis, and an honest report of any unavailable live measurements.
+- Complete delivery with an executable separate diagnostic split, accurate requested/effective provider limits and the measured minimal default, while preserving the frozen experiment and avoiding architecture expansion.
 
 ## Capabilities
 

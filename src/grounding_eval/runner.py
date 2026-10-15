@@ -166,6 +166,14 @@ def public_settings(settings: Settings) -> dict:
     fields = ("provider", "model", "provider_timeout", "operation_timeout", "max_provider_attempts",
               "transport_retries", "retry_delay", "max_output_tokens", "diagnostics")
     result = {name: getattr(settings, name) for name in fields}
+    # AIDEV-NOTE: describe the configured adapter's application, not a measured model cap.
+    # Codex omits this option. Replay leaves historical scalar settings uninterpreted.
+    applied = settings.provider == "openai"
+    result["max_output_tokens"] = {
+        "requested": settings.max_output_tokens,
+        "effective": settings.max_output_tokens if applied else None,
+        "application": "applied" if applied else "not_applied",
+    }
     result["endpoint_sha256"] = hashlib.sha256(settings.base_url.encode()).hexdigest()
     return result
 
@@ -185,7 +193,7 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
     settings = settings or Settings.from_env()
     if (not approaches or len(set(approaches)) != len(approaches)
             or any(a not in APPROACHES for a in approaches)
-            or split not in {"dev", "test", "all"} or track not in {*TRACKS, "both"}
+            or split not in {"dev", "test", "all", "diagnostic"} or track not in {*TRACKS, "both"}
             or type(seed) is not int or type(bootstrap_samples) is not int or bootstrap_samples < 1):
         raise EvaluationError("invalid_arguments")
     try:

@@ -35,7 +35,8 @@ def parser() -> argparse.ArgumentParser:
     run = commands.add_parser("run", help="Run actual verifier implementations into a new directory")
     run.add_argument("--dataset", type=Path, default=DEFAULT_DATASET)
     run.add_argument("--approaches", default="heuristic,minimal,optimized")
-    run.add_argument("--split", choices=["dev", "test", "all"], default="test")
+    run.add_argument("--split", choices=["dev", "test", "all", "diagnostic"], default="test",
+                     help="all selects dev/test only; use --dataset for the separate diagnostic file")
     run.add_argument("--track", choices=["oracle", "end-to-end", "both"], default="both")
     run.add_argument("--output", type=Path, required=True)
     run.add_argument("--seed", type=int, default=20261015)
