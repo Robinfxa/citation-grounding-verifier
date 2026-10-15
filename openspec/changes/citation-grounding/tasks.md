@@ -19,7 +19,7 @@
 - [ ] 4.3 Complete independent implementation/diagnostic review and necessary repairs; pass lint, full tests and HTTP/CLI integration checks on the final code.
   - Final clean-clone functional checks passed: 426 tests, lint, HTTP/CLI acceptance and immutable saved-report reproduction. Service/evaluator/dataset independent checks passed, including the final evaluator corrections. The new provider increment's independent review was stopped by a platform risk check and remains incomplete; no bypass or replacement PASS is claimed.
 - [x] 4.4 Write concise run instructions and measured README report; verify commands, links, artifact fingerprints and repository hygiene.
-- [ ] 4.5 Prepare a reviewable local submission; after required publication authorization, create/push the public GitHub repository and verify the remote contents.
+- [x] 4.5 Prepare a reviewable local submission; after required publication authorization, create/push the public GitHub repository and verify the remote contents.
 
 ## 5. Bounded final delivery corrections
 - [x] 5.1 Expose `--split diagnostic`, retain dev/test-only `all`, and verify diagnostic CLI execution and report separation without changing data or scoring.
