@@ -30,6 +30,20 @@ Three different findings drove the revision:
 
 These changes are evaluated together in v2. **This is not a controlled prompt-only A/B experiment:** the annotation version and transport behavior also changed, and each model request has one observed trial. The v1 table documents the decision process; it is not pooled with v2 or held-out measurements.
 
+## Development v2 and final freeze
+
+[Development v2](development-v2/summary.json) used the corrected 18-claim development set and implementation `48de5a5`. All **48/48 jobs succeeded** with no retry, repair, quota stop, cleanup failure or source change. Usage was complete for every request.
+
+| End-to-end, eight development cases | Joint label F1 | Gold evidence coverage | Exact cases | Median / p95 ms | Input / output tokens |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Heuristic | 0.6061 | 0.3636 | 3/8 | 0.614 / 0.912 | 0 / 0 |
+| Minimal LLM | 0.9143 | 0.9091 | 6/8 | 4,444 / 7,910 | 2,978 / 1,147 |
+| Optimized LLM | 1.0000 | 1.0000 | 8/8 | 7,514 / 9,563 | 8,785 / 1,681 |
+
+Both LLM oracle tracks classified all 18 claims correctly with complete gold evidence. The optimized Kelm quotation now includes its entity antecedent, and the corrected Diska inventory matches the extracted facts. These observations support retaining the revision, not a general claim of perfect performance. The paired development joint-label F1 difference is +0.0857, with a 95% family-bootstrap interval of [0.0000, 0.2195]. Eight development cases and a single model trial are insufficient to establish a reliable improvement.
+
+[The final freeze](freeze.json) records the exact code, prompt and dataset hashes, the successful 410-test integration checkpoint, and the fact that no held-out predictions or scores had been inspected. The 24 held-out cases / 50 claims will use these unchanged versions. Held-out outputs are for reporting and failure analysis; no aliases, prompts or scoring rules are changed in response to them.
+
 ## Reproduce a saved report
 
 From the repository root:

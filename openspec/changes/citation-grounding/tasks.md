@@ -14,7 +14,7 @@
 - [x] 3.3 Implement reproducible benchmark/report CLI with fingerprints, usage and overwrite protection; verify actual offline consumer runs and saved-result reproduction.
 
 ## 4. Empirical comparison and delivery
-- [ ] 4.1 Run a real provider smoke test and all three approaches on development cases, retain failures, and justify any optimized revision with measured evidence.
+- [x] 4.1 Run a real provider smoke test and all three approaches on development cases, retain failures, and justify any optimized revision with measured evidence.
 - [ ] 4.2 Freeze prompts and run the held-out benchmark; report quality, resource use, paired uncertainty and concrete failure cases without tuning on test outputs.
 - [ ] 4.3 Complete independent implementation/diagnostic review and necessary repairs; pass lint, full tests and HTTP/CLI integration checks on the final code.
 - [ ] 4.4 Write concise run instructions and measured README report; verify commands, links, artifact fingerprints and repository hygiene.
