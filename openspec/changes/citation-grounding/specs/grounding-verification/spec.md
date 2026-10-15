@@ -56,3 +56,20 @@ Important request, provider and validation boundaries SHALL emit bounded local d
 #### Scenario: Secret-seeded upstream exception
 - **WHEN** an upstream failure includes synthetic credentials or input text in its exception
 - **THEN** local diagnostics identify the failure stage and category without reproducing the sensitive text, and a later request can still succeed
+
+### Requirement: Independently authorized local plan access
+The optional ChatGPT-plan provider SHALL obtain this application's own public SIWC grant and keep credentials outside the repository. It MUST validate callback state, PKCE and the signed ID token's issuer, issued-client audience, expiry and nonce before saving an authenticated identity. It SHALL require the granted plan-use scopes before inference and SHALL NOT import credentials from unrelated applications. Authorization failures SHALL be distinguishable by safe fixed diagnostic categories without exposing codes, tokens or upstream error text.
+
+#### Scenario: Initial code exchange rejects the grant
+- **WHEN** a state-validated callback supplies an issued client ID but token exchange returns invalid_grant
+- **THEN** login may start at most one fresh authorization within its original deadline using that issued client ID, a new state, nonce and PKCE verifier, and a new authorization code
+- **AND** the rejected code is never resubmitted, no usable credentials are saved before identity validation, and a second rejection terminates the login with an explicit authentication error
+
+#### Scenario: Returning identity changes during recovery
+- **WHEN** reauthorization or its bounded recovery returns a different client ID or a different verified subject for an existing profile
+- **THEN** login rejects the result and preserves the previous profile's credentials
+
+#### Scenario: Completed output arrives before an empty terminal summary
+- **WHEN** the Responses stream supplies paired output-item events with complete assistant content, then a matching response.completed event whose status is completed and whose output is an empty array
+- **THEN** the adapter may reconstruct the output from those completed items and apply the same strict final-response and citation checks
+- **AND** missing media-type metadata does not bypass SSE framing, bounds, identity/index consistency or completion checks; deltas, text-done events or EOF alone never establish success

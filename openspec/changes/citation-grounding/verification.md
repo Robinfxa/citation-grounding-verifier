@@ -1,7 +1,7 @@
 # Verification evidence
 
 ## Shared foundation
-- Workspace: `/Users/robin/Desktop/ass`; initial uncommitted implementation of `src/grounding/contracts.py`, `tests/test_contracts.py`, `pyproject.toml`, `uv.lock`.
+- Foundation commit: `ff17aeb`; shared contracts, contract tests, root packaging, locked dependencies, research and architecture.
 - `openspec validate citation-grounding --strict`: passed.
 - `uv sync --native-tls`: passed with Python 3.11.9. After adding JWT validation, cryptography 50.0.2 built successfully; PyJWT 2.15.1 and its dependency group installed. The build's temporary lock is released.
 - `uv run pytest tests/test_contracts.py -q`: 19 passed. Covers strict indices, blank/wrong-source/Unicode/changed/cross-passage quotes, verdict/evidence shape, input coercion/limits, unknown usage aggregation.
@@ -9,9 +9,28 @@
 - These are offline deterministic boundary tests. They do not establish real provider access, semantic accuracy or model token cost.
 
 ## Domain evidence
-- Service: pending [owner result](../../../docs/plans/active/service-result.md).
-- Evaluation: [owner result](../../../docs/plans/active/evaluation-result.md). Dataset freeze candidate exists, independent semantic review in progress before test inference.
-- Provider: pending [owner result](../../../docs/plans/active/provider-result.md). Official public SIWC route selected; live authentication and schema compatibility remain unverified.
+- Service: implementation and independent actual HTTP/provider consumer acceptance passed, including malformed Unicode rejection and one-attempt stream timeout behavior.
+- Evaluation: all 32 main and six diagnostic cases received non-author semantic review before any predictions. Three annotations were repaired by the original author, then passed focused re-review. Main dataset frozen at SHA-256 `90d760c1fb9cd4497e32466084db56e0534485a74a72acae08d758217a68477c`; 66 claims, 8 development/24 test cases. See [dataset review](../../../docs/dataset-review.md). Runner/scorer acceptance is pending.
+- Provider: official public SIWC route selected; offline implementation/independent acceptance passed before the latest diagnostic delta. Live authentication and schema compatibility remain unverified.
 
-## Outstanding
-All live quality comparisons, measured improvement claims, final integrated checks, independent runtime/logging review and public publication remain incomplete.
+## Independent public HTTP smoke
+- Started the actual `uvicorn grounding.app:app` executable with inherited loopback sockets, then called it through ordinary HTTP clients. Ten checks passed across heuristic and deliberately unconfigured optimized configurations.
+- Covered an exact supported fact, empty context, blank answer, invalid field types, malformed JSON, invalid UTF-8, body overflow, recovery after rejected requests, and safe 503 for missing model configuration.
+- Response correlation IDs matched HTTP start/end records. A synthetic secret included in invalid input was absent from both error responses and captured diagnostics. Source fingerprints did not change during the probe.
+- This validates the local server entry point and selected failure semantics, not live LLM accuracy or OAuth connectivity. The reproducible probe and raw local evidence are retained outside the distributed product under `.multi-subflow/integration/`.
+
+## Integrated checkpoint and remaining work
+- `uv run --frozen ruff check .`: passed.
+- `uv run --frozen pytest -q`: 289 passed in 66.62 seconds at the integration checkpoint. Later auth diagnostic changes require affected-path validation.
+- Independent provider review closed the malformed-Unicode error/terminal-log defect. Independent evaluator review closed inconsistent completion status and missing cleanup failure diagnostics; its focused public CLI replay checked valid and invalid saved artifacts without inspecting held-out predictions.
+- The actual Codex-provider/service outer-timeout fixture completed with one attempt, all streams closed, and safe upstream_timeout. It no longer resubmits after consumption state becomes unknown.
+- Public SIWC discovery reached the expected issuer. The first real login ended with authentication_failed after the browser authorization flow; the cause remains under investigation. There were no live inference requests or model quality measurements.
+- A second real login on auth SHA-256 `41282d994ee1dc70a23de0a40d7622f41b035255163ffa7f2f676f715ec6c019` produced safe correlated diagnostics: callback success / HTTP 200 at 36,977.077 ms; token exchange failure / HTTP 400 / oauth_invalid_grant at 37,712.586 ms; final authentication_failed / exit 1. It never reached JWKS or ID-token validation. The current official registration documentation specifies fresh authorization using the issued client ID after this rejection; bounded recovery is being implemented by the original provider owner, with fresh state/nonce/PKCE and no credential persistence before verification.
+- The diagnostic-delta independent reviewer was stopped by the platform for a possible cybersecurity risk, including a subsequent static-only request. That new independent review is incomplete; its attempted invocation is not a passing result. Earlier provider review evidence retains its original source binding. Parent safe receipts for the real CLI attempts are in `.multi-subflow/integration/live-auth-attempts.json`.
+- Public-file hygiene found 74 publishable files, no unintended private workflow/environment paths, and no broken local Markdown links at this checkpoint. The updated OpenSpec change passed strict validation.
+- Real login attempt 3 passed at 25,282.513 ms on auth `cbe27224...` with signed_in and plan_enabled true. Its first token exchange succeeded; the added recovery branch was not exercised in this live attempt. Raw safe CLI records and unchanged-source receipt are `.multi-subflow/integration/auth-3.*`.
+- Actual model listing initially failed because its valid 568,595-byte catalog exceeded the 128 KiB auth-response budget. Original-owner repair uses a separate 1 MiB catalog budget; 18 affected tests passed. The actual CLI then returned seven visible model choices in 667.584 ms on auth `fddf9629...`; gpt-6.1-sol was selected.
+- Strict-schema compatibility observations found HTTP 200 with no Content-Type, complete framed SSE item events, and a terminal completed response with output=[]. The completed assistant item contains the expected JSON object; the final response reports 52 input / 14 output / 0 cached tokens. The ordinary adapter still rejects this shape, so its smoke is not yet passing. A sanitized event-structure projection is retained at `.multi-subflow/integration/live-sse-projection.json`; the original provider owner is adapting only this transport boundary. Earlier prematurely closed requests have unknown usage and are not quality measurements.
+- After the transport repair (provider `d21bdbf488553365374fc170ff7528128c31930d47edf2b8ab865e4873218cba`, auth `fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917`), the ordinary CodexProvider strict-schema smoke passed in 2,584.839 ms, with exact expected JSON, matching gpt-6.1-sol model identity and complete usage 52 input / 14 output / 0 cached tokens. Source remained unchanged. The prior failure above is retained as historical evidence.
+- The actual optimized `/verify` HTTP entry point returned 200 for the public WAL assignment example in 12,790.449 ms. Its four claims matched the intended CONTRADICTED/SUPPORTED/SUPPORTED/UNSUPPORTED pattern, with deterministic citation validation and unchanged source. Source files passed root lint. This one scenario confirms integration, not benchmark-wide semantic accuracy.
+- Live quality comparisons, development-driven optimization, final acceptance of real provider access and public publication remain incomplete. Offline fixture success is not evidence of live compatibility.

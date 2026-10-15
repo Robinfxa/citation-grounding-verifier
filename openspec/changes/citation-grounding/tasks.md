@@ -4,14 +4,14 @@
 - [x] 1.3 Implement shared strict contracts and locked packaging; verify quote/type/limit tests and a clean environment install.
 
 ## 2. Service
-- [ ] 2.1 Implement heuristic, minimal and optimized verifiers with fixed-ID judgments and bounded repair; verify targeted semantic-contract and scripted-provider tests.
-- [ ] 2.2 Implement OpenAI Responses and the selected Codex quota adapters without leaking credentials or hiding usage; verify protocol, refusal, truncation, cancellation and failure fixtures.
-- [ ] 2.3 Implement HTTP request limits, deadlines, safe errors and local diagnostics; verify actual HTTP success/failure and independent logging probes.
+- [x] 2.1 Implement heuristic, minimal and optimized verifiers with fixed-ID judgments and bounded repair; verify targeted semantic-contract and scripted-provider tests.
+- [x] 2.2 Implement OpenAI Responses and the selected Codex quota adapters without leaking credentials or hiding usage; verify protocol, refusal, truncation, cancellation and failure fixtures.
+- [x] 2.3 Implement HTTP request limits, deadlines, safe errors and local diagnostics; verify actual HTTP success/failure and independent logging probes.
 
 ## 3. Evaluation
-- [ ] 3.1 Author and freeze 32 balanced original cases plus diagnostic edges, disjoint splits and aliases; pass dataset validation and non-author annotation review before inspecting test model outputs.
-- [ ] 3.2 Implement oracle and end-to-end scoring, failure denominators, evidence metrics and case-bootstrap intervals; pass adversarial metric tests.
-- [ ] 3.3 Implement reproducible benchmark/report CLI with fingerprints, usage and overwrite protection; verify actual offline consumer runs and saved-result reproduction.
+- [x] 3.1 Author and freeze 32 balanced original cases plus diagnostic edges, disjoint splits and aliases; pass dataset validation and non-author annotation review before inspecting test model outputs.
+- [x] 3.2 Implement oracle and end-to-end scoring, failure denominators, evidence metrics and case-bootstrap intervals; pass adversarial metric tests.
+- [x] 3.3 Implement reproducible benchmark/report CLI with fingerprints, usage and overwrite protection; verify actual offline consumer runs and saved-result reproduction.
 
 ## 4. Empirical comparison and delivery
 - [ ] 4.1 Run a real provider smoke test and all three approaches on development cases, retain failures, and justify any optimized revision with measured evidence.
