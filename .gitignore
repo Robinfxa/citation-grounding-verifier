@@ -1,0 +1,22 @@
+.multi-subflow/
+.DS_Store
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+*.egg-info/
+reports/runs/
+# Local orchestration kernel is installed in this workspace, not distributed with the product.
+.agents/
+.codex/
+Agent-init/
+AGENTS.md
+references/acceptance-chain/
+docs/plans/
