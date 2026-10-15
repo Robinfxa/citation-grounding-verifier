@@ -26,4 +26,4 @@
 - [x] 5.2 Record requested versus effective output-token limits accurately for each configured provider; preserve historical report reproduction.
 - [x] 5.3 Default Settings and the example environment to minimal; keep explicit optimized/heuristic choices and make the quickstart order easy to follow.
 - [x] 5.4 Save real minimal and optimized diagnostic runs separately from the frozen benchmark and independently check the changed evaluator behavior.
-- [ ] 5.5 Validate frozen installation, tests and HTTP examples from a clean clone; commit the correction and export a source-only submission archive.
+- [x] 5.5 Validate frozen installation, tests and HTTP examples from a clean clone; commit the correction and export a source-only submission archive.
