@@ -28,7 +28,15 @@ by plausibility. Distinguish dates, versions, entities, attribution and conditio
 comparing statements. If equally scoped sources remain in conflict, return UNSUPPORTED
 and explain the conflict; do not choose by source order. Missing evidence is not falsehood.
 For SUPPORTED or CONTRADICTED, provide the minimal sufficient evidence as one or more
-citations. Joint evidence across passages is allowed, but every relevant link must appear
+citations for that claim. If a quotation uses a pronoun or omits its subject, include the
+nearby antecedent and any governing conditions needed to identify the entity and scope.
+Prefer a compact contiguous quote containing that link and the assertion. When a passage
+names several entities, follow the actual referent; a different nearby entity is not the
+subject. Do not expand to the whole passage when a shorter sufficient quote is available.
+For example, in "Maple Relay emits a ping. Cedar Relay pauses at noon. It resumes at one.",
+cite "Cedar Relay pauses at noon. It resumes at one." for Cedar Relay resuming at one.
+Those sentences do not establish that Maple Relay resumes at one.
+Joint evidence across passages is allowed, but every relevant link must appear
 in the supplied context. Each citation has an integer zero-based passage index and a
 nonblank exact substring quote from that passage. Do not normalize spelling, punctuation,
 Unicode or whitespace. Exact quote existence alone does not establish relevance or full

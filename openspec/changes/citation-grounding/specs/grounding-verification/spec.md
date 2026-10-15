@@ -73,3 +73,8 @@ The optional ChatGPT-plan provider SHALL obtain this application's own public SI
 - **WHEN** the Responses stream supplies paired output-item events with complete assistant content, then a matching response.completed event whose status is completed and whose output is an empty array
 - **THEN** the adapter may reconstruct the output from those completed items and apply the same strict final-response and citation checks
 - **AND** missing media-type metadata does not bypass SSE framing, bounds, identity/index consistency or completion checks; deltas, text-done events or EOF alone never establish success
+
+#### Scenario: Optional reasoning status and known terminal usage
+- **WHEN** a paired completed reasoning-item event omits its optional status but its assistant message and matching terminal response are completed
+- **THEN** absence of reasoning status alone SHALL NOT reject the response; explicit unfinished statuses and incomplete assistant messages SHALL still be rejected
+- **AND** if local assembly fails after a terminal response is received, its valid measured usage and model identity SHALL be retained in failure statistics without estimating missing values

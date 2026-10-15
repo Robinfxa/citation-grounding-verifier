@@ -35,12 +35,8 @@ def _usage(data: Any) -> TokenUsage:
     )
 
 
-def parse_response(data: dict) -> ProviderResult:
-    """Accept one complete final text, never an SDK-only output_text convenience field.
-
-    Codex SSE uses this same boundary for response.completed.response. Invalid usage
-    remains unknown rather than being coerced into billable token measurements.
-    """
+def response_stats(data: dict) -> RunStats:
+    """Read known response usage/model independently of output validation."""
     if not isinstance(data, dict):
         raise VerificationError("provider_protocol_error")
     usage = _usage(data.get("usage"))
@@ -52,7 +48,16 @@ def parse_response(data: dict) -> ProviderResult:
             model.encode("utf-8")
         except UnicodeError:
             model = None
-    stats = RunStats(usage=usage, response_models=(model,) if model else ())
+    return RunStats(usage=usage, response_models=(model,) if model else ())
+
+
+def parse_response(data: dict) -> ProviderResult:
+    """Accept one complete final text, never an SDK-only output_text convenience field.
+
+    Codex SSE uses this same boundary for response.completed.response. Invalid usage
+    remains unknown rather than being coerced into billable token measurements.
+    """
+    stats = response_stats(data)
 
     def fail(code: str) -> None:
         raise VerificationError(code, stats=stats)
@@ -90,7 +95,10 @@ def parse_response(data: dict) -> ProviderResult:
         fail("provider_protocol_error")
     if text_bytes > MAX_RESPONSE_BYTES:
         fail("response_too_large")
-    return ProviderResult(text=texts[0], usage=usage, model=model)
+    return ProviderResult(
+        text=texts[0], usage=stats.usage,
+        model=stats.response_models[0] if stats.response_models else None,
+    )
 
 
 class OpenAIProvider:

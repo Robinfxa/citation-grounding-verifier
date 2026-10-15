@@ -64,6 +64,27 @@ def direct_events():
     return [dict(event, sequence_number=index) for index, event in enumerate(events)]
 
 
+def reasoning_events(status_fields=None):
+    """Synthetic content; paired reasoning shape matches the dev failure projection."""
+    events = direct_events()
+    reasoning = {
+        "id": "synthetic-reasoning",
+        "type": "reasoning",
+        "content": [],
+        "summary": [],
+        **(status_fields or {}),
+    }
+    for event in events:
+        if "output_index" in event:
+            event["output_index"] = 1
+    events[2:2] = [
+        {"type": "response.output_item.added", "output_index": 0, "item": copy.deepcopy(reasoning)},
+        {"type": "response.output_item.done", "output_index": 0, "item": reasoning},
+    ]
+    events[-1]["response"]["usage"].update(input_tokens=409, output_tokens=152)
+    return [dict(event, sequence_number=index) for index, event in enumerate(events)]
+
+
 async def generate(credentials, events, *, media_type=None, limits=None, parser=None):
     payload = b"".join(sse(event) for event in events)
     stream = Chunks([payload[index : index + 7] for index in range(0, len(payload), 7)])
@@ -179,6 +200,133 @@ async def test_completed_items_are_ordered_by_index_and_keep_reasoning_separate(
     events.insert(2, added)
     events.insert(-1, done)
     assert json.loads((await generate(credentials, events)).text) == {"ok": True}
+
+
+@pytest.mark.parametrize(
+    "status_fields",
+    [{}, {"status": None}, {"status": "completed"}],
+    ids=["missing", "null", "completed"],
+)
+async def test_paired_reasoning_done_accepts_only_its_optional_status_contract(
+    credentials, status_fields
+):
+    result = await generate(credentials, reasoning_events(status_fields))
+    assert json.loads(result.text) == {"ok": True} and result.model == "returned-model"
+    assert result.usage.complete
+    assert (result.usage.input_tokens, result.usage.output_tokens) == (409, 152)
+
+
+@pytest.mark.parametrize("status", ["in_progress", "incomplete", "unknown", False])
+async def test_reasoning_done_explicit_noncompleted_status_is_rejected(credentials, status):
+    with pytest.raises(VerificationError) as error:
+        await generate(credentials, reasoning_events({"status": status}))
+    assert error.value.code == "provider_protocol_error" and not error.value.retryable
+
+
+@pytest.mark.parametrize("status_fields", [{}, {"status": None}], ids=["missing", "null"])
+async def test_reasoning_optional_status_never_relaxes_assistant_message_completion(
+    credentials, status_fields
+):
+    events = reasoning_events()
+    message = events[-2]["item"]
+    del message["status"]
+    message.update(status_fields)
+    with pytest.raises(VerificationError) as error:
+        await generate(credentials, events)
+    assert error.value.code == "provider_protocol_error" and not error.value.retryable
+
+
+@pytest.mark.parametrize("fault", ["missing-added", "changed-id"])
+async def test_optional_reasoning_status_does_not_bypass_item_pairing(credentials, fault):
+    events = reasoning_events()
+    if fault == "missing-added":
+        del events[2]
+    else:
+        events[3]["item"]["id"] = "other-reasoning-item"
+    with pytest.raises(VerificationError) as error:
+        await generate(credentials, events)
+    assert error.value.code == "provider_protocol_error" and not error.value.retryable
+
+
+@pytest.mark.parametrize("fault", ["reasoning-state", "identity", "size"])
+async def test_terminal_metadata_survives_local_reasoning_assembly_failure(credentials, fault):
+    events = reasoning_events()
+    limits = None
+    if fault == "reasoning-state":
+        events[3]["item"]["status"] = "incomplete"
+    elif fault == "identity":
+        events[3]["item"]["id"] = "other-reasoning-item"
+    else:
+        limits = {"max_response_bytes": 32}
+    with pytest.raises(VerificationError) as error:
+        await generate(credentials, events, limits=limits)
+    assert error.value.code == (
+        "response_too_large" if fault == "size" else "provider_protocol_error"
+    )
+    assert not error.value.retryable and error.value.stats is not None
+    assert error.value.stats.response_models == ("returned-model",)
+    assert error.value.stats.usage.complete
+    assert (error.value.stats.usage.input_tokens, error.value.stats.usage.output_tokens) == (
+        409,
+        152,
+    )
+
+
+async def test_failed_assembly_preserves_shared_unknown_usage_and_invalid_model_rules(credentials):
+    events = reasoning_events({"status": "incomplete"})
+    events[-1]["response"].update(
+        model="\ud800", usage={"input_tokens": True, "output_tokens": 152}
+    )
+    with pytest.raises(VerificationError) as error:
+        await generate(credentials, events)
+    assert error.value.code == "provider_protocol_error" and error.value.stats is not None
+    assert not error.value.stats.usage.complete and error.value.stats.response_models == ()
+    assert (
+        error.value.stats.usage.input_tokens == 0 and error.value.stats.usage.output_tokens == 152
+    )
+
+
+async def test_real_verifier_keeps_terminal_usage_on_reasoning_protocol_failure(credentials):
+    from grounding.config import Settings
+    from grounding.contracts import VerifyRequest
+    from grounding.verifiers import build_verifier
+
+    events = reasoning_events({"status": "incomplete"})
+    stream = Chunks([b"".join(sse(event) for event in events)])
+    calls = []
+
+    def transport(request):
+        calls.append(request)
+        return httpx.Response(200, stream=stream)
+
+    async with httpx.AsyncClient(transport=httpx.MockTransport(transport)) as client:
+        verifier = build_verifier(
+            "minimal",
+            settings=Settings(
+                provider="codex",
+                model="model",
+                transport_retries=1,
+                retry_delay=0,
+                diagnostics=False,
+            ),
+            provider=CodexProvider("model", auth_store=credentials, client=client),
+        )
+        try:
+            with pytest.raises(VerificationError) as error:
+                await verifier.verify(
+                    VerifyRequest(context_passages=["A is B."], generated_answer="A is B.")
+                )
+        finally:
+            await verifier.aclose()
+    assert error.value.code == "provider_protocol_error" and not error.value.retryable
+    assert len(calls) == error.value.stats.provider_calls == 1 and stream.closed
+    assert error.value.stats.usage.complete and error.value.stats.response_models == (
+        "returned-model",
+    )
+    assert (error.value.stats.usage.input_tokens, error.value.stats.usage.output_tokens) == (
+        409,
+        152,
+    )
 
 
 @pytest.mark.parametrize(

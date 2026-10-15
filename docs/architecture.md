@@ -53,6 +53,8 @@ This adapter sends tool-free streamed Responses requests with `store:false`, `st
 
 Both LLM variants share the same model, authentication profile, cancellation/attempt limits and validation path. Subscription usage is not assigned an invented per-token dollar price; missing provider usage remains unknown. A quota exhaustion error is terminal and does not imply the entire subscription is exhausted. An unusable provider fails explicitly rather than silently switching to another model or the heuristic.
 
+For completed-item assembly, a paired reasoning item may omit its optional status; an explicit unfinished status still fails, and assistant messages must be completed. Once a terminal response is received, its validated usage and model metadata remain available even if subsequent local output assembly fails. Shared metadata parsing uses the same rules as ordinary response parsing and never estimates consumption from partial text.
+
 ## Reliability and diagnostics
 
 Initial public limits: 1 MiB HTTP body, 32 passages, 16,000 characters per passage, 96,000 aggregate context characters, 12,000 answer characters and 64 extracted claims. Reject oversized inputs rather than truncate them. Blank answers return no claims without a provider call. Empty context still requires factual extraction, then each extracted fact is unsupported.

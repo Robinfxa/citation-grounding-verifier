@@ -46,7 +46,7 @@ GROUNDING_AUTH_PROFILE=default
 
 ## 最小真实验收
 
-离线验收没有运行真实登录或推理。准备使用套餐额度时，可执行以下真实兼容性检查。
+离线验收不包含真实登录或推理。本项目已在 2026-10-15 通过下述最小真实兼容性检查；其他账号或环境可按以下步骤复验。
 
 1. 执行登录，确认 `status` 中 `plan_enabled:true`，然后用 `models` 选择确切 slug。
 2. 将 `GROUNDING_MODEL` 设置为该 slug；自定义账号目录或 profile 时也设置相应进程环境变量。
@@ -92,7 +92,7 @@ PY
 
 SIWC 专页尚未明确承诺此路由支持 `text.format` strict JSON Schema；上面的 probe 是必要的兼容性确认。实现不会在能力不支持时撤掉 schema 或改用其他 provider。请求固定使用 `store:false`、`stream:true`、`instructions` 和完整 user 数据，省略该预览禁止的参数和所有工具。[预览限制](https://developers.openai.com/siwc/token-sharing-open-source/preview-limitations)
 
-直接路由可能省略 `Content-Type`；适配器仍要求合法、有界的 SSE，明确声明其他媒体类型时会拒绝。只有收到真正的 `response.completed` 且状态为 completed、无错误或不完整原因时，结果才可进入最终校验。若终态的 `output` 恰为空数组，适配器可以采用此前配对的 `output_item.added` / `output_item.done`：响应身份、从零连续的项索引和项 ID 必须一致，每项必须完成，重复或未完成项均拒绝；内容事件也必须指向对应的项和有效内容索引。完整终态输出仍按原路径解析。[官方流事件](https://developers.openai.com/api/reference/resources/responses/streaming-events)
+直接路由可能省略 `Content-Type`；适配器仍要求合法、有界的 SSE，明确声明其他媒体类型时会拒绝。只有收到真正的 `response.completed` 且状态为 completed、无错误或不完整原因时，结果才可进入最终校验。若终态的 `output` 恰为空数组，适配器可以采用此前配对的 `output_item.added` / `output_item.done`：响应身份、从零连续的项索引和项 ID 必须一致，每项须已收到 done，重复或未完成项均拒绝。message 仍须显式 status=completed；reasoning 的可选 status 可以缺失、为 null 或 completed，显式 in_progress/incomplete 仍拒绝。内容事件也必须指向对应的项和有效内容索引。完整终态输出仍按原路径解析。[官方流事件](https://developers.openai.com/api/reference/resources/responses/streaming-events)、[reasoning 类型定义](https://github.com/openai/openai-python/blob/main/src/openai/types/responses/response_reasoning_item.py)
 
 重建仅使用完成项中的完整内容，之后仍通过同一个严格最终解析器；delta、text-done、EOF 或 `[DONE]` 均不能单独证明成功。流、事件和重建后的最终对象继续受 4 MiB / 1 MiB / 1 MiB 上限约束，usage 与 model 仍取自最终响应。
 
@@ -110,6 +110,8 @@ uv run --frozen grounding-auth logout --profile default
 
 token 计量仅保留 Responses 实际返回的值；缺失或无效计量保持 unknown。应用不根据 token 数推算美元、套餐剩余比例或 reset。`status` 的 `quota_remaining` / `quota_reset_at` 始终为 `null`，用户应查看 Usage 页面。
 
+已收到 `response.completed` 对象但本地协议或组装校验失败时，错误结果仍保留按共享规则校验的终态 usage 和 model；输出继续明确失败。没有收到完成响应的读中断仍为 unknown，不从已收到的片段估算计量。
+
 ## 离线证据与日志边界
 
 ```sh
@@ -126,6 +128,8 @@ uv run --frozen python tests/provider/offline_probe.py --output .multi-subflow/p
 
 触发上述恢复时，日志会在同一个 request ID 下增加一条固定的 `auth_login` / `progress` / `reauthorizing` 记录；之后会出现第二组回调与交换结果。它表示一次新的浏览器授权，旧授权码不会再次发送。
 
-当前实现面向 macOS/Linux，使用标准库 `fcntl`；Windows 不在已验证范围。真实登录、套餐权限及模型目录已验证。严格 schema 的受控请求已观察到完整输出项和完成终态，但其响应省略媒体类型且终态输出为空；对应适配与离线回归已完成，修复后的正常 CodexProvider 真实复验仍待完成，尚不能宣称真实兼容性通过。
+当前实现面向 macOS/Linux，使用标准库 `fcntl`；Windows 不在已验证范围。真实登录、套餐权限及模型目录已验证。2026-10-15，正常 CodexProvider 在 reasoning 可选状态增量之前，已用 `gpt-6.1-sol` 完成一次真实严格 schema 请求，返回同一模型，耗时 2584.839ms，实际 usage 为 input 52 / output 14 / cached 0，计量完整。该结果只确认当时版本、本次账号、模型和最小 schema 的真实兼容性。后续发现的 reasoning 可选状态兼容和完成响应的错误计量保留均已修复，137 项受影响检查及本地成功/失败/恢复探针通过，新版真实 verifier 复验仍待完成；此前评测中的 unknown 记录保持原样。实际 `/verify`、其他 schema 与整批评测仍须分别验收，不能据此推定核验质量、整体时延或套餐余量。
+
+真实登录首次交换即成功，未触发 `invalid_grant` 后的新授权恢复；该恢复分支仍只有离线证据。新增诊断、登录恢复、目录预算与 SSE 兼容增量尚未完成独立审阅。
 
 模型目录的响应最多读取 1 MiB；超限会明确失败并关闭响应。认证端点的 discovery、公钥和 token 响应仍分别使用原有的 128 KiB 上限。

@@ -115,7 +115,12 @@ class _CompletedOutput:
                 index >= len(self.started)
                 or index in self.finished
                 or identity != self.started[index]
-                or item.get("status") != "completed"
+                # AIDEV-NOTE: a paired reasoning done item may omit its optional
+                # status. Assistant messages still require explicit completion.
+                or (
+                    item.get("status") != "completed"
+                    and not (item["type"] == "reasoning" and item.get("status") is None)
+                )
             ):
                 raise VerificationError("provider_protocol_error")
             if index in self.content_indices:
@@ -369,29 +374,39 @@ class CodexProvider:
                 raise _error(0, body if isinstance(body, dict) else {})
             if kind == "response.completed":
                 data = event.get("response")
-                if (
-                    not isinstance(data, dict)
-                    or data.get("status") != "completed"
-                    or data.get("error")
-                    or data.get("incomplete_details")
-                ):
+                if not isinstance(data, dict):
                     raise VerificationError("provider_protocol_error")
-                # AIDEV-NOTE: SIWC can send output=[] after finalized item events.
-                # Recover only that exact shape, with paired completed items and
-                # matching response identity; the shared final parser stays strict.
-                if isinstance(data.get("output"), list) and not data["output"]:
-                    if output_error is not None:
-                        raise VerificationError(output_error)
-                    assert output is not None
-                    data = {**data, "output": output.finish(data)}
-                if _encoded_size(data) > self._max_response:
-                    raise VerificationError("response_too_large")
-                parser = self._parser
-                if parser is None:
-                    from grounding.providers import parse_response
+                try:
+                    if (
+                        data.get("status") != "completed"
+                        or data.get("error")
+                        or data.get("incomplete_details")
+                    ):
+                        raise VerificationError("provider_protocol_error")
+                    # AIDEV-NOTE: SIWC can send output=[] after finalized item events.
+                    # Recover only that exact shape, with paired completed items and
+                    # matching response identity; the shared final parser stays strict.
+                    if isinstance(data.get("output"), list) and not data["output"]:
+                        if output_error is not None:
+                            raise VerificationError(output_error)
+                        assert output is not None
+                        data = {**data, "output": output.finish(data)}
+                    if _encoded_size(data) > self._max_response:
+                        raise VerificationError("response_too_large")
+                    parser = self._parser
+                    if parser is None:
+                        from grounding.providers import parse_response
 
-                    parser = parse_response
-                return parser(data)
+                        parser = parse_response
+                    return parser(data)
+                except VerificationError as error:
+                    # AIDEV-NOTE: local assembly failure does not erase terminal
+                    # measurements. Reuse shared validation, including unknowns.
+                    if error.stats is None:
+                        from grounding.providers import response_stats
+
+                        error.stats = response_stats(data)
+                    raise
             if output is not None:
                 try:
                     output.record(event)
