@@ -8,6 +8,8 @@ Three approaches share one interface: a deterministic heuristic, a minimal singl
 
 Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/). No credential or network inference is needed for these checks; installation downloads the locked dependencies.
 
+If your platform needs to build `cryptography` from source, install its [C/Rust and OpenSSL build prerequisites](https://cryptography.io/en/latest/installation/#building-cryptography-on-macos) first.
+
 ```bash
 uv sync --frozen
 uv run pytest
@@ -86,6 +88,8 @@ uv run grounding-eval run --dataset datasets/diagnostic.jsonl \
 ```
 
 The [dataset card](datasets/README.md) describes 32 main cases / 68 claims, with disjoint development (8 cases) and test (24 cases) families, balanced categories, and six separate diagnostics. `--split all` means dev and test only. Oracle evaluation fixes the input claims; end-to-end evaluation includes extraction. Frozen text/alias matching is verdict-blind and one-to-one; correct unregistered paraphrases can be undercounted.
+
+The [separate diagnostic run](reports/2026-10-15/diagnostic-final/README.md) completed 36/36 jobs: minimal and optimized each matched all six cases in both tracks; heuristic matched four. These fixtures are not added to the main scores, and historical run files remain unchanged.
 
 Runs preserve failures in the denominators and save configuration, dataset/prompt/code fingerprints, actual latency, usage and model IDs. Gold evidence coverage is a conservative span proxy, not an independent semantic judge. Zero denominators remain undefined. Small-sample bootstrap intervals do not account for annotation bias or model stochasticity.
 

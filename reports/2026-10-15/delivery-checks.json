@@ -1,0 +1,125 @@
+{
+  "source_commit": "dbe8b77263be8bf952428d83ff0f1eca30a6b24d",
+  "code_sha256": "fa3e618108958f417727bd56652f359e3446d6ca4918781aa38ff16f9746b9cb",
+  "clean_checkout": {
+    "status": "PASS",
+    "started_at": "2026-10-15T10:05:37.396635+00:00",
+    "finished_at": "2026-10-15T10:11:28.795430+00:00",
+    "python": "3.11.9",
+    "platform": "Darwin x86_64",
+    "uv": "0.9.11",
+    "fresh_venv": true,
+    "fresh_uv_cache": true,
+    "dotenv_copied": false,
+    "install_command": "uv sync --frozen",
+    "environment": {
+      "UV_NATIVE_TLS": "true",
+      "UV_PYTHON": "3.11"
+    },
+    "prerequisites": "Existing OS C/Rust build toolchain and OpenSSL; cryptography 50.0.2 built from source. This is a new Python environment, not an OS image installation.",
+    "tests": {
+      "passed": 426,
+      "pytest_elapsed_seconds": 67.55
+    },
+    "checks": [
+      {
+        "name": "sync",
+        "exit_code": 0,
+        "elapsed_seconds": 246.871
+      },
+      {
+        "name": "tests",
+        "exit_code": 0,
+        "elapsed_seconds": 75.21
+      },
+      {
+        "name": "lint",
+        "exit_code": 0,
+        "elapsed_seconds": 6.949
+      },
+      {
+        "name": "validate",
+        "exit_code": 0,
+        "elapsed_seconds": 3.718
+      },
+      {
+        "name": "offline-dev",
+        "exit_code": 0,
+        "elapsed_seconds": 10.434
+      },
+      {
+        "name": "offline-diagnostic",
+        "exit_code": 0,
+        "elapsed_seconds": 6.253
+      },
+      {
+        "name": "http-example-curl",
+        "exit_code": 0,
+        "elapsed_seconds": 0.089
+      }
+    ],
+    "http_checks": [
+      {
+        "case": "README WAL example",
+        "status": 200,
+        "claims": 3,
+        "literal_integrity": true
+      },
+      {
+        "case": "blank",
+        "status": 200
+      },
+      {
+        "case": "invalid-input",
+        "status": 422
+      },
+      {
+        "case": "recovery",
+        "status": 200
+      }
+    ]
+  },
+  "independent_evaluator_review": {
+    "baseline": "97c5b84",
+    "completed_processes": 9,
+    "history": {
+      "development-v1": {
+        "all_files_byte_identical": true,
+        "files": 5,
+        "returncode": 2
+      },
+      "development-v2": {
+        "all_files_byte_identical": true,
+        "files": 5,
+        "returncode": 0
+      },
+      "held-out": {
+        "all_files_byte_identical": true,
+        "files": 5,
+        "returncode": 0
+      }
+    },
+    "live_provider_calls": 0,
+    "provider_auth_security_review": "not_performed",
+    "review_harness_timeouts": 1,
+    "scoring_reporting_diff_from_baseline_exit": 0,
+    "source_files": 14,
+    "source_manifest_sha256": "b87c2d9ec25fe57287ab14b69fddd9edda654ce277772aec7209df02b28ba478",
+    "source_stable": true,
+    "status": "PASS"
+  },
+  "live_diagnostics": {
+    "status": "COMPLETE",
+    "exit_code": 0,
+    "record_count": 36,
+    "source_unchanged": true,
+    "records_sha256": "fe6fca7a574c7c1b432e08493a09b601fbc968f468be23c744bacd937f1f1643",
+    "report": "diagnostic-final/README.md"
+  },
+  "historical_artifacts": "All original development-v1, development-v2 and held-out files remain byte-identical; existing scores were not changed.",
+  "limits": [
+    "OpenAI API-key inference was not exercised live.",
+    "Provider authentication/streaming increment independent review remains incomplete due to the earlier platform risk check; this evaluator review does not replace it.",
+    "No prompt-only A/B experiment was added."
+  ]
+}

@@ -17,13 +17,13 @@
 - [x] 4.1 Run a real provider smoke test and all three approaches on development cases, retain failures, and justify any optimized revision with measured evidence.
 - [x] 4.2 Freeze prompts and run the held-out benchmark; report quality, resource use, paired uncertainty and concrete failure cases without tuning on test outputs.
 - [ ] 4.3 Complete independent implementation/diagnostic review and necessary repairs; pass lint, full tests and HTTP/CLI integration checks on the final code.
-  - Functional checks passed: 410 tests, lint, HTTP/CLI acceptance and immutable saved-report reproduction. Service/evaluator/dataset independent checks passed. The new provider increment's independent review was stopped by a platform risk check and remains incomplete; no bypass or replacement PASS is claimed.
+  - Final clean-clone functional checks passed: 426 tests, lint, HTTP/CLI acceptance and immutable saved-report reproduction. Service/evaluator/dataset independent checks passed, including the final evaluator corrections. The new provider increment's independent review was stopped by a platform risk check and remains incomplete; no bypass or replacement PASS is claimed.
 - [x] 4.4 Write concise run instructions and measured README report; verify commands, links, artifact fingerprints and repository hygiene.
 - [ ] 4.5 Prepare a reviewable local submission; after required publication authorization, create/push the public GitHub repository and verify the remote contents.
 
 ## 5. Bounded final delivery corrections
-- [ ] 5.1 Expose `--split diagnostic`, retain dev/test-only `all`, and verify diagnostic CLI execution and report separation without changing data or scoring.
-- [ ] 5.2 Record requested versus effective output-token limits accurately for each configured provider; preserve historical report reproduction.
+- [x] 5.1 Expose `--split diagnostic`, retain dev/test-only `all`, and verify diagnostic CLI execution and report separation without changing data or scoring.
+- [x] 5.2 Record requested versus effective output-token limits accurately for each configured provider; preserve historical report reproduction.
 - [x] 5.3 Default Settings and the example environment to minimal; keep explicit optimized/heuristic choices and make the quickstart order easy to follow.
-- [ ] 5.4 Save real minimal and optimized diagnostic runs separately from the frozen benchmark and independently check the changed evaluator behavior.
+- [x] 5.4 Save real minimal and optimized diagnostic runs separately from the frozen benchmark and independently check the changed evaluator behavior.
 - [ ] 5.5 Validate frozen installation, tests and HTTP examples from a clean clone; commit the correction and export a source-only submission archive.
