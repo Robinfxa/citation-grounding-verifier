@@ -1,0 +1,15 @@
+# Development annotation review
+
+These are annotation reviews of the development pilot, **not semantic audits of verifier predictions**. One AI author and one non-author AI reviewer used the configured `gpt-6.1-sol / max`; the runtime model build and coding-session usage are unknown. No human review is claimed.
+
+The reviewer first read only the supplied passages, answer and candidate claim texts/anchors. The two [blind](pilot-first4.blind-review.jsonl) [packets](remaining8.blind-review.jsonl) are byte-identical to the inputs actually reviewed. The reviewer locked its [first four](first4-independent.json) and [remaining eight](remaining8-independent.json) judgments before seeing author verdicts, rationale or evidence. These were two batches by the same reviewer, not two independent reviewers.
+
+The [comparison](comparison.json) retains all 123 original author items beside the independent judgments. [Its summary](comparison.md) records one S/U disagreement, an omitted answer-scope qualifier, three proposed atomic splits, evidence-scope problems and overstated multi-passage requirements. Exact anchors and quotations all passed mechanical checks; the semantic findings show why that was insufficient.
+
+The original 123-claim author draft is preserved at [pilot-author-draft-1.jsonl](../../../datasets/v2/pilot-author-draft-1.jsonl). Revisions occur before model outputs and are separately versioned. The [human review queue](human-review-queue.md) remains pending even after AI adjudication.
+
+[Publication metadata](publication.json) distinguishes original locked hashes from public-view hashes. Public review JSON removes machine/private-instruction paths and reformats metadata; all case judgments, reasons, evidence and exposure statements are unchanged. Raw Chinese review notes remain in their original language. `original-artifact:` identifiers name historical inputs, not filesystem links; the complete author draft and blind packets provide the public comparison inputs. Source locators are relative to the source package in `datasets/v2/`. Hashes and role separation support traceability; they are not proof of reviewer independence or annotation truth.
+
+The [affected re-review](affected-review.md) and [hash-bound receipt](affected-review-receipt.json) passed on final pilot SHA `701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df`: 81 affected claims checked, 45 unchanged claims reused by exact field equality, no unresolved finding in this scope. This follow-up occurred after author-gold exposure and is not a second blind annotation round. The [change map](pilot-reviewed-1.change-map.json) and [review input](pilot-reviewed-1.affected-recheck.input.jsonl) preserve its inputs. These new review files contain no machine/private paths and are copied byte-for-byte.
+
+The author package's `pending` review fields describe its frozen state at handoff. They remain unchanged to preserve that input's hashes; this later independent receipt records the completed affected review. Human review remains pending.

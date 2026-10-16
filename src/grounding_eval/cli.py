@@ -19,6 +19,7 @@ from grounding_eval.dataset import (
     validate_cases,
 )
 from grounding_eval.diagnostics import emit
+from grounding_eval.provenance import strict_json
 from grounding_eval.runner import EvaluationError, json_text, regenerate_report, run_benchmark
 
 
@@ -42,6 +43,9 @@ def parser() -> argparse.ArgumentParser:
     run.add_argument("--seed", type=int, default=20261015)
     run.add_argument("--bootstrap-samples", type=int, default=10_000)
     run.add_argument("--prices", type=Path, help="Explicit dated JSON API price snapshot; never used for Codex")
+    run.add_argument("--case-ids-file", type=Path, help="Frozen JSON array of unique case IDs")
+    run.add_argument("--max-total-provider-attempts", type=int,
+                     help="Total provider attempt allowance, including retries; required for model runs")
     report = commands.add_parser("report", help="Regenerate summary from complete saved records")
     report.add_argument("run_dir", type=Path)
     for command in (validate, run, report):
@@ -65,10 +69,14 @@ def main(argv: list[str] | None = None) -> int:
                 if args.quiet:
                     settings = replace(settings, diagnostics=False)
                 prices = json.loads(args.prices.read_text()) if args.prices else None
+                case_ids = strict_json(args.case_ids_file.read_text()) if args.case_ids_file else None
+                if args.case_ids_file and not isinstance(case_ids, list):
+                    raise EvaluationError("invalid_arguments")
                 result = asyncio.run(run_benchmark(
                     dataset_path=args.dataset, output=args.output,
                     approaches=args.approaches.split(","), split=args.split, track=args.track,
-                    seed=args.seed, bootstrap_samples=args.bootstrap_samples, settings=settings, prices=prices))
+                    seed=args.seed, bootstrap_samples=args.bootstrap_samples, settings=settings, prices=prices,
+                    case_ids=case_ids, max_total_provider_attempts=args.max_total_provider_attempts))
             else:
                 result = regenerate_report(args.run_dir)
             if args.command != "run":

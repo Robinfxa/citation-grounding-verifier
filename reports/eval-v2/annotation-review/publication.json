@@ -1,0 +1,75 @@
+{
+  "publication_kind": "sanitized_review_views",
+  "transformations": [
+    "Private instruction read-set entries replaced by an omission notice.",
+    "Machine and private evidence path prefixes replaced by logical artifact names.",
+    "JSON reformatted; all case judgments, reasons, evidence, exposure and timestamps preserved."
+  ],
+  "original_hashes_are_not_published_view_hashes": true,
+  "locked_originals_retained_locally": true,
+  "artifacts": {
+    "first4-independent.json": {
+      "original_sha256": "e79251505ed11c2d17ca8658c8607195eb93e81de342a63f234a8afa63629536",
+      "published_sha256": "8cb5967f784feb43108a51ae409fa658e04ac669715bfd2ad9809fae92aa70aa"
+    },
+    "remaining8-independent.json": {
+      "original_sha256": "6301010451e245a83f682abdb248200acb5faa58f7d452545db5fb82fb885d93",
+      "published_sha256": "0113cd957527648d184b5bfe35f597237b75afac41d24f07a5aea1e2a59c02bf"
+    },
+    "comparison.json": {
+      "original_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+      "published_sha256": "70d29abd25af4114525c2e9ddb4f180e5e6d6046f262e061968df7a34216fd86"
+    },
+    "human-review-queue.json": {
+      "original_sha256": "bb88f0c8650011a7a2abbb8062e1849776d1b8168031966b47813bc5245a8b73",
+      "published_sha256": "0030c36fa5110f338a3000f0514414b40c12a6733bcf219bce5046a516f40f63"
+    },
+    "comparison-validation.json": {
+      "original_sha256": "1679579429c418eb524e3b65a5b165cb31219902758d96e43bab981da4f0febd",
+      "published_sha256": "44d5ce045b4529e4bf8772aea4aa705651f6c6d374c44c86b10d2751caae5f3c"
+    },
+    "pilot-first4.blind-review.jsonl": {
+      "original_sha256": "aeeb28c788b756f53b49822b085a2b84b1f94e48f7bf2347f804defe261cddfb",
+      "published_sha256": "aeeb28c788b756f53b49822b085a2b84b1f94e48f7bf2347f804defe261cddfb",
+      "byte_identical": true
+    },
+    "remaining8.blind-review.jsonl": {
+      "original_sha256": "c2a3c957236bb557f657d814dfd377599869fad41c37900d4d7ed57466d5a6ef",
+      "published_sha256": "c2a3c957236bb557f657d814dfd377599869fad41c37900d4d7ed57466d5a6ef",
+      "byte_identical": true
+    },
+    "comparison.md": {
+      "original_sha256": "ca414cf57f763e7d44881ad83311d5c753cef58dfc5041d5d5dfb0ebfb1fe838",
+      "published_sha256": "ca414cf57f763e7d44881ad83311d5c753cef58dfc5041d5d5dfb0ebfb1fe838"
+    },
+    "human-review-queue.md": {
+      "original_sha256": "3fd72e9202a733ac6cc1fd5088a6e68d565b84ea57a6e3ac23b418caf5d6dade",
+      "published_sha256": "3fd72e9202a733ac6cc1fd5088a6e68d565b84ea57a6e3ac23b418caf5d6dade"
+    },
+    "affected-review.json": {
+      "original_sha256": "3cbcb776c313ae9640c4c31ba9f6711637f9799a87546e3ae412faf2060501ba",
+      "published_sha256": "3cbcb776c313ae9640c4c31ba9f6711637f9799a87546e3ae412faf2060501ba",
+      "byte_identical": true
+    },
+    "affected-review.md": {
+      "original_sha256": "ba93132e5113c341960d3034801b5d3ff59d5810b4d9d74f8e6f92375597f3e2",
+      "published_sha256": "ba93132e5113c341960d3034801b5d3ff59d5810b4d9d74f8e6f92375597f3e2",
+      "byte_identical": true
+    },
+    "affected-review-receipt.json": {
+      "original_sha256": "77d82e9c0634a3c6205b0f7950b2168f1d8c85249a04f92c8e925f1b03524578",
+      "published_sha256": "77d82e9c0634a3c6205b0f7950b2168f1d8c85249a04f92c8e925f1b03524578",
+      "byte_identical": true
+    },
+    "pilot-reviewed-1.change-map.json": {
+      "original_sha256": "7b40a182be5631bf74a9e57ad9d0114764204de7880c12a9c0542a6f6af223bf",
+      "published_sha256": "7b40a182be5631bf74a9e57ad9d0114764204de7880c12a9c0542a6f6af223bf",
+      "byte_identical": true
+    },
+    "pilot-reviewed-1.affected-recheck.input.jsonl": {
+      "original_sha256": "ab2b8a79c53668fa7d6dd6a751d7a368f34b5687cc98ad83ba2846d7d403595b",
+      "published_sha256": "ab2b8a79c53668fa7d6dd6a751d7a368f34b5687cc98ad83ba2846d7d403595b",
+      "byte_identical": true
+    }
+  }
+}

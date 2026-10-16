@@ -12,6 +12,7 @@ SAFE_ERRORS = set(ERRORS) | {
     "dataset_invalid", "output_exists", "persistence_failed", "run_artifact_invalid",
     "oracle_identity_violation", "invalid_arguments", "implementation_unavailable",
     "cleanup_failed", "source_changed", "request_failures",
+    "audit_artifact_invalid",
 }
 
 
@@ -20,7 +21,7 @@ def emit(op: Operation, stage: str, event: str, outcome: str, *,
          requested: int | None = None, approach: str | None = None,
          cleanup_failures: int | None = None, failed_requests: int | None = None,
          source_changed: bool | None = None) -> None:
-    if not op.enabled or stage not in {"eval_run", "eval_case", "eval_validate", "eval_report", "eval_save", "eval_cleanup"}:
+    if not op.enabled or stage not in {"eval_run", "eval_case", "eval_validate", "eval_report", "eval_save", "eval_cleanup", "semantic_audit"}:
         return
     if event not in {"start", "end"} or outcome not in {"started", "success", "failure"}:
         return

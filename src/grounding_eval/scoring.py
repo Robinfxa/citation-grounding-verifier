@@ -10,6 +10,8 @@ from typing import Any
 from grounding.contracts import VERDICTS
 from grounding_eval.dataset import Case, GoldClaim, normalize
 
+SCORER_VERSION = "2"
+
 
 def ratio(numerator: int, denominator: int) -> dict:
     return {"numerator": numerator, "denominator": denominator,
@@ -65,9 +67,14 @@ def score_case(case: Case, predictions: list[dict], *, track: str = "end-to-end"
     lookup = {normalize(text): i for i, g in enumerate(case.gold_claims)
               for text in [g.claim_text, *g.aliases]}
     matched: dict[int, int] = {}
-    extras = []
+    extras, duplicates = [], []
+    seen_texts = set()
     for pno, prediction in enumerate(predictions):
-        gno = lookup.get(normalize(prediction["claim_text"]))
+        text_key = normalize(prediction["claim_text"])
+        gno = lookup.get(text_key)
+        if text_key in seen_texts or (gno is not None and gno in matched):
+            duplicates.append(pno)
+        seen_texts.add(text_key)
         # AIDEV-NOTE: first unused text match wins without reading labels or evidence.
         # A duplicate remains an FP even if its label would score better than the first.
         if gno is not None and gno not in matched:
@@ -76,7 +83,7 @@ def score_case(case: Case, predictions: list[dict], *, track: str = "end-to-end"
             extras.append(pno)
     confusion: Counter[tuple[str, str]] = Counter()
     correct_by_label: Counter[str] = Counter()
-    label_correct = evidence_correct = evidence_non_u = 0
+    label_correct = evidence_correct = evidence_non_u = false_support = matched_non_s = 0
     pairs = []
     for gno, gold in enumerate(case.gold_claims):
         pno = matched.get(gno)
@@ -84,6 +91,8 @@ def score_case(case: Case, predictions: list[dict], *, track: str = "end-to-end"
             confusion[gold.verdict, "ERROR" if error else "MISSING"] += 1
             continue
         prediction = predictions[pno]
+        matched_non_s += gold.verdict != "SUPPORTED"
+        false_support += gold.verdict != "SUPPORTED" and prediction["verdict"] == "SUPPORTED"
         label_ok = prediction["verdict"] == gold.verdict
         evidence_ok = label_ok and evidence_covered(gold, prediction, case.context_passages)
         confusion[gold.verdict, prediction["verdict"]] += 1
@@ -114,6 +123,10 @@ def score_case(case: Case, predictions: list[dict], *, track: str = "end-to-end"
         "case_id": case.id, "family_id": case.family_id, "track": track, "error": error,
         "counts": {
             "gold": gold_n, "predicted": pred_n, "matched": len(matched),
+            "omitted": gold_n - len(matched), "extra": len(extras), "duplicate": len(duplicates),
+            "gold_non_supported": sum(g.verdict != "SUPPORTED" for g in case.gold_claims),
+            "matched_non_supported": matched_non_s,
+            "false_support": false_support,
             "label_correct": label_correct, "evidence_correct": evidence_correct,
             "gold_non_unsupported": sum(g.verdict != "UNSUPPORTED" for g in case.gold_claims),
             "evidence_correct_non_unsupported": evidence_non_u,
@@ -133,6 +146,7 @@ def score_case(case: Case, predictions: list[dict], *, track: str = "end-to-end"
         "missing_gold_ids": [g.id for i, g in enumerate(case.gold_claims) if i not in matched],
         "unmatched_predictions": [{"prediction_index": i, **predictions[i]} for i in extras],
         "rejected_predictions": rejected,
+        "duplicate_prediction_indices": duplicates,
     }
 
 
@@ -159,6 +173,17 @@ def aggregate(scores: list[dict]) -> dict[str, Any]:
         "confusion": {row: dict(value) for row, value in confusion.items()},
         "errors": dict(sorted(errors.items())),
         "strict_decomposition": prf(counts["matched"], counts["predicted"], counts["gold"]),
+        "false_support_rate": ratio(counts["false_support"], counts["gold_non_supported"]),
+        "false_support_note": "C/U gold matched to SUPPORTED, divided by all C/U gold. "
+                              "Missing/error claims remain in the denominator, never count as false support; "
+                              "read with judgment coverage and request failures.",
+        "non_supported_judgment_coverage": ratio(counts["matched_non_supported"], counts["gold_non_supported"]),
+        "extraction_diagnostics": {
+            "omitted_gold": counts["omitted"], "extra_predictions": counts["extra"],
+            "duplicate_predictions": counts["duplicate"],
+            "note": "Duplicates are repeated normalized text or a second alias for an already matched gold. "
+                    "Merges, splits and scope loss require the separate semantic audit.",
+        },
         "joint_label": prf(counts["label_correct"], counts["predicted"], counts["gold"]),
         "joint_evidence": prf(counts["evidence_correct"], counts["predicted"], counts["gold"]),
         "oracle_accuracy": ratio(counts["label_correct"], counts["gold"]),
@@ -168,6 +193,8 @@ def aggregate(scores: list[dict]) -> dict[str, Any]:
         "gold_evidence_coverage": ratio(counts["evidence_correct_non_unsupported"], counts["gold_non_unsupported"]),
         "prediction_gold_evidence_coverage": ratio(counts["evidence_correct_non_unsupported"], counts["predicted_non_unsupported"]),
         "gold_relevant_citation_precision": ratio(counts["citation_gold_relevant"], counts["citation_total"]),
+        "quote_characters_per_covered_non_unsupported_claim": ratio(
+            counts["citation_characters"], counts["evidence_correct_non_unsupported"]),
     }
 
 

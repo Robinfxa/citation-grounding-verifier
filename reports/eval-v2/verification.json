@@ -1,0 +1,252 @@
+{
+  "status": "offline_measurement_consumer_and_annotation_checks_passed; live_budget_pending",
+  "baseline_commit": "8b0b0fe70c7a5d19c1fce14fc77cea68e233e90e",
+  "runtime_fingerprints": {
+    "code_sha256": "4a10accbe110808bcf63025204af444fe75195ea291efb655ffda2261209f992",
+    "files": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "7b8d3bda7858ae97bc3053baa9342f91313ccf6e8ff8798d49443eb5a4a570ec",
+      "grounding/contracts.py": "d19981261f14fc9bb358daa1dd4b3d471d48d5aa5bcd683e29c0ab07eee08244",
+      "grounding/diagnostics.py": "03b88fb52aafc74655c8c2162b858edfe4ca75b79669c29826c2aa71e7bc5083",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "159c7c3cb020b7ee7076c5e732b130964b524f48fe9ea7f3ec54f0aabc03df0c",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/audit.py": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+      "grounding_eval/cli.py": "41186146c4f1e799a6aa286dad51f8385d46751e531404ae9bde1ffcfc955263",
+      "grounding_eval/dataset.py": "1b5aae47a713ad8c71935859fe4e6b6fa6374584780515f6e8d959141aec8df2",
+      "grounding_eval/diagnostics.py": "d5f0ea8db468d70b06e5a823195c18053b12df1c07cde2db24de763a5cb65911",
+      "grounding_eval/provenance.py": "7243c31ea04e8b37e543b56a7d3e96a6701631d6b178ed0576fee47ae801cd33",
+      "grounding_eval/repeated.py": "060ff829327314745c5c4a3dbf8f88b4f301bf2a1d4f3b4fc34a7abf1633f53a",
+      "grounding_eval/reporting.py": "cf149e78431f378fa7ae6f296fb84ab00aacb5212d35cf325d08200c6c917565",
+      "grounding_eval/runner.py": "651299cf8f5545f6707497680d45cefa502576c335d37365a1101a5c76d32e9e",
+      "grounding_eval/scoring.py": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e",
+      "grounding_eval/uncertainty.py": "c6bfbdcb8155acf2fdfdd31ea74eaea4fa8d7a18750e26ca0c3546f49c85f674"
+    },
+    "prompt_files": {
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59"
+    }
+  },
+  "environment": {
+    "python": "3.11.9",
+    "installation": "clean source export without .env, .git, workflow, caches or virtual environment; fresh virtual environment installed with uv sync --frozen; existing dependency cache",
+    "command": "uv sync --frozen",
+    "exit_code": 0,
+    "lockfile_sha256": "11756c62fcab5ccf50828739ab9d5bd5b6ba304241e5721600bca8fe0e636b92",
+    "clean_source_export": true,
+    "clean_git_clone": false,
+    "exported_files": 167,
+    "source_export_receipt_sha256": "b064333ad80106dfcc6a6a6ffb07488939451a8eacd56a23308a3c539618c6e6"
+  },
+  "tests": {
+    "command": "python -m pytest -q",
+    "exit_code": 0,
+    "passed": 510,
+    "seconds": 30.66,
+    "log_sha256": "92805a2aeb11344553b0f747713d2abd838ebf6ad926b46daa444b4de865bc0b",
+    "scope": "full offline suite from clean source export; no live model quality claim"
+  },
+  "lint": {
+    "command": "ruff check .",
+    "exit_code": 0,
+    "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "environment": "same clean source export"
+  },
+  "independent_measurement_review": {
+    "reviewer_kind": "AI non-author",
+    "configured_model": "gpt-6.1-sol",
+    "configured_reasoning_effort": "max",
+    "runtime_build": "unknown",
+    "scope": [
+      "manifest and provenance guards",
+      "attempt accounting and complete population",
+      "strict scoring calibration",
+      "snapshot and scorer-bound replay",
+      "family-preserving repeated measurement",
+      "two-stage semantic audit artifacts",
+      "safe CLI diagnostics and recovery"
+    ],
+    "model_calls": 0,
+    "unresolved_issues": [],
+    "closed_issue": {
+      "severity": "P2",
+      "problem": "audit diagnostic sink failure corrupted stdout and exit status",
+      "before_exit_code": 120,
+      "repair": "reuse existing best-effort operation/emit diagnostic path",
+      "affected_retest_assertions": 53,
+      "affected_retest_all_passed": true,
+      "evidence_sha256": "42be956c02ca2dbbf449fcbe1260a9943b64c23b71ce6ecc1a9f459537473bb6"
+    },
+    "calibration_evidence_sha256": "8a7677dab96ef7d83c95089f2cf41658e1b39550cfde285b5dba1b208f925813",
+    "review_receipt_sha256": "2648939bc324a36d454c97f28555cd07ca21cd95b92355369352fa81def4c05f"
+  },
+  "measurement_policy_binding": {
+    "policy_sha256": "5975b67a16e75f6c71f0f7d2b4d328db01a5bbc622e9cec70764b78f6e2cce82",
+    "calibration_input_sha256": "48c9503b39402cf8a3713c8fb8c349180c1870d80af94c62f2746d33d7c6eac0",
+    "calibration_expectations_sha256": "feb9e412d519ec0e197ffeaa33ebed2f2527e9db3fed41eb277f1891c5359e05",
+    "final_test_freeze": false
+  },
+  "http_acceptance": {
+    "kind": "actual_loopback_http_with_actual_heuristic",
+    "dataset": "datasets/v2/pilot.jsonl",
+    "case_id": "v2-dev-p01",
+    "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "context_unicode_characters": 8418,
+    "answer_unicode_characters": 653,
+    "gold_claims": 8,
+    "model_calls": 0,
+    "semantic_model_acceptance": false,
+    "probes": [
+      {
+        "probe": "long_success",
+        "status": 200,
+        "request_id": "02de9852e09b4523ada17f6982e0a5a0",
+        "claims": 8
+      },
+      {
+        "probe": "safe_invalid",
+        "status": 422,
+        "request_id": "17bf410a6994454eb0c2f7e4ebc6d144",
+        "claims": 0
+      },
+      {
+        "probe": "long_recovery",
+        "status": 200,
+        "request_id": "9af71c3ab86140baa61dfb0d83a73a5b",
+        "claims": 8
+      }
+    ],
+    "safe_diagnostics_and_correlations": true,
+    "success_and_recovery_responses_identical": true
+  },
+  "pilot_cli_acceptance": {
+    "kind": "actual_public_cli_from_clean_source_export",
+    "model_calls": 0,
+    "verifier": "actual_heuristic_no_mock",
+    "records": 24,
+    "all_records_ok": true,
+    "run_directory": "reports/eval-v2/pilot-offline",
+    "replay_all_files_byte_identical": true,
+    "scorer_version": "2",
+    "commands": [
+      {
+        "name": "validate-pilot",
+        "exit_code": 0
+      },
+      {
+        "name": "validate-pilot-author-draft-1",
+        "exit_code": 0
+      },
+      {
+        "name": "validate-main",
+        "exit_code": 0
+      },
+      {
+        "name": "validate-diagnostic",
+        "exit_code": 0
+      },
+      {
+        "name": "pilot-offline",
+        "exit_code": 0
+      },
+      {
+        "name": "pilot-replay",
+        "exit_code": 0
+      }
+    ],
+    "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "artifact_hashes": {
+      "summary.json": "9b1fba56f787fb6a7a971d600662a125e1613051bcbfe45b792a9052b26c2433",
+      "config.json": "f607dc4421f7fd5c789868809bc4e4055e4786c53ad4f0d59fb022eba1b332fc",
+      "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+      "cases.manifest.json": "43b39b666e40fdc25dcca23dd1de33648448d8d034ca1b719756648134a39b56",
+      "records.jsonl": "f9a7c3e44cc9c1de143bdbfbcf21ccaf3b6f6169464edb5d85544d83c5b6dcce",
+      "completion.json": "f046ee62af4cf6eeaf8a19306510a4aebce1afbbec7df196643c158d6b31e875",
+      "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+      "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+      "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+      "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+      "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+      "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+      "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+      "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+      "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+      "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+      "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+      "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+      "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+      "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+    }
+  },
+  "model_measurement": {
+    "v2_provider_calls": 0,
+    "pilot": "NOT_RUN_budget_pending",
+    "dev_ablation": "NOT_RUN",
+    "final_test": "NOT_RUN",
+    "semantic_test_audit": "NOT_RUN",
+    "agent_authoring_or_review_tokens": null,
+    "agent_authoring_or_review_cost": null
+  },
+  "limits": [
+    "The clean source export was assembled from tracked/candidate files before the local checkpoint, not cloned from a published final commit; source/tests/datasets hashes were verified unchanged afterward. The dependency cache was reused.",
+    "Programmatic and independent AI review do not establish real-source annotation truth or live model quality.",
+    "No new GitHub CI or publication result is claimed.",
+    "Provider/authentication review and real inference are outside this measurement review."
+  ],
+  "original_assets": {
+    "protected_files": 26,
+    "all_unchanged": true,
+    "legacy_byte_identical": true,
+    "proof_sha256": "6f4bcf91b660f9e8c977a176e8151a069ea1b0bf1bd57478b47c7e39879b8895"
+  },
+  "openspec": {
+    "command": "openspec validate evaluation-v2 --strict",
+    "exit_code": 0
+  },
+  "configured_model_settings": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "provider_timeout": 30.0,
+    "operation_timeout": 60.0,
+    "max_provider_attempts": 6,
+    "transport_retries": 1,
+    "retry_delay": 0.25,
+    "max_output_tokens": {
+      "requested": 8192,
+      "effective": null,
+      "application": "not_applied"
+    },
+    "diagnostics": true,
+    "endpoint_sha256": "d9617135d6fdd0a2cde722d637a1dfcc3da37515708b3ea5d66ae607c8ac785e"
+  },
+  "annotation_review": {
+    "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "original_candidates": 123,
+    "original_label_disagreements": 1,
+    "revised_claims": 126,
+    "affected_claims_passed": 81,
+    "unchanged_claims_exactly_preserved": 45,
+    "receipt": "annotation-review/affected-review-receipt.json",
+    "receipt_sha256": "77d82e9c0634a3c6205b0f7950b2168f1d8c85249a04f92c8e925f1b03524578",
+    "unresolved_issues": [],
+    "human_review": "pending"
+  },
+  "documentation_checks": {
+    "markdown_files": 41,
+    "local_links_checked": 148,
+    "missing": []
+  },
+  "public_hygiene": {
+    "files_scanned": 41,
+    "hits": []
+  },
+  "commit_binding": "Git revision containing this file; execution evidence is separately bound to runtime/input hashes"
+}

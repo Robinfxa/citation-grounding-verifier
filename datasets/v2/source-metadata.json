@@ -1,0 +1,787 @@
+{
+  "format_version": 1,
+  "sources": [
+    {
+      "id": "cpython-tarfile",
+      "family_id": "v2-cpython-tarfile",
+      "project": "cpython",
+      "title": "CPython 3.13.0 library documentation: tarfile",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/tarfile.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "source_version_label": "v3.13.0",
+      "retrieved_at": "2026-10-16T15:21:23.052267+00:00",
+      "raw_path": "sources/cpython-tarfile/raw.rst",
+      "raw_sha256": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+      "raw_bytes": 50271,
+      "licenses": [
+        {
+          "id": "license-cpython",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/LICENSE",
+          "path": "licenses/cpython/LICENSE.txt",
+          "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+        },
+        {
+          "id": "license-cpython-doc",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/license.rst",
+          "path": "licenses/cpython/DOCUMENTATION-LICENSE.rst",
+          "sha256": "fde6c4707ae1b5a637285ca44162602bd94fa388a6f6157f1e4aceac113b8bde"
+        }
+      ],
+      "license_basis": "PSF License Agreement covers software and documentation, as explicitly stated in the frozen Doc/license.rst; complete LICENSE and documentation license/notice text retained. Documentation code examples are also offered under 0BSD. Keep a summary of excerpt/line-ending changes.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 1,
+          "raw_line_end": 2,
+          "start": 0,
+          "end": 105,
+          "sha256": "909068aa3cbc0c2da4b66abcf4f22f24759508a8b29d14bb9216f81b225c195a"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 955,
+          "raw_line_end": 1020,
+          "start": 33477,
+          "end": 36189,
+          "sha256": "005552b48384dcdbad5395f351f9943b480dd7f0a262e896159a49f8082a7ed1"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 1021,
+          "raw_line_end": 1048,
+          "start": 36191,
+          "end": 37233,
+          "sha256": "73ec1a7f0818e43bd56a4d2e7b8285c51be6fd0f0a18295fb5628a1ec1ce1da2"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 1050,
+          "raw_line_end": 1081,
+          "start": 37235,
+          "end": 38476,
+          "sha256": "2818ee71c6282d4b1c1dd0ac1970a808f9323318fd3eb49c513321737c7cd125"
+        },
+        {
+          "passage_index": 4,
+          "raw_line_start": 1086,
+          "raw_line_end": 1128,
+          "start": 38511,
+          "end": 40417,
+          "sha256": "147fac13cc83f9501cde95ab076fb449d99cb447611368eb35862da8ef6c045d"
+        },
+        {
+          "passage_index": 5,
+          "raw_line_start": 1131,
+          "raw_line_end": 1171,
+          "start": 40420,
+          "end": 41832,
+          "sha256": "77ff6c74b874cbb7e92f60c813736cf9d2e4ae5854f0d2908294683d4394be42"
+        }
+      ]
+    },
+    {
+      "id": "cpython-sqlite3",
+      "family_id": "v2-cpython-sqlite3",
+      "project": "cpython",
+      "title": "CPython 3.13.0 library documentation: sqlite3",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/sqlite3.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "source_version_label": "v3.13.0",
+      "retrieved_at": "2026-10-16T15:21:23.282730+00:00",
+      "raw_path": "sources/cpython-sqlite3/raw.rst",
+      "raw_sha256": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+      "raw_bytes": 94027,
+      "licenses": [
+        {
+          "id": "license-cpython",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/LICENSE",
+          "path": "licenses/cpython/LICENSE.txt",
+          "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+        },
+        {
+          "id": "license-cpython-doc",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/license.rst",
+          "path": "licenses/cpython/DOCUMENTATION-LICENSE.rst",
+          "sha256": "fde6c4707ae1b5a637285ca44162602bd94fa388a6f6157f1e4aceac113b8bde"
+        }
+      ],
+      "license_basis": "PSF License Agreement covers software and documentation, as explicitly stated in the frozen Doc/license.rst; complete LICENSE and documentation license/notice text retained. Documentation code examples are also offered under 0BSD. Keep a summary of excerpt/line-ending changes.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 1,
+          "raw_line_end": 2,
+          "start": 0,
+          "end": 123,
+          "sha256": "c05788634d361f4fcd3f116365b08fe9bee21804f16e851a7af6fbdbe1cbd0cb"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 259,
+          "raw_line_end": 365,
+          "start": 8726,
+          "end": 13318,
+          "sha256": "23686940ff2b0f198d3276ab41bc2d892ff3618bfd29273b384802901d5b2e63"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 2398,
+          "raw_line_end": 2445,
+          "start": 82126,
+          "end": 83889,
+          "sha256": "797b54234ab888fa81d961faaa3f5786b910dd6f8ccc4ff342181fe568f6a2d9"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 2645,
+          "raw_line_end": 2689,
+          "start": 89577,
+          "end": 91532,
+          "sha256": "c2783086f44dbdc9eeb8a330a281e61c5fb846e9b5ee4d54b15e66ea513be74e"
+        },
+        {
+          "passage_index": 4,
+          "raw_line_start": 2694,
+          "raw_line_end": 2746,
+          "start": 91585,
+          "end": 93878,
+          "sha256": "9ebe82f7f118b29c892e820b71897de35069ecc86e92875291c2faa0b712acec"
+        }
+      ]
+    },
+    {
+      "id": "cpython-pathlib",
+      "family_id": "v2-cpython-pathlib",
+      "project": "cpython",
+      "title": "CPython 3.13.0 library documentation: pathlib",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/pathlib.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "source_version_label": "v3.13.0",
+      "retrieved_at": "2026-10-16T15:21:23.509291+00:00",
+      "raw_path": "sources/cpython-pathlib/raw.rst",
+      "raw_sha256": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+      "raw_bytes": 61084,
+      "licenses": [
+        {
+          "id": "license-cpython",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/LICENSE",
+          "path": "licenses/cpython/LICENSE.txt",
+          "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+        },
+        {
+          "id": "license-cpython-doc",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/license.rst",
+          "path": "licenses/cpython/DOCUMENTATION-LICENSE.rst",
+          "sha256": "fde6c4707ae1b5a637285ca44162602bd94fa388a6f6157f1e4aceac113b8bde"
+        }
+      ],
+      "license_basis": "PSF License Agreement covers software and documentation, as explicitly stated in the frozen Doc/license.rst; complete LICENSE and documentation license/notice text retained. Documentation code examples are also offered under 0BSD. Keep a summary of excerpt/line-ending changes.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 1,
+          "raw_line_end": 2,
+          "start": 0,
+          "end": 105,
+          "sha256": "f35945fb22a9cd1dc1b9e1ed8c7474db054f0bed28f3211c82cbb72ba92f4212"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 881,
+          "raw_line_end": 979,
+          "start": 27197,
+          "end": 29933,
+          "sha256": "36fa37aff2ca9d56b10ebe41d254218a1cb5fc3c279f7a47937e43939e3437cd"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 982,
+          "raw_line_end": 1055,
+          "start": 29936,
+          "end": 32110,
+          "sha256": "3c7d957b2238d2bef0f53911d5a15ff5875f28ee7a67c77072710f3d21dc3447"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 1058,
+          "raw_line_end": 1160,
+          "start": 32113,
+          "end": 35550,
+          "sha256": "d8a497658658d966784729fe06108c6737ef509889a8ba8db76148c819b13912"
+        }
+      ]
+    },
+    {
+      "id": "cpython-decimal",
+      "family_id": "v2-cpython-decimal",
+      "project": "cpython",
+      "title": "CPython 3.13.0 library documentation: decimal",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/decimal.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "source_version_label": "v3.13.0",
+      "retrieved_at": "2026-10-16T15:21:23.772500+00:00",
+      "raw_path": "sources/cpython-decimal/raw.rst",
+      "raw_sha256": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+      "raw_bytes": 81974,
+      "licenses": [
+        {
+          "id": "license-cpython",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/LICENSE",
+          "path": "licenses/cpython/LICENSE.txt",
+          "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+        },
+        {
+          "id": "license-cpython-doc",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/license.rst",
+          "path": "licenses/cpython/DOCUMENTATION-LICENSE.rst",
+          "sha256": "fde6c4707ae1b5a637285ca44162602bd94fa388a6f6157f1e4aceac113b8bde"
+        }
+      ],
+      "license_basis": "PSF License Agreement covers software and documentation, as explicitly stated in the frozen Doc/license.rst; complete LICENSE and documentation license/notice text retained. Documentation code examples are also offered under 0BSD. Keep a summary of excerpt/line-ending changes.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 1,
+          "raw_line_end": 2,
+          "start": 0,
+          "end": 139,
+          "sha256": "3a33fd6d3dc4a819e0aa35be65795e97620064ead7089360ee754e6f8c32f4ea"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 959,
+          "raw_line_end": 1013,
+          "start": 38126,
+          "end": 40134,
+          "sha256": "c901a52ae64ebdba0ae4466f46b32e23c9f17338991f2e64448f718c1f24f0bf"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 1015,
+          "raw_line_end": 1060,
+          "start": 40136,
+          "end": 42245,
+          "sha256": "c72ea1c9b2e8548981dd8fafeb0819e3c7e6e63595c411b141f1bb9aebe34c87"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 1062,
+          "raw_line_end": 1115,
+          "start": 42247,
+          "end": 45088,
+          "sha256": "47858a456df5747a1e0c27d974564f0d8275364c8e12158d652b4ec2915da72d"
+        },
+        {
+          "passage_index": 4,
+          "raw_line_start": 1118,
+          "raw_line_end": 1188,
+          "start": 45091,
+          "end": 47425,
+          "sha256": "e94d51afb2ba0e93afe7855de9776c1262255c3486929af9a4dc5e43f6d7f937"
+        }
+      ]
+    },
+    {
+      "id": "cpython-queue",
+      "family_id": "v2-cpython-queue",
+      "project": "cpython",
+      "title": "CPython 3.13.0 library documentation: queue",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/queue.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "source_version_label": "v3.13.0",
+      "retrieved_at": "2026-10-16T15:21:23.986570+00:00",
+      "raw_path": "sources/cpython-queue/raw.rst",
+      "raw_sha256": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+      "raw_bytes": 11427,
+      "licenses": [
+        {
+          "id": "license-cpython",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/LICENSE",
+          "path": "licenses/cpython/LICENSE.txt",
+          "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+        },
+        {
+          "id": "license-cpython-doc",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/license.rst",
+          "path": "licenses/cpython/DOCUMENTATION-LICENSE.rst",
+          "sha256": "fde6c4707ae1b5a637285ca44162602bd94fa388a6f6157f1e4aceac113b8bde"
+        }
+      ],
+      "license_basis": "PSF License Agreement covers software and documentation, as explicitly stated in the frozen Doc/license.rst; complete LICENSE and documentation license/notice text retained. Documentation code examples are also offered under 0BSD. Keep a summary of excerpt/line-ending changes.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 1,
+          "raw_line_end": 105,
+          "start": 0,
+          "end": 3843,
+          "sha256": "27e16633547fc1fb65a532f2e67869d081586cafba67f6d69585d9a5d31d4446"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 106,
+          "raw_line_end": 174,
+          "start": 3845,
+          "end": 6569,
+          "sha256": "0fb4f9b5af85cf2c4953047b62d8be0ad167a6f51fc1140fd71a14ca6e0a3fe5"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 176,
+          "raw_line_end": 230,
+          "start": 6571,
+          "end": 8340,
+          "sha256": "a4746c09dfd9aff0f5725f774132a1b20ca542633ee3f2edcaeb04eee239979d"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 233,
+          "raw_line_end": 253,
+          "start": 8343,
+          "end": 9062,
+          "sha256": "fa676248cd7aab7ea3de86f796a3357cbe1d42323deef25cba2829eb90958d80"
+        },
+        {
+          "passage_index": 4,
+          "raw_line_start": 256,
+          "raw_line_end": 307,
+          "start": 9065,
+          "end": 11026,
+          "sha256": "49831172f306dcdf815d8aa49b83d4ce1a8c18d4d7c63aaae89daded2414be85"
+        }
+      ]
+    },
+    {
+      "id": "cpython-metadata",
+      "family_id": "v2-cpython-metadata",
+      "project": "cpython",
+      "title": "CPython 3.13.0 library documentation: importlib.metadata",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/importlib.metadata.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "source_version_label": "v3.13.0",
+      "retrieved_at": "2026-10-16T15:21:24.230116+00:00",
+      "raw_path": "sources/cpython-metadata/raw.rst",
+      "raw_sha256": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+      "raw_bytes": 19235,
+      "licenses": [
+        {
+          "id": "license-cpython",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/LICENSE",
+          "path": "licenses/cpython/LICENSE.txt",
+          "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+        },
+        {
+          "id": "license-cpython-doc",
+          "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/license.rst",
+          "path": "licenses/cpython/DOCUMENTATION-LICENSE.rst",
+          "sha256": "fde6c4707ae1b5a637285ca44162602bd94fa388a6f6157f1e4aceac113b8bde"
+        }
+      ],
+      "license_basis": "PSF License Agreement covers software and documentation, as explicitly stated in the frozen Doc/license.rst; complete LICENSE and documentation license/notice text retained. Documentation code examples are also offered under 0BSD. Keep a summary of excerpt/line-ending changes.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 4,
+          "raw_line_end": 102,
+          "start": 69,
+          "end": 4287,
+          "sha256": "ff2526f31e41a1a5e04ddec63838c4001a568f6a37a3cd0dabebbbb2e6ee52b1"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 103,
+          "raw_line_end": 185,
+          "start": 4290,
+          "end": 7346,
+          "sha256": "ac4a4cb7a7350add93682c9a4dbf6cb006a8575f412e117aba23165e36ee5202"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 189,
+          "raw_line_end": 235,
+          "start": 7363,
+          "end": 8975,
+          "sha256": "36ef20a4feca92339794340da1920cbede4f2d02e8c5acfa23019c25a8361d52"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 240,
+          "raw_line_end": 283,
+          "start": 8990,
+          "end": 10764,
+          "sha256": "c544bfe7e2e0d47ea2122230985d71bf7ee62056181505f06bdbff8454bc2947"
+        },
+        {
+          "passage_index": 4,
+          "raw_line_start": 287,
+          "raw_line_end": 316,
+          "start": 10785,
+          "end": 11981,
+          "sha256": "625f8683cb349ea433e725f2f4a59b93e2fa73473716f0e4b2db9c6bef55af50"
+        }
+      ]
+    },
+    {
+      "id": "rust-visibility",
+      "family_id": "v2-rust-visibility",
+      "project": "rust",
+      "title": "Rust Reference: Visibility and privacy",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/visibility-and-privacy.md",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "source_version_label": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "retrieved_at": "2026-10-16T15:24:00.705291+00:00",
+      "raw_path": "sources/rust-visibility/raw.md",
+      "raw_sha256": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+      "raw_bytes": 9637,
+      "licenses": [
+        {
+          "id": "license-rust-mit",
+          "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/LICENSE-MIT",
+          "path": "licenses/rust/LICENSE-MIT",
+          "sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720"
+        },
+        {
+          "id": "license-rust-apache",
+          "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/LICENSE-APACHE",
+          "path": "licenses/rust/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        }
+      ],
+      "license_basis": "Dual MIT/Apache-2.0; MIT explicitly covers associated documentation files; both license files retained.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 1,
+          "raw_line_end": 60,
+          "start": 0,
+          "end": 3808,
+          "sha256": "f38dbbeb2e62f0ca13a386e78c609d3c5950ac48f030c81456560efa334a7b27"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 62,
+          "raw_line_end": 114,
+          "start": 3810,
+          "end": 5665,
+          "sha256": "bc0c865342c555f5332bf98fb388e33e1068852be37346c91a31b16447eccdac"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 116,
+          "raw_line_end": 191,
+          "start": 5667,
+          "end": 8760,
+          "sha256": "47cb03fe7657d81aa5c7f2e6fe33d3883893df0699b9265a2fddfb6a956cbf2a"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 193,
+          "raw_line_end": 214,
+          "start": 8762,
+          "end": 9636,
+          "sha256": "248b0151156cfc82853b55b15ca0a3584dbf783f8906f5e21fe2eabba08a818c"
+        }
+      ]
+    },
+    {
+      "id": "rust-destructors",
+      "family_id": "v2-rust-destructors",
+      "project": "rust",
+      "title": "Rust Reference: Destructors",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/destructors.md",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "source_version_label": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "retrieved_at": "2026-10-16T15:24:00.799848+00:00",
+      "raw_path": "sources/rust-destructors/raw.md",
+      "raw_sha256": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+      "raw_bytes": 27464,
+      "licenses": [
+        {
+          "id": "license-rust-mit",
+          "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/LICENSE-MIT",
+          "path": "licenses/rust/LICENSE-MIT",
+          "sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720"
+        },
+        {
+          "id": "license-rust-apache",
+          "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/LICENSE-APACHE",
+          "path": "licenses/rust/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        }
+      ],
+      "license_basis": "Dual MIT/Apache-2.0; MIT explicitly covers associated documentation files; both license files retained.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 1,
+          "raw_line_end": 53,
+          "start": 0,
+          "end": 2083,
+          "sha256": "df838ad808215cf7dae30ba622ef061d3bed272f694222455e8586d63e67fe88"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 55,
+          "raw_line_end": 117,
+          "start": 2085,
+          "end": 4585,
+          "sha256": "10eed0757f000a9984ef22310ad3335969c04bdf224ed639ad716ee7a0535ecc"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 119,
+          "raw_line_end": 142,
+          "start": 4587,
+          "end": 5353,
+          "sha256": "e155a87737999ff19f9429bc17fed5216456039592811f4aebd1328d3bbcd16e"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 144,
+          "raw_line_end": 259,
+          "start": 5355,
+          "end": 9528,
+          "sha256": "7b07f22da4aaa4d199d9ce4fbdab3096348e48752aabe9895c2a40b689a0d4ee"
+        }
+      ]
+    },
+    {
+      "id": "rust-testing",
+      "family_id": "v2-rust-testing",
+      "project": "rust",
+      "title": "Rust Reference: Testing attributes",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/attributes/testing.md",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "source_version_label": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "retrieved_at": "2026-10-16T15:24:00.880983+00:00",
+      "raw_path": "sources/rust-testing/raw.md",
+      "raw_sha256": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+      "raw_bytes": 6612,
+      "licenses": [
+        {
+          "id": "license-rust-mit",
+          "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/LICENSE-MIT",
+          "path": "licenses/rust/LICENSE-MIT",
+          "sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720"
+        },
+        {
+          "id": "license-rust-apache",
+          "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/LICENSE-APACHE",
+          "path": "licenses/rust/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        }
+      ],
+      "license_basis": "Dual MIT/Apache-2.0; MIT explicitly covers associated documentation files; both license files retained.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 1,
+          "raw_line_end": 74,
+          "start": 0,
+          "end": 2796,
+          "sha256": "9c53f8a214fb2cb05e8fd1523389e91711711a2f4d3bf15ef68d5a10f02a03f9"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 76,
+          "raw_line_end": 123,
+          "start": 2798,
+          "end": 4244,
+          "sha256": "2efbb26708b7296b476ab3099ae5ae0d1a2bc48912c04f15a847b8375cd2f912"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 125,
+          "raw_line_end": 191,
+          "start": 4246,
+          "end": 6607,
+          "sha256": "c1865b6057a3449ec246a65613df3c91650c5b1d62a6d1481d05fc5f9513d0a8"
+        }
+      ]
+    },
+    {
+      "id": "postgres-isolation",
+      "family_id": "v2-postgres-isolation",
+      "project": "postgres",
+      "title": "PostgreSQL 17: Concurrency Control / Transaction Isolation",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/doc/src/sgml/mvcc.sgml",
+      "revision": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "source_version_label": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "retrieved_at": "2026-10-16T15:24:00.980341+00:00",
+      "raw_path": "sources/postgres-isolation/raw.sgml",
+      "raw_sha256": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+      "raw_bytes": 82106,
+      "licenses": [
+        {
+          "id": "license-postgres",
+          "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/COPYRIGHT",
+          "path": "licenses/postgresql/COPYRIGHT",
+          "sha256": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de"
+        }
+      ],
+      "license_basis": "COPYRIGHT grant covers software and documentation; full notice and disclaimer retained.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 81,
+          "raw_line_end": 303,
+          "start": 3015,
+          "end": 9226,
+          "sha256": "8aca1aa2824abed55c4afa9d00ec03fba949c28efd8c4e236f6b8dc2d348472b"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 305,
+          "raw_line_end": 375,
+          "start": 9228,
+          "end": 12949,
+          "sha256": "57e4efbcec749cb6810c7584a8dd0986c053043ac2ac15b2538ffbf039869f8c"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 480,
+          "raw_line_end": 598,
+          "start": 18048,
+          "end": 23662,
+          "sha256": "d1440afe1b13910b8fa4de2d096b99e0930bbf7fdb6d32a5d9895232ad7c67a8"
+        }
+      ]
+    },
+    {
+      "id": "postgres-backup",
+      "family_id": "v2-postgres-backup",
+      "project": "postgres",
+      "title": "PostgreSQL 17: Backup and Restore",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/doc/src/sgml/backup.sgml",
+      "revision": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "source_version_label": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "retrieved_at": "2026-10-16T15:24:01.121465+00:00",
+      "raw_path": "sources/postgres-backup/raw.sgml",
+      "raw_sha256": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+      "raw_bytes": 76672,
+      "licenses": [
+        {
+          "id": "license-postgres",
+          "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/COPYRIGHT",
+          "path": "licenses/postgresql/COPYRIGHT",
+          "sha256": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de"
+        }
+      ],
+      "license_basis": "COPYRIGHT grant covers software and documentation; full notice and disclaimer retained.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 27,
+          "raw_line_end": 102,
+          "start": 897,
+          "end": 4891,
+          "sha256": "a4ef4505fd8f3532976088d21956c9b45d7fc1d980856589427915353187dea0"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 104,
+          "raw_line_end": 189,
+          "start": 4893,
+          "end": 9102,
+          "sha256": "2484e85471e43b13d1256df31974587455fbfe21a9056d1c0338973d7e751354"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 191,
+          "raw_line_end": 233,
+          "start": 9104,
+          "end": 11180,
+          "sha256": "458cf2704157c63bc6236796bff58989f1019830271eb34e20243f429e57b38f"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 235,
+          "raw_line_end": 349,
+          "start": 11182,
+          "end": 15623,
+          "sha256": "062b29a331b4ae7fe453151e4c71d57a40af65f18bcbd15f72d1ddad678512bf"
+        }
+      ]
+    },
+    {
+      "id": "postgres-privileges",
+      "family_id": "v2-postgres-privileges",
+      "project": "postgres",
+      "title": "PostgreSQL 17: Data Definition / Privileges",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/doc/src/sgml/ddl.sgml",
+      "revision": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "source_version_label": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "retrieved_at": "2026-10-16T15:24:01.320293+00:00",
+      "raw_path": "sources/postgres-privileges/raw.sgml",
+      "raw_sha256": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+      "raw_bytes": 207835,
+      "licenses": [
+        {
+          "id": "license-postgres",
+          "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/COPYRIGHT",
+          "path": "licenses/postgresql/COPYRIGHT",
+          "sha256": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de"
+        }
+      ],
+      "license_basis": "COPYRIGHT grant covers software and documentation; full notice and disclaimer retained.",
+      "modifications": "Contiguous excerpts of the original UTF-8 text. Original files already use LF; no source wording, markup, comments or footnotes were rewritten or silently removed.",
+      "offset_convention": "Python Unicode code points, zero-based [start,end), in raw UTF-8 decoded text; not byte offsets.",
+      "selected_passages": [
+        {
+          "passage_index": 0,
+          "raw_line_start": 1797,
+          "raw_line_end": 1915,
+          "start": 63899,
+          "end": 68318,
+          "sha256": "12c4ade0bcc81446a2aae0687a7215b1caf3a394438276d9642be2269bb4cde0"
+        },
+        {
+          "passage_index": 1,
+          "raw_line_start": 1921,
+          "raw_line_end": 1984,
+          "start": 68381,
+          "end": 71052,
+          "sha256": "1cbc4a2d7d154210f978580d3950dcf5a49972247e294e97bc162fe6ba9d2f92"
+        },
+        {
+          "passage_index": 2,
+          "raw_line_start": 2154,
+          "raw_line_end": 2181,
+          "start": 77054,
+          "end": 78279,
+          "sha256": "0f0989c6cad2ff976c67a3e00f7ebfc8a6710526dbb0709e46f727789d40d01c"
+        },
+        {
+          "passage_index": 3,
+          "raw_line_start": 2418,
+          "raw_line_end": 2501,
+          "start": 85833,
+          "end": 89960,
+          "sha256": "24d038c4d1ea92139c5c82f0fa859a4545cb19244f00ea68851396553325edfc"
+        }
+      ]
+    }
+  ]
+}

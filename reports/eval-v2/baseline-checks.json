@@ -1,0 +1,108 @@
+{
+  "baseline_commit": "8b0b0fe70c7a5d19c1fce14fc77cea68e233e90e",
+  "environment": "isolated git archive; uv sync --frozen; existing dependency cache",
+  "inference_calls": 0,
+  "results": {
+    "development-v1": {
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "all_files_byte_identical": true,
+      "files_sha256": {
+        "summary.json": "666047494b2045bbd9e14e6228f1b99cf71bdf1654c66e115ea69ea683df150b",
+        "config.json": "76a4c5fb6be8f2eeb56037f889121a2c58d460d268ef77b7e092f0f5145fad39",
+        "cases.jsonl": "9a3ac94c75095a1af52a2b82b0468be5f46bbbddf1d6d17a5bbf44c0063de077",
+        "records.jsonl": "51bccebe4e4dc8b51734ac7fa9b0d086898fecbc4b644db0bd275dad9d696977",
+        "completion.json": "6eeb5347e07d6075817b09fde7316e732bb8b73703c1d674dd9c91e52e28a59c"
+      },
+      "record_count": 48,
+      "completion": "COMPLETED_WITH_ERRORS"
+    },
+    "development-v2": {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "all_files_byte_identical": true,
+      "files_sha256": {
+        "summary.json": "7814deb7eed75649c86e876f68c854f0a1b8c5b1e7e2ec940a58e8da5e9c7feb",
+        "config.json": "dee5064221443631ce3a4ca38c21411f467c73ff418b19dc2b5a153e745766db",
+        "cases.jsonl": "72680300192a7012fb4ec931a6dfafba590d0b6050cb6ddbd2a1157b97fa5998",
+        "records.jsonl": "ec44c648952ccf2ca93e3bd0d4678fa2c9cdcc1f931fc4f7e338f3c77055e64c",
+        "completion.json": "a0e8021df342b079967051db5ecf10056541b97693f8806cdb322bc43acd0ddb"
+      },
+      "record_count": 48,
+      "completion": "COMPLETE"
+    },
+    "held-out": {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "all_files_byte_identical": true,
+      "files_sha256": {
+        "summary.json": "9ec08a556cedf17105c26f4bda569afd73ed9e0b0380a1b7290ed25dc094f19e",
+        "config.json": "9eeb942823cfc0a64b8233f22e715b6d579a2c460ba50a11cdc97f26b64ee1f5",
+        "cases.jsonl": "250bd2176963da17ee4b7f905a8781d21f7c1c06b1a308fcb5ab690a85d32601",
+        "records.jsonl": "789919b8941b639cd58dceb66e5714038044c0489070f83c122581e4d455cd99",
+        "completion.json": "59ff9b48629f6636a7bd3c95410bb1cf93d6c425a4aa6f834e148814b6726207"
+      },
+      "record_count": 144,
+      "completion": "COMPLETE"
+    },
+    "diagnostic-final": {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "all_files_byte_identical": true,
+      "files_sha256": {
+        "summary.json": "2560c9a3a8ad1179c3614b8fc2b98a5a2be7e9d6b9484da7c3c75b212ae8613f",
+        "config.json": "2616e3ada4978c275e258e73441d556d6c5f0c926bbda374eb7a1689e9eb7de3",
+        "cases.jsonl": "33d5919a4e9284fa3ad52fece564cc256a611ccf8a05d1416b63f1e4d244d0d5",
+        "README.md": "baaf91c5a0aa6279886f7038093afe825d2f3c420d97b5e38e1af806b0f6a7c8",
+        "records.jsonl": "fe6fca7a574c7c1b432e08493a09b601fbc968f468be23c744bacd937f1f1643",
+        "completion.json": "f9ca8b0ed9617cb01d4a6c288a92aa1f7895bd106e2887ae8e2e4b818189f632"
+      },
+      "record_count": 36,
+      "completion": "COMPLETE"
+    }
+  },
+  "baseline_tests": {
+    "command": "uv run pytest -q",
+    "exit_code": 0,
+    "passed": 426,
+    "duration_seconds": 21.87,
+    "environment": "existing project environment; distinct from isolated replay installation"
+  },
+  "isolated_install": {
+    "command": "uv sync --frozen",
+    "exit_code": 0,
+    "python": "3.11.9",
+    "uv": "uv 0.9.11 (8d8aabb88 2025-11-20)",
+    "fresh_virtualenv": true,
+    "fresh_download_cache": false
+  },
+  "old_main_sha256": "c9a30acf3ddb3093514a89831f7ae1d2be336f02df1d7b9143b1a01719aec1be",
+  "protected_historical_files": {
+    "datasets/diagnostic.jsonl": "39d581b9abfe695c263130b4e84439aa86aef66900186158b26716a265a34fb0",
+    "reports/2026-10-15/README.md": "abd997870638484d95b6c2c8573a238e9f4cdd9b3b9c213ee1b579f46e5f38a2",
+    "reports/2026-10-15/delivery-checks.json": "bfd5167eb6f355186b6fc63501f5d9e1ff76b206e4f142950ba7491b7f9815f7",
+    "reports/2026-10-15/development-v1/cases.jsonl": "9a3ac94c75095a1af52a2b82b0468be5f46bbbddf1d6d17a5bbf44c0063de077",
+    "reports/2026-10-15/development-v1/completion.json": "6eeb5347e07d6075817b09fde7316e732bb8b73703c1d674dd9c91e52e28a59c",
+    "reports/2026-10-15/development-v1/config.json": "76a4c5fb6be8f2eeb56037f889121a2c58d460d268ef77b7e092f0f5145fad39",
+    "reports/2026-10-15/development-v1/records.jsonl": "51bccebe4e4dc8b51734ac7fa9b0d086898fecbc4b644db0bd275dad9d696977",
+    "reports/2026-10-15/development-v1/summary.json": "666047494b2045bbd9e14e6228f1b99cf71bdf1654c66e115ea69ea683df150b",
+    "reports/2026-10-15/development-v2/cases.jsonl": "72680300192a7012fb4ec931a6dfafba590d0b6050cb6ddbd2a1157b97fa5998",
+    "reports/2026-10-15/development-v2/completion.json": "a0e8021df342b079967051db5ecf10056541b97693f8806cdb322bc43acd0ddb",
+    "reports/2026-10-15/development-v2/config.json": "dee5064221443631ce3a4ca38c21411f467c73ff418b19dc2b5a153e745766db",
+    "reports/2026-10-15/development-v2/records.jsonl": "ec44c648952ccf2ca93e3bd0d4678fa2c9cdcc1f931fc4f7e338f3c77055e64c",
+    "reports/2026-10-15/development-v2/summary.json": "7814deb7eed75649c86e876f68c854f0a1b8c5b1e7e2ec940a58e8da5e9c7feb",
+    "reports/2026-10-15/diagnostic-final/README.md": "baaf91c5a0aa6279886f7038093afe825d2f3c420d97b5e38e1af806b0f6a7c8",
+    "reports/2026-10-15/diagnostic-final/cases.jsonl": "33d5919a4e9284fa3ad52fece564cc256a611ccf8a05d1416b63f1e4d244d0d5",
+    "reports/2026-10-15/diagnostic-final/completion.json": "f9ca8b0ed9617cb01d4a6c288a92aa1f7895bd106e2887ae8e2e4b818189f632",
+    "reports/2026-10-15/diagnostic-final/config.json": "2616e3ada4978c275e258e73441d556d6c5f0c926bbda374eb7a1689e9eb7de3",
+    "reports/2026-10-15/diagnostic-final/records.jsonl": "fe6fca7a574c7c1b432e08493a09b601fbc968f468be23c744bacd937f1f1643",
+    "reports/2026-10-15/diagnostic-final/summary.json": "2560c9a3a8ad1179c3614b8fc2b98a5a2be7e9d6b9484da7c3c75b212ae8613f",
+    "reports/2026-10-15/freeze.json": "10ca4872516defcbe741a339dd17a4e744dce6076987fb0d132c5bce36f3e60d",
+    "reports/2026-10-15/held-out/cases.jsonl": "250bd2176963da17ee4b7f905a8781d21f7c1c06b1a308fcb5ab690a85d32601",
+    "reports/2026-10-15/held-out/completion.json": "59ff9b48629f6636a7bd3c95410bb1cf93d6c425a4aa6f834e148814b6726207",
+    "reports/2026-10-15/held-out/config.json": "9eeb942823cfc0a64b8233f22e715b6d579a2c460ba50a11cdc97f26b64ee1f5",
+    "reports/2026-10-15/held-out/records.jsonl": "789919b8941b639cd58dceb66e5714038044c0489070f83c122581e4d455cd99",
+    "reports/2026-10-15/held-out/summary.json": "9ec08a556cedf17105c26f4bda569afd73ed9e0b0380a1b7290ed25dc094f19e"
+  },
+  "protected_files_unchanged": true
+}

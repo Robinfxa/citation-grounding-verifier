@@ -1,0 +1,37 @@
+Source excerpts and notices for the v2 development pilot
+========================================================
+
+CPython 3.13.0 documentation
+Copyright © 2001-2024 Python Software Foundation; All Rights Reserved.
+The PSF License Agreement covers the software and associated documentation.
+The complete original LICENSE is retained in licenses/cpython/LICENSE.txt.
+The complete documentation history/license and relevant notices are retained
+in licenses/cpython/DOCUMENTATION-LICENSE.rst. Documentation code examples
+are also offered under the Zero-Clause BSD terms recorded there.
+
+Rust Reference
+Copyright (c) 2010 The Rust Project Developers
+The pinned reference is offered under MIT or Apache-2.0. These excerpts are
+redistributed under the MIT option. Both original license texts are retained
+in licenses/rust/LICENSE-MIT and licenses/rust/LICENSE-APACHE.
+The reference commit is a repository snapshot, not a claimed stable release.
+
+PostgreSQL documentation
+Portions Copyright (c) 1996-2024, PostgreSQL Global Development Group
+Portions Copyright (c) 1994, The Regents of the University of California
+The complete permission notice and both disclaimer paragraphs are retained
+in licenses/postgresql/COPYRIGHT.
+
+Changes to source material
+The original source files are retained byte for byte. Context passages select
+continuous Unicode ranges containing complete adjacent prose/code blocks.
+The source files already use LF, so no line-ending or source-word changes
+are present. RST, Markdown and SGML markup remain visible in the excerpts.
+Exact source revisions, URLs, hashes, licenses and extraction ranges are in
+source-metadata.json and the dataset manifests. The answers and annotations
+were separately authored by AI; controlled answer edits and subsequent
+annotation revisions are identified in the case metadata.
+
+The author-draft dataset is retained only for annotation-review history. It
+is not a second independent benchmark population. This package contains
+only development pilot cases and no held-out test cases.

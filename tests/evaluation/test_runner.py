@@ -14,7 +14,7 @@ from grounding.contracts import (
     VerificationReport,
     VerificationRun,
 )
-from grounding_eval.dataset import DEFAULT_DATASET, file_hash, load_dataset
+from grounding_eval.dataset import DEFAULT_DATASET, LEGACY_DATASET, file_hash, load_dataset
 from grounding_eval.runner import EvaluationError, regenerate_report, run_benchmark
 
 
@@ -60,7 +60,7 @@ class MemoryVerifier:
 
 @pytest.fixture
 def fixture(tmp_path):
-    case = load_dataset()[0]
+    case = load_dataset(LEGACY_DATASET)[0]
     path = tmp_path / 'data.jsonl'
     path.write_text(json.dumps(case.model_dump())+'\n')
     return case, path
@@ -198,7 +198,7 @@ def test_actual_cli_diagnostic_split_saves_only_separate_diagnostics(tmp_path):
 
 
 def test_actual_cli_all_split_excludes_diagnostics_from_mixed_dataset(tmp_path):
-    main = load_dataset()
+    main = load_dataset(LEGACY_DATASET)
     selected = [next(c for c in main if c.split == split) for split in ('dev', 'test')]
     diagnostic = load_dataset(DEFAULT_DATASET.with_name('diagnostic.jsonl'))[0]
     path = tmp_path/'mixed.jsonl'
@@ -269,7 +269,8 @@ def test_actual_cli_missing_provider_is_not_run_not_heuristic_fallback(tmp_path,
     _, path = fixture
     output = tmp_path/'missing'
     result = cli('run', '--dataset', path, '--approaches', 'minimal,optimized', '--split', 'dev',
-                 '--track', 'both', '--output', output, '--bootstrap-samples', '10')
+                 '--track', 'both', '--output', output, '--bootstrap-samples', '10',
+                 '--max-total-provider-attempts', '24')
     assert result.returncode == 2
     summary = json.loads(result.stdout)
     assert len(summary['groups']) == 4

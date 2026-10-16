@@ -1,0 +1,300 @@
+{
+  "schema_version": "annotation-human-review-queue/v1",
+  "created_at_utc": "2026-10-16 16:10:16 UTC",
+  "status": "pendinghuman",
+  "human_review_performed": false,
+  "reviewer": "/root/v2_annotation_review",
+  "scope": "12 dev pilot; old author draft v2-pilot-author-draft-1 versus locked independent review",
+  "locked_independent_artifacts": [
+    {
+      "path": "original-artifact:first4-independent.json",
+      "sha256": "e79251505ed11c2d17ca8658c8607195eb93e81de342a63f234a8afa63629536",
+      "preserved": true
+    },
+    {
+      "path": "original-artifact:remaining8-independent.json",
+      "sha256": "6301010451e245a83f682abdb248200acb5faa58f7d452545db5fb82fb885d93",
+      "preserved": true
+    }
+  ],
+  "items": [
+    {
+      "queue_id": "R01",
+      "priority": "high",
+      "claim_ids": [
+        "v2-dev-p04-c09"
+      ],
+      "kind": "verdict_and_unqualified_scope",
+      "status": "pendinghuman",
+      "decision_needed": "作者 S 与盲审 U 是唯一标签分歧。settings 未排除 flags，而紧邻构造器默认复制句规定 flags 缺省/None 时清空。作者引文在该例外之前结束，不能完整支持泛称全部未指定设置。缺少 DefaultContext.flags 非零的具体同条件反例，盲审保留 U，不以未完整蕴含改判 C。",
+      "suggested_action": "测量前将回答及 claim 明确改成 non-flag settings，并保留 flags 例外可见；新句可判 S。旧回答/旧标签作为 v2-pilot-author-draft-1 原稿保留。",
+      "suggested_claims": [
+        {
+          "claim_text": "The Context constructor copies unspecified non-flag settings from DefaultContext.",
+          "suggested_verdict": "S"
+        }
+      ],
+      "comparison_issue_id": "R01",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R02",
+      "priority": "high",
+      "claim_ids": [
+        "v2-dev-p04-c10"
+      ],
+      "kind": "answer_scope_omission_and_comparison_atomicity",
+      "status": "pendinghuman",
+      "decision_needed": "作者与盲审对候选 c10 均 S，但候选文本及精确 anchor 排除了回答前缀“For conversion as well as later arithmetic, ”。按方法保证后续运算也受 chosen context 约束的强读法，回答存在未覆盖的 U；提供的证据只讲 conversion。候选 S 不能覆盖原回答较强读法。",
+      "suggested_action": "删除含糊的 later arithmetic 修饰，并把两个 API 的独立转换行为拆为两条 S；共享原句 anchor 可用。",
+      "suggested_claims": [
+        {
+          "claim_text": "Context.create_decimal() applies its context precision during input conversion.",
+          "suggested_verdict": "S"
+        },
+        {
+          "claim_text": "The Decimal constructor does not apply context precision during input conversion.",
+          "suggested_verdict": "S"
+        }
+      ],
+      "comparison_issue_id": "R02",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R03",
+      "priority": "high",
+      "claim_ids": [
+        "v2-dev-p07-c04"
+      ],
+      "kind": "evidence_logical_direction",
+      "status": "pendinghuman",
+      "decision_needed": "作者唯一引文是“祖先可访问 ⇒ public item 可外部访问”的充分条件，不能反推 claim 所说的祖先可访问是必要条件。完整材料另有明确 must/private-chain 规则，所以双方 S 可保留，必须替换所选证明。",
+      "suggested_action": "保留 normal path 限定及 S，使用 must be pub from root... / Any private item... 的同段直接必要性引文。",
+      "suggested_claims": null,
+      "comparison_issue_id": "R03",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R04",
+      "priority": "medium",
+      "claim_ids": [
+        "v2-dev-p02-c04"
+      ],
+      "kind": "cross_passage_difficulty_overstatement",
+      "status": "pendinghuman",
+      "decision_needed": "作者的跨段证明有效，但不是必需：passage 1 的 isolation_level 参数定义已明说除 LEGACY 模式外无效果，足以推出 autocommit=False 时无法改变既有 BEGIN 行为。因此不应要求同时引用 False-mode BEGIN 段来判定本 claim 的证据完整性。",
+      "suggested_action": "承认单段替代充分集，并移除“必需跨段”难度标签；如要新造真正跨段 claim，需另行明确语义且重新审查，不把较长作者证据当唯一答案。",
+      "suggested_claims": null,
+      "comparison_issue_id": "R04",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R05",
+      "priority": "medium",
+      "claim_ids": [
+        "v2-dev-p05-c08"
+      ],
+      "kind": "cross_passage_difficulty_overstatement",
+      "status": "pendinghuman",
+      "decision_needed": "passage 3 同一条 immediate-shutdown 规则已规定关闭操作标记剩余项目为 done，且 may unblock join；不需消费者实际完成这些项目也可能解除阻塞。正常 join 计数规则有助说明，却不是本 claim 的不可删证据。因此 mandatory cross-passage 元数据过强。",
+      "suggested_action": "保留 S 和 may/remaining queued items 范围，登记单段替代充分集并修正跨段难度元数据。",
+      "suggested_claims": null,
+      "comparison_issue_id": "R05",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R06",
+      "priority": "medium",
+      "claim_ids": [
+        "v2-dev-p10-c05",
+        "v2-dev-p10-c06"
+      ],
+      "kind": "necessary_cross_passage_identity_link",
+      "status": "pendinghuman",
+      "decision_needed": "两条是真正跨段继承：RU=RC 映射与 RC 的 SELECT 规则都必须有。作者已包含这两个内容，但所引 SELECT 句本身未写 Read Committed，需补 passage 1 的标题把规则和映射目标显式连接；不能只靠两个未绑定片段。",
+      "suggested_action": "每个证据集补 <title>Read Committed Isolation Level</title>，保留映射、规则和级别三项必要链接；两个 S 不变。",
+      "suggested_claims": null,
+      "comparison_issue_id": "R06",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R07",
+      "priority": "medium",
+      "claim_ids": [
+        "v2-dev-p06-c07"
+      ],
+      "kind": "atomicity_independent_properties",
+      "status": "pendinghuman",
+      "decision_needed": "size 与 hash 的元数据来源是两个可各自为真/假的属性事实。当前两个均被覆盖且均 S，无遗漏；按本轮将 p04 两 API 行为拆开的严格原子事实口径，应同样拆分，避免合取正确性掩盖单项错误。",
+      "suggested_action": "拆为两条；可共享完整原句 anchor 和必要 source 片段。不要从 hash property 推出 files() 校验内容。",
+      "suggested_claims": [
+        {
+          "claim_text": "A PackagePath returned by files() has a metadata-derived size property.",
+          "suggested_verdict": "S"
+        },
+        {
+          "claim_text": "A PackagePath returned by files() has a metadata-derived hash property.",
+          "suggested_verdict": "S"
+        }
+      ],
+      "comparison_issue_id": "R07",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R08",
+      "priority": "medium",
+      "claim_ids": [
+        "v2-dev-p12-c08"
+      ],
+      "kind": "atomicity_independent_subjects",
+      "status": "pendinghuman",
+      "decision_needed": "functions 与 procedures 是两个独立对象类型，可分别检查默认 PUBLIC EXECUTE。两者原先都已覆盖、均 S；按与 p04/p06 相同严格口径拆分。",
+      "suggested_action": "拆为两条 S，共享原句 anchor 合法；保留 default 而非不可修改权限的含义。",
+      "suggested_claims": [
+        {
+          "claim_text": "Functions receive PUBLIC EXECUTE by default.",
+          "suggested_verdict": "S"
+        },
+        {
+          "claim_text": "Procedures receive PUBLIC EXECUTE by default.",
+          "suggested_verdict": "S"
+        }
+      ],
+      "comparison_issue_id": "R08",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R09",
+      "priority": "medium",
+      "claim_ids": [
+        "v2-dev-p03-c04",
+        "v2-dev-p03-c05",
+        "v2-dev-p04-c03",
+        "v2-dev-p05-c02",
+        "v2-dev-p05-c03",
+        "v2-dev-p05-c04",
+        "v2-dev-p05-c06",
+        "v2-dev-p05-c07",
+        "v2-dev-p05-c08",
+        "v2-dev-p07-c10",
+        "v2-dev-p09-c08",
+        "v2-dev-p10-c08"
+      ],
+      "kind": "quoted_scope_and_coreference_completion",
+      "status": "pendinghuman",
+      "decision_needed": "这些作者引文在完整 passage 中可解释，且不改变现有标签，但引文自身漏掉方法/类型/级别归属或指代绑定。按“最小充分证据包括全部必要链接”的严格口径应补对应短标题/先行词。p05-c06 尤其没有把立即抛出的异常绑定到 ShutDown，p05-c03 未指明 The count 是 unfinished-task count。",
+      "suggested_action": "采用所列最小集或语义等价的显式绑定集。若合同明确允许引用位置隐含章节作用域，应记录这一规则而不把所有标题差异判为错误；本审查仍给出完整自足版本。",
+      "suggested_claims": null,
+      "comparison_issue_id": "R09",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R10",
+      "priority": "low",
+      "claim_ids": [
+        "v2-dev-p01-c01",
+        "v2-dev-p01-c02",
+        "v2-dev-p01-c03",
+        "v2-dev-p01-c04",
+        "v2-dev-p01-c05",
+        "v2-dev-p01-c07",
+        "v2-dev-p02-c01",
+        "v2-dev-p02-c02",
+        "v2-dev-p02-c03",
+        "v2-dev-p02-c04",
+        "v2-dev-p02-c06",
+        "v2-dev-p02-c07",
+        "v2-dev-p02-c08",
+        "v2-dev-p02-c09",
+        "v2-dev-p03-c01",
+        "v2-dev-p03-c02",
+        "v2-dev-p03-c03",
+        "v2-dev-p03-c04",
+        "v2-dev-p03-c05",
+        "v2-dev-p03-c07",
+        "v2-dev-p03-c08",
+        "v2-dev-p03-c09",
+        "v2-dev-p04-c01",
+        "v2-dev-p04-c02",
+        "v2-dev-p04-c04",
+        "v2-dev-p04-c05",
+        "v2-dev-p04-c06",
+        "v2-dev-p04-c07",
+        "v2-dev-p04-c08",
+        "v2-dev-p04-c11",
+        "v2-dev-p04-c12",
+        "v2-dev-p05-c01",
+        "v2-dev-p05-c05",
+        "v2-dev-p05-c06",
+        "v2-dev-p05-c07",
+        "v2-dev-p05-c08",
+        "v2-dev-p05-c09",
+        "v2-dev-p06-c01",
+        "v2-dev-p06-c04",
+        "v2-dev-p06-c05",
+        "v2-dev-p06-c07",
+        "v2-dev-p07-c01",
+        "v2-dev-p07-c02",
+        "v2-dev-p07-c06",
+        "v2-dev-p07-c10",
+        "v2-dev-p07-c11",
+        "v2-dev-p07-c12",
+        "v2-dev-p08-c05",
+        "v2-dev-p08-c07",
+        "v2-dev-p08-c09",
+        "v2-dev-p09-c01",
+        "v2-dev-p09-c02",
+        "v2-dev-p09-c03",
+        "v2-dev-p09-c04",
+        "v2-dev-p09-c06",
+        "v2-dev-p10-c07",
+        "v2-dev-p10-c08",
+        "v2-dev-p10-c10",
+        "v2-dev-p11-c02",
+        "v2-dev-p11-c03",
+        "v2-dev-p11-c04",
+        "v2-dev-p11-c12",
+        "v2-dev-p12-c03",
+        "v2-dev-p12-c04",
+        "v2-dev-p12-c06",
+        "v2-dev-p12-c07",
+        "v2-dev-p12-c08",
+        "v2-dev-p12-c09"
+      ],
+      "kind": "evidence_minimality_calibration",
+      "status": "pendinghuman",
+      "decision_needed": "列出的作者引文可修剪相邻事实、无关分支、完整示例或重复前提。部分同时需要 R09 的主体绑定，不能一味缩短。此项是逐条语义审查的精简建议，不以字符长度推断失效，也不要求唯一规范引文。",
+      "suggested_action": "在评分证据精确度/最小性之前，至少精简这些明显包含无关事实的 gold；comparison 的每 claim 保留了可直接采用的独立集及作者原集。表格证据等语义完整替代集仍应允许。",
+      "suggested_claims": null,
+      "comparison_issue_id": "R10",
+      "completed_by_human": null,
+      "decision": null
+    },
+    {
+      "queue_id": "R11",
+      "priority": "low",
+      "claim_ids": [
+        "v2-dev-p02-c06"
+      ],
+      "kind": "api_scope_wording_precision",
+      "status": "pendinghuman",
+      "decision_needed": "原文隐式 DML 事务规则限定 Cursor.execute/executemany；回答及候选用 sqlite3 概述。普通文档摘要读法可判 S，但若用于完全独立的原子断言，应显式保留 API 入口，避免读成所有 SQL 入口的保证。",
+      "suggested_action": "可将回答及 claim 加入 execute()/executemany() 限定；不据此把当前概述判 C。",
+      "suggested_claims": null,
+      "comparison_issue_id": "R11",
+      "completed_by_human": null,
+      "decision": null
+    }
+  ],
+  "nonblocking_note": "This queue records requested human follow-up. No human approval requirement beyond the existing task contract is inferred.",
+  "all_other_claims_status": "independent LLM comparison completed; human review pending"
+}

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import hashlib
-import json
 from collections import Counter
 from pathlib import Path
 from typing import Literal, Self
@@ -18,9 +17,12 @@ from grounding.contracts import (
     Verdict,
     VerifyRequest,
 )
+from grounding_eval.provenance import AnswerAnchor, Provenance, strict_json, verify_manifest
 
 CATEGORIES = ("supported", "subtle_distortion", "extrinsic", "synthesis")
 DEFAULT_DATASET = Path(__file__).resolve().parents[2] / "datasets" / "main.jsonl"
+LEGACY_DATASET = DEFAULT_DATASET.parent / "legacy" / "main-v1.jsonl"
+SCHEMA_VERSION = "2"
 
 
 def normalize(text: str) -> str:
@@ -32,13 +34,6 @@ class DatasetError(ValueError):
     """Safe codes only: input lines and validation payloads never reach diagnostics."""
 
 
-class Provenance(StrictModel):
-    kind: Literal["original_fixture"]
-    authorship: Literal["agent_authored"]
-    language: Literal["en"]
-    fictional: Literal[True]
-
-
 class GoldClaim(StrictModel):
     id: StrictStr = Field(min_length=1)
     claim_text: StrictStr = Field(min_length=1)
@@ -46,6 +41,7 @@ class GoldClaim(StrictModel):
     verdict: Verdict
     evidence_sets: list[list[Citation]]
     rationale: StrictStr = Field(min_length=1)
+    answer_anchor: AnswerAnchor | None = None
 
     @model_validator(mode="after")
     def meaningful(self) -> Self:
@@ -81,6 +77,12 @@ class Case(StrictModel):
         claim_ids: set[str] = set()
         aliases: dict[str, int] = {}
         for number, claim in enumerate(self.gold_claims):
+            if self.provenance.kind == "real_source" and claim.answer_anchor is None:
+                raise ValueError("real_source_requires_answer_anchor")
+            anchor = claim.answer_anchor
+            if anchor is not None and (anchor.end > len(self.generated_answer)
+                                      or self.generated_answer[anchor.start:anchor.end] != anchor.quote):
+                raise ValueError("answer_anchor_not_verbatim")
             if claim.id in claim_ids:
                 raise ValueError("duplicate_claim_id")
             claim_ids.add(claim.id)
@@ -116,7 +118,7 @@ def validate_cases(cases: list[Case], *, main: bool = False) -> dict:
     if not cases:
         raise DatasetError("empty_dataset")
     counts = Counter((case.split, case.category) for case in cases)
-    if main and counts != Counter({(s, c): n for s, n in [("dev", 2), ("test", 6)] for c in CATEGORIES}):
+    if main and all(c.provenance.kind == "original_fixture" for c in cases) and counts != Counter({(s, c): n for s, n in [("dev", 2), ("test", 6)] for c in CATEGORIES}):
         raise DatasetError("main_layout_must_be_8_dev_24_test_four_equal_categories")
     return {
         "cases": len(cases),
@@ -133,13 +135,18 @@ def validate_cases(cases: list[Case], *, main: bool = False) -> dict:
 
 def load_dataset(path: Path = DEFAULT_DATASET, *, main: bool = False) -> list[Case]:
     try:
-        cases = [Case.model_validate(json.loads(line))
+        cases = [Case.model_validate(strict_json(line))
                  for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
     except (OSError, UnicodeError) as exc:
         raise DatasetError("dataset_unreadable") from exc
     except (ValueError, TypeError, ValidationError) as exc:
         raise DatasetError("dataset_schema_invalid") from exc
     validate_cases(cases, main=main)
+    if any(case.provenance.kind == "real_source" for case in cases):
+        try:
+            verify_manifest(path, cases)
+        except (OSError, UnicodeError, ValueError, TypeError) as exc:
+            raise DatasetError("dataset_manifest_invalid") from exc
     return cases
 
 

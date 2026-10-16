@@ -1,80 +1,34 @@
-# AI 使用与工作流说明
+# AI use and development workflow
 
-本项目使用 Codex，按我们的 **dev-flow-GPT 工作流**完成引用与事实一致性验证服务。“一次出结果”指同一项目委托持续推进到可运行、可验证、可提交的交付物；内部经历了多轮调研、实现、测试和修复，期间也有用户的授权、配置选择和末轮复核反馈。
+Codex helped research, design, implement, test and document this project. The original delivery followed our **dev-flow-GPT** workflow. “One continuous delivery” means continuing the same assignment through investigation, implementation, review and repair; it does not mean one prompt produced a correct final system. Robin supplied the goals, authorization, configuration decisions and subsequent review feedback.
 
-## 工作流如何运转
+The private workflow is not included in this repository. Its relevant rules are explained below so that no separate installation or internal document is needed to understand the process.
 
-工作流本身没有随仓库发布。下面直接说明它的执行规则，读者无需安装或阅读内部工作流文件。内部名称 `/ms-session-loop` 表示项目级协调流程，`/ms-loop` 表示单个领域的开发与验收流程。
+## How the workflow operates
 
-### 1. 按长期职责分工，并规定谁能改什么
+**A session has a responsibility and a file boundary.** The parent Director owns shared interfaces, architecture, integration and delivery. A domain owner carries a coherent service, evaluator or provider task through implementation and repair. A bounded assistant can research a specific unknown or independently review another author's work. Each assignment names its inputs, permitted files, invariants, acceptance checks and required evidence. Shared files have one writer; dependent changes are handed over in order. Parallel work is used when the work and file boundaries are independent.
 
-这里的 session 是一个独立 AI 工作会话，Director 是负责决策和交付的会话角色。
+**Expected behavior comes before a completion claim.** Durable contracts are recorded with OpenSpec: a proposal explains the problem, a design records choices, scenarios describe observable behavior, and a task list tracks unfinished acceptance work. For example, an empty answer must return no claims without inference; an invalid quotation must be rejected; a timeout must remain an operational failure rather than become UNSUPPORTED. These [service scenarios](openspec/changes/citation-grounding/specs/grounding-verification/spec.md) and the [evaluation upgrade scenarios](openspec/changes/evaluation-v2/specs/evaluation-v2/spec.md) are public. Routine edits reuse existing contracts rather than requiring a new specification ceremony.
 
-| 角色 | 具体职责 | 本项目的安排 |
-| --- | --- | --- |
-| 用户 | 决定目标、范围和必要授权，处理配置与重大取舍 | 提出作业要求、授权模型接入、给出末轮收尾反馈 |
-| 父 Director | 整合研究、确定架构和共享接口、安排依赖、核验结果、提交交付物 | 维护共同的数据结构、行为规格、最终报告和 Git 提交 |
-| 领域 Director | 连续负责一个领域的调查、实现、测试、修复和回传 | 服务、评测、模型接入三个领域分别由原负责人持续完成 |
-| 有界助手 | 完成范围明确的研究或非作者复核，再交回结果 | 开源研究、数据标注审查、服务与评测的独立检查 |
+**Implementation proceeds through working consumers.** Research resolves the important unknowns, a small runnable path connects the necessary components, and scenario increments add the required edge cases. Checks use the HTTP or CLI entry point when that is the consumer. External model boundaries may be simulated in offline tests, but the internal behavior under test must remain real. Important failures receive a reproducible failing check before repair.
 
-每次派工都限定可写文件；共享文件指定唯一负责人。互不重叠且前置条件已满足的工作可以并行，同文件修改和接口依赖则串行交接。审查发现问题后交回原实现者修复。小任务由现有负责人直接完成，不固定拆出一整套代理团队。
+**Review findings return to the original owner.** “Written,” “author checks passed,” “non-author review passed” and “integrated” are distinct states. A reviewer checks the contract and actual evidence, not just the author's summary. The owner repairs confirmed defects, then affected checks are repeated. During this round, an independent reviewer found that a failed diagnostic write could corrupt the semantic-audit CLI's otherwise successful output. The author fixed it using the existing safe logging mechanism; a separate process-level retest confirmed successful, failed and recovery paths.
 
-### 2. 把需求写成可检查的行为，再给出具体派工说明
+**State and evidence survive a conversation.** Git records implementation, specifications record intended behavior, a private coordination plan records ownership and next actions, and saved runs record observations. Evidence is bound to the relevant code and inputs. On resumption, the Director checks those records and any running process before continuing. Unchanged evidence can be reused; changed behavior needs affected verification. These are rules followed by the coding sessions, not a claimed autonomous background monitor.
 
-父 Director 先确定目标、约束、未知项和完成条件。涉及稳定接口或行为约定时，用 **OpenSpec** 保存变更目的、设计选择、行为场景和任务清单；它是一组可审阅的规格文件，本项目的[行为规格](openspec/changes/citation-grounding/specs/grounding-verification/spec.md)已公开。
+## What AI did here
 
-规格用输入和预期结果消除歧义。例如：空答案返回空 claims 且不调用模型；引用与原文相差一个字符就不能作为合法引用返回；上游超时必须报告操作失败，不能伪装成“证据不足”。实现与测试都要符合这些约定。小型修改复用已有规格与验收条件。
+The original work researched grounding methods, evaluation, structured output and Hermes-inspired provider separation before implementation. Service, evaluation and provider owners worked within separate scopes. Early provider research used the user-requested Luna 6; later subordinate sessions used the requested `gpt-6.1-sol` with `max` reasoning. Coding-agent identity is separate from the model measured by the product.
 
-派工说明包含目标、事实来源、读写范围、不变量、验收方式和回传要求。本项目末轮“接通诊断集入口”的任务约束可概括为：
+The first saved experiment compared heuristic, minimal and optimized methods on fictional fixtures. It supported retaining the cheaper minimal default, without establishing that minimal was more accurate. The second round addresses the more important weakness: those small fixtures do not establish useful real-document performance.
 
-```text
-目标：让已有六条诊断样本能够通过正式评测命令执行。
-输入：现有诊断数据、CLI/runner 实现和对应行为规格。
-可写范围：评测入口、runner 与评测测试；根文档由父 Director 更新。
-不变量：all 仍只选 dev/test；不改标注、提示词、评分或历史运行记录。
-验收：diagnostic 双轨产生 12 条记录；混合输入的 all 排除诊断样本；
-      历史报告重新生成后逐字节一致。
-回传：改动文件、代码版本、实际命令与退出码、证据位置、未验证事项。
-```
+For the second round, AI researched original papers and source terms, authored a development pilot from frozen licensed documentation, and performed non-author annotation review. The reviewer first saw source passages, answers, candidate claim texts and anchors, but no author verdicts, rationale or evidence. Independent judgments were locked before comparison. Disputes and subsequent revisions are retained; agreement is not counted as human review. The [current report](reports/eval-v2/README.md) distinguishes finished preparation from measurements still awaiting a confirmed budget.
 
-这使负责人拿到任务后可以直接推进，也让审查者有明确依据判断“是否完成”。
+## What makes the evidence checkable—and its limits
 
-### 3. 从可运行骨架推进到真实场景，失败后回原负责人修复
+- **Program checks** verify input contracts, exact quotations, source hashes, accounting, failure denominators and replay integrity. They cannot establish semantic accuracy. [Engineering checks](reports/eval-v2/verification.json) state the environment and scope.
+- **Actual benchmark inference** is identified by saved provider/model, inputs, outputs, errors and usage. The [historical model results](reports/2026-10-15/README.md) remain v1 evidence. Offline heuristic runs and scripted-provider tests are not new LLM results; unknown usage or cost is not zero.
+- **Non-author AI review** can uncover mistakes, but correlated model biases remain. Literal quotation existence, gold-span coverage and semantic sufficiency are different claims. The [audit policy](reports/eval-v2/audit-policy.md) keeps semantic review separate from strict scores.
+- **Robin's review and understanding** remain separate human tasks. AI produced the [code walkthrough](docs/code-walkthrough.zh-CN.md), [interview exercises](docs/interview-self-check.zh-CN.md) and [review queue](reports/eval-v2/human-review.md); generating these materials does not show that Robin has reviewed the annotations or can explain the code unaided.
 
-项目按以下顺序推进：
-
-1. **研究与架构**：调查关键未知项，记录采纳的设计和理由，明确模块边界。
-2. **可运行骨架**：连接必要模块，从真正的 HTTP、命令行或库调用入口跑通，并检查关键失败路径。
-3. **场景增量**：加入边界条件、异常处理和运行诊断。复杂逻辑及故障修复先保留能复现缺口的检查，再修复并验证。
-4. **验收与集成**：实施者提交结果，非作者复核关键实现和行为；父 Director 再确认下游调用方确实能够使用这些结果。
-
-“写完代码”“作者检查通过”“非作者复核通过”“实际入口验收通过”分别记录。复核会检查原始要求和实际运行结果，不只阅读作者摘要。例如日志要能定位失败阶段，并通过成功、故障和恢复请求检查；日志本身不得带出输入正文、密钥或原始上游异常。局部检查通过后，还要完成相应集成，才能声称整个功能交付。
-
-如果失败，原负责人依据复现和日志定位、修复，再补受影响检查。连续尝试没有获得新证据时，应缩小复现或改变诊断方法；原因未明和未完成验证的部分保留明确状态。
-
-### 4. 用文件保存状态，按授权和证据决定下一步
-
-每批完成后，负责人回填当前阶段、负责会话、代码提交或差异、证据位置、阻塞和下一动作。**Git 保存实现，规格保存预期行为，Plan 保存协调状态，运行记录保存实际结果。** 会话恢复时先核对这些记录及进程是否仍在运行，复用有效结果，避免重复发起状态未知的调用。
-
-验收证据与代码版本、输入和环境绑定。相关代码或合同改变后，重新检查受影响部分；未受影响的结果可以继续复用。小型文档修改核对事实和链接，运行行为修改则检查对应调用链；集成里程碑再执行必要的完整测试。
-
-一项结果被验收后，父 Director 继续安排授权范围内、依赖已满足的下一项工作。需要用户决定的重要行为歧义、目标变化、权限或资源问题才交回用户；缺少凭据时暂停真实模型测量，其余可行工作继续。目标与验收满足后停止，不为了增加复杂度继续开任务。
-
-这些规则由会话调用工具执行。检查点提供续接依据；本项目没有运行持久后台监控，也没有验证断线后自动唤醒能力。
-
-## 这次如何从需求走到结果
-
-1. **先研究，再设计。** 研究代理分别调查 grounding 方法、评测方法、结构化 API，以及 Hermes/Codex provider 设计，再由父 Director 形成[架构与边界](docs/architecture.md)。早期 provider 研究按用户要求使用 Luna 6；后续下属会话统一使用 `gpt-6.1-sol / max`。
-2. **按职责拆分实现。** 服务、评测、provider 三个领域会话各有明确写入范围；父 Director 维护共享合同和集成。先打通可运行入口，再补充异常、引用校验和本地诊断。实际发现的认证、流式响应和评分问题由原负责人修复，并保留失败证据。
-3. **用真实测量作选择。** 实现 heuristic、minimal、optimized 三种方法，分别测固定参考断言（gold claims）的判断能力和包含抽取的完整链路。在开发集迭代后冻结，再运行留出集；没有根据留出结果补等价表述（alias）或修改评分。两阶段方案没有展示明确总体收益，最终默认采用延迟和 token 开销更低的 minimal。
-4. **通过实际入口交付。** 末轮复核发现诊断集无法执行、Codex 输出上限记录不准确等缺口后，完成小范围修复。随后从干净克隆安装锁定依赖，运行测试、CLI 和 HTTP 示例，公开仓库，并导出不含环境文件的源码包。
-
-## 为什么这些结果值得信任
-
-可信依据是可检查的证据。以下结果绑定功能交付版本 `597ed50`：
-
-- **工程结果可复现**：全新虚拟环境和依赖缓存下安装成功，**426 项离线测试通过**，真实 HTTP/CLI 验收及 [GitHub CI](https://github.com/Robinfxa/citation-grounding-verifier/actions/runs/38719463461) 通过。详见[交付验收记录](reports/2026-10-15/delivery-checks.json)。
-- **模型成绩有原始记录**：主数据集包含 **32 个案例、68 条 gold claims**，开发与留出分开；保留了留出集 **144 条运行记录**、失败分母、延迟、token 和置信区间。新增诊断单独运行 **36 项**，没有混入主榜。参见[实验报告](reports/2026-10-15/README.md)与[诊断记录](reports/2026-10-15/diagnostic-final/README.md)。
-- **复核能追溯到实际结果**：服务、数据和评测接受了非作者代理复核；历史三份报告重新生成后文件逐字节不变。旧失败没有删除，复杂方案没有被强行写成赢家。开发迭代同时改变了标注、调用传输逻辑和提示词，因此没有把收益全部归因于提示词。
-
-这些证据有明确边界：数据由代理编写并复核，样本较小；测试通过、引文逐字匹配都不能保证语义判断永远正确。OpenAI API 通道没有进行真实推理测量；新增 provider 认证与流式处理部分的独立复核曾被平台风险检查中止，仍标记为未完成。完整范围见[验证说明](openspec/changes/citation-grounding/verification.md)。
+No v2 model quality, controlled optimization result or final held-out result is claimed before those experiments occur. Public-source pretraining contamination and AI annotation bias remain limitations. OpenAI API-key inference was not measured live. The earlier provider authentication/streaming increment's independent review was stopped by a platform risk check and remains incomplete; this round's evaluator review does not fill that gap. Private correspondence, workflow files and credentials are excluded.

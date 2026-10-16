@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "legacy": {
+    "path": "datasets/legacy/main-v1.jsonl",
+    "sha256": "c9a30acf3ddb3093514a89831f7ae1d2be336f02df1d7b9143b1a01719aec1be",
+    "cases": 32,
+    "families": 32,
+    "splits": {
+      "dev": 8,
+      "test": 24
+    },
+    "labels": {
+      "SUPPORTED": 28,
+      "CONTRADICTED": 18,
+      "UNSUPPORTED": 22
+    },
+    "origins": {
+      "legacy_fictional": 32
+    },
+    "claims": 68,
+    "lengths": {
+      "context_unicode_characters": {
+        "min": 76,
+        "median": 116.5,
+        "max": 267,
+        "mean": 130.59375
+      },
+      "context_whitespace_words": {
+        "min": 14,
+        "median": 20.0,
+        "max": 45,
+        "mean": 22.375
+      },
+      "answer_unicode_characters": {
+        "min": 47,
+        "median": 93.0,
+        "max": 143,
+        "mean": 97.15625
+      },
+      "answer_whitespace_words": {
+        "min": 7,
+        "median": 15.0,
+        "max": 26,
+        "mean": 15.90625
+      },
+      "gold_claims_per_answer": {
+        "min": 2,
+        "median": 2.0,
+        "max": 4,
+        "mean": 2.125
+      }
+    },
+    "duplicate_method": "Lowercase ASCII alphanumeric/underscore token five-word set Jaccard; within this population only.",
+    "pair_count": 496,
+    "max_pair": {
+      "a": "oriva-buffer",
+      "b": "kelm-loom",
+      "jaccard": 0.0
+    }
+  },
+  "pilot": {
+    "path": "datasets/v2/pilot.jsonl",
+    "sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "cases": 12,
+    "families": 12,
+    "splits": {
+      "dev": 12
+    },
+    "labels": {
+      "CONTRADICTED": 10,
+      "SUPPORTED": 110,
+      "UNSUPPORTED": 6
+    },
+    "origins": {
+      "controlled_mutation": 6,
+      "generated_from_real_source": 6
+    },
+    "claims": 126,
+    "lengths": {
+      "context_unicode_characters": {
+        "min": 6603,
+        "median": 10178.0,
+        "max": 15546,
+        "mean": 10696.833333333334
+      },
+      "context_whitespace_words": {
+        "min": 905,
+        "median": 1287.5,
+        "max": 1813,
+        "mean": 1311.6666666666667
+      },
+      "answer_unicode_characters": {
+        "min": 548,
+        "median": 723.5,
+        "max": 903,
+        "mean": 718.3333333333334
+      },
+      "answer_whitespace_words": {
+        "min": 74,
+        "median": 95.5,
+        "max": 135,
+        "mean": 99.75
+      },
+      "gold_claims_per_answer": {
+        "min": 8,
+        "median": 10.5,
+        "max": 13,
+        "mean": 10.5
+      }
+    },
+    "duplicate_method": "Lowercase ASCII alphanumeric/underscore token five-word set Jaccard; within this population only.",
+    "pair_count": 66,
+    "max_pair": {
+      "a": "v2-dev-p10",
+      "b": "v2-dev-p12",
+      "jaccard": 0.0008949880668257757
+    }
+  },
+  "token_estimator": {
+    "name": "decoded Unicode context characters / 4, rounded",
+    "provider_tokenizer": null,
+    "provider_usage": false
+  },
+  "statistical_warning": "The v2 pilot is development only. Counts and length differences do not establish increased semantic difficulty or model quality."
+}
