@@ -1,6 +1,6 @@
 # Evaluation v2 protocol
 
-Status: reviewed 12-case development pilot and offline measurement/consumer checks complete; explicit model-call budget pending. No v2 LLM scores, controlled ablation or final test results are available.
+Status: reviewed 12-case development pilot and offline measurement/consumer checks complete. A 60-attempt pilot was authorized; its first live request returned `quota_exhausted`, and the user confirmed that quota had not recovered. Records are preserved with 1 attempt used and 59 remaining. No v2 LLM predictions, controlled ablation or final test results are available.
 
 ## Baseline and gaps
 
@@ -40,7 +40,7 @@ Repeated measurements remain attached to the same source family in paired resamp
 
 ## Resources and authorization
 
-The existing authorized route is Codex / `gpt-6.1-sol`. A pilot allowance of at most 60 provider attempts (including retries) has been requested; no v2 inference starts until explicit budget confirmation. A final budget will follow measured pilot consumption. The Codex output-token request is recorded as not applied, with effective limit unknown; time, byte and attempt limits are separate.
+The existing authorized route is Codex / `gpt-6.1-sol`. On 2026-10-16, Robin approved at most 60 provider attempts for the development pilot, including retries and repairs. The [pre-inference plan](pilot-live-plan.json) freezes the matrix, seeded order, data, code and settings. The [saved outcome](pilot-live.md) records one quota-blocked attempt and 59 unspent attempts. No further calls occur while quota remains unavailable. A final budget requires successful pilot resource observations; this failed request cannot supply that estimate. The Codex output-token request is recorded as not applied, with effective limit unknown; time, byte and attempt limits are separate.
 
 Data authoring/review by coding sessions and benchmark inference are reported separately. Coding-session usage is not available as measured benchmark tokens. Authentication and streaming are outside this change. Private instructions and correspondence are not published; no recruiter message is sent.
 
@@ -48,4 +48,4 @@ Data authoring/review by coding sessions and benchmark inference are reported se
 
 The revised pilot has 12 dev cases / 126 facts, with final dataset SHA `701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df`. The [non-author follow-up](annotation-review/affected-review.md) accepted 81 affected claims; 45 unchanged claims retain their original review by exact field equality. Its author handoff metadata remains unchanged, including the then-pending re-review state. Human review is still pending. No future test content has been generated.
 
-[Offline acceptance](verification.json) passed from a clean source export: frozen dependency installation, 510 tests, lint, actual pilot CLI/HTTP paths, and byte-identical replay of the 24-job heuristic run. [Current results and unfinished work](README.md) distinguish those observations from the unrun LLM comparison. The provisional final population, optimization hypotheses and test selections have not been frozen. The pilot budget question remains unanswered; no resource-limited scope reduction or budget approval is inferred from elapsed time.
+[Offline acceptance](verification.json) passed from a clean source export: frozen dependency installation, 510 tests, lint, actual pilot CLI/HTTP paths, and byte-identical replay of the 24-job heuristic run. The subsequent [quota-blocked live run](pilot-live.md) retained all 72 requested jobs and reproduced its saved artifacts byte-for-byte; its model paths produced no predictions. The provisional final population, optimization hypotheses and test selections have not been frozen. The active blocker is provider quota, not missing pilot authorization. Any later continuation uses a new run directory, retains this failed run and carries forward the remaining 59-attempt allowance rather than resetting it to 60.

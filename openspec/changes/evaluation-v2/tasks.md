@@ -13,6 +13,9 @@
 ## 3. Controlled development and final population
 
 - [ ] 3.1 With explicit budget and valid configuration, run the pilot and frozen development comparison; record actual resources and failure taxonomy.
+
+  Pilot allowance approved: 60 attempts. The first actual request returned `quota_exhausted`; one attempt was used, 59 remain, and no LLM prediction was obtained. The user confirmed quota remained unavailable and requested preservation. See [saved outcome](../../../reports/eval-v2/pilot-live.md); this task stays open.
+
 - [ ] 3.2 Run at least one one-factor development ablation, preserve controls, and record adoption/rejection with measured tradeoffs.
 - [ ] 3.3 Expand only after pilot review, resolve annotation disputes, validate family/near-duplicate separation, and freeze the final dataset, selections, methods, scorer, matrix and budget before test inference.
 

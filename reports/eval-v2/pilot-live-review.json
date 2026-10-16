@@ -1,0 +1,142 @@
+{
+  "assertions": {
+    "applicability": "Local structural/accounting/hash/byte assertions for this saved 72-job run; not a model-quality or semantic-annotation validation.",
+    "failed": 0,
+    "passed": 300,
+    "total": 300
+  },
+  "commands": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-B",
+        "<private-review-directory>/review.py"
+      ],
+      "exit_code": 1,
+      "phase": "review_script_setup",
+      "reason": "Reviewer scratch script had one unclosed parenthesis; corrected before any probe ran."
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-B",
+        "<private-review-directory>/review.py"
+      ],
+      "exit_code": 1,
+      "phase": "guard_setup",
+      "reason": "Review read allowlist blocked the Python runtime public macOS version plist; no network/provider/credential attempt occurred."
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "grounding_eval",
+        "report",
+        "<private-review-directory>/offline-copy"
+      ],
+      "exit_code": 1,
+      "phase": "guard_setup",
+      "reason": "Import aborted on the public platform metadata read before CLI report execution."
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-B",
+        "<private-review-directory>/review.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "grounding_eval",
+        "report",
+        "<private-review-directory>/offline-copy"
+      ],
+      "exit_code": 2
+    }
+  ],
+  "findings": [],
+  "guard": {
+    "credential_file_attempts": 0,
+    "network_attempts": 0,
+    "outside_read_allowlist": 0,
+    "outside_scratch_writes": 0,
+    "process_launch_attempts": 0,
+    "provider_or_auth_module_imports": 0
+  },
+  "input_hashes": {
+    "completion": "c09af2e156be77c1d099b4c8417e334028c612fd799989c42d30b803e360753d",
+    "config": "c95985b47028712d6d0418b6cd4781846c04fb85b378518c8dd479bcdeb4b843",
+    "dataset": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "manifest": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+    "parent_documents": {
+      "reports/eval-v2/pilot-live-receipt.json": "c45523be0beccbb8a4d0b1b04a3db9a8997a5ca0f6140957e2c2033881b7c9f2",
+      "reports/eval-v2/pilot-live.md": "6fd820addde334a23aebbfe883502d5b1cc1f0d248b795cc84d8e7acbb5e5e24"
+    },
+    "plan": "29918c77ad69182e2b0f62181f8ccf6e4125878df32a1f55ade366f7e57ab887",
+    "records": "4bfe640d013dbc658dc96bb2c4a98fc775d1b7df3c096e6a05aaf0fe2b07a02c",
+    "summary": "eaf0ce2b6dd79db26cc6199abf17c38d59c3f8c0dd1b02413a159b9c96f4ed84"
+  },
+  "interpretation": [
+    "The first real request failed with quota_exhausted. No successful model output or model-quality estimate was obtained.",
+    "Zero model metrics under PARTIAL_ERRORS/failure_inclusive_quality represent retained error denominators, not measured semantic accuracy; all-NOT_RUN groups have null quality.",
+    "known_usage zeros are known lower-bound counters. The attempted model group has incomplete usage and null total_usage; subscription dollars remain null.",
+    "The unused allowance is preserved arithmetically. User authorization to resume is not inferred from the remaining 59 attempts.",
+    "The pre-run plan has no explicit runtime field; the run config captures runtime, which matched this isolated replay."
+  ],
+  "limitations": [
+    "No network, provider invocation, credential access, product-source edits, full test suite, future-test inspection, or semantic audit was performed.",
+    "Public source bytes, including filenames in the existing full-code fingerprint, were hashed only to verify frozen bindings; provider/auth implementation safety was not reviewed.",
+    "Authorization and the instruction to save without resuming are supplied by the parent task brief; account quota was not rechecked.",
+    "This receipt covers the saved single development run only. It does not validate future resumption, final-test behavior, or model comparisons.",
+    "Parent document claims about credential renewal, historical test counts, and equality with an earlier offline pilot were outside this narrow review and were not independently rechecked."
+  ],
+  "observations": {
+    "approved_attempt_ceiling": 60,
+    "attempted_group_total_usage": null,
+    "completion": {
+      "cleanup_errors": [],
+      "config_sha256": "c95985b47028712d6d0418b6cd4781846c04fb85b378518c8dd479bcdeb4b843",
+      "provider_attempts_charged": 1,
+      "record_count": 72,
+      "records_sha256": "4bfe640d013dbc658dc96bb2c4a98fc775d1b7df3c096e6a05aaf0fe2b07a02c",
+      "source_changed_during_run": false,
+      "status": "COMPLETED_WITH_ERRORS",
+      "stopped_after_attempt_budget_exhausted": false,
+      "stopped_after_quota_exhausted": true
+    },
+    "gold_claims_per_group": 126,
+    "groups": 6,
+    "heuristic_success_jobs": 24,
+    "model": "gpt-6.1-sol",
+    "model_dollar_cost": null,
+    "model_error_jobs": 1,
+    "model_not_run_jobs": 47,
+    "model_success_jobs": 0,
+    "operation_reservation": 6,
+    "provider": "codex",
+    "provider_attempts_observed_and_charged": 1,
+    "remaining_attempt_allowance": 59,
+    "saved_files_compared_byte_identically": 23,
+    "saved_record_count": 72,
+    "unknown_usage_requests": 1
+  },
+  "publication": {
+    "original_receipt_sha256": "57e93302c6bde6f02c4f71986cf0a5e7684911c3418a46c9aad1aaa6f65ed56c",
+    "parent_document_binding": "The reviewed pilot-live.md and pilot-live-receipt.json remain byte-identical to the listed hashes.",
+    "supporting_probe_files": "Retained locally; not included in this public summary. The ordinary offline replay command is documented in pilot-live.md.",
+    "view": "Selected fields from the independent review receipt; private scratch path prefix is replaced with a named placeholder. Underlying findings, counts and input hashes are unchanged."
+  },
+  "reviewer": {
+    "actual_model_build": "unknown",
+    "configured_model": "gpt-6.1-sol",
+    "configured_reasoning_effort": "max",
+    "kind": "non-author AI"
+  },
+  "scope": "One saved development pilot: frozen inputs, accounting, quota stop, retained jobs, resource uncertainty, and public offline report replay.",
+  "status": "PASS"
+}

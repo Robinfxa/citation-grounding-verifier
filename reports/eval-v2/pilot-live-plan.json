@@ -1,0 +1,457 @@
+{
+  "accounting": {
+    "authoring_and_review_session_costs": "unavailable; separate from product inference",
+    "plan_fee_allocation": "unknown",
+    "prior_v2_product_inference_calls": 0
+  },
+  "authorization": {
+    "later_ablation_and_final_matrix_authorized": false,
+    "model": "gpt-6.1-sol",
+    "provider": "codex",
+    "retries_and_repairs_count": true,
+    "scope": "development pilot only",
+    "total_provider_attempt_ceiling": 60,
+    "user_approved_on": "2026-10-16"
+  },
+  "baseline_commit": "3df1bf1bfaa48b06fb0219bca8de58d4dc4cf5ec",
+  "created_at": "2026-10-16T18:34:08.076964+00:00",
+  "dataset": "datasets/v2/pilot.jsonl",
+  "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+  "fingerprints": {
+    "code_sha256": "4a10accbe110808bcf63025204af444fe75195ea291efb655ffda2261209f992",
+    "files": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "7b8d3bda7858ae97bc3053baa9342f91313ccf6e8ff8798d49443eb5a4a570ec",
+      "grounding/contracts.py": "d19981261f14fc9bb358daa1dd4b3d471d48d5aa5bcd683e29c0ab07eee08244",
+      "grounding/diagnostics.py": "03b88fb52aafc74655c8c2162b858edfe4ca75b79669c29826c2aa71e7bc5083",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "159c7c3cb020b7ee7076c5e732b130964b524f48fe9ea7f3ec54f0aabc03df0c",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/audit.py": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+      "grounding_eval/cli.py": "41186146c4f1e799a6aa286dad51f8385d46751e531404ae9bde1ffcfc955263",
+      "grounding_eval/dataset.py": "1b5aae47a713ad8c71935859fe4e6b6fa6374584780515f6e8d959141aec8df2",
+      "grounding_eval/diagnostics.py": "d5f0ea8db468d70b06e5a823195c18053b12df1c07cde2db24de763a5cb65911",
+      "grounding_eval/provenance.py": "7243c31ea04e8b37e543b56a7d3e96a6701631d6b178ed0576fee47ae801cd33",
+      "grounding_eval/repeated.py": "060ff829327314745c5c4a3dbf8f88b4f301bf2a1d4f3b4fc34a7abf1633f53a",
+      "grounding_eval/reporting.py": "cf149e78431f378fa7ae6f296fb84ab00aacb5212d35cf325d08200c6c917565",
+      "grounding_eval/runner.py": "651299cf8f5545f6707497680d45cefa502576c335d37365a1101a5c76d32e9e",
+      "grounding_eval/scoring.py": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e",
+      "grounding_eval/uncertainty.py": "c6bfbdcb8155acf2fdfdd31ea74eaea4fa8d7a18750e26ca0c3546f49c85f674"
+    },
+    "prompt_files": {
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59"
+    }
+  },
+  "interpretation": "Development measurement only; no final-test or controlled optimization claim.",
+  "manifest_sha256": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+  "matrix": {
+    "approaches": [
+      "heuristic",
+      "minimal",
+      "optimized"
+    ],
+    "bootstrap_samples": 10000,
+    "cases": 12,
+    "execution_order": [
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p01",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p02",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p06",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p01",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p02",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p10",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p06",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p05",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p03",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p04",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p07",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p02",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p03",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p01",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p12",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p04",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p11",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p02",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p08",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p01",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p11",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p11",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p12",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p05",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p03",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p09",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p06",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p04",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p06",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p04",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p03",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p10",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p08",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p09",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p05",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p02",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p11",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p05",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p12",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p04",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p10",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p12",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p08",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p05",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p07",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p12",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p06",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p07",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p12",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p01",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p08",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p11",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p09",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p07",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p10",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p10",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p08",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p07",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p09",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p09",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p08",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p02",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p01",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p06",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p05",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p03",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p04",
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p10",
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-dev-p07",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p09",
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p11",
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-dev-p03",
+        "track": "end-to-end"
+      }
+    ],
+    "gold_claims": 126,
+    "jobs": 72,
+    "repetitions": 1,
+    "seed": 20261016,
+    "split": "dev",
+    "tracks": [
+      "oracle",
+      "end-to-end"
+    ]
+  },
+  "run_directory": "reports/eval-v2/pilot-live",
+  "settings": {
+    "diagnostics": true,
+    "endpoint_sha256": "d9617135d6fdd0a2cde722d637a1dfcc3da37515708b3ea5d66ae607c8ac785e",
+    "max_output_tokens": {
+      "application": "not_applied",
+      "effective": null,
+      "requested": 8192
+    },
+    "max_provider_attempts": 6,
+    "model": "gpt-6.1-sol",
+    "operation_timeout": 60.0,
+    "provider": "codex",
+    "provider_timeout": 30.0,
+    "retry_delay": 0.25,
+    "transport_retries": 1
+  },
+  "status": "frozen_before_inference",
+  "stop_rules": [
+    "Do not start a model job unless its six-attempt reservation fits within the remaining approved allowance.",
+    "Charge observed attempts, including retries/repairs; keep the whole reservation when statistics are unknown.",
+    "Retain failures and NOT_RUN jobs with their full gold denominators; do not refill or rerun for better scores.",
+    "Stop model jobs on quota exhaustion; do not switch provider/model."
+  ]
+}

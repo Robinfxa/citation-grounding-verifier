@@ -1,6 +1,6 @@
 # Evaluation-v2 verification checkpoint
 
-This change is **not complete**. Measurement infrastructure and the reviewed development pilot are being delivered as a local checkpoint; live pilot, controlled ablation, expansion/final freeze, held-out measurement and semantic test audit remain open. The task list retains those unchecked items.
+This change is **not complete**. Measurement infrastructure and the reviewed development pilot are delivered as a local checkpoint. The first authorized live pilot stopped on provider quota before any LLM prediction. Successful pilot measurement, controlled ablation, expansion/final freeze, held-out measurement and semantic test audit remain open. The task list retains those unchecked items.
 
 ## Evidence and scope
 
@@ -12,7 +12,7 @@ This change is **not complete**. Measurement infrastructure and the reviewed dev
 
 ## Limits and unfinished gates
 
-Explicit model-call budget confirmation is pending. V2 product inference calls are zero; no model quality, latency, tokens, controlled improvement, final test uncertainty or semantic audit score is claimed. The provisional 72-case plan is not declared fulfilled by a development-only pilot. The default `main.jsonl` remains v1 until final v2 acceptance.
+Robin authorized 60 pilot provider attempts, including retries/repairs. The [frozen plan and actual run](../../../reports/eval-v2/pilot-live.md) retained 72 requested jobs: 24 heuristic successes, one `quota_exhausted` model error and 47 unstarted model jobs. One attempt was charged and 59 remain. The error took approximately 3.80 seconds including authentication work; token usage and subscription cost are unknown. The user confirmed that quota had not recovered and requested preservation of the records. No LLM quality, successful-inference latency, controlled improvement, final test uncertainty or semantic audit score is claimed. The provisional 72-case plan is not declared fulfilled by a development-only pilot. The default `main.jsonl` remains v1 until final v2 acceptance.
 
 The [human review queue](../../../reports/eval-v2/human-review.md) and [interview exercises](../../../docs/interview-self-check.zh-CN.md) remain for Robin. AI review cannot substitute for human understanding. Public-source contamination, correlated annotation and strict evidence/claim proxies remain limitations.
 
