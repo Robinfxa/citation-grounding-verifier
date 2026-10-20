@@ -19,6 +19,8 @@ See the proposal and `reports/eval-v2/protocol.md`. The baseline evaluator uses 
 
 ## Risks / Trade-offs
 
+The 2026-10-20 continuation exposed a budget-efficiency gap: 22 model jobs encountered `upstream_unavailable` and consumed their allowed retries, although each individual operation stayed bounded. Add an opt-in CLI/run policy `stop_on_model_error` that stops subsequent model jobs after the first failure, while retaining heuristic execution, the frozen population and original error classification. Default behavior remains unchanged. Persist the policy in config; replay validates the stop against seeded records and treats an absent historical option as false. Avoid changing provider/auth/transport or scoring, and preserve historical completion/summary bytes when replaying old runs. Existing per-case diagnostics, attempted flags and attempt totals identify the trigger and uncalled jobs without a new logging service.
+
 - Public source contamination and common-project correlation → disclose them; group versions/mirrors/overlapping excerpts and show family counts rather than claiming independent claims.
 - AI authors/reviewers share model biases → blind initial labels, retain disagreements, queue high-risk examples for Robin and never mark them human-reviewed prematurely.
 - Conservative text/quote proxies → preserve transparent headline scoring and report a separate preselected semantic audit with its own denominator.

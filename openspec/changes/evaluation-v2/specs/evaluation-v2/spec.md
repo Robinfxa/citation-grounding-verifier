@@ -48,6 +48,14 @@ Real model runs MUST have valid authorized configuration and an explicit attempt
 - **THEN** the runner records the remaining model jobs as unattempted budget failures without sending calls
 - **AND** heuristic jobs can still execute and completion is not reported as fully successful
 
+#### Scenario: Opt-in stop after a model error
+- **GIVEN** a run explicitly enables `--stop-on-model-error`
+- **WHEN** a model job fails, including configuration or protocol failure
+- **THEN** subsequent model jobs remain NOT_RUN with the triggering safe error code, zero new attempts and their complete gold denominators
+- **AND** heuristic jobs still execute; the first failure and its actual usage remain intact
+- **AND** the saved policy and seeded record order let offline replay reject a model invocation after that stop
+- **AND** omitting the option preserves existing execution behavior and historical reports replay byte-for-byte
+
 ### Requirement: Family-paired repeated uncertainty
 Comparisons across repeated runs SHALL preserve pairing by case and repetition, cluster all dependent measurements by source family, reject incomplete or incompatible paired populations, and report each repetition alongside pooled results. Missing usage/cost SHALL remain unknown. Dataset and annotation limitations SHALL be disclosed with measured scores.
 

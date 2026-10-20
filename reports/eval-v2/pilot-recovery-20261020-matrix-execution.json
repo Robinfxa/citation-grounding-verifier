@@ -1,0 +1,32 @@
+{
+  "phase": "matrix",
+  "plan_sha256": "e8e12208bb8e73a069e9a4bca0a59b4f12018524a668db8fabde3c69c6bb20a6",
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "grounding-eval",
+    "run",
+    "--dataset",
+    "datasets/v2/pilot.jsonl",
+    "--approaches",
+    "heuristic,minimal,optimized",
+    "--split",
+    "dev",
+    "--track",
+    "both",
+    "--seed",
+    "20261016",
+    "--bootstrap-samples",
+    "10000",
+    "--stop-on-model-error",
+    "--max-total-provider-attempts",
+    "93",
+    "--output",
+    "reports/eval-v2/pilot-recovery-20261020-matrix"
+  ],
+  "started_at": "2026-10-20T09:27:23.060412+00:00",
+  "prior_cumulative_attempts": 57,
+  "allocated_attempts": 93,
+  "status": "frozen_before_inference"
+}

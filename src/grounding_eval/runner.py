@@ -157,6 +157,15 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
             or type(config["bootstrap_samples"]) is not int or config["bootstrap_samples"] < 1
             or config["scorer_version"] != SCORER_VERSION):
         raise ValueError("invalid_saved_versions_or_budget")
+    stop_on_model_error = config.get("stop_on_model_error", False)
+    initialization_errors = config.get("initialization_errors")
+    if (type(stop_on_model_error) is not bool
+            or (stop_on_model_error and (
+                not isinstance(initialization_errors, dict)
+                or any(approach not in config["approaches"]
+                       or error not in {*ERRORS, "implementation_unavailable"}
+                       for approach, error in initialization_errors.items())))):
+        raise ValueError("invalid_saved_model_stop_policy")
     expected_jobs = [(a, t, c.id) for c in cases for a in config["approaches"] for t in config["tracks"]]
     random.Random(config["seed"]).shuffle(expected_jobs)
     if [(r["approach"], r["track"], r["case_id"]) for r in records] != expected_jobs:
@@ -167,6 +176,7 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
         raise ValueError("invalid_saved_job_order")
     charged = 0
     budget_stopped = False
+    quota_stopped, model_error = False, None
     previous_start = datetime.fromisoformat(config["started_at"])
     if previous_start.tzinfo is None:
         raise ValueError("invalid_saved_start")
@@ -187,6 +197,19 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
                 raise ValueError("invalid_saved_start_order")
             previous_start = started
         model_job = record["approach"] != "heuristic"
+        budget_required = model_job and not quota_stopped and (budget_stopped or (
+            budget is not None and charged + maximum > budget))
+        if stop_on_model_error and model_job:
+            # AIDEV-NOTE: replay derives the stop from seeded outcomes, not an editable
+            # completion flag. Only saved initialization failures justify an initial skip.
+            expected_error = ("quota_exhausted" if quota_stopped else
+                              "attempt_budget_exhausted" if budget_required else
+                              model_error or initialization_errors.get(record["approach"]))
+            if ((expected_error is None and not record["attempted"])
+                    or (expected_error is not None and (
+                        record["attempted"] or error != expected_error or not record["stats_known"]
+                        or record["rejected_report"] is not None))):
+                raise ValueError("invalid_saved_model_stop")
         reservation = maximum if model_job and record["attempted"] else 0
         actual_charge = (record["stats"]["provider_calls"] if record["stats_known"] else reservation)
         expected_charge = actual_charge if model_job and record["attempted"] else 0
@@ -205,9 +228,10 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
                         "input_tokens", "output_tokens", "cached_input_tokens"))):
                 raise ValueError("invalid_saved_uncalled_usage")
         if model_job and not record["attempted"] and error == "attempt_budget_exhausted":
-            if budget is None or charged + maximum <= budget:
-                raise ValueError("invalid_saved_budget_stop")
-            budget_stopped = True
+            if not stop_on_model_error or budget_required:
+                if budget is None or charged + maximum <= budget:
+                    raise ValueError("invalid_saved_budget_stop")
+                budget_stopped = True
         charged += expected_charge
         if budget is not None and charged > budget:
             raise ValueError("invalid_saved_budget_overspend")
@@ -223,12 +247,18 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
         elif (error not in {*ERRORS, "oracle_identity_violation", "implementation_unavailable"}
               or record["report"] is not None):
             raise ValueError("invalid_saved_failure")
-        if (record["rejected_report"] is not None) != (error == "oracle_identity_violation"):
+        if (record["rejected_report"] is not None) != (
+            error == "oracle_identity_violation" and (not stop_on_model_error or record["attempted"])
+        ):
             raise ValueError("invalid_saved_rejection")
         expected_score = score_case(case, record["report"]["claims"] if record["report"] else [],
                                     track=record["track"], error=error)
         if json_text(record["score"]) != json_text(expected_score):
             raise ValueError("invalid_saved_score")
+        if error == "quota_exhausted":
+            quota_stopped = True
+        if model_job and error is not None and model_error is None:
+            model_error = error
     cleanup_approaches = [item.approach for item in completion.cleanup_errors]
     if (len(set(cleanup_approaches)) != len(cleanup_approaches)
             or any(a not in config["approaches"] for a in cleanup_approaches)
@@ -385,13 +415,15 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                         bootstrap_samples: int = 10_000, settings: Settings | None = None,
                         verifiers: dict[str, Verifier] | None = None,
                         prices: dict | None = None, case_ids: list[str] | None = None,
-                        max_total_provider_attempts: int | None = None) -> dict:
+                        max_total_provider_attempts: int | None = None,
+                        stop_on_model_error: bool = False) -> dict:
     """The optional verifier mapping is an explicitly labeled offline-test seam only."""
     settings = settings or Settings.from_env()
     if (not approaches or len(set(approaches)) != len(approaches)
             or any(a not in APPROACHES for a in approaches)
             or split not in {"dev", "test", "all", "diagnostic"} or track not in {*TRACKS, "both"}
             or type(seed) is not int or type(bootstrap_samples) is not int or bootstrap_samples < 1
+            or type(stop_on_model_error) is not bool
             or (max_total_provider_attempts is not None and (
                 type(max_total_provider_attempts) is not int or max_total_provider_attempts < 0))
             or (verifiers is None and any(a != "heuristic" for a in approaches)
@@ -431,6 +463,7 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
             raise EvaluationError("persistence_failed") from None
         records, clients, initialization_errors, cleanup_errors = [], {}, {}, []
         quota_stopped = budget_stopped = False
+        model_error = None
         attempts_charged = 0
         try:
             cases_text = "".join(json.dumps(c.model_dump(), ensure_ascii=False, sort_keys=True) + "\n" for c in cases)
@@ -449,6 +482,7 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                 "selection": {"kind": "case_ids" if case_ids is not None else "split",
                               "requested_case_ids": case_ids},
                 "max_total_provider_attempts": max_total_provider_attempts,
+                "stop_on_model_error": stop_on_model_error,
                 "dataset_sha256": snapshot.sha256, "selected_cases_sha256": file_hash(output / "cases.jsonl"),
                 "dataset_snapshot": snapshot.model_dump(),
                 "fingerprints": fingerprints(), "settings": public_settings(settings), "prices": prices,
@@ -473,6 +507,9 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                     initialization_errors[approach] = "implementation_unavailable"
                 except Exception:
                     initialization_errors[approach] = "internal_error"
+            if stop_on_model_error:
+                config["initialization_errors"] = initialization_errors
+                write_json(output / "config.json", config)
             with (output / "records.jsonl").open("x", encoding="utf-8") as stream:
                 for sequence, (approach, selected_track, case) in enumerate(jobs):
                     with operation(enabled=settings.diagnostics, new=True) as case_op:
@@ -480,6 +517,10 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                         started = time.perf_counter()
                         report, rejected, error_code = None, None, initialization_errors.get(approach)
                         stats, stats_known = unknown_stats(approach, settings), False
+                        if stop_on_model_error and error_code is not None:
+                            stats = RunStats(provider="heuristic" if approach == "heuristic" else settings.provider,
+                                             requested_model=None if approach == "heuristic" else settings.model)
+                            stats_known = True
                         if quota_stopped and approach != "heuristic":
                             error_code = "quota_exhausted"
                             stats = RunStats(provider=settings.provider, requested_model=settings.model)
@@ -490,6 +531,10 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                         )):
                             budget_stopped = True
                             error_code = "attempt_budget_exhausted"
+                            stats = RunStats(provider=settings.provider, requested_model=settings.model)
+                            stats_known = True
+                        elif approach != "heuristic" and model_error is not None:
+                            error_code = model_error
                             stats = RunStats(provider=settings.provider, requested_model=settings.model)
                             stats_known = True
                         attempted = error_code is None
@@ -541,6 +586,9 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                             # AIDEV-NOTE: stop this benchmark's shared LLM population only.
                             # Uncalled jobs retain gold denominators but have no fabricated latency/usage.
                             quota_stopped = True
+                        if (stop_on_model_error and approach != "heuristic"
+                                and error_code is not None and model_error is None):
+                            model_error = error_code
                         status = "OK" if error_code is None else (
                             "NOT_RUN" if not attempted or error_code in {"not_configured", "implementation_unavailable"} else "ERROR")
                         record = {

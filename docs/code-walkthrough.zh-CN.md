@@ -37,6 +37,7 @@
 | [provenance.py](../src/grounding_eval/provenance.py) `Manifest`、`verify_manifest`、`relative_file` | 来源与布局声明 → 验证真实 raw/license bytes、hash、Unicode 区间和 passage 映射 | 固定 raw 文本的连续切片复现 context；源被改、manifest 不匹配、路径越界或缺来源失败 |
 | [runner.py](../src/grounding_eval/runner.py) `run_benchmark` | 同一冻结选择 × 方法 × track → 有种子打乱的完整 jobs | oracle 仅传 context 和 gold claim **文本**；end-to-end 仅传 context 和原 answer，不传 gold/metadata |
 | 同文件预算与记录逻辑 | 每 job → 调用或 NOT_RUN 记录；启动前保守预留单 job 最大尝试数 | 已知统计扣实际 calls，未知统计扣预留；余额不足仍保存未调用 jobs 和 gold 分母，heuristic 继续 |
+| 同文件 `stop_on_model_error`、`validate_saved_state` | 可选的失败即停策略 → 原失败记录与后续零调用记录 | 首个模型任务失败后不再启动模型任务，heuristic 继续；重放核对触发原因、调用顺序与零计量，旧报告未设置此选项时保持原策略 |
 | [scoring.py](../src/grounding_eval/scoring.py) `score_case` | gold + 预测 → verdict-blind 一对一 strict matching、confusion、遗漏和 extra | 冻结文本/alias 只归一化空白；正确未登记改写仍可能 missing + extra；重复预测不能挑更有利 verdict 匹配 |
 | 同文件 `evidence_covered` | 已对齐 claim + 实际返回引文 → 保守 evidence proxy | 任一 evidence set 全部满足即可（组间 OR、组内 AND）；缺一个跨段链接失败；通过也不是独立语义判断 |
 | 同文件 `aggregate`；[reporting.py](../src/grounding_eval/reporting.py) `build_summary`、`resources` | 所有请求 → quality、slices、errors、latency、tokens | 主报告使用 `failure_inclusive_quality` 保留全部分母；旧 `quality=null` 仅说明未测，不能用来丢弃失败；未知费用不写零 |

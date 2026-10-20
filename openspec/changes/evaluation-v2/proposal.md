@@ -8,6 +8,7 @@ The published benchmark contains short fictional answers and cannot establish pe
 - Make a versioned real-source dataset the default, with source-family splits, explicit provenance, licenses, answer anchors and non-author annotation review.
 - Retain strict scoring, add transparent false-support and extraction diagnostics, and separately report a preselected, blinded semantic audit.
 - Bound real calls explicitly, preserve complete requested populations, and support frozen subsets and repeated paired measurements.
+- Offer an explicit fail-fast model-run policy after the pilot exposed repeated upstream failures consuming the bounded allowance; preserve default behavior and historical replay.
 - Perform a development-only controlled ablation before freezing the final comparison. Document failures, uncertainty, resource use and limitations.
 - Provide a source-level walkthrough and interview exercises; identify human review as pending until it happens.
 

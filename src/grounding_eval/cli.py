@@ -46,6 +46,8 @@ def parser() -> argparse.ArgumentParser:
     run.add_argument("--case-ids-file", type=Path, help="Frozen JSON array of unique case IDs")
     run.add_argument("--max-total-provider-attempts", type=int,
                      help="Total provider attempt allowance, including retries; required for model runs")
+    run.add_argument("--stop-on-model-error", action="store_true",
+                     help="Leave later model jobs uncalled after the first model failure")
     report = commands.add_parser("report", help="Regenerate summary from complete saved records")
     report.add_argument("run_dir", type=Path)
     for command in (validate, run, report):
@@ -76,7 +78,8 @@ def main(argv: list[str] | None = None) -> int:
                     dataset_path=args.dataset, output=args.output,
                     approaches=args.approaches.split(","), split=args.split, track=args.track,
                     seed=args.seed, bootstrap_samples=args.bootstrap_samples, settings=settings, prices=prices,
-                    case_ids=case_ids, max_total_provider_attempts=args.max_total_provider_attempts))
+                    case_ids=case_ids, max_total_provider_attempts=args.max_total_provider_attempts,
+                    stop_on_model_error=args.stop_on_model_error))
             else:
                 result = regenerate_report(args.run_dir)
             if args.command != "run":

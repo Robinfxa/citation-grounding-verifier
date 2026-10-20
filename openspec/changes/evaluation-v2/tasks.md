@@ -9,12 +9,13 @@
 - [x] 2.2 Add explicit version fields, frozen case selection and conservative total-attempt budgeting; verify complete failure denominators, unknown usage and damaged-artifact/replay rejection.
 - [x] 2.3 Add false-support/extraction diagnostics, honest slices and family-paired repeat analysis; verify independent calibration examples and dependency-preserving resampling.
 - [x] 2.4 Freeze and validate a two-stage semantic audit policy and packet/record format, including blinded stage-one alignment and separate evidence assessment.
+- [x] 2.5 Add opt-in stop-on-model-error execution; verify no later model calls, complete NOT_RUN denominators, continued heuristic work, safe diagnostics, tampered-stop rejection and byte-identical historical replay through actual CLI consumers.
 
 ## 3. Controlled development and final population
 
 - [ ] 3.1 With explicit budget and valid configuration, run the pilot and frozen development comparison; record actual resources and failure taxonomy.
 
-  Pilot allowance approved: 60 attempts. The first actual request returned `quota_exhausted`; one attempt was used, 59 remain, and no LLM prediction was obtained. The user confirmed quota remained unavailable and requested preservation. See [saved outcome](../../../reports/eval-v2/pilot-live.md); this task stays open.
+  The original quota failure used 1 attempt; the [2026-10-20 continuation](../../../reports/eval-v2/pilot-resume-20261020.md) used 54 more, yielding five model outputs but no complete comparison. The user approved a cumulative ceiling of 150 and the [staged recovery plan](../../../reports/eval-v2/pilot-recovery-budget.md). Task 2.5 passed [independent offline acceptance](../../../reports/eval-v2/model-error-stop-verification.json). Under the [frozen plan](../../../reports/eval-v2/pilot-recovery-20261020-plan.json), both fixed recovery checks succeeded, then the full matrix stopped at its first model timeout. This sequence used eight attempts; cumulative use is 63/150, with 87 unspent. The approved failure stop blocks further calls in this sequence; no complete comparison is claimed. This task stays open.
 
 - [ ] 3.2 Run at least one one-factor development ablation, preserve controls, and record adoption/rejection with measured tradeoffs.
 - [ ] 3.3 Expand only after pilot review, resolve annotation disputes, validate family/near-duplicate separation, and freeze the final dataset, selections, methods, scorer, matrix and budget before test inference.

@@ -1,0 +1,174 @@
+{
+  "annotation_version": "v2-pilot-reviewed-1",
+  "approaches": [
+    "minimal"
+  ],
+  "bootstrap_samples": 10000,
+  "case_ids": [
+    "v2-dev-p06"
+  ],
+  "created_at": "2026-10-20T09:26:49.701536+00:00",
+  "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+  "dataset_snapshot": {
+    "dependencies": [
+      {
+        "path": "dataset/licenses/cpython/LICENSE.txt",
+        "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+      },
+      {
+        "path": "dataset/licenses/postgresql/COPYRIGHT",
+        "sha256": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de"
+      },
+      {
+        "path": "dataset/licenses/rust/LICENSE-MIT",
+        "sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720"
+      },
+      {
+        "path": "dataset/sources/cpython-decimal/raw.rst",
+        "sha256": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca"
+      },
+      {
+        "path": "dataset/sources/cpython-metadata/raw.rst",
+        "sha256": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb"
+      },
+      {
+        "path": "dataset/sources/cpython-pathlib/raw.rst",
+        "sha256": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c"
+      },
+      {
+        "path": "dataset/sources/cpython-queue/raw.rst",
+        "sha256": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0"
+      },
+      {
+        "path": "dataset/sources/cpython-sqlite3/raw.rst",
+        "sha256": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520"
+      },
+      {
+        "path": "dataset/sources/cpython-tarfile/raw.rst",
+        "sha256": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3"
+      },
+      {
+        "path": "dataset/sources/postgres-backup/raw.sgml",
+        "sha256": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458"
+      },
+      {
+        "path": "dataset/sources/postgres-isolation/raw.sgml",
+        "sha256": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314"
+      },
+      {
+        "path": "dataset/sources/postgres-privileges/raw.sgml",
+        "sha256": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012"
+      },
+      {
+        "path": "dataset/sources/rust-destructors/raw.md",
+        "sha256": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+      },
+      {
+        "path": "dataset/sources/rust-testing/raw.md",
+        "sha256": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855"
+      },
+      {
+        "path": "dataset/sources/rust-visibility/raw.md",
+        "sha256": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5"
+      }
+    ],
+    "manifest_path": "dataset/pilot.manifest.json",
+    "manifest_sha256": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+    "path": "dataset/pilot.jsonl",
+    "selected_manifest_sha256": "46fefe9ba2aa3988c7902f63f7853b42a6d22e9ccfb09f69cb74089498103c47",
+    "sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df"
+  },
+  "dataset_version": "v2-pilot-reviewed-1",
+  "execution": {
+    "budget_policy": "reserve_operation_max_charge_known_calls_else_reservation",
+    "cache": "none",
+    "concurrency": 1,
+    "jobs": [
+      {
+        "approach": "minimal",
+        "case_id": "v2-dev-p06",
+        "sequence": 0,
+        "track": "end-to-end"
+      }
+    ],
+    "lifecycle": "one_verifier_per_approach; no_warmup",
+    "order": "seeded_job_shuffle"
+  },
+  "fingerprints": {
+    "code_sha256": "abd41b2f67a83134a25c4f3684c81dd0fb01e5f4921414e78dd4193dbcd7ffaa",
+    "files": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "7b8d3bda7858ae97bc3053baa9342f91313ccf6e8ff8798d49443eb5a4a570ec",
+      "grounding/contracts.py": "d19981261f14fc9bb358daa1dd4b3d471d48d5aa5bcd683e29c0ab07eee08244",
+      "grounding/diagnostics.py": "03b88fb52aafc74655c8c2162b858edfe4ca75b79669c29826c2aa71e7bc5083",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "159c7c3cb020b7ee7076c5e732b130964b524f48fe9ea7f3ec54f0aabc03df0c",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/audit.py": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+      "grounding_eval/cli.py": "4db29f98e15f131a9fddea72d3b8b1ed9b60af0dba9f3a9ade698fb2da37027d",
+      "grounding_eval/dataset.py": "1b5aae47a713ad8c71935859fe4e6b6fa6374584780515f6e8d959141aec8df2",
+      "grounding_eval/diagnostics.py": "d5f0ea8db468d70b06e5a823195c18053b12df1c07cde2db24de763a5cb65911",
+      "grounding_eval/provenance.py": "7243c31ea04e8b37e543b56a7d3e96a6701631d6b178ed0576fee47ae801cd33",
+      "grounding_eval/repeated.py": "060ff829327314745c5c4a3dbf8f88b4f301bf2a1d4f3b4fc34a7abf1633f53a",
+      "grounding_eval/reporting.py": "cf149e78431f378fa7ae6f296fb84ab00aacb5212d35cf325d08200c6c917565",
+      "grounding_eval/runner.py": "0a4dc0c4a6a320416414618b8cf3d9a513fc0ec46e7a7b058879788390601bdf",
+      "grounding_eval/scoring.py": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e",
+      "grounding_eval/uncertainty.py": "c6bfbdcb8155acf2fdfdd31ea74eaea4fa8d7a18750e26ca0c3546f49c85f674"
+    },
+    "prompt_files": {
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59"
+    }
+  },
+  "format_version": 2,
+  "initialization_errors": {},
+  "max_total_provider_attempts": 6,
+  "measurement_kind": "actual_verifier",
+  "prices": null,
+  "request_id": "44ee629948944dd78d5f64762f48486b",
+  "runtime": {
+    "packages": {
+      "fastapi": "0.143.1",
+      "httpx": "0.28.1",
+      "pydantic": "2.14.1"
+    },
+    "python": "3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]"
+  },
+  "schema_version": "2",
+  "scorer_version": "2",
+  "seed": 20261016,
+  "selected_cases_sha256": "214ceadbfa259a422c43698d2df9f28187700763f98cbc140a0b056882f159cf",
+  "selection": {
+    "kind": "case_ids",
+    "requested_case_ids": [
+      "v2-dev-p06"
+    ]
+  },
+  "settings": {
+    "diagnostics": true,
+    "endpoint_sha256": "d9617135d6fdd0a2cde722d637a1dfcc3da37515708b3ea5d66ae607c8ac785e",
+    "max_output_tokens": {
+      "application": "not_applied",
+      "effective": null,
+      "requested": 8192
+    },
+    "max_provider_attempts": 6,
+    "model": "gpt-6.1-sol",
+    "operation_timeout": 60.0,
+    "provider": "codex",
+    "provider_timeout": 30.0,
+    "retry_delay": 0.25,
+    "transport_retries": 1
+  },
+  "split": "dev",
+  "started_at": "2026-10-20T09:26:49.561366+00:00",
+  "stop_on_model_error": true,
+  "tracks": [
+    "end-to-end"
+  ]
+}

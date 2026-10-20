@@ -1,0 +1,213 @@
+{
+  "status": "PASS",
+  "recorded_at": "2026-10-20T09:26:16.758376+00:00",
+  "scope": "evaluation-v2 task 2.5; opt-in model error stop and replay compatibility",
+  "fingerprints": {
+    "code_sha256": "abd41b2f67a83134a25c4f3684c81dd0fb01e5f4921414e78dd4193dbcd7ffaa",
+    "files": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "7b8d3bda7858ae97bc3053baa9342f91313ccf6e8ff8798d49443eb5a4a570ec",
+      "grounding/contracts.py": "d19981261f14fc9bb358daa1dd4b3d471d48d5aa5bcd683e29c0ab07eee08244",
+      "grounding/diagnostics.py": "03b88fb52aafc74655c8c2162b858edfe4ca75b79669c29826c2aa71e7bc5083",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "159c7c3cb020b7ee7076c5e732b130964b524f48fe9ea7f3ec54f0aabc03df0c",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/audit.py": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+      "grounding_eval/cli.py": "4db29f98e15f131a9fddea72d3b8b1ed9b60af0dba9f3a9ade698fb2da37027d",
+      "grounding_eval/dataset.py": "1b5aae47a713ad8c71935859fe4e6b6fa6374584780515f6e8d959141aec8df2",
+      "grounding_eval/diagnostics.py": "d5f0ea8db468d70b06e5a823195c18053b12df1c07cde2db24de763a5cb65911",
+      "grounding_eval/provenance.py": "7243c31ea04e8b37e543b56a7d3e96a6701631d6b178ed0576fee47ae801cd33",
+      "grounding_eval/repeated.py": "060ff829327314745c5c4a3dbf8f88b4f301bf2a1d4f3b4fc34a7abf1633f53a",
+      "grounding_eval/reporting.py": "cf149e78431f378fa7ae6f296fb84ab00aacb5212d35cf325d08200c6c917565",
+      "grounding_eval/runner.py": "0a4dc0c4a6a320416414618b8cf3d9a513fc0ec46e7a7b058879788390601bdf",
+      "grounding_eval/scoring.py": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e",
+      "grounding_eval/uncertainty.py": "c6bfbdcb8155acf2fdfdd31ea74eaea4fa8d7a18750e26ca0c3546f49c85f674"
+    },
+    "prompt_files": {
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59"
+    }
+  },
+  "author": {
+    "receipt_sha256": "1ba9a5ad32dad1c1b18cb2121312fa58c241ddde5e56ab85cb08e782112d8896",
+    "tests_passed": 93,
+    "test_commands": [
+      "uv run --frozen pytest tests/evaluation/test_model_error_stop.py -q",
+      "uv run --frozen pytest tests/evaluation/test_runner.py tests/evaluation/test_v2_runner.py -q"
+    ],
+    "red_regressions": [
+      {
+        "exit_code": 1,
+        "reason": "old CLI rejects missing stop-on-model-error option before any call",
+        "evidence": "red-pytest.log"
+      },
+      {
+        "exit_code": 1,
+        "reason": "old replay accepts opt-in policy with later model invocations",
+        "evidence": "red-replay-pytest.log"
+      }
+    ],
+    "other_checks": [
+      "targeted ruff",
+      "git diff --check",
+      "openspec validate evaluation-v2 --strict"
+    ]
+  },
+  "non_author": {
+    "review_sha256": "0a99a094cf83835221a1b7dd750c71c2875d5006833ebd477ca9e5744a753641",
+    "status": "PASS",
+    "checks": {
+      "failed": [],
+      "passed": 78,
+      "total": 78
+    },
+    "gate": "READY_FOR_AUTHORIZED_REAL_RECOVERY_CHECKS",
+    "source_review": [
+      "cli flag defaults false and forwards the boolean",
+      "run-local model_error preserves first failure and prevents later model invocation",
+      "existing quota/budget stops retain priority; heuristic jobs continue",
+      "saved initialization errors justify initial unattempted jobs",
+      "replay derives the stop from seeded record order, not completion flags",
+      "config.get(false) preserves historical reads and only SCORING_FILES gate replay",
+      "logs allowlist safe categories and numeric totals; raw exceptions, notes, payloads and dynamic frames never emitted"
+    ],
+    "independent_probes": {
+      "first-model-error": {
+        "all_artifacts_byte_identical": true,
+        "artifact_sha256": {
+          "cases.jsonl": "432f847f2da225cafe6337dccb7ea43f94a225d8551b422079f617680de5e2ed",
+          "cases.manifest.json": "0356eaf22104cf0817ea0fffe40ad8a60a08872a4babe3118a57ac7578c50c2a",
+          "completion.json": "5ffdfc5f64f8df6c4c65e52707fb46745b22b1694fbc601ce623775e9db28c77",
+          "config.json": "128079dba4acd4b2482f80bd66d90786e1170b3829698da6539739a23fd573e7",
+          "dataset/LICENSE": "f22788b7d87a22e38088418aceaaa2104b2421d1013f0fe1449f74b0e8d7c446",
+          "dataset/development.jsonl": "0ee689b4fd98302c058d90cd12fb761fea29e5d66a5613fe07b51c0f7ce6582b",
+          "dataset/development.manifest.json": "6c6b42cdb0311aa19df2ce175ba198b434e7348e6945f61c4597a8d9637bad7b",
+          "dataset/source.txt": "a5b2ac24fc8b047a7d27737c2a20089e4ed1fe217049757b474f1543b668dbc7",
+          "records.jsonl": "d47d2db96484e3b51e9e860094abbfec61c0ebcb6fdf1fab5dfc5a1ec02c6fda",
+          "summary.json": "54dbb2933cbb760d935ebd044f8f9f50ff2221b1353fac9c25c33fe42af7d155"
+        },
+        "exit_code": 2,
+        "heuristic_ok": 2,
+        "model_attempted": 1,
+        "model_not_run": 3,
+        "provider_calls": 2,
+        "replay_exit_code": 2,
+        "terminal": [
+          {
+            "cleanup_failures": 0,
+            "completed": 6,
+            "elapsed_ms": 61.738,
+            "error_code": "request_failures",
+            "event": "end",
+            "failed_requests": 4,
+            "outcome": "failure",
+            "request_id": "1a25c390126f4e06a29cd4b3326372a9",
+            "requested": 6,
+            "source_changed": false,
+            "stage": "eval_run"
+          }
+        ]
+      },
+      "forged-post-stop": {
+        "artifacts_unchanged": true,
+        "exit_code": 2,
+        "hashes_and_accounting_repaired": true,
+        "safe_error_code": "run_artifact_invalid"
+      },
+      "historical-config": {
+        "all_bytes_unchanged": true,
+        "artifact_count": 23,
+        "exit_code": 2,
+        "missing_policy_defaults_false": true
+      },
+      "initialization-error": {
+        "all_artifacts_byte_identical": true,
+        "artifact_sha256": {
+          "cases.jsonl": "432f847f2da225cafe6337dccb7ea43f94a225d8551b422079f617680de5e2ed",
+          "cases.manifest.json": "0356eaf22104cf0817ea0fffe40ad8a60a08872a4babe3118a57ac7578c50c2a",
+          "completion.json": "2d5b7db14c8dd0fdb463fe8e8c3e851eb410c9902ff85932eb7adef4c92d3d41",
+          "config.json": "16deaead01eb908f81dc67d52212c90eb71c3e129e83d3c09c418a9858437c31",
+          "dataset/LICENSE": "f22788b7d87a22e38088418aceaaa2104b2421d1013f0fe1449f74b0e8d7c446",
+          "dataset/development.jsonl": "0ee689b4fd98302c058d90cd12fb761fea29e5d66a5613fe07b51c0f7ce6582b",
+          "dataset/development.manifest.json": "6c6b42cdb0311aa19df2ce175ba198b434e7348e6945f61c4597a8d9637bad7b",
+          "dataset/source.txt": "a5b2ac24fc8b047a7d27737c2a20089e4ed1fe217049757b474f1543b668dbc7",
+          "records.jsonl": "e0ab4b56a1bb2bc8fdea28a5114bf621f6847c512550a45f7f328cc198e7cb5c",
+          "summary.json": "142c75d4400fbcf89606d80e4273e0cabae8adbf34bfc2a4f6359f0cef69e2ed"
+        },
+        "exit_code": 2,
+        "heuristic_ok": 2,
+        "model_attempted": 0,
+        "model_not_run": 4,
+        "provider_calls": 0,
+        "replay_exit_code": 2,
+        "terminal": [
+          {
+            "cleanup_failures": 0,
+            "completed": 6,
+            "elapsed_ms": 51.271,
+            "error_code": "request_failures",
+            "event": "end",
+            "failed_requests": 4,
+            "outcome": "failure",
+            "request_id": "3889d78eac954ef695f4e90f3ed8b320",
+            "requested": 6,
+            "source_changed": false,
+            "stage": "eval_run"
+          }
+        ]
+      },
+      "new-run-recovery-success": {
+        "all_artifacts_byte_identical": true,
+        "artifact_sha256": {
+          "cases.jsonl": "432f847f2da225cafe6337dccb7ea43f94a225d8551b422079f617680de5e2ed",
+          "cases.manifest.json": "0356eaf22104cf0817ea0fffe40ad8a60a08872a4babe3118a57ac7578c50c2a",
+          "completion.json": "71012991e202f1b8283423d80bfa8e1053084a2e094f3fbe9e96057f4e8b97f7",
+          "config.json": "0fcbd97c87b5e70d9c79ea6da3f4910e6dc21c154a55ec88dee5f1f02d53621e",
+          "dataset/LICENSE": "f22788b7d87a22e38088418aceaaa2104b2421d1013f0fe1449f74b0e8d7c446",
+          "dataset/development.jsonl": "0ee689b4fd98302c058d90cd12fb761fea29e5d66a5613fe07b51c0f7ce6582b",
+          "dataset/development.manifest.json": "6c6b42cdb0311aa19df2ce175ba198b434e7348e6945f61c4597a8d9637bad7b",
+          "dataset/source.txt": "a5b2ac24fc8b047a7d27737c2a20089e4ed1fe217049757b474f1543b668dbc7",
+          "records.jsonl": "39b5aeec66e444ecd0a9b81ba757c8b973079ba7a9fa0f28dd6827a4038c923f",
+          "summary.json": "945dae6d89eb8d83d8752ab03b3294e15ea0c2cfdab5d1f3ce476e0ed61e6c84"
+        },
+        "exit_code": 0,
+        "heuristic_ok": 2,
+        "model_attempted": 4,
+        "model_not_run": 0,
+        "provider_calls": 5,
+        "replay_exit_code": 0,
+        "terminal": [
+          {
+            "cleanup_failures": 0,
+            "completed": 6,
+            "elapsed_ms": 94.042,
+            "event": "end",
+            "failed_requests": 0,
+            "outcome": "success",
+            "request_id": "242f1a9bee5748e3adf667a1e7364ff3",
+            "requested": 6,
+            "source_changed": false,
+            "stage": "eval_run"
+          }
+        ]
+      }
+    },
+    "reused_evidence": [
+      "same-code author quiet/default/other combination tests"
+    ],
+    "limits": [
+      "No real model/network/account/credential operation was performed.",
+      "Provider init/generate/aclose replaced only at external boundary; CLI, runner and service verifiers are real.",
+      "Fixture token values are synthetic and cannot be interpreted as live usage.",
+      "Local editable artifact consistency is checked, not authenticated provenance.",
+      "No provider/auth source expansion, full suite, blocked-sink, hang, or semantic-quality claim.",
+      "This gate does not itself change total authorization or bypass each recovery run preflight."
+    ]
+  },
+  "interpretation": "93 product regression tests and 78 independent audit assertions are distinct; neither measures model quality or closes the historical provider review gap."
+}

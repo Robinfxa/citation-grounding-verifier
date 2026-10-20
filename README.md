@@ -4,7 +4,7 @@ An HTTP service that extracts factual claims from an answer, checks them only ag
 
 ## Current evaluation status
 
-The second evaluation round addresses a weakness in the original submission: short fictional fixtures and high scores do not establish performance on dense real documents. A 12-case / 126-fact licensed-document development pilot and stricter measurement tooling are ready for inspection. **A 60-attempt pilot was authorized, but its first Codex request returned `quota_exhausted`; subsequent model jobs stopped.** One attempt was charged to the allowance, 59 remain, and no LLM predictions were obtained. See the [saved run and recovery boundary](reports/eval-v2/pilot-live.md), [current report](reports/eval-v2/README.md), [data card](reports/eval-v2/data-card.md) and [experiment protocol](reports/eval-v2/protocol.md). Controlled optimization and final held-out evaluation remain incomplete.
+The second evaluation round addresses a weakness in the original submission: short fictional fixtures and high scores do not establish performance on dense real documents. A 12-case / 126-fact licensed-document development pilot and stricter measurement tooling are ready for inspection. **The two recovery checks succeeded, but the full pilot stopped at its first upstream timeout; a complete method comparison is still unavailable.** Cumulative pilot use is 63/150 approved attempts, with 87 unspent. See the [staged recovery and preserved records](reports/eval-v2/pilot-recovery-20261020.md), [earlier continuation](reports/eval-v2/pilot-resume-20261020.md), [current report](reports/eval-v2/README.md), [data card](reports/eval-v2/data-card.md) and [experiment protocol](reports/eval-v2/protocol.md). Controlled optimization and final held-out evaluation remain incomplete.
 
 `datasets/v2/pilot.jsonl` is the new development-only input. `datasets/main.jsonl` still contains v1 while pilot/resource acceptance and the final split remain pending; it is not presented as a completed v2 migration. The commands below name the pilot explicitly. No v2 test results or general accuracy claim are available.
 
@@ -56,6 +56,7 @@ Model runs require an explicit total attempt allowance, including retries and re
 ```bash
 uv run grounding-eval run --dataset datasets/v2/pilot.jsonl \
   --approaches heuristic,minimal,optimized --split dev --track both \
+  --stop-on-model-error \
   --max-total-provider-attempts "${EVAL_ATTEMPTS:?Set an approved attempt allowance}" \
   --output reports/runs/pilot-models
 uv run grounding-eval report reports/runs/pilot-models
@@ -67,6 +68,8 @@ uv run grounding-eval run --dataset datasets/diagnostic.jsonl \
 ```
 
 `--split all` selects dev/test only. `--case-ids-file` accepts a frozen JSON array of unique IDs for a subset within the selected split. Before a model job, the runner reserves that operation's maximum attempts; it charges known actual calls, or conservatively keeps the reservation when statistics are missing. Insufficient budget produces explicit NOT_RUN records with all gold facts retained. Jobs and provider calls are different units.
+
+`--stop-on-model-error` stops subsequent model jobs after the first model failure while continuing heuristic work. The triggering job can use its existing bounded retries; later uncalled jobs retain their gold facts and consume no attempts. Omitting the option preserves the earlier execution policy. Carry prior spending forward when setting another run's allowance.
 
 Oracle runs supply gold claim **texts**, never verdicts or evidence. End-to-end runs receive only passages and the answer. Strict text/registered-alias matching is verdict-blind and one-to-one; omissions, extras, duplicate predictions and operational failures remain in the relevant denominators. Correct unregistered paraphrases can be undercounted. False-support rate is accompanied by non-supported judgment coverage and failure counts. S/C evidence coverage, literal quotation validity and semantic sufficiency are distinct.
 
