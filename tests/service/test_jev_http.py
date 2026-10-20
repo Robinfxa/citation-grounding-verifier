@@ -15,7 +15,7 @@ from grounding.verifiers import build_verifier
 
 ALLOWED_LOG_FIELDS = {
     "request_id", "stage", "event", "outcome", "elapsed_ms", "error_code",
-    "provider_calls", "retries", "repairs", "claims", "routing_reason",
+    "provider_calls", "retries", "repairs", "claims", "routing_reason", "protocol_reason",
 }
 
 
@@ -132,9 +132,22 @@ async def test_native_http_success_fallback_failure_malformed_and_recovery(capfd
     assert stats[2].claim_decisions[0].fallback_reason == "label_uncertain"
 
     raw = capfd.readouterr().err
-    assert "SECRET" not in raw and "confidence" not in raw and "probabilities" not in raw
+    assert "SECRET" not in raw
     logs = [json.loads(line) for line in raw.splitlines()]
     assert logs and all(set(record) <= ALLOWED_LOG_FIELDS for record in logs)
+    # Fixed guard labels are diagnostic vocabulary; decision payload fields stay forbidden.
+    assert all({"confidence", "probabilities"}.isdisjoint(record) for record in logs)
+    assert all(not isinstance(value, (dict, list)) for record in logs for value in record.values())
+    protocol_records = [record for record in logs if "protocol_reason" in record]
+    assert len(protocol_records) == 1
+    protocol_record = protocol_records[0]
+    assert type(protocol_record["elapsed_ms"]) in (int, float) and protocol_record["elapsed_ms"] >= 0
+    assert protocol_record == {
+        "request_id": responses[3].headers["x-request-id"],
+        "stage": "jev_decision", "event": "validation", "outcome": "failure",
+        "elapsed_ms": protocol_record["elapsed_ms"],
+        "error_code": "provider_protocol_error", "protocol_reason": "confidence_invalid",
+    }
     ids = {response.headers["x-request-id"] for response in responses}
     assert len(ids) == 5 and {record["request_id"] for record in logs} == ids
     for response in responses:
