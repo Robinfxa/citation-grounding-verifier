@@ -88,9 +88,21 @@ Real calls SHALL require user-supplied local credentials, separately explicit to
 - **AND** held-out labels, aliases and prompts remain untouched
 
 ### Requirement: Private diagnosable routing
-Local logs SHALL expose safe correlation, stage, routing reason, duration, attempt counts and terminal error without source text, answers, quotations, credentials or raw provider bodies. Detailed confidence artifacts SHALL be retained only in explicitly requested evaluation output. Success, a key failure and subsequent recovery SHALL have independent local consumer-level verification before runtime acceptance.
+Local logs SHALL expose safe correlation, stage, routing reason, duration, attempt counts and terminal error without source text, answers, quotations, credentials or raw provider bodies. For a probability-sum rejection after option keys and individual values are validated, the first failure event SHALL include bounded finite numeric aggregates: option count, the exact computed sum, signed deviation from one and the applied tolerance. These aggregates SHALL NOT include question IDs, option names or individual probabilities. Malformed diagnostic arguments SHALL be omitted without changing consumer behavior. Detailed confidence artifacts SHALL be retained only in explicitly requested evaluation output. Success, a key failure and subsequent recovery SHALL have independent local consumer-level verification before runtime acceptance.
 
 #### Scenario: Low-confidence fallback timeout
 - **WHEN** fallback times out after a valid uncertain Jev decision
 - **THEN** logs identify the escalation reason and failed stage while excluding payload text
 - **AND** a later independent request remains usable
+
+
+#### Scenario: Numeric probability-sum diagnosis
+- **GIVEN** two valid probability values of 0.4 and 0.5, with sum tolerance 0.001 and local diagnostics enabled
+- **WHEN** the native response fails its sum validation
+- **THEN** one correlated failure event records option count 2, sum 0.9, signed deviation approximately -0.1 and tolerance 0.001 without rounding away the deviation
+- **AND** the public error remains provider_protocol_error, known usage is preserved, and no LLM fallback is dispatched
+- **AND** a subsequent valid request succeeds, while disabled diagnostics or a broken log sink preserve the same public outcomes
+
+#### Scenario: Diagnostic fields cannot carry payloads
+- **WHEN** numeric diagnostic inputs contain strings, bools, nonfinite values, containers, out-of-range values or appear on another failure reason
+- **THEN** the numeric detail is omitted safely without emitting supplied content or replacing the consumer outcome

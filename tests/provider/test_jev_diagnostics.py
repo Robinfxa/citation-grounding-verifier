@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 
 import httpx
 import pytest
@@ -41,6 +42,16 @@ ALLOWED = {
     "repairs",
     "claims",
     "routing_reason",
+    "probability_count",
+    "probability_sum",
+    "probability_sum_delta",
+    "probability_sum_tolerance",
+}
+NUMERIC_FIELDS = {
+    "probability_count",
+    "probability_sum",
+    "probability_sum_delta",
+    "probability_sum_tolerance",
 }
 
 
@@ -125,7 +136,7 @@ class Body(httpx.AsyncByteStream):
         self.closed = True
 
 
-async def native_call(payload, calls, streams):
+async def native_call(payload, calls, streams, *, candidate=None):
     def transport(outgoing):
         calls.append(outgoing)
         stream = Body(payload)
@@ -135,7 +146,7 @@ async def native_call(payload, calls, streams):
     async with httpx.AsyncClient(transport=httpx.MockTransport(transport)) as client:
         provider = JevProvider(api_key=SECRET, client=client)
         try:
-            return await provider.decide(request())
+            return await provider.decide(request() if candidate is None else candidate)
         finally:
             await provider.aclose()
             assert not client.is_closed
@@ -170,7 +181,7 @@ async def test_native_guard_reasons_are_distinct_and_preserve_safe_error_and_usa
     assert captured.out == ""
     emitted = records(captured.err)
     assert len(emitted) == 1
-    assert emitted[0] == {
+    expected = {
         "request_id": operation.request_id,
         "stage": "jev_decision",
         "event": "validation",
@@ -179,6 +190,14 @@ async def test_native_guard_reasons_are_distinct_and_preserve_safe_error_and_usa
         "protocol_reason": reason,
         "elapsed_ms": emitted[0]["elapsed_ms"],
     }
+    if reason == "probability_sum":
+        expected.update(
+            probability_count=3,
+            probability_sum=0.5,
+            probability_sum_delta=-0.5,
+            probability_sum_tolerance=0.001,
+        )
+    assert emitted[0] == expected
 
 
 async def test_only_first_guard_is_logged_for_one_response(capfd):
@@ -189,6 +208,204 @@ async def test_only_first_guard_is_logged_for_one_response(capfd):
             await native_call(encode(data), [], [])
     emitted = records(capfd.readouterr().err)
     assert [item.get("protocol_reason") for item in emitted] == ["confidence_invalid"]
+    assert not (NUMERIC_FIELDS & emitted[0].keys())
+
+
+@pytest.mark.parametrize(
+    "left,right,fails",
+    [(0.4, 0.5, True), (0.6, 0.5, True), (0.9, 0.1009, False)],
+    ids=["below-one", "above-one", "valid-near-boundary"],
+)
+async def test_native_sum_diagnosis_reuses_exact_single_computation(
+    left, right, fails, monkeypatch, capfd
+):
+    candidate = request()
+    candidate.questions[QUESTION_ID]["criteria"].pop("U")
+    data = response_for(candidate)
+    answer = data["answers"][QUESTION_ID]
+    answer.update(
+        choice=SELECTED if left >= right else "C",
+        confidence=max(0, 2 * max(left, right) - 1),
+        probabilities={SELECTED: left, "C": right},
+    )
+    computed = []
+    original_fsum = math.fsum
+
+    def measured_sum(values):
+        value = original_fsum(values)
+        computed.append(value)
+        return value
+
+    monkeypatch.setattr("grounding.jev_provider.math.fsum", measured_sum)
+    calls, streams = [], []
+    with diagnostics.operation(enabled=True, new=True) as operation:
+        if fails:
+            with pytest.raises(VerificationError) as caught:
+                await native_call(encode(data), calls, streams, candidate=candidate)
+            assert caught.value.code == "provider_protocol_error" and not caught.value.retryable
+            assert caught.value.stats.usage == TokenUsage(317, 29)
+            assert caught.value.stats.response_models == (MODEL,)
+        else:
+            result = await native_call(encode(data), calls, streams, candidate=candidate)
+            assert result.answers[QUESTION_ID].probabilities == answer["probabilities"]
+            assert result.usage == TokenUsage(317, 29)
+    assert len(computed) == 1 and len(calls) == 1 and streams[0].closed
+    captured = capfd.readouterr()
+    assert captured.out == ""
+    emitted = records(captured.err)
+    if fails:
+        assert len(emitted) == 1 and emitted[0]["request_id"] == operation.request_id
+        assert emitted[0]["protocol_reason"] == "probability_sum"
+        assert {key: emitted[0][key] for key in NUMERIC_FIELDS} == {
+            "probability_count": 2,
+            "probability_sum": computed[0],
+            "probability_sum_delta": computed[0] - 1,
+            "probability_sum_tolerance": 0.001,
+        }
+        assert emitted[0]["probability_sum_delta"] == pytest.approx(-0.1 if left < right else 0.1)
+    else:
+        assert emitted == [] and computed[0] != 1
+
+
+class NumberLike:
+    def __float__(self):
+        raise AssertionError(SECRET)
+
+
+class IntSubclass(int):
+    pass
+
+
+class FloatSubclass(float):
+    pass
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("probability_count", None),
+        ("probability_count", True),
+        ("probability_count", 2.0),
+        ("probability_count", 0),
+        ("probability_count", 256),
+        ("probability_count", IntSubclass(2)),
+        ("probability_count", SECRET),
+        ("probability_count", [2]),
+        ("probability_count", {"secret": SECRET}),
+        ("probability_sum", None),
+        ("probability_sum", True),
+        ("probability_sum", float("nan")),
+        ("probability_sum", float("inf")),
+        ("probability_sum", float("-inf")),
+        ("probability_sum", -0.1),
+        ("probability_sum", 2.1),
+        ("probability_sum", 1),
+        ("probability_sum", FloatSubclass(0.9)),
+        ("probability_sum", IntSubclass(0)),
+        ("probability_sum", SECRET),
+        ("probability_sum", [0.4, 0.5]),
+        ("probability_sum", {"secret": SECRET}),
+        ("probability_sum", NumberLike()),
+        ("probability_sum_tolerance", None),
+        ("probability_sum_tolerance", True),
+        ("probability_sum_tolerance", float("nan")),
+        ("probability_sum_tolerance", float("inf")),
+        ("probability_sum_tolerance", -0.001),
+        ("probability_sum_tolerance", 1.1),
+        ("probability_sum_tolerance", 0.1),
+        ("probability_sum_tolerance", FloatSubclass(0.001)),
+        ("probability_sum_tolerance", SECRET),
+        ("probability_sum_tolerance", [0.001]),
+        ("probability_sum_tolerance", {"secret": SECRET}),
+    ],
+)
+def test_incomplete_incoherent_or_hostile_numeric_bundle_is_omitted(field, value, capfd):
+    detail = {"probability_count": 2, "probability_sum": 0.9, "probability_sum_tolerance": 0.001}
+    detail[field] = value
+    with diagnostics.operation(enabled=True, new=True):
+        diagnostics.emit(
+            "jev_decision",
+            "validation",
+            "failure",
+            error_code="provider_protocol_error",
+            protocol_reason="probability_sum",
+            **detail,
+        )
+    emitted = records(capfd.readouterr().err)
+    assert len(emitted) == 1 and emitted[0]["protocol_reason"] == "probability_sum"
+    assert not (NUMERIC_FIELDS & emitted[0].keys())
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("stage", "jev_judgment"),
+        ("event", "end"),
+        ("outcome", "success"),
+        ("error_code", "internal_error"),
+        ("protocol_reason", "confidence_invalid"),
+    ],
+)
+def test_numeric_bundle_is_exclusive_to_native_probability_sum_failure(field, value, capfd):
+    event = {
+        "stage": "jev_decision",
+        "event": "validation",
+        "outcome": "failure",
+        "error_code": "provider_protocol_error",
+        "protocol_reason": "probability_sum",
+    }
+    event[field] = value
+    with diagnostics.operation(enabled=True, new=True):
+        diagnostics.emit(
+            **event,
+            probability_count=2,
+            probability_sum=0.9,
+            probability_sum_tolerance=0.001,
+        )
+    emitted = records(capfd.readouterr().err)
+    assert len(emitted) == 1 and not (NUMERIC_FIELDS & emitted[0].keys())
+
+
+@pytest.mark.parametrize(
+    "count,total,tolerance",
+    [(1, 0, 0), (255, 255, 1), (2, 0.9, 0.001), (2, 1.0000000000000002, 0)],
+)
+def test_bounded_numeric_bundle_keeps_exact_signed_deviation(count, total, tolerance, capfd):
+    with diagnostics.operation(enabled=True, new=True):
+        diagnostics.emit(
+            "jev_decision",
+            "validation",
+            "failure",
+            error_code="provider_protocol_error",
+            protocol_reason="probability_sum",
+            probability_count=count,
+            probability_sum=total,
+            probability_sum_tolerance=tolerance,
+        )
+    emitted = records(capfd.readouterr().err)
+    assert len(emitted) == 1
+    assert {key: emitted[0][key] for key in NUMERIC_FIELDS} == {
+        "probability_count": count,
+        "probability_sum": total,
+        "probability_sum_delta": total - 1,
+        "probability_sum_tolerance": tolerance,
+    }
+    assert emitted[0]["probability_sum_delta"] != 0
+
+
+def test_disabled_numeric_diagnostics_remain_silent(capfd):
+    with diagnostics.operation(enabled=False, new=True):
+        diagnostics.emit(
+            "jev_decision",
+            "validation",
+            "failure",
+            error_code="provider_protocol_error",
+            protocol_reason="probability_sum",
+            probability_count=2,
+            probability_sum=0.9,
+            probability_sum_tolerance=0.001,
+        )
+    assert capfd.readouterr() == ("", "")
 
 
 @pytest.mark.parametrize(

@@ -104,14 +104,19 @@ def _parse(
         usage=_usage(data.get("usage")),
     )
 
-    def fail(reason: str) -> None:
-        # AIDEV-NOTE: fixed guard labels locate failures without retaining response values.
+    def fail(
+        reason: str, *, probability_count: int | None = None, probability_sum: float | None = None
+    ) -> None:
+        # AIDEV-NOTE: fixed reasons and bounded aggregates exclude response entries and text.
         diagnostics.emit(
             "jev_decision",
             "validation",
             "failure",
             error_code="provider_protocol_error",
             protocol_reason=reason,
+            probability_count=probability_count,
+            probability_sum=probability_sum,
+            probability_sum_tolerance=PROBABILITY_SUM_TOLERANCE,
         )
         raise VerificationError("provider_protocol_error", stats=stats)
 
@@ -138,8 +143,9 @@ def _parse(
             fail("probability_keys")
         if not all(_probability(value) for value in probabilities.values()):
             fail("probability_invalid")
-        if abs(math.fsum(probabilities.values()) - 1) > PROBABILITY_SUM_TOLERANCE:
-            fail("probability_sum")
+        total = math.fsum(probabilities.values())
+        if abs(total - 1) > PROBABILITY_SUM_TOLERANCE:
+            fail("probability_sum", probability_count=len(probabilities), probability_sum=total)
         if max(probabilities.values()) - probabilities[choice] > ARGMAX_TOLERANCE:
             fail("choice_not_argmax")
         decision = ChoiceDecision(choice, confidence, probabilities)

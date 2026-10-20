@@ -9,6 +9,7 @@ The user wants to test whether TypeSafe Jev can reduce verification latency and 
 - Judge against the complete supplied context. Select bounded verbatim evidence candidates and separately check their sufficiency. Uncertain decisions or inadequate candidates escalate once to a configured LLM over the same fixed claims and full context.
 - Treat low confidence as an operational routing condition, never as `UNSUPPORTED`. Preserve whole-request failure, exact quotations and bounded attempts/deadlines.
 - Record per-stage provider/model identity, confidence diagnostics, fallback reasons and usage. Evaluate total workflow quality, latency and cost, including extraction and fallback.
+- Make probability-sum rejection diagnosable with bounded numeric aggregates (option count, observed sum, signed deviation and tolerance) in the existing opt-in local logger; retain payload exclusion and protocol-error semantics.
 - Keep existing methods, default `minimal`, historical reports and the stopped Codex pilot unchanged. New live calls require a separately authorized budget and user-supplied local credentials.
 
 ## Capabilities
