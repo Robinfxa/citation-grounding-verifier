@@ -9,7 +9,7 @@ import shutil
 import sys
 import time
 from collections import Counter
-from dataclasses import asdict
+from dataclasses import replace
 from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
@@ -33,6 +33,18 @@ from grounding.contracts import (
 from grounding.diagnostics import operation
 from grounding_eval.dataset import Case, DatasetError, file_hash, load_dataset
 from grounding_eval.diagnostics import emit
+from grounding_eval.hybrid import (
+    ALL_APPROACHES,
+    JEV_APPROACHES,
+    Attempt,
+    Budget,
+    Trace,
+    freeze_experiment,
+    serialize_stats,
+    validate_attempt_totals,
+    validate_price_book,
+    validate_routing,
+)
 from grounding_eval.provenance import (
     SHA256,
     LayoutEntry,
@@ -126,6 +138,24 @@ class SavedRecord(StrictModel):
     score: dict[str, Any]
 
 
+class MixedStats(SavedStats):
+    attempts: list[Attempt]
+    claim_decisions: list[Trace]
+
+
+class MixedRecord(SavedRecord):
+    approach: Literal["heuristic", "minimal", "optimized", "jev_minimal", "jev_optimized"]
+    stats: MixedStats
+
+
+class MixedCleanup(CleanupFailure):
+    approach: Literal["heuristic", "minimal", "optimized", "jev_minimal", "jev_optimized"]
+
+
+class MixedCompletion(SavedCompletion):
+    cleanup_errors: list[MixedCleanup]
+
+
 def completion_status(records: list[dict], *, cleanup_errors: list,
                       source_changed: bool) -> str:
     return ("COMPLETE" if all(r["status"] == "OK" for r in records)
@@ -136,8 +166,10 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
                          completion: SavedCompletion) -> None:
     """Check persisted relationships, not just hashes or editable success flags."""
     lookup = {case.id: case for case in cases}
+    mixed = config["format_version"] == 3
+    allowed = ALL_APPROACHES if mixed else APPROACHES
     if (not config["approaches"] or len(set(config["approaches"])) != len(config["approaches"])
-            or any(a not in APPROACHES for a in config["approaches"])
+            or any(a not in allowed for a in config["approaches"])
             or not config["tracks"] or len(set(config["tracks"])) != len(config["tracks"])
             or any(t not in TRACKS for t in config["tracks"])):
         raise ValueError("invalid_saved_population")
@@ -152,11 +184,17 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
     maximum = config["settings"]["max_provider_attempts"]
     if ((budget is not None and (type(budget) is not int or budget < 0))
             or type(maximum) is not int or maximum < 1
-            or type(config["format_version"]) is not int or config["format_version"] != 2
-            or config["schema_version"] != "2" or type(config["seed"]) is not int
+            or type(config["format_version"]) is not int or config["format_version"] not in {2, 3}
+            or config["schema_version"] != str(config["format_version"]) or type(config["seed"]) is not int
             or type(config["bootstrap_samples"]) is not int or config["bootstrap_samples"] < 1
             or config["scorer_version"] != SCORER_VERSION):
         raise ValueError("invalid_saved_versions_or_budget")
+    if mixed:
+        allocations = Budget.model_validate(config["provider_budgets"])
+        validate_price_book(config["prices"])
+        if budget is None:
+            raise ValueError("missing_hybrid_budget")
+        provider_charged = Counter()
     stop_on_model_error = config.get("stop_on_model_error", False)
     initialization_errors = config.get("initialization_errors")
     if (type(stop_on_model_error) is not bool
@@ -199,6 +237,11 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
         model_job = record["approach"] != "heuristic"
         budget_required = model_job and not quota_stopped and (budget_stopped or (
             budget is not None and charged + maximum > budget))
+        if mixed:
+            needed = operation_providers(record["approach"], config["experiment"])
+            exhausted = any(provider_charged[p] + maximum > allocations.provider_attempts[p]
+                            for p in needed)
+            budget_required |= model_job and not quota_stopped and exhausted
         if stop_on_model_error and model_job:
             # AIDEV-NOTE: replay derives the stop from seeded outcomes, not an editable
             # completion flag. Only saved initialization failures justify an initial skip.
@@ -213,6 +256,15 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
         reservation = maximum if model_job and record["attempted"] else 0
         actual_charge = (record["stats"]["provider_calls"] if record["stats_known"] else reservation)
         expected_charge = actual_charge if model_job and record["attempted"] else 0
+        if mixed:
+            if record["stats_known"]:
+                validate_attempt_totals(record["stats"])
+                validate_routing(record["stats"], record["report"], config["experiment"], approach=record["approach"])
+            if exhausted and record["attempted"]:
+                raise ValueError("provider_allocation_exhausted")
+            if (not record["attempted"] and error == "attempt_budget_exhausted" and exhausted):
+                budget_required = budget_stopped = True
+            provider_charged.update(provider_charges(record, needed, maximum))
         if (record["provider_attempts_reserved"] != reservation
                 or record["provider_attempts_charged"] != expected_charge
                 or (model_job and record["stats_known"]
@@ -229,7 +281,7 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
                 raise ValueError("invalid_saved_uncalled_usage")
         if model_job and not record["attempted"] and error == "attempt_budget_exhausted":
             if not stop_on_model_error or budget_required:
-                if budget is None or charged + maximum <= budget:
+                if budget is None or (charged + maximum <= budget and not (mixed and exhausted)):
                     raise ValueError("invalid_saved_budget_stop")
                 budget_stopped = True
         charged += expected_charge
@@ -405,22 +457,54 @@ def public_settings(settings: Settings) -> dict:
 
 
 def unknown_stats(approach: str, settings: Settings) -> RunStats:
-    return RunStats(provider="heuristic" if approach == "heuristic" else settings.provider,
-                    requested_model=None if approach == "heuristic" else settings.model,
+    return RunStats(provider="heuristic" if approach == "heuristic" else (
+                        "hybrid" if approach in JEV_APPROACHES else settings.provider),
+                    requested_model=None if approach in {"heuristic", *JEV_APPROACHES} else settings.model,
                     usage=TokenUsage(complete=False))
+
+
+def operation_providers(approach: str, experiment: dict) -> set[str]:
+    if approach == "heuristic":
+        return set()
+    if approach not in JEV_APPROACHES:
+        return {experiment["llm"]["provider"]}
+    needed = {"typesafe"}
+    if approach == "jev_optimized" or experiment["jev"]["fallback"]:
+        needed.add(experiment["llm"]["provider"])
+    return needed
+
+
+def provider_charges(record: dict, needed: set[str], maximum: int) -> Counter:
+    if not record["attempted"]:
+        return Counter()
+    stats = record["stats"]
+    if not record["stats_known"]:
+        return Counter({p: maximum for p in needed})
+    if stats["attempts"]:
+        counts = Counter(a["provider"] for a in stats["attempts"])
+        if not set(counts) <= needed:
+            raise ValueError("unexpected_attempt_provider")
+        return counts
+    if stats["provider_calls"]:
+        if stats["provider"] not in needed:
+            raise ValueError("unattributed_provider_attempts")
+        return Counter({stats["provider"]: stats["provider_calls"]})
+    return Counter()
 
 
 async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[str],
                         split: str = "test", track: str = "both", seed: int = 20261015,
                         bootstrap_samples: int = 10_000, settings: Settings | None = None,
                         verifiers: dict[str, Verifier] | None = None,
-                        prices: dict | None = None, case_ids: list[str] | None = None,
+                        prices: dict | list[dict] | None = None, case_ids: list[str] | None = None,
                         max_total_provider_attempts: int | None = None,
-                        stop_on_model_error: bool = False) -> dict:
+                        stop_on_model_error: bool = False, format_version: int = 2,
+                        provider_budgets: dict | None = None) -> dict:
     """The optional verifier mapping is an explicitly labeled offline-test seam only."""
-    settings = settings or Settings.from_env()
+    settings = settings or Settings.from_env(include_jev=any(a in JEV_APPROACHES for a in approaches))
     if (not approaches or len(set(approaches)) != len(approaches)
-            or any(a not in APPROACHES for a in approaches)
+            or type(format_version) is not int or format_version not in {2, 3}
+            or any(a not in (ALL_APPROACHES if format_version == 3 else APPROACHES) for a in approaches)
             or split not in {"dev", "test", "all", "diagnostic"} or track not in {*TRACKS, "both"}
             or type(seed) is not int or type(bootstrap_samples) is not int or bootstrap_samples < 1
             or type(stop_on_model_error) is not bool
@@ -433,7 +517,16 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                 or len(set(case_ids)) != len(case_ids)))):
         raise EvaluationError("invalid_arguments")
     try:
-        prices = validate_prices(prices)
+        prices = validate_price_book(prices) if format_version == 3 else validate_prices(prices)
+        allocations = Budget.model_validate(provider_budgets) if format_version == 3 else None
+        source_fingerprints = fingerprints() if format_version == 3 else None
+        experiment = freeze_experiment(settings, source_fingerprints) if format_version == 3 else None
+        if format_version == 3:
+            needed = set().union(*(operation_providers(a, experiment) for a in approaches))
+            if max_total_provider_attempts is None or set(allocations.provider_attempts) != needed:
+                raise ValueError("missing_experiment_allocations")
+        elif provider_budgets is not None:
+            raise ValueError("unexpected_experiment_allocations")
     except ValueError:
         raise EvaluationError("invalid_arguments") from None
     all_cases = load_dataset(dataset_path)
@@ -465,12 +558,13 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
         quota_stopped = budget_stopped = False
         model_error = None
         attempts_charged = 0
+        provider_charged = Counter()
         try:
             cases_text = "".join(json.dumps(c.model_dump(), ensure_ascii=False, sort_keys=True) + "\n" for c in cases)
             (output / "cases.jsonl").write_text(cases_text, encoding="utf-8")
             snapshot = save_dataset_snapshot(dataset_path, output, all_cases, cases, manifest)
             config = {
-                "format_version": 2, "schema_version": "2", "scorer_version": SCORER_VERSION,
+                "format_version": format_version, "schema_version": str(format_version), "scorer_version": SCORER_VERSION,
                 "dataset_version": manifest.dataset_version if manifest else "legacy-v1",
                 "annotation_version": manifest.annotation_version if manifest else "legacy-v1",
                 "created_at": datetime.now(UTC).isoformat(), "started_at": started_at,
@@ -485,7 +579,8 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                 "stop_on_model_error": stop_on_model_error,
                 "dataset_sha256": snapshot.sha256, "selected_cases_sha256": file_hash(output / "cases.jsonl"),
                 "dataset_snapshot": snapshot.model_dump(),
-                "fingerprints": fingerprints(), "settings": public_settings(settings), "prices": prices,
+                "fingerprints": source_fingerprints if format_version == 3 else fingerprints(),
+                "settings": public_settings(settings), "prices": prices,
                 "measurement_kind": "offline_protocol_fixture" if verifiers is not None else "actual_verifier",
                 "execution": {"concurrency": 1, "order": "seeded_job_shuffle", "cache": "none",
                               "lifecycle": "one_verifier_per_approach; no_warmup",
@@ -493,6 +588,8 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                               "jobs": [{"sequence": i, "approach": a, "track": t, "case_id": c.id}
                                        for i, (a, t, c) in enumerate(jobs)]},
             }
+            if format_version == 3:
+                config.update(experiment=experiment, provider_budgets=allocations.model_dump())
             write_json(output / "config.json", config)
             for approach in approaches:
                 try:
@@ -517,25 +614,27 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                         started = time.perf_counter()
                         report, rejected, error_code = None, None, initialization_errors.get(approach)
                         stats, stats_known = unknown_stats(approach, settings), False
+                        needed = operation_providers(approach, experiment) if format_version == 3 else set()
                         if stop_on_model_error and error_code is not None:
-                            stats = RunStats(provider="heuristic" if approach == "heuristic" else settings.provider,
-                                             requested_model=None if approach == "heuristic" else settings.model)
+                            stats = replace(unknown_stats(approach, settings), usage=TokenUsage())
                             stats_known = True
                         if quota_stopped and approach != "heuristic":
                             error_code = "quota_exhausted"
-                            stats = RunStats(provider=settings.provider, requested_model=settings.model)
+                            stats = replace(unknown_stats(approach, settings), usage=TokenUsage())
                             stats_known = True
                         elif approach != "heuristic" and (budget_stopped or (
                             max_total_provider_attempts is not None
                             and attempts_charged + settings.max_provider_attempts > max_total_provider_attempts
-                        )):
+                        ) or (allocations is not None and any(
+                            provider_charged[p] + settings.max_provider_attempts > allocations.provider_attempts[p]
+                            for p in needed))):
                             budget_stopped = True
                             error_code = "attempt_budget_exhausted"
-                            stats = RunStats(provider=settings.provider, requested_model=settings.model)
+                            stats = replace(unknown_stats(approach, settings), usage=TokenUsage())
                             stats_known = True
                         elif approach != "heuristic" and model_error is not None:
                             error_code = model_error
-                            stats = RunStats(provider=settings.provider, requested_model=settings.model)
+                            stats = replace(unknown_stats(approach, settings), usage=TokenUsage())
                             stats_known = True
                         attempted = error_code is None
                         job_started_at = datetime.now(UTC).isoformat() if attempted else None
@@ -569,15 +668,19 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                             except Exception:
                                 error_code = "internal_error"
                         try:
-                            stats_data = asdict(stats)
-                            stats_data["response_models"] = list(stats_data["response_models"])
-                            validated_stats = SavedStats.model_validate(stats_data)
+                            stats_data = serialize_stats(stats, format_version=format_version,
+                                                         jev_settings=experiment["jev"] if experiment else None)
+                            validated_stats = (MixedStats if format_version == 3 else SavedStats).model_validate(stats_data)
+                            if format_version == 3 and stats_known:
+                                validate_attempt_totals(stats_data)
+                                validate_routing(stats_data, report, experiment, approach=approach)
+                                provider_charges({"stats": stats_data, "stats_known": True,
+                                                  "attempted": attempted}, needed, reserved)
                             if approach != "heuristic" and validated_stats.provider_calls > settings.max_provider_attempts:
                                 raise ValueError("invalid_provider_attempt_count")
                         except (TypeError, ValueError, KeyError):
                             stats, stats_known = unknown_stats(approach, settings), False
-                            stats_data = asdict(stats)
-                            stats_data["response_models"] = list(stats_data["response_models"])
+                            stats_data = serialize_stats(stats, format_version=format_version)
                             error_code, report, rejected = "provider_protocol_error", None, None
                         charged = (stats.provider_calls if stats_known else reserved) if reserved else 0
                         attempts_charged += charged
@@ -603,6 +706,8 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                             "score": score_case(case, report["claims"] if report else [],
                                                 track=selected_track, error=error_code),
                         }
+                        if format_version == 3:
+                            provider_charged.update(provider_charges(record, needed, settings.max_provider_attempts))
                         stream.write(json.dumps(record, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n")
                         stream.flush()
                         records.append(record)
@@ -653,11 +758,13 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                     emit(op, "eval_cleanup", "end", "success", approach=approach)
 
 
-def regenerate_report(output: Path) -> dict:
+def read_saved_run(output: Path) -> tuple[dict, list[dict], list[Case], SavedCompletion]:
     """Recompute from complete, internally consistent saved records; never call a verifier."""
     try:
         config = strict_json((output / "config.json").read_text())
-        completion = SavedCompletion.model_validate(strict_json((output / "completion.json").read_text()))
+        mixed = config["format_version"] == 3
+        completion = (MixedCompletion if mixed else SavedCompletion).model_validate(
+            strict_json((output / "completion.json").read_text()))
         if (file_hash(output / "config.json") != completion.config_sha256
                 or file_hash(output / "records.jsonl") != completion.records_sha256
                 or file_hash(output / "cases.jsonl") != config["selected_cases_sha256"]):
@@ -665,16 +772,30 @@ def regenerate_report(output: Path) -> dict:
         current = fingerprints()["files"]
         # AIDEV-NOTE: preserve original runner fingerprints, but bind replay to the
         # computation modules. Reader/diagnostic repairs need not repeat inference.
-        if any(current.get(name) != config["fingerprints"]["files"][name] for name in SCORING_FILES):
+        bound = (*SCORING_FILES, "grounding_eval/hybrid.py", "grounding_eval/confidence.py") if mixed else SCORING_FILES
+        if any(current.get(name) != config["fingerprints"]["files"][name] for name in bound):
             raise ValueError("scorer_version_changed")
         cases = load_dataset(output / "cases.jsonl")
         validate_dataset_snapshot(output, config, cases)
-        records = [SavedRecord.model_validate(strict_json(line)).model_dump()
+        records = [(MixedRecord if mixed else SavedRecord).model_validate(strict_json(line)).model_dump()
                    for line in (output / "records.jsonl").read_text().splitlines()]
         validate_saved_state(cases, config, records, completion)
-        summary = build_summary(config, records, cases)
-        summary["completion"] = completion.model_dump()
-        write_json(output / "summary.json", summary)
-        return summary
+        if mixed:
+            from grounding_eval.hybrid import validate_experiment
+
+            validate_experiment(config)
+        return config, records, cases, completion
     except (OSError, UnicodeError, ValueError, KeyError, TypeError):
         raise EvaluationError("run_artifact_invalid") from None
+
+
+def regenerate_report(output: Path) -> dict:
+    """Replay validated saved measurements; never call a provider or migrate records."""
+    config, records, cases, completion = read_saved_run(output)
+    summary = build_summary(config, records, cases)
+    summary["completion"] = completion.model_dump()
+    try:
+        write_json(output / "summary.json", summary)
+    except (OSError, UnicodeError):
+        raise EvaluationError("run_artifact_invalid") from None
+    return summary

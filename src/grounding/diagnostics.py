@@ -22,9 +22,16 @@ class Operation:
 
 
 _current: ContextVar[Operation | None] = ContextVar("grounding_operation", default=None)
-_STAGES = {"http", "verification", "extraction", "judgment", "minimal", "heuristic"}
-_EVENTS = {"start", "end", "provider_attempt", "validation", "repair", "retry"}
+_STAGES = {
+    "http", "verification", "extraction", "judgment", "minimal", "heuristic",
+    "jev_judgment", "jev_evidence", "fallback",
+}
+_EVENTS = {"start", "end", "provider_attempt", "validation", "repair", "retry", "routing"}
 _OUTCOMES = {"started", "success", "failure", "cancelled"}
+_ROUTING_REASONS = {
+    "label_uncertain", "unsupported_reason_uncertain", "candidate_missing",
+    "quote_uncertain", "quote_disagreement",
+}
 
 
 @contextmanager
@@ -56,6 +63,7 @@ def emit(
     retries: int | None = None,
     repairs: int | None = None,
     claims: int | None = None,
+    routing_reason: str | None = None,
 ) -> None:
     current = _current.get()
     if current is None or not current.enabled:
@@ -71,6 +79,8 @@ def emit(
     }
     if error_code in ERRORS:
         record["error_code"] = error_code
+    if routing_reason in _ROUTING_REASONS:
+        record["routing_reason"] = routing_reason
     for key, value in (
         ("provider_calls", provider_calls), ("retries", retries),
         ("repairs", repairs), ("claims", claims),

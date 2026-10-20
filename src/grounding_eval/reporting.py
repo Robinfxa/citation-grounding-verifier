@@ -149,8 +149,15 @@ def build_summary(config: dict, records: list[dict], cases: list[Case]) -> dict:
                 "slices": slices(lookup, scores),
                 "uncertainty": None if status == "NOT_RUN" else bootstrap(
                     scores, seed=config["seed"], samples=config["bootstrap_samples"]),
-                "resources": resources(selected, config.get("prices")),
+                "resources": resources(selected, config.get("prices") if config["format_version"] != 3 else None),
             }
+            if config["format_version"] == 3:
+                from grounding_eval.confidence import routing_summary
+                from grounding_eval.hybrid import mixed_resources
+
+                groups[key]["resources"] = mixed_resources(selected, config.get("prices"))
+                if approach.startswith("jev_"):
+                    groups[key]["routing"] = routing_summary(selected, lookup)
     paired = {}
     for track in config["tracks"]:
         optimized, minimal = f"optimized/{track}", f"minimal/{track}"
@@ -160,7 +167,7 @@ def build_summary(config: dict, records: list[dict], cases: list[Case]) -> dict:
             else:
                 paired[track] = bootstrap(scores_by_group[optimized], paired_scores=scores_by_group[minimal],
                                           seed=config["seed"], samples=config["bootstrap_samples"])
-    return {
+    result = {
         "format_version": config["format_version"], "measurement_kind": config["measurement_kind"],
         "schema_version": config["schema_version"], "dataset_version": config["dataset_version"],
         "annotation_version": config["annotation_version"], "scorer_version": config["scorer_version"],
@@ -169,3 +176,14 @@ def build_summary(config: dict, records: list[dict], cases: list[Case]) -> dict:
         "groups": groups, "paired_optimized_minus_minimal": paired,
         "limitations": limitations(cases),
     }
+    if config["format_version"] == 3:
+        result["paired_jev_optimized_minus_jev_minimal"] = {
+            track: bootstrap(scores_by_group[f"jev_optimized/{track}"],
+                             paired_scores=scores_by_group[f"jev_minimal/{track}"],
+                             seed=config["seed"], samples=config["bootstrap_samples"])
+            for track in config["tracks"]
+            if all(f"{a}/{track}" in groups and not groups[f"{a}/{track}"]["statuses"].get("NOT_RUN")
+                   for a in ("jev_minimal", "jev_optimized"))}
+        result["comparison_note"] = "Jev oracle variants share one algorithm; differences are sampling/operations, " \
+                                    "not extraction gains. Comparisons with old methods change workflow/model/policy."
+    return result

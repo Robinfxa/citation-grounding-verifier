@@ -29,13 +29,15 @@ The public response retains the assignment's exact four claim fields and two cit
 
 Multiple quotations can jointly support or refute one claim. A true quotation with irrelevant or incomplete evidence is still a semantic error. Unresolved equal-scope conflicting passages map to UNSUPPORTED with a conflict explanation and no citations. Explicitly different dates, versions, entities or conditions must first be distinguished. Missing evidence is never evidence of falsehood.
 
-## Three implementations and a shared seam
+## Implementations and a shared seam
 
 | Implementation | End-to-end behavior | Oracle-claim behavior |
 | --- | --- | --- |
 | `heuristic` | Conservative sentence splitting; lexical evidence selection with numeric/negation heuristics | Same evidence classifier over the supplied claims |
 | `minimal` | One short structured prompt returns the complete report; same deterministic output gate | One short prompt judges the fixed supplied claims |
 | `optimized` | Answer-only decomposition, then refined evidence judgment; finite defect repair | The same refined judge, skipping extraction |
+| `jev_minimal` (experimental) | Rule-based sentence extraction, typed Jev judgments and bounded LLM escalation | The same Jev judgment policy over fixed supplied claims |
+| `jev_optimized` (experimental) | Answer-only LLM atomic extraction, then the same Jev policy | Identical judgment algorithm to `jev_minimal`, without extraction |
 
 The heuristic is intentionally inexpensive, not a semantic guarantee. It has no access to gold labels or benchmark IDs. Minimal and optimized share the provider, model, output gate, transport retry policy and deadlines. Optimized's extra calls and repairs are counted as part of its cost and latency, not hidden as pure prompting gains.
 
@@ -44,6 +46,12 @@ The historical v1 held-out comparison did not show a clear overall optimized adv
 Both consumers use `Verifier.verify(VerifyRequest) -> VerificationRun` and `Verifier.verify_claims(context_passages, claims) -> VerificationRun`. The latter preserves claim identity/cardinality and is an internal evaluation seam, not a new HTTP endpoint. `VerificationRun` contains the report and operational statistics; only the report is returned by `/verify`.
 
 The shared module `grounding.contracts` owns request/report types, exact citation validation, safe error categories, provider request/result types, usage statistics and protocols. Service implementations live in `grounding`; the independent `grounding_eval` package imports this public seam without sharing verdict logic or exposing gold labels to the verifier.
+
+The optional Jev path adds a separate `DecisionProvider.decide(DecisionRequest) -> DecisionResult` seam; Jev does not implement free text generation. One request judges each fixed claim against the complete context and selects from bounded bundles of exact source windows. S/C decisions require a second, question-local quote-only check. U decisions require a confident missing-evidence or unresolved-conflict reason. Explanations on the Jev fast path are disclosed templates. Candidate selection never establishes context completeness.
+
+The acceptance gate uses the smaller of returned confidence and the documented value derived from its raw option distribution. Scores are not calibrated correctness probabilities. Missing or inadequate candidates, disagreement and low gate scores escalate the affected fixed claim IDs to one independent LLM batch over full context; accepted claims are retained. The LLM receives no Jev verdict to endorse. Provider errors remain errors, and failed extraction does not silently become rule extraction. All stages, retries and repairs share the operation deadline and attempt cap. [Jev documentation](jev-provider.md) records the experimental thresholds, exact model pin, bounded evidence policy and outstanding live validation.
+
+Hybrid evaluations use an explicit new record format, including stage/provider/model attempts and confidence decisions. Existing formats omit those extensions. Costs retain known subtotals and an unknown whole total if any stage is unpriced or lacks usage. Separate provider caps and the total cap reserve each operation conservatively before calls; the supported spending policy is attempt-based, not a dollar ceiling. Threshold replay changes observed gate acceptance only and cannot synthesize unobserved fallback results.
 
 ## Provider boundary
 

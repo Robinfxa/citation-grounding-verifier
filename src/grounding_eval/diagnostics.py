@@ -29,7 +29,7 @@ def emit(op: Operation, stage: str, event: str, outcome: str, *,
               "outcome": outcome, "elapsed_ms": round((time.monotonic() - op.started) * 1000, 3)}
     if error_code in SAFE_ERRORS:
         record["error_code"] = error_code
-    if approach in {"heuristic", "minimal", "optimized"}:
+    if approach in {"heuristic", "minimal", "optimized", "jev_minimal", "jev_optimized"}:
         record["approach"] = approach
     if type(source_changed) is bool:
         record["source_changed"] = source_changed

@@ -74,7 +74,12 @@ New Jev records SHALL retain per-attempt stage/provider/model, measured usage an
 - **AND** all calls and elapsed time remain included
 
 ### Requirement: Bounded experiments and confidence validation
-Real calls SHALL require user-supplied local credentials and separately explicit provider-attempt and spending limits; previous Codex pilot allowance SHALL NOT authorize this experiment. Threshold development SHALL use development data only. Reports SHALL distinguish automatic coverage/conditional error, fallback outcomes, full-population false-support and failure-inclusive quality, extraction quality, evidence sufficiency, latency and provider costs. Missing and unattempted jobs SHALL retain denominators. Mock responses SHALL never establish live calibration, speed or cost.
+Real calls SHALL require user-supplied local credentials, separately explicit total/per-provider attempt limits and a declared spending policy; previous Codex pilot allowance SHALL NOT authorize this experiment. The attempt limits SHALL be enforced before calls. A policy that only enforces attempts SHALL disclose that dollar costs are measured or unknown, not bounded by a hard monetary limit. Unsupported hard-dollar-limit requests SHALL fail before inference rather than be recorded as applied. Threshold development SHALL use development data only. Reports SHALL distinguish automatic coverage/conditional error, fallback outcomes, full-population false-support and failure-inclusive quality, extraction quality, evidence sufficiency, latency and provider costs. Missing and unattempted jobs SHALL retain denominators. Mock responses SHALL never establish live calibration, speed or cost.
+
+#### Scenario: Unsupported monetary ceiling
+- **WHEN** a run requests a hard dollar cap that the adapter/runtime cannot enforce
+- **THEN** preflight rejects the unsupported policy without any provider invocation
+- **AND** no recorded price snapshot or requested cap is presented as an effective spending guard
 
 #### Scenario: Choosing a threshold
 - **WHEN** development distributions are replayed at different thresholds

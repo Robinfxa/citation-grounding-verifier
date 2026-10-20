@@ -1,6 +1,6 @@
 ## Context
 
-See [proposal.md](proposal.md) for scope and [the research note](../../../docs/research/jev/README.md) for official sources and their limits. This is the 2026-10-20 architecture checkpoint; no Jev implementation or inference is complete.
+See [proposal.md](proposal.md) for scope and [the research note](../../../docs/research/jev/README.md) for official sources and their limits. This design was recorded on 2026-10-20; implementation and outstanding real-provider acceptance are tracked separately in [verification.md](verification.md).
 
 Current code already has answer-only anchored extraction, fixed-ID LLM judgment, exact citation validation, a shared operation budget and immutable evaluation records. Its provider seam returns generated JSON text and its statistics describe one provider/model. Jev is a typed-decision API, so these two assumptions cannot simply be reused unchanged. The user selected rule-based Minimal and LLM-extracted Optimized; both new names remain distinct from the existing LLM methods.
 
@@ -56,6 +56,8 @@ Collect unresolved claim IDs and invoke one logical LLM judgment batch with thos
 Semantic routing reasons include `label_uncertain`, `unsupported_reason_uncertain`, `candidate_missing`, `quote_uncertain`, and `quote_disagreement`. Authentication, quota, transport and malformed responses remain classified errors under the existing bounded transport policy; they do not silently switch providers. Explicit fallback-disabled runs return HTTP 502 `confidence_unresolved` when escalation is needed. Configured fallback failures preserve their own error category plus the original routing reason; the public endpoint never returns partial success.
 
 All stages and retries share the existing operation deadline and total attempt cap. Increment the shared counter before every network attempt, including fallback repair. The experiment preflight reserves the full configured per-operation cap and checks separately authorized provider allowances. Cancellation or exhausted allowance prevents the next attempt. A response with 100 questions counts as one provider attempt and 100 questions; both are recorded. Initial no-retry probes and stop-on-model-error are operational policies, not semantic confidence retries.
+
+Implementation clarification: the initial spending policy enforces total/per-provider attempt caps, not a dollar ceiling. Price snapshots support measured cost only. Without a reliable provider debit guard or verified pre-call billing bound, a request for a hard monetary cap fails preflight. Do not infer a billing bound from local byte limits or silently treat a requested ceiling as effective. The live authorization must explicitly accept this policy and any unpriced subscription stages.
 
 ### 5. Mixed-provider records without rewriting history
 

@@ -21,7 +21,10 @@ def read_repeated_run(path: Path, *, repetition: int) -> dict:
 def _comparable(config: dict) -> dict:
     fields = ("schema_version", "dataset_version", "annotation_version", "scorer_version",
               "dataset_sha256", "fingerprints", "settings", "measurement_kind", "split")
-    return {**{key: config[key] for key in fields}, "order_policy": config["execution"]["order"]}
+    control = {**{key: config[key] for key in fields}, "order_policy": config["execution"]["order"]}
+    if config.get("format_version") == 3:
+        control["experiment"] = config["experiment"]
+    return control
 
 
 def analyze_repeated(runs: list[dict], *, case_ids: list[str], approach: str, track: str,

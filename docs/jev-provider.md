@@ -1,0 +1,82 @@
+# Jev experimental verification
+
+The optional TypeSafe integration separates claim extraction from typed decisions:
+
+| Approach | Claims from an answer | Judgment and escalation |
+| --- | --- | --- |
+| `jev_minimal` | Existing deterministic sentence rules | Jev, followed by LLM review when required |
+| `jev_optimized` | Answer-only LLM atomic extraction with exact answer anchors | The same Jev and LLM-review policy |
+
+The original `minimal` remains the default. Its one-call generative LLM method is different from `jev_minimal`. A rule-produced sentence can contain multiple claims; evaluation continues to penalize merged, missing and extra claims. In the oracle track both Jev methods skip extraction and use the same algorithm.
+
+This integration is experimental. Offline acceptance can establish request construction, control flow and deterministic validators. It does not establish live Jev compatibility, calibrated confidence, grounding accuracy or a speed/cost advantage. See the [current verification status](../openspec/changes/jev-grounding/verification.md).
+
+## Local configuration
+
+Copy the relevant values into the project's ignored `.env`; never put a real key in `.env.example`, a report or a chat message.
+
+```dotenv
+GROUNDING_APPROACH=jev_minimal
+TYPESAFE_MODEL=jev-1.14.0
+TYPESAFE_API_KEY=your-local-key
+GROUNDING_JEV_FALLBACK=true
+GROUNDING_JEV_LABEL_THRESHOLD=0.8
+GROUNDING_JEV_EVIDENCE_THRESHOLD=0.8
+GROUNDING_JEV_REASON_THRESHOLD=0.8
+```
+
+Use `jev_optimized` to select LLM extraction. The existing `GROUNDING_PROVIDER`, `GROUNDING_MODEL` and provider-specific configuration select the generative LLM for extraction and review; they do not select Jev. Retain an explicitly configured, available LLM using the [existing setup](../README.md). TypeSafe's key is independent of the LLM credential or this application's Codex authorization. Moving Jev aliases are rejected so an experiment cannot change model version silently.
+
+Fallback is enabled by default for the new methods. With it enabled, configure the LLM before making requests. For an explicit Jev-only abstention experiment, `GROUNDING_JEV_FALLBACK=false` disables escalation: an uncertain result then fails with `confidence_unresolved`. Optimized still requires an LLM for extraction even when fallback is disabled. There is no automatic switch to rule extraction after an extractor failure.
+
+The service continues to use `POST /verify` with `context_passages` and `generated_answer`. Its successful response fields remain unchanged; detailed confidence and provider accounting belong to evaluation artifacts rather than the public response. Start the service using the existing README instructions only when the configured providers and intended calls are authorized.
+
+## Evidence and uncertainty
+
+Jev chooses from fixed options; it does not generate arbitrary claims, quotations or explanations. The fast path judges against the complete supplied context, selects a bounded bundle of verbatim source windows and separately checks whether those quotations establish the full claim. Quotes are reconstructed from source offsets and checked as exact Unicode substrings. Two passages can contribute joint evidence. Candidate retrieval is deliberately limited; it does not justify declaring the complete context unsupported.
+
+Low label/reason confidence, a missing candidate or insufficient/disagreeing quoted evidence routes the affected fixed claim IDs to one LLM judgment batch over the full context. That LLM receives no Jev candidate labels to endorse. It cannot silently change, drop or duplicate the claims. A failed review fails the whole request, while the evaluator retains every requested gold claim in the appropriate denominator. Transport, authentication and malformed-response errors remain operational errors and do not trigger a hidden provider switch.
+
+Jev's confidence is a statistic of its option probabilities, not a probability that the answer is correct. Each gate uses the smaller of the reported confidence and the documented formula computed from the raw distribution; parser tolerance cannot promote a below-threshold decision. The initial 0.8 thresholds are uncalibrated experimental values. Scores from separate questions are not multiplied, and LLM-reviewed results receive no invented Jev confidence. Jev-path explanations are disclosed templates, not generated reasoning traces.
+
+Source windows may miss paraphrases, long conditions or complex evidence chains. Confident semantic mistakes remain possible after both Jev checks. Threshold development must use development data; freeze policy/model identities before a later held-out comparison. The [research note](research/jev/README.md) links the official evidence and its limits.
+
+## Evaluation and replay
+
+Select the new saved-record format explicitly with `--format-version 3`. Jev runs also require `--provider-budgets` and the existing total-attempt allowance. A budget file has this shape; the zero values below intentionally authorize no inference. Replace them only with the approved allocations for a new experiment, and use `openai` instead of `codex` when that is the configured LLM provider.
+
+```json
+{
+  "provider_attempts": {"typesafe": 0, "codex": 0},
+  "dollar_policy": "measured_only_no_hard_limit"
+}
+```
+
+After providers, case selection and budget are agreed, save that allocation as `jev-budget.json`, save the selected development IDs as a JSON array, and run:
+
+```bash
+uv run grounding-eval run --dataset datasets/v2/pilot.jsonl \
+  --approaches jev_minimal,jev_optimized --format-version 3 \
+  --split dev --track both --case-ids-file jev-case-ids.json \
+  --provider-budgets jev-budget.json --stop-on-model-error \
+  --max-total-provider-attempts "${EVAL_ATTEMPTS:?Set the new approved total allowance}" \
+  --output reports/runs/jev-dev
+uv run grounding-eval report reports/runs/jev-dev
+uv run grounding-eval sweep reports/runs/jev-dev --thresholds 0.7,0.8,0.9
+```
+
+Use a fresh output directory. The CLI loads Jev settings when either Jev method is selected, even if the service's default approach is `minimal`. Each operation reserves its maximum attempts against the total and relevant provider allocations before starting; a reservation shortage leaves explicit NOT_RUN records with all gold facts retained. Allocation caps are conservative and may stop a run with some allowance unused.
+
+`report` and `sweep` read saved artifacts without inference. Sweeps are development-only, vary the three gates together, and describe only decisions actually observed. They do not invent missing quote checks, fallback outputs, counterfactual cost or a new whole-pipeline score. Existing v1/v2 artifacts retain their formats and fixed-source replay requirements.
+
+The proposed first live increment is development case `v2-dev-p01`, once per Jev method on the end-to-end track, using Codex / `gpt-6.1-sol` for extraction and fallback. Two operations with a six-attempt cap require at most 12 total attempts; each provider allocation can be 12 while the shared total remains 12. Disable transport retries and stop after the first model error; any output repair still counts. This is a proposal awaiting credentials and a new budget approval, not authorization or a completed experiment. It checks initial compatibility and both paths; broader diagnostics and calibration remain separate.
+
+## Resource and privacy boundaries
+
+All extraction, Jev, review, repair and retry attempts share one operation deadline and total attempt cap. Several Choice questions can be sent in one request; question count and provider-attempt count are separate measures. Two Jev rounds, LLM extraction and any fallback all contribute to elapsed time and cost.
+
+`GROUNDING_JEV_MAX_REQUEST_BYTES=256000` and `GROUNDING_JEV_MAX_QUESTION_BYTES=128000` limit serialized UTF-8 data locally. The latter includes shared state plus one question. These byte bounds are not estimates of provider token limits. Oversized input fails explicitly; the adapter never silently trims context or enables the long-context preview.
+
+Evaluation records identify each stage's provider, model and measured usage. A dated matching price snapshot can price known Jev usage; missing usage or an unpriced subscription stage leaves the total dollar cost unknown, with any known subtotal shown separately. The supported spending policy enforces attempt caps. It does not guarantee a monetary ceiling, and unsupported hard-dollar-limit requests are rejected before inference. A previous experiment's unused allowance is not a new experiment's authorization.
+
+Routine local diagnostics contain safe stages, outcomes, routing reasons and counts. They omit source text, answers, quotes, keys and raw upstream error messages. Detailed decision traces are saved only as requested evaluation output. Local logging does not install telemetry or establish a timeout guarantee for a permanently blocked synchronous log sink.

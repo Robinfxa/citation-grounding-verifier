@@ -14,7 +14,7 @@ Jev 接收共享 `state` 和若干独立的类型化问题，返回选择及概�
 
 ## 官方示例能借鉴什么
 
-| 证据 | 可借鉴部分 | 本项目需要保留的边界 | 当前状态 |
+| 证据 | 可借鉴部分 | 本项目需要保留的边界 | 研究检查点状态 |
 | --- | --- | --- | --- |
 | [引用核验示例](https://docs.typesafe.ai/cookbooks/citation_check) | 先检查引用存在，再判断来源关系；低 confidence 转复核 | 示例使用 1.12、八条预制引用和 0.8 阈值；会归一化空白及弯引号，只看选中 section。本项目必须逐字匹配，并处理完整 context 和跨段证据 | 仅采纳分层思想；未实现 |
 | [抽取级联示例](https://docs.typesafe.ai/cookbooks/sde_cascade) | 快模型检查后，将有问题的项升级给 LLM | 示例是 1.12 的 Noul 错误概率阈值 0.7，不是 Choice confidence，也不是本任务校准结果 | 仅采纳有限升级；未实现 |
@@ -28,7 +28,7 @@ Jev 接收共享 `state` 和若干独立的类型化问题，返回选择及概�
 - [响应实现](https://github.com/typesafe-ai/typesafe-sdk-python/blob/f36e68549ceca3191e5791e5f99ea1baa1a258b5/src/typesafe_sdk/_core/response_types.py) 使用严格模型；未知答案类型可能被忽略。因此应用还必须检查全部请求题目是否完整返回。
 - [官方测试](https://github.com/typesafe-ai/typesafe-sdk-python/blob/f36e68549ceca3191e5791e5f99ea1baa1a258b5/tests/test_responses.py) 包含缺少 Choice confidence 时拒绝响应的例子。真实 1.14 的精度、舍入和异常响应尚未验证。
 
-HTTP 参考的 system-one/errors 页面在本次读取中不可用；endpoint 和主要请求字段可由 Choice 文档交叉确认，但认证头、错误映射及限额预检仍须在实施前按固定 SDK 源码核实，并通过获授权的最小真实调用验收。不会把“SDK 能解码”写成协议和语义均可靠。
+HTTP 参考的 system-one/errors 页面在初次读取中不可用。实施前已继续核对同一固定 SDK 的 [transport](https://github.com/typesafe-ai/typesafe-sdk-python/blob/f36e68549ceca3191e5791e5f99ea1baa1a258b5/src/typesafe_sdk/_core/transport.py)、[constants](https://github.com/typesafe-ai/typesafe-sdk-python/blob/f36e68549ceca3191e5791e5f99ea1baa1a258b5/src/typesafe_sdk/_core/constants.py) 和 [errors](https://github.com/typesafe-ai/typesafe-sdk-python/blob/f36e68549ceca3191e5791e5f99ea1baa1a258b5/src/typesafe_sdk/_core/errors.py)：原生通道使用 Bearer 认证和 JSON POST `/v1/systemone`，返回 model、answers 与 usage。适配器不采用 SDK 的隐式重试或原始错误正文；未知错误只保留安全分类。本地字节上限不等于服务端 token 限额。实际 wire 兼容仍须通过获授权的最小真实调用验收，不会把“SDK 能解码”写成协议和语义均可靠。
 
 ## 对现有项目的含义
 

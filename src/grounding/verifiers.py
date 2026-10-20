@@ -1,4 +1,4 @@
-"""Three verifiers sharing strict integrity checks and one per-operation budget."""
+"""Verifier strategies sharing strict integrity checks and one per-operation budget."""
 
 from __future__ import annotations
 
@@ -19,7 +19,10 @@ from grounding.contracts import (
     MAX_PASSAGES,
     Citation,
     Claim,
+    ClaimDecisionTrace,
+    DecisionProvider,
     InvalidReport,
+    ProviderAttempt,
     ProviderResult,
     RunStats,
     StrictModel,
@@ -79,6 +82,9 @@ class _Budget:
     repairs: int = 0
     usage: TokenUsage = field(default_factory=TokenUsage)
     models: list[str] = field(default_factory=list)
+    track_attempts: bool = False
+    attempts: list[ProviderAttempt] = field(default_factory=list)
+    claim_decisions: list[ClaimDecisionTrace] = field(default_factory=list)
 
     def measured(self, usage: TokenUsage, models: tuple[str, ...] = ()) -> None:
         self.usage += usage
@@ -86,11 +92,18 @@ class _Budget:
             if model not in self.models:
                 self.models.append(model)
 
+    def rejected(self, code: str) -> None:
+        # AIDEV-NOTE: a completed transport can still yield unusable structured output.
+        # Preserve its measured usage while marking that attempt's actual failure.
+        if self.track_attempts and self.attempts:
+            self.attempts[-1] = replace(self.attempts[-1], outcome="failure", error_code=code)
+
     def stats(self) -> RunStats:
         return RunStats(
             provider=self.provider, requested_model=self.model, response_models=tuple(self.models),
             provider_calls=self.calls, retries=self.retries, repairs=self.repairs,
             usage=self.usage, latency_ms=(time.monotonic() - self.started) * 1_000,
+            attempts=tuple(self.attempts), claim_decisions=tuple(self.claim_decisions),
         )
 
     def emit(self, stage: str, event: str, outcome: str, *, code: str | None = None) -> None:
@@ -100,6 +113,75 @@ class _Budget:
         )
 
 
+async def _provider_attempt(
+    settings: Settings,
+    budget: _Budget,
+    provider: Any,
+    call: Callable[[], Awaitable[Any]],
+    expected_type: type,
+    stage: str,
+    *,
+    question_count: int = 0,
+    repair: bool = False,
+) -> Any:
+    """One shared retry policy for structured-text and typed-decision attempts."""
+    for retry in range(settings.transport_retries + 1):
+        if time.monotonic() - budget.started >= settings.operation_timeout:
+            raise VerificationError("deadline_exceeded")
+        if asyncio.current_task().cancelling():
+            raise asyncio.CancelledError
+        if budget.calls >= settings.max_provider_attempts:
+            raise VerificationError("attempt_budget_exhausted")
+        if retry:
+            budget.retries += 1
+        budget.calls += 1
+        budget.emit(stage, "provider_attempt", "started")
+        started = time.monotonic()
+
+        def measured(outcome: str, usage: TokenUsage, models=(), code=None) -> None:
+            budget.measured(usage, models)
+            if budget.track_attempts:
+                budget.attempts.append(ProviderAttempt(
+                    stage=stage, provider=provider.name, requested_model=provider.model,
+                    response_models=models, outcome=outcome, usage=usage,
+                    latency_ms=(time.monotonic() - started) * 1_000,
+                    question_count=question_count, error_code=code,
+                    retry=bool(retry), repair=repair,
+                ))
+            budget.emit(stage, "provider_attempt", outcome, code=code)
+
+        try:
+            async with asyncio.timeout(settings.provider_timeout):
+                result = await call()
+            if not isinstance(result, expected_type):
+                raise VerificationError("provider_protocol_error")
+        except asyncio.CancelledError:
+            measured("cancelled", TokenUsage(complete=False))
+            raise
+        except Exception as error:
+            if isinstance(error, TimeoutError):
+                error = VerificationError("upstream_timeout")
+                # AIDEV-NOTE: the outer timer cannot know whether output was
+                # already consumed. Do not resend an ambiguously completed call.
+                error.retryable = False
+            if not isinstance(error, VerificationError):
+                error = VerificationError("internal_error")
+            measured(
+                "failure", error.stats.usage if error.stats else TokenUsage(complete=False),
+                error.stats.response_models if error.stats else (), error.code,
+            )
+            if not error.retryable or retry == settings.transport_retries:
+                raise error from None
+            if budget.calls >= settings.max_provider_attempts:
+                raise VerificationError("attempt_budget_exhausted") from None
+            budget.emit(stage, "retry", "started", code=error.code)
+            await asyncio.sleep(settings.retry_delay)
+        else:
+            measured("success", result.usage, (result.model,) if result.model else ())
+            return result
+    raise VerificationError("attempt_budget_exhausted")
+
+
 class _BaseVerifier:
     name: str
 
@@ -107,11 +189,14 @@ class _BaseVerifier:
         self.settings = settings
         self.provider = provider
 
-    async def _run(self, action: Callable[[_Budget], Awaitable[VerificationReport]]) -> VerificationRun:
-        budget = _Budget(
+    def _budget(self) -> _Budget:
+        return _Budget(
             self.provider.name if self.provider else "heuristic",
             self.provider.model if self.provider else None,
         )
+
+    async def _run(self, action: Callable[[_Budget], Awaitable[VerificationReport]]) -> VerificationRun:
+        budget = self._budget()
         with diagnostics.operation(enabled=self.settings.diagnostics):
             budget.emit("verification", "start", "started")
             try:
@@ -157,9 +242,12 @@ class _BaseVerifier:
             if not claims:
                 return VerificationReport(claims=[])
             if not context_passages:
-                return _unsupported(claims)
+                return self._empty_context(claims, budget)
             return await self._judge(context_passages, claims, budget)
         return await self._run(action)
+
+    def _empty_context(self, claims: list[str], budget: _Budget) -> VerificationReport:
+        return _unsupported(claims)
 
     async def aclose(self) -> None:
         if self.provider:
@@ -188,51 +276,17 @@ class HeuristicVerifier(_BaseVerifier):
 
 
 class LLMVerifier(_BaseVerifier):
-    def __init__(self, name: str, settings: Settings, provider: StructuredProvider) -> None:
+    def __init__(self, name: str, settings: Settings, provider: StructuredProvider | None) -> None:
         super().__init__(settings, provider)
         self.name = name
 
-    async def _attempt(self, request: StructuredRequest, stage: str, budget: _Budget) -> ProviderResult:
-        for retry in range(self.settings.transport_retries + 1):
-            if budget.calls >= self.settings.max_provider_attempts:
-                raise VerificationError("attempt_budget_exhausted")
-            if retry:
-                budget.retries += 1
-            budget.calls += 1
-            budget.emit(stage, "provider_attempt", "started")
-            try:
-                async with asyncio.timeout(self.settings.provider_timeout):
-                    result = await self.provider.generate(request)
-                if not isinstance(result, ProviderResult):
-                    raise VerificationError("provider_protocol_error")
-            except asyncio.CancelledError:
-                budget.measured(TokenUsage(complete=False))
-                budget.emit(stage, "provider_attempt", "cancelled")
-                raise
-            except Exception as error:
-                if isinstance(error, TimeoutError):
-                    error = VerificationError("upstream_timeout")
-                    # AIDEV-NOTE: the outer timer cannot know whether output was
-                    # already consumed. Do not resend an ambiguously completed call.
-                    error.retryable = False
-                if not isinstance(error, VerificationError):
-                    error = VerificationError("internal_error")
-                if error.stats:
-                    budget.measured(error.stats.usage, error.stats.response_models)
-                else:
-                    budget.measured(TokenUsage(complete=False))
-                budget.emit(stage, "provider_attempt", "failure", code=error.code)
-                if not error.retryable or retry == self.settings.transport_retries:
-                    raise error from None
-                if budget.calls >= self.settings.max_provider_attempts:
-                    raise VerificationError("attempt_budget_exhausted") from None
-                budget.emit(stage, "retry", "started", code=error.code)
-                await asyncio.sleep(self.settings.retry_delay)
-            else:
-                budget.measured(result.usage, (result.model,) if result.model else ())
-                budget.emit(stage, "provider_attempt", "success")
-                return result
-        raise VerificationError("attempt_budget_exhausted")  # Defensive; loop always returns/raises.
+    async def _attempt(
+        self, request: StructuredRequest, stage: str, budget: _Budget, *, repair: bool = False,
+    ) -> ProviderResult:
+        return await _provider_attempt(
+            self.settings, budget, self.provider, lambda: self.provider.generate(request),
+            ProviderResult, stage, repair=repair,
+        )
 
     async def _structured(
         self,
@@ -241,23 +295,28 @@ class LLMVerifier(_BaseVerifier):
         budget: _Budget,
         validate: Callable[[Any], Any],
     ) -> Any:
-        for repair in range(2 if self.name == "optimized" else 1):
+        allow_repair = self.name != "minimal"
+        for repair in range(2 if allow_repair else 1):
             if repair:
                 if budget.calls >= self.settings.max_provider_attempts:
                     raise VerificationError("attempt_budget_exhausted")
                 budget.repairs += 1
                 budget.emit(stage, "repair", "started", code="invalid_model_output")
-            result = await self._attempt(request, stage, budget)
+            result = await self._attempt(request, stage, budget, repair=bool(repair))
             try:
                 if len(result.text.encode("utf-8")) > MAX_RESPONSE_BYTES:
                     raise VerificationError("response_too_large")
                 value = validate(json.loads(result.text, object_pairs_hook=_json_object))
+            except VerificationError as error:
+                budget.rejected(error.code)
+                raise
             except (ValueError, ValidationError, InvalidReport, RecursionError, UnicodeError) as error:
                 # AIDEV-NOTE: do not serialize Pydantic errors or prior model output.
                 # Only our fixed positional defect codes can enter a repair request.
                 issues = list(error.issues)[:8] if isinstance(error, InvalidReport) else ["schema_invalid"]
+                budget.rejected("invalid_model_output")
                 budget.emit(stage, "validation", "failure", code="invalid_model_output")
-                if self.name != "optimized" or repair == 1:
+                if not allow_repair or repair == 1:
                     raise VerificationError("invalid_model_output") from None
                 request = replace(request, payload={**request.payload, "validation_errors": issues})
             else:
@@ -276,6 +335,14 @@ class LLMVerifier(_BaseVerifier):
                 lambda data: validate_report(VerificationReport.model_validate(data), request.context_passages),
             )
 
+        claims = await self._extract(request, budget)
+        if not claims:
+            return VerificationReport(claims=[])
+        if not request.context_passages:
+            return self._empty_context(claims, budget)
+        return await self._judge(request.context_passages, claims, budget)
+
+    async def _extract(self, request: VerifyRequest, budget: _Budget) -> list[str]:
         def extracted(data: Any) -> list[str]:
             value = _Extraction.model_validate(data)
             claims = []
@@ -289,54 +356,61 @@ class LLMVerifier(_BaseVerifier):
                 claims.append(claim.claim_text)
             return claims
 
-        claims = await self._structured(
+        return await self._structured(
             StructuredRequest(
                 "atomic_claims", _Extraction.model_json_schema(), prompts.EXTRACT,
                 {"generated_answer": request.generated_answer},
             ),
             "extraction", budget, extracted,
         )
-        if not claims:
-            return VerificationReport(claims=[])
-        if not request.context_passages:
-            return _unsupported(claims)
-        return await self._judge(request.context_passages, claims, budget)
 
-    async def _judge(self, passages: list[str], claims: list[str], budget: _Budget) -> VerificationReport:
+    async def _judge(
+        self, passages: list[str], claims: list[str], budget: _Budget,
+        *, claim_ids: list[int] | None = None, stage: str = "judgment",
+    ) -> VerificationReport:
+        claim_ids = list(range(len(claims))) if claim_ids is None else claim_ids
         def judgments(data: Any) -> VerificationReport:
             value = _Judgments.model_validate(data)
             ids = [item.claim_id for item in value.judgments]
             # AIDEV-NOTE: order is irrelevant; exact ID multiplicity and original text are not.
-            if len(ids) != len(claims) or set(ids) != set(range(len(claims))):
+            if len(ids) != len(claims) or set(ids) != set(claim_ids):
                 raise InvalidReport(["judgments.claim_id_coverage"])
             by_id = {item.claim_id: item for item in value.judgments}
             report = VerificationReport(claims=[
                 Claim(claim_text=text, **by_id[index].model_dump(exclude={"claim_id"}))
-                for index, text in enumerate(claims)
+                for index, text in zip(claim_ids, claims, strict=True)
             ])
             return validate_report(report, passages)
 
         return await self._structured(
             StructuredRequest(
                 "claim_judgments", _Judgments.model_json_schema(),
-                prompts.JUDGE if self.name == "optimized" else prompts.MINIMAL_ORACLE,
+                prompts.MINIMAL_ORACLE if self.name == "minimal" else prompts.JUDGE,
                 {"context_passages": passages, "claims": [
-                    {"claim_id": index, "claim_text": text} for index, text in enumerate(claims)
+                    {"claim_id": index, "claim_text": text}
+                    for index, text in zip(claim_ids, claims, strict=True)
                 ]},
             ),
-            "judgment", budget, judgments,
+            stage, budget, judgments,
         )
 
 
 def build_verifier(
-    name: str, *, settings: Settings | None = None, provider: StructuredProvider | None = None
+    name: str, *, settings: Settings | None = None, provider: StructuredProvider | None = None,
+    decision_provider: DecisionProvider | None = None,
 ) -> _BaseVerifier:
-    if name not in {"heuristic", "minimal", "optimized"}:
+    if name not in {"heuristic", "minimal", "optimized", "jev_minimal", "jev_optimized"}:
         raise ValueError("Unknown verifier approach.")
-    settings = settings or Settings.from_env()
+    if settings is None:
+        settings = (
+            Settings.from_env(include_jev=True) if name.startswith("jev_") else Settings.from_env()
+        )
+    if name.startswith("jev_"):
+        settings.validate_jev()
     if name == "heuristic":
         return HeuristicVerifier(settings)
-    if provider is None:
+    injected_llm = provider is not None
+    if provider is None and (name != "jev_minimal" or settings.jev_fallback):
         if settings.provider == "codex":
             from grounding.codex_provider import CodexProvider
 
@@ -349,4 +423,21 @@ def build_verifier(
                 model=settings.model, api_key=settings.api_key, base_url=settings.base_url,
                 timeout_seconds=settings.provider_timeout, max_output_tokens=settings.max_output_tokens,
             )
+    if name.startswith("jev_"):
+        from grounding.jev_verifier import JevVerifier
+
+        injected_decision = decision_provider is not None
+        if decision_provider is None:
+            from grounding.jev_provider import JevProvider
+
+            decision_provider = JevProvider(
+                model=settings.jev_model, api_key=settings.jev_api_key,
+                base_url=settings.jev_base_url, timeout_seconds=settings.provider_timeout,
+                max_request_bytes=settings.jev_max_request_bytes,
+                max_question_bytes=settings.jev_max_question_bytes,
+            )
+        return JevVerifier(
+            name, settings, provider, decision_provider,
+            injected_llm=injected_llm, injected_decision=injected_decision,
+        )
     return LLMVerifier(name, settings, provider)
