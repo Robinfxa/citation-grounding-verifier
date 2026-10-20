@@ -1,0 +1,41 @@
+{
+  "outcome": "PASS_WITH_UNREPRODUCED_HISTORICAL_FAILURE",
+  "reviewer": "parent_director_non_author",
+  "scope": "Read-only checks of actual exit/replay receipts, frozen configuration, models, four attempts, usage, denominators, routing, absent numeric event, published file bindings and critical prior/source hashes. No independent replay, inference or credentials access. Author offline replay accepted from its actual receipt and unchanged files.",
+  "source_commit": "926d5a1b990bb2a4dbcd47577b27287af2d54e61",
+  "cli_exit_code": 0,
+  "author_replay_exit_code": 0,
+  "new_provider_attempts": 4,
+  "cumulative_provider_attempts": 8,
+  "cumulative_limit": 12,
+  "remaining_original_allowance": 4,
+  "numeric_diagnostic_status": "not_observed",
+  "numeric_diagnostic_values": null,
+  "gold": 8,
+  "non_supported_gold": 3,
+  "label_correct": 7,
+  "evidence_correct": 6,
+  "exact_case": false,
+  "input_tokens": 24204,
+  "output_tokens": 4896,
+  "price_total_usd": null,
+  "original_run_files_verified": 23,
+  "source_sha256": {
+    "src/grounding/jev_provider.py": "b43d13f2a0c792c6f75000bdb0b66c8c15f874086e52bb5e86c6d7f50c06a9c4",
+    "src/grounding/diagnostics.py": "b29774e3b94587604b02de928932a374de4ac634cd41e5f47e142380f2853921",
+    "tests/provider/test_jev_diagnostics.py": "4c09c837cb4a8c3b16e79fd239f01f1365baf26ac7fa773860e1e5186a3eee34"
+  },
+  "artifact_sha256": {
+    "reports/jev/numeric-diagnostic-20261020/numeric-receipt.json": "88ae853e308e006b2b103501c602411b5f267d694915640a2e337947f7d09157",
+    "reports/jev/numeric-diagnostic-20261020/README.md": "3df5d4471154b27bb76a7d7ffada0de2b28584808958ae6746f1f076b4426922",
+    "reports/jev/numeric-diagnostic-20261020/run-01/summary.json": "b4e7a35e4669111fb0cdff84a9ec9736b9ea9babc9aa4f9651201aef305428fe",
+    "reports/jev/numeric-diagnostic-20261020/run-01/config.json": "fbdbb28cdb5f64d31a549c261706845c4d2a4c89b2940242409c24d9d87c9144",
+    "reports/jev/numeric-diagnostic-20261020/run-01/records.jsonl": "20463679898f70b895f807901fa02ebef8e8b973581eaaa10ad7accf702e4e17",
+    "reports/jev/numeric-diagnostic-20261020/run-01/completion.json": "08033bad2a46ea1e2a83c470f67bbfc21fc673818f6df2a593dee40c4b2a82b8"
+  },
+  "limitations": [
+    "Historical probability-sum deviation and cause remain unknown; no tolerance or normalization change justified.",
+    "One Optimized case does not establish broad accuracy, calibration, comparative speed/cost or both-method acceptance.",
+    "Protected historical integrity beyond the listed critical bindings is supported by the author receipt, not a repeated parent-wide audit."
+  ]
+}

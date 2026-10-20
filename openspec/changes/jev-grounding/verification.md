@@ -101,3 +101,26 @@ The original provider owner first reproduced the missing fields with **47 failed
 The same non-author reviewer independently exercised actual ASGI `/verify` through the service and native adapter. Normal HTTP statuses were `200, 502, 502, 502, 200, 502, 200`; a separate default-buffered broken-fd2 process retained `200, 502, 200`. Their 63 and 29 consumer assertions passed, all 10 and five simulated streams closed, and fallback remained uncalled for protocol-invalid data. The reviewer also executed 36 applicable logger argument fixtures, including hostile types, huge integers, incomplete/incoherent bundles and incorrect event contexts. Eight prepared caller-controlled-delta fixtures were inapplicable because the final API derives delta internally. All three subprocesses exited 0; the separate evidence audit passed 157 checks, including 48 consumer log records, exact numeric values, correlation, disabled logging and unchanged source/prior-review hashes. No model, network or credential access occurred.
 
 Accepted SHA-256: adapter `b43d13f2a0c792c6f75000bdb0b66c8c15f874086e52bb5e86c6d7f50c06a9c4`; shared diagnostics `b29774e3b94587604b02de928932a374de4ac634cd41e5f47e142380f2853921`; diagnostic regression tests `4c09c837cb4a8c3b16e79fd239f01f1365baf26ac7fa773860e1e5186a3eee34`. Parent read the precise diff and actual frozen author/reviewer receipts rather than rerunning their suites. Focused lint, strict OpenSpec validation, changed Markdown local links and whitespace checks passed. This closes logging task 4.4 only; real-provider acceptance and calibration tasks 4.2–4.3 remain open. Historical failed runs still have no measured sum or deviation.
+
+## Bounded real measurement after numeric repair — 2026-10-20
+
+The repair commit `926d5a1b990bb2a4dbcd47577b27287af2d54e61` passed [CI 39430155877](https://github.com/Robinfxa/citation-grounding-verifier/actions/runs/39430155877): fresh frozen installation, lint, **861 tests in 32.24s** and dataset validation. The independent numeric-review receipt was frozen with SHA-256 `a984c51812bd42fb89c9a8b3580b8ecb5be02471e2bc429e53cf62b85882e3a7`.
+
+To address Robin's request to confirm the real deviation, the parent bounded the next observation to one `v2-dev-p01` / `jev_optimized` / end-to-end operation, with a shared six-attempt sublimit within the original eight remaining. Each provider allocation and the operation limit were six, constrained by the shared six; this was not a new allowance. The original evaluator retained the models, seed, three 0.8 thresholds, fallback, deadlines, zero transport retries and stop-on-model-error. It launched the public CLI once after CI passed, using the frozen repair commit. Minimal was not selected, rather than recorded as a failed or uncalled requested job.
+
+The [saved run](../../../reports/jev/numeric-diagnostic-20261020/run-01/summary.json) exited **0 / COMPLETE** with unchanged source and no cleanup errors:
+
+| Stage | Attempts | Reported input / output tokens | Outcome |
+| --- | --- | --- | --- |
+| Codex extraction | 1 | 462 / 301 | Success |
+| Jev judgment, 24 questions | 1 | 18,763 / 3,593 | Success |
+| Jev evidence, 7 questions | 1 | 2,043 / 367 | Success |
+| Codex fallback batch | 1 | 2,936 / 635 | Success |
+
+Returned models matched `gpt-6.1-sol` and `jev-1.14.0`. Complete reported usage was 24,204 input / 4,896 output tokens, with zero retries and repairs; whole dollar cost remains unknown. The operation took 25.94 seconds and the complete CLI 28.40 seconds. Four claims finished through Jev; four through the one LLM batch (three `quote_uncertain`, one `label_uncertain`). All eight gold facts, including three non-supported facts, remain in the denominator. Strict scoring found seven label-correct and six evidence-correct gold facts, one omission and one extra prediction; exact case success was 0/1. A valid returned report is not a claim of complete semantic correctness.
+
+This used **4/6**, bringing separate cumulative Jev use to **8/12 with four unused**. There was no second launch. No `probability_sum` rejection occurred, so its four-field aggregate is **not observed**, not zero; the earlier deviations remain unknown. No evidence supports changing the adapter's probability interpretation, tolerance or normalization. The successful valid-response fallback illustrates a different path from the earlier protocol failures.
+
+The evaluator's offline report exited 0 and left all 23 saved-run files byte-identical; all 276 protected prior artifacts/review files were unchanged. This one successful Optimized observation does not complete both-method acceptance, calibration or a controlled performance comparison; tasks 4.2–4.3 remain open. The old Codex pilot remains separately at 63/150.
+
+Parent non-author [saved-record acceptance](../../../reports/jev/numeric-diagnostic-20261020/parent-review.json) passed: actual exits, frozen configuration and model identities, four recorded attempts, usage, complete denominators, routing, absence of a numeric failure event, all 23 run-file hashes and critical prior/source bindings were consistent. The parent accepted the author's offline report from its exit and immutable-file receipts without rerunning it or making further provider calls. The review retains the unobserved historical failure and the single-case limitations.
