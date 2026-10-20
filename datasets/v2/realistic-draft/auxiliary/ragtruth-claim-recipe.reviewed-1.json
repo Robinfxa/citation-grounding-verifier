@@ -1,0 +1,4341 @@
+{
+  "format_version": 1,
+  "recipe_version": "ragtruth-claim-recipe.reviewed-1",
+  "upstream_revision": "c103204b9ce28d6bbad859304bf30de72b8ed8fe",
+  "repository_license_file": "RAGTruth-LICENSE",
+  "repository_license_sha256": "b7fd7d6bdfe0cbba63c63a310914beb4a4acb8bf08da73849219f45385f5b244",
+  "raw_acquisition_input_sha256": "8344e25226138e8ff2e5f0238154ab8f3c3779281caefd1ad247472c11c8399f",
+  "original_records": "The fixed upstream response/source records are downloaded separately. This recipe contains new AI-authored propositions, labels, annotation reasons, offsets and hashes, with no quote/anchor substring fields and no complete context or response. Short factual wording can coincide with upstream strings inside the authored annotations.",
+  "coordinate_system": "Unicode code-point offsets, end exclusive. Anchor intervals refer to the unchanged original response; evidence intervals refer to unchanged source_info. Prefix length is added only when rebuilding gold answer anchors.",
+  "input_adapter": "Question: {source_record.prompt first line}\\n\\nAnswer: {complete unchanged response_record.response}",
+  "task_instruction_is_context_evidence": false,
+  "claim_gold_method": "Complete response was independently decomposed by AI author; upstream error-span labels were not treated as full claim gold.",
+  "independent_review_status": "accepted_primary9_after_197_claim_independent_blind_lock_and_affected_review; full12_diagnostic_only",
+  "human_review": "not_performed",
+  "review_evidence": [
+    {
+      "file": "ragtruth-review-status.reviewed-1.json",
+      "sha256": "a796eb5f5c2af13ef5013983bf45341abca414b04e89b5994bd340e153d4d9e4",
+      "type": "metadata_projection_of_completed_independent_AI_review",
+      "original_review_sha256": "bffbdf1b2b74b156c3eeb3b82ee74cfc6979062aa87fd1af1bdf5357cb101f06"
+    }
+  ],
+  "original_packet_hashes": {
+    "ordered_ids": [
+      "ragtruth-response-972",
+      "ragtruth-response-2053",
+      "ragtruth-response-3343",
+      "ragtruth-response-2143",
+      "ragtruth-response-2660",
+      "ragtruth-response-3086",
+      "ragtruth-response-5375",
+      "ragtruth-response-5315",
+      "ragtruth-response-4069",
+      "ragtruth-response-4292",
+      "ragtruth-response-4100",
+      "ragtruth-response-5639"
+    ],
+    "blind_sha256": "9adb0e9623a17e4bbb328014808320b341f52e1da787ebe16db83603f77948c6",
+    "sealed_gold_sha256": "a921a2d9de161ad0860ebf159a6e96e7dc72e7858cbbc7fe54f6afa0a2a2664a",
+    "private_cases_sha256": "ba10177277f9fb104f1fa463396bdd6a1b663cb627adb9f9a19a9ca8418c5b81",
+    "reconstruction_input_sha256": "8344e25226138e8ff2e5f0238154ab8f3c3779281caefd1ad247472c11c8399f",
+    "prior_original_packet_lock_sha256": "8be18b9aa99ab405b9e134869aae2b9e8d31dd116650acc97194cbdb63492114",
+    "original_reviewer_blind_lock_sha256": "9cf5a37ebbe2f10edd8c5bb42ea022517a02151f70eb27598a02035af92d55c1",
+    "scoring_membership_sha256": "d5b8bc356c285b241faa9ce5c4dce6d078cf3fca88ce920f039ebc98adf1a3d1",
+    "independent_review_status": "pending_affected_revision_review_after_original197_blind_lock",
+    "human_review": "not_performed",
+    "full12_status": "Diagnostic annotations under documented readings, not a unique gold for all12.",
+    "primary_scoring_cases": 9,
+    "non_scoring_diagnostic_cases": 3
+  },
+  "expected_outputs": {
+    "private-cases.jsonl": "ba10177277f9fb104f1fa463396bdd6a1b663cb627adb9f9a19a9ca8418c5b81",
+    "blind.jsonl": "9adb0e9623a17e4bbb328014808320b341f52e1da787ebe16db83603f77948c6",
+    "sealed-gold.jsonl": "a921a2d9de161ad0860ebf159a6e96e7dc72e7858cbbc7fe54f6afa0a2a2664a",
+    "scoring-cases.jsonl": "7223830a37eded12168e304ff078bb168a850ea8b393088c08e77386ad615d2d",
+    "scoring-blind.jsonl": "509edcd6a83630b056a0f50b8eeab9944cdb1d85b8425ae189efeb01cbecdbfa",
+    "scoring-sealed-gold.jsonl": "04cc903b47b0a4cb483a07172cc20763fbfb24075283be9cbcdfbbd823e3fb3f",
+    "scoring-membership.json": "d5b8bc356c285b241faa9ce5c4dce6d078cf3fca88ce920f039ebc98adf1a3d1"
+  },
+  "output_privacy": "Reconstructed outputs include upstream text and must stay in the private acquisition workspace. This recipe grants no right to redistribute upstream news or responses.",
+  "records": [
+    {
+      "response_id": "972",
+      "source_id": "15755",
+      "original_response_utf8_sha256": "2124d3b8898540b8b177c051b0eb203faa69d28c3547e8431d9094a4f93cc960",
+      "original_context_utf8_sha256": "bb55736e21b4edba30ba83c75d204f0be10f83d45a362d9e86db5a1b6a1a0c1e",
+      "original_prompt_utf8_sha256": "4cf71ddc475f93152f103da4469dfb3644244e6c8a1833e43657873c192a7c8e",
+      "adapted_answer_utf8_sha256": "20530d9a0d741faf85462eb9fb8023c407e057284558af0234806644b252c31d",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-972",
+        "family_id": "ragtruth-source-15755",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "15755"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "gpt-4-0613",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-972-c01",
+          "proposition": "The article describes highlights and misfires at the 2015 MTV Movie Awards.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 84,
+            "utf8_sha256": "48284fba6f415c2558f9ecb42fae2d29b89bafcf0ef21a7781698e9a11b2b410"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 95,
+                "end": 171,
+                "utf8_sha256": "cb27f9f1f9cff50e6341906d129707a7c3d5f3ca86bdc8777636df3a11c64ab9"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c02",
+          "proposition": "Amy Schumer hosted the awards.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 109,
+            "end": 125,
+            "utf8_sha256": "61fd2783e1cddfae7cb8835dc92914b9bbddc73ec22b2941b1324d91a06befa3"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 11,
+                "end": 93,
+                "utf8_sha256": "7b2a9ea4a2549bb10e57433efc1b781100460e14f37f427e4c8f88d90294d28c"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c03",
+          "proposition": "Schumer's opening video was described as hilarious and inventive.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 114,
+            "end": 201,
+            "utf8_sha256": "3104467d5d818c4d7de6c0a768b010947c2168aa9745cdb25502ed4b81637e86"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 452,
+                "end": 550,
+                "utf8_sha256": "e7c8c4b0048cac85297ad1d80ce4f6499deb84214110cd498023f6d9103cd7f6"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c04",
+          "proposition": "Schumer's monologue was described as a hit.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 216,
+            "end": 245,
+            "utf8_sha256": "afe1887e5b5083f5b09be9144b943c38ac0cee002c6c605209ab1a85278bcf2c"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 329,
+                "end": 688,
+                "utf8_sha256": "b473720ff59ca31704c5e6aafd2366326e6ce487535bf11b4706d941b8b2de09"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c05",
+          "proposition": "The monologue included jokes about Schumer and celebrities.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 247,
+            "end": 296,
+            "utf8_sha256": "06ee6942f701834a737463e822a983bd3b49182b8f0134d1a8542e56cd65a51f"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 594,
+                "end": 688,
+                "utf8_sha256": "d5ca3fc0dd0880734d401e19ca29b18a5d17893e251a4094db30312ba3b703e8"
+              },
+              {
+                "passage_index": 0,
+                "start": 1021,
+                "end": 1092,
+                "utf8_sha256": "e509f8220fac1de28c5f3b576d0b96e7a526a1e2857218d04e50422e96bc8487"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c06",
+          "proposition": "Channing Tatum danced on stage after Jennifer Lopez asked the cast why they were not dancing.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 297,
+            "end": 411,
+            "utf8_sha256": "40b498c29bf5ee2211da81a3230916f2b9eec9be605fdd1ccc2e2cdab71b8103"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 721,
+                "end": 967,
+                "utf8_sha256": "939bd599a6c9200376882af2db55f9f6d44972f846b12faf9b265a536a4df66d"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c07",
+          "proposition": "The article included Rebel Wilson's censored joke among its notable moments.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 443,
+            "end": 471,
+            "utf8_sha256": "c00533783c63d63fa60a87492464ed39028fcea8020d203baaf1414c97716078"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1093,
+                "end": 1262,
+                "utf8_sha256": "d01830052981b290be49f5e5f18862dc742b91bc0b97ae8a1194295ae3e72207"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c08",
+          "proposition": "Fall Out Boy performed with Fetty Wap.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 473,
+            "end": 514,
+            "utf8_sha256": "939c982200945dc7409ebfe0114de4e737857bab0e2dd42c2469521a06334045"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1321,
+                "end": 1486,
+                "utf8_sha256": "0b8c72310de0c3740b7614467ef64d43022c953b18e6a4fa904ec5a98679541f"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c09",
+          "proposition": "Charli XCX, Ty Dolla $ign and Tinashe performed.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 516,
+            "end": 565,
+            "utf8_sha256": "68fbb9b2f69c86473b802261118c1a41d52ff609b3923d30f94749713ac0256f"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1558,
+                "end": 1783,
+                "utf8_sha256": "ae8fea749aa8ba04d3d7196e78d3a8c86a23b9f8825a4b24c9f1522eb66ac2f2"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c10",
+          "proposition": "Kevin Hart accepted the Comedic Genius Award.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 571,
+            "end": 623,
+            "utf8_sha256": "452600a947a72942d11535238e60494d87a45e9708b996f45d7f8acfcf7677ac"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1951,
+                "end": 2152,
+                "utf8_sha256": "00ca6e339ff1251a04fc32b0db6df8d603e670f99738905f6eb1b20df1f31cde"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c11",
+          "proposition": "Schumer's archery failure ruined a gag involving Jimmy Kimmel and was described as awkward.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 691,
+            "end": 771,
+            "utf8_sha256": "910c7dc3a52ab1a582dfad6a2d04c361807fcb5b8157993aae7b98ae90481993"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2474,
+                "end": 2685,
+                "utf8_sha256": "90ffcd57d0309dc26c56f52513a66071f8b5a93cb56e31772122e0278ad7225b"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c12",
+          "proposition": "Schumer's Gone Girl joke was described as slightly off.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 772,
+            "end": 820,
+            "utf8_sha256": "5b6bce8fd60a21a236a1dd25124328d2610ff3078ff973b1ccda5a846c88700c"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2746,
+                "end": 3024,
+                "utf8_sha256": "de55fdc2d61f19bd644e4cc2365163809e6b723ccbd6888a8c77a3fb23da9f20"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c13",
+          "proposition": "Schumer's Gone Girl joke received a lukewarm reaction from the audience.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source describes a cut to Jennifer Lopez laughing with an uncertain reaction; it does not establish the reaction of the audience as a whole. The absence of an upstream span is not complete claim gold.",
+          "original_response_interval": {
+            "start": 825,
+            "end": 872,
+            "utf8_sha256": "8411883548165a401241243f6182c0913363807c0f4c52fee960c6612501a3b7"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-972-c14",
+          "proposition": "Shailene Woodley's Trailblazer acceptance speech lost its charm halfway through and left people confused.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 873,
+            "end": 995,
+            "utf8_sha256": "43c458e4d8a0f16fafffa7a2772723e43efbb51d00fd518347a6d2ef6f9d06f7"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3210,
+                "end": 3359,
+                "utf8_sha256": "ca5e93f0fc568750868b292a7efefe5289c4e0d2cdae0578d46b740d26247aca"
+              },
+              {
+                "passage_index": 0,
+                "start": 3100,
+                "end": 3179,
+                "utf8_sha256": "e954d89e2c2b5a3587e5ee2b093b984fd46c3f9f171f7313639dac071c22682f"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c15",
+          "proposition": "Zac Efron and Dave Franco's bit was treated as stale comedy.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 1004,
+            "end": 1142,
+            "utf8_sha256": "e7f77dddfea945a1a7bae986bf89ccb7a559152cf482c5d83252ce2e14f1206c"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3500,
+                "end": 3691,
+                "utf8_sha256": "c59a39671f607d3c40db595cdcd12722a653c2017150aeb22bdf2f74c453b710"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c16",
+          "proposition": "Dwayne Johnson's shout-out about 2014 movie highlights was described as unnecessary and stale.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 1048,
+            "end": 1142,
+            "utf8_sha256": "8a8a6c1c5de439f7d4dd1ee3dc5937d3670e80b4c3324894d8e2efce11992989"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3692,
+                "end": 3966,
+                "utf8_sha256": "288d52e03c5f02f7712d3c5327350f4ebc8796dadd74763853d264bafe8bbd3d"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-972-c17",
+          "proposition": "Zac Efron and Dave Franco's comedic bit was regarded as unnecessary.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source mocks the stale punchline but does not assert this distinct necessity evaluation; the shared final predicate applies it to the bit.",
+          "original_response_interval": {
+            "start": 1004,
+            "end": 1142,
+            "utf8_sha256": "e7f77dddfea945a1a7bae986bf89ccb7a559152cf482c5d83252ce2e14f1206c"
+          },
+          "source_interval_sets": []
+        }
+      ]
+    },
+    {
+      "response_id": "2053",
+      "source_id": "11806",
+      "original_response_utf8_sha256": "d83ea8cf16b2befe968edcf4dd68beb015defafd706a7c1f36fe375060b75831",
+      "original_context_utf8_sha256": "cb450494e2351d11198c4a48675654aa21777685b1a54fb9e1e1be134e2c5e2a",
+      "original_prompt_utf8_sha256": "8997013c86aec9d3dcb83e92fff7acd37127c448eb05dedc516c232ba9c4be78",
+      "adapted_answer_utf8_sha256": "bd78e9e70dfeea035a7cc76f00735466d825f3e35bf416b1bc068c1d9b631fcc",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-2053",
+        "family_id": "ragtruth-source-11806",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "11806"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "gpt-3.5-turbo-0613",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-2053-c01",
+          "proposition": "The article concerns developments in the 2016 presidential race.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 82,
+            "utf8_sha256": "8027a125eec3ae78d7f17b3ee1d0d9904881125f427bb71c81f4e1599b5743d6"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 16,
+                "end": 69,
+                "utf8_sha256": "d44405070f68b4973e3a646f7d895d1af32bc9d7248b7d41916be82830bdeb1d"
+              },
+              {
+                "passage_index": 0,
+                "start": 121,
+                "end": 210,
+                "utf8_sha256": "ad1a0ec4f2fa0ca776a553f38241aff025cd04c7b312c00199c967957321e146"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c02",
+          "proposition": "Bernie Sanders is a senator from Vermont.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 92,
+            "end": 125,
+            "utf8_sha256": "836a73236b43ebd57c3f75770cb3997335c49c05bfc4ffa22d14a5738e4cf177"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 296,
+                "end": 365,
+                "utf8_sha256": "8b165689a2b89ad5e1f5f67c23341b0c9736c27a7a5cce23d2bf618f93ec3a8e"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c03",
+          "proposition": "Sanders was expected to announce a bid for the Democratic presidential nomination.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 126,
+            "end": 208,
+            "utf8_sha256": "f1f5e7159440d5a454cddf6652124780404c3a97089aebe42269cc5a93b65aa8"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 233,
+                "end": 502,
+                "utf8_sha256": "8d6fd41c2fdfbd246761d21baaab00a2f05cc2276f4f136347e01d1152ec63c9"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c04",
+          "proposition": "Sanders may not challenge Clinton in donors or organization.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 209,
+            "end": 287,
+            "utf8_sha256": "392fedf40d46a3a85d15251c6fba648df1614e413197bf0b2eb1742ac8001fc2"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 296,
+                "end": 742,
+                "utf8_sha256": "1ddcb2f6fde9e42fcaebb2f91c6dcbeef8bc4373606395b26e55b11f0873eb85"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c05",
+          "proposition": "Sanders was expected to bring a populist voice and influence Clinton's rhetoric.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 289,
+            "end": 380,
+            "utf8_sha256": "e7197ac0d0d0195fdd365d78d5cc3ce95e6f950fed10a9e1ec3a8be4da2732a8"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 296,
+                "end": 917,
+                "utf8_sha256": "e4ac4efb02e568afea7acf05f19bc2de93c450c897735ec0dea69aca72275b4a"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c06",
+          "proposition": "Joe Biden was vice president.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 391,
+            "end": 415,
+            "utf8_sha256": "06e954cb205e9d1e032664e7a0035db20811bdb76f5407fd11fb49b79fbc2aa8"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 952,
+                "end": 1068,
+                "utf8_sha256": "2214e1e3232bbfb970a6f6b87970256cd13d4787b6b60c6a5eae8e1f8044722f"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c07",
+          "proposition": "Biden was still considering a presidential run while taking a wait-and-see approach.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 416,
+            "end": 499,
+            "utf8_sha256": "ae21beeb1a0c9e03294e555503470567fa38aaccd9f9ebfb18036529d1a4670a"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 952,
+                "end": 1255,
+                "utf8_sha256": "fae5e091be7b2c68bf5db938592e5687880dbb4e51eb709af176cd1114984c71"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c08",
+          "proposition": "Some speculated that Biden would be the ideal candidate to enter quickly and raise money if Clinton's campaign faltered.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "Potential-entry discussion and Biden not minding the speculation do not establish the answer's ideal-candidate assessment.",
+          "original_response_interval": {
+            "start": 500,
+            "end": 628,
+            "utf8_sha256": "9e253cfcfdf87947741ad488c58ec43b7dc181baade0b35e8cab5e93d8c1aabc"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-2053-c09",
+          "proposition": "John Kasich was Ohio governor and a potential Republican presidential candidate.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 638,
+            "end": 697,
+            "utf8_sha256": "46348b723dc02a20ce6ab0cd04e145fd317b35949c098e6959c31969be15bac1"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1749,
+                "end": 1927,
+                "utf8_sha256": "df792c99c2bf66fdb99d726ea140f138e0493426669dd67aece376e08fcc53cb"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c10",
+          "proposition": "Kasich was not rushing a formal candidacy announcement.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 699,
+            "end": 756,
+            "utf8_sha256": "2e3bf8080913bb67906b923184dcde715654df658b77aeb65e78964cc00975f2"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1928,
+                "end": 1993,
+                "utf8_sha256": "c2192479e87df470cb086043a4099b8534dcbef4488ca45950a7dbd6c18e73a2"
+              },
+              {
+                "passage_index": 0,
+                "start": 1710,
+                "end": 1748,
+                "utf8_sha256": "c4532ac918ede37ecb214fcfefd0d166e50dfde26a2305f098ea4e53ccedcf0d"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c11",
+          "proposition": "Kasich believed donor relationships and momentum mattered more than a quick declaration in the super-PAC era.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 757,
+            "end": 861,
+            "utf8_sha256": "67d970a4518171ed2f4cff5a9d39b67ba1ffb7a3e503cb6b0724b772a9bea4ca"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2023,
+                "end": 2439,
+                "utf8_sha256": "963242900e6fc55b2c3ca51c5ea60f0ec43a63c586500e5c004144e9ba744f84"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c12",
+          "proposition": "The article emphasized possible policy changes depending on who won the election.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 862,
+            "end": 1000,
+            "utf8_sha256": "6bbcb1ff30e464e514913817a65a385689ed4a036e192f454aeefd5ad7184e53"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3205,
+                "end": 3513,
+                "utf8_sha256": "b928d573c2c7b8ada63bc0175991977c9103a38d1bc25d9236c4e64ada4001b3"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c13",
+          "proposition": "The Republican establishment prioritized recruitment to preserve its Senate majority.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 1010,
+            "end": 1128,
+            "utf8_sha256": "5971bc85cd6a5475f3bde7371550335aa849ac337510b823f5a3f85399f394a6"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3640,
+                "end": 3949,
+                "utf8_sha256": "1460301868c3923eda20b8598d36673ba59a9c4b154e6bba9e01f0a5a6197e78"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c14",
+          "proposition": "The establishment sought less-risky candidates to build on its 2014 successes.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 1129,
+            "end": 1265,
+            "utf8_sha256": "b5fd4ba3e1e308697ba23494c2ba47df267081a8a15f34fa979e71f8083e0d64"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3839,
+                "end": 4090,
+                "utf8_sha256": "d63c1eda35d8ba3034de345e78d41b8c739aedd4ce578a5bb61b8f663577502e"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2053-c15",
+          "proposition": "Nevada and Colorado were key states where Republicans sought Democratic-held Senate seats.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 1266,
+            "end": 1397,
+            "utf8_sha256": "24b38f52755d854b9d16101b8fad173bf654eb0f10ab37ea449857be56a9d49c"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 4091,
+                "end": 4305,
+                "utf8_sha256": "6ca9dcbe55d13094c1a2d8af4617256532b241938f353e297ceac5c765a4ab0a"
+              },
+              {
+                "passage_index": 0,
+                "start": 4423,
+                "end": 4584,
+                "utf8_sha256": "dd74635e3ffd17f907f4dd6353ccbceab78c9d8fb02258a2b2eb6d431a635288"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "response_id": "3343",
+      "source_id": "12024",
+      "original_response_utf8_sha256": "04923c1d34080c3ae674ec888293b93927af7d27762eef12171b1c66d71477f9",
+      "original_context_utf8_sha256": "c2b336212ffce486e65e09b8e4ea3c5889ae03deda83f2e81f865dc1b8048f2f",
+      "original_prompt_utf8_sha256": "700a68f9bf0eebfef652ca1454a9f21cc74a189d4afd1a47304afaf285868f7a",
+      "adapted_answer_utf8_sha256": "08be5352e614893c166b8d82faa9e527fc82d95d0ffb11c8cafbf568acfe4eaf",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-3343",
+        "family_id": "ragtruth-source-12024",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "12024"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "gpt-3.5-turbo-0613",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-3343-c01",
+          "proposition": "Obama and Cuban president Raul Castro shook hands at a dinner in Panama City on Friday.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 96,
+            "utf8_sha256": "da1f1a2813688da941bfc0f1afb71ef6ce8dfcad1f0c091d4789130349e3f7c2"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 75,
+                "end": 264,
+                "utf8_sha256": "67b6bcd621d557472251f4eea87f1d7c1e8c69f05f6db02821f17f90d87f9dcc"
+              },
+              {
+                "passage_index": 0,
+                "start": 489,
+                "end": 607,
+                "utf8_sha256": "79e077436ff3267b781132686831a0378226d3bc496ba963540b0b57f1e9356e"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c02",
+          "proposition": "The meeting was historic in US-Cuba relations.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 98,
+            "end": 145,
+            "utf8_sha256": "66a8c8ae6741afbbfc85e54b87fe0fc0fef86425e757c4b8a4931b6dc2b4668e"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 75,
+                "end": 375,
+                "utf8_sha256": "faa4181f9148ab0c2ea4a62e76b24d004884f58dbdaf21c20958a71c031a4437"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c03",
+          "proposition": "US-Cuba relations had been strained for more than 50 years.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 146,
+            "end": 217,
+            "utf8_sha256": "694122708e369cf6d6c0d2d3bf7c981a6ae687ae89e814266063765edab4879d"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 265,
+                "end": 375,
+                "utf8_sha256": "b29ed1e3eb3a2e56d534faea6242e421a2ec9d6f921b8ccb01dd030cd04d0d44"
+              },
+              {
+                "passage_index": 0,
+                "start": 608,
+                "end": 739,
+                "utf8_sha256": "a11691f26bb6ee9e18d6885ed3087e0ad42c85235c7812b102689b05430fc1a6"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c04",
+          "proposition": "The Cuban Missile Crisis and Bay of Pigs exacerbated US-Cuba tensions.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source calls these key traumatic events but explicitly connects worsened tension to the countries being90 miles apart; their causal effect is not stated. The answer's exacerbating relation is retained.",
+          "original_response_interval": {
+            "start": 219,
+            "end": 306,
+            "utf8_sha256": "36d407026d78e8668641e5ba8a5c798d2875d9a6f10657ecf174e74c2a38b9a8"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-3343-c05",
+          "proposition": "Obama spoke to Castro by phone before their face-to-face meeting.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 378,
+            "end": 459,
+            "utf8_sha256": "a751e0f57417e0129518fff30ff5d5a34451830c833a5e06ed71ff2bb12a4008"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 75,
+                "end": 264,
+                "utf8_sha256": "67b6bcd621d557472251f4eea87f1d7c1e8c69f05f6db02821f17f90d87f9dcc"
+              },
+              {
+                "passage_index": 0,
+                "start": 908,
+                "end": 1186,
+                "utf8_sha256": "eb6871bd2f8a09d2397c3f240e5d840a1b5b82df5739468b6dfb9e7ab1e3a1cb"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c06",
+          "proposition": "The meeting was part of the Summit of the Americas.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 460,
+            "end": 515,
+            "utf8_sha256": "5b7ca49423533fed66bbaa776af5ac56e9f2f05d0ddb89a9ba6da2ed282cd6d3"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 75,
+                "end": 264,
+                "utf8_sha256": "67b6bcd621d557472251f4eea87f1d7c1e8c69f05f6db02821f17f90d87f9dcc"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c07",
+          "proposition": "Obama arrived for the summit on Thursday.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 517,
+            "end": 552,
+            "utf8_sha256": "d900f8c92c6269b34e5a247e9b72d5dc9d192bbdcc95390cc90b0d021738c3a2"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 75,
+                "end": 264,
+                "utf8_sha256": "67b6bcd621d557472251f4eea87f1d7c1e8c69f05f6db02821f17f90d87f9dcc"
+              },
+              {
+                "passage_index": 0,
+                "start": 1187,
+                "end": 1478,
+                "utf8_sha256": "33c92504c9ac0a6748505f38084879071c49ac1a6b232c9606cfbcce20ed2f49"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c08",
+          "proposition": "Obama was expected to announce removal of Cuba from the US state-sponsors-of-terrorism list during the visit.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 553,
+            "end": 673,
+            "utf8_sha256": "96743600d7b98575ffdee5e0e6bb417419f32cb18455ebfdb9f9b3e1c6bbbe0a"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2501,
+                "end": 2697,
+                "utf8_sha256": "de46f55c33c1ae575f935392138c6eb5e2ef032d506dcadaa153ac29a514c0d7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c09",
+          "proposition": "Removal from that list was described as a significant step toward diplomatic ties.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 675,
+            "end": 727,
+            "utf8_sha256": "8bb04711ef601c827aed4b3fab6729645ee83449f5f97d20959790581c39a701"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2501,
+                "end": 2697,
+                "utf8_sha256": "de46f55c33c1ae575f935392138c6eb5e2ef032d506dcadaa153ac29a514c0d7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c10",
+          "proposition": "The White House said isolation of Cuba had failed and favored engagement.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 728,
+            "end": 855,
+            "utf8_sha256": "3698ac655ba57f9b167185c5e6d0ed3eaa4debef0bbab9288d20fb094410c720"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1479,
+                "end": 1679,
+                "utf8_sha256": "9d987587221880de88e8b2be6ea37e8b43b61757bcafd273f56b66a51289c20e"
+              },
+              {
+                "passage_index": 0,
+                "start": 1990,
+                "end": 2264,
+                "utf8_sha256": "8a85d41420929544ed252cf10f7e7b3c7134fd4170bc6964419327c592ca2c69"
+              },
+              {
+                "passage_index": 0,
+                "start": 2265,
+                "end": 2500,
+                "utf8_sha256": "231d1fe27b15f93831ce455e61751009631b2c9a166688fc864d78317e4d0dbc"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c11",
+          "proposition": "Some in Cuba were dissatisfied with the pace of the diplomatic thaw.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 856,
+            "end": 936,
+            "utf8_sha256": "bc6b4829aed8c0173b69ed44a8b1a068d172239c8515906b19d8983f009a1d87"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3527,
+                "end": 3615,
+                "utf8_sha256": "3dc105135192c7c7ded3ee805482287b1657a71340e7e1c4c49fa93b479bf24e"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c12",
+          "proposition": "US officials were pleased with progress toward restoring diplomatic ties.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 938,
+            "end": 1015,
+            "utf8_sha256": "b9283cb2d06747f28870793845388728924ab791c69bbfad967fae2536988730"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3527,
+                "end": 3801,
+                "utf8_sha256": "bc0f5bccbf807843eb6675b8f755d974ac820f5eedfe567a829f00cf7a8e0af4"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c13",
+          "proposition": "Some US lawmakers opposed engagement with what they considered a corrupt government.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 1097,
+            "end": 1177,
+            "utf8_sha256": "1bcd1fde94a3fa9e920e445becedca365b1ee6f2afedfc79e48271fee017b516"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3905,
+                "end": 4083,
+                "utf8_sha256": "b573ee761635931aa4b26088fe50f7e032716acf53af95b797f9f786ef8f1cba"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c14",
+          "proposition": "Pro- and anti-Castro activists clashed in Panama City, with Cuban-government supporters violently accosting dissidents.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 1178,
+            "end": 1304,
+            "utf8_sha256": "11772d244c20bb26092168b21636ae5c10b71691c3c79ea4af3fc3ebe48e1ad9"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 4084,
+                "end": 4320,
+                "utf8_sha256": "a279f0df64c39720860c996240379e863498a888499b5ad710f139ed19864f5a"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3343-c15",
+          "proposition": "The White House expressed concern about that violence and said it would keep advocating human-rights reforms in Cuba.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 1305,
+            "end": 1424,
+            "utf8_sha256": "332a6fce8447ae33bf7bcdf111df0aa71d4ff59c3fc18b2da4ae3876fcd39004"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 4084,
+                "end": 4478,
+                "utf8_sha256": "54089c1804442e811166a7a99ae8f273215d00ffef659446c5242e429839a5b6"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "response_id": "2143",
+      "source_id": "11822",
+      "original_response_utf8_sha256": "64d1fb2d67d42827b93b432b3bc2203ffb4e3cd1852caa560874c959e1bca92e",
+      "original_context_utf8_sha256": "d700f8ed8d79fc2ba0efd28a2efd38aaeda8b995e84bbcd8ca4c5f6dd87a5aab",
+      "original_prompt_utf8_sha256": "816c76c39dc9cfe47579b0a727fb374c294eaed0a0c4d1501d03ae0bacec9bb4",
+      "adapted_answer_utf8_sha256": "d73745aba76cfceb440e0fcecb0a5d04b32c2ee1fe203b039df2cd6cc494af4c",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-2143",
+        "family_id": "ragtruth-source-11822",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "11822"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "gpt-3.5-turbo-0613",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-2143-c01",
+          "proposition": "Gabriel Salvador was an actor and a waiter at Craig's in West Hollywood.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 66,
+            "utf8_sha256": "953a84e152cc8020a5aed61e2026b879338707527a5573031ba38c73d479af5f"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 266,
+                "end": 498,
+                "utf8_sha256": "8280723dccf2d5a0b8cbb1b8d52f8b89f2bb344fc52b97bdca2b82a6b21839b9"
+              },
+              {
+                "passage_index": 0,
+                "start": 728,
+                "end": 873,
+                "utf8_sha256": "dd5fe5b7f4ec651b94a679bda6b1d1433daa9e7416c49f1e790aaa970bc1d7ed"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c02",
+          "proposition": "Gabriel Salvador played a crucial role in bringing about the Mayweather-Pacquiao fight.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "Helping arrange the initial meeting supports assistance, not the stronger crucial-role assessment; later ending his role is not by itself a direct contradiction.",
+          "original_response_interval": {
+            "start": 68,
+            "end": 191,
+            "utf8_sha256": "51662ca21e2a252a1c096dd6a96408f7771b795ccb219112076edf47785f94b2"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-2143-c03",
+          "proposition": "Salvador was a boxing fan.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 192,
+            "end": 222,
+            "utf8_sha256": "dc3729e6d6d4613e1cc02268fb1e0d9aec5b6d58c314f3560a0490d9a0fdc270"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 617,
+                "end": 798,
+                "utf8_sha256": "ba02b19a4e63acb8549ba6bb159cb1c2a491f27d514596b94825989539500a57"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c04",
+          "proposition": "Les Moonves was CEO of CBS Corp.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 235,
+            "end": 268,
+            "utf8_sha256": "15bff6422898125a1a4237454a1653bd38a3b2b3d80b83f48ee1633fe47ae259"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 96,
+                "end": 202,
+                "utf8_sha256": "e3e5ef51a187f70ec7c74c419551721bd2484a8299d3bcdec2e47673150cf938"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c05",
+          "proposition": "Salvador approached Moonves offering to help arrange the fight.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 224,
+            "end": 312,
+            "utf8_sha256": "1120e5371347c5d9450c9c9101bbc87d0637eb4cbd36f35bd04ea28f7a056173"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 96,
+                "end": 265,
+                "utf8_sha256": "1374f5bc59a6303e121a3f698b3691e42a232c70859fafe48d54def5ccdeaf21"
+              },
+              {
+                "passage_index": 0,
+                "start": 617,
+                "end": 873,
+                "utf8_sha256": "f7dcd7692fab940b9bc92a5bb7bfdfa90121c9c454c5ebc78cb7b2560f31c887"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c06",
+          "proposition": "Salvador could contact Freddie Roach because his son trained at Roach's gym.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 313,
+            "end": 419,
+            "utf8_sha256": "ab44f4df91fa5aa388cba09cc44e59e3c82c28167741a5d286fc4c3f624e6c42"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 910,
+                "end": 1062,
+                "utf8_sha256": "739579c91e7273d9d55cf4a8376fdf69dddbd16e471ce0a74849409054856e71"
+              },
+              {
+                "passage_index": 0,
+                "start": 1190,
+                "end": 1242,
+                "utf8_sha256": "7f06eadce0df5d0ef9c9b2ebb8df445f872311df84bc2901cdac0a174c7e4cd0"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c07",
+          "proposition": "Moonves met with Salvador and Roach.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 420,
+            "end": 466,
+            "utf8_sha256": "f32a560c9a9e14455f8404c7356aa683383d5065104b2690599b78d4ba7f996a"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1486,
+                "end": 1583,
+                "utf8_sha256": "4fbeaf096b141ae94306e7b64efc735492e0c100db4ecc625ebad38e7dd0d0b7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c08",
+          "proposition": "A later series of meetings resolved the stalemate preventing the fight.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 472,
+            "end": 548,
+            "utf8_sha256": "21feab9e198322f09ad91719f392e57cb601c71c815e1f24ca35bf40ea4eac86"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1790,
+                "end": 1956,
+                "utf8_sha256": "aa762c5d598ffb13872993c2f6e103ff7c25f2b6814310fcc6f46446146d0880"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c09",
+          "proposition": "The fight had already taken place at the time described by the source.",
+          "acceptable_aliases": [],
+          "label": "CONTRADICTED",
+          "annotation_reason": "The source presents the fight as forthcoming and says Salvador will be ringside, while the response uses a completed past event.",
+          "original_response_interval": {
+            "start": 549,
+            "end": 576,
+            "utf8_sha256": "bbc65b7928711252c5acba9c319fa8c101c29b24500ef8331cb309d38c6a8d43"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1957,
+                "end": 2073,
+                "utf8_sha256": "7ef920ac23314ca5e7ccfbfee014760f4a014d5a59f4992176272a115978edc5"
+              },
+              {
+                "passage_index": 0,
+                "start": 2734,
+                "end": 2778,
+                "utf8_sha256": "df76c275a1880866bffd9f0e9eb97b2c1029d6ad7416dd1e3a7eca660654e5d1"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c10",
+          "proposition": "The fight was on May 2, 2015.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source gives May 2 but not the year; the upstream span notes that year was not supplied. Preserve this source-only missing-date distinction without importing outside knowledge.",
+          "original_response_interval": {
+            "start": 577,
+            "end": 591,
+            "utf8_sha256": "b923d04f009105b07de0d57140ae11b0943bed00b223c77b0d55550d398bb121"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-2143-c11",
+          "proposition": "The fight was expected to gross up to $600 million.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 593,
+            "end": 634,
+            "utf8_sha256": "1edb4477322f734275450f51c349bf41e2ce2c955f1c6cc6bfd791719afd8429"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1957,
+                "end": 2073,
+                "utf8_sha256": "7ef920ac23314ca5e7ccfbfee014760f4a014d5a59f4992176272a115978edc5"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c12",
+          "proposition": "Media attention led to speculation about a reward for Salvador.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 635,
+            "end": 763,
+            "utf8_sha256": "aa99cf1afccf39646628c547ace6e575ba69e3b3ff9938bc3a18d2d119ce9d7e"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2074,
+                "end": 2263,
+                "utf8_sha256": "0b78e29e3f906ab8182cb0b4786d56d2d0c284147cc0805ab2f790e691f49f0c"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c13",
+          "proposition": "Pacquiao's team downplayed Salvador's contribution.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 764,
+            "end": 806,
+            "utf8_sha256": "602ad6c8ec2119e705f22d550adc516d1d7f0f0295b65e0c4f3eae10561880d1"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2264,
+                "end": 2330,
+                "utf8_sha256": "e147ecf45bd0e3a52393cd6bab75a81e2137fdbf6359dbbf25e94ed6858d8333"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c14",
+          "proposition": "Salvador said his reward would be attending the fight ringside.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 812,
+            "end": 891,
+            "utf8_sha256": "a712118a5c75f927b544584811d6915bb478a969efdcc98612cc2e8158d31f0c"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2640,
+                "end": 2778,
+                "utf8_sha256": "cc9fc62cb9f4ce0d370c8fa828698b1d7302e85e1f17e617cd3a2d8c2e745696"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2143-c15",
+          "proposition": "The Mayweather-Pacquiao fight was highly anticipated.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The source calls this the most coveted match-up, supporting the anticipation evaluation independently of Salvador's importance.",
+          "original_response_interval": {
+            "start": 111,
+            "end": 190,
+            "utf8_sha256": "e76dedb4a2a4c8965402b9e607313217ff5c0a3e6c5294a585b50f78e42759f6"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 499,
+                "end": 616,
+                "utf8_sha256": "1f722270fb52d1a9d225cd51331f49e4dfc183f02561845e0c6e32bb245836e3"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "response_id": "2660",
+      "source_id": "11909",
+      "original_response_utf8_sha256": "3ae8b4fa09ef466d5e1afad3fb078a2296b792a41080a0a3e955aee151043a3d",
+      "original_context_utf8_sha256": "1df37b80fddf268ba2a925c222c8f8f7c1daeba2507d5d27d3b743e5cd0383cf",
+      "original_prompt_utf8_sha256": "12e1e973bcb6351e0af428a50d6599cad8e59db1c6aa574a147a0d2e0c59d7f1",
+      "adapted_answer_utf8_sha256": "2c75b8d14ef3fec86420f7945917d2d0a50736792be94582e7ad4da17c845ab5",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-2660",
+        "family_id": "ragtruth-source-11909",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "11909"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "mistral-7B-instruct",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-2660-c01",
+          "proposition": "Shops were looted and burned during attacks on foreigners in South Africa.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 81,
+            "utf8_sha256": "b22d90b0d3a02fe0bcac60143e813642bd4a7e887048e981a742a1d78b3dbbec"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 0,
+                "end": 178,
+                "utf8_sha256": "b2179a6ef110ae09b92c0e159877f108715c6bcd6f2a8e9d471fa31df6087887"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c02",
+          "proposition": "More than six people had been killed in the attacks.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source says at least six, which establishes a lower bound of six, not strictly greater than six. The two statements are compatible; unlike the upstream span label, this annotation does not treat a stronger unsupported lower bound as a logical contradiction.",
+          "original_response_interval": {
+            "start": 82,
+            "end": 127,
+            "utf8_sha256": "ec483f096af84f71677906a931909e395c0348f2b7708d2a7e61de4884742499"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-2660-c03",
+          "proposition": "Other African countries were evacuating their citizens from South Africa.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 129,
+            "end": 192,
+            "utf8_sha256": "9a278da11044e4604eaa0db5cbafc48a4f98bf7756379efbf001823b8cc376c7"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 179,
+                "end": 369,
+                "utf8_sha256": "45ea0f733bee648695718d26912bf483cbcab168fd6f415d5fef29ab139d71b3"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c04",
+          "proposition": "A local king encouraged immigrants to leave South Africa.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "Media reported the words, but the king's office explicitly denied them. The answer states the utterance without attribution; unresolved source conflict is U, not selected-source certainty.",
+          "original_response_interval": {
+            "start": 193,
+            "end": 308,
+            "utf8_sha256": "39fd90c4a1fde09e96a0e2d3b7931b5b6807a3625d9fa4fc18427660f1a55844"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-2660-c05",
+          "proposition": "The United Nations said the attacks started in March.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The source explicitly attributes the March onset to the UN; the causal due-to relation is covered separately.",
+          "original_response_interval": {
+            "start": 309,
+            "end": 391,
+            "utf8_sha256": "cbc0e79fcd2f801f8a383af2e92cdb1ab6c560eed54928bb375990348a5d0d1f"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 970,
+                "end": 1086,
+                "utf8_sha256": "755360492a4f679132e372df1ef006f293fa810bf9006ff26b086db102e16d4f"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c06",
+          "proposition": "Zimbabweans were the largest immigrant group in South Africa.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 392,
+            "end": 455,
+            "utf8_sha256": "71c1f03c31efe02e70b29f83a91320cc676a03587063078334e4acdf9d550da2"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 91,
+                "end": 178,
+                "utf8_sha256": "828c723d327325fc94a8f510416fae425297c8846db6e0cf00ef82e708a5f953"
+              },
+              {
+                "passage_index": 0,
+                "start": 1871,
+                "end": 2100,
+                "utf8_sha256": "d2caa6bb03e975a726ce76a8a29140195cf766feb86f6e5660b6808c713cdd71"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c07",
+          "proposition": "South Africa had about two million documented and undocumented immigrants.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 462,
+            "end": 536,
+            "utf8_sha256": "153851548bae1be10c111b9545f73b0a1ea53b7443d51d067e661fa580af302d"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 91,
+                "end": 178,
+                "utf8_sha256": "828c723d327325fc94a8f510416fae425297c8846db6e0cf00ef82e708a5f953"
+              },
+              {
+                "passage_index": 0,
+                "start": 1871,
+                "end": 2045,
+                "utf8_sha256": "2ba3c95b4c12cb2f0082e8cf4dc81fe2894d2111b467a1ef5d7ee3fc0aaaea55"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c08",
+          "proposition": "Those immigrants were roughly four percent of South Africa's population.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 538,
+            "end": 567,
+            "utf8_sha256": "2eb603b4127a7a8136d4a988d7dc10ba80279ce94edc9a766311b9e0628448ed"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 91,
+                "end": 178,
+                "utf8_sha256": "828c723d327325fc94a8f510416fae425297c8846db6e0cf00ef82e708a5f953"
+              },
+              {
+                "passage_index": 0,
+                "start": 1871,
+                "end": 2045,
+                "utf8_sha256": "2ba3c95b4c12cb2f0082e8cf4dc81fe2894d2111b467a1ef5d7ee3fc0aaaea55"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c09",
+          "proposition": "Earlier xenophobic attacks occurred in January and July 2018.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "Diagnostic principal reading:2018 scopes both January and July, neither dating is established. Alternative narrow July-only attachment supports undated January but still not July2018. This ambiguity excludes the whole response from primary scoring; no unique decomposition is claimed.",
+          "original_response_interval": {
+            "start": 568,
+            "end": 629,
+            "utf8_sha256": "3540dfbcdae03587e8f1db8d6d7cb2ec8ccec50ea57b9569b26e96203c17ae85"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-2660-c10",
+          "proposition": "Attacks centered on Johannesburg seven years earlier left dozens dead.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 636,
+            "end": 684,
+            "utf8_sha256": "5ce9cc40aa320e807bf505d60c85db228621b80c2d67576723107fb035c9033f"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2478,
+                "end": 2622,
+                "utf8_sha256": "e3855efb96ab111d30ec3de79e9030a2ae6dd4487abde0c2d592a866d10e4e8f"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c11",
+          "proposition": "South Africa's unemployment rate was about 25%.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 685,
+            "end": 730,
+            "utf8_sha256": "3b1933d1666177abd87ee886035e500b417b125d1db133d6a13b433cde94e865"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 91,
+                "end": 178,
+                "utf8_sha256": "828c723d327325fc94a8f510416fae425297c8846db6e0cf00ef82e708a5f953"
+              },
+              {
+                "passage_index": 0,
+                "start": 1249,
+                "end": 1326,
+                "utf8_sha256": "ad88155fa0cac6e52136ffe9c2dcabb444e7b4c0c5544cf6721f49512bc8ce11"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c12",
+          "proposition": "The government was addressing social and economic concerns.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 731,
+            "end": 795,
+            "utf8_sha256": "0a74aad6da0464ffc05e09f05bce9e603d3b08bec175630dc888b724d2fc8c9f"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 91,
+                "end": 178,
+                "utf8_sha256": "828c723d327325fc94a8f510416fae425297c8846db6e0cf00ef82e708a5f953"
+              },
+              {
+                "passage_index": 0,
+                "start": 1447,
+                "end": 1539,
+                "utf8_sha256": "2e1967a62ccf0d8dbeb39fdd4388de4e0b23691d4a84b4e9f331f8e90e28c18d"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c13",
+          "proposition": "Prejudice, poverty, crime and corruption remained problems.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 801,
+            "end": 868,
+            "utf8_sha256": "577c18dc1035e518809eecda9a5f271fdd346b1b336bc4eec372d3b91e04346c"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 179,
+                "end": 369,
+                "utf8_sha256": "45ea0f733bee648695718d26912bf483cbcab168fd6f415d5fef29ab139d71b3"
+              },
+              {
+                "passage_index": 0,
+                "start": 4232,
+                "end": 4356,
+                "utf8_sha256": "0628857352b3442a1f812df100d979009da6290402b9f52c24691f429a320b5e"
+              },
+              {
+                "passage_index": 0,
+                "start": 91,
+                "end": 178,
+                "utf8_sha256": "828c723d327325fc94a8f510416fae425297c8846db6e0cf00ef82e708a5f953"
+              },
+              {
+                "passage_index": 0,
+                "start": 1327,
+                "end": 1446,
+                "utf8_sha256": "8a8bf5ce387e0e6befbfea8028470d299217055777f41a0382ab52213124641e"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c14",
+          "proposition": "African nations condemned the attacks.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 869,
+            "end": 911,
+            "utf8_sha256": "f05c20359475dd38e8c6957a3072819169f082e83b401584f2d78ca40041ddd2"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 91,
+                "end": 178,
+                "utf8_sha256": "828c723d327325fc94a8f510416fae425297c8846db6e0cf00ef82e708a5f953"
+              },
+              {
+                "passage_index": 0,
+                "start": 3024,
+                "end": 3067,
+                "utf8_sha256": "ec066c03d6aee398224544cd9acbd50b50c84ada036259476140adcbf1c652ea"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c15",
+          "proposition": "Kenya and Malawi were evacuating their citizens from South Africa.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 917,
+            "end": 995,
+            "utf8_sha256": "bc958005bc72b2793ca502997f03ef4caad952436736cfffe868917b5a8f10c8"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3068,
+                "end": 3171,
+                "utf8_sha256": "787547a48a4c7d30dd68088fb1e80f1e3b4f0ed9fb2aaa5f949e35158eefa14a"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c16",
+          "proposition": "A company was sending South African employees home.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "Sasol sent South African nationals home. The safety-of-those-employees causal claim is separately U.",
+          "original_response_interval": {
+            "start": 996,
+            "end": 1098,
+            "utf8_sha256": "58e7614414cd653c2d6b1e26e54a228b3f267183397aeefc2f836c2357191561"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3281,
+                "end": 3560,
+                "utf8_sha256": "ac35d26cbb79dd2b99c7e10a8885bd48bc5bd5b677c16b39e5ca0be1e3598b7f"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-2660-c17",
+          "proposition": "The latest South African attacks originated in the local king's comments.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source has the media account, an explicit denial and a competing UN onset account. The unqualified causal origin is not uniquely established.",
+          "original_response_interval": {
+            "start": 193,
+            "end": 308,
+            "utf8_sha256": "39fd90c4a1fde09e96a0e2d3b7931b5b6807a3625d9fa4fc18427660f1a55844"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-2660-c18",
+          "proposition": "The United Nations attributed the attacks' start to labor disputes.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source says after a labor dispute, not because of one. No causal attribution is inferred solely from temporal sequence.",
+          "original_response_interval": {
+            "start": 309,
+            "end": 391,
+            "utf8_sha256": "cbc0e79fcd2f801f8a383af2e92cdb1ab6c560eed54928bb375990348a5d0d1f"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-2660-c19",
+          "proposition": "The company sent South African employees home because it feared for those employees' own safety.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The explicit concern belongs to Mozambican employees about violence against their nationals. An employer safety or retaliation motive is not stated and is not silently inferred.",
+          "original_response_interval": {
+            "start": 996,
+            "end": 1098,
+            "utf8_sha256": "58e7614414cd653c2d6b1e26e54a228b3f267183397aeefc2f836c2357191561"
+          },
+          "source_interval_sets": []
+        }
+      ]
+    },
+    {
+      "response_id": "3086",
+      "source_id": "11980",
+      "original_response_utf8_sha256": "f5245e549e3313dd89912a89cd5fa9289a63a23df681db97128a380b9931ee71",
+      "original_context_utf8_sha256": "73e925793be82b07cf1df3bd1514133aa3925a1503fb6e33fb06b50258a2fe0b",
+      "original_prompt_utf8_sha256": "41b04ebc3eb143a29e5ffa4001ae9c4bec7a4de321ebd8ac612e0185663e42f0",
+      "adapted_answer_utf8_sha256": "b1d69ce764aa2bf05ee56424fd1e271a55d896392cc78e8e78e7001121462696",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-3086",
+        "family_id": "ragtruth-source-11980",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "11980"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "mistral-7B-instruct",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-3086-c01",
+          "proposition": "Michael Slager was a white police officer.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 36,
+            "utf8_sha256": "7eaef4c3a2b78ccded982999c156f274abca43d250c6051b4b0d80f03f30eb80"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 156,
+                "end": 226,
+                "utf8_sha256": "811caf700f639ffd292edc6ddf6ea5f95f47e876a6bac3158fd22736fa0539e8"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c02",
+          "proposition": "Slager fired eight shots at Walter Scott while Scott was fleeing on foot.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 38,
+            "end": 128,
+            "utf8_sha256": "0b784fe9fca1e8e9445f5aff8d7c1b1e35a0e89f23f473a280f6c3bf2dc2f626"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 156,
+                "end": 304,
+                "utf8_sha256": "f13d128b6f8d29faf2e84234973e253e98296590a0e21ee2f61a22e054d42a2b"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c03",
+          "proposition": "Walter Scott was an unarmed Black man.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 59,
+            "end": 98,
+            "utf8_sha256": "a6a10922e2a819c461618904e3aecabc1682a740df72ab645414291989b4c007"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 0,
+                "end": 351,
+                "utf8_sha256": "e810bde94c551a59b70220ac60ae78610442aaf43d51bb31fc1e696b83d3ffdc"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c04",
+          "proposition": "Scott was struck five times and died.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 129,
+            "end": 166,
+            "utf8_sha256": "743ffd2f351c9129005e574c4257928ea186607bb05fb3dc0d74491169de4f6c"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 156,
+                "end": 351,
+                "utf8_sha256": "5e10b27d70e27ef59338122a1010f61e67ea45eb4f6cbd1eb844531767727d67"
+              },
+              {
+                "passage_index": 0,
+                "start": 0,
+                "end": 155,
+                "utf8_sha256": "64ca128bc328333f88a17713b6f95570530ed94da7a17e052bd901adef3e9f31"
+              },
+              {
+                "passage_index": 0,
+                "start": 1692,
+                "end": 1876,
+                "utf8_sha256": "2812ef556563f77ed0b21870997bd52b4e0e289517eb29654ccc61b5a60da272"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c05",
+          "proposition": "The shooting sparked national outrage and protests in North Charleston.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 167,
+            "end": 254,
+            "utf8_sha256": "d9495f7284503303350eeb9a462f88339cc30bdcad6a6940c6c2ce2761de5bfc"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 372,
+                "end": 471,
+                "utf8_sha256": "b344f0fbe65b43be50d9c7da0527d5258998740b35448ea1a0be70465e80fde8"
+              },
+              {
+                "passage_index": 0,
+                "start": 534,
+                "end": 694,
+                "utf8_sha256": "a03a95e06d3d7a82fdda136b0daf4eb93a196e333f4ee50d07911df7efd76246"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c06",
+          "proposition": "The FBI was investigating.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 255,
+            "end": 279,
+            "utf8_sha256": "431a550685fea02b422f19b6ee15abbe3bee1e8f24623594c478f529647ec1db"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 372,
+                "end": 471,
+                "utf8_sha256": "b344f0fbe65b43be50d9c7da0527d5258998740b35448ea1a0be70465e80fde8"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c07",
+          "proposition": "South Carolina lawmakers were examining police body-camera legislation.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source describes a municipal body-camera purchase and comments by a state representative, not state lawmakers considering legislation.",
+          "original_response_interval": {
+            "start": 284,
+            "end": 357,
+            "utf8_sha256": "5da07b3c25d7a80be99015bbd8ed7ec6896d0635f680c6440004d88c218d921c"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-3086-c08",
+          "proposition": "North Charleston's mayor condemned the shooting at a press conference.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source attributes being sickened by the video to police Chief Driggers. It does not quote or report the mayor condemning the shooting; that the mayor also spoke does not establish this attribution.",
+          "original_response_interval": {
+            "start": 358,
+            "end": 446,
+            "utf8_sha256": "4819c11ee6a3e5347975e0a9d3b992f0159c2c84c4650cd28fe51cc204ea68ba"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-3086-c09",
+          "proposition": "North Charleston's mayor announced an additional 150 body cameras for officers.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 451,
+            "end": 530,
+            "utf8_sha256": "c36b5d99fba8b4e362c801c89c8aa9adf4c9af218152eb6fbde5a80e7d28475b"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 472,
+                "end": 781,
+                "utf8_sha256": "6064ee9fc7dbdd35b9b30b62c7af928818e839330ec00066dc8276e6c60728ff"
+              },
+              {
+                "passage_index": 0,
+                "start": 782,
+                "end": 986,
+                "utf8_sha256": "d10815db12551888cff185cb9c1f71c1a9c197cb28af1b96d0db8c61a8d64bbf"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c10",
+          "proposition": "The shooting video circulated widely on social media.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The article describes a released tape and high-volume Twitter hashtags about the shooting; it does not state the distribution of the video itself on social media.",
+          "original_response_interval": {
+            "start": 531,
+            "end": 599,
+            "utf8_sha256": "0a742767a2876803db0248c6d48efde4038e74add8eb626e71e2d412a61d149a"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-3086-c11",
+          "proposition": "The shooting drew comparisons to the Michael Brown case in Ferguson, Missouri.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 604,
+            "end": 674,
+            "utf8_sha256": "ff2ff684fca2d84a7302c6cb682ed8c9ec75580bd7cea32aa12dcdb7f7c0b066"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1169,
+                "end": 1250,
+                "utf8_sha256": "5a75528cd8cb4847fc7a6d66f8d2837dd50e0556f810e5b6c6cc5d67e2ea5e46"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c12",
+          "proposition": "Not everyone agreed the Scott and Brown cases were similar or race was a factor.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 684,
+            "end": 764,
+            "utf8_sha256": "2dc8268dc85e4c2821c71d6d5c725cd37c5bb88ad54e7e7081072a860a08dc0d"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1380,
+                "end": 1464,
+                "utf8_sha256": "5b522357512cdb02b9e9f3ff4aeba0e66a61ff9782b61cef6d51183111daf501"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c13",
+          "proposition": "The autopsy classified Scott's death as a homicide.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 765,
+            "end": 832,
+            "utf8_sha256": "78d3a455aeaa3c7acdbb1cffb6e913268d26fbd12535e66bd909e6ca0cdab200"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1692,
+                "end": 1876,
+                "utf8_sha256": "2812ef556563f77ed0b21870997bd52b4e0e289517eb29654ccc61b5a60da272"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c14",
+          "proposition": "The autopsy report did not identify which bullet caused Scott's death.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The supplied source gives only a summary of autopsy findings and says nothing about whether the full autopsy report identified a fatal bullet. Absence from the article is not proof of absence from the report.",
+          "original_response_interval": {
+            "start": 834,
+            "end": 887,
+            "utf8_sha256": "af8c76d4eec4d0213556736af59573ac7effa3d252959ceb8e2a0e9938d40ada"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-3086-c15",
+          "proposition": "The video shows Scott trying to flee.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 888,
+            "end": 942,
+            "utf8_sha256": "59b802b832cbe00c2542cf10276c0a252611bd58951263f650d9c962da5c8617"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 4164,
+                "end": 4216,
+                "utf8_sha256": "ff41b682c73ef68883b73eecabc3ad84c67e3dd253c4f34292784b7ef124c4a2"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c16",
+          "proposition": "Scott's family believed he was running for his life.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 948,
+            "end": 996,
+            "utf8_sha256": "301abe417dcca517873768ae19c647441274d3ef15624d3bdf58b4ac43baa00a"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 3739,
+                "end": 4056,
+                "utf8_sha256": "4ffdfe07c9464c16ca38bd098b29b34c9d7883e7501e501267df6f45f285106b"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c17",
+          "proposition": "Witnesses reported a struggle before the shooting.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 997,
+            "end": 1085,
+            "utf8_sha256": "e03cecb5204637abe84c7fd74eb3e1b86933d1a1b10cec145659a5f8445a53b7"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 156,
+                "end": 351,
+                "utf8_sha256": "5e10b27d70e27ef59338122a1010f61e67ea45eb4f6cbd1eb844531767727d67"
+              },
+              {
+                "passage_index": 0,
+                "start": 4315,
+                "end": 4586,
+                "utf8_sha256": "6c375d56a0e598af394acd1afc868f3667fa930cf2eaf911dbc62abc65d0a644"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-3086-c18",
+          "proposition": "Police officials claimed there was no fight.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The no-struggle statement is attributed to Scott's brother Anthony, not police officials. The source does not establish the response's police attribution.",
+          "original_response_interval": {
+            "start": 1091,
+            "end": 1138,
+            "utf8_sha256": "8c3c39cc07b2ff4f5ba89a3a4d36cae0f60dc8905025bb85c5666f45bd1acdef"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-3086-c19",
+          "proposition": "The mayor of North Charleston spoke at a news conference.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The source explicitly says the mayor spoke at the same news conference; this true action is separate from the unreported condemnation.",
+          "original_response_interval": {
+            "start": 358,
+            "end": 414,
+            "utf8_sha256": "18bcdfac5734f82fcab3addb10c07d5bb94aad3f9f3210d46a04a9afb1b8c694"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 472,
+                "end": 781,
+                "utf8_sha256": "6064ee9fc7dbdd35b9b30b62c7af928818e839330ec00066dc8276e6c60728ff"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "response_id": "5375",
+      "source_id": "13551",
+      "original_response_utf8_sha256": "a9765465de8650656c0f7297d333193051d2089c62d74aba78ffba5fc9075247",
+      "original_context_utf8_sha256": "ea3c0872ffd4abac4b1d603d0622ea4535099ab3eee6edc979f59b899062e6aa",
+      "original_prompt_utf8_sha256": "89330e5bae297d4d45d32cac667740719e47b9171014e5600a753d33cbf0f288",
+      "adapted_answer_utf8_sha256": "1f2333c11c839b3e2984657c1a9b0278152b7b044bbc5c800599cd6f3b8c33b2",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-5375",
+        "family_id": "ragtruth-source-13551",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "13551"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "llama-2-70b-chat",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-5375-c01",
+          "proposition": "TransUnion was one of the three major US credit bureaus.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 59,
+            "utf8_sha256": "275b6249fe136e074f385d1d31e5dfdecdfdb83915c12fa2e6a8b5698ea3aae3"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 112,
+                "end": 183,
+                "utf8_sha256": "bcf4ef4f0693d9fbd8165f6a3cc08af31533f6b53671b52255913723dfd99158"
+              },
+              {
+                "passage_index": 0,
+                "start": 264,
+                "end": 387,
+                "utf8_sha256": "f88c8fd75eac4119c2509481a2d2cf1aed4ca58bc960b49ee3323ff5cf881ec1"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5375-c02",
+          "proposition": "TransUnion faced a $23 million fine by the CFPB and FTC.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 61,
+            "end": 177,
+            "utf8_sha256": "ededff8c4136a56c29b65009ce2222e94751a4be9a93ed9991f3e7822d4fe6f9"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 0,
+                "end": 50,
+                "utf8_sha256": "26580353de72d59294e503dd2537a343567e647ab1d2dc654b2e2b02dd05da24"
+              },
+              {
+                "passage_index": 0,
+                "start": 264,
+                "end": 457,
+                "utf8_sha256": "4068c0ab2c3d055e5240d3c63bd44c35f01073fcded6357c1e86917b0958eedb"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5375-c03",
+          "proposition": "The enforcement concerned illegal rental-background-check and credit-freeze practices.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 178,
+            "end": 247,
+            "utf8_sha256": "5db39efd9fdb2891e1fbba8554216a1acb417e1020a2f8a66a36be2da9e5aaa4"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 51,
+                "end": 111,
+                "utf8_sha256": "bb3730ac667bc52207200c8311d42a446ad80cbbb291bf782ccfcb74d3ad1509"
+              },
+              {
+                "passage_index": 0,
+                "start": 264,
+                "end": 457,
+                "utf8_sha256": "4068c0ab2c3d055e5240d3c63bd44c35f01073fcded6357c1e86917b0958eedb"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5375-c04",
+          "proposition": "Regulators found that TransUnion supplied inaccurate rental-background-check information.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 248,
+            "end": 353,
+            "utf8_sha256": "ddeca352f6dfb287a5a2784a160be39bb39865eb6ae9ed79d4b85a4639ef77f3"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 458,
+                "end": 678,
+                "utf8_sha256": "70892ce49f7f76590fbfadb6b47f44870ee600772c81ad98466d702d4c5783c0"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5375-c05",
+          "proposition": "TransUnion failed to properly help renters correct inaccurate information.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 358,
+            "end": 434,
+            "utf8_sha256": "fba653ea1533aba59eb25e32b28b0feb20ff48fdb294d76b725e85a9298aeae4"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 520,
+                "end": 678,
+                "utf8_sha256": "fe2295747539880c78f56b86473cc71f08bc73c20ecf480208ec56db35c2812a"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5375-c06",
+          "proposition": "TransUnion falsely told consumers credit reports had security freezes when requests were backlogged.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 449,
+            "end": 600,
+            "utf8_sha256": "76019add04218cbd0a68d101d9db36eb3f802e5f83bc12b672a1efa78e66b0ee"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 679,
+                "end": 894,
+                "utf8_sha256": "83d5dcfa9405b2f69a25fe203afea11956a9bee1d805c3c1822f2a78907302f2"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5375-c07",
+          "proposition": "Some security-freeze requests took years to complete.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 606,
+            "end": 643,
+            "utf8_sha256": "3d6be4a764b869ea98c324ad853f654271b97d837142fbe0609aa8a5743898ad"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 679,
+                "end": 894,
+                "utf8_sha256": "83d5dcfa9405b2f69a25fe203afea11956a9bee1d805c3c1822f2a78907302f2"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5375-c08",
+          "proposition": "TransUnion would pay $11 million to consumers affected by rental-background-check violations.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 644,
+            "end": 761,
+            "utf8_sha256": "69c19232362c75a02910ebd61396a144e0bc336626ef629e58a7c1326ebad9d1"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1255,
+                "end": 1480,
+                "utf8_sha256": "44a8baa5b6f343a9cea8370cae5bbd5b3cc6b83eb6cb6408775da6b1e30a6d7d"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5375-c09",
+          "proposition": "TransUnion would pay $3 million to consumers harmed by the credit-freeze backlog.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 766,
+            "end": 833,
+            "utf8_sha256": "8fd4e652bd6485e7913f015819703821730cc88ff791a7fdbba5cb61f1829aba"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2535,
+                "end": 2707,
+                "utf8_sha256": "af7c5cb41a56470e54796be71a4589c134fe58988a66c82effb2d56d46a3a533"
+              },
+              {
+                "passage_index": 0,
+                "start": 2782,
+                "end": 2864,
+                "utf8_sha256": "c942c631898f68245424a549b2fe5cc23128f51427d0f782c43d3bcb02bd6d12"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "response_id": "5315",
+      "source_id": "13541",
+      "original_response_utf8_sha256": "80646e32b6f32e4ce2277085ce10dca1707fb2b5d4a38ad3ac1ef2a82aa15837",
+      "original_context_utf8_sha256": "466ad955c9cdb0c7ffeb336238b12e612768479d0bbb348719a1cb6c6567db9c",
+      "original_prompt_utf8_sha256": "d848af4087f14531bd4916ef63fb5b2f1dd94c7dc4abb4a4d0883746b3c9a958",
+      "adapted_answer_utf8_sha256": "2d8da419eb0090fce403a7a4ed06528dd4f28798d30a5db9fa7a0e4f6c7d30c1",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-5315",
+        "family_id": "ragtruth-source-13541",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "13541"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "llama-2-70b-chat",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-5315-c01",
+          "proposition": "Donna Green was 16 when she gave birth in 1978.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 43,
+            "utf8_sha256": "4a26e7d8a97d48181ac7adc154bfa7dd211eb2e3c31dd0a664e817ebdb477c63"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 172,
+                "end": 229,
+                "utf8_sha256": "64d8c1d2c5be5d185560c38b82f24badffe016e6297febb6d99097ccace6f2a2"
+              },
+              {
+                "passage_index": 0,
+                "start": 302,
+                "end": 375,
+                "utf8_sha256": "a7c1d8441b48de3d55e19364470cbfb2611be0b27dfe806d6598a6926fad1822"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c02",
+          "proposition": "Raymond Green Jr. was Donna's second child.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 47,
+            "end": 82,
+            "utf8_sha256": "4e15ef752480b8a19f66d889272244538a109d2d95db044fe93d255d14a0246a"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 302,
+                "end": 563,
+                "utf8_sha256": "701ac9969bc0bacd268f15bd399f8e87173ec09a3e539fdcad2eeb1b8adbba91"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c03",
+          "proposition": "Donna gave birth at Grady Hospital in Atlanta, Georgia.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 84,
+            "end": 122,
+            "utf8_sha256": "b5403e876e7bec78c63e47ed0c1d6556fe65df353e28470eeff284ac4da1347d"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 302,
+                "end": 431,
+                "utf8_sha256": "a60521f76d2288023959a599301c78f588509db82fffe59d688fa4ffda3173b8"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c04",
+          "proposition": "Lisa Morris befriended Donna and gained her trust.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 123,
+            "end": 186,
+            "utf8_sha256": "a60b6bb587f2fe29caea46d9c9a1f92160420738c5f2f6b092421d8925ab13cb"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 598,
+                "end": 664,
+                "utf8_sha256": "4dafaa85733ed623f748dc2a2d72edd4edac13318d0b889a47f5acbd37b9a3f2"
+              },
+              {
+                "passage_index": 0,
+                "start": 792,
+                "end": 867,
+                "utf8_sha256": "573bf4cad0b83c74bcac2e0a1199126e47fb54ae6f627d4280238ac07a4602c7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c05",
+          "proposition": "Lisa kidnapped Raymond Jr. from the Green home on November 6.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 187,
+            "end": 256,
+            "utf8_sha256": "ed78aaeb65f5504b707595601a794f828da50cdc8cb8d0c57eff1e5d85b57297"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 792,
+                "end": 996,
+                "utf8_sha256": "0ba3fb274e1e5d6ddde6c039fe0c65e18d85e4d44f4709d5d113ae4eb3125946"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c06",
+          "proposition": "Donna's socio-economic status and racial background caused the case to receive little attention.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source explicitly attributes this causal explanation to Donna. The unqualified answer does not retain that evidential scope; a separate S covers the narrated little attention.",
+          "original_response_interval": {
+            "start": 257,
+            "end": 372,
+            "utf8_sha256": "bf9632a56e01cce7d768719f8892b1c633ce5706035f93880c4125e81c858058"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-5315-c07",
+          "proposition": "The investigation found that Lisa had supplied false information.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 373,
+            "end": 439,
+            "utf8_sha256": "670b87c97b6bca6423186ee81129515f2e07b5880d2a6127d16a69bcaf2a83c0"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1388,
+                "end": 1488,
+                "utf8_sha256": "924d3f07a6c0ce792d8383384d4cbdf3c6dedb1e7d60d7e0dba4f0aafb5d7cab"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c08",
+          "proposition": "Lisa was described as a Black woman in her early twenties with distinctive scars.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 445,
+            "end": 535,
+            "utf8_sha256": "936e1d37da61eb042cb4fc128908b67ef2a61af22e238e4ba1f6b1c110353ed4"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1489,
+                "end": 1658,
+                "utf8_sha256": "76dd81a08990971a6a230b4e2ffed395af03a8132be9b254e08a94e4b06d76cb"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c09",
+          "proposition": "The emotional aftermath caused Donna and her boyfriend to drift apart.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 536,
+            "end": 605,
+            "utf8_sha256": "77bbf2e448db503f4e068c6d3c095d673cc31e3d0725f12fffc4a59460cfe55b"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1659,
+                "end": 1804,
+                "utf8_sha256": "3aa194148f62045a2c31d42fe1d14e528cad3859cc3ab65e9addf35bdc91ebf8"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c10",
+          "proposition": "Donna and her boyfriend reconciled and had five more children.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 611,
+            "end": 665,
+            "utf8_sha256": "d2862fb7cff66186203b102fde878ec29782ece898cde465cce1806c540ec097"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1716,
+                "end": 1969,
+                "utf8_sha256": "e4ed5ce94e22ae71d1d708abc078e5a6234704993ba33184597c586ba27244b7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c11",
+          "proposition": "Raymond Jr.'s disappearance remained unsolved.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 666,
+            "end": 711,
+            "utf8_sha256": "2f4d4010d827bddf24c3100aa75dfda5593297547623f70a2c04447773363e36"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2013,
+                "end": 2234,
+                "utf8_sha256": "1449349d2fb0bb5d1b0354b8b5446347130e46644bacbf778ec53bbcea83fe42"
+              },
+              {
+                "passage_index": 0,
+                "start": 2235,
+                "end": 2515,
+                "utf8_sha256": "b79305a3f86f7a1b25726ac9c2a8b525dcb37e61ee21ab67b573699d37ce5fa2"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c12",
+          "proposition": "The National Center for Missing & Exploited Children released an age-progressed image of Raymond Jr.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 717,
+            "end": 840,
+            "utf8_sha256": "9d79301a178a9533b691401b0f6b7143fe32d4569e1f3ca4c20f6836d938434d"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2310,
+                "end": 2441,
+                "utf8_sha256": "a84394f249ef1ad4a14567b06ac7e947afd3155f7ab22a0c919395fd67f30a4e"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c13",
+          "proposition": "People with information were urged to contact Atlanta police.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 841,
+            "end": 915,
+            "utf8_sha256": "10dee7d41db3d64c80ab5bdab66719f579133c147ca4550a01d88b4cc8830614"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 2516,
+                "end": 2652,
+                "utf8_sha256": "c19e60e5bffa838f9687a34a386a3542d9c5bb41164f18e100d733aa0a0642a2"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5315-c14",
+          "proposition": "The case received little attention despite Donna's efforts.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The source narrates that her desperate pleas fell largely on deaf ears, separately from her explanation of why.",
+          "original_response_interval": {
+            "start": 257,
+            "end": 316,
+            "utf8_sha256": "3a86c9458e01db39cef20f15ffc1ba6b073adef67a2d33230fe77954f6c36660"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1132,
+                "end": 1387,
+                "utf8_sha256": "7e2ca84ade059a00f00c422b5788a574a53d49f6d96f2a15ad42c141f37f616f"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "response_id": "4069",
+      "source_id": "13849",
+      "original_response_utf8_sha256": "b0784db65add865be7f04091b8adc78731b281f2cb9efedce0382cee81c41836",
+      "original_context_utf8_sha256": "942b71b47631461c1dfeb72422bac65e65c597e58b2e72f0e2ee4cefbaa04439",
+      "original_prompt_utf8_sha256": "49993646499625a5b945098d3bd5aaa433c8a9cdc378ea9f0f7386ad32eac8f2",
+      "adapted_answer_utf8_sha256": "fa1c90a19ea93cfdf314fb63d60f0976278f2bf72bc019676ff3379aee6ea85a",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-4069",
+        "family_id": "ragtruth-source-13849",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "13849"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "gpt-3.5-turbo-0613",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-4069-c01",
+          "proposition": "Growing migrant crowds were causing problems between El Paso and Ciudad Juarez.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 90,
+            "utf8_sha256": "17ecd498252a185a9fcad4ba8653231b2db00bc6936f9c489e83af86befce0f8"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 70,
+                "end": 195,
+                "utf8_sha256": "3727bc790fb8eca89685a36d359949d52b4cb7d7fbf20635f9c2dbfc305987f9"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4069-c02",
+          "proposition": "Hundreds of migrants rushed Mexican authorities trying to prevent crossing into El Paso.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 91,
+            "end": 195,
+            "utf8_sha256": "40a74be0f5be05a6dc482abf8b051e45ac9355b0138156f2c9531a335843cef6"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 244,
+                "end": 387,
+                "utf8_sha256": "ce7bcc4935fd98da50a0bbebfa52740a160fa3279c4b5d65abb42eac63d6b40e"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4069-c03",
+          "proposition": "Some migrants reached razor wire on the Texas side.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 196,
+            "end": 265,
+            "utf8_sha256": "c9f560210fc9bafe3ffa25125a4ad2f26400b69f1c484f38e47308d062a4e259"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 462,
+                "end": 645,
+                "utf8_sha256": "460da4759ca88571d88163d873b83e19f56c286274c61527f9f65204f329a264"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4069-c04",
+          "proposition": "Texas was reinforcing El Paso with barbed wire and troops.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 266,
+            "end": 328,
+            "utf8_sha256": "30805e7a894982428d576f8b44c1cd7ac4a993e96399e2699d53c1e6ad16738f"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 646,
+                "end": 732,
+                "utf8_sha256": "cc1515ee9a322b6d0e0e175e369cbf124231f5c2bf2d7a4ca741fc4d0eff003c"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4069-c05",
+          "proposition": "Reports that Border Patrol agents cut the wire to admit migrants drew criticism.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 334,
+            "end": 431,
+            "utf8_sha256": "06d6032cfe9712cfe7568ed6e6021454a61c36acbee9a45a8653870549364364"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 795,
+                "end": 925,
+                "utf8_sha256": "6c8482b9038bd8b6cd337ffc9a505477844979226ac8c1cbef1a042c20ec3970"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4069-c06",
+          "proposition": "Migrants reaching the razor wire were already inside the US.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 432,
+            "end": 505,
+            "utf8_sha256": "f84a7af91d197225f7866868f473872ab1ce292427fc715b7159fbb88b88434e"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 970,
+                "end": 1088,
+                "utf8_sha256": "87a1d7799d84508cb6d4618ead9018e89a01d8e917c6086ea89f22ff3c1e3861"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4069-c07",
+          "proposition": "Migrants reaching the wire would likely be allowed to pass.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 510,
+            "end": 541,
+            "utf8_sha256": "9d4eb97fb657875d53ea7aa717fa8d32a140c4f6cbad8e8065cd3ff5deb07c14"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1089,
+                "end": 1238,
+                "utf8_sha256": "1cb9f4a2ae26706c4b2435f060bb29c9dc8f0334cc3f145e857b4e353a8ec747"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4069-c08",
+          "proposition": "The Juarez crisis continued with Mexican authorities holding back migrants trying to enter Texas.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 542,
+            "end": 680,
+            "utf8_sha256": "2d6bc552b4a4eae4ebf292fce78752e0ef7ada5dce9015b4d4bcbd2ff1fe120f"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1399,
+                "end": 1580,
+                "utf8_sha256": "dc0e4ee00a3a5171b5e4355494c2cc6a7889d4de3fe3319ed201e5493fa0dada"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4069-c09",
+          "proposition": "Migrants were arriving by train and acting on rumors they would be permitted to cross.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 681,
+            "end": 757,
+            "utf8_sha256": "71780df1f735ac64595680bb8dcc49281733ec17c5becea84a62c2ddf1daefea"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1664,
+                "end": 1791,
+                "utf8_sha256": "bb826c5fa3e538cdd4e305447ff5f9e1d88a0d4853a4350ed51b50532c0cd82e"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4069-c10",
+          "proposition": "Train arrivals in Juarez were estimated in the thousands.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 758,
+            "end": 836,
+            "utf8_sha256": "9f2fe6d641a3a4cdb22939dae0183a83531b5d0ac298920ee9c49e6a05053d3b"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1977,
+                "end": 2065,
+                "utf8_sha256": "3dc96f0af6b26b194b90ab4b979527008fd51f00560d1df234d52d353c8d6210"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "response_id": "4292",
+      "source_id": "13886",
+      "original_response_utf8_sha256": "9343ac200e23dfdeea5127d029259349f95628d09005717f3060b869e97b60cf",
+      "original_context_utf8_sha256": "6850d526243a69fcf447508e6d9126ee8472b96fdb95d2d6a369f6872daba577",
+      "original_prompt_utf8_sha256": "82cdc3ffd3800d9907e7d80abf7f62e41a7a76b0cb12375ad2dda8e3986c7c39",
+      "adapted_answer_utf8_sha256": "731303f1f23c4e9f236e30bda01b938b0ca7e95f0b4674270d536e02a1e219c7",
+      "prefix_unicode_characters": 65,
+      "case_shell": {
+        "id": "ragtruth-response-4292",
+        "family_id": "ragtruth-source-13886",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "13886"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "mistral-7B-instruct",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-4292-c01",
+          "proposition": "Chicago received more migrants after Texas governor Greg Abbott began busing them there the previous year.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 108,
+            "utf8_sha256": "31b239cac08e9ad6165708a94887844d1fecb5c76f8da0cf26e5ffd8f89a7be5"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 76,
+                "end": 207,
+                "utf8_sha256": "b67f6150a09bfbea849e6630d51bdf3a04f8c5bbb5d6ef67e7b936b8b17b6c72"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c02",
+          "proposition": "The influx drained Chicago's budget and confused city leaders.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 109,
+            "end": 183,
+            "utf8_sha256": "00f8b79b0025745e47d839638f948568c98104a83891b4390f917cf63fc79640"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 76,
+                "end": 275,
+                "utf8_sha256": "c01e66f23d97331b3ec8e8d21f6f2545b382ab47171b1fc9eec93cfc844d9912"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c03",
+          "proposition": "Governor J.B. Pritzker raised the issue with President Biden in October.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 184,
+            "end": 256,
+            "utf8_sha256": "e0f021cb194c3a637e9b904306fcbfd0fe9ef5a33ed3c905f38de700dda68be4"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 276,
+                "end": 414,
+                "utf8_sha256": "906e082efd6d0d442349a929a59e84f76f3489efb29494b6145adb7efaf5448f"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c04",
+          "proposition": "Migrants lived in public places including police stations and an airport.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 257,
+            "end": 332,
+            "utf8_sha256": "a0f4141f581ab87fd24db5f22dbe06dc686cd9311879df6d3c7cbfbbc7c8d0e8"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 415,
+                "end": 528,
+                "utf8_sha256": "da80d531bcdb5869f19587d645d827c6df5ac3c94ae18433b413a1a66902c044"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c05",
+          "proposition": "Ten more migrant buses arrived on Tuesday, October 3.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 333,
+            "end": 395,
+            "utf8_sha256": "03466889e3c713ef2ebc45c49b390f41c9dd876fc067be661b1ade5f11ce88b2"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 0,
+                "end": 75,
+                "utf8_sha256": "7d172fe76db97238ca12ab3ba14d02bff6b09a95a6a3a7394b62c4d1e1ea4136"
+              },
+              {
+                "passage_index": 0,
+                "start": 642,
+                "end": 763,
+                "utf8_sha256": "d12fef5ef430394868d733da5f17a86c04fd34ecde0fa156313e56b92782b8c7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c06",
+          "proposition": "Chicago was already supporting 17,000 migrants.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 407,
+            "end": 448,
+            "utf8_sha256": "7189bf3177be4c471ff471a5341d405be54c154e6b2908900a02c6bea6d921c6"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 0,
+                "end": 75,
+                "utf8_sha256": "7d172fe76db97238ca12ab3ba14d02bff6b09a95a6a3a7394b62c4d1e1ea4136"
+              },
+              {
+                "passage_index": 0,
+                "start": 642,
+                "end": 763,
+                "utf8_sha256": "d12fef5ef430394868d733da5f17a86c04fd34ecde0fa156313e56b92782b8c7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c07",
+          "proposition": "Pritzker requested more federal help, including migrant work authorizations.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 449,
+            "end": 561,
+            "utf8_sha256": "547b9704ea7cad850b272085541e8d66654278a3c47e8563aff7ab3a80fb666e"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 764,
+                "end": 882,
+                "utf8_sha256": "d0bab182dec74b697e4114352cf7a2671cca60aba32077bd4a1d953ab9e318d8"
+              },
+              {
+                "passage_index": 0,
+                "start": 1194,
+                "end": 1326,
+                "utf8_sha256": "5eb4069d1ca7002d08fcea5b667f52bb3d542d55a09262c0d297729c4231832a"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c08",
+          "proposition": "Mayor Lori Lightfoot requested greater notice from Abbott about bus arrivals.",
+          "acceptable_aliases": [],
+          "label": "CONTRADICTED",
+          "annotation_reason": "The source attributes this current request to Mayor Brandon Johnson, not Lori Lightfoot. This is an entity attribution error, not automatic adoption of the upstream baseless-info label.",
+          "original_response_interval": {
+            "start": 569,
+            "end": 658,
+            "utf8_sha256": "bc74e2101ae6223ffe03049c687d37f035a8f8dc695db62cc47c48c4f1a18b79"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 764,
+                "end": 976,
+                "utf8_sha256": "e59e1e83adf4df09d88aba1510055b22b3f55a3012e6d68376d58a01c0d20a7c"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c09",
+          "proposition": "Biden had not officially coordinated with Abbott on the crisis.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 673,
+            "end": 755,
+            "utf8_sha256": "59ffcb00d60cd23a9624f207290a44e1e7d4e6a1cf2e5fa1b8cf0b83ea921555"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1484,
+                "end": 1610,
+                "utf8_sha256": "4c0384cda29690af3c78c2426ddbc1faf6b8c084bf3c72373020650bc28cbc85"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c10",
+          "proposition": "White House spokesperson Angelo Fernandez Hernandez did not supply a solution to Chicago's request.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 756,
+            "end": 855,
+            "utf8_sha256": "b1857b4856026503e84d55e09ddfd70700d3a462bb948e7659fe8affcafda50f"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1698,
+                "end": 1796,
+                "utf8_sha256": "6b4f8cf4fdec93302a6c65256b20b5a237514afc5d6e271be14eb960016d765b"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4292-c11",
+          "proposition": "That spokesperson emphasized congressional help in addressing the crisis.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 860,
+            "end": 925,
+            "utf8_sha256": "3f84514d2a829621bef420851ea975e90871c672677fcae6ed4c24f38665e726"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1698,
+                "end": 1823,
+                "utf8_sha256": "5c0858aa887827aa1dffedeb789e20f5b7a0e2b6d0466795b8467329ea81a3da"
+              },
+              {
+                "passage_index": 0,
+                "start": 1824,
+                "end": 2239,
+                "utf8_sha256": "e55ef9602888cb4e66675cf5dc2b6d966d4ce7ef263c1731841705847433c1a3"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "response_id": "4100",
+      "source_id": "13854",
+      "original_response_utf8_sha256": "f1ddc368ae8c41c202c9ca72ddd7307108ae31d67f69ea77b9c163cb1a25ec44",
+      "original_context_utf8_sha256": "07613b713a1f9416a9a52e985a5eb476a22caa3f0adfa63892029f8928f10386",
+      "original_prompt_utf8_sha256": "5cb0e664636826c75caf224db889e20cc85b62f036d6c8653dff901549f8b14e",
+      "adapted_answer_utf8_sha256": "8300f4d6d855c5c5b379de86831b56e210c6d5ddc0ddde42d0512146a671901c",
+      "prefix_unicode_characters": 65,
+      "case_shell": {
+        "id": "ragtruth-response-4100",
+        "family_id": "ragtruth-source-13854",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "13854"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "mistral-7B-instruct",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-4100-c01",
+          "proposition": "A US district judge ruled that Matthew Taylor Coleman was not mentally fit to stand trial.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 135,
+            "utf8_sha256": "fe5eb678e9a460c81be1bfed1e3c4b92c08b1784fabc6c167ef25ce4050589d7"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 150,
+                "end": 298,
+                "utf8_sha256": "0299f49ea721bdecd084ef3c769da07a4283a15dfd3a49e1699043501e446775"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4100-c02",
+          "proposition": "Coleman was a California father accused of murdering his two children in Mexico.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 35,
+            "end": 172,
+            "utf8_sha256": "15db63461b1e278591d454aab34ee19acebbfccaf98e03c60a09b1224f4c6e85"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 203,
+                "end": 262,
+                "utf8_sha256": "a32e92abc4fb52099bb479c3f2f2df4226bd417206497975117938b81d40422a"
+              },
+              {
+                "passage_index": 0,
+                "start": 299,
+                "end": 385,
+                "utf8_sha256": "a377e53e9768e88034f949fedfa481818fa636eb92b435e3787c6cde617055f7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4100-c03",
+          "proposition": "The competency finding was due to Coleman's involvement with QAnon conspiracy theories.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "Non-scoring diagnostic principal reading attaches due to QAnon to the competency finding, which the source does not explain(U). An alternative grammatical attachment to killing motive is supported(S). Both readings are preserved in the diagnostic membership notes; this is not unique gold.",
+          "original_response_interval": {
+            "start": 101,
+            "end": 227,
+            "utf8_sha256": "da1c3d54c12594f47864b0a091c4f7d9e463e51b107db4b02519e6c3947042c1"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-4100-c04",
+          "proposition": "The ruling implied further criminal proceedings would be halted.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 228,
+            "end": 317,
+            "utf8_sha256": "164ed21cfbe37fc1c61b543bf20908b7147d54c04defcfd618a63ad83731a6f7"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 426,
+                "end": 636,
+                "utf8_sha256": "da218a98a4effd1b67aa28d4e2768bd89830e784dfd1f7d6ba6d64acc0b69b76"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4100-c05",
+          "proposition": "The killings occurred on August 23, 2021.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The supplied source gives August 2021 but no day. Do not import the true date or equate unsupported specificity with a contradiction.",
+          "original_response_interval": {
+            "start": 318,
+            "end": 336,
+            "utf8_sha256": "3d31151df70bb5fb744e7a1a055cfb85bf19e266a589f9b023478274266479e2"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-4100-c06",
+          "proposition": "Coleman killed his two-year-old son and ten-year-old daughter with a speargun.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 338,
+            "end": 412,
+            "utf8_sha256": "be5d3f4f9595b196c537179736d2802a2e0808cb7dfcefc2a5fac703206878ec"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 848,
+                "end": 1080,
+                "utf8_sha256": "68d8f5d3df46bacda8201836a50f411a7b4f9e7f43dcc137bde93c7fdf8c913c"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4100-c07",
+          "proposition": "Coleman returned to his hotel room after the killings.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 413,
+            "end": 448,
+            "utf8_sha256": "4ead8f7e879c5190ebcbba68685ed9b8de2c4a2a369164765f99c03584ee8d47"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1081,
+                "end": 1139,
+                "utf8_sha256": "f8085a496db4f6512fbf61180f288ea9814f2493fe8e9f1162c875f584b74374"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4100-c08",
+          "proposition": "Investigations linked Coleman's actions to QAnon ideology and his belief that he was saving the world.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 449,
+            "end": 580,
+            "utf8_sha256": "079eab01a045db8bb43481ef65e0ab886b6b466f9067685d99f687c02772182a"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 637,
+                "end": 847,
+                "utf8_sha256": "ad2f08ade56e98bea153e436b00d468a03f0ba984e8ec18c5a7ea33609b1df47"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4100-c09",
+          "proposition": "Coleman's wife had no indication that he intended to take the children.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source says he did not give the destination and left unexpectedly, but also reports planned family camping. It does not state that she had no indication of an intention to take the children at all.",
+          "original_response_interval": {
+            "start": 581,
+            "end": 653,
+            "utf8_sha256": "9da882aeaabe7c4c510c8f8947cb44db6cef9953ca0f54bcb6790e1a8b6e1c39"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-4100-c10",
+          "proposition": "Coleman's wife thought her children were safe.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 658,
+            "end": 693,
+            "utf8_sha256": "99fd46c4a07aab224c44a93029b2cbd89608fa046d1eb864d7a0be927be58946"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1341,
+                "end": 1621,
+                "utf8_sha256": "2a6b72d7f1a7edeff47b2a6d824f2433e2aa2cda14c21f4ac08af8c61681c63f"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4100-c11",
+          "proposition": "A status hearing was scheduled for December 1.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 694,
+            "end": 749,
+            "utf8_sha256": "d0b48dea16717607480e4247bfc254b033c32cbd9294214dd8dc470411d13b7c"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 98,
+                "end": 298,
+                "utf8_sha256": "527b05557971aec2bac5ed668e61d795875ac4f1e071650d4d0ec66cd2d2084d"
+              },
+              {
+                "passage_index": 0,
+                "start": 2247,
+                "end": 2351,
+                "utf8_sha256": "555cd759e31a5c4eb987bfff1dfc91f96aa43259a67fc321eecd10020429e22e"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-4100-c12",
+          "proposition": "A competency review was scheduled for March 8, 2024.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 751,
+            "end": 798,
+            "utf8_sha256": "eec2ec4f48b96dba09a56744679de315362dc28e093fb64b5474c3b1aec7dd06"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 98,
+                "end": 298,
+                "utf8_sha256": "527b05557971aec2bac5ed668e61d795875ac4f1e071650d4d0ec66cd2d2084d"
+              },
+              {
+                "passage_index": 0,
+                "start": 2247,
+                "end": 2351,
+                "utf8_sha256": "555cd759e31a5c4eb987bfff1dfc91f96aa43259a67fc321eecd10020429e22e"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "response_id": "5639",
+      "source_id": "13595",
+      "original_response_utf8_sha256": "77d676af120b65418637c4c4a0ae613465e304b74fc39dbd795542fa4953c06a",
+      "original_context_utf8_sha256": "86e4ced093a0e43cd571c43677ffa193fac3ca6ff2539ebabe941faa28988022",
+      "original_prompt_utf8_sha256": "1e846c116f1b216162604390d6a66d3bf1f00c8aadeaccd3cac4f3e1e027634c",
+      "adapted_answer_utf8_sha256": "51aa5b9b01de42249a39441dd82164df1fa587ffa56976e1facc05f1a3f0bd8b",
+      "prefix_unicode_characters": 66,
+      "case_shell": {
+        "id": "ragtruth-response-5639",
+        "family_id": "ragtruth-source-13595",
+        "split": "dev",
+        "category": "synthesis",
+        "tags": [
+          "private_auxiliary",
+          "actual_natural_response"
+        ],
+        "provenance": {
+          "kind": "real_source",
+          "fictional": false,
+          "language": "en",
+          "origin": "natural_response",
+          "source_ids": [
+            "13595"
+          ],
+          "generator": {
+            "kind": "model",
+            "name": "llama-2-70b-chat",
+            "version": "upstream RAGTruth response record; no new generation"
+          },
+          "annotation_version": "ragtruth-private-revised-1"
+        }
+      },
+      "claims": [
+        {
+          "claim_id": "ragtruth-5639-c01",
+          "proposition": "The Pentagon released formerly secret photos and videos of US-Chinese aircraft encounters.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 0,
+            "end": 96,
+            "utf8_sha256": "2161f9652df91438488c65a6e8ef05e21413f1dad2d7ef0a36d8f30a2573c441"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 65,
+                "end": 254,
+                "utf8_sha256": "d35ec9cf258198229a9dd4d24af73361d0fe20cf742cf4247ffc6a2e852f351e"
+              },
+              {
+                "passage_index": 0,
+                "start": 485,
+                "end": 613,
+                "utf8_sha256": "211abce9544b83e58169464cd75a9e431e6e08ce7ce17cb2b6a8c74e98c856b8"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c02",
+          "proposition": "The released material highlighted rising tensions between the countries.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 98,
+            "end": 159,
+            "utf8_sha256": "c12cdebccca37c46cb8686e4987a786f88e075f2069289c3b49560f009e2db49"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 255,
+                "end": 382,
+                "utf8_sha256": "053be773ee283cf70bbb530150b4f6a3a8c0138a640a1ad0488e69e7f94a55f7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c03",
+          "proposition": "The visuals showed Chinese fighter jets engaging in coercive, high-risk behavior.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 160,
+            "end": 245,
+            "utf8_sha256": "03a144ee235422cc7bd9f66c250e21ddf131e33d3cad636825c775066192bf71"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 139,
+                "end": 254,
+                "utf8_sha256": "c9ea27b7e89978f027ac0b7325bda11c922b243b1bc6f1d26a8ef230ff7d3d4d"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c04",
+          "proposition": "Chinese fighter jets engaged in close approaches.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "Diagnostic principal actor-bound reading: the later close-approach/UAP-image passage is not explicitly identified as the earlier Chinese-jet material. A generic-material reading may be S; no unique actor link is imposed.",
+          "original_response_interval": {
+            "start": 247,
+            "end": 313,
+            "utf8_sha256": "7e5eaed116f97c3b8e6545a0c6606cd6d835607bf2be1c4021c9eee6d18baf7a"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-5639-c05",
+          "proposition": "The US intended the image release to increase transparency and awareness.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 314,
+            "end": 413,
+            "utf8_sha256": "24dbd7892e7fbb7e73e9dc468db9d8732c04cd48fb2282f7db6f1eceda08fe7a"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 255,
+                "end": 382,
+                "utf8_sha256": "053be773ee283cf70bbb530150b4f6a3a8c0138a640a1ad0488e69e7f94a55f7"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c06",
+          "proposition": "Experts noted a significant recent increase in such encounters.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 414,
+            "end": 490,
+            "utf8_sha256": "6f6a2758ca2161744b3b93f25a7c8faece136b4c4d326a1785f18676303a6692"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1143,
+                "end": 1458,
+                "utf8_sha256": "a577ba90ec4c18b412ac8ac00dbc0f6a8f98f49da7003a89f78acefd0a669c13"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c07",
+          "proposition": "There had been more than 180 encounters since September 2021.",
+          "acceptable_aliases": [],
+          "label": "CONTRADICTED",
+          "annotation_reason": "The source reports 180 similar encounters as the count for this period, while the response increases it to more than 180. The source does not say at least 180.",
+          "original_response_interval": {
+            "start": 492,
+            "end": 537,
+            "utf8_sha256": "22119cae8fb33791d53fd94411ea49dd6d9ba9f0b3d1327c717664fc8968cd47"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1251,
+                "end": 1354,
+                "utf8_sha256": "83c9d358c838feee609205c6a43ebcd629d8a87b3070ada8a6b0347a06cf0d5f"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c08",
+          "proposition": "The Pentagon had used the terms unsafe and unprofessional for encounters.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 538,
+            "end": 614,
+            "utf8_sha256": "1cf161f35c27e052a8737f93105a2fe4ef7d830602897cacc3c314515c76d269"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1628,
+                "end": 1736,
+                "utf8_sha256": "1f5d161cea45d01f9d32054c6dcbbc1c2b06909ef21d212bf5122aecbd812215"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c09",
+          "proposition": "The Pentagon used coercive and high-risk descriptions.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 621,
+            "end": 678,
+            "utf8_sha256": "778b4acd2b539be311a75ad06fd8fb10c7efeb0a4749c2580a82a9fb3dfb26ae"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1628,
+                "end": 1736,
+                "utf8_sha256": "1f5d161cea45d01f9d32054c6dcbbc1c2b06909ef21d212bf5122aecbd812215"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c10",
+          "proposition": "The unsafe/unprofessional and coercive/high-risk terms described separate groups of interactions.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "The source describes a change of terminology instead of the older terms. It does not establish the response's some-versus-others grouping. The individual historical/current terms are covered separately; the unsupported relational claim is not auto-labelled from the original span.",
+          "original_response_interval": {
+            "start": 538,
+            "end": 678,
+            "utf8_sha256": "5be6d187ea9fe95e69f4976f63e83f855ad1da1dfe3f660f9d03003ba107ea36"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-5639-c11",
+          "proposition": "John Aquilino was a Navy admiral and chief of US Indo-Pacific Command.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 679,
+            "end": 735,
+            "utf8_sha256": "99d55cd34912df825d41ae42ce6f4542ec310a8b4f85f5782baa1a5ebf82525a"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1821,
+                "end": 1894,
+                "utf8_sha256": "699742de0248ab78a6f52c7fa80c31219ef926183f9744584ae1f07db42c39db"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c12",
+          "proposition": "Aquilino voiced concern that such encounters could cause accidents.",
+          "acceptable_aliases": [],
+          "label": "SUPPORTED",
+          "annotation_reason": "The unchanged source states this proposition with the subject and conditions in the quote.",
+          "original_response_interval": {
+            "start": 737,
+            "end": 837,
+            "utf8_sha256": "b6988b3880eeeaa064128019b5beaa92cf8366972929f301f1d55c2f356589c4"
+          },
+          "source_interval_sets": [
+            [
+              {
+                "passage_index": 0,
+                "start": 1821,
+                "end": 2050,
+                "utf8_sha256": "903eba7abd5fe1530bb285529b3ee1cbdab95efa4e6bfb69725bec3c57317156"
+              }
+            ]
+          ]
+        },
+        {
+          "claim_id": "ragtruth-5639-c13",
+          "proposition": "Chinese fighter jets released objects during these encounters.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "Diagnostic actor-bound reading: the source attributes object releases to later UAP-image material, without an unambiguous link to the earlier Chinese-jet material.",
+          "original_response_interval": {
+            "start": 160,
+            "end": 313,
+            "utf8_sha256": "883920dfbbc48cb25e35b6467953390ae2eb447c9becb0c98d768a3d3b5ef828"
+          },
+          "source_interval_sets": []
+        },
+        {
+          "claim_id": "ragtruth-5639-c14",
+          "proposition": "The releases of objects occurred at high speeds.",
+          "acceptable_aliases": [],
+          "label": "UNSUPPORTED",
+          "annotation_reason": "Under the adjacent release-modifier reading, the source only attaches high speeds to close approaches. An alternative wider coordination reading differs; the whole response is non-scoring diagnostic.",
+          "original_response_interval": {
+            "start": 247,
+            "end": 313,
+            "utf8_sha256": "7e5eaed116f97c3b8e6545a0c6606cd6d835607bf2be1c4021c9eee6d18baf7a"
+          },
+          "source_interval_sets": []
+        }
+      ]
+    }
+  ],
+  "scoring_membership": {
+    "fixed_acquisition_cases": 12,
+    "ordered_all_ids": [
+      "ragtruth-response-972",
+      "ragtruth-response-2053",
+      "ragtruth-response-3343",
+      "ragtruth-response-2143",
+      "ragtruth-response-2660",
+      "ragtruth-response-3086",
+      "ragtruth-response-5375",
+      "ragtruth-response-5315",
+      "ragtruth-response-4069",
+      "ragtruth-response-4292",
+      "ragtruth-response-4100",
+      "ragtruth-response-5639"
+    ],
+    "ordered_scoring_ids": [
+      "ragtruth-response-972",
+      "ragtruth-response-2053",
+      "ragtruth-response-3343",
+      "ragtruth-response-2143",
+      "ragtruth-response-3086",
+      "ragtruth-response-5375",
+      "ragtruth-response-5315",
+      "ragtruth-response-4069",
+      "ragtruth-response-4292"
+    ],
+    "ordered_non_scoring_diagnostic_ids": [
+      "ragtruth-response-2660",
+      "ragtruth-response-4100",
+      "ragtruth-response-5639"
+    ],
+    "exclusions": [
+      {
+        "case_id": "ragtruth-response-2660",
+        "reason_category": "shared_year_attachment_and_source_attribution_scope",
+        "decisions": [
+          "RA05",
+          "RA06",
+          "RA07",
+          "RA08"
+        ]
+      },
+      {
+        "case_id": "ragtruth-response-4100",
+        "reason_category": "causal_modifier_attachment",
+        "decisions": [
+          "RA11"
+        ]
+      },
+      {
+        "case_id": "ragtruth-response-5639",
+        "reason_category": "speed_modifier_and_Chinese_jet_UAP_actor_binding",
+        "decisions": [
+          "RA12"
+        ]
+      }
+    ],
+    "policy": "Fixed12 remain complete original-input diagnostic reconstruction. Exclude whole cases with non-unique text interpretation from primary scoring because the schema has no claim-ignore mask; never drop ambiguous gold while scoring the same full answer.",
+    "membership_timing": "Pre-verifier-results, after independent blind annotation and before auxiliary live calls; no saved verifier predictions read.",
+    "original_natural_input_rewritten": false,
+    "generalization": "Nine-case purposive auxiliary subset only, not representative of all RAGTruth or a replacement for main72."
+  },
+  "primary_scoring_file": "scoring-cases.jsonl",
+  "full_population_file": "private-cases.jsonl",
+  "full_population_scoring_status": "Diagnostic reconstruction only; score only primary_scoring_file. Three whole cases have non-unique readings and are not primary scoring cases.",
+  "original_packet_status_is_historical": "The unchanged packet lock records its pending handoff status; independent_review_status and later review_evidence record the subsequent affected acceptance."
+}

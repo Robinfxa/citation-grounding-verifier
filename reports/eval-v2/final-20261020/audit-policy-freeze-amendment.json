@@ -1,0 +1,16 @@
+{
+  "status": "AUDIT_POLICY_FROZEN_BEFORE_TEST",
+  "policy_file": "reports/eval-v2/audit-policy.md",
+  "policy_sha256": "5975b67a16e75f6c71f0f7d2b4d328db01a5bbc622e9cec70764b78f6e2cce82",
+  "previous_source_freeze_sha256": "b5e9a773a5ca2b1ad0c002241043d8e7ec4684cb606ed3b1b818c260da0b8d72",
+  "new_source_freeze_sha256": "f2e1e9299430897a5a64d5a7e2cbfd490d3be66ca452c3fb5cc9ff31314ee465",
+  "previous_execution_freeze_sha256": "fe2b5cbb39d7bcf0e9ce5c684c64890a8f034e501125c8e780a7a53b89ffde7d",
+  "changes": [
+    "Add audit-policy.md to input_hashes and prepared-public-freeze",
+    "Record the existing two-stage audit rules in the freeze"
+  ],
+  "data_selection_source_commands_settings_and_budgets_unchanged": true,
+  "archive_cli_validation_reused_inputs_unchanged": true,
+  "old_freezes_and_preflight_receipts_preserved": true,
+  "test_inference_calls": 0
+}

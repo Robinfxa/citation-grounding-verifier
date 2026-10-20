@@ -1,0 +1,201 @@
+{
+  "format_version": 1,
+  "annotation_version": "ragtruth-private-revised-1",
+  "status": "accepted_primary9_and_full12_diagnostic_no_open_revision_requests",
+  "reviewer_type": "same-owner non-author AI; not human",
+  "reviewer_model": "gpt-6.1-sol",
+  "reasoning_effort": "max",
+  "human_review": "not_performed",
+  "original_independent_claims": 197,
+  "original_blind_annotations_sha256": "c6f1f1c0135396760d16b24ca623416e92aecc07acea073e3e778a9ecb33b7bd",
+  "original_blind_lock_sha256": "9cf5a37ebbe2f10edd8c5bb42ea022517a02151f70eb27598a02035af92d55c1",
+  "original_blind_input_sha256": "9adb0e9623a17e4bbb328014808320b341f52e1da787ebe16db83603f77948c6",
+  "original_independent_blind_judgments_are_private": true,
+  "original_affected_review_sha256": "bffbdf1b2b74b156c3eeb3b82ee74cfc6979062aa87fd1af1bdf5357cb101f06",
+  "projection_rule": "This is a newly serialized metadata-only projection of the original affected review and the author membership. No original news/response, quote/anchor fields or private review prose is published here. The original review hash is distinct from this projection hash; this file is not the original blind lock or review.",
+  "full_diagnostic_cases": 12,
+  "full_diagnostic_claims": 170,
+  "full_diagnostic_verdict_counts": {
+    "SUPPORTED": 142,
+    "UNSUPPORTED": 25,
+    "CONTRADICTED": 3
+  },
+  "primary_scoring_cases": 9,
+  "primary_scoring_claims": 125,
+  "primary_verdict_counts": {
+    "SUPPORTED": 111,
+    "UNSUPPORTED": 12,
+    "CONTRADICTED": 2
+  },
+  "full12_unique_gold_not_claimed": true,
+  "changed_or_added_claims": 67,
+  "unchanged_claims_all_fields_exact": 103,
+  "exact_quotes": 189,
+  "exact_answer_anchors": 170,
+  "all_contexts_and_complete_original_answers_unchanged": true,
+  "only_non_gold_difference": "Derived provenance.annotation_version; no original source or response text was rewritten.",
+  "request_groups_resolved": 13,
+  "citation_binding_requests_resolved": 46,
+  "binding_proposals_fully_covered": 44,
+  "equivalent_sufficient_bindings_accepted": 2,
+  "unresolved_primary_scoring_requests": 0,
+  "preserved_snapshot_files": 8,
+  "full12_cases_sha256": "ba10177277f9fb104f1fa463396bdd6a1b663cb627adb9f9a19a9ca8418c5b81",
+  "full12_gold_sha256": "a921a2d9de161ad0860ebf159a6e96e7dc72e7858cbbc7fe54f6afa0a2a2664a",
+  "primary9_cases_sha256": "7223830a37eded12168e304ff078bb168a850ea8b393088c08e77386ad615d2d",
+  "primary9_gold_sha256": "04cc903b47b0a4cb483a07172cc20763fbfb24075283be9cbcdfbbd823e3fb3f",
+  "primary9_blind_sha256": "509edcd6a83630b056a0f50b8eeab9944cdb1d85b8425ae189efeb01cbecdbfa",
+  "membership": {
+    "fixed_acquisition_cases": 12,
+    "ordered_all_ids": [
+      "ragtruth-response-972",
+      "ragtruth-response-2053",
+      "ragtruth-response-3343",
+      "ragtruth-response-2143",
+      "ragtruth-response-2660",
+      "ragtruth-response-3086",
+      "ragtruth-response-5375",
+      "ragtruth-response-5315",
+      "ragtruth-response-4069",
+      "ragtruth-response-4292",
+      "ragtruth-response-4100",
+      "ragtruth-response-5639"
+    ],
+    "ordered_scoring_ids": [
+      "ragtruth-response-972",
+      "ragtruth-response-2053",
+      "ragtruth-response-3343",
+      "ragtruth-response-2143",
+      "ragtruth-response-3086",
+      "ragtruth-response-5375",
+      "ragtruth-response-5315",
+      "ragtruth-response-4069",
+      "ragtruth-response-4292"
+    ],
+    "ordered_non_scoring_diagnostic_ids": [
+      "ragtruth-response-2660",
+      "ragtruth-response-4100",
+      "ragtruth-response-5639"
+    ],
+    "exclusions": [
+      {
+        "case_id": "ragtruth-response-2660",
+        "reason_category": "shared_year_attachment_and_source_attribution_scope",
+        "decisions": [
+          "RA05",
+          "RA06",
+          "RA07",
+          "RA08"
+        ]
+      },
+      {
+        "case_id": "ragtruth-response-4100",
+        "reason_category": "causal_modifier_attachment",
+        "decisions": [
+          "RA11"
+        ]
+      },
+      {
+        "case_id": "ragtruth-response-5639",
+        "reason_category": "speed_modifier_and_Chinese_jet_UAP_actor_binding",
+        "decisions": [
+          "RA12"
+        ]
+      }
+    ],
+    "policy": "Fixed12 remain complete original-input diagnostic reconstruction. Exclude whole cases with non-unique text interpretation from primary scoring because the schema has no claim-ignore mask; never drop ambiguous gold while scoring the same full answer.",
+    "membership_timing": "Pre-verifier-results, after independent blind annotation and before auxiliary live calls; no saved verifier predictions read.",
+    "original_natural_input_rewritten": false,
+    "generalization": "Nine-case purposive auxiliary subset only, not representative of all RAGTruth or a replacement for main72."
+  },
+  "membership_file": "ragtruth-scoring-membership.reviewed-1.json",
+  "membership_sha256": "d5b8bc356c285b241faa9ce5c4dce6d078cf3fca88ce920f039ebc98adf1a3d1",
+  "ordered_all_ids_sha256": "292f4afaa6cbce9047234645c8115cccdbb02b1a26171b0a67fcd0afae58a0d3",
+  "ordered_primary_ids_sha256": "266dcc1723b271ee79f13119ed0962fed140c2df41683d320f01ace4916587dc",
+  "decision_history": [
+    {
+      "request_id": "RA01",
+      "disposition": "separate_supported_evaluation_from_unsupported_evaluation",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    },
+    {
+      "request_id": "RA02",
+      "disposition": "retain_original_strong_evaluative_predicate",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    },
+    {
+      "request_id": "RA03",
+      "disposition": "retain_original_causal_predicate",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    },
+    {
+      "request_id": "RA04",
+      "disposition": "separate_two_independently_asserted_evaluations",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    },
+    {
+      "request_id": "RA05",
+      "disposition": "preserve_unqualified_utterance_and_origin_assertions",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    },
+    {
+      "request_id": "RA06",
+      "disposition": "separate_event_from_causal_attribution",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    },
+    {
+      "request_id": "RA07",
+      "disposition": "separate_action_from_actor_specific_motive",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    },
+    {
+      "request_id": "RA08",
+      "disposition": "record_multiple_year_scope_readings_and_exclude_whole_case",
+      "accepted": true,
+      "scope": "non-scoring diagnostic interpretation accepted, not a claim of unique gold"
+    },
+    {
+      "request_id": "RA09",
+      "disposition": "separate_speaking_event_from_speech_content",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    },
+    {
+      "request_id": "RA10",
+      "disposition": "separate_attention_from_source_specific_causal_theory",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    },
+    {
+      "request_id": "RA11",
+      "disposition": "record_multiple_causal_attachment_readings_and_exclude_whole_case",
+      "accepted": true,
+      "scope": "non-scoring diagnostic interpretation accepted, not a claim of unique gold"
+    },
+    {
+      "request_id": "RA12",
+      "disposition": "record_multiple_actor_modifier_readings_and_exclude_whole_case",
+      "accepted": true,
+      "scope": "non-scoring diagnostic interpretation accepted, not a claim of unique gold"
+    },
+    {
+      "request_id": "RA13",
+      "disposition": "preserve_complete_anchor_and_avoid_redundant_weaker_date_fact",
+      "accepted": true,
+      "scope": "affected annotation accepted"
+    }
+  ],
+  "primary_selection_rule": "Retain the fixed twelve acquisition records. Exclude all three complete cases with genuinely non-unique clause/year/actor attachment after independent blind review; the other nine form the primary auxiliary scoring population. Do not score a full answer after silently dropping its ambiguous gold.",
+  "exclusion_selection_used_verifier_predictions": false,
+  "reconstruction_script": "rebuild_ragtruth_scoring.py",
+  "reconstruction_script_sha256": "deb803c0825ca2fe1d88bfd8b794bce0e8c1b5aceabdb004720225a880c5304a",
+  "inference_performed": false,
+  "limitations": "Independent AI affected review after a 197-claim blind lock, not human review. Nine purposively selected Summary cases do not estimate all RAGTruth. Fixed twelve are diagnostic under disclosed readings, not a unique scoring population. Repository MIT notice is not underlying third-party news redistribution clearance."
+}

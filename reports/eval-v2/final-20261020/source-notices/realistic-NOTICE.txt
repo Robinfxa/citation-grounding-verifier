@@ -1,0 +1,52 @@
+This directory includes historical AI-authored drafts and the reviewed
+main-candidate. The candidate metadata binds the accepted independent AI
+annotation reviews; it is awaiting parent promotion and is not human-reviewed.
+
+Contexts are unchanged Unicode slices of the supplied upstream UTF-8 files.
+The manifest records the exact source revision, raw hash, slice coordinates,
+passage hash and full retained permission notice. Markup and code examples
+remain unchanged. Questions and answers were newly authored by an AI coding
+session; they are not recorded production-user questions or model responses
+borrowed from another benchmark. Controlled changes, when present, are
+identified separately and retain their base answer.
+
+CPython: Python Software Foundation and contributors. Python 3.13.0,
+60403a5409ff2c3f3b07dd2ca91a7a3e096839c7. The complete LICENSE and
+documentation license/history notice are in licenses/cpython/. Changes:
+selection and subdivision into passages only; source prose is unchanged.
+
+pytest: Copyright (c) 2004 Holger Krekel and others, pytest 8.3.3,
+d0f136fe64f9374f18a04562305b178fb380d1ec. The MIT notice is retained in
+licenses/pytest/LICENSE. Source prose is unchanged; passages are selected.
+
+curl: Copyright (c) 1996 - 2024, Daniel Stenberg and many contributors,
+curl 8.10.1, 7eb8c048470ed2cc14dca75be9c1cdae7ac8498b. Each supplied
+command-option file retains its author and SPDX curl notice. The complete
+permission grant and disclaimers are in licenses/curl/COPYING. Source prose
+is unchanged; related option files are supplied as separately mapped passages.
+
+Rust Reference: The Rust Project Developers and contributors,
+2dafab96d919d6ab2884488e970bf95610ff83eb. The MIT redistribution option is
+used, with both upstream MIT and Apache 2.0 licenses retained in
+licenses/reference/. Source prose is unchanged; passages are selected.
+
+The twelve inherited pilot cases preserve the same CPython and Rust source
+bytes and notices separately in pilot-import/. Their complete copies are in
+pilot-import/licenses/cpython/ and pilot-import/licenses/rust/. The copied
+pilot's CPython documentation notice is DOCUMENTATION-LICENSE.rst. The pilot
+source files and every claim/context/answer payload are unchanged; only the
+derived candidate annotation-version field is unified for strict loading.
+
+PostgreSQL: Copyright (c) 1996-2024, PostgreSQL Global Development Group;
+Copyright (c) 1994, The Regents of the University of California. The inherited
+pilot documentation is pinned to d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e.
+The complete permission notice and disclaimer remain in
+pilot-import/licenses/postgresql/COPYRIGHT. Source prose is unchanged;
+selected passages and their exact original Unicode ranges are mapped.
+
+The auxiliary RAGTruth selection is not part of this redistributable context
+pack. It contains metadata and reproducible acquisition/scoring recipes.
+Underlying news, MARCO and Yelp text is not relicensed by this notice or by
+RAGTruth's repository MIT license. Obtain the referenced source data under
+its applicable upstream terms. No auxiliary response is relabeled as an
+AI-authored documentation answer.

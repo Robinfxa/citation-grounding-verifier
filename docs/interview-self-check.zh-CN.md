@@ -14,7 +14,7 @@
 | 6. gold 为什么不能传给端到端 verifier？ | 会预先告诉它要找哪些事实，抽取任务泄漏成 oracle；两条轨道只各测自己的输入合同 | `run_benchmark` 构造两个实际输入的分支 |
 | 7. source-family split 为什么优于随机行？ | 同篇文章/版本/改写共享信息，分开会泄漏；两个答案不是两个独立来源。topic-disjoint 也不等于 project-disjoint | `Case.family_id`；manifest；来源与近重复记录 |
 | 8. 旧高分为什么不够？ | 旧案例短、虚构、事实少，数据分布窄；426 测试通过不证明语义质量；改变数据后的分数不等于模型进退 | v1 报告与新版数据卡 |
-| 9. 哪项优化有受控证据？ | 只能用本轮已完成 ablation 的 dev IDs、单一变化、固定条件、资源和回归回答。若尚未完成，应明确“没有新受控结论”；旧 v1→v2 不能替代 | 本轮协议及实际 ablation 结果；当前未完成时保持 pending |
+| 9. 哪项优化有受控证据？ | C01 只给 Minimal 增加一句充分引用指令；两次观察保留原控制失败，固定数据、模型、评分和传输。严格证据 F1 改善不全等于语义改善；还要解释实际条件引用修复、残留合并问题和输出/耗时增长 | [C01 实验](../reports/eval-v2/ablation-20261020/README.md)；只用开发结果，不借测试调参 |
 | 10. 为什么 minimal/optimized 共用安全边界？ | 比较方法不能靠一方接受假引文或隐藏失败获胜；optimized 的额外调用和有限 repair 是明示的方法成本 | `_structured`、`_attempt`、`validate_report` |
 | 11. timeout/schema failure 与 U 的区别？ | 前者没完成可信操作，返回错误并留在失败分母；U 是成功操作的语义判断，含义是给定材料不足以支持或反驳 | `VerificationError`；HTTP 错误映射；runner records |
 | 12. retry 如何计费与计量？ | 可能再次消耗调用；所有尝试、repair、已知 tokens 都累加。不知道 usage 就标 incomplete，不能根据超时猜零 | `_Budget`、`RunStats`、`resources`、总预算保守预留 |

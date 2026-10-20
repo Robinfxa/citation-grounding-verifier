@@ -72,7 +72,11 @@ family 口径是原文档/API/主题簇；相关选项、来源版本和每个�
 1. `auxiliary/rebuild_ragtruth.py` 下载/核验固定上游两文件并选取原始记录，完整原 response 与 context 不变；该采集层没有 claim gold 或 Question 前缀，记录 `claim_annotation_status=not_performed`。本地 raw-selection artifact SHA256 为 `8344e25226138e8ff2e5f0238154ab8f3c3779281caefd1ad247472c11c8399f`。
 2. `auxiliary/rebuild_ragtruth_scoring.py` 配合自编 annotation recipe，从固定原文的 Unicode intervals 本地还原 gold quote/anchor，并构造实际测量输入 `Question: {原 prompt 第一行 Summary 指令}\n\nAnswer: {完整原 response}`。原 response 字符串和原 span 坐标完整保留；gold anchor 才加 prefix 长度。公开 recipe 不存直接 quote/anchor 字段或完整原文/response，自编事实措辞可能与短原串重合。输出 blind、sealed gold、private cases 三份均核 hash；另生成只在私有目录使用的严格 manifest、逐条 decoded source_info 原文文件和仓库 MIT notice。manifest 的 license 字段明确 underlying third-party rights 未核定、仅私有采集，不能把新闻标成 MIT。
 
-当前 `ragtruth-claim-recipe.author-draft-1.json` 对这 12 条真实回复做了 161 条完整作者 claim 标注；其语义仍待 A 从原盲包独立抽取并锁定后对照，不能把此版称为审后 gold。它已经实际重建出与作者盲包逐字节相同的 scoring 文件，现有严格消费者可加载 12/161。独立来源 reviewer 对 raw hash、interval hash、output hash 和 repository-license hash 四种失配均验证安全拒绝且不写输出目录。脚本不执行推理，未报告辅助模型分数。后续审后 recipe 会另存版本并绑定复核 hash。
+原 `ragtruth-claim-recipe.author-draft-1.json` 的 12 条、161 个作者 claim 及其 pending 元数据保留为历史交接快照。独立 AI reviewer 先完成并锁定 197 个盲判断，才打开作者 gold；集中裁决后另存 `ragtruth-claim-recipe.reviewed-1.json`，保留全部原回答/context，形成 12 条、170 个完整诊断标注。67 项变更或新增逐项获接受，103 项全字段精确不变，189 个引文和 170 个答案锚点逐字核对通过；13 组请求和 46 项主体/范围绑定均已解决。没有声称 human signoff。
+
+主辅助评分只使用 `scoring-cases.jsonl` 的 9 条、125 个事实（111 S、12 U、2 C）。固定原 12 IDs 不变；2660、4100、5639 因真实文本的共享年份、因果附着或行为主体/修饰语附着存在多种合理读法，整例保留为非评分诊断，不把含糊 claim 偷删后继续给原完整答案算分。9 IDs、3 个排除 IDs、原因类别和裁决历史在公开 membership/status 文件中固定，选择发生在辅助 verifier 结果之前，未读取模型预测；该目的性小样本不能代表全部 RAGTruth。
+
+审后配方实际重建的 12 条诊断三件套及 9 条评分三件套，都与接受包的原行字节投影相同。完整 12/170 和正式 9/125 均由现有严格消费者连同相邻 manifest 加载通过。新闻 decoded-field 原文和完整回复仍只在私有重建目录；公开配方只含自编标注、offset/hash 和固定 ID，短事实措辞可能与原文重合，但没有直接 quote/anchor 字段或完整新闻/回复。独立来源 reviewer 曾对 raw hash、interval hash、output hash 和 repository-license hash 四种失配验证安全拒绝；新增 membership 和子集输出 hash 也在写出前核验。脚本不执行推理，未报告辅助模型分数。公开 `ragtruth-review-status.reviewed-1.json` 明确区分原始私有审查 hash 与新序列化元数据投影，原 197 盲判断和锁未修改。
 
 FActScore 的原子事实分解与 RAGTruth 的真实 response/错误 span 是方法参照和辅助来源；HaluEval 本轮没有装入主集。无需为点名来源而假称使用没有实际借入的数据或改造自然回复。
 

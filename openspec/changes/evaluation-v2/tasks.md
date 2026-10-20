@@ -20,7 +20,9 @@
 - [x] 3.2 Run at least one one-factor development ablation, preserve controls, and record adoption/rejection with measured tradeoffs.
 
   [C01](../../../reports/eval-v2/ablation-20261020/README.md) adds only the prespecified Minimal end-to-end citation sentence. Three new 12-case blocks completed in the fixed order, using 36/216 attempts without retry or repair; the original control error remains in the primary comparison. Independent parent replay reproduced all 48 mapped observations and family-paired analysis. Parent adoption accepts the demonstrated condition-citation improvements and measured resource increase, with the localcontext merge, remaining antecedent gap, strict-score artifacts and small-sample limitations explicitly retained. Only this exact prompt delta is handed to the original service owner; final test has not informed the decision.
-- [ ] 3.3 Expand only after pilot review, resolve annotation disputes, validate family/near-duplicate separation, and freeze the final dataset, selections, methods, scorer, matrix and budget before test inference.
+- [x] 3.3 Expand only after pilot review, resolve annotation disputes, validate family/near-duplicate separation, and freeze the final dataset, selections, methods, scorer, matrix and budget before test inference.
+
+  Reviewed main is 72 cases / 668 claims, 24 dev / 48 test, across 48 document/topic families. Source bytes, split separation and independent annotations are recorded in the [data card](../../../reports/eval-v2/data-card.md) and linked original/projection evidence. [Final freeze](../../../reports/eval-v2/final-20261020/experiment-plan.json) binds source commit `324559dccba4624dfa803849f5fd26284c7b27f4`, the adopted prompt, data/scorer/settings, exact 48/16-case run selections, 24-case audit selections and the audit policy before inference. Parent independently reconstructed all 480 seeded jobs and accepted the 600-attempt cap and block-stop policy. Three ambiguous RAGTruth cases are excluded from the separate auxiliary scoring subset before model outcomes; main remains unchanged.
 
 ## 4. Measurement and understandable delivery
 

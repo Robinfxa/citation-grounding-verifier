@@ -45,6 +45,8 @@
 | [runner.py](../src/grounding_eval/runner.py) `save_dataset_snapshot`、`validate_saved_state`、`regenerate_report` | 原始 cases/config/records/completion + 源快照 → 重新生成 summary | 不调用 provider；验证 hash、完整 population、状态、评分模块；损坏或 scorer 改变拒绝，旧版用固定旧提交复算 |
 | [audit.py](../src/grounding_eval/audit.py) `prepare`、`lock_alignment`、`prepare_evidence`、`summarize` | 事前选择的保存输出 → 两阶段非作者审查 → 独立子集结果 | 先隐藏方法/标签/引文锁定 alignment，再看语义证据；锁定被改或清单不完整拒绝；程序不替审查员推断语义 |
 
+当前主集有 72 个真实文档案例、668 条断言。新增 60 个案例把问题保留为 `generated_answer` 中的 `Question: ...\n\nAnswer: ...`，实际 verifier 可以看到提问范围；问题不加入 `context_passages`，也不当成证据。字段中的断言锚点以这份完整输入为准。独立复核、原始版本、裁决和许可映射见[数据卡](../reports/eval-v2/data-card.md)。RAGTruth 原始模型回答作为单独的辅助集合，不能和这些代理创作答案混称自然分布。
+
 端到端 joint label F1 是 `2 × 对齐且标签正确的事实数 / (gold 数 + predicted 数)`。输出很少不能只靠“输出的都正确”得到高分。S/C→证据覆盖只谈需要证据的事实；C/U→S false-support 应同时看它的分母、判断覆盖和请求失败，不能靠不作答降低危险错误率后宣称变好。
 
 阅读顺序建议：先追一个 `examples/wal.json` 请求；再读 `tests/service/test_verifiers.py` 的固定 ID 与失败用例；最后追 `tests/evaluation/fixtures/measurement-calibration.jsonl` 的独立评分边界和一个保存 run。涉及真实模型的操作需明确预算；本导读不要求为学习额外消耗额度。

@@ -1,12 +1,12 @@
 # Evaluation v2 — real-document benchmark
 
-The original short fictional benchmark is retained as history. **The main dataset has been replaced with 72 reviewed real-document cases / 668 claims**, split into 24 dev and 48 held-out cases. The development comparison and a controlled citation-prompt experiment are complete. Final test measurement, stability repeats and the blinded semantic audit are pending at this source checkpoint.
+The original short fictional benchmark is retained as history. **The main dataset has been replaced with 72 reviewed real-document cases / 668 claims**, split into 24 dev and 48 held-out cases. The development comparison and a controlled citation-prompt experiment are complete. Final test measurement is running against the fixed source checkpoint; stability repeats and the blinded semantic audit follow the prespecified design.
 
 ## What changed
 
 Sources are pinned documentation from CPython, Rust, PostgreSQL, pytest and curl. Contexts contain 3,905–15,959 characters and answers assert 8–14 facts. Question context, source mappings, controlled changes and answer anchors are explicit. The [data card](data-card.md) describes the actual population, label imbalance, limited cross-passage coverage and source dependence. Independent AI annotations were locked before author-label exposure; [public review evidence](../../datasets/v2/realistic-draft/review-evidence/README.md) preserves the disagreements and accepted revisions. Human review remains pending.
 
-These answers are AI-authored on real sources. A separate fixed RAGTruth natural-response sample is being adjudicated; its results will not be pooled with main. Longer inputs alone are not evidence of better benchmark quality or harder semantic judgments.
+These answers are AI-authored on real sources. A separate fixed RAGTruth natural-response sample has completed annotation/reconstruction review: nine responses / 125 claims are eligible for scoring, while three responses remain whole-case ambiguity diagnostics. Its measurement has not started and will not be pooled with main. Longer inputs alone are not evidence of better benchmark quality or harder semantic judgments.
 
 ## Completed development measurements
 

@@ -1,0 +1,3368 @@
+{
+  "status": "PREPARED_WAITING_PARENT_FINAL_NARROW_REVIEW",
+  "frozen_at": "2026-10-20T23:34:14.066664+00:00",
+  "source_commit": "324559dccba4624dfa803849f5fd26284c7b27f4",
+  "source_archive_sha256": "34563894d163c829f837625ac3d0352f2fbdb8065aa8e8f6cf29a304f93db9a0",
+  "source_fingerprints": {
+    "code_sha256": "cd15430a02b364c2f6ddef034e6ef046b335dd99b3678d3dada5186e31dd89a6",
+    "files": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "efe9880e6f6691702c764654344532af21b39d252dd4392bb69fbc14eb612d81",
+      "grounding/contracts.py": "736c5e1e2db6f9bc0ff42d4ad2f93e502e5927b57f5a07515130537408f52417",
+      "grounding/diagnostics.py": "b29774e3b94587604b02de928932a374de4ac634cd41e5f47e142380f2853921",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/jev_evidence.py": "9fa033259e3f9a10bf2f59c5df438984a5d025cd2b3e13c3b3aa3dc3253cbf66",
+      "grounding/jev_provider.py": "b43d13f2a0c792c6f75000bdb0b66c8c15f874086e52bb5e86c6d7f50c06a9c4",
+      "grounding/jev_verifier.py": "c69c1427b57f3d976a61a0d7e8dba6544de412d85b52666580c10b81edda760b",
+      "grounding/prompts.py": "2bc178dc2996cfb83e4a5f6332b0908d50e92f409e234ad46e50dcc89e80bb59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "bb68cddb38d1194649448e410e6296d9cc2a9038bfe202dfd0f452e34315ffdf",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/audit.py": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+      "grounding_eval/cli.py": "079a5f9f1ac45da03d16814a1a87252d57bb2e69aeb0f6eb4d03e825dfc119ab",
+      "grounding_eval/confidence.py": "8b821bc658b14d7a7397e697dc5813e34463d305d00f7e020aa2d776f1e42c5d",
+      "grounding_eval/dataset.py": "1b5aae47a713ad8c71935859fe4e6b6fa6374584780515f6e8d959141aec8df2",
+      "grounding_eval/diagnostics.py": "b07bfe37d9f65abedd9432d3ebf51e2397afdf591d57685abde050b9574ecdb9",
+      "grounding_eval/hybrid.py": "b5f64a823700d120e9b5f6202901a296c5e367671b918e1c39f4c17ae23e2e13",
+      "grounding_eval/provenance.py": "7243c31ea04e8b37e543b56a7d3e96a6701631d6b178ed0576fee47ae801cd33",
+      "grounding_eval/repeated.py": "74c9f3de20d1d61c1715e22180652feae366b65233d681e92672ce1652a2cee8",
+      "grounding_eval/reporting.py": "3f61282bacc04399d3fb876395abe6bfcc68f4f232e83333f96957cfc8369122",
+      "grounding_eval/runner.py": "785db293bf0ba1bb17afdf2e2f7d4b29f8e444d9c0bec9127e37127d17caa40d",
+      "grounding_eval/scoring.py": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e",
+      "grounding_eval/uncertainty.py": "c6bfbdcb8155acf2fdfdd31ea74eaea4fa8d7a18750e26ca0c3546f49c85f674"
+    },
+    "prompt_files": {
+      "grounding/prompts.py": "2bc178dc2996cfb83e4a5f6332b0908d50e92f409e234ad46e50dcc89e80bb59"
+    }
+  },
+  "input_hashes": {
+    "datasets/main.jsonl": "b103f0ee127728f0fdfc5d58f3f5cbcf7c39e89d09b1369d1e7b9baf22b1b845",
+    "datasets/main.manifest.json": "3fbbba049fb20bed381ebaf24a993d35a69490498a8d2bdb52cc7b074cf8b9c5",
+    "datasets/v2/NOTICE": "8be96fdaa63022abd039ea2df4722bbf6dfa4d91d2402c35a85f310a200f1c67",
+    "datasets/v2/realistic-draft/NOTICE": "cc1db6b18e14e5877b3015accdf8d06904b49ec95b74f468eab2d1f33bbeef74",
+    "datasets/v2/realistic-draft/licenses/cpython/LICENSE": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+    "datasets/v2/realistic-draft/licenses/curl/COPYING": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+    "datasets/v2/realistic-draft/licenses/pytest/LICENSE": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+    "datasets/v2/realistic-draft/licenses/reference/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+    "datasets/v2/realistic-draft/pilot-import/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+    "datasets/v2/realistic-draft/pilot-import/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+    "datasets/v2/realistic-draft/pilot-import/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+    "datasets/v2/realistic-draft/pilot-import/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+    "datasets/v2/realistic-draft/pilot-import/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+    "datasets/v2/realistic-draft/pilot-import/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+    "datasets/v2/realistic-draft/pilot-import/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+    "datasets/v2/realistic-draft/pilot-import/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+    "datasets/v2/realistic-draft/pilot-import/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/location-trusted.md": "1b4d31f01d5089354f542298032415513d61dbd7ad5f4e1bafd37924546a9fd4",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/location.md": "f9242acc3a6bb75cbff18d59ef86b4ffc11efa541d4423b0673ac6ecc96f6ea4",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/max-redirs.md": "b85b10ff9c08c458736bff490666fe1229ed83e4eafb4f99b0c40557ff992d24",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/post301.md": "58cccf996abbbca0dbb415a6a466dcf150f14e523583b85b36db0981f3739b95",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/post302.md": "c3c1b7a2c1606e0d7e49bbd93ac01b9354d13569c1d4458ed5f3b5939d063c62",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/post303.md": "f5344ae27174e3eeafdf5f85aa07bd0f1d068d5d2d7a8f2e8b91dc137c4681d3",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/proto-redir.md": "1ea97b058c06e86987a5f67bbd8f7e760531a11efea48951beb4874c475a53cf",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/fail-with-body.md": "76754bbc3cf336c31e5826642bb18f8cba261f6878378a1c72e33b4172d09488",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/fail.md": "1c6ea656161a83257ad346aab0bb6e38d476e7a2785656aa3a24df501fcd0966",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry-all-errors.md": "a98f60938760f9d35232b3da2f7b45da4aa239411a142a52e5e8dccf6a5fb916",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry-connrefused.md": "0f1f5c3bcd63340bc74395d50400945fd01d51ceedefcbf3871f2b37788de513",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry-delay.md": "1a595221622a10d316d7e6f2d6d39dcd451c1230cc6fe5bd56022ade2f82f822",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry-max-time.md": "9505140824bf47fe04d4c8b929c16b3371e02399301c153b9f1071718ae53f33",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry.md": "d164104079fbac52eefc1147bfb1eb152bfbb1d883e6c0f963df25a4e7a505e2",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/data-binary.md": "0a13757b573ab911dfe6a80249bd4ce1b17e80aa993c3d4f660c41668069ed68",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/get.md": "33dcc8682ac5df6dd6e7c38df6fc47776d9f03f0b33d5a75b5cb5b99bf949da4",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/header.md": "b2cdd75693813f0aec178bb04bba344d30c19bae4a764eff227c4974ac1afcca",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/request.md": "33b43ebcd8d40f388b92018eaf822e731fbe755793ed87527f4423bab924b2bd",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/upload-file.md": "f9d0b70ff60e0bc1b1337875d19bccfadcbf5b4948bfacce9ec1bbb00e4c7cb0",
+    "datasets/v2/realistic-draft/sources/dev/pytest-monkeypatch/monkeypatch.rst": "6218e09da0c38d4f80346bcb67781a065afd5434ee0ae761102eb4097324f33f",
+    "datasets/v2/realistic-draft/sources/dev/pytest-parametrize/parametrize.rst": "3c4e488b25aaac11a12953da55616c5a76e09c2237c0b2298121dad7c96f21dd",
+    "datasets/v2/realistic-draft/sources/dev/pytest-tmp_path/tmp_path.rst": "4cc3888e67f883a4b8dbee68ab987d6f49763b1d3d32dcadfdacfe95cf534381",
+    "datasets/v2/realistic-draft/sources/dev/python-bisect/bisect.rst": "1fb2fa097a86e3bd92049f3e6b791a9bbf3bdf54a1098fcbb369d3e0e5c56a5c",
+    "datasets/v2/realistic-draft/sources/dev/python-copy/copy.rst": "935088f74e08fa47f652f9d803ab512ca5a961de655739eaa21919a6623ecfba",
+    "datasets/v2/realistic-draft/sources/dev/python-functools/functools.rst": "a3f0dffd4973d3c0902107dbb67ead54af934a1d43ba5552e590c69f233f817a",
+    "datasets/v2/realistic-draft/sources/dev/python-graphlib/graphlib.rst": "4bad5b7eb3c24538907c6358ab2223e23f75bc127b4402bfe14241e33e9f4f3e",
+    "datasets/v2/realistic-draft/sources/dev/python-heapq/heapq.rst": "c9d819c44d892c812f65b07ab9de1d13ec30dcdfc8af8423a754c2506d136e53",
+    "datasets/v2/realistic-draft/sources/dev/python-weakref/weakref.rst": "0ef492312caae331776ef5f24dca5cb8c23df5cb17b3847c562eed6046528c03",
+    "datasets/v2/realistic-draft/sources/test/curl-cookie/cookie-jar.md": "154d8137051090dc9298aaeba6eedddd36a148dff67c916e5d6d55f35e0aebc6",
+    "datasets/v2/realistic-draft/sources/test/curl-cookie/cookie.md": "d1db62cae04a9c5652658583c7153793f2a94441ea594a34a9740b92dbb7c21a",
+    "datasets/v2/realistic-draft/sources/test/curl-cookie/junk-session-cookies.md": "5d01994c2e9931c09338eac4f346858cd23ff2bcf42a361260ec71aed64cb557",
+    "datasets/v2/realistic-draft/sources/test/curl-multipart/form-escape.md": "59c5d847dd468b6554beb16c4b6aabb5691099b500766373d943287f12906234",
+    "datasets/v2/realistic-draft/sources/test/curl-multipart/form-string.md": "621839c2fa14fff9b62849f9444f225f58e68941b13b6952a00083cc767d9cf2",
+    "datasets/v2/realistic-draft/sources/test/curl-multipart/form.md": "1c57890e69bdacbdbf285f5d0339a0eb648ccd3ec345b112a8d75c630f42feb6",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/noproxy.md": "26340294c6c50d8bb495564e2b081793011904dcafd94738f5fb7697dfc6e463",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/preproxy.md": "ea9d61f5efb706bc6d693fe6eb6541d1b307b4e91a72c7c00934d3532f15d54f",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/proxy-user.md": "ac0d5b44fef838fc528e2463ec8fdbc6968200eef129fb51fb6246521ff3dcf7",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/proxy.md": "b70e7bf6e4a44a1955e87c0bfdb4a78a479d6b0b7ca3f60f96591fd6c7efdc28",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/socks5.md": "901f3a50f6bd6dde1148fed2d1eec9b29d3a168bcc8b8cc437aaa1de1880d849",
+    "datasets/v2/realistic-draft/sources/test/curl-ranges/continue-at.md": "893330b33c5055c60ff51b9b0bbce5176c9c2c4bf23a6f66384e6361613fabeb",
+    "datasets/v2/realistic-draft/sources/test/curl-ranges/output.md": "9ebb57bc2d399e134d9454700f46cc0abcc5e4502893ce0d4b810783d102f6c4",
+    "datasets/v2/realistic-draft/sources/test/curl-ranges/range.md": "1efa707c781d99443b717707d0c30a40035c204f3caa1279f0d5a3b7b6d6a7f2",
+    "datasets/v2/realistic-draft/sources/test/curl-ranges/remove-on-error.md": "c55f4d1628d6af7788ddcc863441654a93a006a451afde998bff80ebd3f93765",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/connect-timeout.md": "f0dc4d7cbb253bf57aee6f980b4e3ffa11b7f606acd1e07e9187ddb6732ee05d",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/limit-rate.md": "c5b293b7df99fc72a7e7300327282b7304784e1fd5c4dfe2f3f292c63d4a18dd",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/max-time.md": "36ffc3a4f0b6615359c480f9bc1bb5e5f22d5a59cfbcd6439e0a363d4b8b948b",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/speed-limit.md": "b9dc88c518ea58982744f2e7ca98979a0540562c042d0dfd493cb500886ddfb2",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/speed-time.md": "3531213576b51de358fa6fe25374b5b0cac0fb2f875c69e5edb002c810bcbd13",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/ca-native.md": "63bbc7d75073f2a6348a7d6e9888cecd420711bd01b5342307c87d9590018f46",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/cacert.md": "a1688f98ce18430df010fe6ee17c97bed67863ddf0d9772d6c9698096495995b",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/capath.md": "ade27bf2a177beefbdd42777955c2856e01fa468caec826af13d5fb957f3f538",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/cert-status.md": "a56b9520bb670682eec4024b8800478b258f56222a8ae1dc320f83024ff6772c",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/insecure.md": "f14af147d90f774c0d6ff6dff90bdb6dca1289c70c0960f782518bd1ce546a77",
+    "datasets/v2/realistic-draft/sources/test/pytest-assert/assert.rst": "91fd04a591076e73fbe64c22d4b63a241ea1c76bce570a61ef389d2f59340372",
+    "datasets/v2/realistic-draft/sources/test/pytest-capture-stdout-stderr/capture-stdout-stderr.rst": "8b332b3d0277f3753ded5f754a159e6adf4a014ea6d3db4b80ca144c46e65a26",
+    "datasets/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst": "177068a737b89f624962d35a55420d2585509fa0249af7a9f9f840b700d2497e",
+    "datasets/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+    "datasets/v2/realistic-draft/sources/test/pytest-logging/logging.rst": "f6d13578fd06f3e34ae6e38858e81b313c94aee1f21e678c884491d7c6565647",
+    "datasets/v2/realistic-draft/sources/test/pytest-skipping/skipping.rst": "3cf0500a6b7daf72f11e3e0fa35af89c914921ff17910c1bb83d11c721ca78e6",
+    "datasets/v2/realistic-draft/sources/test/python-asyncio-task/asyncio-task.rst": "f3cbb9d7f174f152127bb4eaea37784484f4a8c2db866d21aaf31edfce7ec7a1",
+    "datasets/v2/realistic-draft/sources/test/python-collections/collections.rst": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b",
+    "datasets/v2/realistic-draft/sources/test/python-concurrent.futures/concurrent.futures.rst": "b7badfc7248121ef632865bcecec4ce344fdd79818adeb94a65f5859376512f8",
+    "datasets/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+    "datasets/v2/realistic-draft/sources/test/python-enum/enum.rst": "ecd67b943a2728c589fab5934159a7da63be57fdb68d17df3fef1b59a6339945",
+    "datasets/v2/realistic-draft/sources/test/python-itertools/itertools.rst": "4daebb6755c23ae2a6791f508028836f2b5c2589287cc954c17dc498a9dc2eeb",
+    "datasets/v2/realistic-draft/sources/test/rust-attributes-derive/derive.md": "1948fc4eb6cda6d58dcad87db2480b1954f545cf843263d16d5a11f6b9773990",
+    "datasets/v2/realistic-draft/sources/test/rust-expressions-match-expr/match-expr.md": "f355120a9f7ed51b017f1e790032bd1f49e9ba42e68c0abc85ccc288d60f9b1e",
+    "datasets/v2/realistic-draft/sources/test/rust-items-traits/traits.md": "c26d6c4c44718d3a2e6872ba76335071e55ecfc1f9e659b01b8130b0d33c9883",
+    "datasets/v2/realistic-draft/sources/test/rust-trait-bounds/trait-bounds.md": "edc5e61dc4c0c1b90659256026a8c6a99cef5c321d3ef01ffd167b01ee1db749",
+    "datasets/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+    "datasets/v2/realistic-draft/sources/test/rust-unsafe-keyword/unsafe-keyword.md": "376c811498b91d3ff8403df1742c3d97963309bc1028cf23922ddde0dfe56502",
+    "pyproject.toml": "7878fcb37e55429ae27066cb699cb6794a3bb4dc8785ac0074d018c4ea593d9f",
+    "reports/eval-v2/ablation-20261020/adoption-decision.json": "5e77e9bdc9ec447523833efa39fe930ecd8a6f03418f453a2c8929d634a32200",
+    "reports/eval-v2/final-20261020/audit-batch-01-case-ids.json": "346b4bd05dadcfc47cdfe4cbc89ed08fce93947b9fe96d95f84f3f43b16aae8f",
+    "reports/eval-v2/final-20261020/audit-batch-02-case-ids.json": "478ab8929ac6d0ad367790cd2bee0ec34fc537a8c654c7ee6365f55d78a69f3c",
+    "reports/eval-v2/final-20261020/audit-case-ids.json": "367394e83f2d0602fe0122136fdd37733229e523269abf8e753c6142c4ee4f4f",
+    "reports/eval-v2/final-20261020/full-case-ids.json": "d7cd2b143bf0fc7d6edc5f08d36fbe6e11b9bc0fc97f82cd4e7a6d7db4256684",
+    "reports/eval-v2/final-20261020/main-promotion.json": "b10de1d72dcf26ca8e2ce018c196a030fd0d0744210231fa409c07d439137637",
+    "reports/eval-v2/final-20261020/repeat-case-ids.json": "aa426ccfa8b3b4f54c6789442e774a0b2c6d847cb2a715c15df40dff1e2471f3",
+    "reports/eval-v2/final-20261020/resource-estimate.json": "bc15e0a48e4c4d41f0dbd39ce6914d73297a52afae6d07927e33357717cd0ed2",
+    "reports/eval-v2/final-20261020/selection.json": "6d3b5cb31eebea775e12fa75dbae55408f8a0261377ec7a119a178cc649bb73d",
+    "reports/eval-v2/final-consumer-verification.json": "c7b75ddeebd13a9f316f964f9e8699769a347687a72876e1ae20e19ed95c4988",
+    "reports/eval-v2/final-offline-verification.json": "34bf7d6c236762149985971d70ca1f982cc7a62971dbd56f39c52590a6f8394b",
+    "uv.lock": "11756c62fcab5ccf50828739ab9d5bd5b6ba304241e5721600bca8fe0e636b92",
+    "reports/eval-v2/audit-policy.md": "5975b67a16e75f6c71f0f7d2b4d328db01a5bbc622e9cec70764b78f6e2cce82"
+  },
+  "parent_verification_artifacts": {
+    "reports/eval-v2/final-offline-verification.json": "34bf7d6c236762149985971d70ca1f982cc7a62971dbd56f39c52590a6f8394b",
+    "reports/eval-v2/final-consumer-verification.json": "c7b75ddeebd13a9f316f964f9e8699769a347687a72876e1ae20e19ed95c4988"
+  },
+  "checkpoint_input_hashes": {
+    "datasets/main.jsonl": "b103f0ee127728f0fdfc5d58f3f5cbcf7c39e89d09b1369d1e7b9baf22b1b845",
+    "datasets/main.manifest.json": "3fbbba049fb20bed381ebaf24a993d35a69490498a8d2bdb52cc7b074cf8b9c5",
+    "datasets/v2/NOTICE": "8be96fdaa63022abd039ea2df4722bbf6dfa4d91d2402c35a85f310a200f1c67",
+    "datasets/v2/realistic-draft/NOTICE": "cc1db6b18e14e5877b3015accdf8d06904b49ec95b74f468eab2d1f33bbeef74",
+    "datasets/v2/realistic-draft/licenses/cpython/LICENSE": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+    "datasets/v2/realistic-draft/licenses/curl/COPYING": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+    "datasets/v2/realistic-draft/licenses/pytest/LICENSE": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+    "datasets/v2/realistic-draft/licenses/reference/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+    "datasets/v2/realistic-draft/pilot-import/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+    "datasets/v2/realistic-draft/pilot-import/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+    "datasets/v2/realistic-draft/pilot-import/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+    "datasets/v2/realistic-draft/pilot-import/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+    "datasets/v2/realistic-draft/pilot-import/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+    "datasets/v2/realistic-draft/pilot-import/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+    "datasets/v2/realistic-draft/pilot-import/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+    "datasets/v2/realistic-draft/pilot-import/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+    "datasets/v2/realistic-draft/pilot-import/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+    "datasets/v2/realistic-draft/pilot-import/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/location-trusted.md": "1b4d31f01d5089354f542298032415513d61dbd7ad5f4e1bafd37924546a9fd4",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/location.md": "f9242acc3a6bb75cbff18d59ef86b4ffc11efa541d4423b0673ac6ecc96f6ea4",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/max-redirs.md": "b85b10ff9c08c458736bff490666fe1229ed83e4eafb4f99b0c40557ff992d24",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/post301.md": "58cccf996abbbca0dbb415a6a466dcf150f14e523583b85b36db0981f3739b95",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/post302.md": "c3c1b7a2c1606e0d7e49bbd93ac01b9354d13569c1d4458ed5f3b5939d063c62",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/post303.md": "f5344ae27174e3eeafdf5f85aa07bd0f1d068d5d2d7a8f2e8b91dc137c4681d3",
+    "datasets/v2/realistic-draft/sources/dev/curl-redirect/proto-redir.md": "1ea97b058c06e86987a5f67bbd8f7e760531a11efea48951beb4874c475a53cf",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/fail-with-body.md": "76754bbc3cf336c31e5826642bb18f8cba261f6878378a1c72e33b4172d09488",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/fail.md": "1c6ea656161a83257ad346aab0bb6e38d476e7a2785656aa3a24df501fcd0966",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry-all-errors.md": "a98f60938760f9d35232b3da2f7b45da4aa239411a142a52e5e8dccf6a5fb916",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry-connrefused.md": "0f1f5c3bcd63340bc74395d50400945fd01d51ceedefcbf3871f2b37788de513",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry-delay.md": "1a595221622a10d316d7e6f2d6d39dcd451c1230cc6fe5bd56022ade2f82f822",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry-max-time.md": "9505140824bf47fe04d4c8b929c16b3371e02399301c153b9f1071718ae53f33",
+    "datasets/v2/realistic-draft/sources/dev/curl-retry/retry.md": "d164104079fbac52eefc1147bfb1eb152bfbb1d883e6c0f963df25a4e7a505e2",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/data-binary.md": "0a13757b573ab911dfe6a80249bd4ce1b17e80aa993c3d4f660c41668069ed68",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/get.md": "33dcc8682ac5df6dd6e7c38df6fc47776d9f03f0b33d5a75b5cb5b99bf949da4",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/header.md": "b2cdd75693813f0aec178bb04bba344d30c19bae4a764eff227c4974ac1afcca",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/request.md": "33b43ebcd8d40f388b92018eaf822e731fbe755793ed87527f4423bab924b2bd",
+    "datasets/v2/realistic-draft/sources/dev/curl-upload/upload-file.md": "f9d0b70ff60e0bc1b1337875d19bccfadcbf5b4948bfacce9ec1bbb00e4c7cb0",
+    "datasets/v2/realistic-draft/sources/dev/pytest-monkeypatch/monkeypatch.rst": "6218e09da0c38d4f80346bcb67781a065afd5434ee0ae761102eb4097324f33f",
+    "datasets/v2/realistic-draft/sources/dev/pytest-parametrize/parametrize.rst": "3c4e488b25aaac11a12953da55616c5a76e09c2237c0b2298121dad7c96f21dd",
+    "datasets/v2/realistic-draft/sources/dev/pytest-tmp_path/tmp_path.rst": "4cc3888e67f883a4b8dbee68ab987d6f49763b1d3d32dcadfdacfe95cf534381",
+    "datasets/v2/realistic-draft/sources/dev/python-bisect/bisect.rst": "1fb2fa097a86e3bd92049f3e6b791a9bbf3bdf54a1098fcbb369d3e0e5c56a5c",
+    "datasets/v2/realistic-draft/sources/dev/python-copy/copy.rst": "935088f74e08fa47f652f9d803ab512ca5a961de655739eaa21919a6623ecfba",
+    "datasets/v2/realistic-draft/sources/dev/python-functools/functools.rst": "a3f0dffd4973d3c0902107dbb67ead54af934a1d43ba5552e590c69f233f817a",
+    "datasets/v2/realistic-draft/sources/dev/python-graphlib/graphlib.rst": "4bad5b7eb3c24538907c6358ab2223e23f75bc127b4402bfe14241e33e9f4f3e",
+    "datasets/v2/realistic-draft/sources/dev/python-heapq/heapq.rst": "c9d819c44d892c812f65b07ab9de1d13ec30dcdfc8af8423a754c2506d136e53",
+    "datasets/v2/realistic-draft/sources/dev/python-weakref/weakref.rst": "0ef492312caae331776ef5f24dca5cb8c23df5cb17b3847c562eed6046528c03",
+    "datasets/v2/realistic-draft/sources/test/curl-cookie/cookie-jar.md": "154d8137051090dc9298aaeba6eedddd36a148dff67c916e5d6d55f35e0aebc6",
+    "datasets/v2/realistic-draft/sources/test/curl-cookie/cookie.md": "d1db62cae04a9c5652658583c7153793f2a94441ea594a34a9740b92dbb7c21a",
+    "datasets/v2/realistic-draft/sources/test/curl-cookie/junk-session-cookies.md": "5d01994c2e9931c09338eac4f346858cd23ff2bcf42a361260ec71aed64cb557",
+    "datasets/v2/realistic-draft/sources/test/curl-multipart/form-escape.md": "59c5d847dd468b6554beb16c4b6aabb5691099b500766373d943287f12906234",
+    "datasets/v2/realistic-draft/sources/test/curl-multipart/form-string.md": "621839c2fa14fff9b62849f9444f225f58e68941b13b6952a00083cc767d9cf2",
+    "datasets/v2/realistic-draft/sources/test/curl-multipart/form.md": "1c57890e69bdacbdbf285f5d0339a0eb648ccd3ec345b112a8d75c630f42feb6",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/noproxy.md": "26340294c6c50d8bb495564e2b081793011904dcafd94738f5fb7697dfc6e463",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/preproxy.md": "ea9d61f5efb706bc6d693fe6eb6541d1b307b4e91a72c7c00934d3532f15d54f",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/proxy-user.md": "ac0d5b44fef838fc528e2463ec8fdbc6968200eef129fb51fb6246521ff3dcf7",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/proxy.md": "b70e7bf6e4a44a1955e87c0bfdb4a78a479d6b0b7ca3f60f96591fd6c7efdc28",
+    "datasets/v2/realistic-draft/sources/test/curl-proxy/socks5.md": "901f3a50f6bd6dde1148fed2d1eec9b29d3a168bcc8b8cc437aaa1de1880d849",
+    "datasets/v2/realistic-draft/sources/test/curl-ranges/continue-at.md": "893330b33c5055c60ff51b9b0bbce5176c9c2c4bf23a6f66384e6361613fabeb",
+    "datasets/v2/realistic-draft/sources/test/curl-ranges/output.md": "9ebb57bc2d399e134d9454700f46cc0abcc5e4502893ce0d4b810783d102f6c4",
+    "datasets/v2/realistic-draft/sources/test/curl-ranges/range.md": "1efa707c781d99443b717707d0c30a40035c204f3caa1279f0d5a3b7b6d6a7f2",
+    "datasets/v2/realistic-draft/sources/test/curl-ranges/remove-on-error.md": "c55f4d1628d6af7788ddcc863441654a93a006a451afde998bff80ebd3f93765",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/connect-timeout.md": "f0dc4d7cbb253bf57aee6f980b4e3ffa11b7f606acd1e07e9187ddb6732ee05d",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/limit-rate.md": "c5b293b7df99fc72a7e7300327282b7304784e1fd5c4dfe2f3f292c63d4a18dd",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/max-time.md": "36ffc3a4f0b6615359c480f9bc1bb5e5f22d5a59cfbcd6439e0a363d4b8b948b",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/speed-limit.md": "b9dc88c518ea58982744f2e7ca98979a0540562c042d0dfd493cb500886ddfb2",
+    "datasets/v2/realistic-draft/sources/test/curl-timeouts/speed-time.md": "3531213576b51de358fa6fe25374b5b0cac0fb2f875c69e5edb002c810bcbd13",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/ca-native.md": "63bbc7d75073f2a6348a7d6e9888cecd420711bd01b5342307c87d9590018f46",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/cacert.md": "a1688f98ce18430df010fe6ee17c97bed67863ddf0d9772d6c9698096495995b",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/capath.md": "ade27bf2a177beefbdd42777955c2856e01fa468caec826af13d5fb957f3f538",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/cert-status.md": "a56b9520bb670682eec4024b8800478b258f56222a8ae1dc320f83024ff6772c",
+    "datasets/v2/realistic-draft/sources/test/curl-tls/insecure.md": "f14af147d90f774c0d6ff6dff90bdb6dca1289c70c0960f782518bd1ce546a77",
+    "datasets/v2/realistic-draft/sources/test/pytest-assert/assert.rst": "91fd04a591076e73fbe64c22d4b63a241ea1c76bce570a61ef389d2f59340372",
+    "datasets/v2/realistic-draft/sources/test/pytest-capture-stdout-stderr/capture-stdout-stderr.rst": "8b332b3d0277f3753ded5f754a159e6adf4a014ea6d3db4b80ca144c46e65a26",
+    "datasets/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst": "177068a737b89f624962d35a55420d2585509fa0249af7a9f9f840b700d2497e",
+    "datasets/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+    "datasets/v2/realistic-draft/sources/test/pytest-logging/logging.rst": "f6d13578fd06f3e34ae6e38858e81b313c94aee1f21e678c884491d7c6565647",
+    "datasets/v2/realistic-draft/sources/test/pytest-skipping/skipping.rst": "3cf0500a6b7daf72f11e3e0fa35af89c914921ff17910c1bb83d11c721ca78e6",
+    "datasets/v2/realistic-draft/sources/test/python-asyncio-task/asyncio-task.rst": "f3cbb9d7f174f152127bb4eaea37784484f4a8c2db866d21aaf31edfce7ec7a1",
+    "datasets/v2/realistic-draft/sources/test/python-collections/collections.rst": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b",
+    "datasets/v2/realistic-draft/sources/test/python-concurrent.futures/concurrent.futures.rst": "b7badfc7248121ef632865bcecec4ce344fdd79818adeb94a65f5859376512f8",
+    "datasets/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+    "datasets/v2/realistic-draft/sources/test/python-enum/enum.rst": "ecd67b943a2728c589fab5934159a7da63be57fdb68d17df3fef1b59a6339945",
+    "datasets/v2/realistic-draft/sources/test/python-itertools/itertools.rst": "4daebb6755c23ae2a6791f508028836f2b5c2589287cc954c17dc498a9dc2eeb",
+    "datasets/v2/realistic-draft/sources/test/rust-attributes-derive/derive.md": "1948fc4eb6cda6d58dcad87db2480b1954f545cf843263d16d5a11f6b9773990",
+    "datasets/v2/realistic-draft/sources/test/rust-expressions-match-expr/match-expr.md": "f355120a9f7ed51b017f1e790032bd1f49e9ba42e68c0abc85ccc288d60f9b1e",
+    "datasets/v2/realistic-draft/sources/test/rust-items-traits/traits.md": "c26d6c4c44718d3a2e6872ba76335071e55ecfc1f9e659b01b8130b0d33c9883",
+    "datasets/v2/realistic-draft/sources/test/rust-trait-bounds/trait-bounds.md": "edc5e61dc4c0c1b90659256026a8c6a99cef5c321d3ef01ffd167b01ee1db749",
+    "datasets/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+    "datasets/v2/realistic-draft/sources/test/rust-unsafe-keyword/unsafe-keyword.md": "376c811498b91d3ff8403df1742c3d97963309bc1028cf23922ddde0dfe56502",
+    "pyproject.toml": "7878fcb37e55429ae27066cb699cb6794a3bb4dc8785ac0074d018c4ea593d9f",
+    "uv.lock": "11756c62fcab5ccf50828739ab9d5bd5b6ba304241e5721600bca8fe0e636b92"
+  },
+  "dependency_hashes": {
+    "pyproject.toml": "7878fcb37e55429ae27066cb699cb6794a3bb4dc8785ac0074d018c4ea593d9f",
+    "uv.lock": "11756c62fcab5ccf50828739ab9d5bd5b6ba304241e5721600bca8fe0e636b92"
+  },
+  "dataset_sha256": "b103f0ee127728f0fdfc5d58f3f5cbcf7c39e89d09b1369d1e7b9baf22b1b845",
+  "manifest_sha256": "3fbbba049fb20bed381ebaf24a993d35a69490498a8d2bdb52cc7b074cf8b9c5",
+  "dataset_population": {
+    "cases": 72,
+    "dev_cases": 24,
+    "test_cases": 48,
+    "test_gold_claims": 410,
+    "test_source_families": 24,
+    "annotation_version": "v2-realistic-reviewed-1"
+  },
+  "legacy_sha256": "c9a30acf3ddb3093514a89831f7ae1d2be336f02df1d7b9143b1a01719aec1be",
+  "settings": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "provider_timeout": 120.0,
+    "operation_timeout": 240.0,
+    "max_provider_attempts": 6,
+    "transport_retries": 0,
+    "retry_delay": 0.25,
+    "max_output_tokens": {
+      "requested": 8192,
+      "effective": null,
+      "application": "not_applied"
+    },
+    "diagnostics": true,
+    "endpoint_sha256": "d9617135d6fdd0a2cde722d637a1dfcc3da37515708b3ea5d66ae607c8ac785e"
+  },
+  "format_version": 2,
+  "seed": 20261015,
+  "bootstrap_samples": 10000,
+  "selection_seed": 20261020,
+  "tracks": [
+    "oracle",
+    "end-to-end"
+  ],
+  "approaches": [
+    "heuristic",
+    "minimal",
+    "optimized"
+  ],
+  "blocks": [
+    {
+      "name": "full-test",
+      "selection_file": "full-case-ids.json",
+      "case_ids": [
+        "v2-test-r01",
+        "v2-test-r02",
+        "v2-test-r03",
+        "v2-test-r04",
+        "v2-test-r05",
+        "v2-test-r06",
+        "v2-test-r07",
+        "v2-test-r08",
+        "v2-test-r09",
+        "v2-test-r10",
+        "v2-test-r11",
+        "v2-test-r12",
+        "v2-test-r13",
+        "v2-test-r14",
+        "v2-test-r15",
+        "v2-test-r16",
+        "v2-test-r17",
+        "v2-test-r18",
+        "v2-test-r19",
+        "v2-test-r20",
+        "v2-test-r21",
+        "v2-test-r22",
+        "v2-test-r23",
+        "v2-test-r24",
+        "v2-test-r25",
+        "v2-test-r26",
+        "v2-test-r27",
+        "v2-test-r28",
+        "v2-test-r29",
+        "v2-test-r30",
+        "v2-test-r31",
+        "v2-test-r32",
+        "v2-test-r33",
+        "v2-test-r34",
+        "v2-test-r35",
+        "v2-test-r36",
+        "v2-test-r37",
+        "v2-test-r38",
+        "v2-test-r39",
+        "v2-test-r40",
+        "v2-test-r41",
+        "v2-test-r42",
+        "v2-test-r43",
+        "v2-test-r44",
+        "v2-test-r45",
+        "v2-test-r46",
+        "v2-test-r47",
+        "v2-test-r48"
+      ],
+      "cases": 48,
+      "requested_jobs": 288,
+      "requested_model_jobs": 192,
+      "expected_calls_before_repairs": 240,
+      "attempt_ceiling": 360,
+      "output": "reports/eval-v2/final-20261020/full-test"
+    },
+    {
+      "name": "repeat-02",
+      "selection_file": "repeat-case-ids.json",
+      "case_ids": [
+        "v2-test-r01",
+        "v2-test-r04",
+        "v2-test-r06",
+        "v2-test-r08",
+        "v2-test-r09",
+        "v2-test-r12",
+        "v2-test-r16",
+        "v2-test-r23",
+        "v2-test-r25",
+        "v2-test-r28",
+        "v2-test-r30",
+        "v2-test-r32",
+        "v2-test-r39",
+        "v2-test-r42",
+        "v2-test-r45",
+        "v2-test-r47"
+      ],
+      "cases": 16,
+      "requested_jobs": 96,
+      "requested_model_jobs": 64,
+      "expected_calls_before_repairs": 80,
+      "attempt_ceiling": 120,
+      "output": "reports/eval-v2/final-20261020/repeat-02"
+    },
+    {
+      "name": "repeat-03",
+      "selection_file": "repeat-case-ids.json",
+      "case_ids": [
+        "v2-test-r01",
+        "v2-test-r04",
+        "v2-test-r06",
+        "v2-test-r08",
+        "v2-test-r09",
+        "v2-test-r12",
+        "v2-test-r16",
+        "v2-test-r23",
+        "v2-test-r25",
+        "v2-test-r28",
+        "v2-test-r30",
+        "v2-test-r32",
+        "v2-test-r39",
+        "v2-test-r42",
+        "v2-test-r45",
+        "v2-test-r47"
+      ],
+      "cases": 16,
+      "requested_jobs": 96,
+      "requested_model_jobs": 64,
+      "expected_calls_before_repairs": 80,
+      "attempt_ceiling": 120,
+      "output": "reports/eval-v2/final-20261020/repeat-03"
+    }
+  ],
+  "job_order": {
+    "full-test": [
+      {
+        "sequence": 0,
+        "case_id": "v2-test-r10",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 1,
+        "case_id": "v2-test-r32",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 2,
+        "case_id": "v2-test-r42",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 3,
+        "case_id": "v2-test-r24",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 4,
+        "case_id": "v2-test-r21",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 5,
+        "case_id": "v2-test-r43",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 6,
+        "case_id": "v2-test-r44",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 7,
+        "case_id": "v2-test-r33",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 8,
+        "case_id": "v2-test-r20",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 9,
+        "case_id": "v2-test-r06",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 10,
+        "case_id": "v2-test-r11",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 11,
+        "case_id": "v2-test-r36",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 12,
+        "case_id": "v2-test-r25",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 13,
+        "case_id": "v2-test-r12",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 14,
+        "case_id": "v2-test-r27",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 15,
+        "case_id": "v2-test-r10",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 16,
+        "case_id": "v2-test-r30",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 17,
+        "case_id": "v2-test-r36",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 18,
+        "case_id": "v2-test-r23",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 19,
+        "case_id": "v2-test-r08",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 20,
+        "case_id": "v2-test-r46",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 21,
+        "case_id": "v2-test-r33",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 22,
+        "case_id": "v2-test-r08",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 23,
+        "case_id": "v2-test-r16",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 24,
+        "case_id": "v2-test-r46",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 25,
+        "case_id": "v2-test-r32",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 26,
+        "case_id": "v2-test-r40",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 27,
+        "case_id": "v2-test-r06",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 28,
+        "case_id": "v2-test-r02",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 29,
+        "case_id": "v2-test-r41",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 30,
+        "case_id": "v2-test-r23",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 31,
+        "case_id": "v2-test-r14",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 32,
+        "case_id": "v2-test-r12",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 33,
+        "case_id": "v2-test-r36",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 34,
+        "case_id": "v2-test-r27",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 35,
+        "case_id": "v2-test-r07",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 36,
+        "case_id": "v2-test-r28",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 37,
+        "case_id": "v2-test-r05",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 38,
+        "case_id": "v2-test-r14",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 39,
+        "case_id": "v2-test-r25",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 40,
+        "case_id": "v2-test-r37",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 41,
+        "case_id": "v2-test-r38",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 42,
+        "case_id": "v2-test-r20",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 43,
+        "case_id": "v2-test-r29",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 44,
+        "case_id": "v2-test-r22",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 45,
+        "case_id": "v2-test-r26",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 46,
+        "case_id": "v2-test-r42",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 47,
+        "case_id": "v2-test-r26",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 48,
+        "case_id": "v2-test-r28",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 49,
+        "case_id": "v2-test-r12",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 50,
+        "case_id": "v2-test-r29",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 51,
+        "case_id": "v2-test-r21",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 52,
+        "case_id": "v2-test-r41",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 53,
+        "case_id": "v2-test-r47",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 54,
+        "case_id": "v2-test-r10",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 55,
+        "case_id": "v2-test-r35",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 56,
+        "case_id": "v2-test-r10",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 57,
+        "case_id": "v2-test-r20",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 58,
+        "case_id": "v2-test-r10",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 59,
+        "case_id": "v2-test-r19",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 60,
+        "case_id": "v2-test-r28",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 61,
+        "case_id": "v2-test-r05",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 62,
+        "case_id": "v2-test-r35",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 63,
+        "case_id": "v2-test-r13",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 64,
+        "case_id": "v2-test-r19",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 65,
+        "case_id": "v2-test-r15",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 66,
+        "case_id": "v2-test-r35",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 67,
+        "case_id": "v2-test-r18",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 68,
+        "case_id": "v2-test-r01",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 69,
+        "case_id": "v2-test-r35",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 70,
+        "case_id": "v2-test-r04",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 71,
+        "case_id": "v2-test-r30",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 72,
+        "case_id": "v2-test-r24",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 73,
+        "case_id": "v2-test-r33",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 74,
+        "case_id": "v2-test-r04",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 75,
+        "case_id": "v2-test-r36",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 76,
+        "case_id": "v2-test-r03",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 77,
+        "case_id": "v2-test-r22",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 78,
+        "case_id": "v2-test-r17",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 79,
+        "case_id": "v2-test-r15",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 80,
+        "case_id": "v2-test-r39",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 81,
+        "case_id": "v2-test-r13",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 82,
+        "case_id": "v2-test-r16",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 83,
+        "case_id": "v2-test-r29",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 84,
+        "case_id": "v2-test-r11",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 85,
+        "case_id": "v2-test-r27",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 86,
+        "case_id": "v2-test-r07",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 87,
+        "case_id": "v2-test-r47",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 88,
+        "case_id": "v2-test-r18",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 89,
+        "case_id": "v2-test-r18",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 90,
+        "case_id": "v2-test-r38",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 91,
+        "case_id": "v2-test-r23",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 92,
+        "case_id": "v2-test-r20",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 93,
+        "case_id": "v2-test-r21",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 94,
+        "case_id": "v2-test-r26",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 95,
+        "case_id": "v2-test-r05",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 96,
+        "case_id": "v2-test-r06",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 97,
+        "case_id": "v2-test-r21",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 98,
+        "case_id": "v2-test-r09",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 99,
+        "case_id": "v2-test-r32",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 100,
+        "case_id": "v2-test-r34",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 101,
+        "case_id": "v2-test-r41",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 102,
+        "case_id": "v2-test-r34",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 103,
+        "case_id": "v2-test-r40",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 104,
+        "case_id": "v2-test-r12",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 105,
+        "case_id": "v2-test-r43",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 106,
+        "case_id": "v2-test-r47",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 107,
+        "case_id": "v2-test-r07",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 108,
+        "case_id": "v2-test-r15",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 109,
+        "case_id": "v2-test-r09",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 110,
+        "case_id": "v2-test-r15",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 111,
+        "case_id": "v2-test-r39",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 112,
+        "case_id": "v2-test-r09",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 113,
+        "case_id": "v2-test-r31",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 114,
+        "case_id": "v2-test-r42",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 115,
+        "case_id": "v2-test-r45",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 116,
+        "case_id": "v2-test-r28",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 117,
+        "case_id": "v2-test-r10",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 118,
+        "case_id": "v2-test-r24",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 119,
+        "case_id": "v2-test-r47",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 120,
+        "case_id": "v2-test-r36",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 121,
+        "case_id": "v2-test-r29",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 122,
+        "case_id": "v2-test-r13",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 123,
+        "case_id": "v2-test-r30",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 124,
+        "case_id": "v2-test-r02",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 125,
+        "case_id": "v2-test-r23",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 126,
+        "case_id": "v2-test-r27",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 127,
+        "case_id": "v2-test-r37",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 128,
+        "case_id": "v2-test-r19",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 129,
+        "case_id": "v2-test-r44",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 130,
+        "case_id": "v2-test-r48",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 131,
+        "case_id": "v2-test-r26",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 132,
+        "case_id": "v2-test-r08",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 133,
+        "case_id": "v2-test-r03",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 134,
+        "case_id": "v2-test-r38",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 135,
+        "case_id": "v2-test-r07",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 136,
+        "case_id": "v2-test-r23",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 137,
+        "case_id": "v2-test-r07",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 138,
+        "case_id": "v2-test-r04",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 139,
+        "case_id": "v2-test-r43",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 140,
+        "case_id": "v2-test-r39",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 141,
+        "case_id": "v2-test-r43",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 142,
+        "case_id": "v2-test-r16",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 143,
+        "case_id": "v2-test-r33",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 144,
+        "case_id": "v2-test-r29",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 145,
+        "case_id": "v2-test-r21",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 146,
+        "case_id": "v2-test-r25",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 147,
+        "case_id": "v2-test-r14",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 148,
+        "case_id": "v2-test-r33",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 149,
+        "case_id": "v2-test-r14",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 150,
+        "case_id": "v2-test-r11",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 151,
+        "case_id": "v2-test-r28",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 152,
+        "case_id": "v2-test-r06",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 153,
+        "case_id": "v2-test-r26",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 154,
+        "case_id": "v2-test-r35",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 155,
+        "case_id": "v2-test-r07",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 156,
+        "case_id": "v2-test-r48",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 157,
+        "case_id": "v2-test-r43",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 158,
+        "case_id": "v2-test-r14",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 159,
+        "case_id": "v2-test-r16",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 160,
+        "case_id": "v2-test-r13",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 161,
+        "case_id": "v2-test-r08",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 162,
+        "case_id": "v2-test-r22",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 163,
+        "case_id": "v2-test-r25",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 164,
+        "case_id": "v2-test-r08",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 165,
+        "case_id": "v2-test-r48",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 166,
+        "case_id": "v2-test-r44",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 167,
+        "case_id": "v2-test-r32",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 168,
+        "case_id": "v2-test-r04",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 169,
+        "case_id": "v2-test-r42",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 170,
+        "case_id": "v2-test-r44",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 171,
+        "case_id": "v2-test-r28",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 172,
+        "case_id": "v2-test-r15",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 173,
+        "case_id": "v2-test-r47",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 174,
+        "case_id": "v2-test-r18",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 175,
+        "case_id": "v2-test-r30",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 176,
+        "case_id": "v2-test-r09",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 177,
+        "case_id": "v2-test-r05",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 178,
+        "case_id": "v2-test-r41",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 179,
+        "case_id": "v2-test-r34",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 180,
+        "case_id": "v2-test-r48",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 181,
+        "case_id": "v2-test-r46",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 182,
+        "case_id": "v2-test-r26",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 183,
+        "case_id": "v2-test-r48",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 184,
+        "case_id": "v2-test-r31",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 185,
+        "case_id": "v2-test-r01",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 186,
+        "case_id": "v2-test-r29",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 187,
+        "case_id": "v2-test-r18",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 188,
+        "case_id": "v2-test-r40",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 189,
+        "case_id": "v2-test-r25",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 190,
+        "case_id": "v2-test-r32",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 191,
+        "case_id": "v2-test-r32",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 192,
+        "case_id": "v2-test-r45",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 193,
+        "case_id": "v2-test-r12",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 194,
+        "case_id": "v2-test-r17",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 195,
+        "case_id": "v2-test-r22",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 196,
+        "case_id": "v2-test-r19",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 197,
+        "case_id": "v2-test-r30",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 198,
+        "case_id": "v2-test-r27",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 199,
+        "case_id": "v2-test-r40",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 200,
+        "case_id": "v2-test-r11",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 201,
+        "case_id": "v2-test-r38",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 202,
+        "case_id": "v2-test-r13",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 203,
+        "case_id": "v2-test-r39",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 204,
+        "case_id": "v2-test-r42",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 205,
+        "case_id": "v2-test-r02",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 206,
+        "case_id": "v2-test-r41",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 207,
+        "case_id": "v2-test-r13",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 208,
+        "case_id": "v2-test-r01",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 209,
+        "case_id": "v2-test-r31",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 210,
+        "case_id": "v2-test-r40",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 211,
+        "case_id": "v2-test-r20",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 212,
+        "case_id": "v2-test-r45",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 213,
+        "case_id": "v2-test-r27",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 214,
+        "case_id": "v2-test-r18",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 215,
+        "case_id": "v2-test-r11",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 216,
+        "case_id": "v2-test-r44",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 217,
+        "case_id": "v2-test-r22",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 218,
+        "case_id": "v2-test-r17",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 219,
+        "case_id": "v2-test-r37",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 220,
+        "case_id": "v2-test-r02",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 221,
+        "case_id": "v2-test-r14",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 222,
+        "case_id": "v2-test-r05",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 223,
+        "case_id": "v2-test-r38",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 224,
+        "case_id": "v2-test-r39",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 225,
+        "case_id": "v2-test-r31",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 226,
+        "case_id": "v2-test-r47",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 227,
+        "case_id": "v2-test-r17",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 228,
+        "case_id": "v2-test-r11",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 229,
+        "case_id": "v2-test-r35",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 230,
+        "case_id": "v2-test-r36",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 231,
+        "case_id": "v2-test-r31",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 232,
+        "case_id": "v2-test-r12",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 233,
+        "case_id": "v2-test-r25",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 234,
+        "case_id": "v2-test-r08",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 235,
+        "case_id": "v2-test-r24",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 236,
+        "case_id": "v2-test-r40",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 237,
+        "case_id": "v2-test-r46",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 238,
+        "case_id": "v2-test-r01",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 239,
+        "case_id": "v2-test-r45",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 240,
+        "case_id": "v2-test-r09",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 241,
+        "case_id": "v2-test-r33",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 242,
+        "case_id": "v2-test-r44",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 243,
+        "case_id": "v2-test-r24",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 244,
+        "case_id": "v2-test-r19",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 245,
+        "case_id": "v2-test-r41",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 246,
+        "case_id": "v2-test-r02",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 247,
+        "case_id": "v2-test-r23",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 248,
+        "case_id": "v2-test-r09",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 249,
+        "case_id": "v2-test-r37",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 250,
+        "case_id": "v2-test-r03",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 251,
+        "case_id": "v2-test-r31",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 252,
+        "case_id": "v2-test-r46",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 253,
+        "case_id": "v2-test-r03",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 254,
+        "case_id": "v2-test-r22",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 255,
+        "case_id": "v2-test-r39",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 256,
+        "case_id": "v2-test-r02",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 257,
+        "case_id": "v2-test-r15",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 258,
+        "case_id": "v2-test-r37",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 259,
+        "case_id": "v2-test-r48",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 260,
+        "case_id": "v2-test-r01",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 261,
+        "case_id": "v2-test-r04",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 262,
+        "case_id": "v2-test-r03",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 263,
+        "case_id": "v2-test-r16",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 264,
+        "case_id": "v2-test-r34",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 265,
+        "case_id": "v2-test-r45",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 266,
+        "case_id": "v2-test-r21",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 267,
+        "case_id": "v2-test-r30",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 268,
+        "case_id": "v2-test-r06",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 269,
+        "case_id": "v2-test-r24",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 270,
+        "case_id": "v2-test-r06",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 271,
+        "case_id": "v2-test-r16",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 272,
+        "case_id": "v2-test-r46",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 273,
+        "case_id": "v2-test-r05",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 274,
+        "case_id": "v2-test-r43",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 275,
+        "case_id": "v2-test-r20",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 276,
+        "case_id": "v2-test-r34",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 277,
+        "case_id": "v2-test-r34",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 278,
+        "case_id": "v2-test-r37",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 279,
+        "case_id": "v2-test-r45",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 280,
+        "case_id": "v2-test-r17",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 281,
+        "case_id": "v2-test-r03",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 282,
+        "case_id": "v2-test-r04",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 283,
+        "case_id": "v2-test-r01",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 284,
+        "case_id": "v2-test-r42",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 285,
+        "case_id": "v2-test-r38",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 286,
+        "case_id": "v2-test-r17",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 287,
+        "case_id": "v2-test-r19",
+        "approach": "heuristic",
+        "track": "oracle"
+      }
+    ],
+    "repeat-02": [
+      {
+        "sequence": 0,
+        "case_id": "v2-test-r08",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 1,
+        "case_id": "v2-test-r39",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 2,
+        "case_id": "v2-test-r16",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 3,
+        "case_id": "v2-test-r30",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 4,
+        "case_id": "v2-test-r09",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 5,
+        "case_id": "v2-test-r30",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 6,
+        "case_id": "v2-test-r16",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 7,
+        "case_id": "v2-test-r32",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 8,
+        "case_id": "v2-test-r16",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 9,
+        "case_id": "v2-test-r12",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 10,
+        "case_id": "v2-test-r25",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 11,
+        "case_id": "v2-test-r47",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 12,
+        "case_id": "v2-test-r47",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 13,
+        "case_id": "v2-test-r25",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 14,
+        "case_id": "v2-test-r23",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 15,
+        "case_id": "v2-test-r08",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 16,
+        "case_id": "v2-test-r28",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 17,
+        "case_id": "v2-test-r12",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 18,
+        "case_id": "v2-test-r04",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 19,
+        "case_id": "v2-test-r28",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 20,
+        "case_id": "v2-test-r08",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 21,
+        "case_id": "v2-test-r06",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 22,
+        "case_id": "v2-test-r45",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 23,
+        "case_id": "v2-test-r45",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 24,
+        "case_id": "v2-test-r32",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 25,
+        "case_id": "v2-test-r25",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 26,
+        "case_id": "v2-test-r28",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 27,
+        "case_id": "v2-test-r06",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 28,
+        "case_id": "v2-test-r25",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 29,
+        "case_id": "v2-test-r23",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 30,
+        "case_id": "v2-test-r30",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 31,
+        "case_id": "v2-test-r08",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 32,
+        "case_id": "v2-test-r04",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 33,
+        "case_id": "v2-test-r25",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 34,
+        "case_id": "v2-test-r39",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 35,
+        "case_id": "v2-test-r45",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 36,
+        "case_id": "v2-test-r06",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 37,
+        "case_id": "v2-test-r06",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 38,
+        "case_id": "v2-test-r16",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 39,
+        "case_id": "v2-test-r04",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 40,
+        "case_id": "v2-test-r23",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 41,
+        "case_id": "v2-test-r39",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 42,
+        "case_id": "v2-test-r47",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 43,
+        "case_id": "v2-test-r39",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 44,
+        "case_id": "v2-test-r06",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 45,
+        "case_id": "v2-test-r12",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 46,
+        "case_id": "v2-test-r28",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 47,
+        "case_id": "v2-test-r01",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 48,
+        "case_id": "v2-test-r32",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 49,
+        "case_id": "v2-test-r06",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 50,
+        "case_id": "v2-test-r01",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 51,
+        "case_id": "v2-test-r23",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 52,
+        "case_id": "v2-test-r39",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 53,
+        "case_id": "v2-test-r32",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 54,
+        "case_id": "v2-test-r12",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 55,
+        "case_id": "v2-test-r09",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 56,
+        "case_id": "v2-test-r23",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 57,
+        "case_id": "v2-test-r16",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 58,
+        "case_id": "v2-test-r16",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 59,
+        "case_id": "v2-test-r30",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 60,
+        "case_id": "v2-test-r42",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 61,
+        "case_id": "v2-test-r04",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 62,
+        "case_id": "v2-test-r47",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 63,
+        "case_id": "v2-test-r47",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 64,
+        "case_id": "v2-test-r01",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 65,
+        "case_id": "v2-test-r47",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 66,
+        "case_id": "v2-test-r45",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 67,
+        "case_id": "v2-test-r08",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 68,
+        "case_id": "v2-test-r42",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 69,
+        "case_id": "v2-test-r42",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 70,
+        "case_id": "v2-test-r12",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 71,
+        "case_id": "v2-test-r23",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 72,
+        "case_id": "v2-test-r04",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 73,
+        "case_id": "v2-test-r12",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 74,
+        "case_id": "v2-test-r45",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 75,
+        "case_id": "v2-test-r08",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 76,
+        "case_id": "v2-test-r32",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 77,
+        "case_id": "v2-test-r42",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 78,
+        "case_id": "v2-test-r04",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 79,
+        "case_id": "v2-test-r30",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 80,
+        "case_id": "v2-test-r09",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 81,
+        "case_id": "v2-test-r45",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 82,
+        "case_id": "v2-test-r42",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 83,
+        "case_id": "v2-test-r39",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 84,
+        "case_id": "v2-test-r25",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 85,
+        "case_id": "v2-test-r28",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 86,
+        "case_id": "v2-test-r32",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 87,
+        "case_id": "v2-test-r09",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 88,
+        "case_id": "v2-test-r42",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 89,
+        "case_id": "v2-test-r01",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 90,
+        "case_id": "v2-test-r01",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 91,
+        "case_id": "v2-test-r01",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 92,
+        "case_id": "v2-test-r30",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 93,
+        "case_id": "v2-test-r28",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 94,
+        "case_id": "v2-test-r09",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 95,
+        "case_id": "v2-test-r09",
+        "approach": "minimal",
+        "track": "end-to-end"
+      }
+    ],
+    "repeat-03": [
+      {
+        "sequence": 0,
+        "case_id": "v2-test-r08",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 1,
+        "case_id": "v2-test-r39",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 2,
+        "case_id": "v2-test-r16",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 3,
+        "case_id": "v2-test-r30",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 4,
+        "case_id": "v2-test-r09",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 5,
+        "case_id": "v2-test-r30",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 6,
+        "case_id": "v2-test-r16",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 7,
+        "case_id": "v2-test-r32",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 8,
+        "case_id": "v2-test-r16",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 9,
+        "case_id": "v2-test-r12",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 10,
+        "case_id": "v2-test-r25",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 11,
+        "case_id": "v2-test-r47",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 12,
+        "case_id": "v2-test-r47",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 13,
+        "case_id": "v2-test-r25",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 14,
+        "case_id": "v2-test-r23",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 15,
+        "case_id": "v2-test-r08",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 16,
+        "case_id": "v2-test-r28",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 17,
+        "case_id": "v2-test-r12",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 18,
+        "case_id": "v2-test-r04",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 19,
+        "case_id": "v2-test-r28",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 20,
+        "case_id": "v2-test-r08",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 21,
+        "case_id": "v2-test-r06",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 22,
+        "case_id": "v2-test-r45",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 23,
+        "case_id": "v2-test-r45",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 24,
+        "case_id": "v2-test-r32",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 25,
+        "case_id": "v2-test-r25",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 26,
+        "case_id": "v2-test-r28",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 27,
+        "case_id": "v2-test-r06",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 28,
+        "case_id": "v2-test-r25",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 29,
+        "case_id": "v2-test-r23",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 30,
+        "case_id": "v2-test-r30",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 31,
+        "case_id": "v2-test-r08",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 32,
+        "case_id": "v2-test-r04",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 33,
+        "case_id": "v2-test-r25",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 34,
+        "case_id": "v2-test-r39",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 35,
+        "case_id": "v2-test-r45",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 36,
+        "case_id": "v2-test-r06",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 37,
+        "case_id": "v2-test-r06",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 38,
+        "case_id": "v2-test-r16",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 39,
+        "case_id": "v2-test-r04",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 40,
+        "case_id": "v2-test-r23",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 41,
+        "case_id": "v2-test-r39",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 42,
+        "case_id": "v2-test-r47",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 43,
+        "case_id": "v2-test-r39",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 44,
+        "case_id": "v2-test-r06",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 45,
+        "case_id": "v2-test-r12",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 46,
+        "case_id": "v2-test-r28",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 47,
+        "case_id": "v2-test-r01",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 48,
+        "case_id": "v2-test-r32",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 49,
+        "case_id": "v2-test-r06",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 50,
+        "case_id": "v2-test-r01",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 51,
+        "case_id": "v2-test-r23",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 52,
+        "case_id": "v2-test-r39",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 53,
+        "case_id": "v2-test-r32",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 54,
+        "case_id": "v2-test-r12",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 55,
+        "case_id": "v2-test-r09",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 56,
+        "case_id": "v2-test-r23",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 57,
+        "case_id": "v2-test-r16",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 58,
+        "case_id": "v2-test-r16",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 59,
+        "case_id": "v2-test-r30",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 60,
+        "case_id": "v2-test-r42",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 61,
+        "case_id": "v2-test-r04",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 62,
+        "case_id": "v2-test-r47",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 63,
+        "case_id": "v2-test-r47",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 64,
+        "case_id": "v2-test-r01",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 65,
+        "case_id": "v2-test-r47",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 66,
+        "case_id": "v2-test-r45",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 67,
+        "case_id": "v2-test-r08",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 68,
+        "case_id": "v2-test-r42",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 69,
+        "case_id": "v2-test-r42",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 70,
+        "case_id": "v2-test-r12",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 71,
+        "case_id": "v2-test-r23",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 72,
+        "case_id": "v2-test-r04",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 73,
+        "case_id": "v2-test-r12",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 74,
+        "case_id": "v2-test-r45",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 75,
+        "case_id": "v2-test-r08",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 76,
+        "case_id": "v2-test-r32",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 77,
+        "case_id": "v2-test-r42",
+        "approach": "optimized",
+        "track": "oracle"
+      },
+      {
+        "sequence": 78,
+        "case_id": "v2-test-r04",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 79,
+        "case_id": "v2-test-r30",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 80,
+        "case_id": "v2-test-r09",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 81,
+        "case_id": "v2-test-r45",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 82,
+        "case_id": "v2-test-r42",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 83,
+        "case_id": "v2-test-r39",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 84,
+        "case_id": "v2-test-r25",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 85,
+        "case_id": "v2-test-r28",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 86,
+        "case_id": "v2-test-r32",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 87,
+        "case_id": "v2-test-r09",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 88,
+        "case_id": "v2-test-r42",
+        "approach": "heuristic",
+        "track": "oracle"
+      },
+      {
+        "sequence": 89,
+        "case_id": "v2-test-r01",
+        "approach": "minimal",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 90,
+        "case_id": "v2-test-r01",
+        "approach": "optimized",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 91,
+        "case_id": "v2-test-r01",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 92,
+        "case_id": "v2-test-r30",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 93,
+        "case_id": "v2-test-r28",
+        "approach": "minimal",
+        "track": "oracle"
+      },
+      {
+        "sequence": 94,
+        "case_id": "v2-test-r09",
+        "approach": "heuristic",
+        "track": "end-to-end"
+      },
+      {
+        "sequence": 95,
+        "case_id": "v2-test-r09",
+        "approach": "minimal",
+        "track": "end-to-end"
+      }
+    ]
+  },
+  "new_total_attempt_ceiling": 600,
+  "total_requested_jobs": 480,
+  "total_requested_model_jobs": 320,
+  "expected_calls_before_repairs": 400,
+  "per_operation_attempts": 6,
+  "transport_retries": 0,
+  "stop_on_model_error": false,
+  "block_gate": {
+    "quota_or_attempt_budget_stop": "Pause all later blocks after the current CLI finishes.",
+    "model_error_ratio": "ERROR model records / all requested model jobs in the block; pause when >= 0.10. Heuristic is excluded.",
+    "comparison": "integer ERROR_count * 10 >= requested_model_jobs",
+    "other_integrity_stop": "Unknown/missing/invalid terminal artifacts, source/data/settings drift, cleanup failure, or any model NOT_RUN.",
+    "ordinary_errors_below_threshold": "Retain every ERROR and continue the next fixed block.",
+    "external_kill": false,
+    "automatic_relaunch_or_failure_replacement": false,
+    "native_deadlines_only": "provider120s/operation240s; interrupted/unknown outcomes are never relaunched."
+  },
+  "fixed_selections": {
+    "audit_cases": 24,
+    "audit_source_families": 24,
+    "repeated_cases": 16,
+    "repeated_source_families": 16,
+    "audit_batches": "Two disjoint 12-case identifier files; frozen before test.",
+    "selector_sha256": "f0e9dea18c170dd27d3f2b5eb072a127c8e3fb84669c9efa9965fea031284f7d",
+    "selection_uses_no_answer_gold_or_prediction": true
+  },
+  "analysis_policy": {
+    "primary": "The original full-test raw run, all 48 test cases and all outcomes; never a recovery composition.",
+    "stability": "Existing analyze_repeated on the explicit fixed16 subset from full-test/repeat-02/repeat-03; no intersection or best repetition.",
+    "bootstrap": "Keep each case and every repetition inside its source-family cluster.",
+    "semantic_audit": "Existing audit.prepare on the full-test raw run and the fixed24 audit cases; separate blind batches.",
+    "proxies": "Strict aliases and gold-span coverage are proxies; semantic audit and error coverage remain separate.",
+    "no_post_test_tuning": true
+  },
+  "historical_budgets_separate": true,
+  "extra_availability_calls": 0,
+  "dollar_policy": "Codex subscription dollars unknown; report measured calls/usage and unknown totals.",
+  "actual_source_and_dataset": "Both are read from the accepted commit archive; original worktree inputs remain hash-guarded.",
+  "wrapper_sha256": "52dba2967586163f4cf1c27d3a88edaf296180cd4103da05eadd1da5040ad803",
+  "common_helper_sha256": "d3ff67c5e1635a4f5803cf3ecc0e64a4118c30353c59919e624ae0bb0e427e73",
+  "preparer_sha256": "c3bfdac931a127381cbfac47d71037bc235c0a41d2642bf2cdb897ff28e0dbf5",
+  "requires_parent_acceptance_before_inference": true,
+  "semantic_audit_policy": {
+    "file": "reports/eval-v2/audit-policy.md",
+    "sha256": "5975b67a16e75f6c71f0f7d2b4d328db01a5bbc622e9cec70764b78f6e2cce82",
+    "version": "v1",
+    "frozen_before_test_inference": true,
+    "population": "The fixed24 cases, all three methods from the first full original run.",
+    "stage1": "Independent text-only alignment; partition all gold/predictions exactly once, then validate and hash-lock before stage2. Method/context/label/reasoning/citations remain hidden.",
+    "stage2": "After the stage1 lock, review context-only S/C/U labels, sufficient evidence and quote economy, while method names remain hidden.",
+    "credit": "Only one-to-one equivalent pairs receive semantic decomposition credit; label/evidence require their additional criteria. No automatic credit for uncertain/merged/split/scope-changed items.",
+    "denominators": "Keep every gold/prediction and failed request in the applicable denominators. Operational errors are not U judgments.",
+    "no_post_test_repairs": "Do not rewrite main scores, gold or aliases; record errata and uncertainty separately.",
+    "review_limits": "The audit subset is not the full population. AI non-author review and eventual Robin human review remain distinct; no fabricated votes."
+  },
+  "precall_policy_amendment": {
+    "amended_at": "2026-10-20T23:38:47.957216+00:00",
+    "reason": "Parent final narrow review required the existing audit policy itself to be hash-guarded before test.",
+    "previous_source_freeze_sha256": "b5e9a773a5ca2b1ad0c002241043d8e7ec4684cb606ed3b1b818c260da0b8d72",
+    "previous_execution_freeze_sha256": "fe2b5cbb39d7bcf0e9ce5c684c64890a8f034e501125c8e780a7a53b89ffde7d",
+    "amender_sha256": "c5acd8ccaec022dd3cc176c9937fdf769508141b0290f830cf7958cd937efb75",
+    "data_selection_source_commands_settings_and_budgets_unchanged": true,
+    "final_test_inference_calls_before_amendment": 0
+  }
+}

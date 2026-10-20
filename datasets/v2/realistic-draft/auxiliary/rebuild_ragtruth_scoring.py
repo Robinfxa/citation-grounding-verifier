@@ -72,22 +72,32 @@ def rebuild(recipe, raw_input, output, recipe_directory):
                                       upstream_model=response['model'], upstream_split=response['split'], upstream_quality=response['quality'])))
         sealed.append(dict(id=case['id'], gold_claims=gold))
     outputs = {'private-cases.jsonl': cases, 'blind.jsonl': blind, 'sealed-gold.jsonl': sealed}
+    membership = recipe.get('scoring_membership')
+    scoring_ids = None
+    if membership is not None:
+        all_ids = [case['id'] for case in cases]
+        scoring_ids = membership['ordered_scoring_ids']
+        diagnostic_ids = membership['ordered_non_scoring_diagnostic_ids']
+        if (membership['ordered_all_ids'] != all_ids or len(set(all_ids)) != len(all_ids)
+                or len(set(scoring_ids)) != len(scoring_ids)
+                or len(set(diagnostic_ids)) != len(diagnostic_ids)
+                or set(scoring_ids) & set(diagnostic_ids)
+                or set(scoring_ids) | set(diagnostic_ids) != set(all_ids)
+                or [ident for ident in all_ids if ident in scoring_ids] != scoring_ids
+                or [ident for ident in all_ids if ident in diagnostic_ids] != diagnostic_ids):
+            raise ValueError('scoring_membership_mismatch')
+        for filename, rows in [('scoring-cases.jsonl', cases), ('scoring-blind.jsonl', blind),
+                               ('scoring-sealed-gold.jsonl', sealed)]:
+            outputs[filename] = [row for row in rows if row['id'] in scoring_ids]
     encoded = {name: ''.join(json.dumps(row, ensure_ascii=False) + '\n' for row in rows).encode() for name, rows in outputs.items()}
+    if membership is not None:
+        encoded['scoring-membership.json'] = (json.dumps(membership, ensure_ascii=False, indent=2) + '\n').encode()
     actual_hashes = {name: digest(data) for name, data in encoded.items()}
     if actual_hashes != recipe['expected_outputs']:
         raise ValueError('scoring_output_hash_mismatch')
     license_bytes = (recipe_directory / recipe['repository_license_file']).read_bytes()
     if digest(license_bytes) != recipe['repository_license_sha256']:
         raise ValueError('repository_license_hash_mismatch')
-    output.mkdir(parents=True, exist_ok=True)
-    for name, data in encoded.items():
-        target = output / name
-        if target.exists() and target.read_bytes() != data:
-            raise ValueError('refusing_to_replace_different_private_output')
-        target.write_bytes(data)
-    license_path = output / 'licenses/RAGTruth-MIT'
-    license_path.parent.mkdir(parents=True, exist_ok=True)
-    license_path.write_bytes(license_bytes)
     sources, maps = [], []
     for case, spec in zip(cases, recipe['records']):
         ident = spec['source_id']
@@ -95,9 +105,7 @@ def rebuild(recipe, raw_input, output, recipe_directory):
             raise ValueError('unexpected_source_id')
         context = case['context_passages'][0]
         relative_path = 'raw-contexts/' + ident + '.txt'
-        raw_path = output / relative_path
-        raw_path.parent.mkdir(parents=True, exist_ok=True)
-        raw_path.write_bytes(context.encode())
+        encoded[relative_path] = context.encode()
         sources.append(dict(id=ident, family_id=case['family_id'],
                             url='https://raw.githubusercontent.com/ParticleMedia/RAGTruth/' + recipe['upstream_revision'] + '/dataset/source_info.jsonl#source_id=' + ident,
                             revision=recipe['upstream_revision'],
@@ -109,23 +117,47 @@ def rebuild(recipe, raw_input, output, recipe_directory):
     versions = {case['provenance']['annotation_version'] for case in cases}
     if len(versions) != 1:
         raise ValueError('annotation_version_mismatch')
-    layout = Counter((case['split'], case['category']) for case in cases)
-    manifest = dict(format_version=2, schema_version='2', dataset_version=recipe['recipe_version'],
-                    annotation_version=next(iter(versions)), dataset_file='private-cases.jsonl',
-                    dataset_sha256=actual_hashes['private-cases.jsonl'],
-                    layout=[dict(split=s, category=c, cases=n) for (s, c), n in sorted(layout.items())],
-                    sources=sources, passage_maps=maps)
-    manifest_path = output / 'private-cases.manifest.json'
-    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+    manifest_hashes = {}
+    dataset_names = ['private-cases.jsonl'] + (['scoring-cases.jsonl'] if membership is not None else [])
+    for filename in dataset_names:
+        rows = outputs[filename]
+        selected_ids = {case['id'] for case in rows}
+        selected_maps = [mapping for mapping in maps if mapping['case_id'] in selected_ids]
+        source_ids = {mapping['source_id'] for mapping in selected_maps}
+        layout = Counter((case['split'], case['category']) for case in rows)
+        manifest = dict(format_version=2, schema_version='2', dataset_version=recipe['recipe_version'],
+                        annotation_version=next(iter(versions)), dataset_file=filename,
+                        dataset_sha256=actual_hashes[filename],
+                        layout=[dict(split=s, category=c, cases=n) for (s, c), n in sorted(layout.items())],
+                        sources=[source for source in sources if source['id'] in source_ids],
+                        passage_maps=selected_maps)
+        manifest_name = Path(filename).stem + '.manifest.json'
+        encoded[manifest_name] = (json.dumps(manifest, ensure_ascii=False, indent=2) + '\n').encode()
+        manifest_hashes[manifest_name] = digest(encoded[manifest_name])
+    encoded['licenses/RAGTruth-MIT'] = license_bytes
+    for name, data in encoded.items():
+        target = output / name
+        if target.exists() and target.read_bytes() != data:
+            raise ValueError('refusing_to_replace_different_private_output')
+    for name, data in encoded.items():
+        target = output / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
     report = dict(records=len(cases), claims=sum(len(c['gold_claims']) for c in cases),
                   recipe_version=recipe['recipe_version'], raw_acquisition_sha256=digest(raw_bytes),
                   private_output_sha256=actual_hashes,
-                  private_manifest_sha256=digest(manifest_path.read_bytes()),
+                  private_manifest_sha256=manifest_hashes['private-cases.manifest.json'],
+                  private_manifest_sha256_by_file=manifest_hashes,
                   private_manifest_source_format='Each raw-contexts file is the unchanged decoded source_info string from the fixed source_info.jsonl record, not the JSON serialization bytes. This exact field extraction is part of the reconstruction recipe.',
                   license_scope='Repository MIT notice is retained for repository material only; manifest loading is not a legal determination or a grant to redistribute underlying news. All reconstructed upstream text stays private.',
                   original_response_and_context_unchanged=True,
                   claim_annotation_status=recipe['independent_review_status'], human_review=recipe['human_review'],
                   inference_performed=False, redistribution='private_outputs_only')
+    if membership is not None:
+        report.update(primary_scoring_file='scoring-cases.jsonl', primary_scoring_cases=len(scoring_ids),
+                      primary_scoring_claims=sum(len(c['gold_claims']) for c in outputs['scoring-cases.jsonl']),
+                      non_scoring_diagnostic_cases=len(membership['ordered_non_scoring_diagnostic_ids']),
+                      full12_is_not_primary_scoring=True)
     (output / 'rebuild-receipt.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     return report
 
