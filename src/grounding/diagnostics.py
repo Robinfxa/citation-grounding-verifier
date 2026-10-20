@@ -24,10 +24,15 @@ class Operation:
 _current: ContextVar[Operation | None] = ContextVar("grounding_operation", default=None)
 _STAGES = {
     "http", "verification", "extraction", "judgment", "minimal", "heuristic",
-    "jev_judgment", "jev_evidence", "fallback",
+    "jev_judgment", "jev_evidence", "jev_decision", "fallback",
 }
 _EVENTS = {"start", "end", "provider_attempt", "validation", "repair", "retry", "routing"}
 _OUTCOMES = {"started", "success", "failure", "cancelled"}
+_PROTOCOL_REASONS = {
+    "duplicate_json_key", "returned_model", "answer_coverage", "answer_type",
+    "choice_not_declared", "confidence_invalid", "probability_keys",
+    "probability_invalid", "probability_sum", "choice_not_argmax", "confidence_formula",
+}
 _ROUTING_REASONS = {
     "label_uncertain", "unsupported_reason_uncertain", "candidate_missing",
     "quote_uncertain", "quote_disagreement",
@@ -64,6 +69,7 @@ def emit(
     repairs: int | None = None,
     claims: int | None = None,
     routing_reason: str | None = None,
+    protocol_reason: str | None = None,
 ) -> None:
     current = _current.get()
     if current is None or not current.enabled:
@@ -81,6 +87,8 @@ def emit(
         record["error_code"] = error_code
     if routing_reason in _ROUTING_REASONS:
         record["routing_reason"] = routing_reason
+    if isinstance(protocol_reason, str) and protocol_reason in _PROTOCOL_REASONS:
+        record["protocol_reason"] = protocol_reason
     for key, value in (
         ("provider_calls", provider_calls), ("retries", retries),
         ("repairs", repairs), ("claims", claims),

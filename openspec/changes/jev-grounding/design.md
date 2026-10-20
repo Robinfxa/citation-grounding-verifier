@@ -95,6 +95,6 @@ Implementation acceptance uses offline HTTPX responses through actual HTTP/CLI c
 
 ## Open Questions
 
-- Which configured generative LLM and explicit per-provider call/spend allowance will be used for the live Jev experiment? This affects run configuration and feasibility, not the two methods' architecture. No new inference is authorized yet.
+- The initial live choice was resolved on 2026-10-20: Codex / `gpt-6.1-sol`, at most 12 total attempts with per-provider allocations of 12 constrained by that shared cap, no transport retries, and measured/unknown dollar costs without a monetary ceiling. The first smoke stopped after two attempts at Jev response validation. Its unspent allowance does not override the stop condition; continuation needs an explicit agreed next step. See [verification.md](verification.md).
 - Real 1.14 response precision, maximum practical batch size, rate-limit responses, usage completeness and speed need the bounded smoke. Until then the HTTP reference/SDK findings and offline fixtures are provisional compatibility evidence.
 - The development sample may be too small to select trustworthy thresholds. If so, report that limitation and retain experimental status instead of claiming a calibrated policy.

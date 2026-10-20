@@ -9,6 +9,7 @@ from typing import Any
 
 import httpx
 
+from grounding import diagnostics
 from grounding.contracts import (
     ChoiceDecision,
     DecisionRequest,
@@ -103,32 +104,44 @@ def _parse(
         usage=_usage(data.get("usage")),
     )
 
-    def fail() -> None:
+    def fail(reason: str) -> None:
+        # AIDEV-NOTE: fixed guard labels locate failures without retaining response values.
+        diagnostics.emit(
+            "jev_decision",
+            "validation",
+            "failure",
+            error_code="provider_protocol_error",
+            protocol_reason=reason,
+        )
         raise VerificationError("provider_protocol_error", stats=stats)
 
     # AIDEV-NOTE: read trustworthy counters before validating decisions or model drift.
-    if duplicate_keys or model != requested_model:
-        fail()
+    if duplicate_keys:
+        fail("duplicate_json_key")
+    if model != requested_model:
+        fail("returned_model")
     answers = data.get("answers")
     if not isinstance(answers, dict) or answers.keys() != options.keys():
-        fail()
+        fail("answer_coverage")
     decisions = {}
     for question_id, criteria in options.items():
         answer = answers[question_id]
         if not isinstance(answer, dict) or answer.get("type") != "choice":
-            fail()
+            fail("answer_type")
         choice, confidence = answer.get("choice"), answer.get("confidence")
         probabilities = answer.get("probabilities")
-        if not isinstance(choice, str) or choice not in criteria or not _probability(confidence):
-            fail()
+        if not isinstance(choice, str) or choice not in criteria:
+            fail("choice_not_declared")
+        if not _probability(confidence):
+            fail("confidence_invalid")
         if not isinstance(probabilities, dict) or probabilities.keys() != set(criteria):
-            fail()
+            fail("probability_keys")
         if not all(_probability(value) for value in probabilities.values()):
-            fail()
+            fail("probability_invalid")
         if abs(math.fsum(probabilities.values()) - 1) > PROBABILITY_SUM_TOLERANCE:
-            fail()
+            fail("probability_sum")
         if max(probabilities.values()) - probabilities[choice] > ARGMAX_TOLERANCE:
-            fail()
+            fail("choice_not_argmax")
         decision = ChoiceDecision(choice, confidence, probabilities)
         # AIDEV-NOTE: tolerance validates the wire; shared gate_score keeps the lower score.
         # Never renormalize probabilities or let parser tolerance relax a routing threshold.
@@ -138,7 +151,7 @@ def _parse(
         if difference > CONFIDENCE_TOLERANCE and not math.isclose(
             difference, CONFIDENCE_TOLERANCE, rel_tol=0, abs_tol=4 * math.ulp(1.0)
         ):
-            fail()
+            fail("confidence_formula")
         decisions[question_id] = decision
     return DecisionResult(decisions, usage=stats.usage, model=model)
 
