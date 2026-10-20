@@ -1,0 +1,2694 @@
+{
+  "cohort": "dev",
+  "original_component": "../dev-increment.jsonl",
+  "original_component_sha256": "860bb36353b82ded1b443f74662f61dc2755ab090f603a19bb7841afc6a5f6ac",
+  "accepted_component": "../dev-revised-2.jsonl",
+  "accepted_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+  "original_gold_claims": 112,
+  "accepted_gold_claims": 132,
+  "unchanged_original_gold_ids": [
+    "v2-dev-r01-c01",
+    "v2-dev-r01-c07",
+    "v2-dev-r01-c08",
+    "v2-dev-r01-c09",
+    "v2-dev-r02-c01",
+    "v2-dev-r02-c03",
+    "v2-dev-r02-c06",
+    "v2-dev-r02-c07",
+    "v2-dev-r02-c08",
+    "v2-dev-r03-c02",
+    "v2-dev-r03-c05",
+    "v2-dev-r04-c07",
+    "v2-dev-r04-c08",
+    "v2-dev-r05-c01",
+    "v2-dev-r05-c02",
+    "v2-dev-r05-c03",
+    "v2-dev-r05-c04",
+    "v2-dev-r05-c05",
+    "v2-dev-r05-c06",
+    "v2-dev-r05-c07",
+    "v2-dev-r05-c09",
+    "v2-dev-r06-c01",
+    "v2-dev-r06-c07",
+    "v2-dev-r06-c08",
+    "v2-dev-r06-c09",
+    "v2-dev-r06-c10",
+    "v2-dev-r07-c01",
+    "v2-dev-r07-c05",
+    "v2-dev-r07-c06",
+    "v2-dev-r07-c07",
+    "v2-dev-r08-c01",
+    "v2-dev-r08-c02",
+    "v2-dev-r08-c04",
+    "v2-dev-r08-c05",
+    "v2-dev-r08-c06",
+    "v2-dev-r09-c01",
+    "v2-dev-r09-c02",
+    "v2-dev-r09-c04",
+    "v2-dev-r09-c05",
+    "v2-dev-r09-c06",
+    "v2-dev-r09-c07",
+    "v2-dev-r09-c08",
+    "v2-dev-r09-c09",
+    "v2-dev-r10-c01",
+    "v2-dev-r10-c02",
+    "v2-dev-r10-c03",
+    "v2-dev-r10-c04",
+    "v2-dev-r10-c07",
+    "v2-dev-r10-c08",
+    "v2-dev-r11-c02",
+    "v2-dev-r11-c04",
+    "v2-dev-r11-c05",
+    "v2-dev-r11-c08",
+    "v2-dev-r12-c02",
+    "v2-dev-r12-c03",
+    "v2-dev-r12-c09"
+  ],
+  "all_contexts_exactly_unchanged": true,
+  "input_changes": [],
+  "gold_field_changes": [
+    {
+      "gold_claim_id": "v2-dev-r01-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Locate the insertion point for *x* in *a* to maintain sorted order.\n   The parameters *lo* and *hi* may be used to specify a subset of the list\n   which should be considered; by default the entire list is used.  If *x* is\n   already present in *a*, the insertion point will be before (to the left of)\n   any existing entries.  The return value is suitable for use as the first\n   parameter to ``list.insert()`` assuming that *a* is already sorted."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: bisect_left(a, x, lo=0, hi=len(a), *, key=None)\n\n   Locate the insertion point for *x* in *a* to maintain sorted order.\n   The parameters *lo* and *hi* may be used to specify a subset of the list\n   which should be considered; by default the entire list is used.  If *x* is\n   already present in *a*, the insertion point will be before (to the left of)\n   any existing entries.  The return value is suitable for use as the first\n   parameter to ``list.insert()`` assuming that *a* is already sorted."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r01-c03",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "bisect_right returns an insertion point after existing equal entries.",
+          "after": "For an already sorted list, bisect_right returns an insertion point after existing equal entries."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Similar to :py:func:`~bisect.bisect_left`, but returns an insertion point which comes\n   after (to the right of) any existing entries of *x* in *a*."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: bisect_right(a, x, lo=0, hi=len(a), *, key=None)\n              bisect(a, x, lo=0, hi=len(a), *, key=None)\n\n   Similar to :py:func:`~bisect.bisect_left`, but returns an insertion point which comes\n   after (to the right of) any existing entries of *x* in *a*."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r01-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Locate the insertion point for *x* in *a* to maintain sorted order.\n   The parameters *lo* and *hi* may be used to specify a subset of the list\n   which should be considered; by default the entire list is used.  If *x* is\n   already present in *a*, the insertion point will be before (to the left of)\n   any existing entries.  The return value is suitable for use as the first\n   parameter to ``list.insert()`` assuming that *a* is already sorted."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: bisect_left(a, x, lo=0, hi=len(a), *, key=None)\n\n   Locate the insertion point for *x* in *a* to maintain sorted order.\n   The parameters *lo* and *hi* may be used to specify a subset of the list\n   which should be considered; by default the entire list is used."
+              },
+              {
+                "index": 0,
+                "quote": ".. function:: bisect_right(a, x, lo=0, hi=len(a), *, key=None)\n              bisect(a, x, lo=0, hi=len(a), *, key=None)\n\n   Similar to :py:func:`~bisect.bisect_left`, but returns an insertion point which comes"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r01-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   *key* specifies a :term:`key function` of one argument that is used to\n   extract a comparison key from each element in the array.  To support\n   searching complex records, the key function is not applied to the *x* value."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: bisect_left(a, x, lo=0, hi=len(a), *, key=None)"
+              },
+              {
+                "index": 0,
+                "quote": "   *key* specifies a :term:`key function` of one argument that is used to\n   extract a comparison key from each element in the array.  To support\n   searching complex records, the key function is not applied to the *x* value."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r01-c06",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "insort_left instead applies key to the new record during its search, then inserts that original record without applying key for the insertion step.",
+            "start": 534,
+            "end": 681
+          },
+          "after": {
+            "quote": "insort_left instead applies key to the new record during its search",
+            "start": 534,
+            "end": 601
+          }
+        },
+        "claim_text": {
+          "before": "insort_left applies key to the new record for searching but inserts the original record.",
+          "after": "When insort_left searches for the insertion point, it applies the key to the new record."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   To support inserting records in a table, the *key* function (if any) is\n   applied to *x* for the search step but not for the insertion step."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: insort_left(a, x, lo=0, hi=len(a), *, key=None)\n\n   Insert *x* in *a* in sorted order.\n\n   This function first runs :py:func:`~bisect.bisect_left` to locate an insertion point.\n   Next, it runs the :meth:`!insert` method on *a* to insert *x* at the\n   appropriate position to maintain sort order.\n\n   To support inserting records in a table, the *key* function (if any) is\n   applied to *x* for the search step but not for the insertion step."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 函数标题与条件段明确为搜索步骤将 key 应用于 x。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r01-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "When searching records with key, the search function applies the key to array elements",
+            "start": 418,
+            "end": 504
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "When searching records with a key, the bisect search function applies the key to array elements."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: bisect_left(a, x, lo=0, hi=len(a), *, key=None)"
+              },
+              {
+                "index": 0,
+                "quote": "   *key* specifies a :term:`key function` of one argument that is used to\n   extract a comparison key from each element in the array.  To support\n   searching complex records, the key function is not applied to the *x* value."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r01-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 函数主体明示从数组各元素抽取比较键。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r01-c11",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "then inserts that original record without applying key for the insertion step.",
+            "start": 603,
+            "end": 681
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "insort_left inserts the original new record, without applying the key during the insertion step."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: insort_left(a, x, lo=0, hi=len(a), *, key=None)\n\n   Insert *x* in *a* in sorted order.\n\n   This function first runs :py:func:`~bisect.bisect_left` to locate an insertion point.\n   Next, it runs the :meth:`!insert` method on *a* to insert *x* at the\n   appropriate position to maintain sort order.\n\n   To support inserting records in a table, the *key* function (if any) is\n   applied to *x* for the search step but not for the insertion step."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r01-c11"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 正文明确 insert 的对象为 x，且 insertion step 不应用 key。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r02-c02",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "A shallow copy makes a new compound object containing references to the original contents",
+            "start": 200,
+            "end": 289
+          },
+          "after": {
+            "quote": "A shallow copy makes a new compound object",
+            "start": 200,
+            "end": 242
+          }
+        },
+        "claim_text": {
+          "before": "A shallow copy creates a new compound object containing references to original contents.",
+          "after": "A shallow copy constructs a new compound object."
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 原文明确新建 compound object。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r02-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "* keeping a ``memo`` dictionary of objects already copied during the current\n  copying pass; and"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "The :func:`deepcopy` function avoids these problems by:\n\n* keeping a ``memo`` dictionary of objects already copied during the current\n  copying pass; and"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r02-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "* letting user-defined classes override the copying operation or the set of\n  components copied."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "The :func:`deepcopy` function avoids these problems by:\n\n* keeping a ``memo`` dictionary of objects already copied during the current\n  copying pass; and\n\n* letting user-defined classes override the copying operation or the set of\n  components copied."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r02-c09",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   This method should create a new object of the same type,\n   replacing fields with values from *changes*."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. method:: object.__replace__(self, /, **changes)\n   :noindexentry:\n\n   This method should create a new object of the same type,\n   replacing fields with values from *changes*."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r02-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "copy.replace is narrower than copy or deepcopy",
+            "start": 686,
+            "end": 732
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "copy.replace is more limited than copy.copy and copy.deepcopy."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Function :func:`!copy.replace` is more limited\nthan :func:`~copy.copy` and :func:`~copy.deepcopy`,"
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r02-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 比较对象与限制性一致。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r02-c11",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "containing references to the original contents",
+            "start": 243,
+            "end": 289
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "A shallow copy contains references to the objects in the original contents."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "* A *shallow copy* constructs a new compound object and then (to the extent\n  possible) inserts *references* into it to the objects found in the original."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r02-c11"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 原文 references into original；回答对应一般浅复制定义。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r03-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Provides functionality to topologically sort a graph of :term:`hashable` nodes."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TopologicalSorter(graph=None)\n\n   Provides functionality to topologically sort a graph of :term:`hashable` nodes."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r03-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "      If called multiple times with the same node argument, the set of\n      dependencies will be the union of all dependencies passed in."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. method:: add(node, *predecessors)\n\n      Add a new node and its predecessors to the graph. Both the *node* and all\n      elements in *predecessors* must be :term:`hashable`.\n\n      If called multiple times with the same node argument, the set of\n      dependencies will be the union of all dependencies passed in."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r03-c04",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "prepare checks for cycles and closes the graph to further additions",
+            "start": 276,
+            "end": 343
+          },
+          "after": {
+            "quote": "prepare checks for cycles",
+            "start": 276,
+            "end": 301
+          }
+        },
+        "claim_text": {
+          "before": "prepare checks cycles and prevents further graph additions.",
+          "after": "TopologicalSorter.prepare checks the graph for cycles."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "      Mark the graph as finished and check for cycles in the graph. If any cycle\n      is detected, :exc:`CycleError` will be raised, but\n      :meth:`~TopologicalSorter.get_ready` can still be used to obtain as many\n      nodes as possible until cycles block more progress. After a call to this\n      function, the graph cannot be modified, and therefore no more nodes can be\n      added using :meth:`~TopologicalSorter.add`."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. method:: prepare()\n\n      Mark the graph as finished and check for cycles in the graph. If any cycle\n      is detected, :exc:`CycleError` will be raised, but"
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 明确 prepare 检查 cycles，并在检测到时抛出。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r03-c06",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "get_ready returns nodes whose predecessors have been processed.",
+          "after": "After prepare, TopologicalSorter.get_ready returns nodes whose predecessors have all been processed."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "      Returns a ``tuple`` with all the nodes that are ready. Initially it\n      returns all nodes with no predecessors, and once those are marked as\n      processed by calling :meth:`TopologicalSorter.done`, further calls will\n      return all new nodes that have all their predecessors already processed.\n      Once no more progress can be made, empty tuples are returned."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. method:: get_ready()"
+              },
+              {
+                "index": 2,
+                "quote": "      Returns a ``tuple`` with all the nodes that are ready. Initially it\n      returns all nodes with no predecessors, and once those are marked as\n      processed by calling :meth:`TopologicalSorter.done`, further calls will\n      return all new nodes that have all their predecessors already processed.\n      Once no more progress can be made, empty tuples are returned.\n\n      Raises :exc:`ValueError` if called without calling\n      :meth:`~TopologicalSorter.prepare` previously."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r03-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "      Marks a set of nodes returned by :meth:`TopologicalSorter.get_ready` as\n      processed, unblocking any successor of each node in *nodes* for being\n      returned in the future by a call to :meth:`TopologicalSorter.get_ready`."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. method:: done(*nodes)\n\n      Marks a set of nodes returned by :meth:`TopologicalSorter.get_ready` as\n      processed, unblocking any successor of each node in *nodes* for being\n      returned in the future by a call to :meth:`TopologicalSorter.get_ready`."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r03-c08",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "is_active remains true while a returned node has not yet been marked done.",
+          "after": "After preparation, TopologicalSorter.is_active remains true while returned nodes await done, even when no additional node is immediately ready."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "      Returns ``True`` if more progress can be made and ``False`` otherwise.\n      Progress can be made if cycles do not block the resolution and either\n      there are still nodes ready that haven't yet been returned by\n      :meth:`TopologicalSorter.get_ready` or the number of nodes marked\n      :meth:`TopologicalSorter.done` is less than the number that have been\n      returned by :meth:`TopologicalSorter.get_ready`."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. method:: is_active()\n\n      Returns ``True`` if more progress can be made and ``False`` otherwise.\n      Progress can be made if cycles do not block the resolution and either\n      there are still nodes ready that haven't yet been returned by\n      :meth:`TopologicalSorter.get_ready` or the number of nodes marked\n      :meth:`TopologicalSorter.done` is less than the number that have been\n      returned by :meth:`TopologicalSorter.get_ready`."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r03-c09",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "      This is due to the fact that \"0\" and \"2\" are in the same level in the\n      graph (they would have been returned in the same call to\n      :meth:`~TopologicalSorter.get_ready`) and the order between them is\n      determined by the order of insertion."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": ".. method:: static_order()\n\n      Returns an iterator object which will iterate over nodes in a topological\n      order. When using this method, :meth:`~TopologicalSorter.prepare` and\n      :meth:`~TopologicalSorter.done` should not be called. This method is\n      equivalent to::\n\n          def static_order(self):\n              self.prepare()\n              while self.is_active():\n                  node_group = self.get_ready()\n                  yield from node_group\n                  self.done(*node_group)\n\n      The particular order that is returned may depend on the specific order in\n      which the items were inserted in the graph. For example:"
+              },
+              {
+                "index": 2,
+                "quote": "      This is due to the fact that \"0\" and \"2\" are in the same level in the\n      graph (they would have been returned in the same call to\n      :meth:`~TopologicalSorter.get_ready`) and the order between them is\n      determined by the order of insertion."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r03-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "and closes the graph to further additions",
+            "start": 302,
+            "end": 343
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "Calling TopologicalSorter.prepare closes the graph to further additions."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. method:: prepare()\n\n      Mark the graph as finished and check for cycles in the graph. If any cycle\n      is detected, :exc:`CycleError` will be raised, but\n      :meth:`~TopologicalSorter.get_ready` can still be used to obtain as many\n      nodes as possible until cycles block more progress. After a call to this\n      function, the graph cannot be modified, and therefore no more nodes can be\n      added using :meth:`~TopologicalSorter.add`."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r03-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 调用后 graph 不可修改，不可 add。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r04-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Simple lightweight unbounded function cache.  Sometimes called\n   `\"memoize\" <https://en.wikipedia.org/wiki/Memoization>`_."
+              },
+              {
+                "index": 0,
+                "quote": "   Returns the same as ``lru_cache(maxsize=None)``, creating a thin\n   wrapper around a dictionary lookup for the function arguments.  Because it\n   never needs to evict old values, this is smaller and faster than\n   :func:`lru_cache` with a size limit."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. decorator:: cache(user_function)\n\n   Simple lightweight unbounded function cache.  Sometimes called\n   `\"memoize\" <https://en.wikipedia.org/wiki/Memoization>`_.\n\n   Returns the same as ``lru_cache(maxsize=None)``, creating a thin\n   wrapper around a dictionary lookup for the function arguments."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r04-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   The cache is threadsafe so that the wrapped function can be used in\n   multiple threads.  This means that the underlying data structure will\n   remain coherent during concurrent updates."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. decorator:: cache(user_function)"
+              },
+              {
+                "index": 0,
+                "quote": "   The cache is threadsafe so that the wrapped function can be used in\n   multiple threads.  This means that the underlying data structure will\n   remain coherent during concurrent updates."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r04-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   It is possible for the wrapped function to be called more than once if\n   another thread makes an additional call before the initial call has been\n   completed and cached."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. decorator:: cache(user_function)"
+              },
+              {
+                "index": 0,
+                "quote": "   It is possible for the wrapped function to be called more than once if\n   another thread makes an additional call before the initial call has been\n   completed and cached."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r04-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "   Since a dictionary is used to cache results, the positional and keyword\n   arguments to the function must be :term:`hashable`."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. decorator:: lru_cache(user_function)\n               lru_cache(maxsize=128, typed=False)"
+              },
+              {
+                "index": 2,
+                "quote": "   Since a dictionary is used to cache results, the positional and keyword\n   arguments to the function must be :term:`hashable`."
+              },
+              {
+                "index": 2,
+                "quote": "   If *user_function* is specified, it must be a callable. This allows the\n   *lru_cache* decorator to be applied directly to a user function, leaving\n   the *maxsize* at its default value of 128:"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r04-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "   Distinct argument patterns may be considered to be distinct calls with\n   separate cache entries.  For example, ``f(a=1, b=2)`` and ``f(b=2, a=1)``\n   differ in their keyword argument order and may have two separate cache\n   entries."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. decorator:: lru_cache(user_function)\n               lru_cache(maxsize=128, typed=False)"
+              },
+              {
+                "index": 2,
+                "quote": "   Distinct argument patterns may be considered to be distinct calls with\n   separate cache entries.  For example, ``f(a=1, b=2)`` and ``f(b=2, a=1)``\n   differ in their keyword argument order and may have two separate cache\n   entries."
+              },
+              {
+                "index": 2,
+                "quote": "   If *user_function* is specified, it must be a callable. This allows the\n   *lru_cache* decorator to be applied directly to a user function, leaving\n   the *maxsize* at its default value of 128:"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r04-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "   The cache keeps references to the arguments and return values until they age\n   out of the cache or until the cache is cleared."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. decorator:: lru_cache(user_function)\n               lru_cache(maxsize=128, typed=False)"
+              },
+              {
+                "index": 2,
+                "quote": "   If *user_function* is specified, it must be a callable. This allows the\n   *lru_cache* decorator to be applied directly to a user function, leaving\n   the *maxsize* at its default value of 128:"
+              },
+              {
+                "index": 2,
+                "quote": "   The cache keeps references to the arguments and return values until they age\n   out of the cache or until the cache is cleared."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r04-c09",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   Also, this decorator requires that the ``__dict__`` attribute on each instance\n   be a mutable mapping. This means it will not work with some types, such as\n   metaclasses (since the ``__dict__`` attributes on type instances are\n   read-only proxies for the class namespace), and those that specify\n   ``__slots__`` without including ``__dict__`` as one of the defined slots\n   (as such classes don't provide a ``__dict__`` attribute at all)."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. decorator:: cached_property(func)"
+              },
+              {
+                "index": 1,
+                "quote": "   The *cached_property* does not prevent a possible race condition in\n   multi-threaded usage."
+              },
+              {
+                "index": 1,
+                "quote": "   Also, this decorator requires that the ``__dict__`` attribute on each instance\n   be a mutable mapping."
+              },
+              {
+                "index": 1,
+                "quote": "   Also, this decorator requires that the ``__dict__`` attribute on each instance\n   be a mutable mapping. This means it will not work with some types, such as\n   metaclasses (since the ``__dict__`` attributes on type instances are\n   read-only proxies for the class namespace), and those that specify\n   ``__slots__`` without including ``__dict__`` as one of the defined slots\n   (as such classes don't provide a ``__dict__`` attribute at all)."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r04-c10",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "In Python 3.12 and later, its old undocumented lock has been removed, so synchronization must be supplied where repeated concurrent getter execution is harmful.",
+            "start": 784,
+            "end": 944
+          },
+          "after": {
+            "quote": "In Python 3.12 and later, its old undocumented lock has been removed",
+            "start": 784,
+            "end": 852
+          }
+        },
+        "claim_text": {
+          "before": "Python 3.12+ removed the cached_property lock, so necessary synchronization must be supplied by the caller.",
+          "after": "In Python 3.12 and later, the old undocumented lock in cached_property is removed."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   .. versionchanged:: 3.12\n      Prior to Python 3.12, ``cached_property`` included an undocumented lock to\n      ensure that in multi-threaded usage the getter function was guaranteed to\n      run only once per instance. However, the lock was per-property, not\n      per-instance, which could result in unacceptably high lock contention. In\n      Python 3.12+ this locking is removed."
+              },
+              {
+                "index": 1,
+                "quote": "   The *cached_property* does not prevent a possible race condition in\n   multi-threaded usage. The getter function could run more than once on the\n   same instance, with the latest run setting the cached value. If the cached\n   property is idempotent or otherwise not harmful to run more than once on an\n   instance, this is fine. If synchronization is needed, implement the necessary\n   locking inside the decorated getter function or around the cached property\n   access."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "   .. versionchanged:: 3.12\n      Prior to Python 3.12, ``cached_property`` included an undocumented lock to\n      ensure that in multi-threaded usage the getter function was guaranteed to\n      run only once per instance. However, the lock was per-property, not\n      per-instance, which could result in unacceptably high lock contention. In\n      Python 3.12+ this locking is removed."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 具名cached_property及版本3.12+条件完整。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r04-c11",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "so synchronization must be supplied where repeated concurrent getter execution is harmful.",
+            "start": 854,
+            "end": 944
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "When repeated concurrent execution of a cached_property getter is harmful, the caller must supply synchronization."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "   The *cached_property* does not prevent a possible race condition in\n   multi-threaded usage. The getter function could run more than once on the\n   same instance, with the latest run setting the cached value. If the cached\n   property is idempotent or otherwise not harmful to run more than once on an\n   instance, this is fine. If synchronization is needed, implement the necessary\n   locking inside the decorated getter function or around the cached property\n   access."
+              },
+              {
+                "index": 1,
+                "quote": "   .. versionchanged:: 3.12\n      Prior to Python 3.12, ``cached_property`` included an undocumented lock to\n      ensure that in multi-threaded usage the getter function was guaranteed to\n      run only once per instance. However, the lock was per-property, not\n      per-instance, which could result in unacceptably high lock contention. In\n      Python 3.12+ this locking is removed."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r04-c11"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 文档允许无害重复，否则需要同步并在getter或访问周围实现锁；版本段说明旧锁已去除。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r05-c08",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "it receives the weak-reference object rather than the referent, which is no longer available",
+            "start": 599,
+            "end": 691
+          },
+          "after": {
+            "quote": "If a supplied callback runs, it receives the weak-reference object rather than the referent",
+            "start": 570,
+            "end": 661
+          }
+        },
+        "claim_text": {
+          "before": "A weak-reference callback receives the weak reference, while its referent is unavailable.",
+          "after": "A supplied weak-reference callback, when it runs, receives the weak-reference object rather than the referent."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   Return a weak reference to *object*.  The original object can be retrieved by\n   calling the reference object if the referent is still alive; if the referent is\n   no longer alive, calling the reference object will cause :const:`None` to be\n   returned.  If *callback* is provided and not :const:`None`, and the returned\n   weakref object is still alive, the callback will be called when the object is\n   about to be finalized; the weak reference object will be passed as the only\n   parameter to the callback; the referent will no longer be available."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "   returned.  If *callback* is provided and not :const:`None`, and the returned\n   weakref object is still alive, the callback will be called when the object is\n   about to be finalized; the weak reference object will be passed as the only\n   parameter to the callback; the referent will no longer be available."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: callback提供且weakref存活才调用；唯一参数是weak reference object，回答用if runs保留条件。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r05-c10",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "Callback exceptions are reported on standard error but cannot propagate to the caller.",
+            "start": 763,
+            "end": 849
+          },
+          "after": {
+            "quote": "Callback exceptions are reported on standard error",
+            "start": 763,
+            "end": 813
+          }
+        },
+        "claim_text": {
+          "before": "Callback exceptions are reported on standard error and cannot propagate.",
+          "after": "Exceptions from weak-reference callbacks are reported to standard error."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   Exceptions raised by the callback will be noted on the standard error output,\n   but cannot be propagated; they are handled in exactly the same way as exceptions\n   raised from an object's :meth:`~object.__del__` method."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. class:: ref(object[, callback])"
+              },
+              {
+                "index": 1,
+                "quote": "   It is allowable for many weak references to be constructed for the same object.\n   Callbacks registered for each weak reference will be called from the most\n   recently registered callback to the oldest registered callback.\n\n   Exceptions raised by the callback will be noted on the standard error output,\n   but cannot be propagated; they are handled in exactly the same way as exceptions\n   raised from an object's :meth:`~object.__del__` method."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 前句给定弱引用callback主体，异常段明确standard error。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r05-c11",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "which is no longer available",
+            "start": 663,
+            "end": 691
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "The referent is no longer available when the weak-reference callback runs."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. class:: ref(object[, callback])"
+              },
+              {
+                "index": 1,
+                "quote": "   returned.  If *callback* is provided and not :const:`None`, and the returned\n   weakref object is still alive, the callback will be called when the object is\n   about to be finalized; the weak reference object will be passed as the only\n   parameter to the callback; the referent will no longer be available."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r05-c11"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 原文明确referent不可得。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r05-c12",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "but cannot propagate to the caller.",
+            "start": 814,
+            "end": 849
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "Exceptions from weak-reference callbacks cannot propagate to the caller."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. class:: ref(object[, callback])"
+              },
+              {
+                "index": 1,
+                "quote": "   It is allowable for many weak references to be constructed for the same object.\n   Callbacks registered for each weak reference will be called from the most\n   recently registered callback to the oldest registered callback.\n\n   Exceptions raised by the callback will be noted on the standard error output,\n   but cannot be propagated; they are handled in exactly the same way as exceptions\n   raised from an object's :meth:`~object.__del__` method."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r05-c12"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: cannot be propagated直接支持。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r06-c02",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "heapify transforms a populated list in place in linear time",
+            "start": 170,
+            "end": 229
+          },
+          "after": {
+            "quote": "heapify transforms a populated list in place",
+            "start": 170,
+            "end": 214
+          }
+        },
+        "claim_text": {
+          "before": "heapify transforms a list in place in linear time.",
+          "after": "heapify transforms a populated list into a heap in place."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Transform list *x* into a heap, in-place, in linear time."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "To create a heap, use a list initialized to ``[]``, or you can transform a\npopulated list into a heap via function :func:`heapify`."
+              },
+              {
+                "index": 0,
+                "quote": ".. function:: heapify(x)\n\n   Transform list *x* into a heap, in-place, in linear time."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: populate list场景与函数原地转换在同段给出。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r06-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Push *item* on the heap, then pop and return the smallest item from the\n   *heap*.  The combined action runs more efficiently than :func:`heappush`\n   followed by a separate call to :func:`heappop`."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: heappushpop(heap, item)\n\n   Push *item* on the heap, then pop and return the smallest item from the\n   *heap*."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r06-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Pop and return the smallest item from the *heap*, maintaining the heap\n   invariant.  If the heap is empty, :exc:`IndexError` is raised.  To access the\n   smallest item without popping it, use ``heap[0]``."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: heapreplace(heap, item)\n\n   Pop and return the smallest item from the *heap*, and also push the new *item*.\n   The heap size doesn't change. If the heap is empty, :exc:`IndexError` is raised.\n\n   This one step operation is more efficient than a :func:`heappop` followed by\n   :func:`heappush` and can be more appropriate when using a fixed-size heap.\n   The pop/push combination always returns an element from the heap and replaces\n   it with *item*."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r06-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Pop and return the smallest item from the *heap*, and also push the new *item*.\n   The heap size doesn't change. If the heap is empty, :exc:`IndexError` is raised."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: heapreplace(heap, item)\n\n   Pop and return the smallest item from the *heap*, and also push the new *item*.\n   The heap size doesn't change. If the heap is empty, :exc:`IndexError` is raised."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r06-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   The value returned may be larger than the *item* added.  If that isn't\n   desired, consider using :func:`heappushpop` instead.  Its push/pop\n   combination returns the smaller of the two values, leaving the larger value\n   on the heap."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: heapreplace(heap, item)\n\n   Pop and return the smallest item from the *heap*, and also push the new *item*.\n   The heap size doesn't change. If the heap is empty, :exc:`IndexError` is raised.\n\n   This one step operation is more efficient than a :func:`heappop` followed by\n   :func:`heappush` and can be more appropriate when using a fixed-size heap.\n   The pop/push combination always returns an element from the heap and replaces\n   it with *item*.\n\n   The value returned may be larger than the *item* added.  If that isn't\n   desired, consider using :func:`heappushpop` instead.  Its push/pop\n   combination returns the smaller of the two values, leaving the larger value\n   on the heap."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r06-c11",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "in linear time.",
+            "start": 215,
+            "end": 230
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "heapify runs in linear time."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: heapify(x)\n\n   Transform list *x* into a heap, in-place, in linear time."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r06-c11"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 具名函数线性复杂度。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r07-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "    Parameter values are passed as-is to tests (no copy whatsoever)."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "    Parameter values are passed as-is to tests (no copy whatsoever)."
+              },
+              {
+                "index": 0,
+                "quote": "    Parameter values are passed as-is to tests (no copy whatsoever).\n\n    For example, if you pass a list or a dict as a parameter value, and\n    the test case code mutates it, the mutations will be reflected in subsequent\n    test case calls."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r07-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "It is also possible to mark individual test instances within parametrize,\nfor example with the builtin ``mark.xfail``:"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "It is also possible to mark individual test instances within parametrize,\nfor example with the builtin ``mark.xfail``:\n\n.. code-block:: python\n\n    # content of test_expectation.py\n    import pytest\n\n\n    @pytest.mark.parametrize(\n        \"test_input,expected\",\n        [(\"3+5\", 8), (\"2+4\", 6), pytest.param(\"6*9\", 42, marks=pytest.mark.xfail)],"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r07-c04",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "Stacking parametrize decorators produces all combinations, with exhaustion ordered by the decorators.",
+            "start": 435,
+            "end": 536
+          },
+          "after": {
+            "quote": "Stacking parametrize decorators produces all combinations",
+            "start": 435,
+            "end": 492
+          }
+        },
+        "claim_text": {
+          "before": "Stacked parametrize decorators generate all combinations in decorator exhaustion order.",
+          "after": "Stacking parametrize decorators produces all combinations of their arguments."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "This will run the test with the arguments set to ``x=0/y=2``, ``x=1/y=2``,\n``x=0/y=3``, and ``x=1/y=3`` exhausting parameters in the order of the decorators."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "To get all combinations of multiple parametrized arguments you can stack\n``parametrize`` decorators:"
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 原文直接全组合。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r07-c08",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "applying the mark to a class or assigning pytestmark at module level extends parametrization to that scope",
+            "start": 724,
+            "end": 830
+          },
+          "after": {
+            "quote": "applying the mark to a class",
+            "start": 724,
+            "end": 752
+          }
+        },
+        "claim_text": {
+          "before": "A parametrization mark can be applied to a class or module scope.",
+          "after": "Applying the parametrize mark to a class extends parametrization to that class scope."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "To parametrize all tests in a module, you can assign to the :globalvar:`pytestmark` global variable:"
+              },
+              {
+                "index": 1,
+                "quote": "Note that you could also use the parametrize marker on a class or a module\n(see :ref:`mark`) which would invoke several functions with the argument sets,\nfor instance:"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Note that you could also use the parametrize marker on a class or a module\n(see :ref:`mark`) which would invoke several functions with the argument sets,\nfor instance:"
+              },
+              {
+                "index": 1,
+                "quote": "    @pytest.mark.parametrize(\"n,expected\", [(1, 2), (3, 4)])\n    class TestClass:\n        def test_simple_case(self, n, expected):\n            assert n + 1 == expected\n\n        def test_weird_simple_case(self, n, expected):\n            assert (n * 1) + 1 == expected"
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 类标记及两个方法均接收参数的示例支持类作用域。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r07-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "with exhaustion ordered by the decorators.",
+            "start": 494,
+            "end": 536
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "When parametrize decorators are stacked, exhaustion order follows the order of the decorators."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "To get all combinations of multiple parametrized arguments you can stack\n``parametrize`` decorators:\n\n.. code-block:: python\n\n    import pytest\n\n\n    @pytest.mark.parametrize(\"x\", [0, 1])\n    @pytest.mark.parametrize(\"y\", [2, 3])\n    def test_foo(x, y):\n        pass\n\nThis will run the test with the arguments set to ``x=0/y=2``, ``x=1/y=2``,\n``x=0/y=3``, and ``x=1/y=3`` exhausting parameters in the order of the decorators."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r07-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 完整堆叠例子和明确exhausting原句，保留关系。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r07-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "assigning pytestmark at module level extends parametrization to that scope.",
+            "start": 756,
+            "end": 831
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "Assigning pytestmark at module level extends parametrization to all tests in the module."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "To parametrize all tests in a module, you can assign to the :globalvar:`pytestmark` global variable:\n\n\n.. code-block:: python\n\n    import pytest\n\n    pytestmark = pytest.mark.parametrize(\"n,expected\", [(1, 2), (3, 4)])"
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r07-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 模块全局pytestmark明确用于all tests。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r08-c03",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "raising controls errors when a set or deletion target does not exist.",
+          "after": "For monkeypatch helpers with a raising argument, raising controls whether a missing set or deletion target raises KeyError or AttributeError."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r08-c07",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "syspath_prepend also fixes namespace packages and invalidates import caches rather than merely adding a string to sys.path.",
+            "start": 584,
+            "end": 707
+          },
+          "after": {
+            "quote": "syspath_prepend also fixes namespace packages",
+            "start": 584,
+            "end": 629
+          }
+        },
+        "claim_text": {
+          "before": "syspath_prepend fixes namespace packages and invalidates import caches.",
+          "after": "monkeypatch.syspath_prepend also fixes namespace packages rather than only adding a sys.path value."
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 直接调用fixup_namespace_packages；回答是其功能摘要，不解读为保证修复所有导入错误。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r08-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "6. Use :py:meth:`monkeypatch.context <MonkeyPatch.context>` to apply patches only in a specific scope, which can help\ncontrol teardown of complex fixtures or patches to the stdlib."
+              },
+              {
+                "index": 2,
+                "quote": "    Mind that patching ``stdlib`` functions and some third-party libraries used by pytest\n    might break pytest itself, therefore in those cases it is recommended to use\n    :meth:`MonkeyPatch.context` to limit the patching to the block you want tested:"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "    Mind that patching ``stdlib`` functions and some third-party libraries used by pytest\n    might break pytest itself, therefore in those cases it is recommended to use\n    :meth:`MonkeyPatch.context` to limit the patching to the block you want tested:"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r08-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "and invalidates import caches rather than merely adding a string to sys.path.",
+            "start": 630,
+            "end": 707
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "monkeypatch.syspath_prepend invalidates import caches."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "5. Use :py:meth:`monkeypatch.syspath_prepend <MonkeyPatch.syspath_prepend>` to modify ``sys.path`` which will also\ncall ``pkg_resources.fixup_namespace_packages`` and :py:func:`importlib.invalidate_caches`."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r08-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 具名方法触发importlib.invalidate_caches。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r09-c03",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "tmp_path_factory is session-scoped and can create directories from another fixture or test.",
+            "start": 273,
+            "end": 364
+          },
+          "after": {
+            "quote": "tmp_path_factory is session-scoped",
+            "start": 273,
+            "end": 307
+          }
+        },
+        "claim_text": {
+          "before": "tmp_path_factory is session-scoped and can create directories from fixtures or tests.",
+          "after": "tmp_path_factory is session-scoped."
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 明确session-scoped。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r09-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "can create directories from another fixture or test.",
+            "start": 312,
+            "end": 364
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "tmp_path_factory can create directories from another fixture or test."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "The ``tmp_path_factory`` is a session-scoped fixture which can be used\nto create arbitrary temporary directories from any other fixture or test."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r09-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 明确from any other fixture or test。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r10-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "Retry on any error. This option is used together with --retry."
+              },
+              {
+                "index": 2,
+                "quote": "By default curl does not return error for transfers with an HTTP response code\nthat indicates an HTTP error, if the transfer was successful. For example, if\na server replies 404 Not Found and the reply is fully received then that is\nnot an error. When --retry is used then curl retries on some HTTP response\ncodes that indicate transient HTTP errors, but that does not include most 4xx\nresponse codes such as 404. If you want to retry on all response codes that\nindicate HTTP errors (4xx and 5xx) then combine with --fail."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--retry-all-errors`"
+              },
+              {
+                "index": 2,
+                "quote": "Retry on any error. This option is used together with --retry."
+              },
+              {
+                "index": 2,
+                "quote": "By default curl does not return error for transfers with an HTTP response code\nthat indicates an HTTP error, if the transfer was successful. For example, if\na server replies 404 Not Found and the reply is fully received then that is\nnot an error. When --retry is used then curl retries on some HTTP response\ncodes that indicate transient HTTP errors, but that does not include most 4xx\nresponse codes such as 404. If you want to retry on all response codes that\nindicate HTTP errors (4xx and 5xx) then combine with --fail."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r10-c06",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "curl exponential retry delays start at one second and cap at ten minutes.",
+          "after": "The normal curl retry delay starts at one second and doubles up to ten minutes, which remains the delay thereafter."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 6,
+                "quote": "When curl is about to retry a transfer, it first waits one second and then for\nall forthcoming retries it doubles the waiting time until it reaches 10\nminutes which then remains delay between the rest of the retries. By using\n--retry-delay you disable this exponential backoff algorithm. See also\n--retry-max-time to limit the total time allowed for retries."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 6,
+                "quote": "When curl is about to retry a transfer, it first waits one second and then for\nall forthcoming retries it doubles the waiting time until it reaches 10\nminutes which then remains delay between the rest of the retries."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r10-c09",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "**WARNING**: For server compatibility curl attempts to retry failed flaky\ntransfers as close as possible to how they were started, but this is not\npossible with redirected input or output. For example, before retrying it\nremoves output data from a failed partial transfer that was written to an\noutput file. However this is not true of data redirected to a | pipe or \\>\nfile, which are not reset. We strongly suggest you do not parse or record\noutput via redirect in combination with this option, since you may receive\nduplicate data."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "**WARNING**: For server compatibility curl attempts to retry failed flaky\ntransfers as close as possible to how they were started, but this is not\npossible with redirected input or output. For example, before retrying it\nremoves output data from a failed partial transfer that was written to an\noutput file. However this is not true of data redirected to a | pipe or \\>\nfile, which are not reset. We strongly suggest you do not parse or record\noutput via redirect in combination with this option, since you may receive\nduplicate data."
+              },
+              {
+                "index": 2,
+                "quote": "# `--retry-all-errors`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r10-c10",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "using --fail-with-body can preserve an HTTP error body while returning error 22",
+            "start": 831,
+            "end": 910
+          },
+          "after": {
+            "quote": "using --fail-with-body can preserve an HTTP error body",
+            "start": 831,
+            "end": 885
+          }
+        },
+        "claim_text": {
+          "before": "--fail-with-body saves an HTTP error body and returns error 22.",
+          "after": "--fail-with-body can preserve the body of an HTTP error response."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Return an error on server errors where the HTTP response code is 400 or\ngreater). In normal cases when an HTTP server fails to deliver a document, it\nreturns an HTML document stating so (which often also describes why and more).\nThis option allows curl to output and save that content but also to return\nerror 22."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--fail-with-body`\n\nReturn an error on server errors where the HTTP response code is 400 or\ngreater). In normal cases when an HTTP server fails to deliver a document, it\nreturns an HTML document stating so (which often also describes why and more).\nThis option allows curl to output and save that content but also to return\nerror 22."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 具名option，400或更高时仍可输出/保存body。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r10-c11",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "--retry-max-time stops starting retries after its timer expires",
+            "start": 604,
+            "end": 667
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "--retry-max-time stops starting retries once its timer reaches the limit."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 5,
+                "quote": "# `--retry-max-time`\n\nThe retry timer is reset before the first transfer attempt. Retries are done\nas usual (see --retry) as long as the timer has not reached this given\nlimit."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r10-c11"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 具名option；只要timer未到limit才retry。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r10-c12",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "while returning error 22.",
+            "start": 886,
+            "end": 911
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "--fail-with-body returns error 22 for the documented HTTP error response conditions."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--fail-with-body`\n\nReturn an error on server errors where the HTTP response code is 400 or\ngreater). In normal cases when an HTTP server fails to deliver a document, it\nreturns an HTML document stating so (which often also describes why and more).\nThis option allows curl to output and save that content but also to return\nerror 22."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r10-c12"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 同一option明确error22，与fail输出body差异未混淆。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "If the server reports that the requested page has moved to a different\nlocation (indicated with a Location: header and a 3XX response code), this\noption makes curl redo the request on the new place. If used together with\n--show-headers or --head, headers from all requested pages are shown."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--location`\n\nIf the server reports that the requested page has moved to a different\nlocation (indicated with a Location: header and a 3XX response code), this\noption makes curl redo the request on the new place."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Instructs curl to like --location follow HTTP redirects, but permits it to\nsend credentials and other secrets along to other hosts than the initial one."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--location-trusted`\n\nInstructs curl to like --location follow HTTP redirects, but permits it to\nsend credentials and other secrets along to other hosts than the initial one."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c06",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "Other 3xx redirects ordinarily preserve the request method.",
+          "after": "When curl follows a redirect for a POST request, other 3xx codes ordinarily preserve that POST method."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c07",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "The post301, post302 and post303 options retain POST for their codes when location is enabled.",
+          "after": "With --location in use, --post301 retains POST after a 301 redirect."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 3,
+                "quote": "Respect RFC 7231/6.4.2 and do not convert POST requests into GET requests when\nfollowing a 301 redirect. The non-RFC behavior is ubiquitous in web browsers,\nso curl does the conversion by default to maintain consistency. However, a\nserver may require a POST to remain a POST after such a redirection. This\noption is meaningful only when using --location."
+              },
+              {
+                "index": 4,
+                "quote": "Respect RFC 7231/6.4.3 and do not convert POST requests into GET requests when\nfollowing a 302 redirect. The non-RFC behavior is ubiquitous in web browsers,\nso curl does the conversion by default to maintain consistency. However, a\nserver may require a POST to remain a POST after such a redirection. This\noption is meaningful only when using --location."
+              },
+              {
+                "index": 5,
+                "quote": "Violate RFC 7231/6.4.4 and do not convert POST requests into GET requests when\nfollowing 303 redirect. A server may require a POST to remain a POST after a\n303 redirection. This option is meaningful only when using --location."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--post301`\n\nRespect RFC 7231/6.4.2 and do not convert POST requests into GET requests when\nfollowing a 301 redirect. The non-RFC behavior is ubiquitous in web browsers,\nso curl does the conversion by default to maintain consistency. However, a\nserver may require a POST to remain a POST after such a redirection. This\noption is meaningful only when using --location."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 具名post301、301、POST保持和location条件均完整。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c09",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "The redirect limit defaults to fifty and can be made unlimited with --max-redirs -1.",
+            "start": 670,
+            "end": 754
+          },
+          "after": {
+            "quote": "The redirect limit defaults to fifty",
+            "start": 670,
+            "end": 706
+          }
+        },
+        "claim_text": {
+          "before": "--max-redirs defaults to fifty and -1 removes the limit.",
+          "after": "The default redirect limit is fifty."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "Set maximum number of redirections to follow. When --location is used, to\nprevent curl from following too many redirects, by default, the limit is\nset to 50 redirects. Set this option to -1 to make it unlimited."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--max-redirs`\n\nSet maximum number of redirections to follow. When --location is used, to\nprevent curl from following too many redirects, by default, the limit is\nset to 50 redirects."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: location使用时default50明确。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c10",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 6,
+                "quote": "Limit what protocols to allow on redirects. Protocols denied by --proto are\nnot overridden by this option. See --proto for how protocols are represented."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 6,
+                "quote": "# `--proto-redir`\n\nLimit what protocols to allow on redirects. Protocols denied by --proto are\nnot overridden by this option. See --proto for how protocols are represented."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c11",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "--proto-redir can restrict redirect protocols",
+            "start": 755,
+            "end": 800
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "--proto-redir can restrict the protocols allowed on redirects."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 6,
+                "quote": "# `--proto-redir`\n\nLimit what protocols to allow on redirects."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r11-c11"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 具名option、redirect作用域明确。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c12",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "--post301, --post302 and --post303 retain POST for their respective codes when --location is in use.",
+            "start": 495,
+            "end": 595
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "With --location in use, --post302 retains POST after a 302 redirect."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 4,
+                "quote": "# `--post302`\n\nRespect RFC 7231/6.4.3 and do not convert POST requests into GET requests when\nfollowing a 302 redirect. The non-RFC behavior is ubiquitous in web browsers,\nso curl does the conversion by default to maintain consistency. However, a\nserver may require a POST to remain a POST after such a redirection. This\noption is meaningful only when using --location."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r11-c12"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 具名post302与302专属行为，避免三flag合并掩盖单项错误。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c13",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "--post301, --post302 and --post303 retain POST for their respective codes when --location is in use.",
+            "start": 495,
+            "end": 595
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "With --location in use, --post303 retains POST after a 303 redirect."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 5,
+                "quote": "# `--post303`\n\nViolate RFC 7231/6.4.4 and do not convert POST requests into GET requests when\nfollowing 303 redirect. A server may require a POST to remain a POST after a\n303 redirection. This option is meaningful only when using --location."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r11-c13"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 具名post303与303专属行为及location条件。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r11-c14",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "can be made unlimited with --max-redirs -1.",
+            "start": 711,
+            "end": 754
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "--max-redirs -1 makes the redirect limit unlimited."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--max-redirs`\n\nSet maximum number of redirections to follow. When --location is used, to\nprevent curl from following too many redirects, by default, the limit is\nset to 50 redirects. Set this option to -1 to make it unlimited."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r11-c14"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 具名option和-1特殊值完整。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r12-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 4,
+                "quote": "If this option is used with an HTTP(S) URL, the PUT method is used."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 4,
+                "quote": "# `--upload-file`\n\nUpload the specified local file to the remote URL."
+              },
+              {
+                "index": 4,
+                "quote": "If this option is used with an HTTP(S) URL, the PUT method is used."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r12-c04",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "A filename of - reads stdin, while . selects nonblocking stdin.",
+            "start": 329,
+            "end": 392
+          },
+          "after": {
+            "quote": "A filename of - reads stdin",
+            "start": 329,
+            "end": 356
+          }
+        },
+        "claim_text": {
+          "before": "Upload filename - selects stdin, while . selects nonblocking stdin.",
+          "after": "For --upload-file, the filename - reads stdin."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 4,
+                "quote": "Use the filename `-` (a single dash) to use stdin instead of a given file.\nAlternately, the filename `.` (a single period) may be specified instead of\n`-` to use stdin in non-blocking mode to allow reading server output while\nstdin is being uploaded."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 4,
+                "quote": "# `--upload-file`\n\nUpload the specified local file to the remote URL."
+              },
+              {
+                "index": 4,
+                "quote": "Use the filename `-` (a single dash) to use stdin instead of a given file."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after independent blind lock: 保留upload-file语境，非所有flag的单dash。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r12-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 3,
+                "quote": "This option only changes the actual word used in the HTTP request, it does not\nalter the way curl behaves. For example if you want to make a proper HEAD\nrequest, using -X HEAD does not suffice. You need to use the --head option."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--request`\n\nChange the method to use when starting the transfer."
+              },
+              {
+                "index": 3,
+                "quote": "This option only changes the actual word used in the HTTP request, it does not\nalter the way curl behaves."
+              },
+              {
+                "index": 3,
+                "quote": "This option only changes the actual word used in the HTTP request, it does not\nalter the way curl behaves. For example if you want to make a proper HEAD\nrequest, using -X HEAD does not suffice. You need to use the --head option."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r12-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "If you start the data with the letter @, the rest should be a filename.\n`@-` makes curl read the data from stdin. Data is posted in a similar\nmanner as --data does, except that newlines and carriage returns are\npreserved and conversions are never done."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--data-binary`\n\nPost data exactly as specified with no extra processing whatsoever.\n\nIf you start the data with the letter @, the rest should be a filename.\n`@-` makes curl read the data from stdin. Data is posted in a similar\nmanner as --data does, except that newlines and carriage returns are\npreserved and conversions are never done."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r12-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Like --data the default content-type sent to the server is\napplication/x-www-form-urlencoded. If you want the data to be treated as\narbitrary binary data by the server then set the content-type to octet-stream:\n-H \"Content-Type: application/octet-stream\"."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--data-binary`\n\nPost data exactly as specified with no extra processing whatsoever.\n\nIf you start the data with the letter @, the rest should be a filename.\n`@-` makes curl read the data from stdin. Data is posted in a similar\nmanner as --data does, except that newlines and carriage returns are\npreserved and conversions are never done."
+              },
+              {
+                "index": 0,
+                "quote": "Like --data the default content-type sent to the server is\napplication/x-www-form-urlencoded."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r12-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "When used, this option makes all data specified with --data, --data-binary or\n--data-urlencode to be used in an HTTP GET request instead of the POST request\nthat otherwise would be used. curl appends the provided data to the URL as a\nquery string."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--get`\n\nWhen used, this option makes all data specified with --data, --data-binary or\n--data-urlencode to be used in an HTTP GET request instead of the POST request\nthat otherwise would be used. curl appends the provided data to the URL as a\nquery string."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r12-c10",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "**WARNING**: headers set with this option are set in all HTTP requests - even\nafter redirects are followed, like when told with --location. This can lead to\nthe header being sent to other hosts than the original host, so sensitive\nheaders should be used with caution combined with following redirects."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--header`"
+              },
+              {
+                "index": 2,
+                "quote": "**WARNING**: headers set with this option are set in all HTTP requests - even\nafter redirects are followed, like when told with --location. This can lead to\nthe header being sent to other hosts than the original host, so sensitive\nheaders should be used with caution combined with following redirects."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-dev-r12-c11",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "while . selects nonblocking stdin.",
+            "start": 358,
+            "end": 392
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "For --upload-file, the filename . selects nonblocking stdin."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 4,
+                "quote": "Use the filename `-` (a single dash) to use stdin instead of a given file.\nAlternately, the filename `.` (a single period) may be specified instead of\n`-` to use stdin in non-blocking mode to allow reading server output while\nstdin is being uploaded."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-dev-r12-c11"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: dot与dash差异完整。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    }
+  ],
+  "rule": "Diff computed directly between archived author input gold and accepted component; only changed fields are stored. This is an author-produced transparent difference map, not a replacement blind review."
+}

@@ -1,0 +1,576 @@
+{
+  "reviewed_at_utc": "2026-10-20T22:56:55.625459+00:00",
+  "reviewer": "same non-author AI blind reviewer B",
+  "configured_model": "gpt-6.1-sol",
+  "configured_reasoning_effort": "max",
+  "model_identity_basis": "Parent task configuration, not measured backend identity or benchmark invocation.",
+  "stage": "post-lock_affected_rereview_1_complete",
+  "status": "accepted_with_recorded_nonblocking_interpretation_boundary",
+  "new_review_is_not_a_second_blind_review": true,
+  "original_blind_lock_preserved": true,
+  "bindings": {
+    "blind_lock_sha256": "d20e7cdd4e9752b8311ba696be7a5c1da396d543ffa741c7e5b06751c8f50fc3",
+    "original_annotations_sha256": "674edbc455b9a4b174f9e396c7f24e797f64606c8a955cf54a7cba944208d472",
+    "input_sha256": "8b05507db86baad55ac3af37748b7b8d0cd648ccaf4100b732de81ec3843f323",
+    "original_gold_sha256": "052194a59a4600ffa0e4b09dcc2d08e5e369dba1f61d5e49c5f2bc3da5db5dbb",
+    "revised_gold_sha256": "ce99b44b2f09f18abf25ee7fa1248dcd7d4625e70e22e2da611c146026c9d7f2",
+    "revised_packet_lock_sha256": "90f080ea41297c258811d2fc60cc758a2d4eb70f5618ad5e173159703900d10f",
+    "revised_dataset_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+    "author_adjudication_sha256": "82c4afea530b56cd880ae7d96df60b3b7d9d7d6c065ab8c0500147b60e0ca9c0",
+    "comparison_sha256": "bc1f524598b492fd6e81820661e1328e0354ab7daf0822618ca6343d6b3be2c6",
+    "mechanical_checks_sha256": "12da99aab782753a75506a1eb91fc857d85ee0cefad61068927b4609ce6fd19e"
+  },
+  "counts": {
+    "cases": 24,
+    "locked_independent_claims": 245,
+    "original_gold_claims": 195,
+    "revised_gold_claims": 200,
+    "affected_revised_claims_manually_rereviewed": 92,
+    "unchanged_claims_reused_after_exact_equality": 108,
+    "new_gold_claims": 5,
+    "unmatched_independent_claims_after_revised_alignment": 0,
+    "remaining_label_disagreements_under_recorded_interpretations": 0,
+    "original_issue_groups_adjudicated_and_checked": 18,
+    "unresolved_blocking_issue_groups": 0,
+    "nonblocking_original_wording_ambiguities_retained": 1,
+    "genuine_cross_passage_required_cases": 2
+  },
+  "issues": [
+    {
+      "issue_id": "B01",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r25-c07",
+        "v2-test-r26-c07"
+      ],
+      "manual_reason": "保留原回答的完成语气，U严格区分attempt与完成保证；上下文缺少保证，不是直接反驳。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B02",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r37-c04",
+        "v2-test-r38-c04"
+      ],
+      "manual_reason": "原回答未写only cookie input，U保留缺少充分条件的边界；gold已移除擅加的sole。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B03",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r27-c09",
+        "v2-test-r28-c09"
+      ],
+      "manual_reason": "新增事实完整覆盖原回答开头的stdout/stderr捕获，引用直接陈述测试执行期间捕获这两类输出。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B04",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r28-c07",
+        "v2-test-r28-c10"
+      ],
+      "manual_reason": "临时文件实现U和readouterr返回bytes S已分离；两种binary fixture的直接类型证据均在。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B05",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r38-c02",
+        "v2-test-r38-c09",
+        "v2-test-r38-c10"
+      ],
+      "manual_reason": "首次读jar文件C、操作后写出S、cookie只用于literal C已分别对齐原回答；不能用整体C吞掉写出事实。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B06",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r43-c01",
+        "v2-test-r44-c01"
+      ],
+      "manual_reason": "引用已换为passage 3的--proxy而非preproxy；HTTP默认与1080默认均由同一API上下文给出。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B07",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r45-c08",
+        "v2-test-r46-c08"
+      ],
+      "manual_reason": "现有证据同时给出错误时删除local output和非regular无效的限制，并明确--remove-on-error身份。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B08",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r35-c06",
+        "v2-test-r36-c06"
+      ],
+      "manual_reason": "strict=True条件、xfail API代码和XPASS导致suite失败已在完整同段证据中绑定。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B09",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r30-c02"
+      ],
+      "manual_reason": "证据已包含实际pytest --show-capture=no命令，身份与停止失败输出显示的作用同时可核。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B10",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r31-c06",
+        "v2-test-r32-c06"
+      ],
+      "manual_reason": "证据明确区分--disable-warnings隐藏summary和-p no:warnings禁用warning capture plugin；标题与命令均可核。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B11",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r31-c07",
+        "v2-test-r32-c07"
+      ],
+      "manual_reason": "pytest.warns(UserWarning)调用和缺少预期warning导致失败的规则已显式绑定，不再只靠相邻的代词。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B12",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r27-c07"
+      ],
+      "manual_reason": "capsysbinary及capfdbinary的返回bytes证据均在，覆盖原回答复数fixture范围。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B13",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r27-c05",
+        "v2-test-r28-c05"
+      ],
+      "manual_reason": "claim_text已按实际回答收窄到library直接写FD，未把仅context提到的subprocess能力插入答案命题。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B14",
+      "status": "accepted_with_explicit_wording_interpretation_boundary",
+      "affected_revised_gold_claims": [
+        "v2-test-r47-c06",
+        "v2-test-r48-c06"
+      ],
+      "manual_reason": "原措辞歧义明确保留。盲审与作者均按传输的uploaded filename解释S；不能据此声称排除了multipart参数名的另一种读法。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B15",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r41-c02",
+        "v2-test-r42-c02"
+      ],
+      "manual_reason": "claim保留may continue，未加强为无条件完成传输或必然成功；原回答模态得到忠实提取。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B16",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r45-c05",
+        "v2-test-r46-c05"
+      ],
+      "manual_reason": "证据加入多个HTTP range例子及(*)标记先行词，multipart原样返回与调用者负责解析的范围现已充分。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B17",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r43-c08"
+      ],
+      "manual_reason": "凭据URL-decoded规则引用已换为passage 3并绑定--proxy；未借相同preproxy句冒充精确API证据。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    },
+    {
+      "issue_id": "B18",
+      "status": "resolved_and_same_reviewer_verified",
+      "affected_revised_gold_claims": [
+        "v2-test-r29-c02",
+        "v2-test-r29-c03",
+        "v2-test-r33-c02",
+        "v2-test-r33-c03",
+        "v2-test-r34-c02",
+        "v2-test-r35-c01",
+        "v2-test-r35-c03",
+        "v2-test-r35-c08",
+        "v2-test-r36-c01",
+        "v2-test-r36-c03",
+        "v2-test-r37-c01",
+        "v2-test-r37-c03",
+        "v2-test-r37-c05",
+        "v2-test-r38-c01",
+        "v2-test-r38-c03",
+        "v2-test-r38-c05",
+        "v2-test-r39-c01",
+        "v2-test-r39-c02",
+        "v2-test-r39-c04",
+        "v2-test-r39-c05",
+        "v2-test-r39-c06",
+        "v2-test-r39-c07",
+        "v2-test-r40-c02",
+        "v2-test-r40-c03",
+        "v2-test-r40-c04",
+        "v2-test-r41-c01",
+        "v2-test-r41-c02",
+        "v2-test-r41-c03",
+        "v2-test-r41-c04",
+        "v2-test-r41-c07",
+        "v2-test-r41-c08",
+        "v2-test-r42-c01",
+        "v2-test-r42-c02",
+        "v2-test-r42-c03",
+        "v2-test-r42-c04",
+        "v2-test-r42-c07",
+        "v2-test-r42-c08",
+        "v2-test-r43-c02",
+        "v2-test-r43-c03",
+        "v2-test-r43-c04",
+        "v2-test-r43-c07",
+        "v2-test-r43-c09",
+        "v2-test-r44-c02",
+        "v2-test-r44-c03",
+        "v2-test-r44-c04",
+        "v2-test-r44-c07",
+        "v2-test-r44-c09",
+        "v2-test-r45-c01",
+        "v2-test-r45-c03",
+        "v2-test-r45-c07",
+        "v2-test-r46-c01",
+        "v2-test-r46-c03",
+        "v2-test-r47-c01",
+        "v2-test-r47-c02",
+        "v2-test-r47-c03",
+        "v2-test-r47-c04",
+        "v2-test-r47-c05",
+        "v2-test-r47-c07",
+        "v2-test-r48-c01",
+        "v2-test-r48-c02",
+        "v2-test-r48-c03",
+        "v2-test-r48-c04",
+        "v2-test-r48-c05",
+        "v2-test-r48-c07"
+      ],
+      "manual_reason": "逐条核对所加本地heading/API及其辖域，现有quote-set可绑定目标实体与条件；同passage补身份不算新增跨passage推理。",
+      "blocking_revision_still_required": false,
+      "human_review_claimed": false
+    }
+  ],
+  "unchanged_claim_ids": [
+    "v2-test-r25-c01",
+    "v2-test-r25-c02",
+    "v2-test-r25-c03",
+    "v2-test-r25-c04",
+    "v2-test-r25-c05",
+    "v2-test-r25-c06",
+    "v2-test-r25-c08",
+    "v2-test-r26-c01",
+    "v2-test-r26-c02",
+    "v2-test-r26-c03",
+    "v2-test-r26-c04",
+    "v2-test-r26-c05",
+    "v2-test-r26-c06",
+    "v2-test-r26-c08",
+    "v2-test-r27-c01",
+    "v2-test-r27-c02",
+    "v2-test-r27-c03",
+    "v2-test-r27-c04",
+    "v2-test-r27-c06",
+    "v2-test-r27-c08",
+    "v2-test-r28-c01",
+    "v2-test-r28-c02",
+    "v2-test-r28-c03",
+    "v2-test-r28-c04",
+    "v2-test-r28-c06",
+    "v2-test-r28-c08",
+    "v2-test-r29-c01",
+    "v2-test-r29-c04",
+    "v2-test-r29-c05",
+    "v2-test-r29-c06",
+    "v2-test-r29-c07",
+    "v2-test-r29-c08",
+    "v2-test-r29-c09",
+    "v2-test-r30-c01",
+    "v2-test-r30-c03",
+    "v2-test-r30-c04",
+    "v2-test-r30-c05",
+    "v2-test-r30-c06",
+    "v2-test-r30-c07",
+    "v2-test-r30-c08",
+    "v2-test-r31-c01",
+    "v2-test-r31-c02",
+    "v2-test-r31-c03",
+    "v2-test-r31-c04",
+    "v2-test-r31-c05",
+    "v2-test-r31-c08",
+    "v2-test-r32-c01",
+    "v2-test-r32-c02",
+    "v2-test-r32-c03",
+    "v2-test-r32-c04",
+    "v2-test-r32-c05",
+    "v2-test-r32-c08",
+    "v2-test-r33-c01",
+    "v2-test-r33-c04",
+    "v2-test-r33-c05",
+    "v2-test-r33-c06",
+    "v2-test-r33-c07",
+    "v2-test-r33-c08",
+    "v2-test-r34-c01",
+    "v2-test-r34-c03",
+    "v2-test-r34-c04",
+    "v2-test-r34-c05",
+    "v2-test-r34-c06",
+    "v2-test-r34-c07",
+    "v2-test-r34-c08",
+    "v2-test-r35-c02",
+    "v2-test-r35-c04",
+    "v2-test-r35-c05",
+    "v2-test-r35-c07",
+    "v2-test-r36-c02",
+    "v2-test-r36-c04",
+    "v2-test-r36-c05",
+    "v2-test-r36-c07",
+    "v2-test-r36-c08",
+    "v2-test-r37-c02",
+    "v2-test-r37-c06",
+    "v2-test-r37-c07",
+    "v2-test-r37-c08",
+    "v2-test-r38-c06",
+    "v2-test-r38-c07",
+    "v2-test-r38-c08",
+    "v2-test-r39-c03",
+    "v2-test-r39-c08",
+    "v2-test-r40-c01",
+    "v2-test-r40-c05",
+    "v2-test-r40-c06",
+    "v2-test-r40-c07",
+    "v2-test-r40-c08",
+    "v2-test-r41-c05",
+    "v2-test-r41-c06",
+    "v2-test-r42-c05",
+    "v2-test-r42-c06",
+    "v2-test-r43-c05",
+    "v2-test-r43-c06",
+    "v2-test-r44-c05",
+    "v2-test-r44-c06",
+    "v2-test-r44-c08",
+    "v2-test-r45-c02",
+    "v2-test-r45-c04",
+    "v2-test-r45-c06",
+    "v2-test-r46-c02",
+    "v2-test-r46-c04",
+    "v2-test-r46-c06",
+    "v2-test-r46-c07",
+    "v2-test-r47-c06",
+    "v2-test-r47-c08",
+    "v2-test-r48-c06",
+    "v2-test-r48-c08"
+  ],
+  "dataset_field_changes": [
+    {
+      "id": "v2-test-r25",
+      "changed_fields": [
+        "category",
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r26",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r27",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r28",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r29",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r30",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r31",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r32",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r33",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r34",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r35",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r36",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r37",
+      "changed_fields": [
+        "category",
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r38",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r39",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r40",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r41",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r42",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r43",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r44",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r45",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r46",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r47",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    },
+    {
+      "id": "v2-test-r48",
+      "changed_fields": [
+        "gold_claims"
+      ]
+    }
+  ],
+  "quality": {
+    "full_input_contexts_preserved": true,
+    "original_context_coherence_review_remains_applicable": true,
+    "no_new_padding_or_context_trimming": true,
+    "heading_bindings_not_counted_as_cross_passage_reasoning": true,
+    "quote_economy_nonblocking_note": "部分同段较长引用与另附heading有冗余；均属同一API辖域，不构成语义错误或虚增独立来源。",
+    "residual_wording_boundary": "原措辞歧义明确保留。盲审与作者均按传输的uploaded filename解释S；不能据此声称排除了multipart参数名的另一种读法。"
+  },
+  "limitations": [
+    "AI independent review only; no human review was performed.",
+    "Context-only labels; no external API behavior was used to establish truth.",
+    "Original blind declaration applies only to the original pre-gold stage; this is explicitly post-gold affected review.",
+    "No benchmark/model prediction was run, and empirical difficulty is not established.",
+    "Source-family separation and source-license applicability remain unverified beyond the separately bounded lexical near-pair review.",
+    "The narrow source-separation review does not establish semantic independence or project-level holdout.",
+    "One answer wording ambiguity remains explicitly bounded by the shared contextual interpretation; no silent answer rewrite occurred.",
+    "Character-based token estimates are not measured provider token usage."
+  ],
+  "author_action": "作者可把本复核记录绑定到这个精确hash的修订packet。任何之后的语义变动仍需受影响复核；本记录不代替human/live-model gate。",
+  "benchmark_inference_calls": 0
+}

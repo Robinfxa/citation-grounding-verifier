@@ -1,0 +1,5103 @@
+{
+  "scope": "All recorded development outputs; strict proxies, no semantic relabeling",
+  "no_new_aliases_or_gold_edits": true,
+  "records": [
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 1294,
+        "citation_gold_relevant": 8,
+        "citation_literal_valid": 10,
+        "citation_total": 10,
+        "duplicate": 0,
+        "evidence_correct": 3,
+        "evidence_correct_non_unsupported": 3,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 8,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 8,
+        "label_correct": 8,
+        "matched": 8,
+        "matched_non_supported": 3,
+        "omitted": 0,
+        "predicted": 8,
+        "predicted_non_unsupported": 8,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c01",
+          "label_correct": true,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c02",
+          "label_correct": true,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c03",
+          "label_correct": true,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c04",
+          "label_correct": true,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c05",
+          "label_correct": true,
+          "prediction_index": 4
+        }
+      ],
+      "stage": "check-oracle"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 774,
+        "citation_gold_relevant": 3,
+        "citation_literal_valid": 8,
+        "citation_total": 8,
+        "duplicate": 0,
+        "evidence_correct": 5,
+        "evidence_correct_non_unsupported": 3,
+        "exact": 0,
+        "extra": 1,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 9,
+        "matched": 9,
+        "matched_non_supported": 2,
+        "omitted": 2,
+        "predicted": 10,
+        "predicted_non_unsupported": 8,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p06-c07a",
+        "v2-dev-p06-c07b"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [
+            {
+              "index": 3,
+              "quote": "Each file object returned is a\n``PackagePath``, a :class:`pathlib.PurePath` derived object with additional ``dist``,\n``size``, and ``hash`` properties as indicated by the metadata."
+            }
+          ],
+          "claim_text": "A PackagePath returned by files() has size and hash properties drawn from metadata.",
+          "prediction_index": 6,
+          "reasoning": "The returned file objects and their metadata-derived properties are explicitly documented.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c03",
+          "label_correct": true,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c04",
+          "label_correct": true,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c05",
+          "label_correct": true,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c06",
+          "label_correct": true,
+          "prediction_index": 5
+        }
+      ],
+      "stage": "check-e2e"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 2809,
+        "citation_gold_relevant": 10,
+        "citation_literal_valid": 10,
+        "citation_total": 10,
+        "duplicate": 0,
+        "evidence_correct": 8,
+        "evidence_correct_non_unsupported": 8,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 9,
+        "label_correct": 9,
+        "matched": 9,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 9,
+        "predicted_non_unsupported": 9,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c09",
+          "label_correct": true,
+          "prediction_index": 8
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 3050,
+        "citation_gold_relevant": 9,
+        "citation_literal_valid": 14,
+        "citation_total": 14,
+        "duplicate": 0,
+        "evidence_correct": 9,
+        "evidence_correct_non_unsupported": 9,
+        "exact": 0,
+        "extra": 4,
+        "false_support": 0,
+        "gold": 13,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 13,
+        "label_correct": 9,
+        "matched": 9,
+        "matched_non_supported": 0,
+        "omitted": 4,
+        "predicted": 13,
+        "predicted_non_unsupported": 13,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p04-c01",
+        "v2-dev-p04-c03",
+        "v2-dev-p04-c07",
+        "v2-dev-p04-c10a"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [
+            {
+              "index": 1,
+              "quote": ".. function:: localcontext(ctx=None, **kwargs)\n\n   Return a context manager that will set the current context for the active thread\n   to a copy of *ctx* on entry to the with-statement and restore the previous context\n   when exiting the with-statement."
+            }
+          ],
+          "claim_text": "For temporary decimal arithmetic settings, localcontext(ctx) enters with a copy of ctx.",
+          "prediction_index": 0,
+          "reasoning": "The context manager sets the active context to a copy of the supplied ctx on entry.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 1,
+              "quote": ".. function:: localcontext(ctx=None, **kwargs)"
+            },
+            {
+              "index": 1,
+              "quote": "The *kwargs* argument is used to set the attributes\n   of the new context."
+            }
+          ],
+          "claim_text": "The keyword arguments of localcontext(ctx) set attributes of the new context.",
+          "prediction_index": 2,
+          "reasoning": "The localcontext documentation explicitly assigns keyword arguments to attributes of the new context.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 2,
+              "quote": ".. class:: ExtendedContext\n\n   This is a standard context defined by the General Decimal Arithmetic\n   Specification.  Precision is set to nine.  Rounding is set to\n   :const:`ROUND_HALF_EVEN`."
+            }
+          ],
+          "claim_text": "ExtendedContext rounds with ROUND_HALF_EVEN.",
+          "prediction_index": 6,
+          "reasoning": "ExtendedContext explicitly uses ROUND_HALF_EVEN.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 4,
+              "quote": ".. method:: create_decimal(num)\n\n      Creates a new Decimal instance from *num* but using *self* as\n      context. Unlike the :class:`Decimal` constructor, the context precision,\n      rounding method, flags, and traps are applied to the conversion."
+            }
+          ],
+          "claim_text": "For input conversion, Context.create_decimal() applies the chosen context precision.",
+          "prediction_index": 9,
+          "reasoning": "create_decimal applies the precision of its context during conversion.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 0,
+        "matched": 12,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 12,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c10",
+          "label_correct": false,
+          "prediction_index": 9
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c11",
+          "label_correct": false,
+          "prediction_index": 10
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c12",
+          "label_correct": false,
+          "prediction_index": 11
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 1,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 4,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 7,
+        "matched_non_supported": 2,
+        "omitted": 2,
+        "predicted": 8,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p03-c01",
+        "v2-dev-p03-c02"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "Path.absolute() normalizes the path and resolves symbolic links.",
+          "prediction_index": 0,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c03",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c04",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c05",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c06",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c07",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c08",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c09",
+          "label_correct": false,
+          "prediction_index": 7
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 2,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 2,
+        "matched": 11,
+        "matched_non_supported": 2,
+        "omitted": 0,
+        "predicted": 11,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c07a",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c07b",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c08",
+          "label_correct": false,
+          "prediction_index": 8
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 13,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 13,
+        "label_correct": 0,
+        "matched": 13,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 13,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c10a",
+          "label_correct": false,
+          "prediction_index": 9
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c10b",
+          "label_correct": false,
+          "prediction_index": 10
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c11",
+          "label_correct": false,
+          "prediction_index": 11
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c12",
+          "label_correct": false,
+          "prediction_index": 12
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 4,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 9,
+        "matched_non_supported": 4,
+        "omitted": 0,
+        "predicted": 9,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p03-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 5,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 0,
+        "matched": 3,
+        "matched_non_supported": 0,
+        "omitted": 9,
+        "predicted": 8,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p07-c01",
+        "v2-dev-p07-c02",
+        "v2-dev-p07-c05",
+        "v2-dev-p07-c06",
+        "v2-dev-p07-c07",
+        "v2-dev-p07-c08",
+        "v2-dev-p07-c10",
+        "v2-dev-p07-c11",
+        "v2-dev-p07-c12"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "Rust exposes the associated items of a public trait by default, as it does the variants of a public enum.",
+          "prediction_index": 0,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "For pub(in path), the path must resolve to an ancestor module; its components must name modules directly rather than names introduced by use.",
+          "prediction_index": 3,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "pub(crate) restricts visibility to the current crate, while pub(self) is equivalent to leaving pub off.",
+          "prediction_index": 4,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Restricted pub syntax still does not guarantee access from every part of the specified scope.",
+          "prediction_index": 6,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "In the public re-export example, an external crate may use api::f, while implementation::api::f would violate privacy.",
+          "prediction_index": 7,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c03",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c04",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c09",
+          "label_correct": false,
+          "prediction_index": 5
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 1785,
+        "citation_gold_relevant": 6,
+        "citation_literal_valid": 12,
+        "citation_total": 12,
+        "duplicate": 0,
+        "evidence_correct": 5,
+        "evidence_correct_non_unsupported": 5,
+        "exact": 0,
+        "extra": 1,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 11,
+        "matched": 11,
+        "matched_non_supported": 0,
+        "omitted": 1,
+        "predicted": 12,
+        "predicted_non_unsupported": 12,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p11-c07"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [
+            {
+              "index": 1,
+              "quote": "the whole dump should be\n    restored as a single transaction, so the restore is either fully\n    completed or fully rolled back."
+            }
+          ],
+          "claim_text": "A single-transaction restore is either completed fully or rolled back fully.",
+          "prediction_index": 6,
+          "reasoning": "The passage describes exactly this all-or-nothing behavior.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c04",
+          "label_correct": true,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c06",
+          "label_correct": true,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c08",
+          "label_correct": true,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c10",
+          "label_correct": true,
+          "prediction_index": 9
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c11",
+          "label_correct": true,
+          "prediction_index": 10
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c12",
+          "label_correct": true,
+          "prediction_index": 11
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 1374,
+        "citation_gold_relevant": 4,
+        "citation_literal_valid": 10,
+        "citation_total": 10,
+        "duplicate": 0,
+        "evidence_correct": 3,
+        "evidence_correct_non_unsupported": 3,
+        "exact": 0,
+        "extra": 5,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 9,
+        "label_correct": 4,
+        "matched": 4,
+        "matched_non_supported": 0,
+        "omitted": 5,
+        "predicted": 9,
+        "predicted_non_unsupported": 9,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p02-c01",
+        "v2-dev-p02-c02",
+        "v2-dev-p02-c03",
+        "v2-dev-p02-c07",
+        "v2-dev-p02-c09"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [
+            {
+              "index": 3,
+              "quote": "It is suggested to set *autocommit* to ``False``,"
+            },
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` ensures that a transaction is always open,"
+            }
+          ],
+          "claim_text": "Setting autocommit=False keeps a transaction open.",
+          "prediction_index": 0,
+          "reasoning": "The documented behavior for autocommit=False ensures a transaction is always open.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 3,
+              "quote": "so :func:`connect`, :meth:`Connection.commit`, and :meth:`Connection.rollback`\n  will implicitly open a new transaction\n  (immediately after closing the pending one, for the latter two)."
+            }
+          ],
+          "claim_text": "With autocommit=False, commit() opens a replacement transaction immediately after closing the pending one.",
+          "prediction_index": 1,
+          "reasoning": "The passage explicitly describes immediate replacement transactions after commit in this mode.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` uses ``BEGIN DEFERRED`` statements when opening transactions."
+            }
+          ],
+          "claim_text": "Transactions opened with autocommit=False use BEGIN DEFERRED.",
+          "prediction_index": 2,
+          "reasoning": "The description of this mode explicitly specifies BEGIN DEFERRED.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 4,
+              "quote": "If :attr:`~Connection.isolation_level` is set to ``None``,\nno transactions are implicitly opened at all."
+            }
+          ],
+          "claim_text": "With legacy control and isolation_level=None, no transactions are opened implicitly.",
+          "prediction_index": 6,
+          "reasoning": "The legacy-control section expressly states this behavior.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 2,
+              "quote": "The context manager neither implicitly opens a new transaction\n   nor closes the connection."
+            }
+          ],
+          "claim_text": "Leaving the connection context manager's block does not close the connection.",
+          "prediction_index": 8,
+          "reasoning": "The documentation explicitly says the context manager does not close the connection.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c06",
+          "label_correct": true,
+          "prediction_index": 5
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 689,
+        "citation_gold_relevant": 2,
+        "citation_literal_valid": 7,
+        "citation_total": 7,
+        "duplicate": 0,
+        "evidence_correct": 3,
+        "evidence_correct_non_unsupported": 1,
+        "exact": 0,
+        "extra": 3,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 6,
+        "matched": 6,
+        "matched_non_supported": 2,
+        "omitted": 5,
+        "predicted": 9,
+        "predicted_non_unsupported": 7,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p09-c01",
+        "v2-dev-p09-c02",
+        "v2-dev-p09-c03",
+        "v2-dev-p09-c04",
+        "v2-dev-p09-c07"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [
+            {
+              "index": 0,
+              "quote": "The `test` attribute may only be applied to [free functions] that are monomorphic, that take no arguments, and where the return type implements the [`Termination`] trait."
+            }
+          ],
+          "claim_text": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments.",
+          "prediction_index": 0,
+          "reasoning": "The passage explicitly lists these restrictions.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 0,
+              "quote": "where the return type implements the [`Termination`] trait."
+            }
+          ],
+          "claim_text": "The return type of a function annotated with the Rust test attribute must implement Termination.",
+          "prediction_index": 1,
+          "reasoning": "This return-type requirement is explicit.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 1,
+              "quote": "The `rustc` test harness supports the `--include-ignored` flag to force ignored tests to be run."
+            }
+          ],
+          "claim_text": "The test harness can force ignored tests to execute with --include-ignored.",
+          "prediction_index": 4,
+          "reasoning": "The passage explicitly identifies this flag and its effect.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c05",
+          "label_correct": true,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c08",
+          "label_correct": true,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c09",
+          "label_correct": true,
+          "prediction_index": 6
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 1896,
+        "citation_gold_relevant": 11,
+        "citation_literal_valid": 14,
+        "citation_total": 14,
+        "duplicate": 0,
+        "evidence_correct": 5,
+        "evidence_correct_non_unsupported": 5,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 9,
+        "label_correct": 9,
+        "matched": 9,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 9,
+        "predicted_non_unsupported": 9,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c01",
+          "label_correct": true,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c02",
+          "label_correct": true,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c03",
+          "label_correct": true,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c09",
+          "label_correct": true,
+          "prediction_index": 8
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 2024,
+        "citation_gold_relevant": 11,
+        "citation_literal_valid": 11,
+        "citation_total": 11,
+        "duplicate": 0,
+        "evidence_correct": 9,
+        "evidence_correct_non_unsupported": 9,
+        "exact": 1,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 4,
+        "gold_non_unsupported": 9,
+        "label_correct": 9,
+        "matched": 9,
+        "matched_non_supported": 4,
+        "omitted": 0,
+        "predicted": 9,
+        "predicted_non_unsupported": 9,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 2159,
+        "citation_gold_relevant": 3,
+        "citation_literal_valid": 11,
+        "citation_total": 11,
+        "duplicate": 0,
+        "evidence_correct": 3,
+        "evidence_correct_non_unsupported": 3,
+        "exact": 0,
+        "extra": 7,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 3,
+        "matched": 3,
+        "matched_non_supported": 0,
+        "omitted": 7,
+        "predicted": 10,
+        "predicted_non_unsupported": 10,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p05-c02",
+        "v2-dev-p05-c03",
+        "v2-dev-p05-c04",
+        "v2-dev-p05-c05",
+        "v2-dev-p05-c06",
+        "v2-dev-p05-c07",
+        "v2-dev-p05-c08"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [
+            {
+              "index": 2,
+              "quote": "The count of unfinished tasks goes up whenever an item is added to the queue."
+            }
+          ],
+          "claim_text": "Adding an item increases the unfinished-task count.",
+          "prediction_index": 1,
+          "reasoning": "The passage explicitly states that adding an item increases the unfinished-task count.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 2,
+              "quote": "The count goes down whenever a consumer thread calls :meth:`task_done` to\n   indicate that the item was retrieved and all work on it is complete."
+            }
+          ],
+          "claim_text": "A consumer’s task_done() call decreases the unfinished-task count.",
+          "prediction_index": 2,
+          "reasoning": "A consumer thread's task_done() call explicitly reduces the count.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 2,
+              "quote": "When the\n   count of unfinished tasks drops to zero, :meth:`join` unblocks."
+            }
+          ],
+          "claim_text": "join() unblocks when the unfinished-task count reaches zero.",
+          "prediction_index": 3,
+          "reasoning": "The stated unblocking condition is that the unfinished-task count drops to zero.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 3,
+              "quote": ".. method:: Queue.shutdown(immediate=False)\n\n   Shut down the queue, making :meth:`~Queue.get` and :meth:`~Queue.put` raise\n   :exc:`ShutDown`.\n\n   By default, :meth:`~Queue.get` on a shut down queue will only raise once the\n   queue is empty."
+            }
+          ],
+          "claim_text": "Under normal shutdown, get() raises ShutDown only once the queue is empty.",
+          "prediction_index": 4,
+          "reasoning": "Default, non-immediate shutdown delays get() raising ShutDown until the queue is empty.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 1,
+              "quote": "Raises :exc:`ShutDown` if the queue has been shut down and is empty, or if\n   the queue has been shut down immediately."
+            },
+            {
+              "index": 3,
+              "quote": "Set *immediate* to true to make :meth:`~Queue.get` raise\n   immediately instead."
+            }
+          ],
+          "claim_text": "With immediate shutdown, get() raises ShutDown immediately.",
+          "prediction_index": 5,
+          "reasoning": "The immediate shutdown option explicitly makes get() raise ShutDown immediately.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 3,
+              "quote": "If *immediate* is true, a task will be marked as done for each\n   remaining item in the queue, which may unblock callers of\n   :meth:`~Queue.join`."
+            }
+          ],
+          "claim_text": "Immediate shutdown marks each remaining queued item as done.",
+          "prediction_index": 6,
+          "reasoning": "Immediate shutdown marks a task done for every remaining item.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "citations": [
+            {
+              "index": 3,
+              "quote": "If *immediate* is true, a task will be marked as done for each\n   remaining item in the queue, which may unblock callers of\n   :meth:`~Queue.join`."
+            }
+          ],
+          "claim_text": "Immediate shutdown may unblock join() even without a consumer completing the remaining queued items because it marks each remaining queued item as done.",
+          "prediction_index": 7,
+          "reasoning": "Shutdown itself marks remaining queued items done, potentially releasing join() without consumer completion of those items.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 4,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 4,
+        "matched_non_supported": 0,
+        "omitted": 5,
+        "predicted": 8,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p02-c01",
+        "v2-dev-p02-c02",
+        "v2-dev-p02-c03",
+        "v2-dev-p02-c07",
+        "v2-dev-p02-c09"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "For sqlite3 transaction control, setting autocommit=False keeps a transaction open.",
+          "prediction_index": 0,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "In that mode, commit() opens a replacement transaction immediately after closing the pending one, and those transactions use BEGIN DEFERRED.",
+          "prediction_index": 1,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "With legacy control and isolation_level=None, it opens no transactions implicitly.",
+          "prediction_index": 5,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Leaving its block does not close the connection.",
+          "prediction_index": 7,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c04",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c05",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c06",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c08",
+          "label_correct": false,
+          "prediction_index": 6
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 1188,
+        "citation_gold_relevant": 10,
+        "citation_literal_valid": 12,
+        "citation_total": 12,
+        "duplicate": 0,
+        "evidence_correct": 1,
+        "evidence_correct_non_unsupported": 1,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 10,
+        "matched": 10,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 10,
+        "predicted_non_unsupported": 10,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c01",
+          "label_correct": true,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c02",
+          "label_correct": true,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c03",
+          "label_correct": true,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c04",
+          "label_correct": true,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c05",
+          "label_correct": true,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c07",
+          "label_correct": true,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c08",
+          "label_correct": true,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c09",
+          "label_correct": true,
+          "prediction_index": 8
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c10",
+          "label_correct": true,
+          "prediction_index": 9
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 2421,
+        "citation_gold_relevant": 11,
+        "citation_literal_valid": 12,
+        "citation_total": 12,
+        "duplicate": 0,
+        "evidence_correct": 9,
+        "evidence_correct_non_unsupported": 9,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 12,
+        "matched": 12,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 12,
+        "predicted_non_unsupported": 12,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c04",
+          "label_correct": true,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c11",
+          "label_correct": true,
+          "prediction_index": 10
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c12",
+          "label_correct": true,
+          "prediction_index": 11
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 1938,
+        "citation_gold_relevant": 8,
+        "citation_literal_valid": 12,
+        "citation_total": 12,
+        "duplicate": 0,
+        "evidence_correct": 6,
+        "evidence_correct_non_unsupported": 6,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 12,
+        "matched": 12,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 12,
+        "predicted_non_unsupported": 12,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c04",
+          "label_correct": true,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c06",
+          "label_correct": true,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c07",
+          "label_correct": true,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c10",
+          "label_correct": true,
+          "prediction_index": 9
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c11",
+          "label_correct": true,
+          "prediction_index": 10
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c12",
+          "label_correct": true,
+          "prediction_index": 11
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 1288,
+        "citation_gold_relevant": 7,
+        "citation_literal_valid": 12,
+        "citation_total": 12,
+        "duplicate": 0,
+        "evidence_correct": 3,
+        "evidence_correct_non_unsupported": 3,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 12,
+        "matched": 12,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 12,
+        "predicted_non_unsupported": 12,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c03",
+          "label_correct": true,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c04",
+          "label_correct": true,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c05",
+          "label_correct": true,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c06",
+          "label_correct": true,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c07",
+          "label_correct": true,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c08",
+          "label_correct": true,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c10",
+          "label_correct": true,
+          "prediction_index": 9
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c11",
+          "label_correct": true,
+          "prediction_index": 10
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c12",
+          "label_correct": true,
+          "prediction_index": 11
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 9,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 9,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p02-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 1751,
+        "citation_gold_relevant": 9,
+        "citation_literal_valid": 9,
+        "citation_total": 9,
+        "duplicate": 0,
+        "evidence_correct": 10,
+        "evidence_correct_non_unsupported": 8,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 11,
+        "matched": 11,
+        "matched_non_supported": 2,
+        "omitted": 0,
+        "predicted": 11,
+        "predicted_non_unsupported": 9,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c05",
+          "label_correct": true,
+          "prediction_index": 4
+        }
+      ],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 2537,
+        "citation_gold_relevant": 15,
+        "citation_literal_valid": 15,
+        "citation_total": 15,
+        "duplicate": 0,
+        "evidence_correct": 10,
+        "evidence_correct_non_unsupported": 10,
+        "exact": 1,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 10,
+        "matched": 10,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 10,
+        "predicted_non_unsupported": 10,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 1181,
+        "citation_gold_relevant": 9,
+        "citation_literal_valid": 10,
+        "citation_total": 10,
+        "duplicate": 0,
+        "evidence_correct": 9,
+        "evidence_correct_non_unsupported": 9,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 9,
+        "label_correct": 9,
+        "matched": 9,
+        "matched_non_supported": 3,
+        "omitted": 0,
+        "predicted": 9,
+        "predicted_non_unsupported": 9,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "ERROR",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 12,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p07-c01",
+        "v2-dev-p07-c02",
+        "v2-dev-p07-c03",
+        "v2-dev-p07-c04",
+        "v2-dev-p07-c05",
+        "v2-dev-p07-c06",
+        "v2-dev-p07-c07",
+        "v2-dev-p07-c08",
+        "v2-dev-p07-c09",
+        "v2-dev-p07-c10",
+        "v2-dev-p07-c11",
+        "v2-dev-p07-c12"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 9,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p08-c01",
+        "v2-dev-p08-c02",
+        "v2-dev-p08-c03",
+        "v2-dev-p08-c04",
+        "v2-dev-p08-c05",
+        "v2-dev-p08-c06",
+        "v2-dev-p08-c07",
+        "v2-dev-p08-c08",
+        "v2-dev-p08-c09"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 13,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 13,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 13,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p04-c01",
+        "v2-dev-p04-c02",
+        "v2-dev-p04-c03",
+        "v2-dev-p04-c04",
+        "v2-dev-p04-c05",
+        "v2-dev-p04-c06",
+        "v2-dev-p04-c07",
+        "v2-dev-p04-c08",
+        "v2-dev-p04-c09",
+        "v2-dev-p04-c10a",
+        "v2-dev-p04-c10b",
+        "v2-dev-p04-c11",
+        "v2-dev-p04-c12"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 6,
+        "false_support": 0,
+        "gold": 13,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 13,
+        "label_correct": 0,
+        "matched": 2,
+        "matched_non_supported": 0,
+        "omitted": 11,
+        "predicted": 8,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p04-c01",
+        "v2-dev-p04-c02",
+        "v2-dev-p04-c03",
+        "v2-dev-p04-c04",
+        "v2-dev-p04-c05",
+        "v2-dev-p04-c06",
+        "v2-dev-p04-c07",
+        "v2-dev-p04-c08",
+        "v2-dev-p04-c10a",
+        "v2-dev-p04-c11",
+        "v2-dev-p04-c12"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "For temporary decimal arithmetic settings, localcontext(ctx) enters with a copy of ctx and restores the previous context when the with block exits.",
+          "prediction_index": 0,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Its keyword arguments set attributes of the new context.",
+          "prediction_index": 1,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "BasicContext uses precision nine and ROUND_HALF_UP rounding.",
+          "prediction_index": 2,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "ExtendedContext also uses precision nine, but rounds with ROUND_HALF_EVEN and enables no traps.",
+          "prediction_index": 3,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "For input conversion, Context.create_decimal() applies the chosen context precision.",
+          "prediction_index": 5,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "With clamp=1, reducing an exponent and adding coefficient zeros preserves the number’s value, but may lose information about significant trailing zeros.",
+          "prediction_index": 7,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c09",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p04-c10b",
+          "label_correct": false,
+          "prediction_index": 6
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 13,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 13,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 13,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p04-c01",
+        "v2-dev-p04-c02",
+        "v2-dev-p04-c03",
+        "v2-dev-p04-c04",
+        "v2-dev-p04-c05",
+        "v2-dev-p04-c06",
+        "v2-dev-p04-c07",
+        "v2-dev-p04-c08",
+        "v2-dev-p04-c09",
+        "v2-dev-p04-c10a",
+        "v2-dev-p04-c10b",
+        "v2-dev-p04-c11",
+        "v2-dev-p04-c12"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 11,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p06-c01",
+        "v2-dev-p06-c02",
+        "v2-dev-p06-c03",
+        "v2-dev-p06-c04",
+        "v2-dev-p06-c05",
+        "v2-dev-p06-c06",
+        "v2-dev-p06-c07a",
+        "v2-dev-p06-c07b",
+        "v2-dev-p06-c08",
+        "v2-dev-p06-c09",
+        "v2-dev-p06-c10"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 11,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p06-c01",
+        "v2-dev-p06-c02",
+        "v2-dev-p06-c03",
+        "v2-dev-p06-c04",
+        "v2-dev-p06-c05",
+        "v2-dev-p06-c06",
+        "v2-dev-p06-c07a",
+        "v2-dev-p06-c07b",
+        "v2-dev-p06-c08",
+        "v2-dev-p06-c09",
+        "v2-dev-p06-c10"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 2,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 10,
+        "label_correct": 2,
+        "matched": 12,
+        "matched_non_supported": 2,
+        "omitted": 0,
+        "predicted": 12,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c08a",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c08b",
+          "label_correct": false,
+          "prediction_index": 8
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c09",
+          "label_correct": false,
+          "prediction_index": 9
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 12,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p12-c01",
+        "v2-dev-p12-c02",
+        "v2-dev-p12-c03",
+        "v2-dev-p12-c04",
+        "v2-dev-p12-c05",
+        "v2-dev-p12-c06",
+        "v2-dev-p12-c07",
+        "v2-dev-p12-c08a",
+        "v2-dev-p12-c08b",
+        "v2-dev-p12-c09",
+        "v2-dev-p12-c10",
+        "v2-dev-p12-c11"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 10,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p05-c01",
+        "v2-dev-p05-c02",
+        "v2-dev-p05-c03",
+        "v2-dev-p05-c04",
+        "v2-dev-p05-c05",
+        "v2-dev-p05-c06",
+        "v2-dev-p05-c07",
+        "v2-dev-p05-c08",
+        "v2-dev-p05-c09",
+        "v2-dev-p05-c10"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 8,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 8,
+        "label_correct": 0,
+        "matched": 8,
+        "matched_non_supported": 3,
+        "omitted": 0,
+        "predicted": 8,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 8,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 8,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 8,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p01-c01",
+        "v2-dev-p01-c02",
+        "v2-dev-p01-c03",
+        "v2-dev-p01-c04",
+        "v2-dev-p01-c05",
+        "v2-dev-p01-c06",
+        "v2-dev-p01-c07",
+        "v2-dev-p01-c08"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 2,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 3,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 10,
+        "label_correct": 2,
+        "matched": 6,
+        "matched_non_supported": 2,
+        "omitted": 6,
+        "predicted": 9,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p12-c04",
+        "v2-dev-p12-c05",
+        "v2-dev-p12-c06",
+        "v2-dev-p12-c07",
+        "v2-dev-p12-c08a",
+        "v2-dev-p12-c08b"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "An owner may revoke their own ordinary privileges, but can always grant them back because ownership retains grant options.",
+          "prediction_index": 3,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "A blank Access privileges column means built-in default privileges; an explicit (none) means no ordinary privileges are granted even to the owner.",
+          "prediction_index": 4,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Functions and procedures receive PUBLIC EXECUTE by default.",
+          "prediction_index": 5,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p12-c09",
+          "label_correct": false,
+          "prediction_index": 6
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 9,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p08-c01",
+        "v2-dev-p08-c02",
+        "v2-dev-p08-c03",
+        "v2-dev-p08-c04",
+        "v2-dev-p08-c05",
+        "v2-dev-p08-c06",
+        "v2-dev-p08-c07",
+        "v2-dev-p08-c08",
+        "v2-dev-p08-c09"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 11,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p09-c01",
+        "v2-dev-p09-c02",
+        "v2-dev-p09-c03",
+        "v2-dev-p09-c04",
+        "v2-dev-p09-c05",
+        "v2-dev-p09-c06",
+        "v2-dev-p09-c07",
+        "v2-dev-p09-c08",
+        "v2-dev-p09-c09",
+        "v2-dev-p09-c10",
+        "v2-dev-p09-c11"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 2,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 3,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 2,
+        "matched": 5,
+        "matched_non_supported": 2,
+        "omitted": 6,
+        "predicted": 8,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p09-c01",
+        "v2-dev-p09-c02",
+        "v2-dev-p09-c03",
+        "v2-dev-p09-c04",
+        "v2-dev-p09-c06",
+        "v2-dev-p09-c07"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments.",
+          "prediction_index": 0,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Their return type must implement Termination.",
+          "prediction_index": 1,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Ignored tests are still compiled in test mode, and the harness can force their execution with --include-ignored.",
+          "prediction_index": 3,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c05",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c08",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c09",
+          "label_correct": false,
+          "prediction_index": 5
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 4,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 9,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p03-c01",
+        "v2-dev-p03-c02",
+        "v2-dev-p03-c03",
+        "v2-dev-p03-c04",
+        "v2-dev-p03-c05",
+        "v2-dev-p03-c06",
+        "v2-dev-p03-c07",
+        "v2-dev-p03-c08",
+        "v2-dev-p03-c09"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 13,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 13,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 13,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p04-c01",
+        "v2-dev-p04-c02",
+        "v2-dev-p04-c03",
+        "v2-dev-p04-c04",
+        "v2-dev-p04-c05",
+        "v2-dev-p04-c06",
+        "v2-dev-p04-c07",
+        "v2-dev-p04-c08",
+        "v2-dev-p04-c09",
+        "v2-dev-p04-c10a",
+        "v2-dev-p04-c10b",
+        "v2-dev-p04-c11",
+        "v2-dev-p04-c12"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 8,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 8,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 8,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p01-c01",
+        "v2-dev-p01-c02",
+        "v2-dev-p01-c03",
+        "v2-dev-p01-c04",
+        "v2-dev-p01-c05",
+        "v2-dev-p01-c06",
+        "v2-dev-p01-c07",
+        "v2-dev-p01-c08"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 4,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 9,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p03-c01",
+        "v2-dev-p03-c02",
+        "v2-dev-p03-c03",
+        "v2-dev-p03-c04",
+        "v2-dev-p03-c05",
+        "v2-dev-p03-c06",
+        "v2-dev-p03-c07",
+        "v2-dev-p03-c08",
+        "v2-dev-p03-c09"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 85,
+        "citation_gold_relevant": 1,
+        "citation_literal_valid": 1,
+        "citation_total": 1,
+        "duplicate": 0,
+        "evidence_correct": 1,
+        "evidence_correct_non_unsupported": 1,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 9,
+        "label_correct": 1,
+        "matched": 9,
+        "matched_non_supported": 3,
+        "omitted": 0,
+        "predicted": 9,
+        "predicted_non_unsupported": 1,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 2,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 2,
+        "matched": 11,
+        "matched_non_supported": 2,
+        "omitted": 0,
+        "predicted": 11,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p09-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 9,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p02-c01",
+        "v2-dev-p02-c02",
+        "v2-dev-p02-c03",
+        "v2-dev-p02-c04",
+        "v2-dev-p02-c05",
+        "v2-dev-p02-c06",
+        "v2-dev-p02-c07",
+        "v2-dev-p02-c08",
+        "v2-dev-p02-c09"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 11,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p06-c01",
+        "v2-dev-p06-c02",
+        "v2-dev-p06-c03",
+        "v2-dev-p06-c04",
+        "v2-dev-p06-c05",
+        "v2-dev-p06-c06",
+        "v2-dev-p06-c07a",
+        "v2-dev-p06-c07b",
+        "v2-dev-p06-c08",
+        "v2-dev-p06-c09",
+        "v2-dev-p06-c10"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 11,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p09-c01",
+        "v2-dev-p09-c02",
+        "v2-dev-p09-c03",
+        "v2-dev-p09-c04",
+        "v2-dev-p09-c05",
+        "v2-dev-p09-c06",
+        "v2-dev-p09-c07",
+        "v2-dev-p09-c08",
+        "v2-dev-p09-c09",
+        "v2-dev-p09-c10",
+        "v2-dev-p09-c11"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 12,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p11-c01",
+        "v2-dev-p11-c02",
+        "v2-dev-p11-c03",
+        "v2-dev-p11-c04",
+        "v2-dev-p11-c05",
+        "v2-dev-p11-c06",
+        "v2-dev-p11-c07",
+        "v2-dev-p11-c08",
+        "v2-dev-p11-c09",
+        "v2-dev-p11-c10",
+        "v2-dev-p11-c11",
+        "v2-dev-p11-c12"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 85,
+        "citation_gold_relevant": 1,
+        "citation_literal_valid": 1,
+        "citation_total": 1,
+        "duplicate": 0,
+        "evidence_correct": 1,
+        "evidence_correct_non_unsupported": 1,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 9,
+        "label_correct": 1,
+        "matched": 9,
+        "matched_non_supported": 3,
+        "omitted": 0,
+        "predicted": 9,
+        "predicted_non_unsupported": 1,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p08-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 2,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 2,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 2,
+        "matched": 7,
+        "matched_non_supported": 2,
+        "omitted": 4,
+        "predicted": 9,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p06-c02",
+        "v2-dev-p06-c03",
+        "v2-dev-p06-c07a",
+        "v2-dev-p06-c07b"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "EntryPoints.select() filters entry points by their properties, and keyword arguments passed to entry_points() are forwarded to select().",
+          "prediction_index": 1,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "A PackagePath returned by files() has size and hash properties drawn from metadata.",
+          "prediction_index": 5,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c04",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c05",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c06",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p06-c08",
+          "label_correct": false,
+          "prediction_index": 6
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 10,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p10-c01",
+        "v2-dev-p10-c02",
+        "v2-dev-p10-c03",
+        "v2-dev-p10-c04",
+        "v2-dev-p10-c05",
+        "v2-dev-p10-c06",
+        "v2-dev-p10-c07",
+        "v2-dev-p10-c08",
+        "v2-dev-p10-c09",
+        "v2-dev-p10-c10"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 4,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 9,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p03-c01",
+        "v2-dev-p03-c02",
+        "v2-dev-p03-c03",
+        "v2-dev-p03-c04",
+        "v2-dev-p03-c05",
+        "v2-dev-p03-c06",
+        "v2-dev-p03-c07",
+        "v2-dev-p03-c08",
+        "v2-dev-p03-c09"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 12,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p12-c01",
+        "v2-dev-p12-c02",
+        "v2-dev-p12-c03",
+        "v2-dev-p12-c04",
+        "v2-dev-p12-c05",
+        "v2-dev-p12-c06",
+        "v2-dev-p12-c07",
+        "v2-dev-p12-c08a",
+        "v2-dev-p12-c08b",
+        "v2-dev-p12-c09",
+        "v2-dev-p12-c10",
+        "v2-dev-p12-c11"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 5,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 4,
+        "matched_non_supported": 0,
+        "omitted": 6,
+        "predicted": 9,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p10-c01",
+        "v2-dev-p10-c02",
+        "v2-dev-p10-c05",
+        "v2-dev-p10-c06",
+        "v2-dev-p10-c07",
+        "v2-dev-p10-c10"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "The SQL standard defines four isolation levels, while PostgreSQL implements three distinct behaviors.",
+          "prediction_index": 0,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Consequently, two ordinary SELECTs in a Read Uncommitted transaction may see different data if another transaction commits changes between them.",
+          "prediction_index": 3,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "A Read Uncommitted SELECT can also see earlier updates made by its own transaction before they commit.",
+          "prediction_index": 4,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "A Repeatable Read query instead uses a snapshot from the first non-transaction-control statement of its transaction.",
+          "prediction_index": 5,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "After a serialization failure caused by a concurrent update at that level, the application should retry the whole transaction from its beginning.",
+          "prediction_index": 8,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c03",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c04",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c08",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c09",
+          "label_correct": false,
+          "prediction_index": 7
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 10,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p10-c01",
+        "v2-dev-p10-c02",
+        "v2-dev-p10-c03",
+        "v2-dev-p10-c04",
+        "v2-dev-p10-c05",
+        "v2-dev-p10-c06",
+        "v2-dev-p10-c07",
+        "v2-dev-p10-c08",
+        "v2-dev-p10-c09",
+        "v2-dev-p10-c10"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 12,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p07-c01",
+        "v2-dev-p07-c02",
+        "v2-dev-p07-c03",
+        "v2-dev-p07-c04",
+        "v2-dev-p07-c05",
+        "v2-dev-p07-c06",
+        "v2-dev-p07-c07",
+        "v2-dev-p07-c08",
+        "v2-dev-p07-c09",
+        "v2-dev-p07-c10",
+        "v2-dev-p07-c11",
+        "v2-dev-p07-c12"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 11,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 11,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p09-c01",
+        "v2-dev-p09-c02",
+        "v2-dev-p09-c03",
+        "v2-dev-p09-c04",
+        "v2-dev-p09-c05",
+        "v2-dev-p09-c06",
+        "v2-dev-p09-c07",
+        "v2-dev-p09-c08",
+        "v2-dev-p09-c09",
+        "v2-dev-p09-c10",
+        "v2-dev-p09-c11"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 9,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 9,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 9,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p08-c01",
+        "v2-dev-p08-c02",
+        "v2-dev-p08-c03",
+        "v2-dev-p08-c04",
+        "v2-dev-p08-c05",
+        "v2-dev-p08-c06",
+        "v2-dev-p08-c07",
+        "v2-dev-p08-c08",
+        "v2-dev-p08-c09"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 12,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p07-c01",
+        "v2-dev-p07-c02",
+        "v2-dev-p07-c03",
+        "v2-dev-p07-c04",
+        "v2-dev-p07-c05",
+        "v2-dev-p07-c06",
+        "v2-dev-p07-c07",
+        "v2-dev-p07-c08",
+        "v2-dev-p07-c09",
+        "v2-dev-p07-c10",
+        "v2-dev-p07-c11",
+        "v2-dev-p07-c12"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 0,
+        "matched": 12,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 12,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c10",
+          "label_correct": false,
+          "prediction_index": 9
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c11",
+          "label_correct": false,
+          "prediction_index": 10
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p07-c12",
+          "label_correct": false,
+          "prediction_index": 11
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "approach": "optimized",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 12,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p12-c01",
+        "v2-dev-p12-c02",
+        "v2-dev-p12-c03",
+        "v2-dev-p12-c04",
+        "v2-dev-p12-c05",
+        "v2-dev-p12-c06",
+        "v2-dev-p12-c07",
+        "v2-dev-p12-c08a",
+        "v2-dev-p12-c08b",
+        "v2-dev-p12-c09",
+        "v2-dev-p12-c10",
+        "v2-dev-p12-c11"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 2,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 12,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p12-c01",
+        "v2-dev-p12-c02",
+        "v2-dev-p12-c03",
+        "v2-dev-p12-c04",
+        "v2-dev-p12-c05",
+        "v2-dev-p12-c06",
+        "v2-dev-p12-c07",
+        "v2-dev-p12-c08a",
+        "v2-dev-p12-c08b",
+        "v2-dev-p12-c09",
+        "v2-dev-p12-c10",
+        "v2-dev-p12-c11"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 10,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 10,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p10-c10",
+          "label_correct": false,
+          "prediction_index": 9
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "approach": "heuristic",
+      "track": "oracle",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 10,
+        "matched_non_supported": 0,
+        "omitted": 0,
+        "predicted": 10,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c09",
+          "label_correct": false,
+          "prediction_index": 8
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c10",
+          "label_correct": false,
+          "prediction_index": 9
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 8,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 8,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 8,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p01-c01",
+        "v2-dev-p01-c02",
+        "v2-dev-p01-c03",
+        "v2-dev-p01-c04",
+        "v2-dev-p01-c05",
+        "v2-dev-p01-c06",
+        "v2-dev-p01-c07",
+        "v2-dev-p01-c08"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 8,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 8,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 8,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p01-c01",
+        "v2-dev-p01-c02",
+        "v2-dev-p01-c03",
+        "v2-dev-p01-c04",
+        "v2-dev-p01-c05",
+        "v2-dev-p01-c06",
+        "v2-dev-p01-c07",
+        "v2-dev-p01-c08"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 8,
+        "gold_non_supported": 3,
+        "gold_non_unsupported": 8,
+        "label_correct": 0,
+        "matched": 8,
+        "matched_non_supported": 3,
+        "omitted": 0,
+        "predicted": 8,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c02",
+          "label_correct": false,
+          "prediction_index": 1
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c03",
+          "label_correct": false,
+          "prediction_index": 2
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c05",
+          "label_correct": false,
+          "prediction_index": 4
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c06",
+          "label_correct": false,
+          "prediction_index": 5
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c07",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p01-c08",
+          "label_correct": false,
+          "prediction_index": 7
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 5,
+        "false_support": 0,
+        "gold": 12,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 12,
+        "label_correct": 0,
+        "matched": 5,
+        "matched_non_supported": 0,
+        "omitted": 7,
+        "predicted": 10,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p11-c02",
+        "v2-dev-p11-c03",
+        "v2-dev-p11-c05",
+        "v2-dev-p11-c06",
+        "v2-dev-p11-c07",
+        "v2-dev-p11-c08",
+        "v2-dev-p11-c09"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "It permits other database operations while working, apart from operations requiring an exclusive lock.",
+          "prediction_index": 1,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Its output can generally be reloaded into newer PostgreSQL versions.",
+          "prediction_index": 2,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "By default psql continues after an SQL error; setting ON_ERROR_STOP makes it exit with status 3 on that error.",
+          "prediction_index": 4,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "A single-transaction restore is either completed fully or rolled back fully.",
+          "prediction_index": 5,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "pg_dump omits cluster-wide role definitions, whereas pg_dumpall preserves them.",
+          "prediction_index": 6,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c04",
+          "label_correct": false,
+          "prediction_index": 3
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c10",
+          "label_correct": false,
+          "prediction_index": 7
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c11",
+          "label_correct": false,
+          "prediction_index": 8
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p11-c12",
+          "label_correct": false,
+          "prediction_index": 9
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "approach": "minimal",
+      "track": "oracle",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 10,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p10-c01",
+        "v2-dev-p10-c02",
+        "v2-dev-p10-c03",
+        "v2-dev-p10-c04",
+        "v2-dev-p10-c05",
+        "v2-dev-p10-c06",
+        "v2-dev-p10-c07",
+        "v2-dev-p10-c08",
+        "v2-dev-p10-c09",
+        "v2-dev-p10-c10"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "status": "OK",
+      "error_code": null,
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 5,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 3,
+        "matched_non_supported": 0,
+        "omitted": 7,
+        "predicted": 8,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 1
+      },
+      "missing_gold_ids": [
+        "v2-dev-p05-c02",
+        "v2-dev-p05-c03",
+        "v2-dev-p05-c04",
+        "v2-dev-p05-c05",
+        "v2-dev-p05-c06",
+        "v2-dev-p05-c07",
+        "v2-dev-p05-c08"
+      ],
+      "unmatched_predictions": [
+        {
+          "citations": [],
+          "claim_text": "Adding an item increases the unfinished-task count, and a consumer’s task_done() call decreases it.",
+          "prediction_index": 1,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "join() unblocks when that count reaches zero.",
+          "prediction_index": 2,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Under normal shutdown, get() raises ShutDown only once the queue is empty.",
+          "prediction_index": 3,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "With immediate shutdown, get() raises immediately instead.",
+          "prediction_index": 4,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        },
+        {
+          "citations": [],
+          "claim_text": "Immediate shutdown marks each remaining queued item as done, so it may unblock join() even without a consumer completing those remaining items.",
+          "prediction_index": 5,
+          "reasoning": "This conservative lexical baseline found no sufficient matching evidence.",
+          "verdict": "UNSUPPORTED"
+        }
+      ],
+      "wrong_label_matches": [
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c01",
+          "label_correct": false,
+          "prediction_index": 0
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c09",
+          "label_correct": false,
+          "prediction_index": 6
+        },
+        {
+          "gold_evidence_covered": false,
+          "gold_id": "v2-dev-p05-c10",
+          "label_correct": false,
+          "prediction_index": 7
+        }
+      ],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "status": "NOT_RUN",
+      "error_code": "provider_protocol_error",
+      "counts": {
+        "citation_characters": 0,
+        "citation_gold_relevant": 0,
+        "citation_literal_valid": 0,
+        "citation_total": 0,
+        "duplicate": 0,
+        "evidence_correct": 0,
+        "evidence_correct_non_unsupported": 0,
+        "exact": 0,
+        "extra": 0,
+        "false_support": 0,
+        "gold": 10,
+        "gold_non_supported": 0,
+        "gold_non_unsupported": 10,
+        "label_correct": 0,
+        "matched": 0,
+        "matched_non_supported": 0,
+        "omitted": 10,
+        "predicted": 0,
+        "predicted_non_unsupported": 0,
+        "requested": 1,
+        "succeeded": 0
+      },
+      "missing_gold_ids": [
+        "v2-dev-p05-c01",
+        "v2-dev-p05-c02",
+        "v2-dev-p05-c03",
+        "v2-dev-p05-c04",
+        "v2-dev-p05-c05",
+        "v2-dev-p05-c06",
+        "v2-dev-p05-c07",
+        "v2-dev-p05-c08",
+        "v2-dev-p05-c09",
+        "v2-dev-p05-c10"
+      ],
+      "unmatched_predictions": [],
+      "wrong_label_matches": [],
+      "label_correct_evidence_proxy_misses": [],
+      "stage": "matrix"
+    }
+  ]
+}

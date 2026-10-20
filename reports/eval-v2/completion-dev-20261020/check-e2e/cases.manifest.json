@@ -1,0 +1,70 @@
+{
+  "annotation_version": "v2-pilot-reviewed-1",
+  "dataset_file": "cases.jsonl",
+  "dataset_sha256": "214ceadbfa259a422c43698d2df9f28187700763f98cbc140a0b056882f159cf",
+  "dataset_version": "v2-pilot-reviewed-1",
+  "format_version": 2,
+  "layout": [
+    {
+      "cases": 1,
+      "category": "extrinsic",
+      "split": "dev"
+    }
+  ],
+  "passage_maps": [
+    {
+      "case_id": "v2-dev-p06",
+      "end": 4287,
+      "passage_index": 0,
+      "source_id": "cpython-metadata",
+      "start": 69,
+      "text_sha256": "ff2526f31e41a1a5e04ddec63838c4001a568f6a37a3cd0dabebbbb2e6ee52b1"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "end": 7346,
+      "passage_index": 1,
+      "source_id": "cpython-metadata",
+      "start": 4290,
+      "text_sha256": "ac4a4cb7a7350add93682c9a4dbf6cb006a8575f412e117aba23165e36ee5202"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "end": 8975,
+      "passage_index": 2,
+      "source_id": "cpython-metadata",
+      "start": 7363,
+      "text_sha256": "36ef20a4feca92339794340da1920cbede4f2d02e8c5acfa23019c25a8361d52"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "end": 10764,
+      "passage_index": 3,
+      "source_id": "cpython-metadata",
+      "start": 8990,
+      "text_sha256": "c544bfe7e2e0d47ea2122230985d71bf7ee62056181505f06bdbff8454bc2947"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "end": 11981,
+      "passage_index": 4,
+      "source_id": "cpython-metadata",
+      "start": 10785,
+      "text_sha256": "625f8683cb349ea433e725f2f4a59b93e2fa73473716f0e4b2db9c6bef55af50"
+    }
+  ],
+  "schema_version": "2",
+  "sources": [
+    {
+      "family_id": "v2-cpython-metadata",
+      "id": "cpython-metadata",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-metadata/raw.rst",
+      "raw_sha256": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/importlib.metadata.rst"
+    }
+  ]
+}

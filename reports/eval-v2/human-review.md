@@ -22,7 +22,9 @@ The [original AI review queue](annotation-review/human-review-queue.json) retain
 - [ ] Follow one request through the [code walkthrough](../../docs/code-walkthrough.zh-CN.md) using the actual symbols.
 - [ ] Answer the [16 interview questions](../../docs/interview-self-check.zh-CN.md) without reading the prepared answer first.
 - [ ] Complete the three exercises in a disposable copy: irrelevant but legal quotation, a scoring regression that genuinely fails, and a C/U boundary with the evidence needed to settle it.
-- [ ] Distinguish historical v1 measurements, v2 offline acceptance and experiments that have not run. No controlled v2 optimization outcome can be explained as a measured result yet.
+- [ ] Distinguish historical v1 measurements, the completed [development comparison](completion-dev-20261020/README.md), the [C01 prompt experiment](ablation-20261020/README.md), and final test work. Explain why a strict evidence-score increase is not by itself semantic improvement, and account for the measured token/latency increase.
 - [ ] Reproduce a saved report without inference, then explain why changing its scorer should reject replay.
 
 No boxes are pre-checked. Producing learning material is not evidence of interview readiness.
+
+The main dataset has since expanded to 72 cases / 668 claims. Its [additional 60-case independent AI review](../../datasets/v2/realistic-draft/review-evidence/README.md) preserves original blind judgments, locked comparisons and affected acceptance. The examples above remain useful development exercises; they are not evidence that a human reviewed the new test population.

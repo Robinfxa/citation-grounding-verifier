@@ -1,43 +1,46 @@
-# Evaluation v2 — development pilot checkpoint
+# Evaluation v2 — real-document benchmark
 
-**Status: recovery checks passed; full pilot stopped on its first model error.** The [staged recovery](pilot-recovery-20261020.md) used eight attempts: the two fixed checks each succeeded once; the original full matrix then recorded 24 heuristic successes, three model successes, one judgment-stage timeout and 44 uncalled model jobs. Both paired comparisons remain NOT_RUN. Cumulative pilot use is **63/150**, leaving **87 unspent** under the [approved plan](pilot-recovery-budget.md). No further inference occurred after the stop. The [earlier continuation](pilot-resume-20261020.md) remains separately preserved.
+The original short fictional benchmark is retained as history. **The main dataset has been replaced with 72 reviewed real-document cases / 668 claims**, split into 24 dev and 48 held-out cases. The development comparison and a controlled citation-prompt experiment are complete. Final test measurement, stability repeats and the blinded semantic audit are pending at this source checkpoint.
 
-The original benchmark's short fictional answers did not establish real-document performance. This round prepares 12 development cases / 126 facts over licensed documentation, non-author annotation review and versioned measurement tools. It preserves the old results rather than relabeling them as new evidence. `datasets/main.jsonl` is still v1; the proposed 72-case final population has not been built or frozen.
+## What changed
 
-## Evidence available now
+Sources are pinned documentation from CPython, Rust, PostgreSQL, pytest and curl. Contexts contain 3,905–15,959 characters and answers assert 8–14 facts. Question context, source mappings, controlled changes and answer anchors are explicit. The [data card](data-card.md) describes the actual population, label imbalance, limited cross-passage coverage and source dependence. Independent AI annotations were locked before author-label exposure; [public review evidence](../../datasets/v2/realistic-draft/review-evidence/README.md) preserves the disagreements and accepted revisions. Human review remains pending.
 
-| Feedback or requirement | Artifact | Evidence and boundary |
-| --- | --- | --- |
-| Denser real-source tasks | [Data card](data-card.md); [source research](../../docs/research/eval-v2-sources.md) | 12 development cases, frozen licensed documentation, exact source/answer mappings; no production-response sample |
-| Annotation reliability before measuring | [Locked independent judgments and disagreements](annotation-review/README.md) | Non-author AI review before author-label exposure, retained disagreements; human review pending |
-| Distinct measurement layers | [Scorer calibration](../../tests/evaluation/fixtures/measurement-calibration.md); [audit policy](audit-policy.md) | Deterministic strict scoring plus separate two-stage audit tools; no final test audit yet |
-| Reproducible engineering | [Offline verification](verification.json) | 510 tests and lint, actual long-input HTTP/CLI success/failure/recovery, protected snapshots and failure denominators; this receipt predates the fail-fast increment |
-| Current run integrity | [Independent review](pilot-recovery-20261020-review.json) | Three guarded CLI replays, exit 0/0/2, all 69 artifacts byte-identical; no inference |
-| Current recovery outcome | [Staged report](pilot-recovery-20261020.md); [receipt](pilot-recovery-20261020-receipt.json) | Two checks succeeded; full matrix stopped at first model error; no complete paired comparison |
-| Model-error stop acceptance | [Verification](model-error-stop-verification.json) | 93 related regressions and separate 78-assertion independent CLI review; no model-quality inference |
-| Earlier model observations | [Continuation report](pilot-resume-20261020.md); [saved records](pilot-resume-20261020/records.jsonl) | 5 successful jobs, 24 model errors, 19 model jobs uncalled; operationally incomplete |
-| Checkable run integrity | [Independent review](pilot-resume-20261020-review.json); [receipt](pilot-resume-20261020-receipt.json) | 72-record population and allowance verified; guarded CLI replay exit 2, all 23 files byte-identical |
-| Useful error attribution | [Development review](pilot-resume-20261020-dev-review.md) | All three successful end-to-end outputs reviewed; distinguishes strict misses, atomicity and evidence gaps; no semantic aggregate score |
-| Historical reproducibility | [Baseline checks](baseline-checks.json) | Fixed baseline installed in isolation; four old reports reproduced byte-for-byte |
-| Controlled optimization | [Protocol](protocol.md) | Candidate quotation rule motivated by dev observations; no controlled experiment performed or improvement claimed |
-| Author understanding | [Walkthrough](../../docs/code-walkthrough.zh-CN.md), [questions/exercises](../../docs/interview-self-check.zh-CN.md), [human checklist](human-review.md), [AI use](../../AI_used.md) | Materials prepared; Robin's own review and demonstrated understanding remain pending |
+These answers are AI-authored on real sources. A separate fixed RAGTruth natural-response sample is being adjudicated; its results will not be pooled with main. Longer inputs alone are not evidence of better benchmark quality or harder semantic judgments.
 
-## What the current results show
+## Completed development measurements
 
-The following observations describe the earlier continuation, not pooled results across attempts. The heuristic completed both tracks on all 12 cases. Its oracle macro F1 is 0.0365 and end-to-end strict joint-label F1 is 0.0614. Oracle labels were correct for 7/126 claims and frozen evidence was covered for 1/120 non-U claims. These observations expose the lexical baseline's limits; they do not establish LLM difficulty.
+The [development comparison](completion-dev-20261020/README.md) covers the original 12 dev cases / 126 claims, all three methods and both tracks. Its 72 analytical records contain 71 successes and one original protocol error. Later runs fill only previously unattempted jobs; they do not replace a failure with a better result. This is a mapped cross-run analysis, not a successful single CLI run. It used 62/320 new attempts, including two availability checks. Unknown usage and subscription dollar costs remain unknown.
 
-The two successful minimal/oracle jobs correctly labeled 18 supplied claims in total. The successful end-to-end jobs were optimized/p01 and minimal/p02,p06. They are a small, availability-selected development population, not a complete paired comparison. All failures retain their requested cases and gold claims in the [machine report](pilot-resume-20261020/summary.json); its failure-inclusive scores must not be promoted to a claim of comparative semantic accuracy.
+| End-to-end strict proxy | Heuristic | Minimal, original prompt | Optimized |
+| --- | ---: | ---: | ---: |
+| Joint label F1 | 0.0614 | 0.7173 | 0.6926 |
+| Joint label + gold-evidence F1 | 0.0614 | 0.2954 | 0.6148 |
+| Exact cases | 0/12 | 0/12 | 1/12 |
 
-Non-author qualitative review found both harmless surface mismatches and actual shortcomings. Removing `also` caused one strict miss; two independent properties were merged into one prediction; some citations omitted their governing API or mode condition. Other quotations sufficiently conveyed a fact but missed nonessential text in the frozen gold span. No labels, aliases or scorer were adjusted after viewing these outputs. The review was not blinded and does not replace the preselected final test audit.
+Both LLMs scored 1.0 oracle label macro F1 on these development claims. Thus lower end-to-end scores do not by themselves establish difficult judgment: extraction, exact surface matching and citation coverage contribute. [Development attribution](completion-dev-20261020/development-findings.json) separates those effects and actual condition/identity citation gaps.
 
-The continuation used 54 attempts, including 23 retries and no repairs. Known usage is 17,017 input / 5,087 output tokens, but 25 attempted jobs have incomplete usage, so total consumption and subscription cost remain unknown. Successful outputs report `gpt-6.1-sol`. Provider timeout was 30 s, operation timeout 60 s, per-operation attempt ceiling 6; requested output limit 8,192 tokens is **not applied on Codex**, with the effective limit unknown. See the run report for outcome counts and successful-job timing.
+The [C01 ablation](ablation-20261020/README.md) changed only one Minimal end-to-end citation instruction, with two observations per condition. Gold, aliases, scorer, model and transport stayed fixed. New blocks used 36/216 attempts; the original control error remains in the primary denominator. Pooled strict evidence F1 increased from **0.2845 to 0.6384**; joint-label F1 increased from **0.7258 to 0.7717**, but its family-paired interval crossed zero. Inspection confirmed improvements to known governing-condition citations, while a localcontext merge and missing antecedent remained. These are development observations, not final-test or general semantic-accuracy claims.
 
-Strict scorer version is `2`; schema, dataset and run formats are separate. Exact quotation validity, frozen gold-span coverage and semantic evidence sufficiency remain distinct. AI author/reviewer agreement cannot prove annotation truth, and public-source pretraining contamination remains possible.
+In the complete second observation, output tokens rose 22.6%, total operation time 23.1%, and quotation characters 79.4%. The exact instruction was adopted with those tradeoffs. The default remains Minimal; no test results have informed tuning.
 
-## Reproduce and continue
+## Frozen final design and remaining work
 
-The root [README](../../README.md) provides frozen installation, explicit pilot CLI/HTTP commands, bounded model-run syntax and isolated historical replay. The earlier continuation can be reconstructed without inference with `uv run grounding-eval report reports/eval-v2/pilot-resume-20261020`; exit 2 preserves its operational failures. Never overwrite a run directory.
+The planned comparison is 48 held-out cases × three methods × two tracks. A preselected 16-case subset receives two additional repetitions; its first observation is the full run. A stratified 24-case audit subset contains one case per held-out topic family. Selection uses metadata and a fixed seed before model outputs, not observed successes or failures. [Selection artifacts](final-20261020/selection.json) bind the promoted main dataset.
 
-The approved staged sequence has reached its failure stop. The new model-error guard passed independent offline acceptance, both recovery checks succeeded, and the full matrix stopped at the first model timeout. Further calls need an explicitly agreed continuation; the unused allowance does not override that stop rule. Final expansion and split acceptance, one-factor development ablation, final test/repeat inference and the preselected semantic audit remain incomplete. Later experiment budgets are separate from the pilot allowance.
+The final allowance is 600 provider attempts across three blocks (360/120/120), including repairs, with zero transport retries. Individual operation errors remain in the records and denominators; quota/budget stops leave explicit NOT_RUN records. Further blocks pause after quota/budget stops or a block model-error rate of at least 10%. The same Codex / `gpt-6.1-sol` configuration uses 120-second provider and 240-second operation deadlines. Requested output limit 8,192 is **not applied** by the Codex route; effective limit is unknown. The final source commit, input/settings hashes and exact commands must be frozen before calls.
 
-The pilot contains 0 natural responses, 6 AI-generated-from-source answers and 6 controlled mutations, from 12 document families in three software projects. It does not establish representative production performance or all proposed final difficulty quotas. No final dataset freeze, new complete model comparison, prompt improvement, human review or CI result is claimed here.
+The [audit policy](audit-policy.md) locks anonymous claim alignment before labels and evidence are revealed. Only equivalent one-to-one assertions receive full alignment credit; merges, splits and scope changes remain distinct. Literal quote validity, exact gold-span coverage and semantic sufficiency are separate measures. Family-paired intervals retain dependent repeated observations; cases from the same upstream projects may remain correlated.
+
+No final score, stability result or semantic-audit total is claimed yet. The final report will retain failures, resource costs, strict/audit disagreements and concrete examples rather than select the most favorable result.
+
+## Inspect and reproduce
+
+- [Main data card](data-card.md), [experiment protocol](protocol.md), [main promotion receipt](final-20261020/main-promotion.json)
+- [Development records and fixed-source replay](completion-dev-20261020/README.md), [single-factor experiment and replay](ablation-20261020/README.md)
+- [Original pilot review](annotation-review/README.md), [new independent reviews](../../datasets/v2/realistic-draft/review-evidence/README.md), [human queue](human-review.md)
+- [Historical v1 report](../2026-10-15/README.md), [fixed-source replay checks](baseline-checks.json)
+- [Earlier partial pilot](pilot-resume-20261020.md), [staged recovery](pilot-recovery-20261020.md); their 63/150 historical counter is preserved separately
+- [AI use/workflow](../../AI_used.md), [code walkthrough](../../docs/code-walkthrough.zh-CN.md), [interview exercises](../../docs/interview-self-check.zh-CN.md)
+
+The [final fresh installation](final-offline-verification.json) passed 861 tests, lint and main validation with locked dependencies in a new environment. [Real long-development-input consumers](final-consumer-verification.json) passed HTTP success → safe rejection → recovery and byte-identical CLI report replay without inference. The earlier 510-test [offline receipt](verification.json) and [model-error-stop review](model-error-stop-verification.json) remain valid only for their stated code/inputs. Optional Jev smoke records remain supplementary and do not establish calibration or a cost/speed advantage.

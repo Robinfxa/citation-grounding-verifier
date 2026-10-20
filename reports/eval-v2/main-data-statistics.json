@@ -1,0 +1,55 @@
+{
+  "cases": 72,
+  "categories": {
+    "extrinsic": 18,
+    "subtle_distortion": 9,
+    "supported": 34,
+    "synthesis": 11
+  },
+  "claims": 668,
+  "claims_by_split": {
+    "dev": {
+      "CONTRADICTED": 10,
+      "SUPPORTED": 242,
+      "UNSUPPORTED": 6
+    },
+    "test": {
+      "CONTRADICTED": 37,
+      "SUPPORTED": 356,
+      "UNSUPPORTED": 17
+    }
+  },
+  "consumer_input_whitespace_words_including_question_prefix": {
+    "max": 143,
+    "median": 122.0,
+    "min": 74
+  },
+  "context_token_estimate": {
+    "max": 3989.75,
+    "median": 2234.375,
+    "min": 976.25
+  },
+  "context_token_estimate_method": "Unicode characters / 4; not tokenizer counts or provider usage",
+  "context_unicode_characters": {
+    "max": 15959,
+    "median": 8937.5,
+    "min": 3905
+  },
+  "dataset": "datasets/main.jsonl",
+  "dataset_sha256": "b103f0ee127728f0fdfc5d58f3f5cbcf7c39e89d09b1369d1e7b9baf22b1b845",
+  "gold_facts_per_case": {
+    "max": 14,
+    "median": 9.0,
+    "min": 8
+  },
+  "measured_model_quality": false,
+  "passages_per_case": {
+    "max": 7,
+    "median": 4.0,
+    "min": 2
+  },
+  "splits": {
+    "dev": 24,
+    "test": 48
+  }
+}

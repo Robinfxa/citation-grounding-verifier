@@ -1,0 +1,1151 @@
+{
+  "dataset_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+  "cases": [
+    {
+      "case_id": "v2-test-r01",
+      "source_family": "v2-real-python-collections",
+      "question": "How should I use Counter for a signed inventory ledger without confusing missing entries, subtraction and multiset operations?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Counter stores hashable elements as keys and permits zero or negative counts. Looking up a missing element returns zero, while setting an existing count to zero leaves the entry present. update adds counts instead of replacing them, and subtract can retain zero or negative results.\n\nMultiset subtraction has a different output policy: like the other multiset operations, it excludes nonpositive results. elements requires integer counts and ignores those below one. Equality treats absent elements as zero, so Counter(a=1) equals Counter(a=1, b=0). Equal-count entries in most_common keep their first-encountered order.",
+      "original_answer_sha256": "3981593a73bfa7e1f9bc1a008f00896937f5d7221ce1f7c97ddbf2034942f7d1",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "subtract_method_vs_multiset_output",
+        "claim_numbers": [
+          5,
+          6
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r02",
+      "source_family": "v2-real-python-collections",
+      "question": "Which Counter details affect ordering and numeric count types?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Counter arithmetic preserves insertion order, taking entries first encountered on the left before new entries from the right. most_common only needs orderable values, whereas in-place count updates need addition and subtraction. Fractions and decimals can therefore be used for such updates.\n\nThe elements iterator has the narrower requirement of integer counts and omits zero or negative entries. Multiset intersections choose the minimum corresponding count and unions choose the maximum; those operations still omit nonpositive outputs. Calling total computes the sum of the stored counts.",
+      "original_answer_sha256": "b2a14beb854379a5ddfc031f794e2bc24ee449da100a996768cddaba65530105",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "subtract_method_vs_multiset_output",
+        "claim_numbers": [
+          5,
+          6
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r03",
+      "source_family": "v2-real-python-dataclasses",
+      "question": "What initialization rules matter when a dataclass uses InitVar, a non-dataclass base and default factories?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order; if no __init__ is generated, that automatic call does not occur. The generated initializer does not call a base-class initializer, so a required non-dataclass base initialization can be done from __post_init__.\n\nClassVar and InitVar pseudo-fields are excluded from fields(). An InitVar is still accepted as an initializer parameter and forwarded to __post_init__. A default_factory receives no arguments when a default is needed. If that field has init=False, the generated initializer still calls the factory to provide its value. frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object.",
+      "original_answer_sha256": "458a18319490bab791d926f0d76ba77aab66da7654cdf6eb3a212d8eb76e3a70",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "generated_initializer_and_pseudofield_scope",
+        "claim_numbers": [
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r04",
+      "source_family": "v2-real-python-dataclasses",
+      "question": "What initialization rules matter when a dataclass uses InitVar, a non-dataclass base and default factories?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order; a handwritten __init__ still receives that automatic call after it returns. The generated initializer does not call a base-class initializer, so a required non-dataclass base initialization can be done from __post_init__.\n\nClassVar and InitVar pseudo-fields are excluded from fields(). An InitVar is still accepted as an initializer parameter and forwarded to __post_init__. A default_factory receives no arguments when a default is needed. If that field has init=False, the factory is deferred until the first attribute read. frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object.",
+      "original_answer_sha256": "e1afadab4cbf31ff827ce55f95e9256e601efab5cf73c65488163e01e855ad5b",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "controlled_mutation",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "generated_initializer_and_pseudofield_scope",
+        "claim_numbers": [
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": "A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order; if no __init__ is generated, that automatic call does not occur. The generated initializer does not call a base-class initializer, so a required non-dataclass base initialization can be done from __post_init__.\n\nClassVar and InitVar pseudo-fields are excluded from fields(). An InitVar is still accepted as an initializer parameter and forwarded to __post_init__. A default_factory receives no arguments when a default is needed. If that field has init=False, the generated initializer still calls the factory to provide its value. frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object.",
+      "mutations": [
+        {
+          "claim_number": 2,
+          "before": "if no __init__ is generated, that automatic call does not occur",
+          "after": "a handwritten __init__ still receives that automatic call after it returns",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The automatic hook is explicitly conditional on generating __init__; it does not wrap a handwritten initializer."
+        },
+        {
+          "claim_number": 7,
+          "before": "If that field has init=False, the generated initializer still calls the factory to provide its value.",
+          "after": "If that field has init=False, the factory is deferred until the first attribute read",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The source says the generated initializer calls the factory, not that attribute access triggers lazy initialization."
+        }
+      ],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed",
+        "controlled_punctuation_only_edits": [
+          [
+            "attribute read frozen=True",
+            "attribute read. frozen=True"
+          ]
+        ],
+        "prior_derived_answer_before_punctuation_repair": "A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order; a handwritten __init__ still receives that automatic call after it returns. The generated initializer does not call a base-class initializer, so a required non-dataclass base initialization can be done from __post_init__.\n\nClassVar and InitVar pseudo-fields are excluded from fields(). An InitVar is still accepted as an initializer parameter and forwarded to __post_init__. A default_factory receives no arguments when a default is needed. If that field has init=False, the factory is deferred until the first attribute read frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object."
+      }
+    },
+    {
+      "case_id": "v2-test-r05",
+      "source_family": "v2-real-python-itertools",
+      "question": "How can I combine grouping, slicing and combinatorial iterators without losing groups or accidentally exhausting an infinite input?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "groupby groups consecutive equal keys rather than gathering matching values from every position, so input generally needs sorting with the same key. Its group iterators share the source: after the outer iterator advances, a previous group is no longer available unless its contents were saved. islice accepts selected positions but does not support negative start, stop or step values.\n\nWith fewer than two inputs, pairwise is empty. permutations treats elements as distinct by position and emits tuples in input-defined lexicographic order. product consumes its inputs into stored pools before generating products, so those inputs must be finite; its rightmost position advances on every iteration.",
+      "original_answer_sha256": "ffa3d194c0f1f7c656d2180e0f5fbf2668155858741997e5cac57e6afaacf0b4",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "group_lifetime_and_product_eagerness",
+        "claim_numbers": [
+          1,
+          2,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r06",
+      "source_family": "v2-real-python-itertools",
+      "question": "How can I combine grouping, slicing and combinatorial iterators without losing groups or accidentally exhausting an infinite input?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "groupby groups consecutive equal keys rather than gathering matching values from every position, so input generally needs sorting with the same key. Its group iterators own independent snapshots, so a previous group remains available after the outer iterator advances. islice accepts selected positions but does not support negative start, stop or step values.\n\nWith fewer than two inputs, pairwise is empty. permutations treats elements as distinct by position and emits tuples in input-defined lexicographic order. product only pulls each new input value as needed for the next tuple, so it can stream an infinite input without building a pool; its rightmost position advances on every iteration.",
+      "original_answer_sha256": "fe0819305ab67d26e3011bb1e5f93f3f9e56642ac8b0174d321310cefc4541e6",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "controlled_mutation",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "group_lifetime_and_product_eagerness",
+        "claim_numbers": [
+          1,
+          2,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": "groupby groups consecutive equal keys rather than gathering matching values from every position, so input generally needs sorting with the same key. Its group iterators share the source: after the outer iterator advances, a previous group is no longer available unless its contents were saved. islice accepts selected positions but does not support negative start, stop or step values.\n\nWith fewer than two inputs, pairwise is empty. permutations treats elements as distinct by position and emits tuples in input-defined lexicographic order. product consumes its inputs into stored pools before generating products, so those inputs must be finite; its rightmost position advances on every iteration.",
+      "mutations": [
+        {
+          "claim_number": 2,
+          "before": "Its group iterators share the source: after the outer iterator advances, a previous group is no longer available unless its contents were saved.",
+          "after": "Its group iterators own independent snapshots, so a previous group remains available after the outer iterator advances",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The group shares the underlying iterator and is not an independent saved snapshot."
+        },
+        {
+          "claim_number": 7,
+          "before": "product consumes its inputs into stored pools before generating products, so those inputs must be finite",
+          "after": "product only pulls each new input value as needed for the next tuple, so it can stream an infinite input without building a pool",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "product eagerly consumes inputs; this confuses lazy output with lazy input consumption."
+        }
+      ],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed",
+        "controlled_punctuation_only_edits": [
+          [
+            "iterator advances islice",
+            "iterator advances. islice"
+          ]
+        ],
+        "prior_derived_answer_before_punctuation_repair": "groupby groups consecutive equal keys rather than gathering matching values from every position, so input generally needs sorting with the same key. Its group iterators own independent snapshots, so a previous group remains available after the outer iterator advances islice accepts selected positions but does not support negative start, stop or step values.\n\nWith fewer than two inputs, pairwise is empty. permutations treats elements as distinct by position and emits tuples in input-defined lexicographic order. product only pulls each new input value as needed for the next tuple, so it can stream an infinite input without building a pool; its rightmost position advances on every iteration."
+      }
+    },
+    {
+      "case_id": "v2-test-r07",
+      "source_family": "v2-real-python-enum",
+      "question": "How do IntEnum, StrEnum and Flag behave when I use their values in ordinary operations?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "IntEnum members can be used as integers, but an integer operation produces a value that has lost enumeration status. StrEnum similarly permits string use while string-operation results are outside the enumeration; exact-str checks in some standard-library locations require conversion with str(). Its auto values are lowercased member names.\n\nFlag bitwise operations produce enumeration members or aliases, and iterating a flag yields its contained non-alias members. IntFlag also supports integer use, though arithmetic results are not IntFlag members. Inversion of an IntFlag produces the positive union of flags absent from it, matching Flag behavior.",
+      "original_answer_sha256": "dd3484bf52cb82a9bdcbcacea8b9284d95d2e4f907977aa517975467afc13143",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": null,
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r08",
+      "source_family": "v2-real-python-enum",
+      "question": "How do automatically assigned integer enum values and flag operations differ?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "For IntEnum, auto assigns increasing integers beginning at one. Flag and IntFlag instead receive powers of two beginning at one. A Flag value is truthy when it contains any member, and its length reports the number of contained members.\n\nFlag inversion returns the flags missing from the value. For IntFlag, a valid bitwise result remains an IntFlag, whereas an invalid result depends on FlagBoundary. Arithmetic such as adding an integer loses IntFlag status. Since Python 3.11, IntFlag string conversion uses int.__str__ to support replacing existing constants.",
+      "original_answer_sha256": "3ea80f941d2f9e0035e007fa86ca4d8213771276c3edd51d51c8a38b66c05a36",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": null,
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r09",
+      "source_family": "v2-real-python-asyncio-task",
+      "question": "How should cancellation and failures be handled inside an asyncio TaskGroup?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Cancellation raises CancelledError in a task at its next opportunity. That exception directly subclasses BaseException; coroutine cleanup should generally propagate it after cleanup, because TaskGroup and timeout use cancellation internally. A TaskGroup waits for all its tasks on exit, and in Python 3.13 an inactive group closes a coroutine passed to create_task.\n\nThe first child failure other than CancelledError cancels the remaining children and prevents new additions. Once all children finish, non-cancellation failures are grouped and raised. KeyboardInterrupt and SystemExit are special: the group still cancels and waits for the other tasks but re-raises the original base exception. A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup.",
+      "original_answer_sha256": "67cd5b923696555a3517c456ff68342c2f177716944c85fcb5f4b0b46d686033",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "cancellation_vs_failure_and_baseexception",
+        "claim_numbers": [
+          3,
+          6,
+          7,
+          8,
+          9
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r10",
+      "source_family": "v2-real-python-asyncio-task",
+      "question": "How should cancellation and failures be handled inside an asyncio TaskGroup?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Cancellation raises CancelledError in a task at its next opportunity. That exception directly subclasses BaseException; coroutine cleanup should generally propagate it after cleanup, because TaskGroup and timeout use cancellation internally. A TaskGroup waits for all its tasks on exit, and in Python 3.13 an inactive group closes a coroutine passed to create_task.\n\nA child cancellation with CancelledError cancels the remaining children and prevents new additions. Once all children finish, non-cancellation failures are grouped and raised. KeyboardInterrupt and SystemExit are placed into the same ExceptionGroup as the other child failures after cancellation and waiting. A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup.",
+      "original_answer_sha256": "9bcebdec7a765f8a7908e143d341e72d882ae29951765e11b6178cfb24e7236e",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "controlled_mutation",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "cancellation_vs_failure_and_baseexception",
+        "claim_numbers": [
+          3,
+          6,
+          7,
+          8,
+          9
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": "Cancellation raises CancelledError in a task at its next opportunity. That exception directly subclasses BaseException; coroutine cleanup should generally propagate it after cleanup, because TaskGroup and timeout use cancellation internally. A TaskGroup waits for all its tasks on exit, and in Python 3.13 an inactive group closes a coroutine passed to create_task.\n\nThe first child failure other than CancelledError cancels the remaining children and prevents new additions. Once all children finish, non-cancellation failures are grouped and raised. KeyboardInterrupt and SystemExit are special: the group still cancels and waits for the other tasks but re-raises the original base exception. A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup.",
+      "mutations": [
+        {
+          "claim_number": 6,
+          "before": "The first child failure other than CancelledError cancels the remaining children and prevents new additions.",
+          "after": "A child cancellation with CancelledError cancels the remaining children and prevents new additions",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The trigger explicitly excludes CancelledError, so the mutation broadens the failure condition."
+        },
+        {
+          "claim_number": 8,
+          "before": "KeyboardInterrupt and SystemExit are special: the group still cancels and waits for the other tasks but re-raises the original base exception.",
+          "after": "KeyboardInterrupt and SystemExit are placed into the same ExceptionGroup as the other child failures after cancellation and waiting",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The source singles these exceptions out for original re-raising instead of grouping."
+        }
+      ],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed",
+        "controlled_punctuation_only_edits": [
+          [
+            "new additions Once",
+            "new additions. Once"
+          ],
+          [
+            "and waiting A simultaneous",
+            "and waiting. A simultaneous"
+          ]
+        ],
+        "prior_derived_answer_before_punctuation_repair": "Cancellation raises CancelledError in a task at its next opportunity. That exception directly subclasses BaseException; coroutine cleanup should generally propagate it after cleanup, because TaskGroup and timeout use cancellation internally. A TaskGroup waits for all its tasks on exit, and in Python 3.13 an inactive group closes a coroutine passed to create_task.\n\nA child cancellation with CancelledError cancels the remaining children and prevents new additions Once all children finish, non-cancellation failures are grouped and raised. KeyboardInterrupt and SystemExit are placed into the same ExceptionGroup as the other child failures after cancellation and waiting A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup."
+      }
+    },
+    {
+      "case_id": "v2-test-r11",
+      "source_family": "v2-real-python-concurrent.futures",
+      "question": "What do executor map timeouts and shutdown options guarantee for pending and running work?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Executor.submit returns a Future for the scheduled call. map collects its input iterables immediately, and its timeout is measured from the original map call rather than each request for a result. A callable exception is raised when that result is retrieved. chunksize affects ProcessPoolExecutor but has no effect for ThreadPoolExecutor.\n\nshutdown(wait=False) returns immediately, yet Python still waits for pending futures before exiting. cancel_futures only cancels pending work that has not started, leaving running or completed futures alone. Using an executor as a context manager waits as shutdown(wait=True) would. Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker.",
+      "original_answer_sha256": "528f174bd906f603d70ac304fa6357b7f245ec4d901ea5f2a3d48c8c90dcfff4",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "return_vs_process_exit_and_running_work",
+        "claim_numbers": [
+          3,
+          6,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r12",
+      "source_family": "v2-real-python-concurrent.futures",
+      "question": "What do executor map timeouts and shutdown options guarantee for pending and running work?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Executor.submit returns a Future for the scheduled call. map collects its input iterables immediately, and its timeout starts again each time the caller asks for the next result. A callable exception is raised when that result is retrieved. chunksize affects ProcessPoolExecutor but has no effect for ThreadPoolExecutor.\n\nshutdown(wait=False) returns immediately, yet Python still waits for pending futures before exiting. cancel_futures also interrupts futures already executing in worker threads. Using an executor as a context manager waits as shutdown(wait=True) would. Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker.",
+      "original_answer_sha256": "40279aab7e02b1076e344912cf0c0081a03917d26c880e2070ed071cb3fea376",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "controlled_mutation",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "return_vs_process_exit_and_running_work",
+        "claim_numbers": [
+          3,
+          6,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": "Executor.submit returns a Future for the scheduled call. map collects its input iterables immediately, and its timeout is measured from the original map call rather than each request for a result. A callable exception is raised when that result is retrieved. chunksize affects ProcessPoolExecutor but has no effect for ThreadPoolExecutor.\n\nshutdown(wait=False) returns immediately, yet Python still waits for pending futures before exiting. cancel_futures only cancels pending work that has not started, leaving running or completed futures alone. Using an executor as a context manager waits as shutdown(wait=True) would. Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker.",
+      "mutations": [
+        {
+          "claim_number": 3,
+          "before": "its timeout is measured from the original map call rather than each request for a result",
+          "after": "its timeout starts again each time the caller asks for the next result",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The documented timer origin is the initial map call, not iterator advancement."
+        },
+        {
+          "claim_number": 7,
+          "before": "cancel_futures only cancels pending work that has not started, leaving running or completed futures alone.",
+          "after": "cancel_futures also interrupts futures already executing in worker threads",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The cancellation scope is work not yet started; running work is explicitly excluded."
+        }
+      ],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed",
+        "controlled_punctuation_only_edits": [
+          [
+            "worker threads Using",
+            "worker threads. Using"
+          ]
+        ],
+        "prior_derived_answer_before_punctuation_repair": "Executor.submit returns a Future for the scheduled call. map collects its input iterables immediately, and its timeout starts again each time the caller asks for the next result. A callable exception is raised when that result is retrieved. chunksize affects ProcessPoolExecutor but has no effect for ThreadPoolExecutor.\n\nshutdown(wait=False) returns immediately, yet Python still waits for pending futures before exiting. cancel_futures also interrupts futures already executing in worker threads Using an executor as a context manager waits as shutdown(wait=True) would. Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker."
+      }
+    },
+    {
+      "case_id": "v2-test-r13",
+      "source_family": "v2-real-rust-expressions-match-expr",
+      "question": "What do match guards change about arm selection, bindings and side effects in Rust?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "A match compares a scrutinee with patterns of the same type. With a value expression it evaluates into a temporary and selects the first matching arm; a place expression does not allocate that temporary, though a by-value binding can still copy or move. Pattern bindings are scoped to the guard and the arm expression.\n\nAlternatives joined by | must bind the same names with the same types and binding modes. A guard runs after its pattern matches; if it fails, matching continues, including other alternatives in that arm. Such alternatives can execute a guard with side effects more than once. During guard evaluation a shared reference is used, and moving or copying into a binding happens only after the guard succeeds.",
+      "original_answer_sha256": "c4440739bd8d3ef8c10683b5c0e485f9daa639133fb2cbf172c198d06a97ad1f",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "guard_failure_vs_binding_move",
+        "claim_numbers": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r14",
+      "source_family": "v2-real-rust-expressions-match-expr",
+      "question": "What do match guards change about arm selection, bindings and side effects in Rust?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "A match compares a scrutinee with patterns of the same type. With a value expression it evaluates into a temporary and selects the first matching arm; a place expression does not allocate that temporary, though a by-value binding can still copy or move. Pattern bindings are scoped to the guard and the arm expression.\n\nAlternatives joined by | may bind different names because each successful alternative has its own binding environment. A guard runs after its pattern matches; if it fails, matching continues, including other alternatives in that arm. Such alternatives can execute a guard with side effects more than once. A by-value pattern moves its binding out of the scrutinee before evaluating the guard, even when that guard later fails.",
+      "original_answer_sha256": "0ab0b487a92e660d59fb91169acab6b70295d1920c837d536972a9e9eabb7c9c",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "controlled_mutation",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "guard_failure_vs_binding_move",
+        "claim_numbers": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": "A match compares a scrutinee with patterns of the same type. With a value expression it evaluates into a temporary and selects the first matching arm; a place expression does not allocate that temporary, though a by-value binding can still copy or move. Pattern bindings are scoped to the guard and the arm expression.\n\nAlternatives joined by | must bind the same names with the same types and binding modes. A guard runs after its pattern matches; if it fails, matching continues, including other alternatives in that arm. Such alternatives can execute a guard with side effects more than once. During guard evaluation a shared reference is used, and moving or copying into a binding happens only after the guard succeeds.",
+      "mutations": [
+        {
+          "claim_number": 5,
+          "before": "Alternatives joined by | must bind the same names with the same types and binding modes.",
+          "after": "Alternatives joined by | may bind different names because each successful alternative has its own binding environment",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The alternatives are required to bind the same names; this invents independent environments."
+        },
+        {
+          "claim_number": 8,
+          "before": "During guard evaluation a shared reference is used, and moving or copying into a binding happens only after the guard succeeds.",
+          "after": "A by-value pattern moves its binding out of the scrutinee before evaluating the guard, even when that guard later fails",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The text delays the move until guard success, which is the material failure condition."
+        }
+      ],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed",
+        "controlled_punctuation_only_edits": [
+          [
+            "binding environment A guard",
+            "binding environment. A guard"
+          ]
+        ],
+        "prior_derived_answer_before_punctuation_repair": "A match compares a scrutinee with patterns of the same type. With a value expression it evaluates into a temporary and selects the first matching arm; a place expression does not allocate that temporary, though a by-value binding can still copy or move. Pattern bindings are scoped to the guard and the arm expression.\n\nAlternatives joined by | may bind different names because each successful alternative has its own binding environment A guard runs after its pattern matches; if it fails, matching continues, including other alternatives in that arm. Such alternatives can execute a guard with side effects more than once. A by-value pattern moves its binding out of the scrutinee before evaluating the guard, even when that guard later fails"
+      }
+    },
+    {
+      "case_id": "v2-test-r15",
+      "source_family": "v2-real-rust-attributes-derive",
+      "question": "What can derive generate and where may derive and automatically_derived be applied?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "The derive attribute invokes derive macros to generate items for data structures, and procedural macros can define custom derives. It accepts a list of macro paths and is allowed on structs, enums and unions. Multiple derive attributes are allowed on one item, and every macro listed across them is invoked.\n\nEach invoked macro can expand to zero or more items. Built-in derives include automatically_derived on their generated implementations. That attribute marks an implementation as generated for tools and diagnostics but has no direct behavior; applying it repeatedly has the same effect as applying it once.",
+      "original_answer_sha256": "ede2b26baa87523d3c8b6a874e0e59b4bc9d74da841d21163126cd710b43afa7",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": null,
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r16",
+      "source_family": "v2-real-rust-attributes-derive",
+      "question": "In the documented Foo<T> example, what does deriving PartialEq and Clone require and generate?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "The example derives PartialEq and Clone for a struct Foo<T> with fields a: i32 and b: T. Its PartialEq implementation requires T: PartialEq and compares both fields for equality. Its Clone implementation requires T: Clone and clones both fields into a new Foo.\n\nThese are generated impl items, not changes to the fields of the struct. The derive attribute can be repeated to invoke the listed macros across all applications. Built-in derives mark generated implementations automatically_derived, an annotation that tools may recognize without changing implementation behavior.",
+      "original_answer_sha256": "c567181a7787c3baa5bbe9335dec72a78bb0e119b50160ca55b50cf63c8cd08e",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": null,
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r17",
+      "source_family": "v2-real-rust-trait-bounds",
+      "question": "Which lifetime and trait bounds can I rely on implicitly inside generic Rust code?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Bounds restrict the types and lifetimes accepted by generic items, and they must hold when an item is used. A bound that uses neither the item parameters nor higher-ranked lifetimes is checked at definition. ?Sized only relaxes the implicit Sized bound on a type parameter or associated type.\n\nThe relation a: b means lifetime a lasts at least as long as b. Higher-ranked bounds express a requirement over all lifetimes. Well-formed reference parameters can imply lifetime bounds: a parameter of type &'a T lets the function assume T: 'a. This does not infer arbitrary trait bounds, which must still be written explicitly. Lifetime bounds can also be inferred from types in definitions and impl blocks.",
+      "original_answer_sha256": "461aaef32dbe9cd3bf4c9be9730fcf95460e71fc40e6ca35af4ec71e831c5fe8",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "lifetime_vs_trait_inference",
+        "claim_numbers": [
+          2,
+          5,
+          6,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r18",
+      "source_family": "v2-real-rust-trait-bounds",
+      "question": "Which lifetime and trait bounds can I rely on implicitly inside generic Rust code?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Bounds restrict the types and lifetimes accepted by generic items, and they must hold when an item is used. A bound that uses neither the item parameters nor higher-ranked lifetimes is checked at definition. ?Sized only relaxes the implicit Sized bound on a type parameter or associated type.\n\nThe relation a: b means lifetime a lasts at least as long as b. Higher-ranked bounds require the bound for one lifetime chosen by the caller. Well-formed reference parameters can imply lifetime bounds: a parameter of type &'a T lets the function assume T: 'a. The same well-formedness rule infers trait bounds such as Debug from argument types, so these need not be written explicitly. Lifetime bounds can also be inferred from types in definitions and impl blocks.",
+      "original_answer_sha256": "b135e02d366e6527f2ff5551c9a5237538d0be54e88d23626009eb5770d0b8d3",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "controlled_mutation",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "lifetime_vs_trait_inference",
+        "claim_numbers": [
+          2,
+          5,
+          6,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": "Bounds restrict the types and lifetimes accepted by generic items, and they must hold when an item is used. A bound that uses neither the item parameters nor higher-ranked lifetimes is checked at definition. ?Sized only relaxes the implicit Sized bound on a type parameter or associated type.\n\nThe relation a: b means lifetime a lasts at least as long as b. Higher-ranked bounds express a requirement over all lifetimes. Well-formed reference parameters can imply lifetime bounds: a parameter of type &'a T lets the function assume T: 'a. This does not infer arbitrary trait bounds, which must still be written explicitly. Lifetime bounds can also be inferred from types in definitions and impl blocks.",
+      "mutations": [
+        {
+          "claim_number": 5,
+          "before": "Higher-ranked bounds express a requirement over all lifetimes.",
+          "after": "Higher-ranked bounds require the bound for one lifetime chosen by the caller",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The mutation changes a universal lifetime condition into an existential caller choice."
+        },
+        {
+          "claim_number": 7,
+          "before": "This does not infer arbitrary trait bounds, which must still be written explicitly.",
+          "after": "The same well-formedness rule infers trait bounds such as Debug from argument types, so these need not be written explicitly",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "Only lifetime bounds are implied; arbitrary trait obligations remain explicit."
+        }
+      ],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed",
+        "controlled_punctuation_only_edits": [
+          [
+            "the caller Well-formed",
+            "the caller. Well-formed"
+          ],
+          [
+            "written explicitly Lifetime",
+            "written explicitly. Lifetime"
+          ]
+        ],
+        "prior_derived_answer_before_punctuation_repair": "Bounds restrict the types and lifetimes accepted by generic items, and they must hold when an item is used. A bound that uses neither the item parameters nor higher-ranked lifetimes is checked at definition. ?Sized only relaxes the implicit Sized bound on a type parameter or associated type.\n\nThe relation a: b means lifetime a lasts at least as long as b. Higher-ranked bounds require the bound for one lifetime chosen by the caller Well-formed reference parameters can imply lifetime bounds: a parameter of type &'a T lets the function assume T: 'a. The same well-formedness rule infers trait bounds such as Debug from argument types, so these need not be written explicitly Lifetime bounds can also be inferred from types in definitions and impl blocks."
+      }
+    },
+    {
+      "case_id": "v2-test-r19",
+      "source_family": "v2-real-rust-items-traits",
+      "question": "What makes a Rust trait dyn compatible, and how do supertraits affect that requirement?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "A dyn-compatible trait can serve as a trait-object base. Every supertrait must also be dyn compatible, and Sized cannot be a supertrait. The trait must not contain associated constants or generic associated types.\n\nFor a dispatchable method, lifetime parameters are allowed but type parameters are not; an async method or a return-position impl Trait is excluded by its opaque return type. A function can instead be explicitly non-dispatchable by requiring Self: Sized. Supertrait requirements are transitive, and bounds by a trait give access to the associated items of its supertraits. An unsafe trait can be used safely when correctly implemented, though its implementation must use unsafe.",
+      "original_answer_sha256": "ee026fb30b2459c5c3bde53bd72b27955e7e20bbf20ab76821555d1a2c30cd37",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "dispatchable_vs_sized_exemption",
+        "claim_numbers": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r20",
+      "source_family": "v2-real-rust-items-traits",
+      "question": "What makes a Rust trait dyn compatible, and how do supertraits affect that requirement?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "A dyn-compatible trait can serve as a trait-object base. Every supertrait must also be dyn compatible, and Sized cannot be a supertrait. The trait must not contain associated constants or generic associated types.\n\nFor a dispatchable method, both lifetime and type parameters are permitted when they do not mention Self; an async method or a return-position impl Trait is excluded by its opaque return type. A function can instead be explicitly non-dispatchable by requiring Self: Sized. Supertrait requirements are transitive, and bounds by a trait expose only its own associated items, so supertrait methods require an additional explicit bound. An unsafe trait can be used safely when correctly implemented, though its implementation must use unsafe.",
+      "original_answer_sha256": "091b81d09f7f39f11902c1ab4d1b7bc6cc4e738243a654ce6f70b8125d65a725",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "controlled_mutation",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "dispatchable_vs_sized_exemption",
+        "claim_numbers": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": "A dyn-compatible trait can serve as a trait-object base. Every supertrait must also be dyn compatible, and Sized cannot be a supertrait. The trait must not contain associated constants or generic associated types.\n\nFor a dispatchable method, lifetime parameters are allowed but type parameters are not; an async method or a return-position impl Trait is excluded by its opaque return type. A function can instead be explicitly non-dispatchable by requiring Self: Sized. Supertrait requirements are transitive, and bounds by a trait give access to the associated items of its supertraits. An unsafe trait can be used safely when correctly implemented, though its implementation must use unsafe.",
+      "mutations": [
+        {
+          "claim_number": 4,
+          "before": "For a dispatchable method, lifetime parameters are allowed but type parameters are not",
+          "after": "For a dispatchable method, both lifetime and type parameters are permitted when they do not mention Self",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The prohibition on type parameters is unconditional; this imports the separate Self-use rule."
+        },
+        {
+          "claim_number": 8,
+          "before": "bounds by a trait give access to the associated items of its supertraits",
+          "after": "bounds by a trait expose only its own associated items, so supertrait methods require an additional explicit bound",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The source directly grants supertrait item access wherever the trait bounds the type."
+        }
+      ],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r21",
+      "source_family": "v2-real-rust-type-coercions",
+      "question": "Where do implicit Rust coercions happen, and which unsized conversions are available?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Coercions are restricted implicit type changes at specified sites, including explicitly typed let bindings, function arguments and function return values. A method receiver follows separate coercion rules. Coercion sites can propagate through array elements, tuples, parentheses and final block expressions when the surrounding type is known.\n\nA mutable reference can coerce to a shared reference; a noncapturing closure can coerce to a function pointer. Unsized conversions include arrays to slices and a sized implementing type to a dyn-compatible trait object. A trait object may coerce to a supertrait object. Although these unsized conversions are stabilized, Unsize and CoerceUnsized themselves are not stable for direct use in stable Rust.",
+      "original_answer_sha256": "e26d88a6a79ceb6d583f492e2bee573d5717fa058c4885fa78038946f6bb13c0",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "conversion_stability_vs_direct_trait_use",
+        "claim_numbers": [
+          1,
+          2,
+          6,
+          7,
+          8
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r22",
+      "source_family": "v2-real-rust-type-coercions",
+      "question": "Where do implicit Rust coercions happen, and which unsized conversions are available?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Coercions are restricted implicit type changes at specified sites, including explicitly typed let bindings, function arguments and function return values. A method receiver follows separate coercion rules. Coercion sites can propagate through array elements, tuples, parentheses and final block expressions when the surrounding type is known.\n\nA mutable reference can coerce to a shared reference; a closure that captures its environment can coerce to a function pointer when all captured values implement Copy. Unsized conversions include arrays to slices and a sized implementing type to a dyn-compatible trait object. A trait object may coerce to a supertrait object. These stabilized unsized conversions make Unsize and CoerceUnsized available for direct implementation in stable Rust",
+      "original_answer_sha256": "733422f7a187e70df4b772f57806043f36635ecc3cb9e7338b8d4bdbed372d52",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "controlled_mutation",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "conversion_stability_vs_direct_trait_use",
+        "claim_numbers": [
+          1,
+          2,
+          6,
+          7,
+          8
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": "Coercions are restricted implicit type changes at specified sites, including explicitly typed let bindings, function arguments and function return values. A method receiver follows separate coercion rules. Coercion sites can propagate through array elements, tuples, parentheses and final block expressions when the surrounding type is known.\n\nA mutable reference can coerce to a shared reference; a noncapturing closure can coerce to a function pointer. Unsized conversions include arrays to slices and a sized implementing type to a dyn-compatible trait object. A trait object may coerce to a supertrait object. Although these unsized conversions are stabilized, Unsize and CoerceUnsized themselves are not stable for direct use in stable Rust.",
+      "mutations": [
+        {
+          "claim_number": 5,
+          "before": "a noncapturing closure can coerce to a function pointer",
+          "after": "a closure that captures its environment can coerce to a function pointer when all captured values implement Copy",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The allowed coercion is limited to noncapturing closures; Copy captures do not meet that condition."
+        },
+        {
+          "claim_number": 8,
+          "before": "Although these unsized conversions are stabilized, Unsize and CoerceUnsized themselves are not stable for direct use in stable Rust.",
+          "after": "These stabilized unsized conversions make Unsize and CoerceUnsized available for direct implementation in stable Rust",
+          "type": "condition_scope_or_mechanism_change",
+          "reason": "The source explicitly distinguishes stable conversion behavior from unstable helper traits."
+        }
+      ],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r23",
+      "source_family": "v2-real-rust-unsafe-keyword",
+      "question": "Which safety obligations does unsafe create, and which uses assert that an obligation has been satisfied?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "An unsafe function has extra conditions that callers must uphold and the compiler does not check. Its documentation should explain those conditions. An unsafe block permits unsafe actions and asserts that their safety obligations have been discharged, rather than making the compiler prove them.\n\nAn unsafe trait puts extra obligations on implementations; writing unsafe impl asserts that those obligations are satisfied. In an unsafe extern block, the declaring programmer must ensure the contained signatures are correct, because incorrect signatures can lead to undefined behavior. Unsafe attributes likewise have conditions the compiler cannot check and are wrapped in unsafe(..) to assert compliance. Before edition 2024, extern blocks were permitted without unsafe.",
+      "original_answer_sha256": "52ad88a6b5e346fbade572ef5d5421e03797c7ed4b34237e765342b8ee13bbcc",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "define_vs_discharge_obligations",
+        "claim_numbers": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    },
+    {
+      "case_id": "v2-test-r24",
+      "source_family": "v2-real-rust-unsafe-keyword",
+      "question": "How does unsafe_op_in_unsafe_fn affect the body of an unsafe function and its callers?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "An unsafe function may be called from an unsafe block, or from an unsafe function without unsafe_op_in_unsafe_fn. By default, the body of an unsafe function is itself treated as an unsafe block, but enabling that lint changes this treatment.\n\nThe unsafe function still defines obligations for its callers; an unsafe block states that obligations for its contained operations have been met. Such a block may rely on runtime checks, data-structure invariants or the obligations supplied by its enclosing unsafe function. Unsafe traits shift the obligation to implementations, which must be marked unsafe impl. These uses record who must establish safety, rather than removing those safety conditions.",
+      "original_answer_sha256": "0ce228172ab54f745939ffef567800c3f3bf54a486c8bd6b68623525b533cea1",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "test",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "define_vs_discharge_obligations",
+        "claim_numbers": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "adjudication": {
+        "stage": "post_blind_lock_pre_freeze",
+        "natural_answer_unchanged": true,
+        "required_substantive_cross_passage": false,
+        "scope_resolution": true,
+        "review_requests_sha256": "6f8917aacc59a80bef78bc92d739f1c73095e8811a660d027aa9a163777308b9",
+        "status": "pending_same_reviewer_verification",
+        "human_review": "not_performed"
+      }
+    }
+  ]
+}

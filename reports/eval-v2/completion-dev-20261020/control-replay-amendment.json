@@ -1,0 +1,21 @@
+{
+  "status": "EXPORTED_CONTROL_REPLAY_PASSED",
+  "source_commit": "45d01e2a3d7142f4d8a5737a53e1743a921ea294",
+  "source_fingerprint": "353c9d50f6035dadf76006913708123f4fbe525f79d74c70e9245e919413239e",
+  "old_readme_sha256": "696e464f76f0d49496a478e433509ce80257171771daaf7a0fb232f3c1bad22c",
+  "new_readme_sha256": "9bca0603264730804092386ad35393898a2762214299e8f26f8fd03f2e2a80f8",
+  "replay_script_sha256": "8e9f08981b338cc3dd132c0bd49a697f0e22f1a03502d463fd6150bf4b528fb6",
+  "replay_exit_code": 0,
+  "replay_result": {
+    "status": "BYTE_IDENTICAL_COMBINED_ANALYSIS",
+    "mapped_jobs": 72,
+    "network_calls": 0,
+    "inference_calls": 0,
+    "credential_reads": 0
+  },
+  "replay_wall_ms": 24500.503743998706,
+  "source_equality_assertion_unchanged": true,
+  "checkout_unchanged": true,
+  "original_receipts_and_freeze_preserved": true,
+  "documentation_only_change": true
+}

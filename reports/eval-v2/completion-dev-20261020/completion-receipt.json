@@ -1,0 +1,293 @@
+{
+  "status": "COMPLETE_ATTEMPTED_POPULATION_WITH_ORIGINAL_ERROR",
+  "source_commit": "45d01e2a3d7142f4d8a5737a53e1743a921ea294",
+  "combined_statuses": {
+    "OK": 71,
+    "ERROR": 1,
+    "NOT_RUN": 0
+  },
+  "requested_jobs": 72,
+  "independent_cases": 12,
+  "gold_claims_per_method_track": 126,
+  "checks_excluded_from_comparison": true,
+  "new_limit": 320,
+  "checks_charged": 2,
+  "initial_matrix_charged": 18,
+  "continuation_charged": 42,
+  "slice_cumulative_charged": 62,
+  "remaining_allowance": 258,
+  "known_usage_including_checks": {
+    "input_tokens": 178434,
+    "output_tokens": 50165,
+    "cached_input_tokens": 0
+  },
+  "total_usage": null,
+  "usage_complete": false,
+  "requests_with_unknown_usage": 1,
+  "failed_attempt_usage_unavailable": true,
+  "dollar_total_usd": null,
+  "failed_p07_minimal_end_to_end_retried": false,
+  "original_error_retained": true,
+  "continuation_groups": [
+    {
+      "name": "recovery-01-minimal-oracle",
+      "cli_exit_code": 0,
+      "wrapper_timeout": false,
+      "finished_at": "2026-10-20T22:26:09.423799+00:00",
+      "cli_wall_ms": 145911.75909200683,
+      "charged_attempts": 8,
+      "continuation_charged": 8,
+      "slice_cumulative_charged": 28,
+      "shared_remaining": 292,
+      "statuses": {
+        "OK": 8
+      },
+      "status": "COMPLETE",
+      "actual_model_errors": [],
+      "known_usage": {
+        "input_tokens": 26491,
+        "output_tokens": 6165,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": true,
+      "retries": 0,
+      "repairs": 0
+    },
+    {
+      "name": "recovery-02-minimal-e2e",
+      "cli_exit_code": 0,
+      "wrapper_timeout": false,
+      "finished_at": "2026-10-20T22:29:04.036573+00:00",
+      "cli_wall_ms": 174533.77311164513,
+      "charged_attempts": 8,
+      "continuation_charged": 16,
+      "slice_cumulative_charged": 36,
+      "shared_remaining": 284,
+      "statuses": {
+        "OK": 8
+      },
+      "status": "COMPLETE",
+      "actual_model_errors": [],
+      "known_usage": {
+        "input_tokens": 26385,
+        "output_tokens": 7861,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": true,
+      "retries": 0,
+      "repairs": 0
+    },
+    {
+      "name": "recovery-03-optimized-oracle",
+      "cli_exit_code": 0,
+      "wrapper_timeout": false,
+      "finished_at": "2026-10-20T22:31:20.108101+00:00",
+      "cli_wall_ms": 136023.4139165841,
+      "charged_attempts": 6,
+      "continuation_charged": 22,
+      "slice_cumulative_charged": 42,
+      "shared_remaining": 278,
+      "statuses": {
+        "OK": 6
+      },
+      "status": "COMPLETE",
+      "actual_model_errors": [],
+      "known_usage": {
+        "input_tokens": 20657,
+        "output_tokens": 5933,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": true,
+      "retries": 0,
+      "repairs": 0
+    },
+    {
+      "name": "recovery-04-optimized-e2e",
+      "cli_exit_code": 0,
+      "wrapper_timeout": false,
+      "finished_at": "2026-10-20T22:37:05.485481+00:00",
+      "cli_wall_ms": 345319.54913400114,
+      "charged_attempts": 20,
+      "continuation_charged": 42,
+      "slice_cumulative_charged": 62,
+      "shared_remaining": 258,
+      "statuses": {
+        "OK": 10
+      },
+      "status": "COMPLETE",
+      "actual_model_errors": [],
+      "known_usage": {
+        "input_tokens": 42440,
+        "output_tokens": 14050,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": true,
+      "retries": 0,
+      "repairs": 0
+    }
+  ],
+  "replays": [
+    {
+      "run": "recovery-01-minimal-oracle",
+      "exit_code": 0,
+      "wall_ms": 1305.6810330599546,
+      "run_files_byte_identical": 23,
+      "inference_calls": 0,
+      "network_settings_credentials_guarded": true,
+      "artifact_hashes": {
+        "cases.jsonl": "c139c17ea81e4b1147747828772df79db0aaff51bcce61930e079ee0952d89c2",
+        "cases.manifest.json": "127e2abf2cdbbd1904f81777c503737ae2981d5fac31047ba6c27c255d619c75",
+        "completion.json": "2912e429d076d178c35eb7045979603011c1011cf8aa7a4f17ee636e11b5d4a4",
+        "config.json": "94ee86e75faaa6933d4fb64dd08337ad49c36dfaa87801cc19379fda2544cd25",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "records.jsonl": "be1b4fae8fd501b901ec34671f95694101249b59af5e88dced0accc455dd5769",
+        "summary.json": "e817feb08422626e9efa92a2f03b96e856e9f11273700084a61fc777bb131524"
+      }
+    },
+    {
+      "run": "recovery-02-minimal-e2e",
+      "exit_code": 0,
+      "wall_ms": 1124.6466618031263,
+      "run_files_byte_identical": 23,
+      "inference_calls": 0,
+      "network_settings_credentials_guarded": true,
+      "artifact_hashes": {
+        "cases.jsonl": "32483c60c5c850ef7d705d9247f26fd36a79fb41902fb5d83b89712e5ba8de69",
+        "cases.manifest.json": "50bdde43e8124ea7361e0ba108c2c43f9d24fe02a378c1fb5f128af10a891c16",
+        "completion.json": "83b74bc309ccf2d81b1a40bf7a69693f14679a7d82f84432e36ce6995e0bde05",
+        "config.json": "3c7ab8fe23cdeceb7dd8cac567d39e9c0bf98bd2f2ef842e10172a39cbe7e114",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "records.jsonl": "d0793c194e874df62d0bd377c15c48cabed1dfafe7323af13a6116a175744663",
+        "summary.json": "d71380e1e0b505b423461f7e736b8d75cb4ae973e96789cf2c7f7493f930521f"
+      }
+    },
+    {
+      "run": "recovery-03-optimized-oracle",
+      "exit_code": 0,
+      "wall_ms": 969.0370969474316,
+      "run_files_byte_identical": 23,
+      "inference_calls": 0,
+      "network_settings_credentials_guarded": true,
+      "artifact_hashes": {
+        "cases.jsonl": "aa894e9d19d55f239e1bd9c41b4fb52f5088f513c034256a988d946a19396d34",
+        "cases.manifest.json": "7866b1f421ab2d81f2e9e2153509a53a9e8aa92d63bfd16335a5b58e35317a36",
+        "completion.json": "7d549d881410f7e5c0075048f465d8e8dbdf8eee35d56204a6d1fae8e11fbac1",
+        "config.json": "7f4f897875dce18d73de4b0b0f3e26bb89e25fd0ec90c2846a8dbe5777268247",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "records.jsonl": "ce34740978703955a9cc5e85a8d20b8f957b8826b2297671da397737a50aa666",
+        "summary.json": "393c0392eea13656ba5f812676c6abadaf0c8f75d89a1f2a043740d54c0fd6ea"
+      }
+    },
+    {
+      "run": "recovery-04-optimized-e2e",
+      "exit_code": 0,
+      "wall_ms": 1282.3848892003298,
+      "run_files_byte_identical": 23,
+      "inference_calls": 0,
+      "network_settings_credentials_guarded": true,
+      "artifact_hashes": {
+        "cases.jsonl": "d083d4517a2e335ae7628e06532071dda7b9042cb713aadc746b685c93d1438f",
+        "cases.manifest.json": "fb17fa1dd7e9e3fa8cb830a5affbc5b170032db6aea4ab7a392de843406143b3",
+        "completion.json": "0ddd6e6e2612efbc106200131d40b3438d482b28fd4367beea26c002b015e4a8",
+        "config.json": "9fb49c3717f3b99937e59b4d6e86203ee7d69db725415e648f1a7d831bba7bac",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "records.jsonl": "e916a3cbb3c3d17c27f3a8d1a2302369d58d15b7f8935d897060a69133ee5406",
+        "summary.json": "31e7759391df1fc4cee64385808304082fd6ce3f70660028879b85b7f0fdf4d0"
+      }
+    }
+  ],
+  "combined_replay": {
+    "exit_code": 0,
+    "wall_ms": 24629.87576192245,
+    "inference_calls": 0,
+    "network_calls": 0,
+    "credential_reads": 0,
+    "byte_identical_analysis_files": 3,
+    "hashes": {
+      "records.jsonl": "e211f96ceae54c9e32c4a37fd7ee12bfde29c39860f6dea7dda441a6008ccf1e",
+      "source-row-map.json": "c4743df4827adf6225a4f8fe31fa2c67474129bb5b87ba02a3c528dc80095391",
+      "summary.json": "72ae58b49bf7be57905f7c67877c78f13da9ab4e58f1d9f11e19b6b8c642b95f"
+    }
+  },
+  "old_protected_files_unchanged": 442,
+  "initial_run_files_unchanged": 69,
+  "cli_wall_ms_total": 1226856.2453393824,
+  "campaign_through_final_replay_ms": 2160930.389,
+  "campaign_includes_diagnosis_preparation_and_offline_replay_pauses": true,
+  "finalized_at": "2026-10-20T22:38:15.125984+00:00",
+  "source_files_unchanged": 28,
+  "original_job_mapping": "combined-analysis/source-row-map.json",
+  "not_a_successful_single_run": true,
+  "independent_parent_review": "pending",
+  "portable_replay_command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "reports/eval-v2/completion-dev-20261020/replay-combined.py"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "reason": "Independent affected-review residual scope/condition wording and one TaskGroup subject binding; no input or verdict edits.",
+  "source_original_sha256": "2e7f5da19a6a7b70a0da8c1031ac4782d615f62c306caba76e2537f03708c2f0",
+  "gold_change_details": "See cohort author-to-accepted diff for final field changes; intermediate accepted stages remain in the original affected-review copies."
+}

@@ -1,0 +1,30 @@
+{
+  "status": "FORMAT_ONLY_AMENDMENT_REPLAY_PASSED",
+  "authorized_by": "Parent narrow lint review after the original delivery",
+  "script": "reports/eval-v2/completion-dev-20261020/replay-combined.py",
+  "old_script_sha256": "774198166fd27a2cd7cb7a5b5293014c83e72435b53095c82733bedf362973a7",
+  "new_script_sha256": "8e9f08981b338cc3dd132c0bd49a697f0e22f1a03502d463fd6150bf4b528fb6",
+  "changes": [
+    "Four precise inline noqa: E402 annotations, with the guard-order explanation",
+    "Split the two append statements onto separate lines"
+  ],
+  "ast_identical_without_positions": true,
+  "offline_guard_order_retained": true,
+  "ruff_check": "passed",
+  "replay_exit_code": 0,
+  "replay_result": {
+    "status": "BYTE_IDENTICAL_COMBINED_ANALYSIS",
+    "mapped_jobs": 72,
+    "network_calls": 0,
+    "inference_calls": 0,
+    "credential_reads": 0
+  },
+  "unchanged_original_frozen_public_files": 181,
+  "changed_original_frozen_public_files": [
+    "reports/eval-v2/completion-dev-20261020/replay-combined.py"
+  ],
+  "original_public_freeze_preserved": true,
+  "original_parent_receipt_old_hash_preserved": true,
+  "raw_run_records_changed": false,
+  "scope": "Only the report consumer formatting changed after C01 postflight verified the original 182-file baseline freeze."
+}

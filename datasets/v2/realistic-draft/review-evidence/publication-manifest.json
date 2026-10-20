@@ -1,0 +1,297 @@
+{
+  "format_version": 1,
+  "title": "Original independent AI blind judgments and documented affected acceptance for the 60 new licensed-document cases",
+  "main_dataset": "../main-candidate.jsonl",
+  "main_dataset_sha256": "d2c809677180d5400dcb23a0d7d322198b2cea057e42427410e5a77fd779aee5",
+  "main_manifest_sha256": "9a67ff72f54fcb1cb6aaaf0744bcd36dce7a0357ad52b9ddfb8ce492db5f35d8",
+  "main_metadata_sha256": "af1761736c8643ba63e2817a3f96e08a205a3ed108d5677d14a5ff84948a2933",
+  "cases": 60,
+  "independent_judgements": 665,
+  "accepted_gold_claims": 542,
+  "human_review": false,
+  "new_review_performed": false,
+  "core_documentation_only": true,
+  "identity_and_projection_rule": "*.original files retain exact original bytes and therefore equal original/public hashes. *.projected files retain or omit exactly their stated fields; if nothing is removed and serialization is unchanged, their hashes can also match. Use each entry byte_identical flag and both hashes. Never present a changed projection hash as an original lock/file hash.",
+  "entries": [
+    {
+      "original_record": "dev-blind-annotations.jsonl",
+      "original_sha256": "eb4df28bb5e0debf4cdbb341a881a433bcf852aeba7e10c339f16ade94f349f5",
+      "published_file": "dev-independent-blind.original.jsonl",
+      "published_sha256": "eb4df28bb5e0debf4cdbb341a881a433bcf852aeba7e10c339f16ade94f349f5",
+      "rule": "Identity copy of the real documentation-only original blind judgment file. All original fields and bytes retained; original/public hashes intentionally equal.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "dev-blind-lock.json",
+      "original_sha256": "6261c4c9b38d372130c302f8619f0edaa2097d85f67f119cf6074a8f70ae446e",
+      "published_file": "dev-blind-lock.projected.json",
+      "published_sha256": "0cdb4179825047e3764ee8d7d21673cf3c6468ff396c219cb8fca594a37b2382",
+      "rule": "Remove only listed path/sharing-routing fields, retain historical lock time, model identity, pre-exposure declarations, counts and original artifact hashes. Public serialization is separately hashed; if no field is removed and serialization matches, it can be byte-identical.",
+      "removed_fields": [
+        "blind_input_path"
+      ],
+      "byte_identical": false
+    },
+    {
+      "original_record": "test-first24-blind-annotations.jsonl",
+      "original_sha256": "7d4dd35d732dad4b1a37bf8d4c5abb11e69399740315b99e4ea6a5977ab4a8fb",
+      "published_file": "test-first24-independent-blind.original.jsonl",
+      "published_sha256": "7d4dd35d732dad4b1a37bf8d4c5abb11e69399740315b99e4ea6a5977ab4a8fb",
+      "rule": "Identity copy of the real documentation-only original blind judgment file. All original fields and bytes retained; original/public hashes intentionally equal.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "test-first24-blind-lock.json",
+      "original_sha256": "f8100fffb06879eff346d68444ef8aa54f3e75b985b545bf08a1375c6ed2e1da",
+      "published_file": "test-first24-blind-lock.projected.json",
+      "published_sha256": "c1737d8597160516098258795b3f9f79b7cff24e7d29f34a8feedf2ca1fb7198",
+      "rule": "Remove only listed path/sharing-routing fields, retain historical lock time, model identity, pre-exposure declarations, counts and original artifact hashes. Public serialization is separately hashed; if no field is removed and serialization matches, it can be byte-identical.",
+      "removed_fields": [
+        "sharing_boundary"
+      ],
+      "byte_identical": false
+    },
+    {
+      "original_record": "blind-annotations.jsonl",
+      "original_sha256": "674edbc455b9a4b174f9e396c7f24e797f64606c8a955cf54a7cba944208d472",
+      "published_file": "test-second24-independent-blind.original.jsonl",
+      "published_sha256": "674edbc455b9a4b174f9e396c7f24e797f64606c8a955cf54a7cba944208d472",
+      "rule": "Identity copy of the real documentation-only original blind judgment file. All original fields and bytes retained; original/public hashes intentionally equal.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "blind-lock.json",
+      "original_sha256": "d20e7cdd4e9752b8311ba696be7a5c1da396d543ffa741c7e5b06751c8f50fc3",
+      "published_file": "test-second24-blind-lock.projected.json",
+      "published_sha256": "d20e7cdd4e9752b8311ba696be7a5c1da396d543ffa741c7e5b06751c8f50fc3",
+      "rule": "Remove only listed path/sharing-routing fields, retain historical lock time, model identity, pre-exposure declarations, counts and original artifact hashes. Public serialization is separately hashed; if no field is removed and serialization matches, it can be byte-identical.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "dev-revised-1-followup.json",
+      "original_sha256": "caff32e566bcf13dfdacc969c9b9580061b11fb57a8c85092a531bf7c1f4d424",
+      "published_file": "dev-revised-1-affected-acceptance.original.json",
+      "published_sha256": "caff32e566bcf13dfdacc969c9b9580061b11fb57a8c85092a531bf7c1f4d424",
+      "rule": "Identity copy of the real documentation-only comparison/affected-review record after checking no private workspace path or external-corpus material. Historical first-revision residuals are preserved; later acceptance resolves them.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "dev-revised-2-DR01-followup.json",
+      "original_sha256": "82b6342be7b0999abdf28f9cee3c109c05451136e9fb1fa1c56c256ff3bcb1ca",
+      "published_file": "dev-DR01-acceptance.original.json",
+      "published_sha256": "82b6342be7b0999abdf28f9cee3c109c05451136e9fb1fa1c56c256ff3bcb1ca",
+      "rule": "Identity copy of the real documentation-only comparison/affected-review record after checking no private workspace path or external-corpus material. Historical first-revision residuals are preserved; later acceptance resolves them.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "test-first24-revised-1-followup.private.json",
+      "original_sha256": "25db286d739b6b012ae6abc9678abc70576f12da143c2222a5be4d8576ad2d53",
+      "published_file": "test-first24-revised-1-affected-review.original.json",
+      "published_sha256": "25db286d739b6b012ae6abc9678abc70576f12da143c2222a5be4d8576ad2d53",
+      "rule": "Identity copy of the real documentation-only comparison/affected-review record after checking no private workspace path or external-corpus material. Historical first-revision residuals are preserved; later acceptance resolves them.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "test-first24-revised-2-followup.private.json",
+      "original_sha256": "d5f3729cc14851eb5e019b95d95926d0f8e00983ddd5854f9d834beeef5755b3",
+      "published_file": "test-first24-revised-2-acceptance.original.json",
+      "published_sha256": "d5f3729cc14851eb5e019b95d95926d0f8e00983ddd5854f9d834beeef5755b3",
+      "rule": "Identity copy of the real documentation-only comparison/affected-review record after checking no private workspace path or external-corpus material. Historical first-revision residuals are preserved; later acceptance resolves them.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "affected-review-1.json",
+      "original_sha256": "ed3c4375c624f84483680b79daae09d6205691eab36a352786aaf61ea4d33f8d",
+      "published_file": "test-second24-affected-acceptance.original.json",
+      "published_sha256": "ed3c4375c624f84483680b79daae09d6205691eab36a352786aaf61ea4d33f8d",
+      "rule": "Identity copy of the real documentation-only comparison/affected-review record after checking no private workspace path or external-corpus material. Historical first-revision residuals are preserved; later acceptance resolves them.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "dev-gold-comparison.jsonl",
+      "original_sha256": "6ea13b313c41ca0b2ac56d8db0ea2ac127e6359dccf39882d76088f4d37dd496",
+      "published_file": "dev-original-gold-comparison.original.jsonl",
+      "published_sha256": "6ea13b313c41ca0b2ac56d8db0ea2ac127e6359dccf39882d76088f4d37dd496",
+      "rule": "Identity copy of the real documentation-only comparison/affected-review record after checking no private workspace path or external-corpus material. Historical first-revision residuals are preserved; later acceptance resolves them.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "test-first24-gold-comparison.jsonl",
+      "original_sha256": "6413c13798dfe8b24ea67eec440e0e0a25ddafbb5e21e2d2577c21f3cfc5400f",
+      "published_file": "test-first24-original-gold-comparison.original.jsonl",
+      "published_sha256": "6413c13798dfe8b24ea67eec440e0e0a25ddafbb5e21e2d2577c21f3cfc5400f",
+      "rule": "Identity copy of the real documentation-only comparison/affected-review record after checking no private workspace path or external-corpus material. Historical first-revision residuals are preserved; later acceptance resolves them.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "affected-comparison-1.jsonl",
+      "original_sha256": "bc1f524598b492fd6e81820661e1328e0354ab7daf0822618ca6343d6b3be2c6",
+      "published_file": "test-second24-affected-comparison.original.jsonl",
+      "published_sha256": "bc1f524598b492fd6e81820661e1328e0354ab7daf0822618ca6343d6b3be2c6",
+      "rule": "Identity copy of the real documentation-only comparison/affected-review record after checking no private workspace path or external-corpus material. Historical first-revision residuals are preserved; later acceptance resolves them.",
+      "removed_fields": [],
+      "byte_identical": true
+    },
+    {
+      "original_record": "dev-adjudication-1.json",
+      "original_sha256": "6963c7d43fbfe71f6436fabfe942fc4d0304e012eb2e1e1a3b0c9b8bab4591a4",
+      "published_file": "dev-adjudication-1.decisions.projected.json",
+      "published_sha256": "50c18177b57872b1d0615a41c91bade60862230268cec1a74b5e3fe444a97689",
+      "rule": "Retain only original issue decisions/atomicity or bounded-follow-up reason; omit private routing, snapshot paths and repeated gold payloads. Original hash retained separately.",
+      "removed_fields": [
+        "status",
+        "original_dataset_sha256",
+        "revised_dataset_sha256",
+        "blind_input_byte_identical",
+        "blind_sha256",
+        "unchanged_case_fields",
+        "unchanged_claim_ids",
+        "unchanged_claims_exact_structural_equality",
+        "original_claim_count",
+        "revised_claim_count",
+        "changed_or_added_claim_count",
+        "label_direction_changes",
+        "changes",
+        "strict_load_exit_code",
+        "statistics"
+      ],
+      "byte_identical": false
+    },
+    {
+      "original_record": "dev-adjudication-2-DR01.json",
+      "original_sha256": "7294ee32f139f3fa905dd596fc9287b06ef7d74284a95f251f901f39eaf3009c",
+      "published_file": "dev-adjudication-2-DR01.decisions.projected.json",
+      "published_sha256": "a87602d0bf26768df42cc4b4df0b4b50c688fb9cd8bbbf24412f8e75b64bc61e",
+      "rule": "Retain only original issue decisions/atomicity or bounded-follow-up reason; omit private routing, snapshot paths and repeated gold payloads. Original hash retained separately.",
+      "removed_fields": [
+        "before_dataset_sha256",
+        "after_dataset_sha256",
+        "blind_byte_identical",
+        "changed_claim_ids",
+        "unchanged_claim_count",
+        "before",
+        "after",
+        "strict_load_exit_code",
+        "statistics",
+        "status"
+      ],
+      "byte_identical": false
+    },
+    {
+      "original_record": "test-first24-adjudication-1.private.json",
+      "original_sha256": "15f10090f8af225d1d6856e9e1f6f7dbdd58fde44d27d682aa85e5dd01219b01",
+      "published_file": "test-first24-adjudication-1.decisions.projected.json",
+      "published_sha256": "e0d2da80ad01238f02099dbd09b1c5ec086bea86b4ae3646ca1a72ce6e35fe9e",
+      "rule": "Retain only original issue decisions/atomicity or bounded-follow-up reason; omit private routing, snapshot paths and repeated gold payloads. Original hash retained separately.",
+      "removed_fields": [
+        "original_dataset_sha256",
+        "revised_dataset_sha256",
+        "all_contexts_unchanged",
+        "all_natural_answers_byte_identical",
+        "controlled_punctuation_repaired_case_ids",
+        "original_claim_count",
+        "revised_claim_count",
+        "unchanged_claim_ids",
+        "unchanged_claims_exact_structural_equality",
+        "changes",
+        "category_changes",
+        "verdict_direction_changes",
+        "statistics",
+        "strict_load_exit_code",
+        "status",
+        "original_packet_and_review_preserved"
+      ],
+      "byte_identical": false
+    },
+    {
+      "original_record": "test-first24-adjudication-2.private.json",
+      "original_sha256": "2e7f5da19a6a7b70a0da8c1031ac4782d615f62c306caba76e2537f03708c2f0",
+      "published_file": "test-first24-adjudication-2.decisions.projected.json",
+      "published_sha256": "07915383181907c12bb9c314776b2e71382e8086d4d36d70117fce9ede09b725",
+      "rule": "Retain only original issue decisions/atomicity or bounded-follow-up reason; omit private routing, snapshot paths and repeated gold payloads. Original hash retained separately.",
+      "removed_fields": [
+        "from_dataset_sha256",
+        "to_dataset_sha256",
+        "blind_byte_identical",
+        "all_non_gold_fields_exactly_equal",
+        "changed_claim_count",
+        "unchanged_claim_count",
+        "unchanged_claim_ids",
+        "label_direction_changes",
+        "changes",
+        "strict_load_exit_code",
+        "statistics",
+        "independent_followup_status"
+      ],
+      "byte_identical": false
+    },
+    {
+      "original_record": "test-second24-adjudication-1.private.json",
+      "original_sha256": "82c4afea530b56cd880ae7d96df60b3b7d9d7d6c065ab8c0500147b60e0ca9c0",
+      "published_file": "test-second24-adjudication-1.decisions.projected.json",
+      "published_sha256": "f0a32008533a021a892f1f391edc40b8cd2caf99b4fa8b676d78d1c7e8d0d0f7",
+      "rule": "Retain only original issue decisions/atomicity or bounded-follow-up reason; omit private routing, snapshot paths and repeated gold payloads. Original hash retained separately.",
+      "removed_fields": [
+        "original_dataset_sha256",
+        "revised_dataset_sha256",
+        "blind_input_byte_identical",
+        "original_claim_count",
+        "revised_claim_count",
+        "unchanged_claim_ids",
+        "unchanged_claims_exact_structural_equality",
+        "changes",
+        "category_changes",
+        "verdict_direction_changes",
+        "statistics",
+        "strict_load_exit_code",
+        "status",
+        "original_blind_review_and_packet_preserved"
+      ],
+      "byte_identical": false
+    }
+  ],
+  "final_difference_maps": [
+    {
+      "cohort": "dev",
+      "file": "dev-author-to-accepted.diff.json",
+      "sha256": "fd35175278705c01274193fc3693d5ebff85d066bc9cb1307cea6002e8ca94df",
+      "changed_gold_ids": 76,
+      "unchanged_gold_ids": 56
+    },
+    {
+      "cohort": "test-first24",
+      "file": "test-first24-author-to-accepted.diff.json",
+      "sha256": "40713f0ca6b8edd97b8dcc8cf224e8f7b27229d9215886c24b50707d0895bfe3",
+      "changed_gold_ids": 79,
+      "unchanged_gold_ids": 131
+    },
+    {
+      "cohort": "test-second24",
+      "file": "test-second24-author-to-accepted.diff.json",
+      "sha256": "f47d592a6c0524632cead8ac160ff55ef3f928176e6ffa2213baa8fd9cf532b8",
+      "changed_gold_ids": 92,
+      "unchanged_gold_ids": 108
+    }
+  ],
+  "input_reconstruction": {
+    "file": "input-reconstruction.json",
+    "sha256": "29ed24f7fe6089c65a0489f1f3cf4b61b546445e1d2d9680bc9895160f222225"
+  },
+  "documentation": {
+    "file": "README.md",
+    "sha256": "f27475f6f96d26f9eef285afea232091ea2254602abec6dcfdb13c253dfe046f"
+  },
+  "inherited_pilot_review": "The 12 original pilot cases use the existing public reports/eval-v2/annotation-review evidence; this publication archive covers only the new60.",
+  "no_main_candidate_or_metadata_modified": true
+}

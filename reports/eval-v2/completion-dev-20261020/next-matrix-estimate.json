@@ -1,0 +1,43 @@
+{
+  "kind": "conditional_workload_estimate_not_a_guarantee",
+  "basis": {
+    "successful_minimal_e2e_cases": 11,
+    "same_12_case_dev_population": true,
+    "provider_timeout": 120,
+    "operation_timeout": 240,
+    "mean_known_usage_per_success": {
+      "input_tokens": 3285.4545454545455,
+      "output_tokens": 979.1818181818181
+    },
+    "mean_operation_ms_per_success": 22001.360800117254
+  },
+  "next_C01_experiment": {
+    "blocks": [
+      "candidate1",
+      "control2",
+      "candidate2"
+    ],
+    "cases_per_block": 12,
+    "expected_calls_before_repairs": 36,
+    "separate_frozen_hard_ceiling": 216,
+    "estimated_input_tokens": 118276.36363636363,
+    "estimated_output_tokens": 35250.545454545456,
+    "estimated_operation_ms_excluding_startup_auth_scoring_cleanup": 792048.9888042212,
+    "original_p07_error_remains_in_control1": true,
+    "adoption": "not measured"
+  },
+  "future_three_method_both_track_matrix": {
+    "expected_calls_per_case_before_repairs": 5,
+    "example_test_cases": 48,
+    "example_full_matrix_calls": 240,
+    "example_extra_two_repeats_of_16_case_subset_calls": 160,
+    "example_total_calls": 400,
+    "final_population_and_budget_not_frozen_here": true
+  },
+  "limits": [
+    "Only 12 development source families; no new heldout content used.",
+    "The failed operation has unknown model/usage and is excluded from successful-token means only, never the primary denominator.",
+    "Different final context lengths, provider drift, repairs and failures can invalidate these resource extrapolations.",
+    "Codex subscription dollar cost is unknown."
+  ]
+}

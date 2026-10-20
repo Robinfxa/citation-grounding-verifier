@@ -1,0 +1,295 @@
+{
+  "decisions": [
+    {
+      "issue_id": "D01",
+      "case_id": "v2-dev-r01",
+      "decision": "accepted",
+      "category": "omitted_answer_fact"
+    },
+    {
+      "issue_id": "D02",
+      "case_id": "v2-dev-r02",
+      "decision": "accepted",
+      "category": "omitted_answer_fact"
+    },
+    {
+      "issue_id": "D03",
+      "case_id": "v2-dev-r10",
+      "decision": "accepted",
+      "category": "omitted_answer_fact"
+    },
+    {
+      "issue_id": "D04",
+      "case_id": "v2-dev-r11",
+      "decision": "accepted",
+      "category": "omitted_answer_fact"
+    },
+    {
+      "issue_id": "D05",
+      "case_id": "v2-dev-r06",
+      "decision": "accepted",
+      "category": "wrong_API_evidence"
+    },
+    {
+      "issue_id": "D06",
+      "case_id": "v2-dev-r11",
+      "decision": "accepted",
+      "category": "scope_loss"
+    },
+    {
+      "issue_id": "D07",
+      "case_id": "v2-dev-r07",
+      "decision": "accepted",
+      "category": "scope_detail_loss"
+    },
+    {
+      "issue_id": "D08",
+      "case_id": "v2-dev-r08",
+      "decision": "accepted",
+      "category": "scope_detail_loss"
+    },
+    {
+      "issue_id": "D09",
+      "case_id": "v2-dev-r10",
+      "decision": "accepted",
+      "category": "scope_detail_loss"
+    },
+    {
+      "issue_id": "D10",
+      "case_id": "v2-dev-r07",
+      "decision": "accepted",
+      "category": "incomplete_evidence"
+    },
+    {
+      "issue_id": "D11",
+      "case_id": "v2-dev-r07",
+      "decision": "accepted",
+      "category": "incomplete_evidence"
+    },
+    {
+      "issue_id": "D12",
+      "case_id": "v2-dev-r07",
+      "decision": "accepted",
+      "category": "incomplete_evidence"
+    },
+    {
+      "issue_id": "D13",
+      "case_id": "v2-dev-r01",
+      "decision": "accepted",
+      "category": "scope_detail_loss"
+    },
+    {
+      "issue_id": "D01",
+      "new_claim_id": "v2-dev-r01-c10",
+      "decision": "add previously omitted independent answer fact"
+    },
+    {
+      "issue_id": "D02",
+      "new_claim_id": "v2-dev-r02-c10",
+      "decision": "add previously omitted independent answer fact"
+    },
+    {
+      "issue_id": "D03",
+      "new_claim_id": "v2-dev-r10-c11",
+      "decision": "add previously omitted independent answer fact"
+    },
+    {
+      "issue_id": "D04",
+      "new_claim_id": "v2-dev-r11-c11",
+      "decision": "add previously omitted independent answer fact"
+    },
+    {
+      "original_claim_id": "v2-dev-r01-c06",
+      "result_ids": [
+        "v2-dev-r01-c06",
+        "v2-dev-r01-c11"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r01-a07",
+        "v2-dev-r01-a08"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r02-c02",
+      "result_ids": [
+        "v2-dev-r02-c02",
+        "v2-dev-r02-c11"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r02-a02",
+        "v2-dev-r02-a03"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r03-c04",
+      "result_ids": [
+        "v2-dev-r03-c04",
+        "v2-dev-r03-c10"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r03-a04",
+        "v2-dev-r03-a05"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r04-c10",
+      "result_ids": [
+        "v2-dev-r04-c10",
+        "v2-dev-r04-c11"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r04-a11",
+        "v2-dev-r04-a12"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r05-c08",
+      "result_ids": [
+        "v2-dev-r05-c08",
+        "v2-dev-r05-c11"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r05-a09",
+        "v2-dev-r05-a10"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r05-c10",
+      "result_ids": [
+        "v2-dev-r05-c10",
+        "v2-dev-r05-c12"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r05-a12",
+        "v2-dev-r05-a13"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r06-c02",
+      "result_ids": [
+        "v2-dev-r06-c02",
+        "v2-dev-r06-c11"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r06-a02",
+        "v2-dev-r06-a03"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r07-c04",
+      "result_ids": [
+        "v2-dev-r07-c04",
+        "v2-dev-r07-c09"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r07-a05",
+        "v2-dev-r07-a06"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r07-c08",
+      "result_ids": [
+        "v2-dev-r07-c08",
+        "v2-dev-r07-c10"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r07-a10",
+        "v2-dev-r07-a11"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r08-c07",
+      "result_ids": [
+        "v2-dev-r08-c07",
+        "v2-dev-r08-c09"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r08-a09",
+        "v2-dev-r08-a10"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r09-c03",
+      "result_ids": [
+        "v2-dev-r09-c03",
+        "v2-dev-r09-c10"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r09-a03",
+        "v2-dev-r09-a04"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r10-c10",
+      "result_ids": [
+        "v2-dev-r10-c10",
+        "v2-dev-r10-c12"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r10-a12",
+        "v2-dev-r10-a13"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r11-c07",
+      "result_ids": [
+        "v2-dev-r11-c07",
+        "v2-dev-r11-c12",
+        "v2-dev-r11-c13"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r11-a07",
+        "v2-dev-r11-a08",
+        "v2-dev-r11-a09"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r11-c09",
+      "result_ids": [
+        "v2-dev-r11-c09",
+        "v2-dev-r11-c14"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r11-a11",
+        "v2-dev-r11-a12"
+      ],
+      "decision": "split independent properties or mode branches"
+    },
+    {
+      "original_claim_id": "v2-dev-r12-c04",
+      "result_ids": [
+        "v2-dev-r12-c04",
+        "v2-dev-r12-c11"
+      ],
+      "review_claim_ids": [
+        "v2-dev-r12-a04",
+        "v2-dev-r12-a05"
+      ],
+      "decision": "split independent properties or mode branches"
+    }
+  ],
+  "atomicity_policy": {
+    "split": "Distinct APIs/modes/branches, distinct operation stages, independent observable outcomes or performance/lifetime properties.",
+    "retain": "One definition or rule with its causal consequence, explicit negative counterpart, or a set of eligible object types is one full proposition; retain all qualifiers.",
+    "not_counted_twice": "Do not separately add a generalization already covered by explicit type branches, or both a linear insertion step and its directly entailed non-logarithmic overall consequence.",
+    "counts_are_descriptive": "No target count is used to add, remove, or relabel claims. One dev case exceeds 12 claims after real branch splitting."
+  },
+  "context_limitations_retained": [
+    "Same-page cmp_to_key neighboring section and heapq historical Theory subsection remain in unchanged original context; no claimed required substantive chain."
+  ],
+  "source_original_sha256": "6963c7d43fbfe71f6436fabfe942fc4d0304e012eb2e1e1a3b0c9b8bab4591a4",
+  "gold_change_details": "See cohort author-to-accepted diff for final field changes; intermediate accepted stages remain in the original affected-review copies."
+}

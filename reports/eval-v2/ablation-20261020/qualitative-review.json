@@ -1,0 +1,107 @@
+{
+  "status": "AUTHOR_REVIEW_COMPLETE_PARENT_ADOPTION_PENDING",
+  "review_scope": {
+    "paired_case_observations": 24,
+    "changed_aligned_gold_outcomes": 126,
+    "unique_prediction_variants_reviewed": 206,
+    "includes_control_and_candidate_unmatched_predictions": true,
+    "method": "Read every differing claim/verdict/citation projection across four observations, deduplicated within each case; then inspect strict-match losses and entity/condition links. This is author qualitative review, not the later blinded semantic audit."
+  },
+  "notes": [
+    {
+      "case_id": "v2-dev-p01",
+      "review": "候选两次均补上两层None、data继承tar_filter、FilterError/errorlevel及filter=data的语境；标签未改变。较长完整段落也增加gold-span覆盖，不能把全部代理增益视为新增语义正确。"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "review": "原control1的prediction1/2/5/6分别缺False或LEGACY外层条件。candidate1/2四项均返回这些条件与API关系。control2的prediction5已通过两段quote具备LEGACY条件，剩余1/2/6仍缺外层条件；不把该已有正确项重复称为新修复。"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "review": "候选为Path.absolute/lstat/stat/is_file/exists及resolve补API标识或例子。candidate2 prediction3/4加入Path限定名而未命中严格alias；缺失的gold c04/c05仍分别以SUPPORTED/CONTRADICTED返回，含版本/strict条件及充分引文，未发现语义漏判。"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "review": "候选引文补localcontext、BasicContext、ExtendedContext、Context和create_decimal的声明。candidate2 prediction0把进入复制与退出恢复合成一条，是实际拆分粒度回归；两事实及支持仍存在。其余舍入文字和弯引号变化属于表面匹配差异。"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "review": "候选为Queue.join/task_done/shutdown/put与SimpleQueue补API及控制条件，immediate=True关系保留。多个预测重复返回同一完整段落，说明引用未必最短，需计资源代价。"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "review": "候选补EntryPoint.load、metadata及files/PackagePath的引用语境。candidate1/2均把size/hash两事实合并；control1分开、control2也合并，不能据此作稳定的单因素退化判断。标签、关系未见新冲突；部分原短引文已经充分。"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "review": "原control1为ERROR，candidate1成功不得计为prompt可用性修复。相对control2，候选补pub(in path)及父模块限制关系。candidate2 prediction9仍仅以This syntax开头，未带restricted pub先行词；candidate1有标题quote。该充分性缺口仍未完全解决。"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "review": "候选补析构列表的type T先行语境；第二次or-pattern quote仍明确第一子模式决定顺序，即使第二子模式匹配。没有发现新增错判或范围变化。"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "review": "候选补test属性与Termination的关系，并用attributes.testing.should_panic规则标识补should_panic返回值/expected语境。free-function/monomorphic/no-args合并事实是两条件中既有现象，未在本轮改gold或补alias。"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "review": "候选补PostgreSQL、Read Committed与Read Uncommitted桥接、Repeatable Read标题/先行词。两次仍保留SELECT跨语句条件、自己未提交写入及整事务重试关系；重试文字改写未见新语义冲突。"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "review": "候选补文本dump恢复、pg_dump/pg_dumpall的实体语境。原parallel dump短引文已直接表达directory-only关系，候选较长引文的gold-span提升不等于原答案语义错误。"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "review": "候选补SELECT标题，消除This privilege的指代缺口。两次prediction6的the Access privileges column相对gold造成严格漏匹配，但普通权限、owner及保留grant options语义和引文都在；不是实际漏掉(none)事实。"
+    }
+  ],
+  "known_condition_gap_result": {
+    "original_control1_defects": 4,
+    "candidate1_corrected": 4,
+    "candidate2_corrected": 4,
+    "control2_had_legacy_non_none_already_correct": true,
+    "all_citations_semantically_sufficient_claimed": false
+  },
+  "regression_judgment": "未发现本次变化中新增明确的标签语义错判。发现localcontext两事实合并；size/hash合并也存在于control2。API限定名和Access privileges column造成严格匹配回退。该判断不覆盖未观察模型随机性或最终test。",
+  "resource_tradeoff": {
+    "complete_second_observation_only": true,
+    "input_tokens": {
+      "control": 39004,
+      "candidate": 39436,
+      "relative_change": 0.011075787098759005
+    },
+    "output_tokens": {
+      "control": 11772,
+      "candidate": 14435,
+      "relative_change": 0.22621474685694865
+    },
+    "operation_elapsed_sum_ms": {
+      "control": 258651.18236280978,
+      "candidate": 318429.85249636695,
+      "relative_change": 0.23111694130864513
+    },
+    "operation_elapsed_median_ms": {
+      "control": 20958.656687522307,
+      "candidate": 27838.08369957842,
+      "relative_change": 0.3282379741518342
+    },
+    "citation_characters": {
+      "control": 14789,
+      "candidate": 26532,
+      "relative_change": 0.7940361079180471
+    }
+  },
+  "recommendation": "ADOPT_C01_FOR_FINAL_EVALUATION_WITH_RECORDED_COST_AND_RESIDUAL_LIMITS",
+  "recommendation_reason": "两个候选观察都修复了已知引用条件缺口，证据代理增益方向一致；没有发现实质性标签退化，局部拆分回归和资源增加需保留。该开发证据不建立统计显著的语义提升。",
+  "parent_adoption_decision": "PENDING",
+  "product_prompt_changed": false,
+  "changed_outcomes_sha256": "2e129c602213fbcd039fad164729d14b48c7dbfef7fe293cb8932e397162477c",
+  "review_packet_hashes": [
+    "00d53401fbc941f4c7715da04e820003bc467ce6c540122019de144e29f98e1c",
+    "00f8f3874678d6e0e1d4eedc63680c898bf0a50789f6048c6751e7026133b4ed",
+    "d2576c8531aad061fa45c756f8737d3a5b706f1d882d74c7ab5a490a8d2385f0",
+    "ec3f9ead6280cfa51823253acf8a93e211441bd681989aff42d0cbfec06a22a6"
+  ]
+}

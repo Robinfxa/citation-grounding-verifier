@@ -1,0 +1,35 @@
+{
+  "decision": "ADOPT_C01",
+  "decided_at": "2026-10-20T23:12:17.492442+00:00",
+  "scope": "Only the prespecified sentence in MINIMAL end-to-end; no other prompt, data, alias, scorer or setting changes",
+  "candidate_code_sha256": "cd15430a02b364c2f6ddef034e6ef046b335dd99b3678d3dada5186e31dd89a6",
+  "reason": "Both candidate observations improve the targeted governing-condition citations. The parent verified p02 candidate2 predictions 1/2/5/6 against their actual returned text. Large gold-span coverage gains support adoption with a measured resource cost; label/extraction improvement is not statistically established.",
+  "independent_checks": [
+    "48-row paired analysis and 72-row baseline replay identical, without network/provider/credential use",
+    "Exact single prompt-sentence delta verified before inference",
+    "Directly inspected four p02 condition citations, p04 merged-fact regression and p07 unresolved antecedent"
+  ],
+  "known_tradeoffs": {
+    "second_observation_output_token_increase": 0.22621474685694865,
+    "second_observation_elapsed_sum_increase": 0.23111694130864513,
+    "second_observation_citation_characters_increase": 0.7940361079180471,
+    "residuals": [
+      "p04 localcontext entering/exiting facts merge in candidate2",
+      "p07 candidate2 quote still lacks restricted-pub antecedent",
+      "Strict surface matching and gold-span coverage remain proxies",
+      "Original control1 error and unknown usage remain in primary results",
+      "Small development population and fixed block order limit inference"
+    ]
+  },
+  "test_exposure": "No held-out content, individual gold or predictions read by parent prompt decision-maker",
+  "no_post_test_tuning": true,
+  "artifacts": {
+    "candidate.patch": "00c101b2946724359103a2bb58ad4f0a0a5bf9f59e80adf4804d6a5e56ce70ce",
+    "analysis.json": "8de556cc23a035f1d61d2347dbcdee1be5279e073cc61c15eacf1977e67d6665",
+    "qualitative-review.json": "bcecbcac47d39f7ad0e79ff6264e211152790760004d60f11b30fb3927daa0dc",
+    "analysis-row-map.json": "7f23560e3266ef3aaaa1aa51a0d1144c7c42d4f00d62c7d1365558acd53490db"
+  },
+  "implementation": "Hand the exact accepted patch to original Service Director; product prompt is unchanged at decision time.",
+  "parent_decision_sha256": "3714d69ddb516879dbaa0bbd84f26fd35221d78abc0ff0b457d21030b4c8a803",
+  "record_kind": "Public projection of parent decision; original author review and runs remain immutable"
+}

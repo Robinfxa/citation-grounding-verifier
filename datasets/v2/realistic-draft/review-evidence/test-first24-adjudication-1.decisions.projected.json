@@ -1,0 +1,168 @@
+{
+  "decisions": [
+    {
+      "issue_id": "TD03",
+      "decision": "split call-existence U from argument-order S; retain natural/controlled input unchanged. Strict necessary-condition reading adopted consistently with B01/B02; no when-defined condition is silently inserted into gold or answer.",
+      "case_id": "v2-test-r03",
+      "claim_id": "v2-test-r03-c01",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TD04",
+      "decision": "split call-existence U from argument-order S; retain natural/controlled input unchanged. Strict necessary-condition reading adopted consistently with B01/B02; no when-defined condition is silently inserted into gold or answer.",
+      "case_id": "v2-test-r04",
+      "claim_id": "v2-test-r04-c01",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TO-v2-test-r05-a05",
+      "decision": "add true independent answer proposition as v2-test-r05-c09",
+      "case_id": "v2-test-r05",
+      "claim_id": null,
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TO-v2-test-r06-a05",
+      "decision": "add true independent answer proposition as v2-test-r06-c09",
+      "case_id": "v2-test-r06",
+      "claim_id": null,
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TO-v2-test-r07-a01",
+      "decision": "add true independent answer proposition as v2-test-r07-c09",
+      "case_id": "v2-test-r07",
+      "claim_id": null,
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TO-v2-test-r07-a03",
+      "decision": "add true independent answer proposition as v2-test-r07-c10",
+      "case_id": "v2-test-r07",
+      "claim_id": null,
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TO-v2-test-r07-a09",
+      "decision": "add true independent answer proposition as v2-test-r07-c11",
+      "case_id": "v2-test-r07",
+      "claim_id": null,
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TO-v2-test-r14-a07",
+      "decision": "add true independent answer proposition as v2-test-r14-c09",
+      "case_id": "v2-test-r14",
+      "claim_id": null,
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TO-v2-test-r16-a09",
+      "decision": "add true independent answer proposition as v2-test-r16-c09",
+      "case_id": "v2-test-r16",
+      "claim_id": null,
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TO-v2-test-r20-a06",
+      "decision": "add true independent answer proposition as v2-test-r20-c10",
+      "case_id": "v2-test-r20",
+      "claim_id": null,
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TE01",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r08",
+      "claim_id": "v2-test-r08-c08",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TE02",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r13",
+      "claim_id": "v2-test-r13-c05",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TE21",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r21",
+      "claim_id": "v2-test-r21-c03",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TE22",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r22",
+      "claim_id": "v2-test-r22-c03",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TV9",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r09",
+      "claim_id": "v2-test-r09-c05",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TV10",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r10",
+      "claim_id": "v2-test-r10-c05",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TM10",
+      "decision": "add supported cancellation/waiting independently of contradicted ExceptionGroup placement",
+      "case_id": "v2-test-r10",
+      "claim_id": "v2-test-r10-c08",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TS19",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r19",
+      "claim_id": "v2-test-r19-c05",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TS20",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r20",
+      "claim_id": "v2-test-r20-c05",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TS16",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r08",
+      "claim_id": "v2-test-r08-c08",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TS02",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r02",
+      "claim_id": "v2-test-r02-c02",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TS09",
+      "decision": "accepted; exact sufficient evidence or claim qualifier repaired",
+      "case_id": "v2-test-r09",
+      "claim_id": "v2-test-r09-c03",
+      "status": "pending_same_reviewer_verification"
+    },
+    {
+      "issue_id": "TS23",
+      "decision": "retain assert-vs-compiler-proof as explicit contrast in the same responsibility proposition, not a duplicated consequence",
+      "case_id": "v2-test-r23",
+      "claim_id": "v2-test-r23-c03",
+      "status": "pending_same_reviewer_verification"
+    }
+  ],
+  "atomicity_policy": "Retain coherent single-rule cause/consequence, contrast or eligible-type sets when no mixed outcome is hidden. Split supported effects from unsupported/contradicted conclusions; preserve omitted independent assertions. Do not mechanically copy 275 extraction count.",
+  "source_original_sha256": "15f10090f8af225d1d6856e9e1f6f7dbdd58fde44d27d682aa85e5dd01219b01",
+  "gold_change_details": "See cohort author-to-accepted diff for final field changes; intermediate accepted stages remain in the original affected-review copies."
+}

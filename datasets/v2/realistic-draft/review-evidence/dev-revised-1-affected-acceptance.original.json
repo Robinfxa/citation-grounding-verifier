@@ -1,0 +1,488 @@
+{
+  "completed_at_utc": "2026-10-20T22:55:07.306674+00:00",
+  "status": "75_affected_claims_accepted_one_small_unchanged_claim_binding_request",
+  "reviewer_type": "same independent non-author AI; not human",
+  "reviewer_model": "gpt-6.1-sol",
+  "reasoning_effort": "max",
+  "original_blind_record_unchanged": true,
+  "original_blind_lock_sha256": "6261c4c9b38d372130c302f8619f0edaa2097d85f67f119cf6074a8f70ae446e",
+  "revised_gold_sha256": "84f23e2b8667f0a892444959a4b134bf296f2a71a1b6363c7061f6ea328b9478",
+  "revised_dataset_sha256": "077810f11e85527e70deb983be0f1dbc4e6536395700e666ac5abbb7bcd3d8e3",
+  "blind_input_byte_identical": true,
+  "all_non_gold_case_fields_exactly_equal": true,
+  "all_10_preservation_snapshot_hashes_match": true,
+  "original_claim_count": 112,
+  "revised_claim_count": 132,
+  "new_claim_count": 20,
+  "changed_or_added_count": 75,
+  "accepted_changed_or_added_ids": [
+    "v2-dev-r01-c02",
+    "v2-dev-r01-c03",
+    "v2-dev-r01-c04",
+    "v2-dev-r01-c05",
+    "v2-dev-r01-c06",
+    "v2-dev-r01-c10",
+    "v2-dev-r01-c11",
+    "v2-dev-r02-c02",
+    "v2-dev-r02-c04",
+    "v2-dev-r02-c05",
+    "v2-dev-r02-c09",
+    "v2-dev-r02-c10",
+    "v2-dev-r02-c11",
+    "v2-dev-r03-c01",
+    "v2-dev-r03-c03",
+    "v2-dev-r03-c04",
+    "v2-dev-r03-c06",
+    "v2-dev-r03-c07",
+    "v2-dev-r03-c08",
+    "v2-dev-r03-c09",
+    "v2-dev-r03-c10",
+    "v2-dev-r04-c01",
+    "v2-dev-r04-c02",
+    "v2-dev-r04-c03",
+    "v2-dev-r04-c04",
+    "v2-dev-r04-c05",
+    "v2-dev-r04-c06",
+    "v2-dev-r04-c09",
+    "v2-dev-r04-c10",
+    "v2-dev-r04-c11",
+    "v2-dev-r05-c08",
+    "v2-dev-r05-c10",
+    "v2-dev-r05-c11",
+    "v2-dev-r05-c12",
+    "v2-dev-r06-c02",
+    "v2-dev-r06-c03",
+    "v2-dev-r06-c04",
+    "v2-dev-r06-c05",
+    "v2-dev-r06-c06",
+    "v2-dev-r06-c11",
+    "v2-dev-r07-c02",
+    "v2-dev-r07-c03",
+    "v2-dev-r07-c04",
+    "v2-dev-r07-c08",
+    "v2-dev-r07-c09",
+    "v2-dev-r07-c10",
+    "v2-dev-r08-c03",
+    "v2-dev-r08-c07",
+    "v2-dev-r08-c08",
+    "v2-dev-r08-c09",
+    "v2-dev-r09-c03",
+    "v2-dev-r09-c10",
+    "v2-dev-r10-c06",
+    "v2-dev-r10-c09",
+    "v2-dev-r10-c10",
+    "v2-dev-r10-c11",
+    "v2-dev-r10-c12",
+    "v2-dev-r11-c01",
+    "v2-dev-r11-c03",
+    "v2-dev-r11-c06",
+    "v2-dev-r11-c07",
+    "v2-dev-r11-c09",
+    "v2-dev-r11-c10",
+    "v2-dev-r11-c11",
+    "v2-dev-r11-c12",
+    "v2-dev-r11-c13",
+    "v2-dev-r11-c14",
+    "v2-dev-r12-c01",
+    "v2-dev-r12-c04",
+    "v2-dev-r12-c05",
+    "v2-dev-r12-c06",
+    "v2-dev-r12-c07",
+    "v2-dev-r12-c08",
+    "v2-dev-r12-c10",
+    "v2-dev-r12-c11"
+  ],
+  "unchanged_claim_count": 57,
+  "unchanged_ids_exact_all_fields": [
+    "v2-dev-r01-c01",
+    "v2-dev-r01-c07",
+    "v2-dev-r01-c08",
+    "v2-dev-r01-c09",
+    "v2-dev-r02-c01",
+    "v2-dev-r02-c03",
+    "v2-dev-r02-c06",
+    "v2-dev-r02-c07",
+    "v2-dev-r02-c08",
+    "v2-dev-r03-c02",
+    "v2-dev-r03-c05",
+    "v2-dev-r04-c07",
+    "v2-dev-r04-c08",
+    "v2-dev-r05-c01",
+    "v2-dev-r05-c02",
+    "v2-dev-r05-c03",
+    "v2-dev-r05-c04",
+    "v2-dev-r05-c05",
+    "v2-dev-r05-c06",
+    "v2-dev-r05-c07",
+    "v2-dev-r05-c09",
+    "v2-dev-r06-c01",
+    "v2-dev-r06-c07",
+    "v2-dev-r06-c08",
+    "v2-dev-r06-c09",
+    "v2-dev-r06-c10",
+    "v2-dev-r07-c01",
+    "v2-dev-r07-c05",
+    "v2-dev-r07-c06",
+    "v2-dev-r07-c07",
+    "v2-dev-r08-c01",
+    "v2-dev-r08-c02",
+    "v2-dev-r08-c04",
+    "v2-dev-r08-c05",
+    "v2-dev-r08-c06",
+    "v2-dev-r09-c01",
+    "v2-dev-r09-c02",
+    "v2-dev-r09-c04",
+    "v2-dev-r09-c05",
+    "v2-dev-r09-c06",
+    "v2-dev-r09-c07",
+    "v2-dev-r09-c08",
+    "v2-dev-r09-c09",
+    "v2-dev-r10-c01",
+    "v2-dev-r10-c02",
+    "v2-dev-r10-c03",
+    "v2-dev-r10-c04",
+    "v2-dev-r10-c05",
+    "v2-dev-r10-c07",
+    "v2-dev-r10-c08",
+    "v2-dev-r11-c02",
+    "v2-dev-r11-c04",
+    "v2-dev-r11-c05",
+    "v2-dev-r11-c08",
+    "v2-dev-r12-c02",
+    "v2-dev-r12-c03",
+    "v2-dev-r12-c09"
+  ],
+  "new_gold_exact_quotes": 163,
+  "new_gold_exact_answer_anchors": 132,
+  "label_direction_changes": 0,
+  "accepted_primary_requests": [
+    {
+      "issue_id": "D01",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r01-c10",
+      "review": "新增array elements的正向key应用事实；c05保留不应用x。"
+    },
+    {
+      "issue_id": "D02",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r02-c10",
+      "review": "新增copy.replace相对copy/deepcopy更受限比较。"
+    },
+    {
+      "issue_id": "D03",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r10-c11",
+      "review": "新增retry-max-time到期不再发起retry；c08保留早发请求可越过时间限。"
+    },
+    {
+      "issue_id": "D04",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r11-c11",
+      "review": "新增proto-redir能限制redirect协议；c10保留不能放开proto拒绝的协议。"
+    },
+    {
+      "issue_id": "D05",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r06-c04",
+      "review": "证据已换成具名heapreplace规则，包含pop旧min及push新item，不再错用heappop。"
+    },
+    {
+      "issue_id": "D06",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r11-c06",
+      "review": "恢复POST request前提下其他3xx保留POST；不再泛化所有方法。"
+    },
+    {
+      "issue_id": "D07",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r07-c10",
+      "review": "独立module层pytestmark全局赋值及all tests范围；class c08独立。"
+    },
+    {
+      "issue_id": "D08",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r08-c03",
+      "review": "恢复KeyError/AttributeError及set/deletion missing target，限定有raising参数的helpers。"
+    },
+    {
+      "issue_id": "D09",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r10-c06",
+      "review": "恢复one second、doubles和ten minutes后保持。"
+    },
+    {
+      "issue_id": "D10",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r07-c03",
+      "review": "证据补pytest.param(...marks=pytest.mark.xfail)代码，直接绑定个别参数mark机制。"
+    },
+    {
+      "issue_id": "D11",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r07-c02",
+      "review": "证据补mutable list/dict mutation影响后续调用的必要后句；冗余no-copy短引文可后续删。"
+    },
+    {
+      "issue_id": "D12",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r07-c04",
+      "review": "引用一般all combinations+stack decorators规则；exhaustion order拆到c09并保留例子。"
+    },
+    {
+      "issue_id": "D13",
+      "result": "accepted",
+      "revised_claim_id": "v2-dev-r01-c03",
+      "review": "claim恢复already sorted list条件；具名bisect_right引用与Similar bisect_left规则对应。"
+    }
+  ],
+  "accepted_original_subject_binding_requests": [
+    {
+      "claim_id": "v2-dev-r01-c02",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r01-c03",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r01-c04",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r01-c05",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r01-c06",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r02-c04",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r02-c05",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r02-c09",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r03-c01",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r03-c03",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r03-c04",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r03-c06",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r03-c07",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r03-c08",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r03-c09",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r04-c01",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r04-c02",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r04-c03",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r04-c04",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r04-c05",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r04-c06",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r04-c09",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r05-c10",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r06-c02",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r06-c03",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r06-c05",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r06-c06",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r10-c09",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r10-c10",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r11-c01",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r11-c03",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r11-c07",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r11-c09",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r11-c10",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r12-c01",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r12-c04",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r12-c05",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r12-c06",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r12-c07",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r12-c08",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    },
+    {
+      "claim_id": "v2-dev-r12-c10",
+      "result": "accepted",
+      "review": "已逐项检查修订后的主体heading/具名正文与原请求必要条件；语义标签未变，浅层身份关联不计实质多段。"
+    }
+  ],
+  "atomicity_assessment": "4真实遗漏补全+16增量分拆与透明原子政策相符；保持单规则因果/直接后果与eligible-type集合可接受，不要求机械复制145。r11 14事实作为真实例外公开。",
+  "difficulty_assessment": {
+    "necessary_substantive_cross_passage_cases": 0,
+    "scope_resolution_cases": 12,
+    "metadata_corrected": true,
+    "explanation": "函数/mode/生命周期/条件范围边界是真实难点；get_ready等heading→body身份链不夸大为实质多段。完整逻辑章节与同页相近规则的干扰可合理保留，未用于gold不自动称padding。"
+  },
+  "residual_requests": [
+    {
+      "issue_id": "DR01",
+      "priority": "P2",
+      "claim_id": "v2-dev-r10-c05",
+      "changed_in_revision": false,
+      "finding": "该保留原样的claim组合retry、retry-all-errors、fail；第一引文只说Retry on any error. This option is used together with --retry.，没有给this option的名称。函数/选项身份约束同样适用，passage2中已有标题可用。",
+      "requested_action": "在该evidence AND-set补同passage的# `--retry-all-errors`，其余来源/答案/标签无需改变。",
+      "proposed_exact_evidence_sets": [
+        [
+          {
+            "index": 2,
+            "quote": "# `--retry-all-errors`"
+          },
+          {
+            "index": 2,
+            "quote": "Retry on any error. This option is used together with --retry."
+          },
+          {
+            "index": 2,
+            "quote": "By default curl does not return error for transfers with an HTTP response code\nthat indicates an HTTP error, if the transfer was successful. For example, if\na server replies 404 Not Found and the reply is fully received then that is\nnot an error. When --retry is used then curl retries on some HTTP response\ncodes that indicate transient HTTP errors, but that does not include most 4xx\nresponse codes such as 404. If you want to retry on all response codes that\nindicate HTTP errors (4xx and 5xx) then combine with --fail."
+          }
+        ]
+      ],
+      "scope": "One small residual source-binding request outside the 75 changed/added claims, not a new label disagreement."
+    }
+  ],
+  "optional_evidence_economy": [
+    "r04 c09 contains both a shorter quote and its longer superset; one complete subject-bound set is enough.",
+    "r07 c02 and r12 c05 similarly include redundant short quote plus its longer superset; removing duplicates is optional and changes no label."
+  ],
+  "limitations": [
+    "Only the revised 75 affected claims have this new semantic follow-up; 57 exact-unchanged claims retain the original same AI review, apart from the one explicit residual identity request.",
+    "No human review, model benchmark or raw-source/redistribution permission audit.",
+    "All 12 new dev answers still have SUPPORTED facts only; this incremental review supplies no C/U or model-difficulty evidence."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "locked_at_utc": "2026-10-20T22:23:35.933556+00:00",
+  "reviewer_model": "gpt-6.1-sol",
+  "reviewer_reasoning_effort": "max",
+  "reviewer_type": "non-author AI; no human review",
+  "blind_sha256": "367afdfda5ca7bf32452edc5f2ca18a2f8527e5ea42809b2c3fb684d992f39fa",
+  "packet_lock_sha256": "44bfb1451c1087187c0e4c3ace5f02e8f9ee24690aee33d9a32f2146bd3ef0e9",
+  "ordered_ids": [
+    "v2-dev-r01",
+    "v2-dev-r02",
+    "v2-dev-r03",
+    "v2-dev-r04",
+    "v2-dev-r05",
+    "v2-dev-r06",
+    "v2-dev-r07",
+    "v2-dev-r08",
+    "v2-dev-r09",
+    "v2-dev-r10",
+    "v2-dev-r11",
+    "v2-dev-r12"
+  ],
+  "author_gold_or_claims_seen_before_lock": false,
+  "model_predictions_seen": false,
+  "files_sha256": {
+    "dev-blind-annotations.jsonl": "eb4df28bb5e0debf4cdbb341a881a433bcf852aeba7e10c339f16ade94f349f5",
+    "dev-prelock-revisions.json": "3dad85f778e5b56711b6777b19454ad1c8f2201569f6b2fc5c3e67e62e744bd1",
+    "dev-blind-validation.json": "485337e732805f8915296cf662d4ccf3dc1ca9451b4a2f8d772fa53b62699654"
+  },
+  "gold_expected_sha256": "429c1b1bc1a4d93c947b907ad65597f2b1d87eeb87e8c60b4c956588be024e37",
+  "claim_count": 145,
+  "verdict_counts": {
+    "SUPPORTED": 145
+  },
+  "immutability_rule": "Do not alter locked annotations after gold exposure; write comparison/adjudication separately."
+}

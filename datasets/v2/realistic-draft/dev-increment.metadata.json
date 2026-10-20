@@ -1,0 +1,355 @@
+{
+  "dataset_sha256": "860bb36353b82ded1b443f74662f61dc2755ab090f603a19bb7841afc6a5f6ac",
+  "cases": [
+    {
+      "case_id": "v2-dev-r01",
+      "source_family": "v2-real-python-bisect",
+      "question": "How should I search and insert records with expensive sort keys while controlling which side of equal records is used?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "The bisect search functions locate insertion points using less-than comparisons rather than equality tests. For an already sorted list, bisect_left places the point before equal entries, whereas bisect_right places it after them; lo and hi can restrict the search to a subrange.\n\nWhen searching records with key, the search function applies the key to array elements but not to the search value. insort_left instead applies key to the new record during its search, then inserts that original record without applying key for the insertion step. The insertion still costs linear time, so its logarithmic search does not make the whole insertion logarithmic. Repeated searches discard computed keys; an array of precomputed keys can avoid recomputing an expensive key.",
+      "original_answer_sha256": "82c2939e53f2589a7a457ba92e7373fb5ed0f009f47ecb36a77d85dc36243998",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "search_vs_insertion_key_scope",
+        "claim_numbers": [
+          5,
+          6,
+          7
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r02",
+      "source_family": "v2-real-python-copy",
+      "question": "How do assignment, shallow copying, deep copying and field replacement differ when I customize copying for my classes?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "Assignment creates a binding to an object rather than a copy. A shallow copy makes a new compound object containing references to the original contents; a deep copy recursively copies those contents. Deep copying keeps a memo of objects already copied during the current pass, and user-defined classes can override the copying operation.\n\nFor a custom __deepcopy__, a component that itself needs deep copying should be passed to deepcopy with the same memo as its second argument. Functions and classes are returned unchanged even by deep copying. copy.replace is narrower than copy or deepcopy: it supports named tuples, dataclasses and classes implementing __replace__, whose result should be a new object of the original type with the requested fields changed.",
+      "original_answer_sha256": "7ba4f20eeee1aa8d8eb758215dadd0c496f91770b41eaad35ab1a8aed666bb8f",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": null,
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r03",
+      "source_family": "v2-real-python-graphlib",
+      "question": "How can a worker scheduler use TopologicalSorter safely when dependencies may contain a cycle?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "TopologicalSorter accepts hashable nodes, with a supplied graph mapping each node to its predecessors. Calling add repeatedly for a node unions its dependencies. prepare checks for cycles and closes the graph to further additions; even if it raises CycleError, get_ready can still expose nodes until cycles prevent more progress.\n\nAfter prepare, get_ready yields nodes whose predecessors have been processed, and done marks returned nodes as processed so successors can become ready. is_active stays true while already returned nodes are still awaiting done, even if no further node is immediately ready. If several nodes at the same level can be returned, their static_order ordering can depend on insertion order.",
+      "original_answer_sha256": "2643ab3d2fa7eea3aa2a3c6c0f33f1c8dfdcd5c9bd2fcd314d7a6db3335dc0a8",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "cycle_and_inflight_work",
+        "claim_numbers": [
+          4,
+          5,
+          8
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r04",
+      "source_family": "v2-real-python-functools",
+      "question": "Which caching guarantees and lifetime limits matter when I use cache, lru_cache and cached_property in concurrent code?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "cache is an unbounded cache equivalent to lru_cache(maxsize=None). Its internal structure remains coherent under concurrent updates, but another thread can cause the wrapped function to execute again before the first result is cached. lru_cache requires hashable arguments and may store different keyword-argument orders as separate entries. It retains arguments and return values until eviction or clearing.\n\nA cached_property allows normal attribute writes after the value has been stored; deleting the attribute allows its getter to run again. It needs a mutable instance __dict__, so a slots-only class without __dict__ does not support it. In Python 3.12 and later, its old undocumented lock has been removed, so synchronization must be supplied where repeated concurrent getter execution is harmful.",
+      "original_answer_sha256": "15a218286f7ab3cd5854b9c3e89c510460bcf5cc7b87de15c357b94b8c2efa06",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "cache_safety_vs_single_execution",
+        "claim_numbers": [
+          2,
+          3,
+          10
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r05",
+      "source_family": "v2-real-python-weakref",
+      "question": "What changes when I use weak references for a cache and attach cleanup callbacks?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "A weak reference alone does not keep its referent alive, though it can still return the referent until destruction actually happens. A WeakValueDictionary removes the corresponding entry when its value is reclaimed. Not every built-in supports weak references: subclassing list or dict can add support, but subclassing tuple or int does not. Defining __slots__ disables support unless __weakref__ is included.\n\nCalling a reference after its referent dies returns None. If a supplied callback runs, it receives the weak-reference object rather than the referent, which is no longer available; callbacks for one object run from most recently registered to oldest. Callback exceptions are reported on standard error but cannot propagate to the caller.",
+      "original_answer_sha256": "e1e653ce076f05ca6843e797010660afe41b1d3443a08c6c8482248f7757d15c",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": null,
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r06",
+      "source_family": "v2-real-python-heapq",
+      "question": "How should I maintain a stable priority queue and choose between the combined heap operations?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "The smallest item in a heapq heap is at index zero, and heapify transforms a populated list in place in linear time. heappushpop pushes and then returns the smallest value, whereas heapreplace removes an existing smallest item before inserting the new one; heapreplace raises IndexError on an empty heap and may return a value larger than the one just supplied.\n\nFor a task queue, storing priority, a unique entry count and the task lets equal-priority tasks come out in insertion order without comparing the tasks themselves. To change a pending task priority, the documented recipe marks the old entry removed and adds a new entry instead of mutating the heap ordering in place. For reverse=True merging, every input must already be sorted from largest to smallest.",
+      "original_answer_sha256": "2d2924076011fb40837e2eb6b53b880d65a30c756fd2ff083d7f99cf1dbc6e49",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": null,
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r07",
+      "source_family": "v2-real-pytest-parametrize",
+      "question": "How can I generate combinations of test arguments without accidentally assuming mutable parameter values are isolated?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "pytest.mark.parametrize runs a test for its supplied argument sets. Parameter values are passed as-is without copying, so a test that mutates a list or dictionary can affect later invocations using that same value. Individual parameter sets can carry marks through pytest.param, including xfail.\n\nStacking parametrize decorators produces all combinations, with exhaustion ordered by the decorators. An empty generated parameter list follows the empty_parameter_set_mark configuration. For a custom scheme, pytest_generate_tests runs during collection and can call metafunc.parametrize; applying the mark to a class or assigning pytestmark at module level extends parametrization to that scope.",
+      "original_answer_sha256": "5fac63927d78a2110c7c5e1dd4d0e0c645481ac1b10740580af58e4aa771e89c",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": null,
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r08",
+      "source_family": "v2-real-pytest-monkeypatch",
+      "question": "How should I isolate environment and import changes in a test that also needs to replace a library function?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "monkeypatch can set or delete attributes, mapping items and environment variables, and it undoes changes when the requesting test function or fixture finishes. Its raising parameter controls whether a missing set or deletion target causes KeyError or AttributeError. A function replacement must be installed before the code using that function runs.\n\nFor PATH, setenv can prepend a value using os.pathsep; chdir changes the working directory for the test. syspath_prepend also fixes namespace packages and invalidates import caches rather than merely adding a string to sys.path. A monkeypatch.context block can confine a patch to a narrower scope, which helps when a standard-library patch would otherwise affect pytest itself.",
+      "original_answer_sha256": "3a6ee394801ab3382d3660213d371eb30d19e68b1473145b215da919fc62683a",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "patch_lifetime_and_import_scope",
+        "claim_numbers": [
+          2,
+          4,
+          7,
+          8
+        ],
+        "necessary_cross_passage": false
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r09",
+      "source_family": "v2-real-pytest-tmp_path",
+      "question": "Which temporary-directory fixtures and retention settings should I use for per-test files and an expensive shared file?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "tmp_path provides a pathlib.Path directory unique to each test function. For an expensive file that can be shared within the session, tmp_path_factory is session-scoped and can create directories from another fixture or test. The older tmpdir fixtures use py.path.local instead.\n\nBy default pytest retains temporary directories from the last three invocations, with retention count and policy configurable. Concurrent runs need unique base temporary directories. Supplying --basetemp removes that directory before every run, leaving only the most recent run there; local pytest-xdist subprocesses are arranged under one per-run temporary directory.",
+      "original_answer_sha256": "cbb408a8c262031b5aa38036eb2bcc104708772dd60097a1a3cc094d189ed378",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": null,
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r10",
+      "source_family": "v2-real-curl-retry",
+      "question": "How should a curl download distinguish retryable HTTP failures, retry timing and the risk of duplicated redirected output?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "curl does no retries by default. With --retry, its transient set includes timeouts, FTP 4xx and HTTP 408, 429, 500, 502, 503 and 504; ordinary 404 responses are not in that set. A fully received 404 is not itself a transfer error by default, so retrying all HTTP error responses requires combining --retry-all-errors and --fail with --retry.\n\nThe normal retry delay starts at one second and doubles up to ten minutes, while --retry-delay overrides that backoff. --retry-max-time stops starting retries after its timer expires, but a retry started earlier may finish after that limit. Redirected pipe or file output is not reset between retries, so --retry-all-errors can duplicate output; using --fail-with-body can preserve an HTTP error body while returning error 22.",
+      "original_answer_sha256": "1b1f71cda82a4ddcd9278bd34ed12c0f4c532d018cf3b79670aa88f813afd609",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "retry_policy_with_http_error_conversion",
+        "claim_numbers": [
+          5,
+          8,
+          9
+        ],
+        "necessary_cross_passage": true
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r11",
+      "source_family": "v2-real-curl-redirect",
+      "question": "How does curl follow redirects without accidentally forwarding credentials or changing the intended POST behavior?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "With --location, curl follows a Location header on a 3xx response. Credentials normally stay with the initial host; --location-trusted allows them to cross to another host, where a changed hostname, scheme or port counts as another host.\n\nFor POST redirects, curl normally switches to GET after 301, 302 or 303 but preserves the method for other 3xx responses. --post301, --post302 and --post303 retain POST for their respective codes when --location is in use. A method explicitly selected by --request overrides the normal selection. The redirect limit defaults to fifty and can be made unlimited with --max-redirs -1. --proto-redir can restrict redirect protocols, but cannot re-enable a protocol forbidden by --proto.",
+      "original_answer_sha256": "dfe320551c4f51165ac67ba4dde93daeceb65933b5bcc8c1e7d4225090d679a5",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "redirect_method_and_auth_scope",
+        "claim_numbers": [
+          2,
+          3,
+          4,
+          7,
+          10
+        ],
+        "necessary_cross_passage": true
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    },
+    {
+      "case_id": "v2-dev-r12",
+      "source_family": "v2-real-curl-upload",
+      "question": "Which curl options should I use for a file upload or binary body, and what do method and header overrides actually change?",
+      "question_origin": "AI data-author practical question, not a recorded production user",
+      "input_adapter": "Question: {question}\\n\\nAnswer: {unmodified_authored_answer}; question is visible but never source evidence",
+      "original_authored_answer": "For an HTTP(S) URL, --upload-file uses PUT. To let curl append the local filename, the destination directory URL needs a trailing slash; curl appends only the basename of the local path. A filename of - reads stdin, while . selects nonblocking stdin.\n\n--request changes the method word without changing the transfer behavior, so -X HEAD alone is insufficient for a proper HEAD request. --data-binary preserves newlines and carriage returns, but its default content type is application/x-www-form-urlencoded; --get moves such data into the URL query instead of sending the usual POST. Custom headers replace same-named internal headers, and they continue across followed redirects, which can expose a sensitive header to another host.",
+      "original_answer_sha256": "b0339715f5fb647596e51b30aade8d363cfcc10c5f4730d0a07f13ba4b74b14c",
+      "author_type": "AI",
+      "configured_model": null,
+      "model_identity_limit": "GPT-6 family per session instructions; exact variant/build not exposed",
+      "measured_coding_session_usage": null,
+      "origin": "generated_from_real_source",
+      "source_split": "dev",
+      "source_quality": "pinned real documentation",
+      "original_error_span_labels": null,
+      "scope_reasoning": {
+        "kind": "file_upload_vs_binary_post_and_redirect",
+        "claim_numbers": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          10
+        ],
+        "necessary_cross_passage": true
+      },
+      "review": {
+        "independent_annotation": "pending",
+        "human_review": "not_performed"
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": []
+    }
+  ]
+}

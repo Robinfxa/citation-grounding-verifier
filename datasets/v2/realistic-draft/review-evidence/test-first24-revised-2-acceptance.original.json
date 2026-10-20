@@ -1,0 +1,66 @@
+{
+  "completed_at_utc": "2026-10-20T23:02:51.954256+00:00",
+  "status": "accepted_no_open_test_revision_requests",
+  "reviewer": "same gpt-6.1-sol/max independent non-author AI; not human",
+  "private_test_content": true,
+  "dataset_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+  "sealed_gold_sha256": "351212f41b3ec6aaa5cc65e69a4e395d27588d7bd369728164ac02d1ef6dfc4c",
+  "case_count": 24,
+  "claim_count": 210,
+  "changed_claim_count": 6,
+  "unchanged_claim_count": 204,
+  "all_author_before_after_records_exactly_verified": true,
+  "all_204_unchanged_claims_exact_all_fields_equal": true,
+  "all_non_gold_case_fields_exactly_equal": true,
+  "blind_byte_identical_to_revised_1": true,
+  "original_blind_record_hashes_still_unchanged": true,
+  "label_changes_from_revised_1": 0,
+  "exact_quote_count": 277,
+  "exact_anchor_count": 210,
+  "label_counts_private": {
+    "SUPPORTED": 191,
+    "UNSUPPORTED": 3,
+    "CONTRADICTED": 16
+  },
+  "semantic_followup": [
+    {
+      "claim_id": "v2-test-r03-c05",
+      "result": "accepted",
+      "notes": "InitVar的fields排除与init参数接受完整保留；去掉无条件转发，调用存在性U和条件化顺序S由既有c01/c09单独覆盖。"
+    },
+    {
+      "claim_id": "v2-test-r04-c05",
+      "result": "accepted",
+      "notes": "同样消除strict when-defined政策下的转发矛盾；新anchor是原答案连续串，不改答案。"
+    },
+    {
+      "claim_id": "v2-test-r08-c08",
+      "result": "accepted",
+      "notes": "Since 3.11恢复后续版本范围；实际IntFlag引用保留。"
+    },
+    {
+      "claim_id": "v2-test-r09-c03",
+      "result": "accepted",
+      "notes": "明确explicitly caught条件、generally、after cleanup时序及TaskGroup/timeout因果，证据包含两段必要规则。"
+    },
+    {
+      "claim_id": "v2-test-r10-c03",
+      "result": "accepted",
+      "notes": "同样保留条件/时序/具名消费者，不因同答案其他错误改变本S事实。"
+    },
+    {
+      "claim_id": "v2-test-r10-c10",
+      "result": "accepted",
+      "notes": "新支持效果有TaskGroup具名主体和特殊异常cancel/wait正文；身份heading→body为浅层定位，不冒充实质跨段。"
+    }
+  ],
+  "prior_revision_inherited": "77 changed/added claims and 133 exact-unchanged records were checked against revised-1. Six controlled answers differ from the original only by nine literal period insertions, no word substitutions; contexts and all 16 non-controlled AI-generated replies unchanged. See revised-1 followup for explicit change audit.",
+  "condition_dispute_resolution": "Strict necessary-condition policy adopted explicitly by author; former generic-API alternative remains visible in original blind notes rather than being erased. No unresolved annotation item remains under this adopted policy.",
+  "scope_and_atomicity": "All explicit answer assertions covered under declared coherent-rule/causal-background/eligible-set policy. Detailed independent 275-claim extraction remains unchanged; it is not replaced with the author granularity.",
+  "open_requests": [],
+  "limits": [
+    "No human annotation; correlated AI review remains a limitation.",
+    "No model inference or benchmark-difficulty claim.",
+    "Raw-source construction, redistribution permission and complete cross-split leakage audit are outside this affected semantic follow-up."
+  ]
+}

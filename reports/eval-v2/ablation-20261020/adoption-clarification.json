@@ -1,0 +1,8 @@
+{
+  "status": "HISTORICAL_RECOMMENDATION_LABEL_CLARIFIED",
+  "old_readme_sha256": "a395e92a5acef3f96b6a4bb7d78e82414e4cb4420bdc63cdd1414d66c0faadbb",
+  "new_readme_sha256": "5f362bbb131824f6961e4e765034ed3370afb33f14b5fc6f0896dc6e7b7814d4",
+  "reason": "Parent requested a clear historical label on the original pending recommendation, after adoption was already recorded.",
+  "observation_review_analysis_and_raw_runs_changed": false,
+  "original_adoption_amendment_preserved": true
+}

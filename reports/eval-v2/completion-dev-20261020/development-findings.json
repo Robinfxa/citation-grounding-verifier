@@ -1,0 +1,427 @@
+{
+  "scope": "Bounded qualitative development diagnosis, not a blinded test audit or rescoring",
+  "strict_scores_unchanged": true,
+  "gold_or_alias_edits": false,
+  "independent_parent_review": "pending",
+  "gold_label_distribution": {
+    "CONTRADICTED": 10,
+    "SUPPORTED": 110,
+    "UNSUPPORTED": 6
+  },
+  "findings": [
+    {
+      "id": "D01",
+      "kind": "strict_text_surface_mismatch",
+      "confidence": "high within this example",
+      "finding": "ExtendedContext uses ROUND_HALF_EVEN rounding 与 rounds with ROUND_HALF_EVEN 表达同一局部命题，仍被严格匹配保留为一漏一多。不得事后补alias或把全部失配自动算对。",
+      "evidence": {
+        "case_id": "v2-dev-p04",
+        "approach": "optimized",
+        "track": "end-to-end",
+        "source_run": "matrix",
+        "source_sequence": 1,
+        "source_row_sha256": "ec2ee832235725895f9bd9a16153da86edb9a7a973a4eae83e544c6bf2cd8e15",
+        "gold_claims": [
+          {
+            "aliases": [],
+            "answer_anchor": {
+              "end": 362,
+              "quote": "ExtendedContext also uses precision nine, but rounds with ROUND_HALF_EVEN and enables no traps.",
+              "start": 267
+            },
+            "claim_text": "ExtendedContext uses ROUND_HALF_EVEN rounding.",
+            "evidence_sets": [
+              [
+                {
+                  "index": 2,
+                  "quote": ".. class:: ExtendedContext"
+                },
+                {
+                  "index": 2,
+                  "quote": "Rounding is set to\n   :const:`ROUND_HALF_EVEN`."
+                }
+              ]
+            ],
+            "id": "v2-dev-p04-c07",
+            "rationale": "The distinct rounding rule is explicit.",
+            "verdict": "SUPPORTED"
+          }
+        ],
+        "predictions": [
+          {
+            "prediction_index": 6,
+            "citations": [
+              {
+                "index": 2,
+                "quote": ".. class:: ExtendedContext\n\n   This is a standard context defined by the General Decimal Arithmetic\n   Specification.  Precision is set to nine.  Rounding is set to\n   :const:`ROUND_HALF_EVEN`."
+              }
+            ],
+            "claim_text": "ExtendedContext rounds with ROUND_HALF_EVEN.",
+            "reasoning": "ExtendedContext explicitly uses ROUND_HALF_EVEN.",
+            "verdict": "SUPPORTED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "D02",
+      "kind": "atomic_claim_merge",
+      "confidence": "high",
+      "finding": "单条Rust test预测合并free function、monomorphic、no arguments三个gold事实。三个条件都在输出中；这属于粒度合并，不能称为三个事实全漏，也不能静默补成三个一对一正确项。",
+      "evidence": {
+        "case_id": "v2-dev-p09",
+        "approach": "minimal",
+        "track": "end-to-end",
+        "source_run": "matrix",
+        "source_sequence": 10,
+        "source_row_sha256": "3614f50c30a78391f13212f4f636b3d5ed3b862c946bc0c4df287c619b0ab754",
+        "gold_claims": [
+          {
+            "aliases": [],
+            "answer_anchor": {
+              "end": 99,
+              "quote": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments.",
+              "start": 0
+            },
+            "claim_text": "The Rust test attribute is restricted to free functions.",
+            "evidence_sets": [
+              [
+                {
+                  "index": 0,
+                  "quote": "The `test` attribute may only be applied to [free functions]"
+                }
+              ]
+            ],
+            "id": "v2-dev-p09-c01",
+            "rationale": "The allowed-position rule is limited to free functions.",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "aliases": [],
+            "answer_anchor": {
+              "end": 99,
+              "quote": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments.",
+              "start": 0
+            },
+            "claim_text": "Functions bearing the Rust test attribute must be monomorphic.",
+            "evidence_sets": [
+              [
+                {
+                  "index": 0,
+                  "quote": "The `test` attribute may only be applied to [free functions] that are monomorphic"
+                }
+              ]
+            ],
+            "id": "v2-dev-p09-c02",
+            "rationale": "Monomorphism is a separate eligibility requirement.",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "aliases": [],
+            "answer_anchor": {
+              "end": 99,
+              "quote": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments.",
+              "start": 0
+            },
+            "claim_text": "Functions bearing the Rust test attribute take no arguments.",
+            "evidence_sets": [
+              [
+                {
+                  "index": 0,
+                  "quote": "The `test` attribute may only be applied to [free functions]"
+                },
+                {
+                  "index": 0,
+                  "quote": "that take no arguments"
+                }
+              ]
+            ],
+            "id": "v2-dev-p09-c03",
+            "rationale": "The zero-argument restriction is explicit.",
+            "verdict": "SUPPORTED"
+          }
+        ],
+        "predictions": [
+          {
+            "prediction_index": 0,
+            "citations": [
+              {
+                "index": 0,
+                "quote": "The `test` attribute may only be applied to [free functions] that are monomorphic, that take no arguments, and where the return type implements the [`Termination`] trait."
+              }
+            ],
+            "claim_text": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments.",
+            "reasoning": "The passage explicitly lists these restrictions.",
+            "verdict": "SUPPORTED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "D03",
+      "kind": "citation_governing_condition_gap",
+      "confidence": "high for the mode links shown",
+      "finding": "p02预测保留False/legacy条件，但引用分别只截立即替换事务、BEGIN DEFERRED或isolation_level分支，未带上位模式条件。完整passage支持标签，返回引用集合未自行展示所有限定；不能以reasoning或整段未引用文字替代证据。",
+      "evidence": {
+        "case_id": "v2-dev-p02",
+        "approach": "minimal",
+        "track": "end-to-end",
+        "source_run": "matrix",
+        "source_sequence": 9,
+        "source_row_sha256": "b9ac754aae41a3564ca23fc2448a38f61a3983f9a33dac18de3900a6dbcc93f5",
+        "gold_claims": [
+          {
+            "aliases": [],
+            "answer_anchor": {
+              "end": 180,
+              "quote": "In that mode, commit() opens a replacement transaction immediately after closing the pending one",
+              "start": 84
+            },
+            "claim_text": "With sqlite3 autocommit=False, commit() opens a replacement transaction immediately after closing the pending one.",
+            "evidence_sets": [
+              [
+                {
+                  "index": 3,
+                  "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:"
+                },
+                {
+                  "index": 3,
+                  "quote": ":func:`connect`, :meth:`Connection.commit`, and :meth:`Connection.rollback`\n  will implicitly open a new transaction\n  (immediately after closing the pending one, for the latter two)."
+                }
+              ]
+            ],
+            "id": "v2-dev-p02-c02",
+            "rationale": "The mode qualifier and immediate replacement behavior are explicit.",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "aliases": [],
+            "answer_anchor": {
+              "end": 224,
+              "quote": "those transactions use BEGIN DEFERRED.",
+              "start": 186
+            },
+            "claim_text": "Transactions opened under sqlite3 autocommit=False use BEGIN DEFERRED.",
+            "evidence_sets": [
+              [
+                {
+                  "index": 3,
+                  "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:"
+                },
+                {
+                  "index": 3,
+                  "quote": ":mod:`!sqlite3` uses ``BEGIN DEFERRED`` statements when opening transactions."
+                }
+              ]
+            ],
+            "id": "v2-dev-p02-c03",
+            "rationale": "The BEGIN choice belongs to the False branch.",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "aliases": [],
+            "answer_anchor": {
+              "end": 553,
+              "quote": "With LEGACY_TRANSACTION_CONTROL and a non-None isolation_level, Cursor.execute() and Cursor.executemany() implicitly open a transaction before executing INSERT, UPDATE, DELETE or REPLACE.",
+              "start": 366
+            },
+            "claim_text": "With LEGACY_TRANSACTION_CONTROL and a non-None isolation_level, Cursor.execute() and Cursor.executemany() implicitly open a transaction before executing INSERT, UPDATE, DELETE or REPLACE.",
+            "evidence_sets": [
+              [
+                {
+                  "index": 4,
+                  "quote": "If :attr:`Connection.autocommit` is set to\n:data:`LEGACY_TRANSACTION_CONTROL` (the default),\ntransaction behaviour is controlled using\nthe :attr:`Connection.isolation_level` attribute."
+                },
+                {
+                  "index": 4,
+                  "quote": "If the connection attribute :attr:`~Connection.isolation_level`\nis not ``None``,\nnew transactions are implicitly opened before\n:meth:`~Cursor.execute` and :meth:`~Cursor.executemany` executes\n``INSERT``, ``UPDATE``, ``DELETE``, or ``REPLACE`` statements;"
+                }
+              ]
+            ],
+            "id": "v2-dev-p02-c06",
+            "rationale": "The LEGACY outer condition and non-None isolation_level condition govern the explicitly named Cursor.execute()/Cursor.executemany() DML mechanism. No all-SQL-entry-point guarantee is asserted.",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "aliases": [],
+            "answer_anchor": {
+              "end": 636,
+              "quote": "With legacy control and isolation_level=None, it opens no transactions implicitly.",
+              "start": 554
+            },
+            "claim_text": "With legacy control and isolation_level=None, sqlite3 opens no transactions implicitly.",
+            "evidence_sets": [
+              [
+                {
+                  "index": 4,
+                  "quote": "If :attr:`Connection.autocommit` is set to\n:data:`LEGACY_TRANSACTION_CONTROL` (the default),\ntransaction behaviour is controlled using\nthe :attr:`Connection.isolation_level` attribute."
+                },
+                {
+                  "index": 4,
+                  "quote": "If :attr:`~Connection.isolation_level` is set to ``None``,\nno transactions are implicitly opened at all."
+                }
+              ]
+            ],
+            "id": "v2-dev-p02-c07",
+            "rationale": "The legacy condition and None branch jointly support the claim.",
+            "verdict": "SUPPORTED"
+          }
+        ],
+        "predictions": [
+          {
+            "prediction_index": 1,
+            "citations": [
+              {
+                "index": 3,
+                "quote": "so :func:`connect`, :meth:`Connection.commit`, and :meth:`Connection.rollback`\n  will implicitly open a new transaction\n  (immediately after closing the pending one, for the latter two)."
+              }
+            ],
+            "claim_text": "With autocommit=False, commit() opens a replacement transaction immediately after closing the pending one.",
+            "reasoning": "The passage explicitly describes immediate replacement transactions after commit in this mode.",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "prediction_index": 2,
+            "citations": [
+              {
+                "index": 3,
+                "quote": ":mod:`!sqlite3` uses ``BEGIN DEFERRED`` statements when opening transactions."
+              }
+            ],
+            "claim_text": "Transactions opened with autocommit=False use BEGIN DEFERRED.",
+            "reasoning": "The description of this mode explicitly specifies BEGIN DEFERRED.",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "prediction_index": 5,
+            "citations": [
+              {
+                "index": 4,
+                "quote": "If the connection attribute :attr:`~Connection.isolation_level`\nis not ``None``,\nnew transactions are implicitly opened before\n:meth:`~Cursor.execute` and :meth:`~Cursor.executemany` executes\n``INSERT``, ``UPDATE``, ``DELETE``, or ``REPLACE`` statements;"
+              }
+            ],
+            "claim_text": "With LEGACY_TRANSACTION_CONTROL and a non-None isolation_level, Cursor.execute() and Cursor.executemany() implicitly open a transaction before executing INSERT, UPDATE, DELETE or REPLACE.",
+            "reasoning": "The legacy-control section explicitly describes this implicit transaction handling.",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "prediction_index": 6,
+            "citations": [
+              {
+                "index": 4,
+                "quote": "If :attr:`~Connection.isolation_level` is set to ``None``,\nno transactions are implicitly opened at all."
+              }
+            ],
+            "claim_text": "With legacy control and isolation_level=None, no transactions are opened implicitly.",
+            "reasoning": "The legacy-control section expressly states this behavior.",
+            "verdict": "SUPPORTED"
+          }
+        ]
+      },
+      "source_passages": {
+        "autocommit_false": 3,
+        "legacy_outer_condition": 4
+      }
+    },
+    {
+      "id": "D04",
+      "kind": "conservative_gold_evidence_proxy",
+      "confidence": "high for the direct relation, no global semantic credit assigned",
+      "finding": "返回引文直接说明parallel dumps只支持directory archive；另一例直接说明不终止的tests既不pass也不fail，均仍未满足更长gold evidence span。保留严格扣分，并将代理差异与实际条件缺口分开，不把gold span命中当语义认证。",
+      "examples": [
+        {
+          "case_id": "v2-dev-p11",
+          "approach": "minimal",
+          "track": "end-to-end",
+          "source_run": "matrix",
+          "source_sequence": 8,
+          "source_row_sha256": "ccddcaaa151d16f55c1411b9f97c94440a40addfa8361eec7e2079add451ff99",
+          "gold_claims": [
+            {
+              "aliases": [],
+              "answer_anchor": {
+                "end": 804,
+                "quote": "Parallel dumping is supported only for directory archives.",
+                "start": 746
+              },
+              "claim_text": "Parallel dumping is supported only for directory archives.",
+              "evidence_sets": [
+                [
+                  {
+                    "index": 3,
+                    "quote": "<application>pg_dump</application>'s parallel mode."
+                  },
+                  {
+                    "index": 3,
+                    "quote": "Parallel dumps\n     are only supported for the \"directory\" archive format."
+                  }
+                ]
+              ],
+              "id": "v2-dev-p11-c12",
+              "rationale": "This restriction is on parallel dumping, not on parallel restoration.",
+              "verdict": "SUPPORTED"
+            }
+          ],
+          "predictions": [
+            {
+              "prediction_index": 11,
+              "citations": [
+                {
+                  "index": 3,
+                  "quote": "Parallel dumps\n     are only supported for the \"directory\" archive format."
+                }
+              ],
+              "claim_text": "Parallel dumping is supported only for directory archives.",
+              "reasoning": "The passage explicitly limits parallel dumps to directory archive format.",
+              "verdict": "SUPPORTED"
+            }
+          ]
+        },
+        {
+          "case_id": "v2-dev-p09",
+          "approach": "minimal",
+          "track": "end-to-end",
+          "source_run": "matrix",
+          "source_sequence": 10,
+          "source_row_sha256": "3614f50c30a78391f13212f4f636b3d5ed3b862c946bc0c4df287c619b0ab754",
+          "gold_claims": [
+            {
+              "aliases": [],
+              "answer_anchor": {
+                "end": 202,
+                "quote": "A test that does not terminate neither passes nor fails.",
+                "start": 146
+              },
+              "claim_text": "A test that does not terminate neither passes nor fails.",
+              "evidence_sets": [
+                [
+                  {
+                    "index": 0,
+                    "quote": "* Tests that do not terminate neither pass nor fail."
+                  }
+                ]
+              ],
+              "id": "v2-dev-p09-c05",
+              "rationale": "Nontermination is not silently labeled a pass or failure.",
+              "verdict": "SUPPORTED"
+            }
+          ],
+          "predictions": [
+            {
+              "prediction_index": 2,
+              "citations": [
+                {
+                  "index": 0,
+                  "quote": "Tests that do not terminate neither pass nor fail."
+                }
+              ],
+              "claim_text": "A test that does not terminate neither passes nor fails.",
+              "reasoning": "The passage states this directly.",
+              "verdict": "SUPPORTED"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

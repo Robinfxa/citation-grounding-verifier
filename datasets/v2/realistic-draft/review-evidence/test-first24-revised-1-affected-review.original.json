@@ -1,0 +1,137 @@
+{
+  "completed_at_utc": "2026-10-20T23:02:03.241299+00:00",
+  "status": "mechanical_and_primary_fixes_verified_small_scope_consistency_residuals_sent_to_author",
+  "reviewer": "same gpt-6.1-sol/max independent non-author AI; not human",
+  "private_test_content": true,
+  "dataset_sha256": "8d17c6baa5822a97f6e0e7c57a2ca69441651cbc996179e3f0377932b82f0281",
+  "original_claim_count": 199,
+  "revised_claim_count": 210,
+  "changed_or_added_count": 77,
+  "exact_unchanged_count": 133,
+  "all_author_before_after_records_exactly_verified": true,
+  "all_contexts_byte_identical": true,
+  "non_controlled_answers_byte_identical_count": 16,
+  "controlled_answers_changed_count": 6,
+  "punctuation_changes_are_only_9_literal_period_insertions": [
+    {
+      "case_id": "v2-test-r04",
+      "original_offset": 752,
+      "adapted_offset": 752,
+      "inserted": "."
+    },
+    {
+      "case_id": "v2-test-r06",
+      "original_offset": 418,
+      "adapted_offset": 418,
+      "inserted": "."
+    },
+    {
+      "case_id": "v2-test-r10",
+      "original_offset": 561,
+      "adapted_offset": 561,
+      "inserted": "."
+    },
+    {
+      "case_id": "v2-test-r10",
+      "original_offset": 769,
+      "adapted_offset": 770,
+      "inserted": "."
+    },
+    {
+      "case_id": "v2-test-r12",
+      "original_offset": 607,
+      "adapted_offset": 607,
+      "inserted": "."
+    },
+    {
+      "case_id": "v2-test-r14",
+      "original_offset": 540,
+      "adapted_offset": 540,
+      "inserted": "."
+    },
+    {
+      "case_id": "v2-test-r14",
+      "original_offset": 847,
+      "adapted_offset": 848,
+      "inserted": "."
+    },
+    {
+      "case_id": "v2-test-r18",
+      "original_offset": 536,
+      "adapted_offset": 536,
+      "inserted": "."
+    },
+    {
+      "case_id": "v2-test-r18",
+      "original_offset": 779,
+      "adapted_offset": 780,
+      "inserted": "."
+    }
+  ],
+  "all_original_and_snapshot_hashes_preserved_count": 9,
+  "original_blind_locked_files_unchanged": true,
+  "all_44_binding_issues_semantically_resolved_or_equivalent": true,
+  "exact_proposed_span_match_count": 41,
+  "equivalent_smaller_subject_binding_sets": [
+    {
+      "claim_id": "v2-test-r09-c05",
+      "reason": "Full create_task method plus task-group inactive/close/version rule, or explicit the task group special-exception rule, names the task-group subject and avoids unrelated Task/timeout behavior. Redundant exact heading is not required when an equivalent sufficient body set names that same subject."
+    },
+    {
+      "claim_id": "v2-test-r10-c05",
+      "reason": "Full create_task method plus task-group inactive/close/version rule, or explicit the task group special-exception rule, names the task-group subject and avoids unrelated Task/timeout behavior. Redundant exact heading is not required when an equivalent sufficient body set names that same subject."
+    },
+    {
+      "claim_id": "v2-test-r10-c08",
+      "reason": "Full create_task method plus task-group inactive/close/version rule, or explicit the task group special-exception rule, names the task-group subject and avoids unrelated Task/timeout behavior. Redundant exact heading is not required when an equivalent sufficient body set names that same subject."
+    }
+  ],
+  "exact_quotes": 276,
+  "exact_anchors": 210,
+  "label_counts_private": {
+    "SUPPORTED": 191,
+    "UNSUPPORTED": 3,
+    "CONTRADICTED": 16
+  },
+  "primary_changes_accepted": [
+    "Eight omitted assertions now present, including explicit U for undefined causal term.",
+    "TD03/TD04 call-existence and InitVar-order split is aligned with strict necessary-condition interpretation; no answer or condition silently repaired.",
+    "TE01 cites actual IntFlag paragraph, TE02 actual binding restriction, TE21/22 complete every propagated-position component, TV9/10 actual 3.13 close-coro change.",
+    "TM10 separates supported cancellation/waiting from false ExceptionGroup placement.",
+    "Opaque-return causal reason, most_common only qualifier, TaskGroup/timeout naming and unsafe programmer/compiler contrast restored."
+  ],
+  "residuals": [
+    {
+      "claim_ids": [
+        "v2-test-r03-c05",
+        "v2-test-r04-c05"
+      ],
+      "request": "Remove unqualified forwarding to post_init from this supported composite, retain exclusion+accepted initializer parameters. Call-existence is c01/U and order c09/S, avoiding inconsistency or silently inserted optional condition."
+    },
+    {
+      "claim_ids": [
+        "v2-test-r08-c08"
+      ],
+      "request": "Restore Since Python 3.11 rather than In Python 3.11, preserving version range."
+    },
+    {
+      "claim_ids": [
+        "v2-test-r09-c03",
+        "v2-test-r10-c03"
+      ],
+      "request": "Retain explicitly caught and after cleanup in the new named-API wording."
+    },
+    {
+      "claim_ids": [
+        "v2-test-r10-c10"
+      ],
+      "request": "Bind newly added effects claim with TaskGroup heading, consistently with the existing identity policy."
+    }
+  ],
+  "atomicity": "Transparent single-rule causes/consequences and eligible-type sets remain acceptable, with no automatic requirement to copy 275; original independent granularity preserved separately.",
+  "not_reperformed": [
+    "Human review",
+    "Model benchmark",
+    "Raw-source permission/temporal audit"
+  ]
+}

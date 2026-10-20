@@ -13,11 +13,13 @@
 
 ## 3. Controlled development and final population
 
-- [ ] 3.1 With explicit budget and valid configuration, run the pilot and frozen development comparison; record actual resources and failure taxonomy.
+- [x] 3.1 With explicit budget and valid configuration, run the pilot and frozen development comparison; record actual resources and failure taxonomy.
 
-  The original quota failure used 1 attempt; the [2026-10-20 continuation](../../../reports/eval-v2/pilot-resume-20261020.md) used 54 more, yielding five model outputs but no complete comparison. The user approved a cumulative ceiling of 150 and the [staged recovery plan](../../../reports/eval-v2/pilot-recovery-budget.md). Task 2.5 passed [independent offline acceptance](../../../reports/eval-v2/model-error-stop-verification.json). Under the [frozen plan](../../../reports/eval-v2/pilot-recovery-20261020-plan.json), both fixed recovery checks succeeded, then the full matrix stopped at its first model timeout. This sequence used eight attempts; cumulative use is 63/150, with 87 unspent. The approved failure stop blocks further calls in this sequence; no complete comparison is claimed. This task stays open.
+  Historical quota/partial/recovery runs remain immutable at 63/150 attempts. The separately authorized [new development comparison](../../../reports/eval-v2/completion-dev-20261020/combined-analysis/summary.json) covers all 72 jobs: 71 OK and one original protocol ERROR. Its [row map](../../../reports/eval-v2/completion-dev-20261020/combined-analysis/source-row-map.json) retains original OK/ERROR rows and replaces only the 32 unattempted jobs with later measured rows. This is a failure-inclusive analytical combination, not a successful single CLI run. The parent independently ran [guarded replay](../../../reports/eval-v2/completion-dev-20261020/replay-combined.py): 72 unique mapped jobs and byte-identical summary, zero inference calls. Actual new consumption is 62/320 attempts including the two checks; unknown usage and subscription costs remain unknown. Timeouts changed before this baseline, so it is not a prompt-only comparison against historical runs. The [development findings](../../../reports/eval-v2/completion-dev-20261020/development-findings.json) separate extraction, citation scope, strict-score artifacts and operational failure.
 
-- [ ] 3.2 Run at least one one-factor development ablation, preserve controls, and record adoption/rejection with measured tradeoffs.
+- [x] 3.2 Run at least one one-factor development ablation, preserve controls, and record adoption/rejection with measured tradeoffs.
+
+  [C01](../../../reports/eval-v2/ablation-20261020/README.md) adds only the prespecified Minimal end-to-end citation sentence. Three new 12-case blocks completed in the fixed order, using 36/216 attempts without retry or repair; the original control error remains in the primary comparison. Independent parent replay reproduced all 48 mapped observations and family-paired analysis. Parent adoption accepts the demonstrated condition-citation improvements and measured resource increase, with the localcontext merge, remaining antecedent gap, strict-score artifacts and small-sample limitations explicitly retained. Only this exact prompt delta is handed to the original service owner; final test has not informed the decision.
 - [ ] 3.3 Expand only after pilot review, resolve annotation disputes, validate family/near-duplicate separation, and freeze the final dataset, selections, methods, scorer, matrix and budget before test inference.
 
 ## 4. Measurement and understandable delivery
@@ -25,4 +27,9 @@
 - [ ] 4.1 Run the predefined final comparison and stability subset with all raw outcomes/resources retained; independently replay without provider calls.
 - [ ] 4.2 Complete the preselected semantic audit and publish strict/audit/slice/repeat analyses with actual representative failures and uncertainty.
 - [x] 4.3 Verify frozen installation, lint, complete tests and real long-input HTTP/CLI success plus safe failure/recovery in a fresh environment; independently review changed critical paths.
-- [x] 4.4 Update README, data card and AI use; deliver symbol-based code walkthrough, interview self-check/exercises and explicit human-review queue; verify links and prepare a reviewable local commit.
+
+  [Final isolated installation](../../../reports/eval-v2/final-offline-verification.json) passed locked dependency installation in a new environment, 861 tests, lint and main validation at the exact adopted C01 runtime fingerprint. The original service owner ran [real long-development HTTP/CLI consumers](../../../reports/eval-v2/final-consumer-verification.json): 200 → safe 422 → 200, identical recovery body, two-track CLI and byte-identical report replay, four actual process exits 0, no provider calls. Parent checked the new runtime/input binding and returned evidence. Earlier independently accepted diagnostic fault probes are reused only for unchanged code; no new model-quality inference is implied.
+
+- [ ] 4.4 Update README, data card and AI use; deliver symbol-based code walkthrough, interview self-check/exercises and explicit human-review queue; verify links and prepare a reviewable local commit.
+
+  Earlier guides and pilot-status documentation exist. Reopened for the final population, actual final measurements, preserved failure history and concise submission-ready navigation; do not present preparation as final empirical delivery.

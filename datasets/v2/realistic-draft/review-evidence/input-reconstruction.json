@@ -1,0 +1,56 @@
+[
+  {
+    "cohort": "dev",
+    "cases": 12,
+    "independent_judgements": 145,
+    "original_input_dataset": "../dev-increment.jsonl",
+    "original_input_dataset_sha256": "860bb36353b82ded1b443f74662f61dc2755ab090f603a19bb7841afc6a5f6ac",
+    "rebuilt_original_blind_sha256": "367afdfda5ca7bf32452edc5f2ca18a2f8527e5ea42809b2c3fb684d992f39fa",
+    "accepted_component": "../dev-revised-2.jsonl",
+    "accepted_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+    "input_record_fields_in_order": [
+      "id",
+      "context_passages",
+      "generated_answer",
+      "origin"
+    ],
+    "origin_from": "provenance.origin",
+    "serialization": "UTF-8, Python json.dumps ensure_ascii=False default separators; each record followed by newline"
+  },
+  {
+    "cohort": "test-first24",
+    "cases": 24,
+    "independent_judgements": 275,
+    "original_input_dataset": "../test-first24.jsonl",
+    "original_input_dataset_sha256": "cfd36432b794b70ed0802660f604c5601c45ab2901cd4c0a9263b816bd1ff864",
+    "rebuilt_original_blind_sha256": "c613287c5db7ca5b8fe1a72a03765e2667157ef0576cedbb9e63f1007cc97f49",
+    "accepted_component": "../test-first24-revised-2.jsonl",
+    "accepted_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+    "input_record_fields_in_order": [
+      "id",
+      "context_passages",
+      "generated_answer",
+      "origin"
+    ],
+    "origin_from": "provenance.origin",
+    "serialization": "UTF-8, Python json.dumps ensure_ascii=False default separators; each record followed by newline"
+  },
+  {
+    "cohort": "test-second24",
+    "cases": 24,
+    "independent_judgements": 245,
+    "original_input_dataset": "../test-second24.jsonl",
+    "original_input_dataset_sha256": "24ab3c0b8f3a72c3035f886f550823378b8a2516d16c7b7143d427d0c72cc77b",
+    "rebuilt_original_blind_sha256": "8b05507db86baad55ac3af37748b7b8d0cd648ccaf4100b732de81ec3843f323",
+    "accepted_component": "../test-second24-revised-1.jsonl",
+    "accepted_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+    "input_record_fields_in_order": [
+      "id",
+      "context_passages",
+      "generated_answer",
+      "origin"
+    ],
+    "origin_from": "provenance.origin",
+    "serialization": "UTF-8, Python json.dumps ensure_ascii=False default separators; each record followed by newline"
+  }
+]

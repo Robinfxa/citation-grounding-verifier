@@ -1,0 +1,282 @@
+{
+  "version": 1,
+  "revision": "c103204b9ce28d6bbad859304bf30de72b8ed8fe",
+  "seed": 20261020,
+  "selection_policy": "Summary only, quality good, upstream train only, context 400–16000 Unicode characters (some below main density target), at least 120 answer words; 3 sources per news-origin × upstream-span-presence stratum; hash(seed:id) order; one response per source_id; spans are not complete claim gold.",
+  "records": [
+    {
+      "response_id": "972",
+      "source_id": "15755",
+      "source": "CNN/DM",
+      "task_type": "Summary",
+      "upstream_model": "gpt-4-0613",
+      "temperature": 0.7,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "no_upstream_error_span",
+      "response_utf8_sha256": "2124d3b8898540b8b177c051b0eb203faa69d28c3547e8431d9094a4f93cc960",
+      "context_utf8_sha256": "bb55736e21b4edba30ba83c75d204f0be10f83d45a362d9e86db5a1b6a1a0c1e",
+      "response_unicode_characters": 1142,
+      "response_words": 176,
+      "context_char_div4_estimate": 1003,
+      "original_labels": []
+    },
+    {
+      "response_id": "2053",
+      "source_id": "11806",
+      "source": "CNN/DM",
+      "task_type": "Summary",
+      "upstream_model": "gpt-3.5-turbo-0613",
+      "temperature": 0.7,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "no_upstream_error_span",
+      "response_utf8_sha256": "d83ea8cf16b2befe968edcf4dd68beb015defafd706a7c1f36fe375060b75831",
+      "context_utf8_sha256": "cb450494e2351d11198c4a48675654aa21777685b1a54fb9e1e1be134e2c5e2a",
+      "response_unicode_characters": 1397,
+      "response_words": 221,
+      "context_char_div4_estimate": 1203,
+      "original_labels": []
+    },
+    {
+      "response_id": "3343",
+      "source_id": "12024",
+      "source": "CNN/DM",
+      "task_type": "Summary",
+      "upstream_model": "gpt-3.5-turbo-0613",
+      "temperature": 0.7,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "no_upstream_error_span",
+      "response_utf8_sha256": "04923c1d34080c3ae674ec888293b93927af7d27762eef12171b1c66d71477f9",
+      "context_utf8_sha256": "c2b336212ffce486e65e09b8e4ea3c5889ae03deda83f2e81f865dc1b8048f2f",
+      "response_unicode_characters": 1424,
+      "response_words": 230,
+      "context_char_div4_estimate": 1120,
+      "original_labels": []
+    },
+    {
+      "response_id": "2143",
+      "source_id": "11822",
+      "source": "CNN/DM",
+      "task_type": "Summary",
+      "upstream_model": "gpt-3.5-turbo-0613",
+      "temperature": 0.7,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "upstream_error_span_present",
+      "response_utf8_sha256": "64d1fb2d67d42827b93b432b3bc2203ffb4e3cd1852caa560874c959e1bca92e",
+      "context_utf8_sha256": "d700f8ed8d79fc2ba0efd28a2efd38aaeda8b995e84bbcd8ca4c5f6dd87a5aab",
+      "response_unicode_characters": 891,
+      "response_words": 142,
+      "context_char_div4_estimate": 735,
+      "original_labels": [
+        {
+          "start": 580,
+          "end": 591,
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "2660",
+      "source_id": "11909",
+      "source": "CNN/DM",
+      "task_type": "Summary",
+      "upstream_model": "mistral-7B-instruct",
+      "temperature": 0.85,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "upstream_error_span_present",
+      "response_utf8_sha256": "3ae8b4fa09ef466d5e1afad3fb078a2296b792a41080a0a3e955aee151043a3d",
+      "context_utf8_sha256": "1df37b80fddf268ba2a925c222c8f8f7c1daeba2507d5d27d3b743e5cd0383cf",
+      "response_unicode_characters": 1098,
+      "response_words": 174,
+      "context_char_div4_estimate": 1089,
+      "original_labels": [
+        {
+          "start": 82,
+          "end": 95,
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "3086",
+      "source_id": "11980",
+      "source": "CNN/DM",
+      "task_type": "Summary",
+      "upstream_model": "mistral-7B-instruct",
+      "temperature": 0.925,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "upstream_error_span_present",
+      "response_utf8_sha256": "f5245e549e3313dd89912a89cd5fa9289a63a23df681db97128a380b9931ee71",
+      "context_utf8_sha256": "73e925793be82b07cf1df3bd1514133aa3925a1503fb6e33fb06b50258a2fe0b",
+      "response_unicode_characters": 1138,
+      "response_words": 194,
+      "context_char_div4_estimate": 1932,
+      "original_labels": [
+        {
+          "start": 834,
+          "end": 887,
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1087,
+          "end": 1138,
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "5375",
+      "source_id": "13551",
+      "source": "Recent News",
+      "task_type": "Summary",
+      "upstream_model": "llama-2-70b-chat",
+      "temperature": 1.0,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "no_upstream_error_span",
+      "response_utf8_sha256": "a9765465de8650656c0f7297d333193051d2089c62d74aba78ffba5fc9075247",
+      "context_utf8_sha256": "ea3c0872ffd4abac4b1d603d0622ea4535099ab3eee6edc979f59b899062e6aa",
+      "response_unicode_characters": 833,
+      "response_words": 132,
+      "context_char_div4_estimate": 738,
+      "original_labels": []
+    },
+    {
+      "response_id": "5315",
+      "source_id": "13541",
+      "source": "Recent News",
+      "task_type": "Summary",
+      "upstream_model": "llama-2-70b-chat",
+      "temperature": 1.0,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "no_upstream_error_span",
+      "response_utf8_sha256": "80646e32b6f32e4ce2277085ce10dca1707fb2b5d4a38ad3ac1ef2a82aa15837",
+      "context_utf8_sha256": "466ad955c9cdb0c7ffeb336238b12e612768479d0bbb348719a1cb6c6567db9c",
+      "response_unicode_characters": 915,
+      "response_words": 142,
+      "context_char_div4_estimate": 684,
+      "original_labels": []
+    },
+    {
+      "response_id": "4069",
+      "source_id": "13849",
+      "source": "Recent News",
+      "task_type": "Summary",
+      "upstream_model": "gpt-3.5-turbo-0613",
+      "temperature": 0.7,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "no_upstream_error_span",
+      "response_utf8_sha256": "b0784db65add865be7f04091b8adc78731b281f2cb9efedce0382cee81c41836",
+      "context_utf8_sha256": "942b71b47631461c1dfeb72422bac65e65c597e58b2e72f0e2ee4cefbaa04439",
+      "response_unicode_characters": 836,
+      "response_words": 145,
+      "context_char_div4_estimate": 655,
+      "original_labels": []
+    },
+    {
+      "response_id": "4292",
+      "source_id": "13886",
+      "source": "Recent News",
+      "task_type": "Summary",
+      "upstream_model": "mistral-7B-instruct",
+      "temperature": 0.85,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "upstream_error_span_present",
+      "response_utf8_sha256": "9343ac200e23dfdeea5127d029259349f95628d09005717f3060b869e97b60cf",
+      "context_utf8_sha256": "6850d526243a69fcf447508e6d9126ee8472b96fdb95d2d6a369f6872daba577",
+      "response_unicode_characters": 925,
+      "response_words": 139,
+      "context_char_div4_estimate": 575,
+      "original_labels": [
+        {
+          "start": 563,
+          "end": 657,
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "4100",
+      "source_id": "13854",
+      "source": "Recent News",
+      "task_type": "Summary",
+      "upstream_model": "mistral-7B-instruct",
+      "temperature": 0.85,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "upstream_error_span_present",
+      "response_utf8_sha256": "f1ddc368ae8c41c202c9ca72ddd7307108ae31d67f69ea77b9c163cb1a25ec44",
+      "context_utf8_sha256": "07613b713a1f9416a9a52e985a5eb476a22caa3f0adfa63892029f8928f10386",
+      "response_unicode_characters": 798,
+      "response_words": 131,
+      "context_char_div4_estimate": 588,
+      "original_labels": [
+        {
+          "start": 321,
+          "end": 336,
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "5639",
+      "source_id": "13595",
+      "source": "Recent News",
+      "task_type": "Summary",
+      "upstream_model": "llama-2-70b-chat",
+      "temperature": 0.775,
+      "original_split": "train",
+      "auxiliary_split": "dev",
+      "quality": "good",
+      "selection_stratum": "upstream_error_span_present",
+      "response_utf8_sha256": "77d676af120b65418637c4c4a0ae613465e304b74fc39dbd795542fa4953c06a",
+      "context_utf8_sha256": "86e4ced093a0e43cd571c43677ffa193fac3ca6ff2539ebabe941faa28988022",
+      "response_unicode_characters": 837,
+      "response_words": 124,
+      "context_char_div4_estimate": 750,
+      "original_labels": [
+        {
+          "start": 538,
+          "end": 678,
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    }
+  ],
+  "main_scored_population": false,
+  "redistribution_status": "Metadata-only acquisition recipe; underlying third-party text is not bundled here",
+  "claim_annotation_status": "pending"
+}

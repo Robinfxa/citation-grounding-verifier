@@ -1,0 +1,5 @@
+{
+  "request_id": "DR01",
+  "source_original_sha256": "7294ee32f139f3fa905dd596fc9287b06ef7d74284a95f251f901f39eaf3009c",
+  "gold_change_details": "See cohort author-to-accepted diff for final field changes; intermediate accepted stages remain in the original affected-review copies."
+}

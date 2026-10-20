@@ -1,0 +1,566 @@
+{
+  "frozen_at": "2026-10-20T22:01:58.022412+00:00",
+  "source_commit": "45d01e2a3d7142f4d8a5737a53e1743a921ea294",
+  "source_fingerprints": {
+    "code_sha256": "353c9d50f6035dadf76006913708123f4fbe525f79d74c70e9245e919413239e",
+    "files": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "efe9880e6f6691702c764654344532af21b39d252dd4392bb69fbc14eb612d81",
+      "grounding/contracts.py": "736c5e1e2db6f9bc0ff42d4ad2f93e502e5927b57f5a07515130537408f52417",
+      "grounding/diagnostics.py": "b29774e3b94587604b02de928932a374de4ac634cd41e5f47e142380f2853921",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/jev_evidence.py": "9fa033259e3f9a10bf2f59c5df438984a5d025cd2b3e13c3b3aa3dc3253cbf66",
+      "grounding/jev_provider.py": "b43d13f2a0c792c6f75000bdb0b66c8c15f874086e52bb5e86c6d7f50c06a9c4",
+      "grounding/jev_verifier.py": "c69c1427b57f3d976a61a0d7e8dba6544de412d85b52666580c10b81edda760b",
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "bb68cddb38d1194649448e410e6296d9cc2a9038bfe202dfd0f452e34315ffdf",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/audit.py": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+      "grounding_eval/cli.py": "079a5f9f1ac45da03d16814a1a87252d57bb2e69aeb0f6eb4d03e825dfc119ab",
+      "grounding_eval/confidence.py": "8b821bc658b14d7a7397e697dc5813e34463d305d00f7e020aa2d776f1e42c5d",
+      "grounding_eval/dataset.py": "1b5aae47a713ad8c71935859fe4e6b6fa6374584780515f6e8d959141aec8df2",
+      "grounding_eval/diagnostics.py": "b07bfe37d9f65abedd9432d3ebf51e2397afdf591d57685abde050b9574ecdb9",
+      "grounding_eval/hybrid.py": "b5f64a823700d120e9b5f6202901a296c5e367671b918e1c39f4c17ae23e2e13",
+      "grounding_eval/provenance.py": "7243c31ea04e8b37e543b56a7d3e96a6701631d6b178ed0576fee47ae801cd33",
+      "grounding_eval/repeated.py": "74c9f3de20d1d61c1715e22180652feae366b65233d681e92672ce1652a2cee8",
+      "grounding_eval/reporting.py": "3f61282bacc04399d3fb876395abe6bfcc68f4f232e83333f96957cfc8369122",
+      "grounding_eval/runner.py": "785db293bf0ba1bb17afdf2e2f7d4b29f8e444d9c0bec9127e37127d17caa40d",
+      "grounding_eval/scoring.py": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e",
+      "grounding_eval/uncertainty.py": "c6bfbdcb8155acf2fdfdd31ea74eaea4fa8d7a18750e26ca0c3546f49c85f674"
+    },
+    "prompt_files": {
+      "grounding/prompts.py": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59"
+    }
+  },
+  "input_hashes": {
+    "datasets/v2/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "datasets/v2/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+    "pyproject.toml": "7878fcb37e55429ae27066cb699cb6794a3bb4dc8785ac0074d018c4ea593d9f",
+    "uv.lock": "11756c62fcab5ccf50828739ab9d5bd5b6ba304241e5721600bca8fe0e636b92"
+  },
+  "dataset_version": "v2-pilot-reviewed-1",
+  "annotation_version": "v2-pilot-reviewed-1",
+  "population": {
+    "cases": 12,
+    "gold_claims": 126,
+    "split": "dev",
+    "case_ids": [
+      "v2-dev-p01",
+      "v2-dev-p02",
+      "v2-dev-p03",
+      "v2-dev-p04",
+      "v2-dev-p05",
+      "v2-dev-p06",
+      "v2-dev-p07",
+      "v2-dev-p08",
+      "v2-dev-p09",
+      "v2-dev-p10",
+      "v2-dev-p11",
+      "v2-dev-p12"
+    ]
+  },
+  "settings": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "provider_timeout": 120.0,
+    "operation_timeout": 240.0,
+    "max_provider_attempts": 6,
+    "transport_retries": 0,
+    "retry_delay": 0.25,
+    "max_output_tokens": {
+      "requested": 8192,
+      "effective": null,
+      "application": "not_applied"
+    },
+    "diagnostics": true,
+    "endpoint_sha256": "d9617135d6fdd0a2cde722d637a1dfcc3da37515708b3ea5d66ae607c8ac785e"
+  },
+  "new_total_attempt_limit": 320,
+  "prior_pilot_attempts_separate": 63,
+  "prior_jev_attempts_separate": 8,
+  "checks_combined_maximum": 12,
+  "matrix_allowance": "320 minus actual charges of both successful checks",
+  "matrix_execution_order": [
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p11"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p12"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p01"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p02"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p07"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p07"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p01"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p02"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p04"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p10"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p04"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p09"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p05"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p06"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p08"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p03"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p05"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p03"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p03"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p07"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p11"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p11"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p11"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p04"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p12"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p10"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p08"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p09"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p10"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p09"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p07"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p12"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p05"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p01"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p03"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p08"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p10"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p06"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p02"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p04"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p11"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p05"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p06"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p07"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p01"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p12"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p12"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p05"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p06"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p08"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p08"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p10"
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p03"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p09"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p08"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p12"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p05"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p03"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p09"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p06"
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p01"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p11"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p10"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p07"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p01"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p04"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p06"
+    },
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "case_id": "v2-dev-p02"
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "case_id": "v2-dev-p02"
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "case_id": "v2-dev-p09"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p02"
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "case_id": "v2-dev-p04"
+    }
+  ],
+  "matrix_requires": "both fixed checks exit 0 and COMPLETE with exactly one success",
+  "stop": "first model error; no automatic relaunch after unknown outcome or error",
+  "timeout_change": {
+    "prior_provider_seconds": 30,
+    "prior_operation_seconds": 60,
+    "provider_seconds": 120,
+    "operation_seconds": 240,
+    "kind": "explicit operational change; prompts unchanged"
+  },
+  "dollar_policy": "measured_only_no_hard_limit; Codex subscription dollars unknown",
+  "selection_hashes": {
+    "oracle-selection.json": "d8e959e56809968563b2f54f150dbabfd84d1a8d012cc854162cc8673a62e268",
+    "e2e-selection.json": "682edcdd91b1d7e4bac192ace6a8d16d72d94853e997241583ded91dc1ae68b4",
+    "matrix-selection.json": "6a116012fbd755277c6399ec1fc298efa211685bc7563bdae9d248a72b56a51d"
+  },
+  "private_pre_inference_freeze_sha256": "08567bd46aa0cebe978d55695276035a43242da421f284aff518faceaae331f9",
+  "commands_are_portable_examples_not_original_argv": true,
+  "requires_new_live_authorization": true,
+  "original_absolute_commands_location": "private execution receipts",
+  "reproduction_environment": {
+    "GROUNDING_PROVIDER": "codex",
+    "GROUNDING_MODEL": "gpt-6.1-sol",
+    "GROUNDING_PROVIDER_TIMEOUT": "120",
+    "GROUNDING_OPERATION_TIMEOUT": "240",
+    "GROUNDING_TRANSPORT_RETRIES": "0",
+    "GROUNDING_MAX_PROVIDER_ATTEMPTS": "6",
+    "GROUNDING_MAX_OUTPUT_TOKENS": "8192",
+    "GROUNDING_RETRY_DELAY": "0.25",
+    "GROUNDING_DIAGNOSTICS": "true"
+  },
+  "portable_reproduction_commands": {
+    "check-oracle": [
+      "uv",
+      "run",
+      "--frozen",
+      "grounding-eval",
+      "run",
+      "--dataset",
+      "datasets/v2/pilot.jsonl",
+      "--split",
+      "dev",
+      "--format-version",
+      "2",
+      "--approaches",
+      "minimal",
+      "--track",
+      "oracle",
+      "--case-ids-file",
+      "reports/eval-v2/completion-dev-20261020/oracle-selection.json",
+      "--max-total-provider-attempts",
+      "6",
+      "--stop-on-model-error",
+      "--seed",
+      "20261015",
+      "--bootstrap-samples",
+      "10000",
+      "--output",
+      "reports/eval-v2/completion-dev-reproduction-NEW/check-oracle"
+    ],
+    "check-e2e": [
+      "uv",
+      "run",
+      "--frozen",
+      "grounding-eval",
+      "run",
+      "--dataset",
+      "datasets/v2/pilot.jsonl",
+      "--split",
+      "dev",
+      "--format-version",
+      "2",
+      "--approaches",
+      "minimal",
+      "--track",
+      "end-to-end",
+      "--case-ids-file",
+      "reports/eval-v2/completion-dev-20261020/e2e-selection.json",
+      "--max-total-provider-attempts",
+      "6",
+      "--stop-on-model-error",
+      "--seed",
+      "20261015",
+      "--bootstrap-samples",
+      "10000",
+      "--output",
+      "reports/eval-v2/completion-dev-reproduction-NEW/check-e2e"
+    ],
+    "matrix_template": [
+      "uv",
+      "run",
+      "--frozen",
+      "grounding-eval",
+      "run",
+      "--dataset",
+      "datasets/v2/pilot.jsonl",
+      "--split",
+      "dev",
+      "--format-version",
+      "2",
+      "--approaches",
+      "heuristic,minimal,optimized",
+      "--track",
+      "both",
+      "--case-ids-file",
+      "reports/eval-v2/completion-dev-20261020/matrix-selection.json",
+      "--max-total-provider-attempts",
+      "REMAINING_FROM_320_AFTER_TWO_SUCCESSFUL_CHECKS",
+      "--stop-on-model-error",
+      "--seed",
+      "20261015",
+      "--bootstrap-samples",
+      "10000",
+      "--output",
+      "reports/eval-v2/completion-dev-reproduction-NEW/matrix"
+    ]
+  }
+}

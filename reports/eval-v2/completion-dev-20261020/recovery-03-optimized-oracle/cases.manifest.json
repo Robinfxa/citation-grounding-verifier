@@ -1,0 +1,316 @@
+{
+  "annotation_version": "v2-pilot-reviewed-1",
+  "dataset_file": "cases.jsonl",
+  "dataset_sha256": "aa894e9d19d55f239e1bd9c41b4fb52f5088f513c034256a988d946a19396d34",
+  "dataset_version": "v2-pilot-reviewed-1",
+  "format_version": 2,
+  "layout": [
+    {
+      "cases": 2,
+      "category": "extrinsic",
+      "split": "dev"
+    },
+    {
+      "cases": 1,
+      "category": "subtle_distortion",
+      "split": "dev"
+    },
+    {
+      "cases": 2,
+      "category": "supported",
+      "split": "dev"
+    },
+    {
+      "cases": 1,
+      "category": "synthesis",
+      "split": "dev"
+    }
+  ],
+  "passage_maps": [
+    {
+      "case_id": "v2-dev-p01",
+      "end": 105,
+      "passage_index": 0,
+      "source_id": "cpython-tarfile",
+      "start": 0,
+      "text_sha256": "909068aa3cbc0c2da4b66abcf4f22f24759508a8b29d14bb9216f81b225c195a"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 36189,
+      "passage_index": 1,
+      "source_id": "cpython-tarfile",
+      "start": 33477,
+      "text_sha256": "005552b48384dcdbad5395f351f9943b480dd7f0a262e896159a49f8082a7ed1"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 37233,
+      "passage_index": 2,
+      "source_id": "cpython-tarfile",
+      "start": 36191,
+      "text_sha256": "73ec1a7f0818e43bd56a4d2e7b8285c51be6fd0f0a18295fb5628a1ec1ce1da2"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 38476,
+      "passage_index": 3,
+      "source_id": "cpython-tarfile",
+      "start": 37235,
+      "text_sha256": "2818ee71c6282d4b1c1dd0ac1970a808f9323318fd3eb49c513321737c7cd125"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 40417,
+      "passage_index": 4,
+      "source_id": "cpython-tarfile",
+      "start": 38511,
+      "text_sha256": "147fac13cc83f9501cde95ab076fb449d99cb447611368eb35862da8ef6c045d"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 41832,
+      "passage_index": 5,
+      "source_id": "cpython-tarfile",
+      "start": 40420,
+      "text_sha256": "77ff6c74b874cbb7e92f60c813736cf9d2e4ae5854f0d2908294683d4394be42"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 139,
+      "passage_index": 0,
+      "source_id": "cpython-decimal",
+      "start": 0,
+      "text_sha256": "3a33fd6d3dc4a819e0aa35be65795e97620064ead7089360ee754e6f8c32f4ea"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 40134,
+      "passage_index": 1,
+      "source_id": "cpython-decimal",
+      "start": 38126,
+      "text_sha256": "c901a52ae64ebdba0ae4466f46b32e23c9f17338991f2e64448f718c1f24f0bf"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 42245,
+      "passage_index": 2,
+      "source_id": "cpython-decimal",
+      "start": 40136,
+      "text_sha256": "c72ea1c9b2e8548981dd8fafeb0819e3c7e6e63595c411b141f1bb9aebe34c87"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 45088,
+      "passage_index": 3,
+      "source_id": "cpython-decimal",
+      "start": 42247,
+      "text_sha256": "47858a456df5747a1e0c27d974564f0d8275364c8e12158d652b4ec2915da72d"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 47425,
+      "passage_index": 4,
+      "source_id": "cpython-decimal",
+      "start": 45091,
+      "text_sha256": "e94d51afb2ba0e93afe7855de9776c1262255c3486929af9a4dc5e43f6d7f937"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 3843,
+      "passage_index": 0,
+      "source_id": "cpython-queue",
+      "start": 0,
+      "text_sha256": "27e16633547fc1fb65a532f2e67869d081586cafba67f6d69585d9a5d31d4446"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 6569,
+      "passage_index": 1,
+      "source_id": "cpython-queue",
+      "start": 3845,
+      "text_sha256": "0fb4f9b5af85cf2c4953047b62d8be0ad167a6f51fc1140fd71a14ca6e0a3fe5"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 8340,
+      "passage_index": 2,
+      "source_id": "cpython-queue",
+      "start": 6571,
+      "text_sha256": "a4746c09dfd9aff0f5725f774132a1b20ca542633ee3f2edcaeb04eee239979d"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 9062,
+      "passage_index": 3,
+      "source_id": "cpython-queue",
+      "start": 8343,
+      "text_sha256": "fa676248cd7aab7ea3de86f796a3357cbe1d42323deef25cba2829eb90958d80"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 11026,
+      "passage_index": 4,
+      "source_id": "cpython-queue",
+      "start": 9065,
+      "text_sha256": "49831172f306dcdf815d8aa49b83d4ce1a8c18d4d7c63aaae89daded2414be85"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "end": 3808,
+      "passage_index": 0,
+      "source_id": "rust-visibility",
+      "start": 0,
+      "text_sha256": "f38dbbeb2e62f0ca13a386e78c609d3c5950ac48f030c81456560efa334a7b27"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "end": 5665,
+      "passage_index": 1,
+      "source_id": "rust-visibility",
+      "start": 3810,
+      "text_sha256": "bc0c865342c555f5332bf98fb388e33e1068852be37346c91a31b16447eccdac"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "end": 8760,
+      "passage_index": 2,
+      "source_id": "rust-visibility",
+      "start": 5667,
+      "text_sha256": "47cb03fe7657d81aa5c7f2e6fe33d3883893df0699b9265a2fddfb6a956cbf2a"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "end": 9636,
+      "passage_index": 3,
+      "source_id": "rust-visibility",
+      "start": 8762,
+      "text_sha256": "248b0151156cfc82853b55b15ca0a3584dbf783f8906f5e21fe2eabba08a818c"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "end": 2796,
+      "passage_index": 0,
+      "source_id": "rust-testing",
+      "start": 0,
+      "text_sha256": "9c53f8a214fb2cb05e8fd1523389e91711711a2f4d3bf15ef68d5a10f02a03f9"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "end": 4244,
+      "passage_index": 1,
+      "source_id": "rust-testing",
+      "start": 2798,
+      "text_sha256": "2efbb26708b7296b476ab3099ae5ae0d1a2bc48912c04f15a847b8375cd2f912"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "end": 6607,
+      "passage_index": 2,
+      "source_id": "rust-testing",
+      "start": 4246,
+      "text_sha256": "c1865b6057a3449ec246a65613df3c91650c5b1d62a6d1481d05fc5f9513d0a8"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "end": 68318,
+      "passage_index": 0,
+      "source_id": "postgres-privileges",
+      "start": 63899,
+      "text_sha256": "12c4ade0bcc81446a2aae0687a7215b1caf3a394438276d9642be2269bb4cde0"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "end": 71052,
+      "passage_index": 1,
+      "source_id": "postgres-privileges",
+      "start": 68381,
+      "text_sha256": "1cbc4a2d7d154210f978580d3950dcf5a49972247e294e97bc162fe6ba9d2f92"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "end": 78279,
+      "passage_index": 2,
+      "source_id": "postgres-privileges",
+      "start": 77054,
+      "text_sha256": "0f0989c6cad2ff976c67a3e00f7ebfc8a6710526dbb0709e46f727789d40d01c"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "end": 89960,
+      "passage_index": 3,
+      "source_id": "postgres-privileges",
+      "start": 85833,
+      "text_sha256": "24d038c4d1ea92139c5c82f0fa859a4545cb19244f00ea68851396553325edfc"
+    }
+  ],
+  "schema_version": "2",
+  "sources": [
+    {
+      "family_id": "v2-cpython-decimal",
+      "id": "cpython-decimal",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-decimal/raw.rst",
+      "raw_sha256": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/decimal.rst"
+    },
+    {
+      "family_id": "v2-cpython-queue",
+      "id": "cpython-queue",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-queue/raw.rst",
+      "raw_sha256": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/queue.rst"
+    },
+    {
+      "family_id": "v2-cpython-tarfile",
+      "id": "cpython-tarfile",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-tarfile/raw.rst",
+      "raw_sha256": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/tarfile.rst"
+    },
+    {
+      "family_id": "v2-postgres-privileges",
+      "id": "postgres-privileges",
+      "license": "PostgreSQL",
+      "license_path": "dataset/licenses/postgresql/COPYRIGHT",
+      "license_sha256": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+      "raw_path": "dataset/sources/postgres-privileges/raw.sgml",
+      "raw_sha256": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+      "revision": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/doc/src/sgml/ddl.sgml"
+    },
+    {
+      "family_id": "v2-rust-testing",
+      "id": "rust-testing",
+      "license": "MIT",
+      "license_path": "dataset/licenses/rust/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "dataset/sources/rust-testing/raw.md",
+      "raw_sha256": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/attributes/testing.md"
+    },
+    {
+      "family_id": "v2-rust-visibility",
+      "id": "rust-visibility",
+      "license": "MIT",
+      "license_path": "dataset/licenses/rust/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "dataset/sources/rust-visibility/raw.md",
+      "raw_sha256": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/visibility-and-privacy.md"
+    }
+  ]
+}

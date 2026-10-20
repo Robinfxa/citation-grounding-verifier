@@ -1,0 +1,2819 @@
+{
+  "cohort": "test-second24",
+  "original_component": "../test-second24.jsonl",
+  "original_component_sha256": "24ab3c0b8f3a72c3035f886f550823378b8a2516d16c7b7143d427d0c72cc77b",
+  "accepted_component": "../test-second24-revised-1.jsonl",
+  "accepted_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+  "original_gold_claims": 195,
+  "accepted_gold_claims": 200,
+  "unchanged_original_gold_ids": [
+    "v2-test-r25-c01",
+    "v2-test-r25-c02",
+    "v2-test-r25-c03",
+    "v2-test-r25-c04",
+    "v2-test-r25-c05",
+    "v2-test-r25-c06",
+    "v2-test-r25-c08",
+    "v2-test-r26-c01",
+    "v2-test-r26-c02",
+    "v2-test-r26-c03",
+    "v2-test-r26-c04",
+    "v2-test-r26-c05",
+    "v2-test-r26-c06",
+    "v2-test-r26-c08",
+    "v2-test-r27-c01",
+    "v2-test-r27-c02",
+    "v2-test-r27-c03",
+    "v2-test-r27-c04",
+    "v2-test-r27-c06",
+    "v2-test-r27-c08",
+    "v2-test-r28-c01",
+    "v2-test-r28-c02",
+    "v2-test-r28-c03",
+    "v2-test-r28-c04",
+    "v2-test-r28-c06",
+    "v2-test-r28-c08",
+    "v2-test-r29-c01",
+    "v2-test-r29-c04",
+    "v2-test-r29-c05",
+    "v2-test-r29-c06",
+    "v2-test-r29-c07",
+    "v2-test-r29-c08",
+    "v2-test-r29-c09",
+    "v2-test-r30-c01",
+    "v2-test-r30-c03",
+    "v2-test-r30-c04",
+    "v2-test-r30-c05",
+    "v2-test-r30-c06",
+    "v2-test-r30-c07",
+    "v2-test-r30-c08",
+    "v2-test-r31-c01",
+    "v2-test-r31-c02",
+    "v2-test-r31-c03",
+    "v2-test-r31-c04",
+    "v2-test-r31-c05",
+    "v2-test-r31-c08",
+    "v2-test-r32-c01",
+    "v2-test-r32-c02",
+    "v2-test-r32-c03",
+    "v2-test-r32-c04",
+    "v2-test-r32-c05",
+    "v2-test-r32-c08",
+    "v2-test-r33-c01",
+    "v2-test-r33-c04",
+    "v2-test-r33-c05",
+    "v2-test-r33-c06",
+    "v2-test-r33-c07",
+    "v2-test-r33-c08",
+    "v2-test-r34-c01",
+    "v2-test-r34-c03",
+    "v2-test-r34-c04",
+    "v2-test-r34-c05",
+    "v2-test-r34-c06",
+    "v2-test-r34-c07",
+    "v2-test-r34-c08",
+    "v2-test-r35-c02",
+    "v2-test-r35-c04",
+    "v2-test-r35-c05",
+    "v2-test-r35-c07",
+    "v2-test-r36-c02",
+    "v2-test-r36-c04",
+    "v2-test-r36-c05",
+    "v2-test-r36-c07",
+    "v2-test-r36-c08",
+    "v2-test-r37-c02",
+    "v2-test-r37-c06",
+    "v2-test-r37-c07",
+    "v2-test-r37-c08",
+    "v2-test-r38-c06",
+    "v2-test-r38-c07",
+    "v2-test-r38-c08",
+    "v2-test-r39-c03",
+    "v2-test-r39-c08",
+    "v2-test-r40-c01",
+    "v2-test-r40-c05",
+    "v2-test-r40-c06",
+    "v2-test-r40-c07",
+    "v2-test-r40-c08",
+    "v2-test-r41-c05",
+    "v2-test-r41-c06",
+    "v2-test-r42-c05",
+    "v2-test-r42-c06",
+    "v2-test-r43-c05",
+    "v2-test-r43-c06",
+    "v2-test-r44-c05",
+    "v2-test-r44-c06",
+    "v2-test-r44-c08",
+    "v2-test-r45-c02",
+    "v2-test-r45-c04",
+    "v2-test-r45-c06",
+    "v2-test-r46-c02",
+    "v2-test-r46-c04",
+    "v2-test-r46-c06",
+    "v2-test-r46-c07",
+    "v2-test-r47-c06",
+    "v2-test-r47-c08",
+    "v2-test-r48-c06",
+    "v2-test-r48-c08"
+  ],
+  "all_contexts_exactly_unchanged": true,
+  "input_changes": [],
+  "gold_field_changes": [
+    {
+      "gold_claim_id": "v2-test-r25-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "If a yield fixture raises an exception before yielding, pytest won't try to run\nthe teardown code after that yield fixture's ``yield`` statement. But, for every\nfixture that has already run successfully for that test, pytest will still\nattempt to tear them down as it normally would."
+              }
+            ]
+          ],
+          "after": []
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "The source promises pytest will attempt to tear down earlier successful fixtures, not that arbitrary user cleanup completes successfully. The unchanged answer uses completed teardown language."
+        },
+        "verdict": {
+          "before": "SUPPORTED",
+          "after": "UNSUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r26-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "If a yield fixture raises an exception before yielding, pytest won't try to run\nthe teardown code after that yield fixture's ``yield`` statement. But, for every\nfixture that has already run successfully for that test, pytest will still\nattempt to tear them down as it normally would."
+              }
+            ]
+          ],
+          "after": []
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "The source promises pytest will attempt to tear down earlier successful fixtures, not that arbitrary user cleanup completes successfully. The unchanged answer uses completed teardown language."
+        },
+        "verdict": {
+          "before": "SUPPORTED",
+          "after": "UNSUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r27-c05",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "capfd captures direct library or subprocess writes to file descriptors.",
+          "after": "capfd covers libraries writing directly to file descriptors."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r27-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "If the code under test writes non-textual data, you can capture this using\nthe ``capsysbinary`` fixture which instead returns ``bytes`` from\nthe ``readouterr`` method."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "If the code under test writes non-textual data, you can capture this using\nthe ``capsysbinary`` fixture which instead returns ``bytes`` from\nthe ``readouterr`` method."
+              },
+              {
+                "index": 1,
+                "quote": "the ``capfdbinary`` fixture which instead returns ``bytes`` from\nthe ``readouterr`` method.  The ``capfdbinary`` fixture operates on the\nfiledescriptor level."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r27-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "pytest captures stdout and stderr during tests",
+            "start": 153,
+            "end": 199
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "pytest captures stdout and stderr during tests."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "During test execution any output sent to ``stdout`` and ``stderr`` is\ncaptured."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r27-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 明确test execution作用域。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r28-c05",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "capfd captures direct library or subprocess writes to file descriptors.",
+          "after": "capfd covers libraries writing directly to file descriptors."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r28-c07",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "pytest binary capture fixtures spool bytes to a temporary file before returning captured output.",
+          "after": "Binary capture fixtures spool captured bytes to a temporary file before readouterr returns them."
+        },
+        "rationale": {
+          "before": "The context specifies the returned bytes and capture level but not the buffering or spooling implementation.",
+          "after": "Author adjudication after independent blind lock: 上下文说binary返回bytes；通用--capture=fd注释提临时文件，未给binary fixture共通存储实现与readouterr之前的时序。缺支持而非直接否定。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r28-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "pytest captures stdout and stderr during tests",
+            "start": 153,
+            "end": 199
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "pytest captures stdout and stderr during tests."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "During test execution any output sent to ``stdout`` and ``stderr`` is\ncaptured."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r28-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: test execution默认行为。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r28-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "The binary capture fixtures spool the captured bytes to a temporary file before readouterr returns them",
+            "start": 707,
+            "end": 810
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "The binary capture fixtures return bytes from readouterr."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "If the code under test writes non-textual data, you can capture this using\nthe ``capsysbinary`` fixture which instead returns ``bytes`` from\nthe ``readouterr`` method."
+              },
+              {
+                "index": 1,
+                "quote": "the ``capfdbinary`` fixture which instead returns ``bytes`` from\nthe ``readouterr`` method.  The ``capfdbinary`` fixture operates on the\nfiledescriptor level."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r28-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 返回bytes可独立于临时文件实现细节判定；不因前一个未支持的存储主张漏掉已支持的输出类型。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r29-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "By default the level is set on the root logger,\nhowever as a convenience it is also possible to set the log level of any\nlogger:"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "caplog fixture\n^^^^^^^^^^^^^^\n\nInside tests it is possible to change the log level for the captured log\nmessages.  This is supported by the ``caplog`` fixture:\n\n.. code-block:: python\n\n    def test_foo(caplog):\n        caplog.set_level(logging.INFO)\n\nBy default the level is set on the root logger,\nhowever as a convenience it is also possible to set the log level of any\nlogger:\n\n.. code-block:: python\n\n    def test_foo(caplog):\n        caplog.set_level(logging.CRITICAL, logger=\"root.baz\")\n\nThe log levels set are restored automatically at the end of the test."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r29-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "The log levels set are restored automatically at the end of the test."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "caplog fixture\n^^^^^^^^^^^^^^\n\nInside tests it is possible to change the log level for the captured log\nmessages.  This is supported by the ``caplog`` fixture:\n\n.. code-block:: python\n\n    def test_foo(caplog):\n        caplog.set_level(logging.INFO)\n\nBy default the level is set on the root logger,\nhowever as a convenience it is also possible to set the log level of any\nlogger:\n\n.. code-block:: python\n\n    def test_foo(caplog):\n        caplog.set_level(logging.CRITICAL, logger=\"root.baz\")\n\nThe log levels set are restored automatically at the end of the test."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r30-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Further it is possible to disable reporting of captured content (stdout,\nstderr and logs) on failed tests completely with:"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "Further it is possible to disable reporting of captured content (stdout,\nstderr and logs) on failed tests completely with:\n\n.. code-block:: bash\n\n    pytest --show-capture=no"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r31-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Although not recommended, you can use the ``--disable-warnings`` command-line option to suppress the\nwarning summary entirely from the test run output."
+              },
+              {
+                "index": 1,
+                "quote": "This plugin is enabled by default but can be disabled entirely in your ``pytest.ini`` file with:"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Although not recommended, you can use the ``--disable-warnings`` command-line option to suppress the\nwarning summary entirely from the test run output."
+              },
+              {
+                "index": 1,
+                "quote": "This plugin is enabled by default but can be disabled entirely in your ``pytest.ini`` file with:"
+              },
+              {
+                "index": 1,
+                "quote": "Disabling warning capture entirely\n----------------------------------\n\nThis plugin is enabled by default but can be disabled entirely in your ``pytest.ini`` file with:\n\n    .. code-block:: ini\n\n        [pytest]\n        addopts = -p no:warnings"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r31-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "The test will fail if the warning in question is not raised. Use the keyword\nargument ``match`` to assert that the warning matches a text or regex.\nTo match a literal string that may contain regular expression metacharacters like ``(`` or ``.``, the pattern can\nfirst be escaped with ``re.escape``."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "You can check that code raises a particular warning using :func:`pytest.warns`,\nwhich works in a similar manner to :ref:`raises <assertraises>` (except that\n:ref:`raises <assertraises>` does not capture all exceptions, only the\n``expected_exception``):\n\n.. code-block:: python\n\n    import warnings\n\n    import pytest\n\n\n    def test_warning():\n        with pytest.warns(UserWarning):\n            warnings.warn(\"my warning\", UserWarning)\n\nThe test will fail if the warning in question is not raised."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r32-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Although not recommended, you can use the ``--disable-warnings`` command-line option to suppress the\nwarning summary entirely from the test run output."
+              },
+              {
+                "index": 1,
+                "quote": "This plugin is enabled by default but can be disabled entirely in your ``pytest.ini`` file with:"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Although not recommended, you can use the ``--disable-warnings`` command-line option to suppress the\nwarning summary entirely from the test run output."
+              },
+              {
+                "index": 1,
+                "quote": "This plugin is enabled by default but can be disabled entirely in your ``pytest.ini`` file with:"
+              },
+              {
+                "index": 1,
+                "quote": "Disabling warning capture entirely\n----------------------------------\n\nThis plugin is enabled by default but can be disabled entirely in your ``pytest.ini`` file with:\n\n    .. code-block:: ini\n\n        [pytest]\n        addopts = -p no:warnings"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r32-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "The test will fail if the warning in question is not raised. Use the keyword\nargument ``match`` to assert that the warning matches a text or regex.\nTo match a literal string that may contain regular expression metacharacters like ``(`` or ``.``, the pattern can\nfirst be escaped with ``re.escape``."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "You can check that code raises a particular warning using :func:`pytest.warns`,\nwhich works in a similar manner to :ref:`raises <assertraises>` (except that\n:ref:`raises <assertraises>` does not capture all exceptions, only the\n``expected_exception``):\n\n.. code-block:: python\n\n    import warnings\n\n    import pytest\n\n\n    def test_warning():\n        with pytest.warns(UserWarning):\n            warnings.warn(\"my warning\", UserWarning)\n\nThe test will fail if the warning in question is not raised."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r33-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "* The ``match`` parameter is matched with the :func:`re.search`\n  function, so in the above example ``match='123'`` would have worked as well.\n* The ``match`` parameter also matches against `PEP-678 <https://peps.python.org/pep-0678/>`__ ``__notes__``."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Matching exception messages\n~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nYou can pass a ``match`` keyword parameter to the context-manager to test\nthat a regular expression matches on the string representation of an exception\n(similar to the ``TestCase.assertRaisesRegex`` method from ``unittest``):\n\n.. code-block:: python\n\n    import pytest\n\n\n    def myfunc():\n        raise ValueError(\"Exception 123 raised\")\n\n\n    def test_match():\n        with pytest.raises(ValueError, match=r\".* 123 .*\"):\n            myfunc()\n\nNotes:\n\n* The ``match`` parameter is matched with the :func:`re.search`\n  function, so in the above example ``match='123'`` would have worked as well.\n* The ``match`` parameter also matches against `PEP-678 <https://peps.python.org/pep-0678/>`__ ``__notes__``."
+              },
+              {
+                "index": 1,
+                "quote": "with pytest.raises(ValueError, match=r\".* 123 .*\"):"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r33-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "* The ``match`` parameter is matched with the :func:`re.search`\n  function, so in the above example ``match='123'`` would have worked as well.\n* The ``match`` parameter also matches against `PEP-678 <https://peps.python.org/pep-0678/>`__ ``__notes__``."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Matching exception messages\n~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nYou can pass a ``match`` keyword parameter to the context-manager to test\nthat a regular expression matches on the string representation of an exception\n(similar to the ``TestCase.assertRaisesRegex`` method from ``unittest``):\n\n.. code-block:: python\n\n    import pytest\n\n\n    def myfunc():\n        raise ValueError(\"Exception 123 raised\")\n\n\n    def test_match():\n        with pytest.raises(ValueError, match=r\".* 123 .*\"):\n            myfunc()\n\nNotes:\n\n* The ``match`` parameter is matched with the :func:`re.search`\n  function, so in the above example ``match='123'`` would have worked as well.\n* The ``match`` parameter also matches against `PEP-678 <https://peps.python.org/pep-0678/>`__ ``__notes__``."
+              },
+              {
+                "index": 1,
+                "quote": "with pytest.raises(ValueError, match=r\".* 123 .*\"):"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r34-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "* The ``match`` parameter is matched with the :func:`re.search`\n  function, so in the above example ``match='123'`` would have worked as well.\n* The ``match`` parameter also matches against `PEP-678 <https://peps.python.org/pep-0678/>`__ ``__notes__``."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Matching exception messages\n~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nYou can pass a ``match`` keyword parameter to the context-manager to test\nthat a regular expression matches on the string representation of an exception\n(similar to the ``TestCase.assertRaisesRegex`` method from ``unittest``):\n\n.. code-block:: python\n\n    import pytest\n\n\n    def myfunc():\n        raise ValueError(\"Exception 123 raised\")\n\n\n    def test_match():\n        with pytest.raises(ValueError, match=r\".* 123 .*\"):\n            myfunc()\n\nNotes:\n\n* The ``match`` parameter is matched with the :func:`re.search`\n  function, so in the above example ``match='123'`` would have worked as well.\n* The ``match`` parameter also matches against `PEP-678 <https://peps.python.org/pep-0678/>`__ ``__notes__``."
+              },
+              {
+                "index": 1,
+                "quote": "with pytest.raises(ValueError, match=r\".* 123 .*\"):"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r35-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "A **skip** means that you expect your test to pass only if some conditions are met,\notherwise pytest should skip running the test altogether. Common examples are skipping\nwindows-only tests on non-windows platforms, or skipping tests that depend on an external\nresource which is not available at the moment (for example a database)."
+              },
+              {
+                "index": 1,
+                "quote": "This test will run but no traceback will be reported when it fails. Instead, terminal\nreporting will list it in the \"expected to fail\" (``XFAIL``) or \"unexpectedly\npassing\" (``XPASS``) sections."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "A **skip** means that you expect your test to pass only if some conditions are met,\notherwise pytest should skip running the test altogether. Common examples are skipping\nwindows-only tests on non-windows platforms, or skipping tests that depend on an external\nresource which is not available at the moment (for example a database)."
+              },
+              {
+                "index": 1,
+                "quote": "You can use the ``xfail`` marker to indicate that you\nexpect a test to fail:\n\n.. code-block:: python\n\n    @pytest.mark.xfail\n    def test_function(): ...\n\nThis test will run but no traceback will be reported when it fails. Instead, terminal\nreporting will list it in the \"expected to fail\" (``XFAIL``) or \"unexpectedly\npassing\" (``XPASS``) sections."
+              },
+              {
+                "index": 1,
+                "quote": "@pytest.mark.xfail"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r35-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "Then the test will be reported as a regular failure if it fails with an\nexception not mentioned in ``raises``."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "If you want to be more specific as to why the test is failing, you can specify\na single exception, or a tuple of exceptions, in the ``raises`` argument.\n\n.. code-block:: python\n\n    @pytest.mark.xfail(raises=RuntimeError)\n    def test_function(): ...\n\nThen the test will be reported as a regular failure if it fails with an\nexception not mentioned in ``raises``."
+              },
+              {
+                "index": 2,
+                "quote": "@pytest.mark.xfail(raises=RuntimeError)"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r35-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "This will make ``XPASS`` (\"unexpectedly passing\") results from this test to fail the test suite."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "Both ``XFAIL`` and ``XPASS`` don't fail the test suite by default.\nYou can change this by setting the ``strict`` keyword-only parameter to ``True``:\n\n.. code-block:: python\n\n    @pytest.mark.xfail(strict=True)\n    def test_function(): ...\n\n\nThis will make ``XPASS`` (\"unexpectedly passing\") results from this test to fail the test suite."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r35-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "you can force the running and reporting of an ``xfail`` marked test\nas if it weren't marked at all. This also causes :func:`pytest.xfail` to produce no effect."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "Ignoring xfail\n~~~~~~~~~~~~~~\n\nBy specifying on the commandline:\n\n.. code-block:: bash\n\n    pytest --runxfail\n\nyou can force the running and reporting of an ``xfail`` marked test\nas if it weren't marked at all. This also causes :func:`pytest.xfail` to produce no effect."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r36-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "A **skip** means that you expect your test to pass only if some conditions are met,\notherwise pytest should skip running the test altogether. Common examples are skipping\nwindows-only tests on non-windows platforms, or skipping tests that depend on an external\nresource which is not available at the moment (for example a database)."
+              },
+              {
+                "index": 1,
+                "quote": "This test will run but no traceback will be reported when it fails. Instead, terminal\nreporting will list it in the \"expected to fail\" (``XFAIL``) or \"unexpectedly\npassing\" (``XPASS``) sections."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "A **skip** means that you expect your test to pass only if some conditions are met,\notherwise pytest should skip running the test altogether. Common examples are skipping\nwindows-only tests on non-windows platforms, or skipping tests that depend on an external\nresource which is not available at the moment (for example a database)."
+              },
+              {
+                "index": 1,
+                "quote": "You can use the ``xfail`` marker to indicate that you\nexpect a test to fail:\n\n.. code-block:: python\n\n    @pytest.mark.xfail\n    def test_function(): ...\n\nThis test will run but no traceback will be reported when it fails. Instead, terminal\nreporting will list it in the \"expected to fail\" (``XFAIL``) or \"unexpectedly\npassing\" (``XPASS``) sections."
+              },
+              {
+                "index": 1,
+                "quote": "@pytest.mark.xfail"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r36-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "Then the test will be reported as a regular failure if it fails with an\nexception not mentioned in ``raises``."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "If you want to be more specific as to why the test is failing, you can specify\na single exception, or a tuple of exceptions, in the ``raises`` argument.\n\n.. code-block:: python\n\n    @pytest.mark.xfail(raises=RuntimeError)\n    def test_function(): ...\n\nThen the test will be reported as a regular failure if it fails with an\nexception not mentioned in ``raises``."
+              },
+              {
+                "index": 2,
+                "quote": "@pytest.mark.xfail(raises=RuntimeError)"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r36-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "This will make ``XPASS`` (\"unexpectedly passing\") results from this test to fail the test suite."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "Both ``XFAIL`` and ``XPASS`` don't fail the test suite by default.\nYou can change this by setting the ``strict`` keyword-only parameter to ``True``:\n\n.. code-block:: python\n\n    @pytest.mark.xfail(strict=True)\n    def test_function(): ...\n\n\nThis will make ``XPASS`` (\"unexpectedly passing\") results from this test to fail the test suite."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r37-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Or: If no `=` symbol is used in the argument, it is instead treated as a\nfilename to read previously stored cookie from. This option also activates the\ncookie engine which makes curl record incoming cookies, which may be handy if\nyou are using this in combination with the --location option or do multiple\nURL transfers on the same invoke."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Or: If no `=` symbol is used in the argument, it is instead treated as a\nfilename to read previously stored cookie from. This option also activates the\ncookie engine which makes curl record incoming cookies, which may be handy if\nyou are using this in combination with the --location option or do multiple\nURL transfers on the same invoke."
+              },
+              {
+                "index": 1,
+                "quote": "# `--cookie`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r37-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Specify to which file you want curl to write all cookies after a completed\noperation. Curl writes all cookies from its in-memory cookie storage to the\ngiven file at the end of operations. Even if no cookies are known, a file is\ncreated so that it removes any formerly existing cookies from the file. The\nfile uses the Netscape cookie file format. If you set the filename to a single\nminus, \"-\", the cookies are written to stdout."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--cookie-jar`\n\nSpecify to which file you want curl to write all cookies after a completed\noperation. Curl writes all cookies from its in-memory cookie storage to the\ngiven file at the end of operations. Even if no cookies are known, a file is\ncreated so that it removes any formerly existing cookies from the file. The\nfile uses the Netscape cookie file format. If you set the filename to a single\nminus, \"-\", the cookies are written to stdout.\n\nThe file specified with --cookie-jar is only used for output. No cookies are\nread from the file. To read cookies, use the --cookie option. Both options\ncan specify the same file."
+              },
+              {
+                "index": 0,
+                "quote": "# `--cookie-jar`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r37-c04",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "An empty sole cookie input enables the engine without cookies.",
+          "after": "An empty cookie input activates the cookie engine without loading cookies."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "If the filename is a single minus (\"-\"), curl reads the contents from stdin.\nIf the filename is an empty string (\"\") and is the only cookie input, curl\nactivates the cookie engine without any cookies."
+              }
+            ]
+          ],
+          "after": []
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "The source requires the empty filename to be the only cookie input. The unchanged answer omits that necessary condition; gold cannot insert sole/only to repair it."
+        },
+        "verdict": {
+          "before": "SUPPORTED",
+          "after": "UNSUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r37-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "When curl is told to read cookies from a given file, this option makes it\ndiscard all \"session cookies\". This has the same effect as if a new session is\nstarted. Typical browsers discard session cookies when they are closed down."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--junk-session-cookies`\n\nWhen curl is told to read cookies from a given file, this option makes it\ndiscard all \"session cookies\". This has the same effect as if a new session is\nstarted. Typical browsers discard session cookies when they are closed down."
+              },
+              {
+                "index": 2,
+                "quote": "# `--junk-session-cookies`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r38-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Or: If no `=` symbol is used in the argument, it is instead treated as a\nfilename to read previously stored cookie from. This option also activates the\ncookie engine which makes curl record incoming cookies, which may be handy if\nyou are using this in combination with the --location option or do multiple\nURL transfers on the same invoke."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Or: If no `=` symbol is used in the argument, it is instead treated as a\nfilename to read previously stored cookie from. This option also activates the\ncookie engine which makes curl record incoming cookies, which may be handy if\nyou are using this in combination with the --location option or do multiple\nURL transfers on the same invoke."
+              },
+              {
+                "index": 1,
+                "quote": "# `--cookie`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r38-c02",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "--cookie-jar first loads a named file and then writes updated cookies after the operation, so --cookie is needed only for literal header data",
+            "start": 212,
+            "end": 353
+          },
+          "after": {
+            "quote": "--cookie-jar first loads a named file",
+            "start": 212,
+            "end": 249
+          }
+        },
+        "claim_text": {
+          "before": "curl --cookie-jar loads existing cookies before writing updates, making --cookie unnecessary for file input.",
+          "after": "--cookie-jar first loads the named file."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "The file specified with --cookie-jar is only used for output. No cookies are\nread from the file. To read cookies, use the --cookie option. Both options\ncan specify the same file."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--cookie-jar`\n\nSpecify to which file you want curl to write all cookies after a completed\noperation. Curl writes all cookies from its in-memory cookie storage to the\ngiven file at the end of operations. Even if no cookies are known, a file is\ncreated so that it removes any formerly existing cookies from the file. The\nfile uses the Netscape cookie file format. If you set the filename to a single\nminus, \"-\", the cookies are written to stdout.\n\nThe file specified with --cookie-jar is only used for output. No cookies are\nread from the file. To read cookies, use the --cookie option. Both options\ncan specify the same file."
+              }
+            ]
+          ]
+        },
+        "rationale": {
+          "before": "The jar is output-only; this confuses the shared filename pattern with a combined read-write option.",
+          "after": "Author adjudication after independent blind lock: jar明确output-only且不读。"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r38-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Specify to which file you want curl to write all cookies after a completed\noperation. Curl writes all cookies from its in-memory cookie storage to the\ngiven file at the end of operations. Even if no cookies are known, a file is\ncreated so that it removes any formerly existing cookies from the file. The\nfile uses the Netscape cookie file format. If you set the filename to a single\nminus, \"-\", the cookies are written to stdout."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--cookie-jar`\n\nSpecify to which file you want curl to write all cookies after a completed\noperation. Curl writes all cookies from its in-memory cookie storage to the\ngiven file at the end of operations. Even if no cookies are known, a file is\ncreated so that it removes any formerly existing cookies from the file. The\nfile uses the Netscape cookie file format. If you set the filename to a single\nminus, \"-\", the cookies are written to stdout.\n\nThe file specified with --cookie-jar is only used for output. No cookies are\nread from the file. To read cookies, use the --cookie option. Both options\ncan specify the same file."
+              },
+              {
+                "index": 0,
+                "quote": "# `--cookie-jar`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r38-c04",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "An empty sole cookie input enables the engine without cookies.",
+          "after": "An empty cookie input activates the cookie engine without loading cookies."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "If the filename is a single minus (\"-\"), curl reads the contents from stdin.\nIf the filename is an empty string (\"\") and is the only cookie input, curl\nactivates the cookie engine without any cookies."
+              }
+            ]
+          ],
+          "after": []
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "The source requires the empty filename to be the only cookie input. The unchanged answer omits that necessary condition; gold cannot insert sole/only to repair it."
+        },
+        "verdict": {
+          "before": "SUPPORTED",
+          "after": "UNSUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r38-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "When curl is told to read cookies from a given file, this option makes it\ndiscard all \"session cookies\". This has the same effect as if a new session is\nstarted. Typical browsers discard session cookies when they are closed down."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--junk-session-cookies`\n\nWhen curl is told to read cookies from a given file, this option makes it\ndiscard all \"session cookies\". This has the same effect as if a new session is\nstarted. Typical browsers discard session cookies when they are closed down."
+              },
+              {
+                "index": 2,
+                "quote": "# `--junk-session-cookies`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r38-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "then writes updated cookies after the operation",
+            "start": 254,
+            "end": 301
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "--cookie-jar writes updated cookies after the operation."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--cookie-jar`\n\nSpecify to which file you want curl to write all cookies after a completed\noperation. Curl writes all cookies from its in-memory cookie storage to the\ngiven file at the end of operations. Even if no cookies are known, a file is\ncreated so that it removes any formerly existing cookies from the file. The\nfile uses the Netscape cookie file format. If you set the filename to a single\nminus, \"-\", the cookies are written to stdout.\n\nThe file specified with --cookie-jar is only used for output. No cookies are\nread from the file. To read cookies, use the --cookie option. Both options\ncan specify the same file."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r38-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: 写操作部分可单独判定；不把错误load机制吞并这条。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r38-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "--cookie is needed only for literal header data",
+            "start": 306,
+            "end": 353
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "--cookie is needed only for literal header data, not loading cookies."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Or: If no `=` symbol is used in the argument, it is instead treated as a\nfilename to read previously stored cookie from. This option also activates the\ncookie engine which makes curl record incoming cookies, which may be handy if\nyou are using this in combination with the --location option or do multiple\nURL transfers on the same invoke."
+              },
+              {
+                "index": 1,
+                "quote": "The file specified with --cookie is only used as input. No cookies are written\nto that file. To store cookies, use the --cookie-jar option."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r38-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after independent blind lock: --cookie明确可读file；only literal排除了明文用途。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "CONTRADICTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r39-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Use the specified certificate file to verify the peer. The file may contain\nmultiple CA certificates. The certificate(s) must be in PEM format. Normally\ncurl is built to use a default file for this, so this option is typically used\nto alter that default file."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--cacert`\n\nUse the specified certificate file to verify the peer. The file may contain\nmultiple CA certificates. The certificate(s) must be in PEM format. Normally\ncurl is built to use a default file for this, so this option is typically used\nto alter that default file.\n\ncurl recognizes the environment variable named 'CURL_CA_BUNDLE' if it is set\nand the TLS backend is not Schannel, and uses the given path as a path to a CA\ncert bundle. This option overrides that variable."
+              },
+              {
+                "index": 1,
+                "quote": "# `--cacert`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r39-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "curl recognizes the environment variable named 'CURL_CA_BUNDLE' if it is set\nand the TLS backend is not Schannel, and uses the given path as a path to a CA\ncert bundle. This option overrides that variable."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--cacert`\n\nUse the specified certificate file to verify the peer. The file may contain\nmultiple CA certificates. The certificate(s) must be in PEM format. Normally\ncurl is built to use a default file for this, so this option is typically used\nto alter that default file.\n\ncurl recognizes the environment variable named 'CURL_CA_BUNDLE' if it is set\nand the TLS backend is not Schannel, and uses the given path as a path to a CA\ncert bundle. This option overrides that variable."
+              },
+              {
+                "index": 1,
+                "quote": "# `--cacert`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r39-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "This option works for curl on Windows when built to use OpenSSL, wolfSSL\n(added in 8.3.0) or GnuTLS (added in 8.5.0). When curl on Windows is built to\nuse Schannel, this feature is implied and curl then only uses the native CA\nstore."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--ca-native`\n\nUse the CA store from the native operating system to verify the peer. By\ndefault, curl otherwise uses a CA store provided in a single file or\ndirectory, but when using this option it interfaces the operating system's own\nvault.\n\nThis option works for curl on Windows when built to use OpenSSL, wolfSSL\n(added in 8.3.0) or GnuTLS (added in 8.5.0). When curl on Windows is built to\nuse Schannel, this feature is implied and curl then only uses the native CA\nstore."
+              },
+              {
+                "index": 1,
+                "quote": "(Schannel only) This option is supported for Schannel in Windows 7 or later\n(added in 7.60.0). This option is supported for backward compatibility with\nother SSL engines; instead it is recommended to use Windows' store of root\ncertificates (the default for Schannel)."
+              },
+              {
+                "index": 0,
+                "quote": "# `--ca-native`"
+              },
+              {
+                "index": 1,
+                "quote": "# `--cacert`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r39-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 3,
+                "quote": "Verify the status of the server certificate by using the Certificate Status\nRequest (aka. OCSP stapling) TLS extension."
+              },
+              {
+                "index": 3,
+                "quote": "If this option is enabled and the server sends an invalid (e.g. expired)\nresponse, if the response suggests that the server certificate has been\nrevoked, or no response at all is received, the verification fails."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--cert-status`\n\nVerify the status of the server certificate by using the Certificate Status\nRequest (aka. OCSP stapling) TLS extension.\n\nIf this option is enabled and the server sends an invalid (e.g. expired)\nresponse, if the response suggests that the server certificate has been\nrevoked, or no response at all is received, the verification fails.\n\nThis support is currently only implemented in the OpenSSL and GnuTLS backends."
+              },
+              {
+                "index": 3,
+                "quote": "# `--cert-status`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r39-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 3,
+                "quote": "This support is currently only implemented in the OpenSSL and GnuTLS backends."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--cert-status`\n\nVerify the status of the server certificate by using the Certificate Status\nRequest (aka. OCSP stapling) TLS extension.\n\nIf this option is enabled and the server sends an invalid (e.g. expired)\nresponse, if the response suggests that the server certificate has been\nrevoked, or no response at all is received, the verification fails.\n\nThis support is currently only implemented in the OpenSSL and GnuTLS backends."
+              },
+              {
+                "index": 3,
+                "quote": "# `--cert-status`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r39-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 4,
+                "quote": "By default, every secure connection curl makes is verified to be secure before\nthe transfer takes place. This option makes curl skip the verification step\nand proceed without checking."
+              },
+              {
+                "index": 4,
+                "quote": "For SFTP and SCP, this option makes curl skip the *known_hosts* verification.\n*known_hosts* is a file normally stored in the user's home directory in the\n\".ssh\" subdirectory, which contains hostnames and their public keys."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 4,
+                "quote": "# `--insecure`\n\nBy default, every secure connection curl makes is verified to be secure before\nthe transfer takes place. This option makes curl skip the verification step\nand proceed without checking."
+              },
+              {
+                "index": 4,
+                "quote": "For SFTP and SCP, this option makes curl skip the *known_hosts* verification.\n*known_hosts* is a file normally stored in the user's home directory in the\n\".ssh\" subdirectory, which contains hostnames and their public keys."
+              },
+              {
+                "index": 4,
+                "quote": "# `--insecure`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r40-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "(iOS and macOS only) If curl is built against Secure Transport, then this\noption is supported for backward compatibility with other SSL engines, but it\nshould not be set. If the option is not set, then curl uses the certificates\nin the system and user Keychain to verify the peer, which is the preferred\nmethod of verifying the peer's certificate chain."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "(iOS and macOS only) If curl is built against Secure Transport, then this\noption is supported for backward compatibility with other SSL engines, but it\nshould not be set. If the option is not set, then curl uses the certificates\nin the system and user Keychain to verify the peer, which is the preferred\nmethod of verifying the peer's certificate chain."
+              },
+              {
+                "index": 1,
+                "quote": "# `--cacert`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r40-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "(Schannel only) This option is supported for Schannel in Windows 7 or later\n(added in 7.60.0). This option is supported for backward compatibility with\nother SSL engines; instead it is recommended to use Windows' store of root\ncertificates (the default for Schannel)."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "(Schannel only) This option is supported for Schannel in Windows 7 or later\n(added in 7.60.0). This option is supported for backward compatibility with\nother SSL engines; instead it is recommended to use Windows' store of root\ncertificates (the default for Schannel)."
+              },
+              {
+                "index": 1,
+                "quote": "# `--cacert`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r40-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "This option works for curl on Windows when built to use OpenSSL, wolfSSL\n(added in 8.3.0) or GnuTLS (added in 8.5.0). When curl on Windows is built to\nuse Schannel, this feature is implied and curl then only uses the native CA\nstore."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--ca-native`\n\nUse the CA store from the native operating system to verify the peer. By\ndefault, curl otherwise uses a CA store provided in a single file or\ndirectory, but when using this option it interfaces the operating system's own\nvault.\n\nThis option works for curl on Windows when built to use OpenSSL, wolfSSL\n(added in 8.3.0) or GnuTLS (added in 8.5.0). When curl on Windows is built to\nuse Schannel, this feature is implied and curl then only uses the native CA\nstore."
+              },
+              {
+                "index": 0,
+                "quote": "# `--ca-native`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r41-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "The connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`\n\nMaximum time in seconds that you allow curl's connection to take. This only\nlimits the connection phase, so if curl connects within the given period it\ncontinues - if not it exits.\n\nThis option accepts decimal values (added in 7.32.0). The decimal value needs\nto be provided using a dot (.) as decimal separator - not the local version\neven if it might be using another separator.\n\nThe connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              },
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r41-c02",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "A transfer continues if the connection completes within connect-timeout.",
+          "after": "A transfer may continue beyond --connect-timeout once the connection phase has completed."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Maximum time in seconds that you allow curl's connection to take. This only\nlimits the connection phase, so if curl connects within the given period it\ncontinues - if not it exits."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`\n\nMaximum time in seconds that you allow curl's connection to take. This only\nlimits the connection phase, so if curl connects within the given period it\ncontinues - if not it exits.\n\nThis option accepts decimal values (added in 7.32.0). The decimal value needs\nto be provided using a dot (.) as decimal separator - not the local version\neven if it might be using another separator.\n\nThe connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              },
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r41-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "Set maximum time in seconds that you allow each transfer to take. Prevents\nyour batch jobs from hanging for hours due to slow networks or links going\ndown. This option accepts decimal values (added in 7.32.0)."
+              },
+              {
+                "index": 2,
+                "quote": "If you enable retrying the transfer (--retry) then the maximum time counter is\nreset each time the transfer is retried. You can use --retry-max-time to limit\nthe retry time."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--max-time`\n\nSet maximum time in seconds that you allow each transfer to take. Prevents\nyour batch jobs from hanging for hours due to slow networks or links going\ndown. This option accepts decimal values (added in 7.32.0).\n\nIf you enable retrying the transfer (--retry) then the maximum time counter is\nreset each time the transfer is retried. You can use --retry-max-time to limit\nthe retry time."
+              },
+              {
+                "index": 2,
+                "quote": "# `--max-time`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r41-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "The connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              },
+              {
+                "index": 4,
+                "quote": "This option controls transfers (in both directions) but does not affect slow\nconnects etc. If this is a concern for you, try the --connect-timeout option."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`\n\nMaximum time in seconds that you allow curl's connection to take. This only\nlimits the connection phase, so if curl connects within the given period it\ncontinues - if not it exits.\n\nThis option accepts decimal values (added in 7.32.0). The decimal value needs\nto be provided using a dot (.) as decimal separator - not the local version\neven if it might be using another separator.\n\nThe connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              },
+              {
+                "index": 4,
+                "quote": "# `--speed-time`\n\nIf a transfer runs slower than speed-limit bytes per second during a\nspeed-time period, the transfer is aborted. If speed-time is used, the default\nspeed-limit is 1 unless set with --speed-limit.\n\nThis option controls transfers (in both directions) but does not affect slow\nconnects etc. If this is a concern for you, try the --connect-timeout option."
+              },
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`"
+              },
+              {
+                "index": 4,
+                "quote": "# `--speed-time`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r41-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Specify the maximum transfer rate you want curl to use - for both downloads\nand uploads. This feature is useful if you have a limited pipe and you would\nlike your transfer not to use your entire bandwidth. To make it slower than it\notherwise would be."
+              },
+              {
+                "index": 1,
+                "quote": "The given speed is measured in bytes/second, unless a suffix is appended.\nAppending 'k' or 'K' counts the number as kilobytes, 'm' or 'M' makes it\nmegabytes, while 'g' or 'G' makes it gigabytes. The suffixes (k, M, G, T, P)\nare 1024 based. For example 1k is 1024. Examples: 200K, 3m and 1G."
+              },
+              {
+                "index": 1,
+                "quote": "The rate limiting logic works on averaging the transfer speed to no more than\nthe set threshold over a period of multiple seconds."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--limit-rate`\n\nSpecify the maximum transfer rate you want curl to use - for both downloads\nand uploads. This feature is useful if you have a limited pipe and you would\nlike your transfer not to use your entire bandwidth. To make it slower than it\notherwise would be.\n\nThe given speed is measured in bytes/second, unless a suffix is appended.\nAppending 'k' or 'K' counts the number as kilobytes, 'm' or 'M' makes it\nmegabytes, while 'g' or 'G' makes it gigabytes. The suffixes (k, M, G, T, P)\nare 1024 based. For example 1k is 1024. Examples: 200K, 3m and 1G.\n\nThe rate limiting logic works on averaging the transfer speed to no more than\nthe set threshold over a period of multiple seconds.\n\nIf you also use the --speed-limit option, that option takes precedence and\nmight cripple the rate-limiting slightly, to help keeping the speed-limit\nlogic working."
+              },
+              {
+                "index": 1,
+                "quote": "# `--limit-rate`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r41-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "If you also use the --speed-limit option, that option takes precedence and\nmight cripple the rate-limiting slightly, to help keeping the speed-limit\nlogic working."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--limit-rate`\n\nSpecify the maximum transfer rate you want curl to use - for both downloads\nand uploads. This feature is useful if you have a limited pipe and you would\nlike your transfer not to use your entire bandwidth. To make it slower than it\notherwise would be.\n\nThe given speed is measured in bytes/second, unless a suffix is appended.\nAppending 'k' or 'K' counts the number as kilobytes, 'm' or 'M' makes it\nmegabytes, while 'g' or 'G' makes it gigabytes. The suffixes (k, M, G, T, P)\nare 1024 based. For example 1k is 1024. Examples: 200K, 3m and 1G.\n\nThe rate limiting logic works on averaging the transfer speed to no more than\nthe set threshold over a period of multiple seconds.\n\nIf you also use the --speed-limit option, that option takes precedence and\nmight cripple the rate-limiting slightly, to help keeping the speed-limit\nlogic working."
+              },
+              {
+                "index": 1,
+                "quote": "# `--limit-rate`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r42-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "The connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`\n\nMaximum time in seconds that you allow curl's connection to take. This only\nlimits the connection phase, so if curl connects within the given period it\ncontinues - if not it exits.\n\nThis option accepts decimal values (added in 7.32.0). The decimal value needs\nto be provided using a dot (.) as decimal separator - not the local version\neven if it might be using another separator.\n\nThe connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              },
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r42-c02",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "A transfer continues if the connection completes within connect-timeout.",
+          "after": "A transfer may continue beyond --connect-timeout once the connection phase has completed."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Maximum time in seconds that you allow curl's connection to take. This only\nlimits the connection phase, so if curl connects within the given period it\ncontinues - if not it exits."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`\n\nMaximum time in seconds that you allow curl's connection to take. This only\nlimits the connection phase, so if curl connects within the given period it\ncontinues - if not it exits.\n\nThis option accepts decimal values (added in 7.32.0). The decimal value needs\nto be provided using a dot (.) as decimal separator - not the local version\neven if it might be using another separator.\n\nThe connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              },
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r42-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "If you enable retrying the transfer (--retry) then the maximum time counter is\nreset each time the transfer is retried. You can use --retry-max-time to limit\nthe retry time."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--max-time`\n\nSet maximum time in seconds that you allow each transfer to take. Prevents\nyour batch jobs from hanging for hours due to slow networks or links going\ndown. This option accepts decimal values (added in 7.32.0).\n\nIf you enable retrying the transfer (--retry) then the maximum time counter is\nreset each time the transfer is retried. You can use --retry-max-time to limit\nthe retry time."
+              },
+              {
+                "index": 2,
+                "quote": "# `--max-time`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r42-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 4,
+                "quote": "This option controls transfers (in both directions) but does not affect slow\nconnects etc. If this is a concern for you, try the --connect-timeout option."
+              },
+              {
+                "index": 0,
+                "quote": "The connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`\n\nMaximum time in seconds that you allow curl's connection to take. This only\nlimits the connection phase, so if curl connects within the given period it\ncontinues - if not it exits.\n\nThis option accepts decimal values (added in 7.32.0). The decimal value needs\nto be provided using a dot (.) as decimal separator - not the local version\neven if it might be using another separator.\n\nThe connection phase is considered complete when the DNS lookup and requested\nTCP, TLS or QUIC handshakes are done."
+              },
+              {
+                "index": 4,
+                "quote": "# `--speed-time`\n\nIf a transfer runs slower than speed-limit bytes per second during a\nspeed-time period, the transfer is aborted. If speed-time is used, the default\nspeed-limit is 1 unless set with --speed-limit.\n\nThis option controls transfers (in both directions) but does not affect slow\nconnects etc. If this is a concern for you, try the --connect-timeout option."
+              },
+              {
+                "index": 0,
+                "quote": "# `--connect-timeout`"
+              },
+              {
+                "index": 4,
+                "quote": "# `--speed-time`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r42-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Specify the maximum transfer rate you want curl to use - for both downloads\nand uploads. This feature is useful if you have a limited pipe and you would\nlike your transfer not to use your entire bandwidth. To make it slower than it\notherwise would be."
+              },
+              {
+                "index": 1,
+                "quote": "The given speed is measured in bytes/second, unless a suffix is appended.\nAppending 'k' or 'K' counts the number as kilobytes, 'm' or 'M' makes it\nmegabytes, while 'g' or 'G' makes it gigabytes. The suffixes (k, M, G, T, P)\nare 1024 based. For example 1k is 1024. Examples: 200K, 3m and 1G."
+              },
+              {
+                "index": 1,
+                "quote": "The rate limiting logic works on averaging the transfer speed to no more than\nthe set threshold over a period of multiple seconds."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--limit-rate`\n\nSpecify the maximum transfer rate you want curl to use - for both downloads\nand uploads. This feature is useful if you have a limited pipe and you would\nlike your transfer not to use your entire bandwidth. To make it slower than it\notherwise would be.\n\nThe given speed is measured in bytes/second, unless a suffix is appended.\nAppending 'k' or 'K' counts the number as kilobytes, 'm' or 'M' makes it\nmegabytes, while 'g' or 'G' makes it gigabytes. The suffixes (k, M, G, T, P)\nare 1024 based. For example 1k is 1024. Examples: 200K, 3m and 1G.\n\nThe rate limiting logic works on averaging the transfer speed to no more than\nthe set threshold over a period of multiple seconds.\n\nIf you also use the --speed-limit option, that option takes precedence and\nmight cripple the rate-limiting slightly, to help keeping the speed-limit\nlogic working."
+              },
+              {
+                "index": 1,
+                "quote": "# `--limit-rate`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r42-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "If you also use the --speed-limit option, that option takes precedence and\nmight cripple the rate-limiting slightly, to help keeping the speed-limit\nlogic working."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--limit-rate`\n\nSpecify the maximum transfer rate you want curl to use - for both downloads\nand uploads. This feature is useful if you have a limited pipe and you would\nlike your transfer not to use your entire bandwidth. To make it slower than it\notherwise would be.\n\nThe given speed is measured in bytes/second, unless a suffix is appended.\nAppending 'k' or 'K' counts the number as kilobytes, 'm' or 'M' makes it\nmegabytes, while 'g' or 'G' makes it gigabytes. The suffixes (k, M, G, T, P)\nare 1024 based. For example 1k is 1024. Examples: 200K, 3m and 1G.\n\nThe rate limiting logic works on averaging the transfer speed to no more than\nthe set threshold over a period of multiple seconds.\n\nIf you also use the --speed-limit option, that option takes precedence and\nmight cripple the rate-limiting slightly, to help keeping the speed-limit\nlogic working."
+              },
+              {
+                "index": 1,
+                "quote": "# `--limit-rate`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r43-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "The pre proxy string should be specified with a protocol:// prefix to specify\nalternative proxy protocols. Use socks4://, socks4a://, socks5:// or\nsocks5h:// to request the specific SOCKS version to be used. No protocol\nspecified makes curl default to SOCKS4."
+              },
+              {
+                "index": 1,
+                "quote": "If the port number is not specified in the proxy string, it is assumed to be\n1080."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--proxy`\n\nUse the specified proxy.\n\nThe proxy string can be specified with a protocol:// prefix. No protocol\nspecified or http:// it is treated as an HTTP proxy. Use socks4://,\nsocks4a://, socks5:// or socks5h:// to request a specific SOCKS version to be\nused.  (Added in 7.21.7)\n\nUnix domain sockets are supported for socks proxy. Set localhost for the host\npart. e.g. socks5h://localhost/path/to/socket.sock\n\nHTTPS proxy support works set with the https:// protocol prefix for OpenSSL\nand GnuTLS (added in 7.52.0). It also works for BearSSL, mbedTLS, Rustls,\nSchannel, Secure Transport and wolfSSL (added in 7.87.0).\n\nUnrecognized and unsupported proxy protocols cause an error (added in 7.52.0).\nAncient curl versions ignored unknown schemes and used http:// instead.\n\nIf the port number is not specified in the proxy string, it is assumed to be\n1080."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r43-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 3,
+                "quote": "This option overrides existing environment variables that set the proxy to\nuse. If there is an environment variable setting a proxy, you can set proxy to\n\"\" to override it."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--proxy`\n\nUse the specified proxy.\n\nThe proxy string can be specified with a protocol:// prefix. No protocol\nspecified or http:// it is treated as an HTTP proxy. Use socks4://,\nsocks4a://, socks5:// or socks5h:// to request a specific SOCKS version to be\nused.  (Added in 7.21.7)\n\nUnix domain sockets are supported for socks proxy. Set localhost for the host\npart. e.g. socks5h://localhost/path/to/socket.sock\n\nHTTPS proxy support works set with the https:// protocol prefix for OpenSSL\nand GnuTLS (added in 7.52.0). It also works for BearSSL, mbedTLS, Rustls,\nSchannel, Secure Transport and wolfSSL (added in 7.87.0).\n\nUnrecognized and unsupported proxy protocols cause an error (added in 7.52.0).\nAncient curl versions ignored unknown schemes and used http:// instead.\n\nIf the port number is not specified in the proxy string, it is assumed to be\n1080.\n\nThis option overrides existing environment variables that set the proxy to\nuse. If there is an environment variable setting a proxy, you can set proxy to\n\"\" to override it."
+              },
+              {
+                "index": 3,
+                "quote": "# `--proxy`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r43-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Comma-separated list of hosts for which not to use a proxy, if one is\nspecified. The only wildcard is a single `*` character, which matches all\nhosts, and effectively disables the proxy. Each name in this list is matched\nas either a domain which contains the hostname, or the hostname itself. For\nexample, `local.com` would match `local.com`, `local.com:80`, and\n`www.local.com`, but not `www.notlocal.com`."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--noproxy`\n\nComma-separated list of hosts for which not to use a proxy, if one is\nspecified. The only wildcard is a single `*` character, which matches all\nhosts, and effectively disables the proxy. Each name in this list is matched\nas either a domain which contains the hostname, or the hostname itself. For\nexample, `local.com` would match `local.com`, `local.com:80`, and\n`www.local.com`, but not `www.notlocal.com`.\n\nThis option overrides the environment variables that disable the proxy\n(`no_proxy` and `NO_PROXY`) (added in 7.53.0). If there is an environment\nvariable disabling a proxy, you can set the no proxy list to \"\" to override\nit."
+              },
+              {
+                "index": 0,
+                "quote": "# `--noproxy`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r43-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "This option overrides the environment variables that disable the proxy\n(`no_proxy` and `NO_PROXY`) (added in 7.53.0). If there is an environment\nvariable disabling a proxy, you can set the no proxy list to \"\" to override\nit."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--noproxy`\n\nComma-separated list of hosts for which not to use a proxy, if one is\nspecified. The only wildcard is a single `*` character, which matches all\nhosts, and effectively disables the proxy. Each name in this list is matched\nas either a domain which contains the hostname, or the hostname itself. For\nexample, `local.com` would match `local.com`, `local.com:80`, and\n`www.local.com`, but not `www.notlocal.com`.\n\nThis option overrides the environment variables that disable the proxy\n(`no_proxy` and `NO_PROXY`) (added in 7.53.0). If there is an environment\nvariable disabling a proxy, you can set the no proxy list to \"\" to override\nit."
+              },
+              {
+                "index": 0,
+                "quote": "# `--noproxy`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r43-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 4,
+                "quote": "Use the specified SOCKS5 proxy - but resolve the hostname locally. If the\nport number is not specified, it is assumed at port 1080."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 4,
+                "quote": "# `--socks5`\n\nUse the specified SOCKS5 proxy - but resolve the hostname locally. If the\nport number is not specified, it is assumed at port 1080."
+              },
+              {
+                "index": 4,
+                "quote": "# `--socks5`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r43-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "User and password that might be provided in the proxy string are URL decoded\nby curl. This allows you to pass in special characters such as @ by using %40\nor pass in a colon with %3a."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "User and password that might be provided in the proxy string are URL decoded\nby curl. This allows you to pass in special characters such as @ by using %40\nor pass in a colon with %3a."
+              },
+              {
+                "index": 3,
+                "quote": "# `--proxy`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r43-c09",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "On systems where it works, curl hides the given option argument from process\nlistings. This is not enough to protect credentials from possibly getting seen\nby other users on the same system as they still are visible for a moment\nbefore cleared. Such sensitive data should be retrieved from a file instead or\nsimilar and never used in clear text in a command line."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--proxy-user`\n\nSpecify the username and password to use for proxy authentication.\n\nIf you use a Windows SSPI-enabled curl binary and do either Negotiate or NTLM\nauthentication then you can tell curl to select the username and password from\nyour environment by specifying a single colon with this option: \"-U :\".\n\nOn systems where it works, curl hides the given option argument from process\nlistings. This is not enough to protect credentials from possibly getting seen\nby other users on the same system as they still are visible for a moment\nbefore cleared. Such sensitive data should be retrieved from a file instead or\nsimilar and never used in clear text in a command line."
+              },
+              {
+                "index": 2,
+                "quote": "# `--proxy-user`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r44-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "The pre proxy string should be specified with a protocol:// prefix to specify\nalternative proxy protocols. Use socks4://, socks4a://, socks5:// or\nsocks5h:// to request the specific SOCKS version to be used. No protocol\nspecified makes curl default to SOCKS4."
+              },
+              {
+                "index": 1,
+                "quote": "If the port number is not specified in the proxy string, it is assumed to be\n1080."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--proxy`\n\nUse the specified proxy.\n\nThe proxy string can be specified with a protocol:// prefix. No protocol\nspecified or http:// it is treated as an HTTP proxy. Use socks4://,\nsocks4a://, socks5:// or socks5h:// to request a specific SOCKS version to be\nused.  (Added in 7.21.7)\n\nUnix domain sockets are supported for socks proxy. Set localhost for the host\npart. e.g. socks5h://localhost/path/to/socket.sock\n\nHTTPS proxy support works set with the https:// protocol prefix for OpenSSL\nand GnuTLS (added in 7.52.0). It also works for BearSSL, mbedTLS, Rustls,\nSchannel, Secure Transport and wolfSSL (added in 7.87.0).\n\nUnrecognized and unsupported proxy protocols cause an error (added in 7.52.0).\nAncient curl versions ignored unknown schemes and used http:// instead.\n\nIf the port number is not specified in the proxy string, it is assumed to be\n1080."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r44-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 3,
+                "quote": "This option overrides existing environment variables that set the proxy to\nuse. If there is an environment variable setting a proxy, you can set proxy to\n\"\" to override it."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--proxy`\n\nUse the specified proxy.\n\nThe proxy string can be specified with a protocol:// prefix. No protocol\nspecified or http:// it is treated as an HTTP proxy. Use socks4://,\nsocks4a://, socks5:// or socks5h:// to request a specific SOCKS version to be\nused.  (Added in 7.21.7)\n\nUnix domain sockets are supported for socks proxy. Set localhost for the host\npart. e.g. socks5h://localhost/path/to/socket.sock\n\nHTTPS proxy support works set with the https:// protocol prefix for OpenSSL\nand GnuTLS (added in 7.52.0). It also works for BearSSL, mbedTLS, Rustls,\nSchannel, Secure Transport and wolfSSL (added in 7.87.0).\n\nUnrecognized and unsupported proxy protocols cause an error (added in 7.52.0).\nAncient curl versions ignored unknown schemes and used http:// instead.\n\nIf the port number is not specified in the proxy string, it is assumed to be\n1080.\n\nThis option overrides existing environment variables that set the proxy to\nuse. If there is an environment variable setting a proxy, you can set proxy to\n\"\" to override it."
+              },
+              {
+                "index": 3,
+                "quote": "# `--proxy`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r44-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Comma-separated list of hosts for which not to use a proxy, if one is\nspecified. The only wildcard is a single `*` character, which matches all\nhosts, and effectively disables the proxy. Each name in this list is matched\nas either a domain which contains the hostname, or the hostname itself. For\nexample, `local.com` would match `local.com`, `local.com:80`, and\n`www.local.com`, but not `www.notlocal.com`."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--noproxy`\n\nComma-separated list of hosts for which not to use a proxy, if one is\nspecified. The only wildcard is a single `*` character, which matches all\nhosts, and effectively disables the proxy. Each name in this list is matched\nas either a domain which contains the hostname, or the hostname itself. For\nexample, `local.com` would match `local.com`, `local.com:80`, and\n`www.local.com`, but not `www.notlocal.com`.\n\nThis option overrides the environment variables that disable the proxy\n(`no_proxy` and `NO_PROXY`) (added in 7.53.0). If there is an environment\nvariable disabling a proxy, you can set the no proxy list to \"\" to override\nit."
+              },
+              {
+                "index": 0,
+                "quote": "# `--noproxy`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r44-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "This option overrides the environment variables that disable the proxy\n(`no_proxy` and `NO_PROXY`) (added in 7.53.0). If there is an environment\nvariable disabling a proxy, you can set the no proxy list to \"\" to override\nit."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--noproxy`\n\nComma-separated list of hosts for which not to use a proxy, if one is\nspecified. The only wildcard is a single `*` character, which matches all\nhosts, and effectively disables the proxy. Each name in this list is matched\nas either a domain which contains the hostname, or the hostname itself. For\nexample, `local.com` would match `local.com`, `local.com:80`, and\n`www.local.com`, but not `www.notlocal.com`.\n\nThis option overrides the environment variables that disable the proxy\n(`no_proxy` and `NO_PROXY`) (added in 7.53.0). If there is an environment\nvariable disabling a proxy, you can set the no proxy list to \"\" to override\nit."
+              },
+              {
+                "index": 0,
+                "quote": "# `--noproxy`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r44-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 4,
+                "quote": "Use the specified SOCKS5 proxy - but resolve the hostname locally. If the\nport number is not specified, it is assumed at port 1080."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 4,
+                "quote": "# `--socks5`\n\nUse the specified SOCKS5 proxy - but resolve the hostname locally. If the\nport number is not specified, it is assumed at port 1080."
+              },
+              {
+                "index": 4,
+                "quote": "# `--socks5`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r44-c09",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "On systems where it works, curl hides the given option argument from process\nlistings. This is not enough to protect credentials from possibly getting seen\nby other users on the same system as they still are visible for a moment\nbefore cleared. Such sensitive data should be retrieved from a file instead or\nsimilar and never used in clear text in a command line."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--proxy-user`\n\nSpecify the username and password to use for proxy authentication.\n\nIf you use a Windows SSPI-enabled curl binary and do either Negotiate or NTLM\nauthentication then you can tell curl to select the username and password from\nyour environment by specifying a single colon with this option: \"-U :\".\n\nOn systems where it works, curl hides the given option argument from process\nlistings. This is not enough to protect credentials from possibly getting seen\nby other users on the same system as they still are visible for a moment\nbefore cleared. Such sensitive data should be retrieved from a file instead or\nsimilar and never used in clear text in a command line."
+              },
+              {
+                "index": 2,
+                "quote": "# `--proxy-user`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r45-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Resume a previous transfer from the given byte offset. The given offset is the\nexact number of bytes that are skipped, counting from the beginning of the\nsource file before it is transferred to the destination. If used with uploads,\nthe FTP server command SIZE is not used by curl."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--continue-at`\n\nResume a previous transfer from the given byte offset. The given offset is the\nexact number of bytes that are skipped, counting from the beginning of the\nsource file before it is transferred to the destination. If used with uploads,\nthe FTP server command SIZE is not used by curl.\n\nUse \"-C -\" to instruct curl to automatically find out where/how to resume the\ntransfer. It then uses the given output/input files to figure that out."
+              },
+              {
+                "index": 0,
+                "quote": "# `--continue-at`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r45-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "## 0-499\nspecifies the first 500 bytes"
+              },
+              {
+                "index": 2,
+                "quote": "## -500\nspecifies the last 500 bytes"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--range`\n\nRetrieve a byte range (i.e. a partial document) from an HTTP/1.1, FTP or SFTP\nserver or a local FILE. Ranges can be specified in a number of ways.\n\n## 0-499\nspecifies the first 500 bytes\n\n## 500-999\nspecifies the second 500 bytes\n\n## -500\nspecifies the last 500 bytes"
+              },
+              {
+                "index": 2,
+                "quote": "# `--range`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r45-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "(*) = NOTE that these make the server reply with a multipart response, which\nis returned as-is by curl! Parsing or otherwise transforming this response is\nthe responsibility of the caller."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "0-0,-1\nspecifies the first and last byte only(*)(HTTP)\n\n## 100-199,500-599\nspecifies two separate 100-byte ranges(*) (HTTP)\n\n##\n\n(*) = NOTE that these make the server reply with a multipart response, which\nis returned as-is by curl! Parsing or otherwise transforming this response is\nthe responsibility of the caller."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r45-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "and the order of the -o options and the URLs does not matter, just that the\nfirst -o is for the first URL and so on, so the above command line can also be\nwritten as"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "You may use this option as many times as the number of URLs you have. For\nexample, if you specify two URLs on the same command line, you can use it like\nthis:\n\n    curl -o aa example.com -o bb example.net\n\nand the order of the -o options and the URLs does not matter, just that the\nfirst -o is for the first URL and so on, so the above command line can also be\nwritten as\n\n    curl example.com example.net -o aa -o bb"
+              },
+              {
+                "index": 1,
+                "quote": "# `--output`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r45-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 3,
+                "quote": "If the output is not a regular file, this option has no effect."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--remove-on-error`\n\nRemove output file if an error occurs. If curl returns an error when told to\nsave output in a local file. This prevents curl from leaving a partial file in\nthe case of an error during transfer.\n\nIf the output is not a regular file, this option has no effect."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r46-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Resume a previous transfer from the given byte offset. The given offset is the\nexact number of bytes that are skipped, counting from the beginning of the\nsource file before it is transferred to the destination. If used with uploads,\nthe FTP server command SIZE is not used by curl."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--continue-at`\n\nResume a previous transfer from the given byte offset. The given offset is the\nexact number of bytes that are skipped, counting from the beginning of the\nsource file before it is transferred to the destination. If used with uploads,\nthe FTP server command SIZE is not used by curl.\n\nUse \"-C -\" to instruct curl to automatically find out where/how to resume the\ntransfer. It then uses the given output/input files to figure that out."
+              },
+              {
+                "index": 0,
+                "quote": "# `--continue-at`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r46-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "## 0-499\nspecifies the first 500 bytes"
+              },
+              {
+                "index": 2,
+                "quote": "## -500\nspecifies the last 500 bytes"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--range`\n\nRetrieve a byte range (i.e. a partial document) from an HTTP/1.1, FTP or SFTP\nserver or a local FILE. Ranges can be specified in a number of ways.\n\n## 0-499\nspecifies the first 500 bytes\n\n## 500-999\nspecifies the second 500 bytes\n\n## -500\nspecifies the last 500 bytes"
+              },
+              {
+                "index": 2,
+                "quote": "# `--range`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r46-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "(*) = NOTE that these make the server reply with a multipart response, which\nis returned as-is by curl! Parsing or otherwise transforming this response is\nthe responsibility of the caller."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "0-0,-1\nspecifies the first and last byte only(*)(HTTP)\n\n## 100-199,500-599\nspecifies two separate 100-byte ranges(*) (HTTP)\n\n##\n\n(*) = NOTE that these make the server reply with a multipart response, which\nis returned as-is by curl! Parsing or otherwise transforming this response is\nthe responsibility of the caller."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r46-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 3,
+                "quote": "If the output is not a regular file, this option has no effect."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 3,
+                "quote": "# `--remove-on-error`\n\nRemove output file if an error occurs. If curl returns an error when told to\nsave output in a local file. This prevents curl from leaving a partial file in\nthe case of an error during transfer.\n\nIf the output is not a regular file, this option has no effect."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r47-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "For the HTTP protocol family, emulate a filled-in form in which a user has\npressed the submit button. This makes curl POST data using the Content-Type\nmultipart/form-data according to RFC 2388."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--form`\n\nFor the HTTP protocol family, emulate a filled-in form in which a user has\npressed the submit button. This makes curl POST data using the Content-Type\nmultipart/form-data according to RFC 2388."
+              },
+              {
+                "index": 2,
+                "quote": "# `--form`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r47-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "This enables uploading of binary files etc. To force the 'content' part to be\na file, prefix the filename with an @ sign. To just get the content part from\na file, prefix the filename with the symbol \\<. The difference between @ and\n\\< is then that @ makes a file get attached in the post as a file upload,\nwhile the \\< makes a text field and just get the contents for that text field\nfrom a file."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "This enables uploading of binary files etc. To force the 'content' part to be\na file, prefix the filename with an @ sign. To just get the content part from\na file, prefix the filename with the symbol \\<. The difference between @ and\n\\< is then that @ makes a file get attached in the post as a file upload,\nwhile the \\< makes a text field and just get the contents for that text field\nfrom a file."
+              },
+              {
+                "index": 2,
+                "quote": "# `--form`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r47-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "Read content from stdin instead of a file by using a single \"-\" as filename.\nThis goes for both @ and \\< constructs. When stdin is used, the contents is\nbuffered in memory first by curl to determine its size and allow a possible\nresend. Defining a part's data from a named non-regular file (such as a named\npipe or similar) is not subject to buffering and is instead read at\ntransmission time; since the full size is unknown before the transfer starts,\nsuch data is sent as chunks by HTTP and rejected by IMAP."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "Read content from stdin instead of a file by using a single \"-\" as filename.\nThis goes for both @ and \\< constructs. When stdin is used, the contents is\nbuffered in memory first by curl to determine its size and allow a possible\nresend."
+              },
+              {
+                "index": 2,
+                "quote": "# `--form`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r47-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "Read content from stdin instead of a file by using a single \"-\" as filename.\nThis goes for both @ and \\< constructs. When stdin is used, the contents is\nbuffered in memory first by curl to determine its size and allow a possible\nresend. Defining a part's data from a named non-regular file (such as a named\npipe or similar) is not subject to buffering and is instead read at\ntransmission time; since the full size is unknown before the transfer starts,\nsuch data is sent as chunks by HTTP and rejected by IMAP."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "Defining a part's data from a named non-regular file (such as a named\npipe or similar) is not subject to buffering and is instead read at\ntransmission time; since the full size is unknown before the transfer starts,\nsuch data is sent as chunks by HTTP and rejected by IMAP."
+              },
+              {
+                "index": 2,
+                "quote": "# `--form`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r47-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Similar to --form except that the value string for the named parameter is used\nliterally. Leading @ and \\< characters, and the `;type=` string in the value\nhave no special meaning. Use this in preference to --form if there is any\npossibility that the string value may accidentally trigger the @ or \\<\nfeatures of --form."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--form-string`\n\nSimilar to --form except that the value string for the named parameter is used\nliterally. Leading @ and \\< characters, and the `;type=` string in the value\nhave no special meaning. Use this in preference to --form if there is any\npossibility that the string value may accidentally trigger the @ or \\<\nfeatures of --form."
+              },
+              {
+                "index": 1,
+                "quote": "# `--form-string`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r47-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Pass on names of multipart form fields and files using backslash-escaping\ninstead of percent-encoding."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--form-escape`\n\nPass on names of multipart form fields and files using backslash-escaping\ninstead of percent-encoding."
+              },
+              {
+                "index": 0,
+                "quote": "# `--form-escape`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r48-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "For the HTTP protocol family, emulate a filled-in form in which a user has\npressed the submit button. This makes curl POST data using the Content-Type\nmultipart/form-data according to RFC 2388."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "# `--form`\n\nFor the HTTP protocol family, emulate a filled-in form in which a user has\npressed the submit button. This makes curl POST data using the Content-Type\nmultipart/form-data according to RFC 2388."
+              },
+              {
+                "index": 2,
+                "quote": "# `--form`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r48-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "This enables uploading of binary files etc. To force the 'content' part to be\na file, prefix the filename with an @ sign. To just get the content part from\na file, prefix the filename with the symbol \\<. The difference between @ and\n\\< is then that @ makes a file get attached in the post as a file upload,\nwhile the \\< makes a text field and just get the contents for that text field\nfrom a file."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "This enables uploading of binary files etc. To force the 'content' part to be\na file, prefix the filename with an @ sign. To just get the content part from\na file, prefix the filename with the symbol \\<. The difference between @ and\n\\< is then that @ makes a file get attached in the post as a file upload,\nwhile the \\< makes a text field and just get the contents for that text field\nfrom a file."
+              },
+              {
+                "index": 2,
+                "quote": "# `--form`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r48-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "Read content from stdin instead of a file by using a single \"-\" as filename.\nThis goes for both @ and \\< constructs. When stdin is used, the contents is\nbuffered in memory first by curl to determine its size and allow a possible\nresend. Defining a part's data from a named non-regular file (such as a named\npipe or similar) is not subject to buffering and is instead read at\ntransmission time; since the full size is unknown before the transfer starts,\nsuch data is sent as chunks by HTTP and rejected by IMAP."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "Read content from stdin instead of a file by using a single \"-\" as filename.\nThis goes for both @ and \\< constructs. When stdin is used, the contents is\nbuffered in memory first by curl to determine its size and allow a possible\nresend."
+              },
+              {
+                "index": 2,
+                "quote": "# `--form`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r48-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "Read content from stdin instead of a file by using a single \"-\" as filename.\nThis goes for both @ and \\< constructs. When stdin is used, the contents is\nbuffered in memory first by curl to determine its size and allow a possible\nresend. Defining a part's data from a named non-regular file (such as a named\npipe or similar) is not subject to buffering and is instead read at\ntransmission time; since the full size is unknown before the transfer starts,\nsuch data is sent as chunks by HTTP and rejected by IMAP."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "Defining a part's data from a named non-regular file (such as a named\npipe or similar) is not subject to buffering and is instead read at\ntransmission time; since the full size is unknown before the transfer starts,\nsuch data is sent as chunks by HTTP and rejected by IMAP."
+              },
+              {
+                "index": 2,
+                "quote": "# `--form`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r48-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Similar to --form except that the value string for the named parameter is used\nliterally. Leading @ and \\< characters, and the `;type=` string in the value\nhave no special meaning. Use this in preference to --form if there is any\npossibility that the string value may accidentally trigger the @ or \\<\nfeatures of --form."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "# `--form-string`\n\nSimilar to --form except that the value string for the named parameter is used\nliterally. Leading @ and \\< characters, and the `;type=` string in the value\nhave no special meaning. Use this in preference to --form if there is any\npossibility that the string value may accidentally trigger the @ or \\<\nfeatures of --form."
+              },
+              {
+                "index": 1,
+                "quote": "# `--form-string`"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r48-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Pass on names of multipart form fields and files using backslash-escaping\ninstead of percent-encoding."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "# `--form-escape`\n\nPass on names of multipart form fields and files using backslash-escaping\ninstead of percent-encoding."
+              },
+              {
+                "index": 0,
+                "quote": "# `--form-escape`"
+              }
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "rule": "Diff computed directly between archived author input gold and accepted component; only changed fields are stored. This is an author-produced transparent difference map, not a replacement blind review."
+}

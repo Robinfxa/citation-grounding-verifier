@@ -4,9 +4,9 @@ An HTTP service that extracts factual claims from an answer, checks them only ag
 
 ## Current evaluation status
 
-The second evaluation round addresses a weakness in the original submission: short fictional fixtures and high scores do not establish performance on dense real documents. A 12-case / 126-fact licensed-document development pilot and stricter measurement tooling are ready for inspection. **The two recovery checks succeeded, but the full pilot stopped at its first upstream timeout; a complete method comparison is still unavailable.** Cumulative pilot use is 63/150 approved attempts, with 87 unspent. See the [staged recovery and preserved records](reports/eval-v2/pilot-recovery-20261020.md), [earlier continuation](reports/eval-v2/pilot-resume-20261020.md), [current report](reports/eval-v2/README.md), [data card](reports/eval-v2/data-card.md) and [experiment protocol](reports/eval-v2/protocol.md). Controlled optimization and final held-out evaluation remain incomplete.
+`datasets/main.jsonl` now contains **72 real-document cases / 668 atomic claims**, split into 24 development and 48 held-out cases. Contexts contain 3,905–15,959 characters; answers assert 8–14 facts. Sources are pinned, licensed documentation from CPython, Rust, PostgreSQL, pytest and curl. The answers are AI-authored summaries and controlled mutations, not natural production responses. See the [data card](reports/eval-v2/data-card.md) and [independent annotation evidence](datasets/v2/realistic-draft/review-evidence/README.md).
 
-`datasets/v2/pilot.jsonl` is the new development-only input. `datasets/main.jsonl` still contains v1 while pilot/resource acceptance and the final split remain pending; it is not presented as a completed v2 migration. The commands below name the pilot explicitly. No v2 test results or general accuracy claim are available.
+The [12-case development comparison](reports/eval-v2/completion-dev-20261020/README.md) retained an original protocol failure and completed the previously unattempted jobs. A [controlled prompt experiment](reports/eval-v2/ablation-20261020/README.md) supported one Minimal citation instruction, with higher output usage and latency; that exact change is now applied. **The final held-out comparison and semantic audit are pending.** A separate RAGTruth natural-response sample is being adjudicated and will not be pooled with the documentation benchmark. The [current report](reports/eval-v2/README.md) distinguishes completed observations from pending work.
 
 ## Try it offline
 
@@ -16,11 +16,11 @@ Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/). Installation downloa
 uv sync --frozen
 uv run pytest
 uv run ruff check .
-uv run grounding-eval validate --dataset datasets/v2/pilot.jsonl
-uv run grounding-eval run --dataset datasets/v2/pilot.jsonl \
+uv run grounding-eval validate --dataset datasets/main.jsonl
+uv run grounding-eval run --dataset datasets/main.jsonl \
   --approaches heuristic --split dev --track both \
-  --output reports/runs/pilot-offline
-uv run grounding-eval report reports/runs/pilot-offline
+  --output reports/runs/main-dev-offline
+uv run grounding-eval report reports/runs/main-dev-offline
 ```
 
 Use a **new output directory for every run**. The heuristic is a lexical baseline; its successful execution does not validate model quality. Platforms building `cryptography` from source need its [build prerequisites](https://cryptography.io/en/latest/installation/#building-cryptography-on-macos).

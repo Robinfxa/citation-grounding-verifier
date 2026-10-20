@@ -1,0 +1,11 @@
+{
+  "status": "PARENT_ADOPTION_PROJECTED",
+  "decision": "ADOPT_C01",
+  "parent_decision_sha256": "3714d69ddb516879dbaa0bbd84f26fd35221d78abc0ff0b457d21030b4c8a803",
+  "old_frozen_readme_sha256": "df6798ea91245a2a11ff12ecfa09bbfd05c247881501ed553d50eadde55af198",
+  "new_readme_sha256": "a395e92a5acef3f96b6a4bb7d78e82414e4cb4420bdc63cdd1414d66c0faadbb",
+  "adoption_projection_sha256": "5e77e9bdc9ec447523833efa39fe930ecd8a6f03418f453a2c8929d634a32200",
+  "unchanged_original_public_files": 79,
+  "author_review_and_raw_runs_unchanged": true,
+  "original_delivery_receipt_preserved": true
+}
