@@ -1,0 +1,37 @@
+{
+  "outcome": "PASS_WITH_LIVE_FAILURE",
+  "reviewer": "parent_director_non_author",
+  "scope": "Read-only checks of frozen configuration, actual exit and replay receipts, new records, budget, fixed diagnostic reason and critical original/source hashes; no independent rerun of report, inference or credentials access. Author replay is accepted from actual receipts.",
+  "source_commit": "6feda7b09eac9566d63804d3b53133f73b4d3c06",
+  "cli_exit_code": 2,
+  "author_replay_exit_code": 2,
+  "new_provider_attempts": 2,
+  "cumulative_provider_attempts": 4,
+  "cumulative_limit": 12,
+  "remaining_after_stop": 8,
+  "protocol_reason": "probability_sum",
+  "methods": {
+    "jev_optimized": "ERROR",
+    "jev_minimal": "NOT_RUN"
+  },
+  "gold_per_method": 8,
+  "non_supported_gold_per_method": 3,
+  "input_tokens": 19225,
+  "output_tokens": 3895,
+  "price_total_usd": null,
+  "critical_source_and_prior_record_unchanged": true,
+  "artifact_sha256": {
+    "reports/jev/resume-20261020/resume-receipt.json": "04d0c2490a41f22a3637a2776ec2eedc40b3df8691fe3fe55e7508f07662980e",
+    "reports/jev/resume-20261020/README.md": "f4dcdf71682259654cd7bbf2d2923c2b7fc4bf0571102d40a556d6626d3af5ca",
+    "reports/jev/resume-20261020/run-01/config.json": "cace7be24db10488f75374a435fb4cc0fbd566cadd1caf4cba4afdcac2da3dca",
+    "reports/jev/resume-20261020/run-01/records.jsonl": "330ad6b8c8c40b6e5c9d70ead8a6a791c51c4c2cb2b77ccf861132e34dbbaf14",
+    "reports/jev/resume-20261020/run-01/summary.json": "c3c62b9c6777b69ec4e96c44da8798649230eea78d80ff04aa1414926c44624b",
+    "reports/jev/resume-20261020/run-01/completion.json": "965b4aa1ba1c13500e9470a8d966ca9de3e7641609b4805dbb4e54f55448bda3"
+  },
+  "limitations": [
+    "No accepted Jev decisions or successful end-to-end report.",
+    "No raw rejected probabilities retained; deviation magnitude and root cause unknown.",
+    "Prior smoke subcondition remains unknown.",
+    "Real acceptance and calibration tasks 4.2/4.3 remain open."
+  ]
+}

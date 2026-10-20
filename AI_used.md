@@ -34,6 +34,8 @@ After Robin supplied local credentials and separately approved at most 12 provid
 
 Independent saved-record review confirmed the failure, usage and complete denominators, and regenerated reports without inference. Because the original logs could not identify which protocol check rejected the response, the original provider owner added fixed diagnostic reason labels. Independent review caught a non-string logging-parameter defect, which was repaired and retested through actual HTTP consumers, including a broken log sink. This improves diagnosis of a later authorized request; it does not establish the original live root cause or turn that failed experiment into a success.
 
+Robin explicitly authorized resumption within the ten unused attempts. On the accepted diagnostic commit, the original evaluator made one fresh CLI run: Codex extraction succeeded and Jev was rejected at `probability_sum`; Minimal was again left NOT_RUN. The [continuation record](reports/jev/resume-20261020/README.md) used two further attempts, bringing the separate Jev experiment to 4/12, with eight unspent after the new stop. AI preserved both failures and did not renormalize returned probabilities or relax validation to obtain a passing result. The response body was not retained, so this identifies the rejected check, not the size or cause of the deviation.
+
 ## What makes the evidence checkable—and its limits
 
 - **Program checks** verify input contracts, exact quotations, source hashes, accounting, failure denominators and replay integrity. They cannot establish semantic accuracy. [Engineering checks](reports/eval-v2/verification.json) state the environment and scope.
