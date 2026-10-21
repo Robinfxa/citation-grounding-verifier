@@ -1,0 +1,32 @@
+{
+  "status": "PASSED",
+  "tests": "tests/evaluation/test_terminology_calibration.py",
+  "test_sha256": "1e09d6c2e7b7c3673b0c4895f59ae11ceae21b5c7c7fb12ed57691685f1c1205",
+  "pytest": {
+    "actual_exit_code": 0,
+    "passed": 4,
+    "reported_seconds": 0.45,
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/pytest -q tests/evaluation/test_terminology_calibration.py -p no:cacheprovider"
+  },
+  "lint": {
+    "actual_exit_code": 0,
+    "command": ".venv/bin/ruff check tests/evaluation/test_terminology_calibration.py"
+  },
+  "scope_checked_before_write": {
+    "main_and_auxiliary_guard_test_paths": 0,
+    "prepared_public_guard_test_paths": 0
+  },
+  "after_checks": {
+    "all_main_and_auxiliary_frozen_bindings_unchanged": true
+  },
+  "coverage": [
+    "attempts versus retries, both directions",
+    "submission versus execution, both directions",
+    "exact positive match",
+    "single-term negative no match",
+    "all gold and prediction denominators retained as one FN and one FP"
+  ],
+  "new_inference_calls": 0,
+  "earlier_861_test_acceptance_preserved_as_historical_fact": true,
+  "calibration_task_modified_frozen_source_data_prompts_or_run_files": false
+}

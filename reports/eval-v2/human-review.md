@@ -28,3 +28,16 @@ The [original AI review queue](annotation-review/human-review-queue.json) retain
 No boxes are pre-checked. Producing learning material is not evidence of interview readiness.
 
 The main dataset has since expanded to 72 cases / 668 claims. Its [additional 60-case independent AI review](../../datasets/v2/realistic-draft/review-evidence/README.md) preserves original blind judgments, locked comparisons and affected acceptance. The examples above remain useful development exercises; they are not evidence that a human reviewed the new test population.
+
+## 最终结果高风险人工入口（仍未审）
+
+以下全部保持未勾选。程序重放、父端有限代理抽查和原代理澄清均不等于 Robin 已完成逐项人工审阅；原 pilot 练习继续保留。
+
+- [ ] 核对[实际例子 E01/E02 及直接证据定位](final-20261020/failure-examples.md)：有效改述为何被 strict 漏计，Counter 的 gold 合写与预测三条拆写为何按冻结规则判 split；说明 split/extra 不自动等于事实错误，审计 F1 也不是通用 faithfulness 排名。
+- [ ] 逐读[两条已确认审阅纠错](final-20261020/semantic-audit-adjudication.json)：A/r34-c07 与 B/r20-c10 为什么已有足够证据；核原票仍在，并核[独立敏感性](final-20261020/semantic-audit-correction-sensitivity.json)只把 Optimized evidence 100→102、保持分母 546。不得据两次定点发现估计全部 371 对的审阅误差率。
+- [ ] 检查 B 的[锁定对齐与证据判断](final-20261020/semantic-audit/batch-02/evidence-review.json)：item-0017/r04-c09/prediction1 的条件范围为何仍 uncertain；对照原文本阶段记录，区分对齐疑点与标签争议，不事后改本轮 gold、alias 或原审阅票。
+- [ ] 检查 E03 的 Flag 类身份前提，以及 E04/r32-c03 的 gold evidence 模板疑点：引文等于 gold 组且直接 span 代理为 true，为何仍可能缺 configured-filter-list 指代前提；同时确认其 E2E 文本未匹配、原 joint 分数没有通过。先保留未决，不把代理判断或 gold 模板任一方自动当作最终真值。
+- [ ] 对照 E05–E08：解释 teardown 的“尝试/保证完成”、post-init 的 when-defined 条件和 Rust 完整允许列表的推理边界；将同家族复现与独立错误分开。协议 ERROR 不作 U，缺失 usage 不作零，也不猜测未记录的协议原因。
+- [ ] 结合[固定 24 项审计](final-20261020/semantic-audit-analysis.json)与[天然回答辅助结果](ragtruth-20261020/README.md)，区分真实文档上的合成/受控回答、9 条天然 RAGTruth 回答及预测前整例排除。解释阶段 2 reasoning 可泄露方法风格、每项并非双审、私有天然全文不能由公开聚合替代；人工结论另记身份、时间、来源和未决项。
+
+最终辅助测量已完成54/54项，实际46次调用（含1次输出修复），原执行者公开聚合重放退出0且18个私有原始文件字节一致。此执行完成不改变任何待人工审阅状态；原文、完整gold、预测和引文仍私有，公开聚合不能替代逐项人工核查。

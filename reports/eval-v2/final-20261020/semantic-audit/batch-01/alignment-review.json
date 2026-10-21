@@ -1,0 +1,3225 @@
+{
+  "packet_sha256": "311f65ddb544ce24ee55d06c4b1b170c4a56eb7071bae7dfc7840ba1e0aa1a1f",
+  "reviewer": {
+    "id": "independent-semantic-reviewer-a",
+    "kind": "ai",
+    "model": "gpt-6.1-sol (configured), max reasoning",
+    "completed_at": "2026-10-21T01:24:07Z",
+    "exposure": "alignment_text_only"
+  },
+  "items": [
+    {
+      "item_id": "item-0000",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r34-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same default exact-class requirement; the gold describes acceptance without a separate check."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "extra",
+          "reason": "Adds the specific prescription to run isinstance afterward for subclass acceptance; no separate gold states that procedure. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Both specify re.search on the exception string for raises match."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Both assert NFC normalization of exception text before raises matching."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Both preserve nested-group recursion and the depth-limiting condition."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Both attribute assertion introspection to rewriting before execution."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c06"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Both claim rewrite registration can affect supporting modules imported before registration."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c07"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "equivalent",
+          "reason": "In the answer, rewriting produces introspection; both say failed bytecode caching does not stop that behavior."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c08"
+          ],
+          "prediction_indices": [
+            8,
+            9
+          ],
+          "relation": "split",
+          "reason": "Global --assert=plain disabling and per-module PYTEST_DONT_REWRITE disabling are in separate predictions; neither gives both controls."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0001",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r47-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Both identify --form HTTP multipart/form-data."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2
+          ],
+          "relation": "split",
+          "reason": "The @ file attachment and < file-to-text-field semantics are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c03"
+          ],
+          "prediction_indices": [
+            4,
+            5
+          ],
+          "relation": "split",
+          "reason": "Size determination and possible resend are separate buffering purposes; neither prediction contains both."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "extra",
+          "reason": "States that filename - reads stdin for @ or <, a selector fact absent from the gold buffering claim. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c04"
+          ],
+          "prediction_indices": [
+            6,
+            7,
+            8
+          ],
+          "relation": "split",
+          "reason": "Transmission-time reading, unknown-size HTTP chunking and IMAP rejection are separate pieces of the gold causal claim."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c05"
+          ],
+          "prediction_indices": [
+            9,
+            10,
+            11
+          ],
+          "relation": "split",
+          "reason": "The three literal tokens @, < and ;type= are assigned to separate predictions."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c06"
+          ],
+          "prediction_indices": [
+            12
+          ],
+          "relation": "equivalent",
+          "reason": "Here filename= changes the upload part name/filename; the answer does not identify it as the form-field name."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c07"
+          ],
+          "prediction_indices": [
+            13,
+            14
+          ],
+          "relation": "split",
+          "reason": "Backslash rather than percent escaping is separately stated for fields and filenames; the gold describes the option generally."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c08"
+          ],
+          "prediction_indices": [
+            15
+          ],
+          "relation": "equivalent",
+          "reason": "Same base64 transfer encoding limit of 76 characters per encoded line."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0002",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r01-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Both give hashable Counter keys and permission for zero or negative counts."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c02",
+            "v2-test-r01-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "merged",
+          "reason": "One prediction combines zero lookup for a missing key with retaining an entry assigned zero."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c04",
+            "v2-test-r01-c05"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "merged",
+          "reason": "One prediction combines update addition with subtract retaining zero/negative results."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c06"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Both exclude nonpositive results from multiset operations, including subtraction."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c07"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Both require integer elements counts and ignore counts below one."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c08"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Both state missing-as-zero equality and the same Counter(a=1, b=0) example."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c09"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Both preserve first-encounter order for equal most_common counts."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0003",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r25-c01",
+            "v2-test-r25-c02"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "merged",
+          "reason": "Function-default scope and module-instance sharing are independently stated in one prediction."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Both preserve repeated parametrized invocation per scope and the single cached instance explanation."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c04"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Callable/dynamic scope is determined once at definition despite later instance recreation."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c05"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Both put yield-fixture cleanup after yield in reverse fixture order."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c06",
+            "v2-test-r25-c07"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "merged",
+          "reason": "One prediction joins the failing fixture skipping its cleanup with successful fixtures still tearing down."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c08"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Both preserve finalizer execution after subsequent failure and registration only after cleanup state exists."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0004",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r30-c01"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Repeating --log-disable for several loggers expresses the same repeatable named-logger disabling rule."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "extra",
+          "reason": "Only states the single-logger component of the repeatable multi-logger rule accounted for by prediction 1; not a second complete gold proposition."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c02"
+          ],
+          "prediction_indices": [
+            2,
+            3,
+            4
+          ],
+          "relation": "split",
+          "reason": "Suppression for stdout, stderr and logs is divided across three predictions."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c03"
+          ],
+          "prediction_indices": [
+            5,
+            6,
+            7
+          ],
+          "relation": "split",
+          "reason": "Console-threshold selection, a level-name input and a numeric input are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c04"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "equivalent",
+          "reason": "Same fallback from omitted console-specific formats to ordinary log formats."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c05"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "equivalent",
+          "reason": "Same current-working-directory base for relative log paths, including config-file values."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c06"
+          ],
+          "prediction_indices": [
+            10,
+            11
+          ],
+          "relation": "split",
+          "reason": "Independent file level and file formatting are separated; neither gives both gold settings."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c07"
+          ],
+          "prediction_indices": [
+            12,
+            13
+          ],
+          "relation": "split",
+          "reason": "Dynamic path selection and respecting file mode are in separate predictions."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c08"
+          ],
+          "prediction_indices": [
+            14
+          ],
+          "relation": "equivalent",
+          "reason": "Both describe set_log_path as experimental."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0005",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r13-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Both require the scrutinee and patterns to have the same type."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Both preserve value-expression temporary creation and first matching arm selection."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c03"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "relation": "split",
+          "reason": "No place-expression temporary and possible by-value copy/move are separate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Both scope bindings to the guard and arm expression."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c05"
+          ],
+          "prediction_indices": [
+            5,
+            6
+          ],
+          "relation": "split",
+          "reason": "Same names and same types/binding modes are divided between predictions."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c06"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "relation": "split",
+          "reason": "Guard execution after pattern match and continuation after failure, including same-arm alternatives, are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c07"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "equivalent",
+          "reason": "Both permit repeating a side-effecting guard across or-pattern alternatives."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c08"
+          ],
+          "prediction_indices": [
+            10,
+            11
+          ],
+          "relation": "split",
+          "reason": "Shared-reference access during the guard and delayed copy/move after success are separated."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0006",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r47-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same --form multipart/form-data behavior; Answer prefix has no semantic effect."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Both include @ attaching a file and < loading a text field from file contents."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "scope_changed",
+          "reason": "Preserves buffering for size/resend but additionally asserts filename - selects stdin for both forms. That independent selector fact has no gold; erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same nonregular transmission-time reading, no prebuffering, unknown-size chunking and IMAP rejection."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c05"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same literal treatment of @, < and ;type=; avoiding file semantics explains that treatment."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c06",
+            "v2-test-r47-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "merged",
+          "reason": "One prediction combines uploaded filename selection with field/filename backslash escaping."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same 76-character limit for base64 transfer-encoded lines."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0007",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r17-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1,
+            2
+          ],
+          "relation": "split",
+          "reason": "Restriction of types, restriction of lifetimes and validity when used are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c02"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Both retain absence of item parameters and higher-ranked lifetimes as conditions for definition-time checking."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c03"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same ?Sized relaxation limited to implicit Sized on type parameters or associated types."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c04"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Both define a: b as a outliving or equaling b."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c05"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Both quantify higher-ranked bounds over all lifetimes."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c06"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "equivalent",
+          "reason": "Both specify &'a T as the premise for assuming T: 'a inside the function."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "extra",
+          "reason": "Generic reference-to-lifetime implication statement lacks the specific &'a T -> T: 'a scope already accounted for by prediction 8; a redundant partial restatement, not another complete gold."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c07"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "equivalent",
+          "reason": "Both deny inference of arbitrary trait bounds by the implied lifetime-bound rule."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            10
+          ],
+          "relation": "extra",
+          "reason": "Adds an unqualified prescription to write arbitrary trait bounds explicitly, while gold 7 only denies one inference route. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c08"
+          ],
+          "prediction_indices": [
+            11,
+            12
+          ],
+          "relation": "split",
+          "reason": "Lifetime inference in definitions and in impl blocks is separated."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0008",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r42-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1,
+            2
+          ],
+          "relation": "split",
+          "reason": "Connection-only coverage, DNS inclusion and requested handshake inclusion are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c02"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Both allow the transfer to continue once connection has completed within its connection limit."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c03"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "One shared deadline across the original transfer and every retry expresses the gold single non-resetting retry deadline."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "duplicate",
+          "reason": "Repeats the non-resetting retry-deadline proposition already accounted for by prediction 4: a single shared deadline cannot reset per retry."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c04"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same slow-DNS coverage conditioned on configured speed-limit."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c05"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "equivalent",
+          "reason": "Both start the speed watchdog window at the first response-body byte."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c06"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "equivalent",
+          "reason": "Same one-byte-per-second default when speed-time is set without speed-limit."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c07"
+          ],
+          "prediction_indices": [
+            9,
+            10,
+            11
+          ],
+          "relation": "split",
+          "reason": "Average upload cap, average download cap and 1024-based suffixes are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c08"
+          ],
+          "prediction_indices": [
+            12
+          ],
+          "relation": "equivalent",
+          "reason": "Same speed-limit watchdog precedence when combined with limit-rate."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0009",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r25-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same default function fixture scope."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same shared module fixture instance across that module tests."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c03"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "This complete prediction includes both repeated parametrized invocation and the single-instance cache cause."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "extra",
+          "reason": "Only the repeated-invocation fragment of the complete causal proposition in prediction 4; no separate gold for this fragment."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "extra",
+          "reason": "Only the single-cache-instance fragment of the complete causal proposition in prediction 4; no separate gold for this fragment."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c04"
+          ],
+          "prediction_indices": [
+            5,
+            6
+          ],
+          "relation": "split",
+          "reason": "One-time definition-time callable-scope evaluation and possible later recreation are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c05"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "relation": "split",
+          "reason": "Explicit after-yield timing and reverse fixture ordering are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c06"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "equivalent",
+          "reason": "Same failing-before-yield condition and omission of that fixture own post-yield cleanup."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c07"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "relation": "equivalent",
+          "reason": "Same teardown of successful fixtures when another setup fails before yielding."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c08"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "relation": "scope_changed",
+          "reason": "Only retains finalizer execution after failure; omits gold requirement to register after cleanup state has been created."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0010",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r45-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same resume byte offset measured from source beginning."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same -C - inference from the input/output file."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c03"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "relation": "split",
+          "reason": "The first-500-byte and last-500-byte range examples are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same possibility of a whole document from a server lacking HTTP range support."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "scope_changed",
+          "reason": "Keeps unchanged caller-parsed multipart responses but additionally asserts multiple HTTP ranges produce that format. The production fact is not separately in gold; erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c06"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Both restrict FTP/SFTP to simple start-stop with either endpoint optional."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c07"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "equivalent",
+          "reason": "Both associate the first output filename and URL regardless of command-line order."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c08"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "equivalent",
+          "reason": "Both limit failed-output deletion to regular files; arbitrary targets are the excluded complement."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0011",
+      "relations": [
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "extra",
+          "reason": "States that the example derives PartialEq; gold field-layout claim does not assert which traits are derived. Erratum candidate."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "extra",
+          "reason": "States that the example derives Clone; no independent gold covers this derive-selection fact. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c01"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "relation": "split",
+          "reason": "Foo field a: i32 and field b: T are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c02"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same T: PartialEq bound for the example generated PartialEq implementation."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c03"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Both compare the example two fields for equality; the answer names them a and b."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c04"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same T: Clone bound for the generated Clone implementation."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c05"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "equivalent",
+          "reason": "Same cloning of both fields into a new Foo."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c06"
+          ],
+          "prediction_indices": [
+            8,
+            9
+          ],
+          "relation": "split",
+          "reason": "Generation of impl items and absence of struct-field changes are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c07"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "relation": "equivalent",
+          "reason": "Both permit repeated derive attributes and invoke macros listed across all applications."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c08"
+          ],
+          "prediction_indices": [
+            11,
+            13
+          ],
+          "relation": "split",
+          "reason": "automatically_derived marking and absence of behavior change are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c09"
+          ],
+          "prediction_indices": [
+            12
+          ],
+          "relation": "equivalent",
+          "reason": "Same possibility that tools recognize automatically_derived."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0012",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r34-c01",
+            "v2-test-r34-c02",
+            "v2-test-r34-c03"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "merged",
+          "reason": "Combines exact-class acceptance, re.search matching and NFC normalization. Also adds the explicit isinstance-afterward procedure not separately stated by gold; erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c04"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same recursive nested-group search unless limited by depth."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c05"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same pre-execution rewriting as the source of assertion introspection."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c06",
+            "v2-test-r34-c07"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "merged",
+          "reason": "Combines retroactive rewrite registration with continued rewriting when bytecode cannot be cached."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c08"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Both include global --assert=plain disabling and per-module PYTEST_DONT_REWRITE disabling."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0013",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r16-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "scope_changed",
+          "reason": "Includes both field types but also independently asserts selection of PartialEq and Clone derives, absent from the field-layout gold. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c02",
+            "v2-test-r16-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "merged",
+          "reason": "One prediction combines the PartialEq trait bound with comparison of both fields."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c04",
+            "v2-test-r16-c05"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "merged",
+          "reason": "One prediction combines the Clone trait bound with cloning both fields into a new Foo."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c06"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same generated impl items rather than changes to struct fields."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c07"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same repeated derive attributes invoking all listed macros."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c08",
+            "v2-test-r16-c09"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "merged",
+          "reason": "One prediction combines behavior-neutral automatically_derived marking with possible tool recognition."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0014",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r30-c01"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Repeating --log-disable for several loggers preserves repeatable named-logger disabling."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "extra",
+          "reason": "Only the single-logger capability entailed by the multi-logger rule in prediction 1; not another complete gold claim."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Both suppress failed-test reports for stdout, stderr and logs."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same live-console threshold setting accepting a name or number."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same omitted console-format fallback to ordinary formats."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same cwd-relative paths even for configuration-file values."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c06"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "relation": "split",
+          "reason": "Separate file level and file formatting settings are divided into two predictions."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c07"
+          ],
+          "prediction_indices": [
+            8,
+            9
+          ],
+          "relation": "split",
+          "reason": "Dynamic log path and respecting selected file mode are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c08"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "relation": "equivalent",
+          "reason": "Both identify set_log_path as experimental."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0015",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r13-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same match scrutinee/pattern type requirement."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2
+          ],
+          "relation": "split",
+          "reason": "Value-expression temporary creation and first matching arm selection are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c03"
+          ],
+          "prediction_indices": [
+            3,
+            4,
+            5
+          ],
+          "relation": "split",
+          "reason": "Avoiding a place-expression temporary, by-value copy and by-value move are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c04"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same guard-and-arm binding scope."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c05"
+          ],
+          "prediction_indices": [
+            7,
+            8,
+            9
+          ],
+          "relation": "split",
+          "reason": "Same names, same types and same binding modes are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c06"
+          ],
+          "prediction_indices": [
+            10,
+            12
+          ],
+          "relation": "split",
+          "reason": "Guard execution after a pattern match and failure continuing to same-arm alternatives are separated."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            11
+          ],
+          "relation": "extra",
+          "reason": "Generic continuation after guard failure is a less specific component of prediction 12; it does not independently give the full gold pattern/guard rule."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c07"
+          ],
+          "prediction_indices": [
+            13
+          ],
+          "relation": "equivalent",
+          "reason": "Same possibility of repeated side-effecting guards across alternatives in one arm."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c08"
+          ],
+          "prediction_indices": [
+            14,
+            15,
+            16
+          ],
+          "relation": "split",
+          "reason": "Shared-reference guard access and delayed moves and copies are separated."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0016",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r01-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1
+          ],
+          "relation": "split",
+          "reason": "Hashable key storage and permission for zero/negative counts are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same zero for a missing Counter element."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same retention of an entry set to zero."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same update addition instead of replacement."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same ability of subtract to retain zero or negative results."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c06"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same exclusion of nonpositive outputs from subtraction and other multiset operations."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c07"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "relation": "split",
+          "reason": "Integer-count requirement and ignoring counts below one are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c08"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "equivalent",
+          "reason": "The general missing-as-zero equality rule entails the gold zero-valued-key example without additional assumptions."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            10
+          ],
+          "relation": "extra",
+          "reason": "Only the specific Counter(a=1, b=0) instance of the general equality rule in prediction 9; not a second complete general proposition and no new gold fact."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c09"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "relation": "equivalent",
+          "reason": "Same first-encounter ordering for tied most_common counts."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0017",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r34-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same default exact-class acceptance requirement without a separate check."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "extra",
+          "reason": "Adds the specific isinstance-afterward procedure for subclasses, not independently specified by gold. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same raises match re.search on exception text."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same NFC normalization before raises text matching."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same nested-group recursion with a depth limit exception."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same introspection produced by rewriting before execution."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c06"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same claim of retroactive rewriting for supporting modules imported before registration."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c07"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "equivalent",
+          "reason": "Both allow rewriting/introspection despite failed bytecode caching, using the answer explicit link between them."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r34-c08"
+          ],
+          "prediction_indices": [
+            8,
+            9
+          ],
+          "relation": "split",
+          "reason": "Global plain assertion mode and the per-module docstring marker are separate predictions."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0018",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r17-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1
+          ],
+          "relation": "split",
+          "reason": "Admissible types/lifetimes and the requirement at item use are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same parameter-independent, non-higher-ranked conditions for definition-time bound checking."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same limited relaxation of implicit Sized by ?Sized."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same direction and inclusiveness of lifetime a: b."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same all-lifetimes quantification of higher-ranked bounds."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c06"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same function-local inference of T: 'a from a parameter &'a T."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c07"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "equivalent",
+          "reason": "Same denial of arbitrary trait-bound inference through this lifetime rule; explicitness is stated in that inference context."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c08"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "equivalent",
+          "reason": "Same lifetime-bound inference in type definitions and impl blocks."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0019",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r16-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "scope_changed",
+          "reason": "Includes field a: i32 and b: T but adds selection of PartialEq and Clone derives, independent of the field-layout gold. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same generated PartialEq implementation bound T: PartialEq."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same comparison of the example a and b fields for equality."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same generated Clone implementation bound T: Clone."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c05"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same cloning of both fields into a new Foo."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c06"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same derive-generated impl items with no changes to struct fields."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c07"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same repeated derive attributes invoking macros across all applications."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c08"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "scope_changed",
+          "reason": "States automatically_derived marking but drops gold no-behavior-change clause, which appears instead in prediction 8."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r16-c09"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "scope_changed",
+          "reason": "Adds no implementation behavior change to tool recognition; that extra clause belongs to gold 8, so this is not the same independent proposition as gold 9."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0020",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r47-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same --form HTTP multipart/form-data behavior."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2
+          ],
+          "relation": "split",
+          "reason": "The @ attachment and < text-field loading behaviors are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "scope_changed",
+          "reason": "Adds filename - reading stdin for @/< to size/resend buffering. The input-selector fact has no independent gold; erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c04"
+          ],
+          "prediction_indices": [
+            4,
+            5
+          ],
+          "relation": "split",
+          "reason": "Transmission-time unbuffered reading is separated from the unknown-size HTTP/IMAP consequences."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c05"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same literal treatment of @, < and ;type= in --form-string."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c06"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "equivalent",
+          "reason": "filename= changes the uploaded part name/filename in this answer context, without identifying a different form-field name."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c07"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "equivalent",
+          "reason": "Same backslash instead of percent escaping for fields and filenames."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r47-c08"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "equivalent",
+          "reason": "Same base64 transfer-encoded line limit of 76 characters."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0021",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r30-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same repeatable named-logger disabling with --log-disable."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same failed-test captured stdout/stderr/log report suppression."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same console threshold set by a named or numeric --log-cli-level value."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same omitted console-format fallback to ordinary log formats."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c05"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same cwd-relative log paths even when defined in config files."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c06"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same separate file level and formatting settings."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r30-c07",
+            "v2-test-r30-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "merged",
+          "reason": "Combines dynamic mode-respecting set_log_path behavior with its experimental status."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0022",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r42-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same connection-only timeout including DNS and requested TCP/TLS/QUIC handshakes."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same permission for later transfer continuation after timely connection completion."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same shared, non-resetting original-transfer-and-retries deadline."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same speed-time coverage of slow DNS when speed-limit is configured."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c05"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same first response-body byte as start of the watchdog measurement window."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c06"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same one-byte-per-second default without an explicit speed limit."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c07"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "relation": "split",
+          "reason": "The average upload/download cap over seconds and its 1024-based suffixes are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c08"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "equivalent",
+          "reason": "Same speed-limit watchdog precedence over rate limiting."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0023",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r45-c01",
+            "v2-test-r45-c02"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "merged",
+          "reason": "Combines source-beginning byte offsets with -C - inference from input/output files."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same first/last 500-byte range values 0-499 and -500."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c04"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same possible whole-document response without HTTP range support."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c05"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "scope_changed",
+          "reason": "Adds multiple HTTP ranges producing multipart responses to the gold unchanged caller-parsing behavior. Additional format-production fact is an erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same FTP/SFTP simple start-stop restriction and optional endpoints."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same first filename/first URL association independent of option placement."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same regular-file-only deletion on transfer failure; arbitrary targets are excluded by that rule."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0024",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r28-c09"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same pytest stdout/stderr capture during tests."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c01"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same default fd capture of descriptors one/two, including subprocess output."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "uncertain",
+          "reason": "Gold specifically names child-process file-descriptor writes; prediction instead says direct child writes via Python-stream replacement. These texts do not settle whether the I/O layer is the same. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same tee-sys capture plus live pass-through of Python writes."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same null stdin replacement failing on reads."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same capfd coverage of library direct descriptor writes."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c06"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "relation": "split",
+          "reason": "Finalizing/stopping capture and routing subsequent writes to original streams are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c07",
+            "v2-test-r28-c10"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "merged",
+          "reason": "States both temporary-file spooling before return and returning the captured bytes. Gold 7 already embeds the bytes-return fact of gold 10; this overlapping gold granularity is an erratum candidate, retained unchanged."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c08"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "equivalent",
+          "reason": "Same temporary disabled() capture suspension for capsys and capfd."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0025",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r13-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same scrutinee/pattern type agreement."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c02",
+            "v2-test-r13-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "merged",
+          "reason": "Combines value-expression temporary/first-arm behavior with place-expression no-temporary and copy/move behavior."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c04"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same binding scope over guard and arm expression."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c05"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same or-pattern names, types and binding-mode agreement."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same pattern-before-guard order and continued matching on guard failure, including same-arm alternatives."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Such alternatives resolves to the answer or-pattern alternatives; same repeated side-effecting guard behavior."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r13-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same shared reference during guard evaluation and copy/move only after success."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0026",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r42-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same DNS/handshake-inclusive connection-only timeout."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "The limit resolves to --connect-timeout in the answer; same continuation after connection completion."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same single non-resetting deadline across original transfer and retries."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c04",
+            "v2-test-r42-c05",
+            "v2-test-r42-c06"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "merged",
+          "reason": "Combines configured-speed-limit DNS coverage, first-body-byte measurement start and the one-byte-per-second default."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c07"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same average upload/download cap across seconds and 1024-based suffixes."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r42-c08"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same speed-limit watchdog precedence over limit-rate."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0027",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r44-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1
+          ],
+          "relation": "split",
+          "reason": "Default HTTP scheme and default port 1080 are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c02"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "relation": "split",
+          "reason": "Proxy-environment override and disabling an inherited proxy with an empty string are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c03"
+          ],
+          "prediction_indices": [
+            4,
+            5
+          ],
+          "relation": "split",
+          "reason": "Comma-separated host rules and the all-host * rule are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c04"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same --noproxy override of both no_proxy and NO_PROXY."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c05"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "scope_changed",
+          "reason": "Gold gives one www.notlocal.com substring example; prediction additionally quantifies over any hostname containing local.com. That broader rule is an erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c06"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "equivalent",
+          "reason": "Same HTTP(S)-then-SOCKS preproxy order."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c07"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "equivalent",
+          "reason": "Same local target-name resolution for --socks5."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c08"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "relation": "equivalent",
+          "reason": "Same credential-free preproxy inheritance of HTTP-proxy username and password."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c09"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "relation": "equivalent",
+          "reason": "Same inability of process-list hiding to prevent brief credential exposure."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0028",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r44-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1
+          ],
+          "relation": "split",
+          "reason": "Default scheme and default port are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c02"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "relation": "split",
+          "reason": "Environment override and empty-string disabling are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c03"
+          ],
+          "prediction_indices": [
+            4,
+            5
+          ],
+          "relation": "split",
+          "reason": "Comma-separated hosts and wildcard-all matching are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c04"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "relation": "split",
+          "reason": "Override of lowercase no_proxy and uppercase NO_PROXY is separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c05"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "scope_changed",
+          "reason": "Keeps the www.notlocal.com match but omits the gold substring matching basis; the general substring statement is separate in prediction 8."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            8
+          ],
+          "relation": "extra",
+          "reason": "Adds the all-hostnames substring rule, broader than the gold single named-host example. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c06"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "relation": "equivalent",
+          "reason": "This prediction itself specifies HTTP(S) connection first and then reaching SOCKS through that proxy, preserving the whole gold order."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            10
+          ],
+          "relation": "extra",
+          "reason": "Only the HTTP(S)-first fragment of the full proxy-order claim in prediction 11; no second independent gold for the fragment."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c07"
+          ],
+          "prediction_indices": [
+            12
+          ],
+          "relation": "equivalent",
+          "reason": "Same local hostname resolution for socks5."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c08"
+          ],
+          "prediction_indices": [
+            13,
+            14
+          ],
+          "relation": "split",
+          "reason": "Credential-free inheritance of HTTP username and password is separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c09"
+          ],
+          "prediction_indices": [
+            15
+          ],
+          "relation": "equivalent",
+          "reason": "Brief exposure refers to --proxy-user credentials in the answer; same inability of process-list hiding to prevent it."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0029",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r17-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same restriction of generic types/lifetimes and obligation when the item is used."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same parameter-independent and non-higher-ranked definition-time bound check."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same ?Sized relaxation of implicit Sized only for type parameters/associated types."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same a-outlives-b interpretation of a: b."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c05"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same all-lifetimes requirement for higher-ranked bounds."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c06"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same &'a T -> T: 'a function-local inference; the general reference implication intro is a consequence of that rule."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c07"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same denial of arbitrary trait-bound inference through this rule; explicitness remains in that inference context."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r17-c08"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "relation": "equivalent",
+          "reason": "Same lifetime-bound inference from types in definitions and impl blocks."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0030",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r01-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1,
+            2
+          ],
+          "relation": "split",
+          "reason": "Hashable keys, zero-count permission and negative-count permission are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c02"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same missing-element lookup returning zero."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c03"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same entry retention after assigning zero."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c04"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same update accumulation instead of replacement."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c05"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "relation": "split",
+          "reason": "Retention of zero and negative subtract results is separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c06"
+          ],
+          "prediction_indices": [
+            8,
+            9
+          ],
+          "relation": "split",
+          "reason": "Excluding nonpositive results from subtraction and the other multiset operations is separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c07"
+          ],
+          "prediction_indices": [
+            10,
+            11
+          ],
+          "relation": "split",
+          "reason": "Integer-count requirement and ignoring counts below one are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c08"
+          ],
+          "prediction_indices": [
+            12
+          ],
+          "relation": "equivalent",
+          "reason": "The general missing-as-zero equality rule already entails the specific zero-key example in gold."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            13
+          ],
+          "relation": "extra",
+          "reason": "Only the named Counter equality example, a narrower instance of prediction 12; not another complete general equality rule and no new gold fact."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r01-c09"
+          ],
+          "prediction_indices": [
+            14
+          ],
+          "relation": "equivalent",
+          "reason": "Same first-encounter tie order in most_common."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0031",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r28-c09"
+          ],
+          "prediction_indices": [
+            0,
+            1
+          ],
+          "relation": "split",
+          "reason": "Capturing stdout and stderr during tests is separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c01"
+          ],
+          "prediction_indices": [
+            3,
+            4,
+            5
+          ],
+          "relation": "split",
+          "reason": "The default fd method coverage of descriptor one, descriptor two and subprocess output is separated."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "extra",
+          "reason": "Only the default-fd-method component already explicit in predictions 3-5; no separate complete gold for that fragment."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c02"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "uncertain",
+          "reason": "Gold explicitly specifies file-descriptor writes from children; direct writes via replaced Python streams does not settle that I/O-level identity. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c03"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "relation": "split",
+          "reason": "tee-sys capturing Python writes and passing them through live are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c04"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "relation": "equivalent",
+          "reason": "The null object replacing stdin and failure on reads are both present in this complete prediction."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "extra",
+          "reason": "Only stdin replacement by a null object, a partial restatement of the complete read-failure proposition in prediction 10."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c05"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "relation": "equivalent",
+          "reason": "Same capfd coverage of direct library descriptor writes."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c06"
+          ],
+          "prediction_indices": [
+            13
+          ],
+          "relation": "equivalent",
+          "reason": "This complete causal prediction includes both finalization of capture and subsequent original-stream writes."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            12
+          ],
+          "relation": "extra",
+          "reason": "Only the finalization component of the complete prediction 13; not another complete gold proposition."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c07",
+            "v2-test-r28-c10"
+          ],
+          "prediction_indices": [
+            14
+          ],
+          "relation": "merged",
+          "reason": "States temporary-file spooling and return of bytes together. Gold 7 already embeds gold 10 bytes-return scope; overlapping gold granularity is an erratum candidate, retained unchanged."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c08"
+          ],
+          "prediction_indices": [
+            15,
+            16
+          ],
+          "relation": "split",
+          "reason": "disabled() capture suspension for capsys and capfd is separated."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0032",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r45-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same byte resume offset from source beginning."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same -C - resume point inference from input/output file."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c03"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "relation": "split",
+          "reason": "The first-500 and last-500 range examples are separated."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same possible whole-document response without HTTP range support."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c05"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same multipart range response returned unchanged for caller parsing."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "extra",
+          "reason": "Separately asserts multiple HTTP ranges produce multipart responses, absent as independent gold. Erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c06"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "relation": "split",
+          "reason": "Simple start-stop with optional endpoints is separately specified for FTP and SFTP."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c07"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "relation": "equivalent",
+          "reason": "Same first output filename/first URL association irrespective of command order."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r45-c08"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "relation": "equivalent",
+          "reason": "Same regular-file-only output deletion after transfer failure."
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            11
+          ],
+          "relation": "duplicate",
+          "reason": "Repeats the complete regular-file-only deletion rule in prediction 10; not cleaning arbitrary targets is its stated consequence."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0033",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r28-c01",
+            "v2-test-r28-c09"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "merged",
+          "reason": "Combines stdout/stderr capture during tests with default fd coverage of descriptors one/two and subprocess output."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c02",
+            "v2-test-r28-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "uncertain",
+          "reason": "Combines the clear tee-sys capture/pass-through claim with a sys-capture claim whose Python-stream mechanism does not settle gold explicit file-descriptor scope. Cannot give a clean merged semantic match to both; erratum candidate for gold 2."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c04"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same null stdin object failing on reads."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c05"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same capfd coverage of direct library file-descriptor writes."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r28-c06",
+            "v2-test-r28-c07",
+            "v2-test-r28-c08",
+            "v2-test-r28-c10"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "merged",
+          "reason": "Combines capture finalization/later routing, temporary-file byte spooling/return and disabled() contexts. Gold 7 embeds the bytes-return fact of gold 10; overlapping gold granularity is an erratum candidate, kept unchanged."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0034",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r25-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same default function fixture scope."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "Same shared fixture instance within a module."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same repeated parametrized invocation caused by caching one instance at a time."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Same one-time callable scope evaluation at definition despite possible later instance recreation."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c05"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "equivalent",
+          "reason": "Same post-yield cleanup in reverse fixture order."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c06"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "relation": "equivalent",
+          "reason": "Same omission of own post-yield cleanup when setup fails before yield."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c07"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "relation": "equivalent",
+          "reason": "Same continued teardown of already successful fixtures after another pre-yield failure."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r25-c08"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "relation": "split",
+          "reason": "Finalizer execution after subsequent failure and registration only after cleanup state exists are separated."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0035",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r44-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "relation": "equivalent",
+          "reason": "Same default HTTP scheme and 1080 port when unspecified."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "relation": "equivalent",
+          "reason": "It resolves to --proxy; same environment override and empty-string disabling of an inherited proxy."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c03",
+            "v2-test-r44-c04"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "merged",
+          "reason": "Combines comma-separated bypass hosts/* behavior with overriding no_proxy and NO_PROXY."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c05",
+            "v2-test-r44-c06",
+            "v2-test-r44-c07"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "merged",
+          "reason": "Combines the substring host example, HTTP(S)-before-SOCKS chaining and local socks5 resolution. Also generalizes the host example to all containing hostnames; that wider rule is an erratum candidate."
+        },
+        {
+          "gold_ids": [
+            "v2-test-r44-c08",
+            "v2-test-r44-c09"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "relation": "merged",
+          "reason": "Combines credential-free preproxy inheritance of HTTP username/password with transient proxy-user exposure despite process-list hiding."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "status": "COMPLETE",
+  "actual_cli_exit_code": 0,
+  "cli_wall_ms": 1377733.2663750276,
+  "finished_at": "2026-10-21T02:33:32.643445+00:00",
+  "statuses": {
+    "OK": 54
+  },
+  "completion": {
+    "records_sha256": "87d8f104aca0994e39240044ec07c6796f7fa9022247d451ce7228a6f89095cd",
+    "config_sha256": "4f580ceb3863f9be6d85e112b0de7f089ed43ce8d596268500ea17b9ba88a4fb",
+    "record_count": 54,
+    "cleanup_errors": [],
+    "source_changed_during_run": false,
+    "stopped_after_quota_exhausted": false,
+    "stopped_after_attempt_budget_exhausted": false,
+    "provider_attempts_charged": 46,
+    "status": "COMPLETE"
+  },
+  "new_total_attempt_ceiling": 90,
+  "charged_attempts": 46,
+  "remaining_attempt_allowance": 44,
+  "requested_jobs": 54,
+  "requested_model_jobs": 36,
+  "model_error_count": 0,
+  "unattempted_model_jobs": 0,
+  "source_freeze_sha256": "e807ea2bac042445e29880a9f6ce6330789358706c0de7dcb354b6d1e0794d80",
+  "execution_freeze_sha256": "628b4442c958b3713c13fb94db248a07b58f609c3000959dd58784de5c0b71b5",
+  "publication_policy_sha256": "fb2f34bc6ebb42ab48bd8c2e338a20e3d17a565aabd643f42648cf82c3999311",
+  "private_run_artifact_hashes": {
+    "summary.json": "a11171198fb5aa0e8214c04997e5f70580fdb1af9561f6d425df1c364069b1cc",
+    "config.json": "4f580ceb3863f9be6d85e112b0de7f089ed43ce8d596268500ea17b9ba88a4fb",
+    "cases.jsonl": "25a3ec5b56df66ce8cff8a7449f0825b3cdc6addf90570611627fe1c05528208",
+    "cases.manifest.json": "a6de0f36e87734a85684520058df3b28130b00bce9bf566bda21e89db3fe9f69",
+    "records.jsonl": "87d8f104aca0994e39240044ec07c6796f7fa9022247d451ce7228a6f89095cd",
+    "completion.json": "1cc4dbc3c35b7247de40baf387597e422d155d3a88baa604eeb8e398a7f4d26e",
+    "dataset/scoring-cases.manifest.json": "67b65b1ea5a7892817971b4378f5b7ad8d4e500ccd8135636dfe0aef3ddcd3fa",
+    "dataset/scoring-cases.jsonl": "7223830a37eded12168e304ff078bb168a850ea8b393088c08e77386ad615d2d",
+    "dataset/licenses/RAGTruth-MIT": "b7fd7d6bdfe0cbba63c63a310914beb4a4acb8bf08da73849219f45385f5b244",
+    "dataset/raw-contexts/13886.txt": "6850d526243a69fcf447508e6d9126ee8472b96fdb95d2d6a369f6872daba577",
+    "dataset/raw-contexts/12024.txt": "c2b336212ffce486e65e09b8e4ea3c5889ae03deda83f2e81f865dc1b8048f2f",
+    "dataset/raw-contexts/11980.txt": "73e925793be82b07cf1df3bd1514133aa3925a1503fb6e33fb06b50258a2fe0b",
+    "dataset/raw-contexts/11822.txt": "d700f8ed8d79fc2ba0efd28a2efd38aaeda8b995e84bbcd8ca4c5f6dd87a5aab",
+    "dataset/raw-contexts/13541.txt": "466ad955c9cdb0c7ffeb336238b12e612768479d0bbb348719a1cb6c6567db9c",
+    "dataset/raw-contexts/13551.txt": "ea3c0872ffd4abac4b1d603d0622ea4535099ab3eee6edc979f59b899062e6aa",
+    "dataset/raw-contexts/11806.txt": "cb450494e2351d11198c4a48675654aa21777685b1a54fb9e1e1be134e2c5e2a",
+    "dataset/raw-contexts/15755.txt": "bb55736e21b4edba30ba83c75d204f0be10f83d45a362d9e86db5a1b6a1a0c1e",
+    "dataset/raw-contexts/13849.txt": "942b71b47631461c1dfeb72422bac65e65c597e58b2e72f0e2ee4cefbaa04439"
+  },
+  "raw_dataset_predictions_citations_and_logs_private": true,
+  "offline_replay": {
+    "consumer": "read_saved_run -> regenerate_report -> aggregate allowlist",
+    "wall_ms": 13327.208176720887,
+    "byte_identical_private_files": 18,
+    "network_inference_settings_and_credentials_guarded": true,
+    "new_inference_calls": 0
+  },
+  "all_ERROR_and_NOT_RUN_retained": true,
+  "automatic_relaunch": false,
+  "whole_dollar_cost_usd": null,
+  "known_terminal_resources": {
+    "elapsed_ms": {
+      "count": 54,
+      "sum": 1360333.3359733224,
+      "median": 25195.50479343161,
+      "p95": 66408.1442856695,
+      "includes_failures": true
+    },
+    "attempted_requests": 54,
+    "not_attempted_requests": 0,
+    "known_usage": {
+      "input_tokens": 66143,
+      "output_tokens": 62978,
+      "cached_input_tokens": 0
+    },
+    "usage_complete": true,
+    "total_usage": {
+      "input_tokens": 66143,
+      "output_tokens": 62978,
+      "cached_input_tokens": 0
+    },
+    "requests_with_unknown_usage": 0,
+    "requests_with_unknown_stats": 0,
+    "provider_calls_known": 46,
+    "retries_known": 0,
+    "repairs_known": 1,
+    "requests_with_repair": 1,
+    "requested_models": [
+      "gpt-6.1-sol"
+    ],
+    "returned_models": [
+      "gpt-6.1-sol"
+    ],
+    "dollar_cost": {
+      "value": null,
+      "currency": "USD",
+      "reason": "subscription_usage_not_dollar_cost"
+    }
+  }
+}

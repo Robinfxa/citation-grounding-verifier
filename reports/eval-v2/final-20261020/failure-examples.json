@@ -1,0 +1,2348 @@
+{
+  "scope": "Eight illustrative measured failure or measurement examples; not a sampled failure-rate estimate. Only licensed main data and original main/repeat records; no RAGTruth text.",
+  "selection": "Two-stage review judgments are attributed to the original reviewers. Parent narrow acceptance is separate; programmatic binding is not a new semantic review.",
+  "human_review": "not_performed",
+  "original_audit_analysis_sha256": "a7e285302f5a79a0460d170efd11dd6a0c2678fb429e72e6053d5a39fff9f065",
+  "adjudication_sha256": "8c322bbc2ba86a1e1808274dccebaa781f59ecb0e3f4d810b0bbad50efeb11e2",
+  "examples": [
+    {
+      "id": "E01",
+      "kind": "valid_paraphrase_strict_miss",
+      "interpretation": "The independent two-stage review credits this equivalent label/evidence pair, but frozen strict text identity misses it. This is a measurement example, not an actual model factual failure.",
+      "case_id": "v2-test-r01",
+      "family_id": "v2-real-python-collections",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "source": {
+        "records_file": "full-test/records.jsonl",
+        "sequence": 185,
+        "jsonl_line": 186,
+        "raw_row_sha256": "24ca902529be964021f9bb16b61a2a9c8755d9dca5c2b24561a9195b5880e1cb",
+        "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d"
+      },
+      "audit": {
+        "batch": 1,
+        "item_id": "item-0016",
+        "alignment_review_sha256": "6577c35b570483ba47a06a551859d012365c25edc511a797943e2f9d4cccb016",
+        "evidence_review_sha256": "9f86f97041699544bcdf7ed289b589bb4731d1482dd5a09cfb9356e4f429f6eb",
+        "relation": {
+          "gold_ids": [
+            "v2-test-r01-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "relation": "equivalent",
+          "reason": "Same zero for a missing Counter element."
+        },
+        "judgment": {
+          "gold_id": "v2-test-r01-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names Counter objects and directly gives zero for missing items."
+        }
+      },
+      "gold": [
+        {
+          "aliases": [],
+          "answer_anchor": {
+            "end": 265,
+            "quote": "Looking up a missing element returns zero",
+            "start": 224
+          },
+          "claim_text": "A missing Counter item returns zero.",
+          "evidence_sets": [
+            [
+              {
+                "index": 0,
+                "quote": "    Counter objects have a dictionary interface except that they return a zero\n    count for missing items instead of raising a :exc:`KeyError`:"
+              }
+            ]
+          ],
+          "id": "v2-test-r01-c02",
+          "rationale": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "predictions": [
+        {
+          "prediction_index": 2,
+          "citations": [
+            {
+              "index": 0,
+              "quote": "Counter objects have a dictionary interface except that they return a zero\n    count for missing items instead of raising a :exc:`KeyError`:"
+            }
+          ],
+          "claim_text": "Looking up a missing element in Counter returns zero.",
+          "reasoning": "The documented missing-item behavior is a zero count.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "locators": {
+        "run_directory": "full-test",
+        "run_link": "full-test/",
+        "prediction_record": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 185,
+          "jsonl_line": 186,
+          "raw_row_sha256": "24ca902529be964021f9bb16b61a2a9c8755d9dca5c2b24561a9195b5880e1cb",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L186"
+        },
+        "case": {
+          "id": "v2-test-r01",
+          "cases_file": "full-test/cases.jsonl",
+          "jsonl_line": 1,
+          "raw_row_sha256": "f22798d67d862f98b423c5dcacfca04770f082cbc5eb96dae5e021964fae865c",
+          "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+          "link": "full-test/cases.jsonl#L1",
+          "selected_gold": [
+            {
+              "id": "v2-test-r01-c02",
+              "json_pointer": "/gold_claims/1"
+            }
+          ],
+          "available_gold_ids": [
+            "v2-test-r01-c01",
+            "v2-test-r01-c02",
+            "v2-test-r01-c03",
+            "v2-test-r01-c04",
+            "v2-test-r01-c05",
+            "v2-test-r01-c06",
+            "v2-test-r01-c07",
+            "v2-test-r01-c08",
+            "v2-test-r01-c09"
+          ]
+        },
+        "source_manifest": {
+          "file": "full-test/cases.manifest.json",
+          "link": "full-test/cases.manifest.json",
+          "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+        },
+        "passage_mappings": [
+          {
+            "case_id": "v2-test-r01",
+            "end": 12875,
+            "passage_index": 0,
+            "source_id": "python-collections-collections",
+            "start": 9408,
+            "text_sha256": "908d46f14429c63505afc1652d7dffd33c1132f2c006a2ecb07566d042cdbda1",
+            "case_context_json_pointer": "/context_passages/0",
+            "manifest_json_pointer": "/passage_maps/0",
+            "source_entry_json_pointer": "/sources/0",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst#L222",
+            "source_line_start": 222,
+            "source_line_end": 304,
+            "source_file_sha256": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/collections.rst"
+          },
+          {
+            "case_id": "v2-test-r01",
+            "end": 15791,
+            "passage_index": 1,
+            "source_id": "python-collections-collections",
+            "start": 12875,
+            "text_sha256": "aabf1937a24696489937bb56398b17aa55dc2cb9b2cac60d43a65a398549e849",
+            "case_context_json_pointer": "/context_passages/1",
+            "manifest_json_pointer": "/passage_maps/1",
+            "source_entry_json_pointer": "/sources/0",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst#L305",
+            "source_line_start": 305,
+            "source_line_end": 375,
+            "source_file_sha256": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/collections.rst"
+          },
+          {
+            "case_id": "v2-test-r01",
+            "end": 18879,
+            "passage_index": 2,
+            "source_id": "python-collections-collections",
+            "start": 15791,
+            "text_sha256": "21cbb223e3ffa768610a24df2b161fd0f400a6abd62af9efe1af2c40fde13b83",
+            "case_context_json_pointer": "/context_passages/2",
+            "manifest_json_pointer": "/passage_maps/2",
+            "source_entry_json_pointer": "/sources/0",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst#L376",
+            "source_line_start": 376,
+            "source_line_end": 449,
+            "source_file_sha256": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/collections.rst"
+          }
+        ]
+      }
+    },
+    {
+      "id": "E02",
+      "kind": "split_atomic_granularity",
+      "interpretation": "The frozen gold combines hashable-key scope, zero-count permission and negative-count permission in one claim; Optimized states these separately. The original reviewer labels the group split, so the frozen one-to-one contract gives no equivalent credit. This is a granularity-contract difference, not evidence that the three predictions are factually false. Whether this gold bundling is the best atomic granularity remains for future human review.",
+      "case_id": "v2-test-r01",
+      "family_id": "v2-real-python-collections",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "source": {
+        "records_file": "full-test/records.jsonl",
+        "sequence": 283,
+        "jsonl_line": 284,
+        "raw_row_sha256": "d8ceea2950cdd3da402d2a70daf22d4b702b500803ba4bd1ad0470ee328d50c9",
+        "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d"
+      },
+      "audit": {
+        "batch": 1,
+        "item_id": "item-0030",
+        "alignment_review_sha256": "6577c35b570483ba47a06a551859d012365c25edc511a797943e2f9d4cccb016",
+        "evidence_review_sha256": "9f86f97041699544bcdf7ed289b589bb4731d1482dd5a09cfb9356e4f429f6eb",
+        "relation": {
+          "gold_ids": [
+            "v2-test-r01-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1,
+            2
+          ],
+          "relation": "split",
+          "reason": "Hashable keys, zero-count permission and negative-count permission are separated."
+        },
+        "judgment": null
+      },
+      "gold": [
+        {
+          "aliases": [],
+          "answer_anchor": {
+            "end": 223,
+            "quote": "Counter stores hashable elements as keys and permits zero or negative counts.",
+            "start": 146
+          },
+          "claim_text": "Counter permits zero and negative counts for hashable keys.",
+          "evidence_sets": [
+            [
+              {
+                "index": 0,
+                "quote": "    A :class:`Counter` is a :class:`dict` subclass for counting :term:`hashable` objects.\n    It is a collection where elements are stored as dictionary keys\n    and their counts are stored as dictionary values.  Counts are allowed to be\n    any integer value including zero or negative counts.  The :class:`Counter`\n    class is similar to bags or multisets in other languages."
+              }
+            ]
+          ],
+          "id": "v2-test-r01-c01",
+          "rationale": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "predictions": [
+        {
+          "prediction_index": 0,
+          "citations": [
+            {
+              "index": 0,
+              "quote": "A :class:`Counter` is a :class:`dict` subclass for counting :term:`hashable` objects.\n    It is a collection where elements are stored as dictionary keys\n    and their counts are stored as dictionary values."
+            }
+          ],
+          "claim_text": "Counter stores hashable elements as keys.",
+          "reasoning": "Counter counts hashable objects and stores those elements as dictionary keys.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "prediction_index": 1,
+          "citations": [
+            {
+              "index": 0,
+              "quote": "Counts are allowed to be\n    any integer value including zero or negative counts."
+            }
+          ],
+          "claim_text": "Counter permits zero counts.",
+          "reasoning": "Zero is explicitly permitted as a count.",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "prediction_index": 2,
+          "citations": [
+            {
+              "index": 0,
+              "quote": "Counts are allowed to be\n    any integer value including zero or negative counts."
+            }
+          ],
+          "claim_text": "Counter permits negative counts.",
+          "reasoning": "Negative counts are explicitly permitted.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "locators": {
+        "run_directory": "full-test",
+        "run_link": "full-test/",
+        "prediction_record": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 283,
+          "jsonl_line": 284,
+          "raw_row_sha256": "d8ceea2950cdd3da402d2a70daf22d4b702b500803ba4bd1ad0470ee328d50c9",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L284"
+        },
+        "case": {
+          "id": "v2-test-r01",
+          "cases_file": "full-test/cases.jsonl",
+          "jsonl_line": 1,
+          "raw_row_sha256": "f22798d67d862f98b423c5dcacfca04770f082cbc5eb96dae5e021964fae865c",
+          "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+          "link": "full-test/cases.jsonl#L1",
+          "selected_gold": [
+            {
+              "id": "v2-test-r01-c01",
+              "json_pointer": "/gold_claims/0"
+            }
+          ],
+          "available_gold_ids": [
+            "v2-test-r01-c01",
+            "v2-test-r01-c02",
+            "v2-test-r01-c03",
+            "v2-test-r01-c04",
+            "v2-test-r01-c05",
+            "v2-test-r01-c06",
+            "v2-test-r01-c07",
+            "v2-test-r01-c08",
+            "v2-test-r01-c09"
+          ]
+        },
+        "source_manifest": {
+          "file": "full-test/cases.manifest.json",
+          "link": "full-test/cases.manifest.json",
+          "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+        },
+        "passage_mappings": [
+          {
+            "case_id": "v2-test-r01",
+            "end": 12875,
+            "passage_index": 0,
+            "source_id": "python-collections-collections",
+            "start": 9408,
+            "text_sha256": "908d46f14429c63505afc1652d7dffd33c1132f2c006a2ecb07566d042cdbda1",
+            "case_context_json_pointer": "/context_passages/0",
+            "manifest_json_pointer": "/passage_maps/0",
+            "source_entry_json_pointer": "/sources/0",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst#L222",
+            "source_line_start": 222,
+            "source_line_end": 304,
+            "source_file_sha256": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/collections.rst"
+          },
+          {
+            "case_id": "v2-test-r01",
+            "end": 15791,
+            "passage_index": 1,
+            "source_id": "python-collections-collections",
+            "start": 12875,
+            "text_sha256": "aabf1937a24696489937bb56398b17aa55dc2cb9b2cac60d43a65a398549e849",
+            "case_context_json_pointer": "/context_passages/1",
+            "manifest_json_pointer": "/passage_maps/1",
+            "source_entry_json_pointer": "/sources/0",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst#L305",
+            "source_line_start": 305,
+            "source_line_end": 375,
+            "source_file_sha256": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/collections.rst"
+          },
+          {
+            "case_id": "v2-test-r01",
+            "end": 18879,
+            "passage_index": 2,
+            "source_id": "python-collections-collections",
+            "start": 15791,
+            "text_sha256": "21cbb223e3ffa768610a24df2b161fd0f400a6abd62af9efe1af2c40fde13b83",
+            "case_context_json_pointer": "/context_passages/2",
+            "manifest_json_pointer": "/passage_maps/2",
+            "source_entry_json_pointer": "/sources/0",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-collections/collections.rst#L376",
+            "source_line_start": 376,
+            "source_line_end": 449,
+            "source_file_sha256": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/collections.rst"
+          }
+        ]
+      }
+    },
+    {
+      "id": "E03",
+      "kind": "evidence_entity_anchor_gap",
+      "interpretation": "The original independent reviewer judges the label correct but the quoted method lacks its Flag-class anchor among several enum classes. This remains an AI review judgment, subject to the disclosed review limitations.",
+      "case_id": "v2-test-r08",
+      "family_id": "v2-real-python-enum",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "source": {
+        "records_file": "full-test/records.jsonl",
+        "sequence": 234,
+        "jsonl_line": 235,
+        "raw_row_sha256": "088986d05fa78c039fee42cce76819c6752ec31fe9dadf067a96021a325f0634",
+        "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d"
+      },
+      "audit": {
+        "batch": 2,
+        "item_id": "item-0035",
+        "alignment_review_sha256": "c479678b84e27aecea2be63426fec34d613d0c2a44fc5212027d4dd50559866c",
+        "evidence_review_sha256": "3fed1257ce484d8e0638cbabb1bf4e416788e07cc33d99304fd73ddac86619fc",
+        "relation": {
+          "gold_ids": [
+            "v2-test-r08-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Both make a Flag truthy when it contains any member."
+        },
+        "judgment": {
+          "gold_id": "v2-test-r08-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The S label is supported by the Flag section, but the bare __bool__ quote does not identify its enclosing Flag class among the multiple enum classes in the passage."
+        }
+      },
+      "gold": [
+        {
+          "aliases": [],
+          "answer_anchor": {
+            "end": 276,
+            "quote": "A Flag value is truthy when it contains any member",
+            "start": 226
+          },
+          "claim_text": "A Flag is true if it contains any members.",
+          "evidence_sets": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: Flag\n\n   ``Flag`` is the same as :class:`Enum`, but its members support the bitwise\n   operators ``&`` (*AND*), ``|`` (*OR*), ``^`` (*XOR*), and ``~`` (*INVERT*);\n   the results of those operations are (aliases of) members of the enumeration."
+              },
+              {
+                "index": 0,
+                "quote": "   .. method:: __bool__(self):\n\n      Returns *True* if any members in flag, *False* otherwise:"
+              },
+              {
+                "index": 0,
+                "quote": "      Returns *True* if any members in flag, *False* otherwise::"
+              }
+            ]
+          ],
+          "id": "v2-test-r08-c03",
+          "rationale": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "predictions": [
+        {
+          "prediction_index": 3,
+          "citations": [
+            {
+              "index": 0,
+              "quote": ".. method:: __bool__(self):\n\n      Returns *True* if any members in flag, *False* otherwise::"
+            }
+          ],
+          "claim_text": "A Flag value is truthy when it contains any member.",
+          "reasoning": "Flag's boolean method returns true when any members are present.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "locators": {
+        "run_directory": "full-test",
+        "run_link": "full-test/",
+        "prediction_record": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 234,
+          "jsonl_line": 235,
+          "raw_row_sha256": "088986d05fa78c039fee42cce76819c6752ec31fe9dadf067a96021a325f0634",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L235"
+        },
+        "case": {
+          "id": "v2-test-r08",
+          "cases_file": "full-test/cases.jsonl",
+          "jsonl_line": 8,
+          "raw_row_sha256": "e02ffa4145935943f183b87602b48a564591c5f787578a5f360bf635cbb60804",
+          "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+          "link": "full-test/cases.jsonl#L8",
+          "selected_gold": [
+            {
+              "id": "v2-test-r08-c03",
+              "json_pointer": "/gold_claims/2"
+            }
+          ],
+          "available_gold_ids": [
+            "v2-test-r08-c01",
+            "v2-test-r08-c02",
+            "v2-test-r08-c03",
+            "v2-test-r08-c04",
+            "v2-test-r08-c05",
+            "v2-test-r08-c06",
+            "v2-test-r08-c07",
+            "v2-test-r08-c08"
+          ]
+        },
+        "source_manifest": {
+          "file": "full-test/cases.manifest.json",
+          "link": "full-test/cases.manifest.json",
+          "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+        },
+        "passage_mappings": [
+          {
+            "case_id": "v2-test-r08",
+            "end": 18856,
+            "passage_index": 0,
+            "source_id": "python-enum-enum",
+            "start": 15375,
+            "text_sha256": "08ae6ddeb65ada71602129d562d6ebcc0e5cb4f2134cbeebe93b440455b94800",
+            "case_context_json_pointer": "/context_passages/0",
+            "manifest_json_pointer": "/passage_maps/22",
+            "source_entry_json_pointer": "/sources/3",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-enum/enum.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-enum/enum.rst#L469",
+            "source_line_start": 469,
+            "source_line_end": 590,
+            "source_file_sha256": "ecd67b943a2728c589fab5934159a7da63be57fdb68d17df3fef1b59a6339945",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/enum.rst"
+          },
+          {
+            "case_id": "v2-test-r08",
+            "end": 21573,
+            "passage_index": 1,
+            "source_id": "python-enum-enum",
+            "start": 18856,
+            "text_sha256": "c2e8ae73d925fe758192426fbd7d56cad87c7a853ebb4f5df185c4e12687fcae",
+            "case_context_json_pointer": "/context_passages/1",
+            "manifest_json_pointer": "/passage_maps/23",
+            "source_entry_json_pointer": "/sources/3",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-enum/enum.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-enum/enum.rst#L591",
+            "source_line_start": 591,
+            "source_line_end": 685,
+            "source_file_sha256": "ecd67b943a2728c589fab5934159a7da63be57fdb68d17df3fef1b59a6339945",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/enum.rst"
+          }
+        ]
+      }
+    },
+    {
+      "id": "E04",
+      "kind": "gold_span_proxy_and_review_disagreement",
+      "interpretation": "The reviewer flags a configured-filter-list antecedent missing from the frozen evidence template. This remains a potential gold-span limitation for future human review, not a confirmed model failure or an applied correction. E2E received no strict pair credit because text identity did not match.",
+      "actual_frozen_evidence_covered_result": true,
+      "strict_pair_received_credit": false,
+      "case_id": "v2-test-r32",
+      "family_id": "v2-real-pytest-capture-warnings",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "source": {
+        "records_file": "full-test/records.jsonl",
+        "sequence": 167,
+        "jsonl_line": 168,
+        "raw_row_sha256": "1cc18d19a1ee8b394e28a2fd7a6d04d637033729f5ddf641d079805d0e3ec574",
+        "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d"
+      },
+      "audit": {
+        "batch": 2,
+        "item_id": "item-0010",
+        "alignment_review_sha256": "c479678b84e27aecea2be63426fec34d613d0c2a44fc5212027d4dd50559866c",
+        "evidence_review_sha256": "3fed1257ce484d8e0638cbabb1bf4e416788e07cc33d99304fd73ddac86619fc",
+        "relation": {
+          "gold_ids": [
+            "v2-test-r32-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "relation": "equivalent",
+          "reason": "Both choose the last matching configured warning-filter action."
+        },
+        "judgment": {
+          "gold_id": "v2-test-r32-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The S label is supported, but the quote refers to the list without the configured-filter-list antecedent in passage 0; it does not independently bind this precedence rule to configuration."
+        }
+      },
+      "gold": [
+        {
+          "aliases": [],
+          "answer_anchor": {
+            "end": 381,
+            "quote": "When several configured filters match, the last matching action wins.",
+            "start": 312
+          },
+          "claim_text": "The last matching configured warning filter wins.",
+          "evidence_sets": [
+            [
+              {
+                "index": 1,
+                "quote": "When a warning matches more than one option in the list, the action for the last matching option\nis performed."
+              }
+            ]
+          ],
+          "id": "v2-test-r32-c03",
+          "rationale": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "predictions": [
+        {
+          "prediction_index": 3,
+          "citations": [
+            {
+              "index": 1,
+              "quote": "When a warning matches more than one option in the list, the action for the last matching option\nis performed."
+            }
+          ],
+          "claim_text": "When several configured filters match, the last matching action wins.",
+          "reasoning": "The passages explicitly give last-match precedence within the filter list.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "locators": {
+        "run_directory": "full-test",
+        "run_link": "full-test/",
+        "prediction_record": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 167,
+          "jsonl_line": 168,
+          "raw_row_sha256": "1cc18d19a1ee8b394e28a2fd7a6d04d637033729f5ddf641d079805d0e3ec574",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L168"
+        },
+        "case": {
+          "id": "v2-test-r32",
+          "cases_file": "full-test/cases.jsonl",
+          "jsonl_line": 32,
+          "raw_row_sha256": "535179a669d625b2c0df8085bef9687db00b42793d8aaf50aa3eb9addff676b8",
+          "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+          "link": "full-test/cases.jsonl#L32",
+          "selected_gold": [
+            {
+              "id": "v2-test-r32-c03",
+              "json_pointer": "/gold_claims/2"
+            }
+          ],
+          "available_gold_ids": [
+            "v2-test-r32-c01",
+            "v2-test-r32-c02",
+            "v2-test-r32-c03",
+            "v2-test-r32-c04",
+            "v2-test-r32-c05",
+            "v2-test-r32-c06",
+            "v2-test-r32-c07",
+            "v2-test-r32-c08"
+          ]
+        },
+        "source_manifest": {
+          "file": "full-test/cases.manifest.json",
+          "link": "full-test/cases.manifest.json",
+          "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+        },
+        "passage_mappings": [
+          {
+            "case_id": "v2-test-r32",
+            "end": 3453,
+            "passage_index": 0,
+            "source_id": "pytest-capture-warnings-capture-warnings",
+            "start": 0,
+            "text_sha256": "3163db18d5f0598a7bb0bc0b9f86073f79960f598e399d0b8e0bbd1864902a79",
+            "case_context_json_pointer": "/context_passages/0",
+            "manifest_json_pointer": "/passage_maps/97",
+            "source_entry_json_pointer": "/sources/15",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst#L1",
+            "source_line_start": 1,
+            "source_line_end": 107,
+            "source_file_sha256": "177068a737b89f624962d35a55420d2585509fa0249af7a9f9f840b700d2497e",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/capture-warnings.rst"
+          },
+          {
+            "case_id": "v2-test-r32",
+            "end": 6870,
+            "passage_index": 1,
+            "source_id": "pytest-capture-warnings-capture-warnings",
+            "start": 3453,
+            "text_sha256": "cf85ce9d71d8498979a10e836fd8fd52d9783138d92097872f0a4ffcdc42a0bd",
+            "case_context_json_pointer": "/context_passages/1",
+            "manifest_json_pointer": "/passage_maps/98",
+            "source_entry_json_pointer": "/sources/15",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst#L108",
+            "source_line_start": 108,
+            "source_line_end": 208,
+            "source_file_sha256": "177068a737b89f624962d35a55420d2585509fa0249af7a9f9f840b700d2497e",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/capture-warnings.rst"
+          },
+          {
+            "case_id": "v2-test-r32",
+            "end": 10345,
+            "passage_index": 2,
+            "source_id": "pytest-capture-warnings-capture-warnings",
+            "start": 6870,
+            "text_sha256": "45909a7aab795507eab04b18ddc0f89ca79bacf77e7a2cd4acd1db22bcbb0fda",
+            "case_context_json_pointer": "/context_passages/2",
+            "manifest_json_pointer": "/passage_maps/99",
+            "source_entry_json_pointer": "/sources/15",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst#L209",
+            "source_line_start": 209,
+            "source_line_end": 325,
+            "source_file_sha256": "177068a737b89f624962d35a55420d2585509fa0249af7a9f9f840b700d2497e",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/capture-warnings.rst"
+          },
+          {
+            "case_id": "v2-test-r32",
+            "end": 13708,
+            "passage_index": 3,
+            "source_id": "pytest-capture-warnings-capture-warnings",
+            "start": 10345,
+            "text_sha256": "00816937810c02f8df078b2291255c9645bb811f3d12b90390dcbc9d97a0d093",
+            "case_context_json_pointer": "/context_passages/3",
+            "manifest_json_pointer": "/passage_maps/100",
+            "source_entry_json_pointer": "/sources/15",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst#L326",
+            "source_line_start": 326,
+            "source_line_end": 446,
+            "source_file_sha256": "177068a737b89f624962d35a55420d2585509fa0249af7a9f9f840b700d2497e",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/capture-warnings.rst"
+          },
+          {
+            "case_id": "v2-test-r32",
+            "end": 15798,
+            "passage_index": 4,
+            "source_id": "pytest-capture-warnings-capture-warnings",
+            "start": 13708,
+            "text_sha256": "aad03d002fd9c6d9941cd4715852cfcadb87e6d9d924fd6057528fcef29fcfc1",
+            "case_context_json_pointer": "/context_passages/4",
+            "manifest_json_pointer": "/passage_maps/101",
+            "source_entry_json_pointer": "/sources/15",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst#L447",
+            "source_line_start": 447,
+            "source_line_end": 503,
+            "source_file_sha256": "177068a737b89f624962d35a55420d2585509fa0249af7a9f9f840b700d2497e",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/capture-warnings.rst"
+          }
+        ]
+      }
+    },
+    {
+      "id": "E05",
+      "kind": "oracle_teardown_completion_vs_attempt",
+      "interpretation": "The frozen context promises an attempt to tear down already-successful fixtures, not guaranteed completed teardown. Gold U versus predicted S depends on this strength distinction; four observations are two cases/methods from one source family.",
+      "annotation_or_scope_boundary_human_review_pending": true,
+      "representative_observation": {
+        "case_id": "v2-test-r25",
+        "family_id": "v2-real-pytest-fixtures",
+        "sequence": 12,
+        "approach": "optimized",
+        "track": "oracle",
+        "gold_id": "v2-test-r25-c07",
+        "prediction_index": 6,
+        "gold": {
+          "aliases": [],
+          "answer_anchor": {
+            "end": 652,
+            "quote": "already successful fixtures are still torn down",
+            "start": 605
+          },
+          "claim_text": "Successful fixtures are still torn down when another fixture fails before yielding.",
+          "evidence_sets": [],
+          "id": "v2-test-r25-c07",
+          "rationale": "The source promises pytest will attempt to tear down earlier successful fixtures, not that arbitrary user cleanup completes successfully. The unchanged answer uses completed teardown language.",
+          "verdict": "UNSUPPORTED"
+        },
+        "prediction": {
+          "citations": [
+            {
+              "index": 2,
+              "quote": "If a yield fixture raises an exception before yielding, pytest won't try to run\nthe teardown code after that yield fixture's ``yield`` statement. But, for every\nfixture that has already run successfully for that test, pytest will still\nattempt to tear them down as it normally would."
+            }
+          ],
+          "claim_text": "Successful fixtures are still torn down when another fixture fails before yielding.",
+          "reasoning": "Pytest still attempts normal teardown for fixtures that already succeeded when another fixture fails before yielding.",
+          "verdict": "SUPPORTED"
+        },
+        "source_record_sha256": "2ba9d73527be0e65347a1f7314edaa487c4de7b89c6cdf3e067bbc4089bd07a2",
+        "scope": "Disagreement with frozen pre-result gold, not a newly performed semantic audit.",
+        "source": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 12,
+          "jsonl_line": 13,
+          "raw_row_sha256": "2ba9d73527be0e65347a1f7314edaa487c4de7b89c6cdf3e067bbc4089bd07a2",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L13"
+        }
+      },
+      "same_family_observations": [
+        {
+          "case_id": "v2-test-r25",
+          "approach": "optimized",
+          "sequence": 12,
+          "gold_id": "v2-test-r25-c07",
+          "source_record_sha256": "2ba9d73527be0e65347a1f7314edaa487c4de7b89c6cdf3e067bbc4089bd07a2",
+          "locators": {
+            "run_directory": "full-test",
+            "run_link": "full-test/",
+            "prediction_record": {
+              "records_file": "full-test/records.jsonl",
+              "sequence": 12,
+              "jsonl_line": 13,
+              "raw_row_sha256": "2ba9d73527be0e65347a1f7314edaa487c4de7b89c6cdf3e067bbc4089bd07a2",
+              "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+              "link": "full-test/records.jsonl#L13"
+            },
+            "case": {
+              "id": "v2-test-r25",
+              "cases_file": "full-test/cases.jsonl",
+              "jsonl_line": 25,
+              "raw_row_sha256": "b16e7d4ea8d283b7ecc0bd582f727d79707587f261237472bafaf843109c02fc",
+              "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+              "link": "full-test/cases.jsonl#L25",
+              "selected_gold": [
+                {
+                  "id": "v2-test-r25-c07",
+                  "json_pointer": "/gold_claims/6"
+                }
+              ],
+              "available_gold_ids": [
+                "v2-test-r25-c01",
+                "v2-test-r25-c02",
+                "v2-test-r25-c03",
+                "v2-test-r25-c04",
+                "v2-test-r25-c05",
+                "v2-test-r25-c06",
+                "v2-test-r25-c07",
+                "v2-test-r25-c08"
+              ]
+            },
+            "source_manifest": {
+              "file": "full-test/cases.manifest.json",
+              "link": "full-test/cases.manifest.json",
+              "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+            },
+            "passage_mappings": [
+              {
+                "case_id": "v2-test-r25",
+                "end": 12557,
+                "passage_index": 0,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 9237,
+                "text_sha256": "52bcf1462f7ae386fea81c8d26c902877364b27fa2f7146390a124a0872bd5fe",
+                "case_context_json_pointer": "/context_passages/0",
+                "manifest_json_pointer": "/passage_maps/70",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L379",
+                "source_line_start": 379,
+                "source_line_end": 470,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r25",
+                "end": 15999,
+                "passage_index": 1,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 12557,
+                "text_sha256": "073b8aa9531f329d9c306b380c9f1bc4af3810a0f068fb436ace1e5e8b893b54",
+                "case_context_json_pointer": "/context_passages/1",
+                "manifest_json_pointer": "/passage_maps/71",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L471",
+                "source_line_start": 471,
+                "source_line_end": 562,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r25",
+                "end": 19360,
+                "passage_index": 2,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 15999,
+                "text_sha256": "1c4cf15cc4ec420cbce2e6d2d70722d095c66d731e6efb79e434529781c0ece9",
+                "case_context_json_pointer": "/context_passages/2",
+                "manifest_json_pointer": "/passage_maps/72",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L563",
+                "source_line_start": 563,
+                "source_line_end": 671,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r25",
+                "end": 22776,
+                "passage_index": 3,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 19360,
+                "text_sha256": "2d33c899ee05ed96d10ac53f29d1c84e7f6da22740457f7a6ec7941a7961ea73",
+                "case_context_json_pointer": "/context_passages/3",
+                "manifest_json_pointer": "/passage_maps/73",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L672",
+                "source_line_start": 672,
+                "source_line_end": 805,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r25",
+                "end": 25196,
+                "passage_index": 4,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 22776,
+                "text_sha256": "f38ebc9f6d3f4ed3724d34ed7324ae9b6a74b519316aa7f1fa1bd1402e1e572e",
+                "case_context_json_pointer": "/context_passages/4",
+                "manifest_json_pointer": "/passage_maps/74",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L806",
+                "source_line_start": 806,
+                "source_line_end": 877,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              }
+            ]
+          },
+          "source": {
+            "records_file": "full-test/records.jsonl",
+            "sequence": 12,
+            "jsonl_line": 13,
+            "raw_row_sha256": "2ba9d73527be0e65347a1f7314edaa487c4de7b89c6cdf3e067bbc4089bd07a2",
+            "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+            "link": "full-test/records.jsonl#L13"
+          }
+        },
+        {
+          "case_id": "v2-test-r25",
+          "approach": "minimal",
+          "sequence": 39,
+          "gold_id": "v2-test-r25-c07",
+          "source_record_sha256": "4678dacbb64ad20af161f23546e2538ff73bb533206dce5055f88b7f8330b90c",
+          "locators": {
+            "run_directory": "full-test",
+            "run_link": "full-test/",
+            "prediction_record": {
+              "records_file": "full-test/records.jsonl",
+              "sequence": 39,
+              "jsonl_line": 40,
+              "raw_row_sha256": "4678dacbb64ad20af161f23546e2538ff73bb533206dce5055f88b7f8330b90c",
+              "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+              "link": "full-test/records.jsonl#L40"
+            },
+            "case": {
+              "id": "v2-test-r25",
+              "cases_file": "full-test/cases.jsonl",
+              "jsonl_line": 25,
+              "raw_row_sha256": "b16e7d4ea8d283b7ecc0bd582f727d79707587f261237472bafaf843109c02fc",
+              "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+              "link": "full-test/cases.jsonl#L25",
+              "selected_gold": [
+                {
+                  "id": "v2-test-r25-c07",
+                  "json_pointer": "/gold_claims/6"
+                }
+              ],
+              "available_gold_ids": [
+                "v2-test-r25-c01",
+                "v2-test-r25-c02",
+                "v2-test-r25-c03",
+                "v2-test-r25-c04",
+                "v2-test-r25-c05",
+                "v2-test-r25-c06",
+                "v2-test-r25-c07",
+                "v2-test-r25-c08"
+              ]
+            },
+            "source_manifest": {
+              "file": "full-test/cases.manifest.json",
+              "link": "full-test/cases.manifest.json",
+              "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+            },
+            "passage_mappings": [
+              {
+                "case_id": "v2-test-r25",
+                "end": 12557,
+                "passage_index": 0,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 9237,
+                "text_sha256": "52bcf1462f7ae386fea81c8d26c902877364b27fa2f7146390a124a0872bd5fe",
+                "case_context_json_pointer": "/context_passages/0",
+                "manifest_json_pointer": "/passage_maps/70",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L379",
+                "source_line_start": 379,
+                "source_line_end": 470,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r25",
+                "end": 15999,
+                "passage_index": 1,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 12557,
+                "text_sha256": "073b8aa9531f329d9c306b380c9f1bc4af3810a0f068fb436ace1e5e8b893b54",
+                "case_context_json_pointer": "/context_passages/1",
+                "manifest_json_pointer": "/passage_maps/71",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L471",
+                "source_line_start": 471,
+                "source_line_end": 562,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r25",
+                "end": 19360,
+                "passage_index": 2,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 15999,
+                "text_sha256": "1c4cf15cc4ec420cbce2e6d2d70722d095c66d731e6efb79e434529781c0ece9",
+                "case_context_json_pointer": "/context_passages/2",
+                "manifest_json_pointer": "/passage_maps/72",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L563",
+                "source_line_start": 563,
+                "source_line_end": 671,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r25",
+                "end": 22776,
+                "passage_index": 3,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 19360,
+                "text_sha256": "2d33c899ee05ed96d10ac53f29d1c84e7f6da22740457f7a6ec7941a7961ea73",
+                "case_context_json_pointer": "/context_passages/3",
+                "manifest_json_pointer": "/passage_maps/73",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L672",
+                "source_line_start": 672,
+                "source_line_end": 805,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r25",
+                "end": 25196,
+                "passage_index": 4,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 22776,
+                "text_sha256": "f38ebc9f6d3f4ed3724d34ed7324ae9b6a74b519316aa7f1fa1bd1402e1e572e",
+                "case_context_json_pointer": "/context_passages/4",
+                "manifest_json_pointer": "/passage_maps/74",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L806",
+                "source_line_start": 806,
+                "source_line_end": 877,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              }
+            ]
+          },
+          "source": {
+            "records_file": "full-test/records.jsonl",
+            "sequence": 39,
+            "jsonl_line": 40,
+            "raw_row_sha256": "4678dacbb64ad20af161f23546e2538ff73bb533206dce5055f88b7f8330b90c",
+            "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+            "link": "full-test/records.jsonl#L40"
+          }
+        },
+        {
+          "case_id": "v2-test-r26",
+          "approach": "minimal",
+          "sequence": 45,
+          "gold_id": "v2-test-r26-c07",
+          "source_record_sha256": "2778d8ffe5b6e892056fbec03691a457ca890232d327cc6300632f71e1765513",
+          "locators": {
+            "run_directory": "full-test",
+            "run_link": "full-test/",
+            "prediction_record": {
+              "records_file": "full-test/records.jsonl",
+              "sequence": 45,
+              "jsonl_line": 46,
+              "raw_row_sha256": "2778d8ffe5b6e892056fbec03691a457ca890232d327cc6300632f71e1765513",
+              "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+              "link": "full-test/records.jsonl#L46"
+            },
+            "case": {
+              "id": "v2-test-r26",
+              "cases_file": "full-test/cases.jsonl",
+              "jsonl_line": 26,
+              "raw_row_sha256": "319478a7bfbae1e254d53b15fe5bbd72f45e3d750089069f80e65f426959ef30",
+              "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+              "link": "full-test/cases.jsonl#L26",
+              "selected_gold": [
+                {
+                  "id": "v2-test-r26-c07",
+                  "json_pointer": "/gold_claims/6"
+                }
+              ],
+              "available_gold_ids": [
+                "v2-test-r26-c01",
+                "v2-test-r26-c02",
+                "v2-test-r26-c03",
+                "v2-test-r26-c04",
+                "v2-test-r26-c05",
+                "v2-test-r26-c06",
+                "v2-test-r26-c07",
+                "v2-test-r26-c08"
+              ]
+            },
+            "source_manifest": {
+              "file": "full-test/cases.manifest.json",
+              "link": "full-test/cases.manifest.json",
+              "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+            },
+            "passage_mappings": [
+              {
+                "case_id": "v2-test-r26",
+                "end": 12557,
+                "passage_index": 0,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 9237,
+                "text_sha256": "52bcf1462f7ae386fea81c8d26c902877364b27fa2f7146390a124a0872bd5fe",
+                "case_context_json_pointer": "/context_passages/0",
+                "manifest_json_pointer": "/passage_maps/75",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L379",
+                "source_line_start": 379,
+                "source_line_end": 470,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r26",
+                "end": 15999,
+                "passage_index": 1,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 12557,
+                "text_sha256": "073b8aa9531f329d9c306b380c9f1bc4af3810a0f068fb436ace1e5e8b893b54",
+                "case_context_json_pointer": "/context_passages/1",
+                "manifest_json_pointer": "/passage_maps/76",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L471",
+                "source_line_start": 471,
+                "source_line_end": 562,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r26",
+                "end": 19360,
+                "passage_index": 2,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 15999,
+                "text_sha256": "1c4cf15cc4ec420cbce2e6d2d70722d095c66d731e6efb79e434529781c0ece9",
+                "case_context_json_pointer": "/context_passages/2",
+                "manifest_json_pointer": "/passage_maps/77",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L563",
+                "source_line_start": 563,
+                "source_line_end": 671,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r26",
+                "end": 22776,
+                "passage_index": 3,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 19360,
+                "text_sha256": "2d33c899ee05ed96d10ac53f29d1c84e7f6da22740457f7a6ec7941a7961ea73",
+                "case_context_json_pointer": "/context_passages/3",
+                "manifest_json_pointer": "/passage_maps/78",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L672",
+                "source_line_start": 672,
+                "source_line_end": 805,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r26",
+                "end": 25196,
+                "passage_index": 4,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 22776,
+                "text_sha256": "f38ebc9f6d3f4ed3724d34ed7324ae9b6a74b519316aa7f1fa1bd1402e1e572e",
+                "case_context_json_pointer": "/context_passages/4",
+                "manifest_json_pointer": "/passage_maps/79",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L806",
+                "source_line_start": 806,
+                "source_line_end": 877,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              }
+            ]
+          },
+          "source": {
+            "records_file": "full-test/records.jsonl",
+            "sequence": 45,
+            "jsonl_line": 46,
+            "raw_row_sha256": "2778d8ffe5b6e892056fbec03691a457ca890232d327cc6300632f71e1765513",
+            "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+            "link": "full-test/records.jsonl#L46"
+          }
+        },
+        {
+          "case_id": "v2-test-r26",
+          "approach": "optimized",
+          "sequence": 182,
+          "gold_id": "v2-test-r26-c07",
+          "source_record_sha256": "c572c42ce129837831da1fafd257fa6063bd4387f030e6a04f2f67e14e4905ff",
+          "locators": {
+            "run_directory": "full-test",
+            "run_link": "full-test/",
+            "prediction_record": {
+              "records_file": "full-test/records.jsonl",
+              "sequence": 182,
+              "jsonl_line": 183,
+              "raw_row_sha256": "c572c42ce129837831da1fafd257fa6063bd4387f030e6a04f2f67e14e4905ff",
+              "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+              "link": "full-test/records.jsonl#L183"
+            },
+            "case": {
+              "id": "v2-test-r26",
+              "cases_file": "full-test/cases.jsonl",
+              "jsonl_line": 26,
+              "raw_row_sha256": "319478a7bfbae1e254d53b15fe5bbd72f45e3d750089069f80e65f426959ef30",
+              "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+              "link": "full-test/cases.jsonl#L26",
+              "selected_gold": [
+                {
+                  "id": "v2-test-r26-c07",
+                  "json_pointer": "/gold_claims/6"
+                }
+              ],
+              "available_gold_ids": [
+                "v2-test-r26-c01",
+                "v2-test-r26-c02",
+                "v2-test-r26-c03",
+                "v2-test-r26-c04",
+                "v2-test-r26-c05",
+                "v2-test-r26-c06",
+                "v2-test-r26-c07",
+                "v2-test-r26-c08"
+              ]
+            },
+            "source_manifest": {
+              "file": "full-test/cases.manifest.json",
+              "link": "full-test/cases.manifest.json",
+              "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+            },
+            "passage_mappings": [
+              {
+                "case_id": "v2-test-r26",
+                "end": 12557,
+                "passage_index": 0,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 9237,
+                "text_sha256": "52bcf1462f7ae386fea81c8d26c902877364b27fa2f7146390a124a0872bd5fe",
+                "case_context_json_pointer": "/context_passages/0",
+                "manifest_json_pointer": "/passage_maps/75",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L379",
+                "source_line_start": 379,
+                "source_line_end": 470,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r26",
+                "end": 15999,
+                "passage_index": 1,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 12557,
+                "text_sha256": "073b8aa9531f329d9c306b380c9f1bc4af3810a0f068fb436ace1e5e8b893b54",
+                "case_context_json_pointer": "/context_passages/1",
+                "manifest_json_pointer": "/passage_maps/76",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L471",
+                "source_line_start": 471,
+                "source_line_end": 562,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r26",
+                "end": 19360,
+                "passage_index": 2,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 15999,
+                "text_sha256": "1c4cf15cc4ec420cbce2e6d2d70722d095c66d731e6efb79e434529781c0ece9",
+                "case_context_json_pointer": "/context_passages/2",
+                "manifest_json_pointer": "/passage_maps/77",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L563",
+                "source_line_start": 563,
+                "source_line_end": 671,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r26",
+                "end": 22776,
+                "passage_index": 3,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 19360,
+                "text_sha256": "2d33c899ee05ed96d10ac53f29d1c84e7f6da22740457f7a6ec7941a7961ea73",
+                "case_context_json_pointer": "/context_passages/3",
+                "manifest_json_pointer": "/passage_maps/78",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L672",
+                "source_line_start": 672,
+                "source_line_end": 805,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              },
+              {
+                "case_id": "v2-test-r26",
+                "end": 25196,
+                "passage_index": 4,
+                "source_id": "pytest-fixtures-fixtures",
+                "start": 22776,
+                "text_sha256": "f38ebc9f6d3f4ed3724d34ed7324ae9b6a74b519316aa7f1fa1bd1402e1e572e",
+                "case_context_json_pointer": "/context_passages/4",
+                "manifest_json_pointer": "/passage_maps/79",
+                "source_entry_json_pointer": "/sources/12",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L806",
+                "source_line_start": 806,
+                "source_line_end": 877,
+                "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+                "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+              }
+            ]
+          },
+          "source": {
+            "records_file": "full-test/records.jsonl",
+            "sequence": 182,
+            "jsonl_line": 183,
+            "raw_row_sha256": "c572c42ce129837831da1fafd257fa6063bd4387f030e6a04f2f67e14e4905ff",
+            "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+            "link": "full-test/records.jsonl#L183"
+          }
+        }
+      ],
+      "locators": {
+        "run_directory": "full-test",
+        "run_link": "full-test/",
+        "prediction_record": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 12,
+          "jsonl_line": 13,
+          "raw_row_sha256": "2ba9d73527be0e65347a1f7314edaa487c4de7b89c6cdf3e067bbc4089bd07a2",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L13"
+        },
+        "case": {
+          "id": "v2-test-r25",
+          "cases_file": "full-test/cases.jsonl",
+          "jsonl_line": 25,
+          "raw_row_sha256": "b16e7d4ea8d283b7ecc0bd582f727d79707587f261237472bafaf843109c02fc",
+          "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+          "link": "full-test/cases.jsonl#L25",
+          "selected_gold": [
+            {
+              "id": "v2-test-r25-c07",
+              "json_pointer": "/gold_claims/6"
+            }
+          ],
+          "available_gold_ids": [
+            "v2-test-r25-c01",
+            "v2-test-r25-c02",
+            "v2-test-r25-c03",
+            "v2-test-r25-c04",
+            "v2-test-r25-c05",
+            "v2-test-r25-c06",
+            "v2-test-r25-c07",
+            "v2-test-r25-c08"
+          ]
+        },
+        "source_manifest": {
+          "file": "full-test/cases.manifest.json",
+          "link": "full-test/cases.manifest.json",
+          "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+        },
+        "passage_mappings": [
+          {
+            "case_id": "v2-test-r25",
+            "end": 12557,
+            "passage_index": 0,
+            "source_id": "pytest-fixtures-fixtures",
+            "start": 9237,
+            "text_sha256": "52bcf1462f7ae386fea81c8d26c902877364b27fa2f7146390a124a0872bd5fe",
+            "case_context_json_pointer": "/context_passages/0",
+            "manifest_json_pointer": "/passage_maps/70",
+            "source_entry_json_pointer": "/sources/12",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L379",
+            "source_line_start": 379,
+            "source_line_end": 470,
+            "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+          },
+          {
+            "case_id": "v2-test-r25",
+            "end": 15999,
+            "passage_index": 1,
+            "source_id": "pytest-fixtures-fixtures",
+            "start": 12557,
+            "text_sha256": "073b8aa9531f329d9c306b380c9f1bc4af3810a0f068fb436ace1e5e8b893b54",
+            "case_context_json_pointer": "/context_passages/1",
+            "manifest_json_pointer": "/passage_maps/71",
+            "source_entry_json_pointer": "/sources/12",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L471",
+            "source_line_start": 471,
+            "source_line_end": 562,
+            "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+          },
+          {
+            "case_id": "v2-test-r25",
+            "end": 19360,
+            "passage_index": 2,
+            "source_id": "pytest-fixtures-fixtures",
+            "start": 15999,
+            "text_sha256": "1c4cf15cc4ec420cbce2e6d2d70722d095c66d731e6efb79e434529781c0ece9",
+            "case_context_json_pointer": "/context_passages/2",
+            "manifest_json_pointer": "/passage_maps/72",
+            "source_entry_json_pointer": "/sources/12",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L563",
+            "source_line_start": 563,
+            "source_line_end": 671,
+            "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+          },
+          {
+            "case_id": "v2-test-r25",
+            "end": 22776,
+            "passage_index": 3,
+            "source_id": "pytest-fixtures-fixtures",
+            "start": 19360,
+            "text_sha256": "2d33c899ee05ed96d10ac53f29d1c84e7f6da22740457f7a6ec7941a7961ea73",
+            "case_context_json_pointer": "/context_passages/3",
+            "manifest_json_pointer": "/passage_maps/73",
+            "source_entry_json_pointer": "/sources/12",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L672",
+            "source_line_start": 672,
+            "source_line_end": 805,
+            "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+          },
+          {
+            "case_id": "v2-test-r25",
+            "end": 25196,
+            "passage_index": 4,
+            "source_id": "pytest-fixtures-fixtures",
+            "start": 22776,
+            "text_sha256": "f38ebc9f6d3f4ed3724d34ed7324ae9b6a74b519316aa7f1fa1bd1402e1e572e",
+            "case_context_json_pointer": "/context_passages/4",
+            "manifest_json_pointer": "/passage_maps/74",
+            "source_entry_json_pointer": "/sources/12",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst#L806",
+            "source_line_start": 806,
+            "source_line_end": 877,
+            "source_file_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+            "pinned_revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+          }
+        ]
+      }
+    },
+    {
+      "id": "E06",
+      "kind": "oracle_post_init_defined_condition",
+      "interpretation": "Gold U requires the when-defined-on-the-class premise. The unconditional supplied claim is predicted S. This is annotation-sensitive condition handling, not a claim that dataclasses never invoke post-init; two observations share one source family.",
+      "annotation_or_scope_boundary_human_review_pending": true,
+      "representative_observation": {
+        "case_id": "v2-test-r03",
+        "family_id": "v2-real-python-dataclasses",
+        "sequence": 253,
+        "approach": "minimal",
+        "track": "oracle",
+        "gold_id": "v2-test-r03-c01",
+        "prediction_index": 0,
+        "gold": {
+          "aliases": [],
+          "answer_anchor": {
+            "end": 177,
+            "quote": "A generated dataclass __init__ calls __post_init__",
+            "start": 127
+          },
+          "claim_text": "A generated dataclass __init__ calls __post_init__.",
+          "evidence_sets": [],
+          "id": "v2-test-r03-c01",
+          "rationale": "Author adjudication after blind lock: 原文只在When defined on the class条件下保证调用；本问答未显式给出已定义该方法的前提。无条件形式未被完全蕴含，也没有直接反驳，故U。",
+          "verdict": "UNSUPPORTED"
+        },
+        "prediction": {
+          "citations": [
+            {
+              "index": 0,
+              "quote": "When defined on the class, it will be called by the generated\n   :meth:`~object.__init__`, normally as :meth:`!self.__post_init__`."
+            }
+          ],
+          "claim_text": "A generated dataclass __init__ calls __post_init__.",
+          "reasoning": "The generated initializer calls __post_init__ when that method is defined on the class.",
+          "verdict": "SUPPORTED"
+        },
+        "source_record_sha256": "9891c07b73d78bd948971cf829400afc8701ff10a53b4b95c55a7710808a2966",
+        "scope": "Disagreement with frozen pre-result gold, not a newly performed semantic audit.",
+        "source": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 253,
+          "jsonl_line": 254,
+          "raw_row_sha256": "9891c07b73d78bd948971cf829400afc8701ff10a53b4b95c55a7710808a2966",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L254"
+        }
+      },
+      "same_family_observations": [
+        {
+          "case_id": "v2-test-r03",
+          "approach": "minimal",
+          "sequence": 253,
+          "gold_id": "v2-test-r03-c01",
+          "source_record_sha256": "9891c07b73d78bd948971cf829400afc8701ff10a53b4b95c55a7710808a2966",
+          "locators": {
+            "run_directory": "full-test",
+            "run_link": "full-test/",
+            "prediction_record": {
+              "records_file": "full-test/records.jsonl",
+              "sequence": 253,
+              "jsonl_line": 254,
+              "raw_row_sha256": "9891c07b73d78bd948971cf829400afc8701ff10a53b4b95c55a7710808a2966",
+              "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+              "link": "full-test/records.jsonl#L254"
+            },
+            "case": {
+              "id": "v2-test-r03",
+              "cases_file": "full-test/cases.jsonl",
+              "jsonl_line": 3,
+              "raw_row_sha256": "8ea9cb12c246f6eb207b191a9a4250eddeb18b3ed15d3541fa9230bc427f7511",
+              "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+              "link": "full-test/cases.jsonl#L3",
+              "selected_gold": [
+                {
+                  "id": "v2-test-r03-c01",
+                  "json_pointer": "/gold_claims/0"
+                }
+              ],
+              "available_gold_ids": [
+                "v2-test-r03-c01",
+                "v2-test-r03-c02",
+                "v2-test-r03-c03",
+                "v2-test-r03-c04",
+                "v2-test-r03-c05",
+                "v2-test-r03-c06",
+                "v2-test-r03-c07",
+                "v2-test-r03-c08",
+                "v2-test-r03-c09"
+              ]
+            },
+            "source_manifest": {
+              "file": "full-test/cases.manifest.json",
+              "link": "full-test/cases.manifest.json",
+              "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+            },
+            "passage_mappings": [
+              {
+                "case_id": "v2-test-r03",
+                "end": 25462,
+                "passage_index": 0,
+                "source_id": "python-dataclasses-dataclasses",
+                "start": 21985,
+                "text_sha256": "ded05e71c9fca4b4774af4019187e9d32051e3494d137d5d503613bda4b6440c",
+                "case_context_json_pointer": "/context_passages/0",
+                "manifest_json_pointer": "/passage_maps/6",
+                "source_entry_json_pointer": "/sources/1",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L525",
+                "source_line_start": 525,
+                "source_line_end": 619,
+                "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+                "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+              },
+              {
+                "case_id": "v2-test-r03",
+                "end": 28740,
+                "passage_index": 1,
+                "source_id": "python-dataclasses-dataclasses",
+                "start": 25462,
+                "text_sha256": "97901edeb1400a1845521df24a9ee88e5717017fcd02a4234237a7837e8ef6d4",
+                "case_context_json_pointer": "/context_passages/1",
+                "manifest_json_pointer": "/passage_maps/7",
+                "source_entry_json_pointer": "/sources/1",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L620",
+                "source_line_start": 620,
+                "source_line_end": 713,
+                "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+                "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+              },
+              {
+                "case_id": "v2-test-r03",
+                "end": 32211,
+                "passage_index": 2,
+                "source_id": "python-dataclasses-dataclasses",
+                "start": 28740,
+                "text_sha256": "0bc06f0d8ec9ed345e4f252b53e9034fcfb7697aacb6b986a8bdf1d8c2f59e00",
+                "case_context_json_pointer": "/context_passages/2",
+                "manifest_json_pointer": "/passage_maps/8",
+                "source_entry_json_pointer": "/sources/1",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L714",
+                "source_line_start": 714,
+                "source_line_end": 816,
+                "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+                "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+              },
+              {
+                "case_id": "v2-test-r03",
+                "end": 32884,
+                "passage_index": 3,
+                "source_id": "python-dataclasses-dataclasses",
+                "start": 32211,
+                "text_sha256": "965670743fe2a501bda15a8616fb8272b5d840de05574ec93a8a789b73bd4ba5",
+                "case_context_json_pointer": "/context_passages/3",
+                "manifest_json_pointer": "/passage_maps/9",
+                "source_entry_json_pointer": "/sources/1",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L817",
+                "source_line_start": 817,
+                "source_line_end": 837,
+                "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+                "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+              }
+            ]
+          },
+          "source": {
+            "records_file": "full-test/records.jsonl",
+            "sequence": 253,
+            "jsonl_line": 254,
+            "raw_row_sha256": "9891c07b73d78bd948971cf829400afc8701ff10a53b4b95c55a7710808a2966",
+            "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+            "link": "full-test/records.jsonl#L254"
+          }
+        },
+        {
+          "case_id": "v2-test-r04",
+          "approach": "minimal",
+          "sequence": 282,
+          "gold_id": "v2-test-r04-c01",
+          "source_record_sha256": "9f2542a88f92c97ab4bcfca1ec118bedd7d75ebeeae74d82ceed66f71541c69c",
+          "locators": {
+            "run_directory": "full-test",
+            "run_link": "full-test/",
+            "prediction_record": {
+              "records_file": "full-test/records.jsonl",
+              "sequence": 282,
+              "jsonl_line": 283,
+              "raw_row_sha256": "9f2542a88f92c97ab4bcfca1ec118bedd7d75ebeeae74d82ceed66f71541c69c",
+              "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+              "link": "full-test/records.jsonl#L283"
+            },
+            "case": {
+              "id": "v2-test-r04",
+              "cases_file": "full-test/cases.jsonl",
+              "jsonl_line": 4,
+              "raw_row_sha256": "e7b4c9d0249bb7104b9c13d6d4f7e00458b56a9eb99a634c4bab90ec056c2071",
+              "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+              "link": "full-test/cases.jsonl#L4",
+              "selected_gold": [
+                {
+                  "id": "v2-test-r04-c01",
+                  "json_pointer": "/gold_claims/0"
+                }
+              ],
+              "available_gold_ids": [
+                "v2-test-r04-c01",
+                "v2-test-r04-c02",
+                "v2-test-r04-c03",
+                "v2-test-r04-c04",
+                "v2-test-r04-c05",
+                "v2-test-r04-c06",
+                "v2-test-r04-c07",
+                "v2-test-r04-c08",
+                "v2-test-r04-c09"
+              ]
+            },
+            "source_manifest": {
+              "file": "full-test/cases.manifest.json",
+              "link": "full-test/cases.manifest.json",
+              "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+            },
+            "passage_mappings": [
+              {
+                "case_id": "v2-test-r04",
+                "end": 25462,
+                "passage_index": 0,
+                "source_id": "python-dataclasses-dataclasses",
+                "start": 21985,
+                "text_sha256": "ded05e71c9fca4b4774af4019187e9d32051e3494d137d5d503613bda4b6440c",
+                "case_context_json_pointer": "/context_passages/0",
+                "manifest_json_pointer": "/passage_maps/10",
+                "source_entry_json_pointer": "/sources/1",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L525",
+                "source_line_start": 525,
+                "source_line_end": 619,
+                "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+                "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+              },
+              {
+                "case_id": "v2-test-r04",
+                "end": 28740,
+                "passage_index": 1,
+                "source_id": "python-dataclasses-dataclasses",
+                "start": 25462,
+                "text_sha256": "97901edeb1400a1845521df24a9ee88e5717017fcd02a4234237a7837e8ef6d4",
+                "case_context_json_pointer": "/context_passages/1",
+                "manifest_json_pointer": "/passage_maps/11",
+                "source_entry_json_pointer": "/sources/1",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L620",
+                "source_line_start": 620,
+                "source_line_end": 713,
+                "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+                "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+              },
+              {
+                "case_id": "v2-test-r04",
+                "end": 32211,
+                "passage_index": 2,
+                "source_id": "python-dataclasses-dataclasses",
+                "start": 28740,
+                "text_sha256": "0bc06f0d8ec9ed345e4f252b53e9034fcfb7697aacb6b986a8bdf1d8c2f59e00",
+                "case_context_json_pointer": "/context_passages/2",
+                "manifest_json_pointer": "/passage_maps/12",
+                "source_entry_json_pointer": "/sources/1",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L714",
+                "source_line_start": 714,
+                "source_line_end": 816,
+                "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+                "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+              },
+              {
+                "case_id": "v2-test-r04",
+                "end": 32884,
+                "passage_index": 3,
+                "source_id": "python-dataclasses-dataclasses",
+                "start": 32211,
+                "text_sha256": "965670743fe2a501bda15a8616fb8272b5d840de05574ec93a8a789b73bd4ba5",
+                "case_context_json_pointer": "/context_passages/3",
+                "manifest_json_pointer": "/passage_maps/13",
+                "source_entry_json_pointer": "/sources/1",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L817",
+                "source_line_start": 817,
+                "source_line_end": 837,
+                "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+                "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+              }
+            ]
+          },
+          "source": {
+            "records_file": "full-test/records.jsonl",
+            "sequence": 282,
+            "jsonl_line": 283,
+            "raw_row_sha256": "9f2542a88f92c97ab4bcfca1ec118bedd7d75ebeeae74d82ceed66f71541c69c",
+            "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+            "link": "full-test/records.jsonl#L283"
+          }
+        }
+      ],
+      "locators": {
+        "run_directory": "full-test",
+        "run_link": "full-test/",
+        "prediction_record": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 253,
+          "jsonl_line": 254,
+          "raw_row_sha256": "9891c07b73d78bd948971cf829400afc8701ff10a53b4b95c55a7710808a2966",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L254"
+        },
+        "case": {
+          "id": "v2-test-r03",
+          "cases_file": "full-test/cases.jsonl",
+          "jsonl_line": 3,
+          "raw_row_sha256": "8ea9cb12c246f6eb207b191a9a4250eddeb18b3ed15d3541fa9230bc427f7511",
+          "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+          "link": "full-test/cases.jsonl#L3",
+          "selected_gold": [
+            {
+              "id": "v2-test-r03-c01",
+              "json_pointer": "/gold_claims/0"
+            }
+          ],
+          "available_gold_ids": [
+            "v2-test-r03-c01",
+            "v2-test-r03-c02",
+            "v2-test-r03-c03",
+            "v2-test-r03-c04",
+            "v2-test-r03-c05",
+            "v2-test-r03-c06",
+            "v2-test-r03-c07",
+            "v2-test-r03-c08",
+            "v2-test-r03-c09"
+          ]
+        },
+        "source_manifest": {
+          "file": "full-test/cases.manifest.json",
+          "link": "full-test/cases.manifest.json",
+          "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+        },
+        "passage_mappings": [
+          {
+            "case_id": "v2-test-r03",
+            "end": 25462,
+            "passage_index": 0,
+            "source_id": "python-dataclasses-dataclasses",
+            "start": 21985,
+            "text_sha256": "ded05e71c9fca4b4774af4019187e9d32051e3494d137d5d503613bda4b6440c",
+            "case_context_json_pointer": "/context_passages/0",
+            "manifest_json_pointer": "/passage_maps/6",
+            "source_entry_json_pointer": "/sources/1",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L525",
+            "source_line_start": 525,
+            "source_line_end": 619,
+            "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+          },
+          {
+            "case_id": "v2-test-r03",
+            "end": 28740,
+            "passage_index": 1,
+            "source_id": "python-dataclasses-dataclasses",
+            "start": 25462,
+            "text_sha256": "97901edeb1400a1845521df24a9ee88e5717017fcd02a4234237a7837e8ef6d4",
+            "case_context_json_pointer": "/context_passages/1",
+            "manifest_json_pointer": "/passage_maps/7",
+            "source_entry_json_pointer": "/sources/1",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L620",
+            "source_line_start": 620,
+            "source_line_end": 713,
+            "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+          },
+          {
+            "case_id": "v2-test-r03",
+            "end": 32211,
+            "passage_index": 2,
+            "source_id": "python-dataclasses-dataclasses",
+            "start": 28740,
+            "text_sha256": "0bc06f0d8ec9ed345e4f252b53e9034fcfb7697aacb6b986a8bdf1d8c2f59e00",
+            "case_context_json_pointer": "/context_passages/2",
+            "manifest_json_pointer": "/passage_maps/8",
+            "source_entry_json_pointer": "/sources/1",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L714",
+            "source_line_start": 714,
+            "source_line_end": 816,
+            "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+          },
+          {
+            "case_id": "v2-test-r03",
+            "end": 32884,
+            "passage_index": 3,
+            "source_id": "python-dataclasses-dataclasses",
+            "start": 32211,
+            "text_sha256": "965670743fe2a501bda15a8616fb8272b5d840de05574ec93a8a789b73bd4ba5",
+            "case_context_json_pointer": "/context_passages/3",
+            "manifest_json_pointer": "/passage_maps/9",
+            "source_entry_json_pointer": "/sources/1",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst#L817",
+            "source_line_start": 817,
+            "source_line_end": 837,
+            "source_file_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+          }
+        ]
+      }
+    },
+    {
+      "id": "E07",
+      "kind": "oracle_closed_list_coercion_boundary",
+      "interpretation": "Gold C treats the supplied complete allowed-coercions list as excluding capturing closures. Optimized chooses U because no direct Copy-exception rebuttal is quoted. The distinction depends on treating the frozen list as exhaustive, not external Rust knowledge.",
+      "annotation_or_scope_boundary_human_review_pending": true,
+      "representative_observation": {
+        "case_id": "v2-test-r22",
+        "family_id": "v2-real-rust-type-coercions",
+        "sequence": 195,
+        "approach": "optimized",
+        "track": "oracle",
+        "gold_id": "v2-test-r22-c05",
+        "prediction_index": 4,
+        "gold": {
+          "aliases": [],
+          "answer_anchor": {
+            "end": 615,
+            "quote": "a closure that captures its environment can coerce to a function pointer when all captured values implement Copy",
+            "start": 503
+          },
+          "claim_text": "A capturing closure can coerce to a function pointer if its captures implement Copy.",
+          "evidence_sets": [
+            [
+              {
+                "index": 1,
+                "quote": "r[coerce.types.closure]\n* Non capturing closures to `fn` pointers"
+              }
+            ]
+          ],
+          "id": "v2-test-r22-c05",
+          "rationale": "The allowed coercion is limited to noncapturing closures; Copy captures do not meet that condition.",
+          "verdict": "CONTRADICTED"
+        },
+        "prediction": {
+          "citations": [],
+          "claim_text": "A capturing closure can coerce to a function pointer if its captures implement Copy.",
+          "reasoning": "The passages establish function-pointer coercion for noncapturing closures, but provide no rule establishing or directly refuting the proposed Copy-capture exception.",
+          "verdict": "UNSUPPORTED"
+        },
+        "source_record_sha256": "f62a0a3437a43bc70b79a6569374665586ace5279859ae6351709018e86d95c1",
+        "scope": "Disagreement with frozen pre-result gold, not a newly performed semantic audit.",
+        "source": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 195,
+          "jsonl_line": 196,
+          "raw_row_sha256": "f62a0a3437a43bc70b79a6569374665586ace5279859ae6351709018e86d95c1",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L196"
+        }
+      },
+      "same_family_observations": [
+        {
+          "case_id": "v2-test-r22",
+          "approach": "optimized",
+          "sequence": 195,
+          "gold_id": "v2-test-r22-c05",
+          "source_record_sha256": "f62a0a3437a43bc70b79a6569374665586ace5279859ae6351709018e86d95c1",
+          "locators": {
+            "run_directory": "full-test",
+            "run_link": "full-test/",
+            "prediction_record": {
+              "records_file": "full-test/records.jsonl",
+              "sequence": 195,
+              "jsonl_line": 196,
+              "raw_row_sha256": "f62a0a3437a43bc70b79a6569374665586ace5279859ae6351709018e86d95c1",
+              "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+              "link": "full-test/records.jsonl#L196"
+            },
+            "case": {
+              "id": "v2-test-r22",
+              "cases_file": "full-test/cases.jsonl",
+              "jsonl_line": 22,
+              "raw_row_sha256": "5ffaa9e9912bc635cb9c3d477f7b5e5f43ad64a8c3f7036e28bac1e8a3b7dbed",
+              "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+              "link": "full-test/cases.jsonl#L22",
+              "selected_gold": [
+                {
+                  "id": "v2-test-r22-c05",
+                  "json_pointer": "/gold_claims/4"
+                }
+              ],
+              "available_gold_ids": [
+                "v2-test-r22-c01",
+                "v2-test-r22-c02",
+                "v2-test-r22-c03",
+                "v2-test-r22-c04",
+                "v2-test-r22-c05",
+                "v2-test-r22-c06",
+                "v2-test-r22-c07",
+                "v2-test-r22-c08"
+              ]
+            },
+            "source_manifest": {
+              "file": "full-test/cases.manifest.json",
+              "link": "full-test/cases.manifest.json",
+              "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+            },
+            "passage_mappings": [
+              {
+                "case_id": "v2-test-r22",
+                "end": 3265,
+                "passage_index": 0,
+                "source_id": "rust-type-coercions-type-coercions",
+                "start": 0,
+                "text_sha256": "21b4024f2b850fefad194c53bc3d1d6d6c9d3da389b8cf915b1f2399893b7dbd",
+                "case_context_json_pointer": "/context_passages/0",
+                "manifest_json_pointer": "/passage_maps/62",
+                "source_entry_json_pointer": "/sources/10",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md#L1",
+                "source_line_start": 1,
+                "source_line_end": 96,
+                "source_file_sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+                "pinned_revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/type-coercions.md"
+              },
+              {
+                "case_id": "v2-test-r22",
+                "end": 6763,
+                "passage_index": 1,
+                "source_id": "rust-type-coercions-type-coercions",
+                "start": 3265,
+                "text_sha256": "e5c4f4da0137d0fb0b7fa83d02dad537bae5504f2c003ac352a71a9cf9ecf775",
+                "case_context_json_pointer": "/context_passages/1",
+                "manifest_json_pointer": "/passage_maps/63",
+                "source_entry_json_pointer": "/sources/10",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md#L97",
+                "source_line_start": 97,
+                "source_line_end": 205,
+                "source_file_sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+                "pinned_revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/type-coercions.md"
+              },
+              {
+                "case_id": "v2-test-r22",
+                "end": 9903,
+                "passage_index": 2,
+                "source_id": "rust-type-coercions-type-coercions",
+                "start": 6763,
+                "text_sha256": "73692bc59022634f63188c49dd17bc18db47146e0b02855a7651be8008b7c95b",
+                "case_context_json_pointer": "/context_passages/2",
+                "manifest_json_pointer": "/passage_maps/64",
+                "source_entry_json_pointer": "/sources/10",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md#L206",
+                "source_line_start": 206,
+                "source_line_end": 292,
+                "source_file_sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+                "pinned_revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/type-coercions.md"
+              },
+              {
+                "case_id": "v2-test-r22",
+                "end": 10520,
+                "passage_index": 3,
+                "source_id": "rust-type-coercions-type-coercions",
+                "start": 9903,
+                "text_sha256": "a0822a48b337accbe2dec6f8f0a7272c418e9a11e3c9ad571bfaea5529d71dab",
+                "case_context_json_pointer": "/context_passages/3",
+                "manifest_json_pointer": "/passage_maps/65",
+                "source_entry_json_pointer": "/sources/10",
+                "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md",
+                "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md#L293",
+                "source_line_start": 293,
+                "source_line_end": 303,
+                "source_file_sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+                "pinned_revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+                "pinned_upstream_url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/type-coercions.md"
+              }
+            ]
+          },
+          "source": {
+            "records_file": "full-test/records.jsonl",
+            "sequence": 195,
+            "jsonl_line": 196,
+            "raw_row_sha256": "f62a0a3437a43bc70b79a6569374665586ace5279859ae6351709018e86d95c1",
+            "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+            "link": "full-test/records.jsonl#L196"
+          }
+        }
+      ],
+      "locators": {
+        "run_directory": "full-test",
+        "run_link": "full-test/",
+        "prediction_record": {
+          "records_file": "full-test/records.jsonl",
+          "sequence": 195,
+          "jsonl_line": 196,
+          "raw_row_sha256": "f62a0a3437a43bc70b79a6569374665586ace5279859ae6351709018e86d95c1",
+          "records_file_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+          "link": "full-test/records.jsonl#L196"
+        },
+        "case": {
+          "id": "v2-test-r22",
+          "cases_file": "full-test/cases.jsonl",
+          "jsonl_line": 22,
+          "raw_row_sha256": "5ffaa9e9912bc635cb9c3d477f7b5e5f43ad64a8c3f7036e28bac1e8a3b7dbed",
+          "cases_file_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+          "link": "full-test/cases.jsonl#L22",
+          "selected_gold": [
+            {
+              "id": "v2-test-r22-c05",
+              "json_pointer": "/gold_claims/4"
+            }
+          ],
+          "available_gold_ids": [
+            "v2-test-r22-c01",
+            "v2-test-r22-c02",
+            "v2-test-r22-c03",
+            "v2-test-r22-c04",
+            "v2-test-r22-c05",
+            "v2-test-r22-c06",
+            "v2-test-r22-c07",
+            "v2-test-r22-c08"
+          ]
+        },
+        "source_manifest": {
+          "file": "full-test/cases.manifest.json",
+          "link": "full-test/cases.manifest.json",
+          "sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da"
+        },
+        "passage_mappings": [
+          {
+            "case_id": "v2-test-r22",
+            "end": 3265,
+            "passage_index": 0,
+            "source_id": "rust-type-coercions-type-coercions",
+            "start": 0,
+            "text_sha256": "21b4024f2b850fefad194c53bc3d1d6d6c9d3da389b8cf915b1f2399893b7dbd",
+            "case_context_json_pointer": "/context_passages/0",
+            "manifest_json_pointer": "/passage_maps/62",
+            "source_entry_json_pointer": "/sources/10",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md#L1",
+            "source_line_start": 1,
+            "source_line_end": 96,
+            "source_file_sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+            "pinned_revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/type-coercions.md"
+          },
+          {
+            "case_id": "v2-test-r22",
+            "end": 6763,
+            "passage_index": 1,
+            "source_id": "rust-type-coercions-type-coercions",
+            "start": 3265,
+            "text_sha256": "e5c4f4da0137d0fb0b7fa83d02dad537bae5504f2c003ac352a71a9cf9ecf775",
+            "case_context_json_pointer": "/context_passages/1",
+            "manifest_json_pointer": "/passage_maps/63",
+            "source_entry_json_pointer": "/sources/10",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md#L97",
+            "source_line_start": 97,
+            "source_line_end": 205,
+            "source_file_sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+            "pinned_revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/type-coercions.md"
+          },
+          {
+            "case_id": "v2-test-r22",
+            "end": 9903,
+            "passage_index": 2,
+            "source_id": "rust-type-coercions-type-coercions",
+            "start": 6763,
+            "text_sha256": "73692bc59022634f63188c49dd17bc18db47146e0b02855a7651be8008b7c95b",
+            "case_context_json_pointer": "/context_passages/2",
+            "manifest_json_pointer": "/passage_maps/64",
+            "source_entry_json_pointer": "/sources/10",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md#L206",
+            "source_line_start": 206,
+            "source_line_end": 292,
+            "source_file_sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+            "pinned_revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/type-coercions.md"
+          },
+          {
+            "case_id": "v2-test-r22",
+            "end": 10520,
+            "passage_index": 3,
+            "source_id": "rust-type-coercions-type-coercions",
+            "start": 9903,
+            "text_sha256": "a0822a48b337accbe2dec6f8f0a7272c418e9a11e3c9ad571bfaea5529d71dab",
+            "case_context_json_pointer": "/context_passages/3",
+            "manifest_json_pointer": "/passage_maps/65",
+            "source_entry_json_pointer": "/sources/10",
+            "local_source_file": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md",
+            "local_source_link": "full-test/dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md#L293",
+            "source_line_start": 293,
+            "source_line_end": 303,
+            "source_file_sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1",
+            "pinned_revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/type-coercions.md"
+          }
+        ]
+      }
+    },
+    {
+      "id": "E08",
+      "kind": "retained_operational_protocol_failure",
+      "case_id": "v2-test-r08",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "source": {
+        "records_file": "repeat-02/records.jsonl",
+        "sequence": 20,
+        "jsonl_line": 21,
+        "raw_row_sha256": "5b9aa56ae66cde4b11991741add26cd4ab976750344d3b2cdd794c396bf4b6df",
+        "records_file_sha256": "1225d76e5e21cd468ae9cc9ef964f9e045f0ff8a449e9894072c98d6b0c6bea2"
+      },
+      "error_code": "provider_protocol_error",
+      "elapsed_ms": 10052.09963209927,
+      "charged_provider_attempts": 1,
+      "usage_complete": false,
+      "returned_models": [],
+      "interpretation": "An original measured ERROR, never rerun or replaced. Safe existing events do not expose a protocol_reason; no timeout/quota/prompt/internal-protocol cause is inferred. Missing usage is not zero cost, and this is not a U judgment.",
+      "locators": {
+        "run_directory": "repeat-02",
+        "run_link": "repeat-02/",
+        "prediction_record": {
+          "records_file": "repeat-02/records.jsonl",
+          "sequence": 20,
+          "jsonl_line": 21,
+          "raw_row_sha256": "5b9aa56ae66cde4b11991741add26cd4ab976750344d3b2cdd794c396bf4b6df",
+          "records_file_sha256": "1225d76e5e21cd468ae9cc9ef964f9e045f0ff8a449e9894072c98d6b0c6bea2",
+          "link": "repeat-02/records.jsonl#L21"
+        },
+        "case": {
+          "id": "v2-test-r08",
+          "cases_file": "repeat-02/cases.jsonl",
+          "jsonl_line": 4,
+          "raw_row_sha256": "e02ffa4145935943f183b87602b48a564591c5f787578a5f360bf635cbb60804",
+          "cases_file_sha256": "f63b63f7365511ac0cbec1e1e33b3e71f0d574e918da6eab3a0f9a333b9d5b81",
+          "link": "repeat-02/cases.jsonl#L4",
+          "selected_gold": [],
+          "available_gold_ids": [
+            "v2-test-r08-c01",
+            "v2-test-r08-c02",
+            "v2-test-r08-c03",
+            "v2-test-r08-c04",
+            "v2-test-r08-c05",
+            "v2-test-r08-c06",
+            "v2-test-r08-c07",
+            "v2-test-r08-c08"
+          ]
+        },
+        "source_manifest": {
+          "file": "repeat-02/cases.manifest.json",
+          "link": "repeat-02/cases.manifest.json",
+          "sha256": "1a8339c9be506941db979b79cabbf40ef00abd189dbb47364bfc6c4df0ed2ce1"
+        },
+        "passage_mappings": [
+          {
+            "case_id": "v2-test-r08",
+            "end": 18856,
+            "passage_index": 0,
+            "source_id": "python-enum-enum",
+            "start": 15375,
+            "text_sha256": "08ae6ddeb65ada71602129d562d6ebcc0e5cb4f2134cbeebe93b440455b94800",
+            "case_context_json_pointer": "/context_passages/0",
+            "manifest_json_pointer": "/passage_maps/10",
+            "source_entry_json_pointer": "/sources/3",
+            "local_source_file": "repeat-02/dataset/v2/realistic-draft/sources/test/python-enum/enum.rst",
+            "local_source_link": "repeat-02/dataset/v2/realistic-draft/sources/test/python-enum/enum.rst#L469",
+            "source_line_start": 469,
+            "source_line_end": 590,
+            "source_file_sha256": "ecd67b943a2728c589fab5934159a7da63be57fdb68d17df3fef1b59a6339945",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/enum.rst"
+          },
+          {
+            "case_id": "v2-test-r08",
+            "end": 21573,
+            "passage_index": 1,
+            "source_id": "python-enum-enum",
+            "start": 18856,
+            "text_sha256": "c2e8ae73d925fe758192426fbd7d56cad87c7a853ebb4f5df185c4e12687fcae",
+            "case_context_json_pointer": "/context_passages/1",
+            "manifest_json_pointer": "/passage_maps/11",
+            "source_entry_json_pointer": "/sources/3",
+            "local_source_file": "repeat-02/dataset/v2/realistic-draft/sources/test/python-enum/enum.rst",
+            "local_source_link": "repeat-02/dataset/v2/realistic-draft/sources/test/python-enum/enum.rst#L591",
+            "source_line_start": 591,
+            "source_line_end": 685,
+            "source_file_sha256": "ecd67b943a2728c589fab5934159a7da63be57fdb68d17df3fef1b59a6339945",
+            "pinned_revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+            "pinned_upstream_url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/enum.rst"
+          }
+        ]
+      }
+    }
+  ],
+  "locator_notes": "All local paths are relative to this final-20261020 folder. JSONL/source lines are 1-based; passage offsets are Unicode character ranges [start,end). Case rows contain the generated answer, selected gold and full context; passage maps bind each context to a hashed pinned source snapshot. No new context text was copied into these locators."
+}

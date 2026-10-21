@@ -1,0 +1,11 @@
+{
+  "source": "reports/eval-v2/final-20261020/full-test/summary.json",
+  "summary_sha256": "ac3b61ce63ed3179bedb262dcf15cfa21aae733b6fcf2e61eee4cfef052440e6",
+  "records_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+  "raw_original_run": true,
+  "cases": 48,
+  "gold_claims_per_method_track": 410,
+  "independent_source_families": 24,
+  "includes_every_ERROR_and_NOT_RUN": true,
+  "not_a_recovery_composition": true
+}

@@ -1,0 +1,97 @@
+{
+  "recorded_at": "2026-10-21T01:51:57.903454+00:00",
+  "original_analysis_sha256": "a7e285302f5a79a0460d170efd11dd6a0c2678fb429e72e6053d5a39fff9f065",
+  "source_records_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+  "scope": "Two parent-selected targeted evidence checks acknowledged by the original AI reviewers; not exhaustive correction or a measured reviewer error rate.",
+  "confirmed_review_corrections": [
+    {
+      "batch": 1,
+      "item_id": "item-0000",
+      "case_id": "v2-test-r34",
+      "approach": "optimized",
+      "gold_id": "v2-test-r34-c07",
+      "prediction_index": 7,
+      "source_record_sequence": 100,
+      "original_evidence_review_sha256": "9f86f97041699544bcdf7ed289b589bb4731d1482dd5a09cfb9356e4f429f6eb",
+      "alignment_lock_sha256": "2d0d486e4c78b0f191feb7ead8ad701846e5daa90c00d967cf1df50d9ce83aa0",
+      "evidence_input_sha256": "84d2fe2aa4abe96de2b01034456e7561f50549aa43f82028c668b96101865a3d",
+      "original_judgment": {
+        "gold_id": "v2-test-r34-c07",
+        "prediction_index": 7,
+        "label": "correct",
+        "evidence": "insufficient",
+        "quote_economy": "compact",
+        "reason": "Context preserves introspection when caching fails, so S is correct. The quote only says rewriting skips caching; the explicit retained-introspection statement and its link are unquoted."
+      },
+      "confirmed_evidence_value": "sufficient",
+      "label_and_quote_economy_unchanged": true,
+      "prediction_citations": [
+        {
+          "index": 3,
+          "quote": "Additionally, rewriting will silently skip caching if it cannot write new ``.pyc`` files,\ni.e. in a read-only filesystem or a zipfile."
+        }
+      ],
+      "reviewer_confirmation": "Rewriting is the subject; inability to write bytecode skips caching, which supports rewriting still working without caching. Under the locked equivalent relation, an additional explicit retained-introspection sentence was an unnecessary wording requirement.",
+      "confirmation_source": "Parent relayed the same original reviewer acknowledgement in chat; no separate reviewer-written clarification file.",
+      "original_review_bytes_changed": false
+    },
+    {
+      "batch": 2,
+      "item_id": "item-0007",
+      "case_id": "v2-test-r20",
+      "approach": "optimized",
+      "gold_id": "v2-test-r20-c10",
+      "prediction_index": 5,
+      "source_record_sequence": 275,
+      "original_evidence_review_sha256": "3fed1257ce484d8e0638cbabb1bf4e416788e07cc33d99304fd73ddac86619fc",
+      "alignment_lock_sha256": "dee16eda47bf34749474b33ecfd5cb151aadbb3e5abf1746d06e0eec0a552e7a",
+      "evidence_input_sha256": "49f8d0692e18ad2aed667ba01cfba697932f661de18914c7de0c0e8aa5efb0d8",
+      "original_judgment": {
+        "gold_id": "v2-test-r20-c10",
+        "prediction_index": 5,
+        "label": "correct",
+        "evidence": "insufficient",
+        "quote_economy": "compact",
+        "reason": "The S label is supported by passage 1, but the quote gives lifetime permission without the neighboring no-Self method restriction needed for the stated condition."
+      },
+      "confirmed_evidence_value": "sufficient",
+      "label_and_quote_economy_unchanged": true,
+      "prediction_citations": [
+        {
+          "index": 1,
+          "quote": "* Dispatchable functions must:\n        * Not have any type parameters (although lifetime parameters are allowed)."
+        }
+      ],
+      "reviewer_confirmation": "The claim already presupposes a dispatchable method. The general lifetime permission therefore also supports the narrower no-Self setting. An extra restriction would need evidence for a sufficiency or only-if claim, which this prediction does not make.",
+      "confirmation_source": "Parent relayed the same original reviewer acknowledgement in chat; no separate reviewer-written clarification file.",
+      "original_review_bytes_changed": false
+    }
+  ],
+  "unresolved_proxy_issue": {
+    "batch": 2,
+    "item_id": "item-0010",
+    "case_id": "v2-test-r32",
+    "approach": "minimal",
+    "gold_id": "v2-test-r32-c03",
+    "prediction_index": 3,
+    "source_record_sequence": 167,
+    "original_evidence_review_sha256": "3fed1257ce484d8e0638cbabb1bf4e416788e07cc33d99304fd73ddac86619fc",
+    "original_judgment": {
+      "gold_id": "v2-test-r32-c03",
+      "prediction_index": 3,
+      "label": "correct",
+      "evidence": "insufficient",
+      "quote_economy": "compact",
+      "reason": "The S label is supported, but the quote refers to the list without the configured-filter-list antecedent in passage 0; it does not independently bind this precedence rule to configuration."
+    },
+    "returned_quotes_equal_a_frozen_gold_evidence_set": true,
+    "actual_frozen_evidence_covered_result": true,
+    "strict_claim_pair_matched": false,
+    "strict_joint_credit_for_this_pair": false,
+    "limitation": "The reviewer flags a configured-filter-list antecedent missing from the frozen evidence template. This remains a potential gold-span limitation for future human review, not a confirmed model failure or an applied correction. E2E received no strict pair credit because text identity did not match."
+  },
+  "human_adjudication": "not_performed",
+  "original_gold_aliases_strict_scores_alignment_and_reviews_unchanged": true,
+  "original_audit_aggregate_unchanged": true,
+  "new_benchmark_provider_calls": 0
+}

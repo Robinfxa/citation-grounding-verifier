@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-10-21T01:37:44.331276+00:00",
+  "source": "Parent relayed reviewer A disclosure during stage2 evidence review.",
+  "reviewer_id": "independent-semantic-reviewer-a",
+  "stage": "locked_alignment_and_evidence",
+  "reported_cue": "Some original prediction reasoning describes itself as a conservative lexical baseline.",
+  "method_keys_exposure": "Reviewer reported no key access or identity/ranking investigation.",
+  "limitation": "Method names are omitted, but method inference from prediction style/reasoning is possible and was explicitly reported. Full method blindness is not established.",
+  "stage1_locked_before_stage2_cue": true,
+  "frozen_packets_or_original_reviews_changed_to_improve_blinding": false,
+  "new_inference_calls": 0
+}

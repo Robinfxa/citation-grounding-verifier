@@ -1,0 +1,1696 @@
+{
+  "packet_sha256": "49f8d0692e18ad2aed667ba01cfba697932f661de18914c7de0c0e8aa5efb0d8",
+  "reviewer": {
+    "id": "semantic-auditor-b",
+    "kind": "ai",
+    "model": "gpt-6.1-sol (configured), max reasoning",
+    "completed_at": "2026-10-21T01:45:00.484660Z",
+    "exposure": "locked_alignment_and_evidence"
+  },
+  "items": [
+    {
+      "item_id": "item-0000",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r35-c02",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Passage 2 directly states that imperative pytest.xfail raises a known exception and prevents subsequent code; the quote covers both parts."
+        },
+        {
+          "gold_id": "v2-test-r35-c03",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted xfail raises example and regular-failure sentence establish the restriction and the unlisted-exception consequence."
+        },
+        {
+          "gold_id": "v2-test-r35-c05",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly states that XPASS does not fail the suite by default."
+        },
+        {
+          "gold_id": "v2-test-r35-c06",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote links the xfail strict=True setting to XPASS failing the suite, including the needed trigger and result."
+        },
+        {
+          "gold_id": "v2-test-r35-c07",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote states the complete multiple-skipif any-true skipping condition."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0001",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r35-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 2 explicitly supports the stopping/internal-exception claim, so U is incorrect; no citations were supplied."
+        },
+        {
+          "gold_id": "v2-test-r35-c03",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 2 explicitly makes an exception outside raises a regular failure; U is incorrect and the citation set is empty."
+        },
+        {
+          "gold_id": "v2-test-r35-c07",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 states that any true stacked skipif condition skips the test; U is incorrect and has no supporting citations."
+        },
+        {
+          "gold_id": "v2-test-r35-c08",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 2 establishes both ordinary xfail bypass and imperative pytest.xfail having no effect; U is incorrect and no citations were supplied."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0002",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r20-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Passage 0 directly permits a dyn-compatible trait to be a trait-object base, and the quote states that permission."
+        },
+        {
+          "gold_id": "v2-test-r20-c04",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted dispatchability rule prohibits any type parameters, directly contradicting the claimed no-Self exception."
+        },
+        {
+          "gold_id": "v2-test-r20-c06",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly associates explicitly non-dispatchable functions with a Self: Sized bound."
+        },
+        {
+          "gold_id": "v2-test-r20-c07",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly includes transitive supertraits in the definition."
+        },
+        {
+          "gold_id": "v2-test-r20-c08",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote says a trait bound grants access to supertrait associated items, directly contradicting own-items-only access."
+        },
+        {
+          "gold_id": "v2-test-r20-c10",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The two quoted dispatchability bullets cover lifetime-parameter permission and the no-Self restriction outside the receiver."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0003",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r09-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names task cancellation, CancelledError, and its next-opportunity timing."
+        },
+        {
+          "gold_id": "v2-test-r09-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly identifies BaseException as the direct superclass of CancelledError."
+        },
+        {
+          "gold_id": "v2-test-r09-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The TaskGroup header and exit-await sentence fully support the claim; the intervening create_task addition capability is unnecessary extra detail."
+        },
+        {
+          "gold_id": "v2-test-r09-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote covers create_task, inactive-group closure, and the 3.13 change; its separate signature-comparison statement is irrelevant to this claim."
+        },
+        {
+          "gold_id": "v2-test-r09-c07",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The first quote covers finish-before-grouping/raising, and the second supplies the prediction's explicit KeyboardInterrupt/SystemExit exception qualification."
+        },
+        {
+          "gold_id": "v2-test-r09-c08",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names both special exceptions and includes cancellation, waiting, and original-exception re-raising."
+        },
+        {
+          "gold_id": "v2-test-r09-c09",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote includes external cancellation plus required ExceptionGroup, parent cancel(), and preservation at the next await."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0004",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r37-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly treats --cookie arguments without = as filenames and activates the engine; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r37-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passages 0 and 1 jointly state input-only --cookie, post-operation output-only jar writing, and sharing the filename; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r37-c03",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly creates an empty-store jar and uses Netscape format; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r37-c04",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "The source only guarantees cookie-free activation when the empty-string filename is the only cookie input; the broader claim omits that condition, so U is defensible and citation-free."
+        },
+        {
+          "gold_id": "v2-test-r37-c05",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 2 directly defines discarding session cookies while reading a file; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r37-c06",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 states that jar-write failure does not fail the operation and --verbose gives a warning; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0005",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r08-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly specifies IntEnum auto values increasing from one."
+        },
+        {
+          "gold_id": "v2-test-r08-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The Flag class anchor and __bool__ quote establish the entity and any-member truth rule; the long class description of bitwise operations is unnecessary."
+        },
+        {
+          "gold_id": "v2-test-r08-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The Flag class anchor and __len__ quote establish the entity and member count; the class description of bitwise operators adds irrelevant detail."
+        },
+        {
+          "gold_id": "v2-test-r08-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The Flag anchor and inversion quote establish the class across passages and the absent-flags result; the bitwise-operator class description is excessive."
+        },
+        {
+          "gold_id": "v2-test-r08-c07",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly makes integer operations on IntFlag return a non-IntFlag result and gives the claimed addition example."
+        },
+        {
+          "gold_id": "v2-test-r08-c08",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The IntFlag class anchor and 3.11 __str__ note cover entity, time, method, and purpose; the extra integer-usage class description is not needed."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0006",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r21-c02",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly distinguishes method receiver coercion from ordinary argument coercion."
+        },
+        {
+          "gold_id": "v2-test-r21-c04",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The named coercion rule directly gives the &mut T to &T direction."
+        },
+        {
+          "gold_id": "v2-test-r21-c05",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The named coercion rule explicitly lists noncapturing closures to fn pointers."
+        },
+        {
+          "gold_id": "v2-test-r21-c07",
+          "prediction_index": 13,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly permits dyn T to dyn U when U is a supertrait of T."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0007",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r20-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly permits dyn-compatible traits as trait-object base traits."
+        },
+        {
+          "gold_id": "v2-test-r20-c04",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote prohibits all method type parameters, including the claimed case where they do not mention Self."
+        },
+        {
+          "gold_id": "v2-test-r20-c06",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted explicitly-non-dispatchable-function rule requires a Self: Sized bound."
+        },
+        {
+          "gold_id": "v2-test-r20-c07",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly states transitive inclusion of supertraits."
+        },
+        {
+          "gold_id": "v2-test-r20-c08",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote grants supertrait-associated-item access through the trait bound, directly refuting the prediction."
+        },
+        {
+          "gold_id": "v2-test-r20-c10",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The S label is supported by passage 1, but the quote gives lifetime permission without the neighboring no-Self method restriction needed for the stated condition."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0008",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r35-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly covers both raising the internal known exception and stopping all later test code."
+        },
+        {
+          "gold_id": "v2-test-r35-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The xfail raises setup and unlisted-exception regular-failure sentence jointly cover the complete claim."
+        },
+        {
+          "gold_id": "v2-test-r35-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly states the default non-failing XPASS behavior."
+        },
+        {
+          "gold_id": "v2-test-r35-c06",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted strict=True xfail example and XPASS consequence establish the full setting-dependent rule."
+        },
+        {
+          "gold_id": "v2-test-r35-c07",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly states the any-true condition for multiple skipif decorators."
+        },
+        {
+          "gold_id": "v2-test-r35-c08",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names --runxfail and covers both running/reporting as unmarked and imperative pytest.xfail producing no effect."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0009",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r12-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The submit method quote schedules the callable and explicitly returns its Future."
+        },
+        {
+          "gold_id": "v2-test-r12-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The map signature and quoted immediate-collection bullet identify the API and complete timing claim."
+        },
+        {
+          "gold_id": "v2-test-r12-c03",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote measures timeout from the original Executor.map call, directly contradicting per-next-request restart."
+        },
+        {
+          "gold_id": "v2-test-r12-c04",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The map signature binds fn and the iterator to Executor.map; the second quote explicitly raises the callable exception at value retrieval."
+        },
+        {
+          "gold_id": "v2-test-r12-c07",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The shutdown signature and quoted rule explicitly exempt running futures from cancellation regardless of cancel_futures."
+        },
+        {
+          "gold_id": "v2-test-r12-c08",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly equates with-statement Executor shutdown waiting with wait=True."
+        },
+        {
+          "gold_id": "v2-test-r12-c09",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The complete single-worker example links ThreadPoolExecutor, a worker waiting on a submitted Future, and the occupied-worker reason it cannot complete."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0010",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r32-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "The full context does not specify summary ordering by filename or by test execution; a single-warning example cannot establish either ordering. U is correct and citation-free."
+        },
+        {
+          "gold_id": "v2-test-r32-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The S label is supported, but the quote refers to the list without the configured-filter-list antecedent in passage 0; it does not independently bind this precedence rule to configuration."
+        },
+        {
+          "gold_id": "v2-test-r32-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly gives mark filters precedence over command-line filters, directly contradicting the reversed claim."
+        },
+        {
+          "gold_id": "v2-test-r32-c07",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The first quote identifies pytest.warns and its particular expected warning; the second states failure when that warning is absent."
+        },
+        {
+          "gold_id": "v2-test-r32-c08",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names recwarn and explicitly resets the warning filter at test end."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0011",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r39-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 directly specifies --cacert PEM files and multiple CA certificates; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r39-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 states non-Schannel CURL_CA_BUNDLE use and --cacert overriding it; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r39-c03",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 2 explicitly requires PEM certificates and OpenSSL c_rehash processing for capath directories; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r39-c04",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 specifies native OS CA-store use and Schannel implying it by default; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r39-c07",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 4 states verification skipping and expressly includes SFTP/SCP known_hosts checks; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r39-c08",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 4 explicitly warns that --insecure may trust and reuse malicious-server HSTS/Alt-Svc information; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0012",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r08-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly specifies IntEnum auto values increasing from one; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r08-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 separately specifies powers-of-two auto values beginning at one for both Flag and IntFlag; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r08-c05",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The Flag inversion documentation returns flags absent from the value; U is incorrect and no citations were supplied."
+        },
+        {
+          "gold_id": "v2-test-r08-c06",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly gives the valid-IntFlag return rule and invalid-result FlagBoundary rule; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r08-c07",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly makes IntFlag integer arithmetic lose IntFlag status; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r08-c08",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The IntFlag 3.11 note establishes int.__str__ and its existing-constant replacement purpose; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0013",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r06-c03",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The islice signature and negative start/stop/step rule establish the claim; the selected-elements description is an additional independent behavior."
+        },
+        {
+          "gold_id": "v2-test-r06-c04",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The pairwise anchor and fewer-than-two empty rule suffice; the general one-fewer-output count is unnecessary additional information."
+        },
+        {
+          "gold_id": "v2-test-r06-c05",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The permutation reference binds the element-identity sentence to permutations and establishes positional uniqueness; the lexicographic/sorted-output statements are unnecessary for identity."
+        },
+        {
+          "gold_id": "v2-test-r06-c06",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly names permutation tuples and their input-defined lexicographic order."
+        },
+        {
+          "gold_id": "v2-test-r06-c07",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote says product completely consumes input, stores pools, and is only useful for finite input, directly contradicting both claimed infinite streaming and no-pool behavior."
+        },
+        {
+          "gold_id": "v2-test-r06-c08",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The product header anchors the following section across the passage boundary, and the second quote states rightmost-element advancement on every iteration."
+        },
+        {
+          "gold_id": "v2-test-r06-c09",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The islice signature and selected-elements sentence establish positional selection; the negative-value restrictions add unnecessary independent behavior."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0014",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r37-c05",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The option header resolves this option, and the quote states session-cookie discarding during cookie-file reading."
+        },
+        {
+          "gold_id": "v2-test-r37-c07",
+          "prediction_index": 13,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote preserves Set-Cookie format, missing domain, non-sending, and the never-matching-domain explanation."
+        },
+        {
+          "gold_id": "v2-test-r37-c08",
+          "prediction_index": 14,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote states protection with PSL build support and inability to stop super cookies without it, covering the required dependency."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0015",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r39-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The --cacert header and quoted file description jointly cover PEM format and possible multiple CA certificates."
+        },
+        {
+          "gold_id": "v2-test-r39-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote includes the --cacert anchor, non-Schannel condition, environment variable, and override; its preceding PEM/multiple-CA/default-file details are unrelated to overriding the variable."
+        },
+        {
+          "gold_id": "v2-test-r39-c06",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The --cert-status anchor and only-OpenSSL/GnuTLS sentence establish feature identity and exclusive support; the complete response-failure paragraph is unnecessary."
+        },
+        {
+          "gold_id": "v2-test-r39-c08",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names HSTS and Alt-Svc storage/subsequent use and links malicious-server trust/use specifically to --insecure."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0016",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r23-c01",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names unsafe functions, extra conditions, caller responsibility, and lack of compiler checking."
+        },
+        {
+          "gold_id": "v2-test-r23-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly recommends unsafe-function documentation explaining the extra safety conditions."
+        },
+        {
+          "gold_id": "v2-test-r23-c04",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly assigns an unsafe trait's extra conditions to its implementations."
+        },
+        {
+          "gold_id": "v2-test-r23-c05",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly makes writing unsafe impl an assertion of satisfying the trait's extra safety conditions."
+        },
+        {
+          "gold_id": "v2-test-r23-c08",
+          "prediction_index": 12,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote preserves both the pre-edition-2024 time boundary and permission to omit unsafe on extern blocks."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0017",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r04-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "The source only promises the generated-initializer call when __post_init__ is defined on the class; the unconditional claim omits that condition. U is defensible and citation-free."
+        },
+        {
+          "gold_id": "v2-test-r04-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly denies automatic __post_init__ when no __init__ is generated, directly refuting the handwritten-initializer claim."
+        },
+        {
+          "gold_id": "v2-test-r04-c03",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The text gives the omitted-base-call rule and __post_init__ remedy; the ordinary Rectangle base and Square example establish the prediction's non-dataclass-base scope."
+        },
+        {
+          "gold_id": "v2-test-r04-c04",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly excludes named ClassVar pseudo-fields from fields()."
+        },
+        {
+          "gold_id": "v2-test-r04-c06",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote includes default_factory, zero arguments, and the when-a-default-is-needed condition."
+        },
+        {
+          "gold_id": "v2-test-r04-c07",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote preserves both init=False and default_factory and says the generated initializer always calls the factory, directly contradicting first-read deferral."
+        },
+        {
+          "gold_id": "v2-test-r04-c08",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote links frozen=True to emulation and the generated assignment/deletion methods raising FrozenInstanceError."
+        },
+        {
+          "gold_id": "v2-test-r04-c09",
+          "prediction_index": 1,
+          "label": "uncertain",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Erratum candidate in the locked equivalence: gold conditionally specifies order when InitVars are passed, but prediction asserts unconditional forwarding and labels it U. The source qualifies actual forwarding by a defined hook, so the gold S and prediction U address different scopes. No stage-one repair or automatic label credit is assigned; citations are empty."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0018",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r21-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 establishes restricted implicit coercions and typed lets, arguments, and returns as sites; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r21-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly gives method receivers different coercion rules; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r21-c03",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passages 0 and 1 establish propagation through arrays, tuples, parentheses, and final blocks under known types; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r21-c06",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 directly lists array-to-slice and sized implementing-type-to-dyn-compatible-object unsizing; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r21-c07",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly permits trait-object upcasting to a supertrait object; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r21-c08",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The unsizing-trait introductions and passage 2 note establish stable conversions but unstable direct Unsize/CoerceUnsized use; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0019",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r20-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 directly permits dyn-compatible traits as trait-object bases; U is incorrect and no citations were supplied."
+        },
+        {
+          "gold_id": "v2-test-r20-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 requires dyn-compatible supertraits and forbids Sized as a supertrait; U is incorrect and the citation set is empty."
+        },
+        {
+          "gold_id": "v2-test-r20-c03",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly prohibits associated constants and generic associated types; U is incorrect and there are no citations."
+        },
+        {
+          "gold_id": "v2-test-r20-c06",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly makes Self: Sized the non-dispatchable-function requirement; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r20-c09",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 2 states both safe use after correct unsafe-trait implementation and unsafe on the implementation; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0020",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r32-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "No passage establishes warning-summary filename ordering or its contrast with execution order; U is correct and contains no citations."
+        },
+        {
+          "gold_id": "v2-test-r32-c03",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The context supports S, but the quoted the list lacks its configured-filter-list antecedent from the previous passage; the configuration scope is not established by the citation set."
+        },
+        {
+          "gold_id": "v2-test-r32-c04",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly states the opposite precedence: marks take priority over command-line warning filters."
+        },
+        {
+          "gold_id": "v2-test-r32-c07",
+          "prediction_index": 13,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The pytest.warns(UserWarning) example identifies the expected warning and the following sentence explicitly makes absence a test failure."
+        },
+        {
+          "gold_id": "v2-test-r32-c08",
+          "prediction_index": 14,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly names recwarn and its end-of-test warning-filter reset."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0021",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r21-c02",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly assigns method receiver coercion different rules."
+        },
+        {
+          "gold_id": "v2-test-r21-c04",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly lists &mut T to &T coercion."
+        },
+        {
+          "gold_id": "v2-test-r21-c05",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly lists noncapturing closures to fn pointers."
+        },
+        {
+          "gold_id": "v2-test-r21-c07",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly allows dyn T to dyn U when U is one of T's supertraits."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0022",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r23-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly states unsafe-function caller obligations and compiler nonchecking; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r23-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly recommends documenting the unsafe function's extra conditions; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r23-c03",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The unsafe-block sections and introductory programmer-assertion distinction support permission plus discharged obligations without a compiler proof; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r23-c06",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 assigns correct-signature responsibility to the extern declarer and explicitly states undefined-behavior risk; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r23-c07",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly states compiler-unchecked unsafe-attribute conditions and unsafe(..) asserting compliance; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r23-c08",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 expressly permits extern without unsafe before edition 2024; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0023",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r04-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly denies an automatic __post_init__ call when no initializer is generated, contradicting the handwritten-initializer claim."
+        },
+        {
+          "gold_id": "v2-test-r04-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly names ClassVar pseudo-fields and excludes them from fields()."
+        },
+        {
+          "gold_id": "v2-test-r04-c06",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly invokes default_factory with zero arguments when a default is needed."
+        },
+        {
+          "gold_id": "v2-test-r04-c07",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly calls an init=False field's default_factory from generated __init__, contradicting first-attribute-read deferral."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0024",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r23-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly covers extra unsafe-function conditions, caller obligations, and compiler nonchecking."
+        },
+        {
+          "gold_id": "v2-test-r23-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly requires unsafe-function documentation to explain extra safety conditions."
+        },
+        {
+          "gold_id": "v2-test-r23-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly makes unsafe-trait implementations uphold extra safety conditions."
+        },
+        {
+          "gold_id": "v2-test-r23-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote states that unsafe impl asserts satisfaction of the trait's extra conditions."
+        },
+        {
+          "gold_id": "v2-test-r23-c08",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly permits extern blocks without unsafe before edition 2024."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0025",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r12-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The submit method quote explicitly schedules the callable and returns a Future representing it."
+        },
+        {
+          "gold_id": "v2-test-r12-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The map signature and immediate-collection bullet fully establish the claim."
+        },
+        {
+          "gold_id": "v2-test-r12-c03",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote measures the deadline from the original Executor.map call, directly refuting a restarted timeout."
+        },
+        {
+          "gold_id": "v2-test-r12-c04",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The S label follows from the map section, but the isolated fn/iterator sentence lacks the map API anchor; the passage also uses fn for submit."
+        },
+        {
+          "gold_id": "v2-test-r12-c07",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly names cancel_futures and says already running futures are never cancelled by it, directly contradicting the prediction."
+        },
+        {
+          "gold_id": "v2-test-r12-c08",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names Executor.shutdown and states that with-statement cleanup waits as wait=True would."
+        },
+        {
+          "gold_id": "v2-test-r12-c09",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The full single-worker ThreadPoolExecutor example includes the waiting Future, occupied worker, and noncompletion cause."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0026",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r32-c03",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The configured list and last-match sentence in passages 0 and 1 support this claim; U is incorrect and no citations were supplied."
+        },
+        {
+          "gold_id": "v2-test-r32-c04",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 directly gives marks precedence over command-line filters; the reversed claim requires C rather than U, and has no citations."
+        },
+        {
+          "gold_id": "v2-test-r32-c05",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly contrasts filterwarnings case-insensitive regex prefixes with -W literal prefixes; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0027",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r09-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly raises CancelledError in the cancelled task at its next opportunity."
+        },
+        {
+          "gold_id": "v2-test-r09-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly states the CancelledError/BaseException inheritance relationship."
+        },
+        {
+          "gold_id": "v2-test-r09-c04",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The TaskGroup header and exit-await guarantee suffice; the intervening statement about adding tasks through create_task is unnecessary."
+        },
+        {
+          "gold_id": "v2-test-r09-c05",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote covers inactive create_task coroutine closure and version 3.13; comparing the signature with asyncio.create_task adds irrelevant detail."
+        },
+        {
+          "gold_id": "v2-test-r09-c09",
+          "prediction_index": 17,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote preserves the simultaneous external-cancellation/ExceptionGroup condition and the parent-cancellation preservation mechanism."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0028",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r09-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly establishes CancelledError at the next cancellation opportunity; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r09-c06",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly cancels remaining tasks and forbids additions after a non-CancelledError child failure; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r09-c07",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 states post-completion grouping and raising of non-cancellation failures; U is incorrect and has no citations."
+        },
+        {
+          "gold_id": "v2-test-r09-c08",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 directly establishes the KeyboardInterrupt/SystemExit cancellation, waiting, and original re-raise sequence; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r09-c09",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly preserves concurrent external cancellation by cancelling the parent when raising ExceptionGroup; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0029",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r39-c01",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote identifies --cacert and directly gives both PEM format and multiple-CA capacity."
+        },
+        {
+          "gold_id": "v2-test-r39-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The separate --cacert header resolves this option, and the body includes CURL_CA_BUNDLE, the non-Schannel condition, and overriding it."
+        },
+        {
+          "gold_id": "v2-test-r39-c03",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote covers --capath, PEM certificates, OpenSSL, and c_rehash; its colon-separated multi-path syntax and example are unnecessary."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0030",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r06-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 establishes consecutive equal-key grouping and general same-key sorting; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r06-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly says groups share the underlying iterable and become unavailable after outer advancement; C is required rather than U, and there are no citations."
+        },
+        {
+          "gold_id": "v2-test-r06-c04",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly makes pairwise empty below two input values; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0031",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r06-c01",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote connects key-change grouping with the same-key sorting recommendation; its Unix uniq analogy is unnecessary to establish either property."
+        },
+        {
+          "gold_id": "v2-test-r06-c09",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The islice signature and selected-elements statement establish the claim; the negative start/stop/step restrictions are additional unused behavior."
+        },
+        {
+          "gold_id": "v2-test-r06-c04",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote names pairwise and its empty-below-two rule; the one-fewer-output count is unnecessary."
+        },
+        {
+          "gold_id": "v2-test-r06-c05",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote supports position-based element identity and anchors permutations, but includes unnecessary lexicographic and sorted-output facts."
+        },
+        {
+          "gold_id": "v2-test-r06-c06",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly gives input-defined lexicographic ordering for permutation tuples."
+        },
+        {
+          "gold_id": "v2-test-r06-c08",
+          "prediction_index": 13,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The product section anchor and nested-loop bridge support the cross-passage rightmost-advance statement; the concrete product(A,B) comprehension example is unnecessary."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0032",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r37-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The --cookie header and body quote jointly identify the option, no-= filename interpretation, and engine activation."
+        },
+        {
+          "gold_id": "v2-test-r37-c04",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "The source requires the empty-string filename to be the only cookie input; it does not establish the claim without that condition. U is correct and has no citations."
+        },
+        {
+          "gold_id": "v2-test-r37-c05",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The option header and quoted file-reading rule establish session-cookie discarding by --junk-session-cookies."
+        },
+        {
+          "gold_id": "v2-test-r37-c07",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly covers domainless Set-Cookie-format non-sending and its domain-mismatch cause."
+        },
+        {
+          "gold_id": "v2-test-r37-c08",
+          "prediction_index": 12,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Both sides of the quoted PSL-build contrast establish the public-suffix protection dependency."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0033",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r12-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly makes submit return a Future for the callable; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r12-c04",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The map section in passage 0 explicitly raises a callable exception on result retrieval; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r12-c05",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 specifies ProcessPoolExecutor chunk sizing and no ThreadPoolExecutor effect; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r12-c06",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly combines immediate wait=False return with waiting for pending futures before Python exit; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r12-c07",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 directly says running futures will not be cancelled regardless of cancel_futures; C is required rather than U, and there are no citations."
+        },
+        {
+          "gold_id": "v2-test-r12-c08",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly equates executor with-statement waiting to shutdown(wait=True); U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r12-c09",
+          "prediction_index": 7,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The single-worker deadlock example in passage 1 supports the dependency-starvation claim; U is incorrect and uncited."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0034",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r04-c03",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 0 explicitly states omitted generated base calls and the __post_init__ remedy, with a non-dataclass base example; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r04-c06",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 1 explicitly specifies zero-argument default_factory calls when a default is needed; U is incorrect and uncited."
+        },
+        {
+          "gold_id": "v2-test-r04-c07",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Passage 2 explicitly calls init=False default factories from generated __init__; the deferral claim requires C rather than U, and no citations were supplied."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0035",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r08-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names IntEnum, auto, increasing integers, and the starting value one."
+        },
+        {
+          "gold_id": "v2-test-r08-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The S label is supported by the Flag section, but the bare __bool__ quote does not identify its enclosing Flag class among the multiple enum classes in the passage."
+        },
+        {
+          "gold_id": "v2-test-r08-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The S label is supported by the Flag section; the bare __len__ quote omits the class anchor needed to bind this method to Flag."
+        },
+        {
+          "gold_id": "v2-test-r08-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The context supports Flag inversion, but this method-only quote in passage 1 lacks the Flag class anchor in passage 0 needed for that entity link."
+        },
+        {
+          "gold_id": "v2-test-r08-c07",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly names IntFlag and says integer operations lose IntFlag status, with addition illustrated."
+        }
+      ]
+    }
+  ]
+}

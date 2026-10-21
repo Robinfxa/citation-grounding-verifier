@@ -1,0 +1,25 @@
+{
+  "status": "PUBLIC_PRIVATE_HOLDER_REPLAY_PASS",
+  "actual_exit_code": 0,
+  "started_at": "2026-10-21T02:36:16.642822+00:00",
+  "finished_at": "2026-10-21T02:36:24.707398+00:00",
+  "wall_ms": 8063.523774035275,
+  "source_commit": "324559dccba4624dfa803849f5fd26284c7b27f4",
+  "code_sha256": "cd15430a02b364c2f6ddef034e6ef046b335dd99b3678d3dada5186e31dd89a6",
+  "public_replay_script_sha256": "a41155093af80248bd9c3613cfa1fd7c90dff7893af386baba6ac8b1ea91e611",
+  "execution_receipt_sha256": "97467114a9aa2ab4ef4bb6df3ba2c3618fdafdf0d001a1723d1d7ac29ab12854",
+  "aggregate_results_sha256": "33a73fbdf399b94b363ddb81dd3d4bd934b06806fe1172ec8a766d600bab5a84",
+  "portable_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=\"$ragtruth_checkpoint_dir/src\" python reports/eval-v2/ragtruth-20261020/replay-aggregate.py --private-run \"$ragtruth_private_run\"",
+  "consumer_events": [
+    {
+      "status": "IDENTICAL_PRIVATE_RUN_AND_PUBLIC_AGGREGATE",
+      "byte_identical_private_files": 18,
+      "new_inference_calls": 0
+    }
+  ],
+  "private_original_files_byte_identical": 18,
+  "raw_inputs_predictions_quotes_and_logs_published": false,
+  "network_inference_settings_and_credentials_guarded": true,
+  "new_benchmark_provider_calls": 0,
+  "requires_original_private_saved_run": true
+}

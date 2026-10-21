@@ -1,0 +1,33 @@
+{
+  "status": "ORIGINAL_TWO_STAGE_AI_AUDIT_PUBLISHED",
+  "files_sha256": {
+    "batch-01/alignment-input.json": "311f65ddb544ce24ee55d06c4b1b170c4a56eb7071bae7dfc7840ba1e0aa1a1f",
+    "batch-01/alignment-lock.json": "2d0d486e4c78b0f191feb7ead8ad701846e5daa90c00d967cf1df50d9ce83aa0",
+    "batch-01/alignment-locked.json": "972987461e35cc1f8ed1c861e98a8c2deb9497c7414149fb48aae659414bac49",
+    "batch-01/alignment-review.json": "6577c35b570483ba47a06a551859d012365c25edc511a797943e2f9d4cccb016",
+    "batch-01/evidence-input.json": "84d2fe2aa4abe96de2b01034456e7561f50549aa43f82028c668b96101865a3d",
+    "batch-01/evidence-review.json": "9f86f97041699544bcdf7ed289b589bb4731d1482dd5a09cfb9356e4f429f6eb",
+    "batch-01/key.json": "70b32d62ce22065146a993c12bcf5924f45c269f69bf418197de5bc8b8aad894",
+    "batch-01/stage1-consumer-receipt.json": "c32f2704801a92e8519b0322d448f12adf0d09883ee44efe9fd9c02c914cbe01",
+    "batch-01/stage2-consumer-receipt.json": "1cf7cb5d34b9a7dcd6b01d310b9867e9c78204f26440f188f447d122ba586986",
+    "batch-01/summary.json": "1f866bcfe37423fdacd3813e205b646b71599a399be8ba4e2b62ba07a0783c10",
+    "batch-02/alignment-input.json": "a07827cc79b8893cdd4d1dd633be744217d3e5a48fe68cc09b88513c60a3d9ff",
+    "batch-02/alignment-lock.json": "dee16eda47bf34749474b33ecfd5cb151aadbb3e5abf1746d06e0eec0a552e7a",
+    "batch-02/alignment-locked.json": "fa0b725b50b5e09e00310984f68ad65aa09178d62c43d43d29db3edfb1352246",
+    "batch-02/alignment-review.json": "c479678b84e27aecea2be63426fec34d613d0c2a44fc5212027d4dd50559866c",
+    "batch-02/evidence-input.json": "49f8d0692e18ad2aed667ba01cfba697932f661de18914c7de0c0e8aa5efb0d8",
+    "batch-02/evidence-review.json": "3fed1257ce484d8e0638cbabb1bf4e416788e07cc33d99304fd73ddac86619fc",
+    "batch-02/key.json": "1e5752fcd0fb259234f08f268ed54cdd2d7a71efe500e4b6b0f4844390b27e3b",
+    "batch-02/stage1-consumer-receipt.json": "f66a5bcb72edf009ec85cbd16bab4ab3c52652162b3397521d3a95e706c6f599",
+    "batch-02/stage2-consumer-receipt.json": "e344929372e3e5099fbbb055477eec5a5e45b00b7de10f6040fd31be5da7bfa3",
+    "batch-02/summary.json": "ec6fffd4a79b54e52e7d3cd9f13f7cac56bc2e97bbd82f30fa48194b115d4362",
+    "exposure-disclosure.json": "bd4816f27fac3f06bb7afd7e4c3627872cb6fb249f6ffa1178e36fcd378a1f2f"
+  },
+  "original_review_bytes_preserved": true,
+  "both_stage2_reviews_terminal_before_key_publication": true,
+  "new_benchmark_inference_calls": 0,
+  "human_review": "not_performed",
+  "not_an_inter_rater_agreement_study": true,
+  "blinding_limitation_file": "semantic-audit/exposure-disclosure.json",
+  "scope": "Licensed main first-run fixed24 end-to-end audit only; no RAGTruth raw material."
+}

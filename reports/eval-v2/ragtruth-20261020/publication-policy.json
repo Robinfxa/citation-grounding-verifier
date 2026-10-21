@@ -1,0 +1,19 @@
+{
+  "allowed_public_content": [
+    "Fixed response/source/case identifiers, file hashes and source revisions.",
+    "Pre-result membership/exclusions and public acquisition/reconstruction recipe links.",
+    "Frozen method/model/settings/attempt budget and safe aggregate completion counts.",
+    "Aggregate strict quality/confusion/coverage and source-family sensitivity intervals.",
+    "Aggregate measured calls/usage/latency/retry/repair and unknown costs.",
+    "Portable offline replay recipe that requires privately reconstructed input/artifacts."
+  ],
+  "private_only": [
+    "Original responses, source contexts, full gold instances and private manifests.",
+    "Raw run/config/case/record files, predictions, quotations, reasoning and rejected reports.",
+    "Raw logs/diagnostics, exact absolute launch argv and authentication selection.",
+    "Per-case claim/quote/failure examples or excerpts of underlying news text."
+  ],
+  "rights": "Public authored annotations, offsets, hashes and acquisition/reconstruction scripts; upstream full texts remain private. Repository MIT is not news redistribution clearance.",
+  "scope": "Nine purposive natural Summary responses; not a representative RAGTruth reproduction.",
+  "human_review": "not_performed"
+}

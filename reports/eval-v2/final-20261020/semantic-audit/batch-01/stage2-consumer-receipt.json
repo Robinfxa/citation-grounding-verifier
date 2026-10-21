@@ -1,0 +1,14 @@
+{
+  "alignment_lock_sha256": "2d0d486e4c78b0f191feb7ead8ad701846e5daa90c00d967cf1df50d9ce83aa0",
+  "new_inference_calls": 0,
+  "original_review_sha256": "9f86f97041699544bcdf7ed289b589bb4731d1482dd5a09cfb9356e4f429f6eb",
+  "reviewer": {
+    "completed_at": "2026-10-21T01:43:39Z",
+    "exposure": "locked_alignment_and_evidence",
+    "id": "independent-semantic-reviewer-a",
+    "kind": "ai",
+    "model": "gpt-6.1-sol (configured), max reasoning"
+  },
+  "status": "INDEPENDENT_EVIDENCE_VALIDATED_SUMMARIZED",
+  "summary_sha256": "1f866bcfe37423fdacd3813e205b646b71599a399be8ba4e2b62ba07a0783c10"
+}

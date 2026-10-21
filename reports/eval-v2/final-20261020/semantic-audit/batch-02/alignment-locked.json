@@ -1,0 +1,3256 @@
+{
+  "items": [
+    {
+      "item_id": "item-0000",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r35-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1,
+            2
+          ],
+          "reason": "The contrast is divided into skip omission and xfail execution/reporting, but the skip prediction adds an unmet-conditions trigger absent from gold; a pure split versus a narrower skip scope cannot be settled from these texts.",
+          "relation": "uncertain"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c02"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both state that imperative pytest.xfail raises its internal exception and stops the remaining test code.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c03"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both make an exception outside the xfail raises restriction a normal failure.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c04"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "The prediction states capability for a crashing test, while gold states the general run=False test-marking behavior; the subject is narrowed and can weakens the assertion.",
+          "relation": "scope_changed"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c05"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both state that XPASS does not fail the suite by default.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c06"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "reason": "Both make strict=True turn XPASS into a suite failure.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c07"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both use any true stacked skipif condition as sufficient to skip the test.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c08"
+          ],
+          "prediction_indices": [
+            9,
+            10
+          ],
+          "reason": "Ignoring xfail behavior and disabling imperative pytest.xfail are stated separately; each prediction omits one part of the gold claim.",
+          "relation": "split"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0001",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r35-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "The xfail behavior agrees, but the prediction conditions skip omission on unmet conditions whereas gold states it without that trigger; whether this is contextual explanation or narrower scope is unresolved.",
+          "relation": "uncertain"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both state that imperative pytest.xfail raises its internal exception and stops the remaining test code.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both make an unlisted exception under an xfail raises restriction a regular failure.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "The prediction states capability for a crashing test, while gold states the general run=False test-marking behavior; the subject is narrowed and can weakens the assertion.",
+          "relation": "scope_changed"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c05",
+            "v2-test-r35-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "One prediction joins the default non-failing XPASS rule and the strict=True suite-failure rule.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both state that any true condition among stacked skipif decorators skips the test.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both state that --runxfail ignores xfail behavior and makes imperative pytest.xfail ineffective.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0002",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r20-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both permit a dyn-compatible trait to serve as a trait-object base.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2
+          ],
+          "reason": "Requiring dyn-compatible supertraits and excluding Sized are separated; neither prediction contains both requirements.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c03"
+          ],
+          "prediction_indices": [
+            3,
+            4
+          ],
+          "reason": "The associated-constant prohibition and generic-associated-type prohibition are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c04"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both permit type parameters on a dispatchable method under the same no-Self condition.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c05"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "reason": "The async and return-position impl Trait exclusions, including the opaque-return explanation, are divided between two predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c06"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Both use Self: Sized to make the function explicitly non-dispatchable.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c07"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both state transitivity of supertrait requirements.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c08"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "reason": "Exposing only the bound trait's own associated items states that the bound alone grants no access to supertrait items.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            12
+          ],
+          "reason": "Prediction 11 already accounts for lack of access to all supertrait associated items through the trait bound alone; this repeats the necessary-extra-bound consequence for its method subset.",
+          "relation": "duplicate"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c09"
+          ],
+          "prediction_indices": [
+            13,
+            14
+          ],
+          "reason": "Safe use when correctly implemented and the unsafe implementation requirement are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c10"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both permit lifetime parameters on a dispatchable method when they do not mention Self.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0003",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r09-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both raise CancelledError in the cancelled task at its next opportunity.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both identify BaseException as the direct superclass of CancelledError.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c03"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "reason": "The recommendation and cancellation rationale are separated, but the recommendation omits gold's explicit-catch condition; this is mixed splitting and possible scope broadening, not a clear complete split.",
+          "relation": "uncertain"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both require TaskGroup to wait for all its tasks on exit.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both preserve Python 3.13, an inactive group, create_task, and closing the supplied coroutine.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c06"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "reason": "Sibling cancellation and prevention of new additions after a non-CancelledError child failure are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c07"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both group and raise non-cancellation failures after all children finish; the prediction makes the answer's stated base-exception exceptions explicit.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c08"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Both cancel and wait for other tasks on KeyboardInterrupt/SystemExit, then re-raise the original exception.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c09"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both preserve simultaneous external cancellation by cancelling the parent when an ExceptionGroup must also be raised.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0004",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r37-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both treat a --cookie argument without = as a filename and activate the cookie engine.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both preserve input-only --cookie, write-only post-operation --cookie-jar, and permission to share a filename.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both preserve Netscape jar format and creation even with no cookies.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both activate the engine with empty cookie input without loading cookies.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c05"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both discard session cookies while loading a cookie file with --junk-session-cookies.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c06"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both keep the curl operation successful after a jar write failure and obtain a warning through --verbose.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c07",
+            "v2-test-r37-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "One prediction combines the no-domain Set-Cookie non-sending rule with PSL-build-dependent public-suffix protection.",
+          "relation": "merged"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0005",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r08-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both assign increasing IntEnum auto integers beginning at one.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2
+          ],
+          "reason": "The powers-of-two-from-one rule is stated separately for Flag and IntFlag; each prediction covers only one subject.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both make a Flag truthy when it contains any member.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both make Flag length count the contained members.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both make inversion return flags absent from the value.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c06"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "reason": "Preserving IntFlag for a valid bitwise result and applying FlagBoundary for an invalid result are separated.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c07"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both state that arithmetic loses IntFlag status; integer addition is presented as an example.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c08"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Both preserve the Python 3.11 boundary, int.__str__ implementation, and existing-constant replacement purpose.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0006",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r21-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "reason": "The restricted implicit-change rule and its typed-let, argument, and return sites are spread over four predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c02"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both assign method receivers separate coercion rules.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c03"
+          ],
+          "prediction_indices": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "reason": "Propagation through arrays, tuples, parentheses, and final blocks is divided by site; each keeps the known-surrounding-type condition.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c04"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "A mutable-to-shared reference coercion preserves the &mut T to &T direction.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c05"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both allow a noncapturing closure to coerce to a function pointer.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c06"
+          ],
+          "prediction_indices": [
+            11,
+            12
+          ],
+          "reason": "Array-to-slice unsizing and sized-implementor-to-dyn-compatible-object unsizing are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c07"
+          ],
+          "prediction_indices": [
+            13
+          ],
+          "reason": "Both permit coercion from a trait object to its supertrait object.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c08"
+          ],
+          "prediction_indices": [
+            14,
+            15,
+            16
+          ],
+          "reason": "Stable conversions and the direct-use instability of Unsize and CoerceUnsized are divided across three predictions.",
+          "relation": "split"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0007",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r20-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both permit a dyn-compatible trait to serve as a trait-object base.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2
+          ],
+          "reason": "Requiring dyn-compatible supertraits and excluding Sized are separated; neither prediction contains both requirements.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c03"
+          ],
+          "prediction_indices": [
+            3,
+            4
+          ],
+          "reason": "The associated-constant and generic-associated-type prohibitions are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c04"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both permit method type parameters under the same no-Self condition.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c05"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "reason": "The async and return-position impl Trait exclusions due to opaque returns are divided by method form.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c06"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Both use Self: Sized to make a function explicitly non-dispatchable.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c07"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both state transitivity of supertrait requirements.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c08"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "reason": "Exposing only the bound trait's own associated items states that the bound alone grants no access to supertrait items.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            12
+          ],
+          "reason": "Prediction 11 already accounts for the no-supertrait-access rule; prediction 12 repeats that rule and its method-bound consequence.",
+          "relation": "duplicate"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c09"
+          ],
+          "prediction_indices": [
+            13,
+            14
+          ],
+          "reason": "Safe use after correct implementation and the unsafe implementation requirement are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c10"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both permit lifetime parameters on a dispatchable method under the same no-Self condition.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0008",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r35-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1
+          ],
+          "reason": "Skip omission and xfail execution/reporting are separated, but the skip prediction adds an unmet-conditions trigger absent from gold; a pure split versus narrower skip scope is unresolved.",
+          "relation": "uncertain"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both stop further test code by raising the internal imperative pytest.xfail exception.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both make an exception outside the xfail raises restriction a normal failure.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "The prediction states capability for a crashing test, while gold states the general run=False test-marking behavior; the subject is narrowed and can weakens the assertion.",
+          "relation": "scope_changed"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both state that XPASS does not fail the suite by default.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c06"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both make strict=True turn XPASS into a suite failure.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c07"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "reason": "Both skip the test when any stacked skipif condition is true.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r35-c08"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both make --runxfail ignore xfail behavior, including imperative pytest.xfail.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0009",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r12-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both make Executor.submit return a Future for the scheduled callable.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both state immediate collection of Executor.map input iterables.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both restart the map timeout for each next-result request.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both raise the callable exception when the corresponding map result is retrieved.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c05"
+          ],
+          "prediction_indices": [
+            4,
+            5
+          ],
+          "reason": "The ProcessPoolExecutor effect and ThreadPoolExecutor non-effect of chunksize are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c06"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "reason": "Immediate shutdown(wait=False) return and the continuing Python-exit wait are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c07"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both claim that cancel_futures interrupts work already executing in worker threads.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c08"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Both make executor context-manager completion wait as shutdown(wait=True) does.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c09"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both describe deadlock when a waiting worker's Future dependency cannot obtain a worker.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0010",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r32-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both order the warning summary by source filename rather than test execution order.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2
+          ],
+          "reason": "The warning actions of -W and the corresponding filterwarnings configuration are divided by interface.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both choose the last matching configured warning-filter action.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both give a matching command-line -W filter precedence over a filterwarnings mark.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c05"
+          ],
+          "prediction_indices": [
+            5,
+            6
+          ],
+          "reason": "The case-insensitive regex prefix and literal-prefix message rules are stated separately for the two interfaces.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c06"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "reason": "Stopping capture with --disable-warnings and only hiding the summary by disabling the plugin are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c07"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Both make pytest.warns fail when its expected warning is absent.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c08"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both reset warning filters at test end with recwarn.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0011",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r39-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both let --cacert select a PEM file that can contain multiple CA certificates.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "The pronoun refers to --cacert, and both keep the non-Schannel condition for overriding CURL_CA_BUNDLE.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both describe PEM capath directories and require c_rehash for OpenSSL builds.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both use the OS CA store with --ca-native and identify it as Schannel's default store.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c05",
+            "v2-test-r39-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "One prediction joins OCSP stapling checks and missing/invalid/revoked failure conditions with the documented OpenSSL/GnuTLS support limit.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both make --insecure skip peer verification, including SFTP/SCP known_hosts verification.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "The pronoun refers to --insecure; both preserve the possibility of trusting and reusing malicious HSTS or Alt-Svc information.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0012",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r08-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both assign increasing IntEnum auto integers beginning at one.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both give Flag and IntFlag auto values powers of two beginning at one.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c03",
+            "v2-test-r08-c04"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "One prediction joins Flag truthiness for any member with length counting contained members.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c05"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both make Flag inversion return absent flags.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both preserve IntFlag for valid bitwise results and defer invalid results to FlagBoundary.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both state that arithmetic loses IntFlag status, using addition as an example.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both preserve Python 3.11, int.__str__, and the existing-constant replacement purpose.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0013",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r06-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1
+          ],
+          "reason": "Consecutive-key grouping and the same-key sorting recommendation are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c02"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "reason": "Snapshot independence and availability after outer-iterator advancement are separate predictions; neither states both properties.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c03"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both exclude negative start, stop, and step for islice.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c04"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both make pairwise empty with fewer than two input values.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c05"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "reason": "Both distinguish permutation elements by their position rather than their value.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c06"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both emit permutation tuples in input-defined lexicographic order.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Erratum candidate: the answer explicitly asserts per-next-tuple lazy input pulling, a mechanism not independently stated by the gold infinite-stream/no-pool claim.",
+          "relation": "extra"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c07"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both claim that product can stream infinite input without building its input pool.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c08"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "reason": "Both advance product's rightmost position on every iteration.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c09"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both describe islice selecting iterable elements by position.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0014",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r37-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1
+          ],
+          "reason": "Filename interpretation for a --cookie argument without = and cookie-engine activation are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c02"
+          ],
+          "prediction_indices": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "reason": "Input-only --cookie, post-operation jar writing, no jar reading, and sharing a filename are divided across four predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c03"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "reason": "Netscape jar format and creation even with an empty store are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c04"
+          ],
+          "prediction_indices": [
+            8,
+            9
+          ],
+          "reason": "Empty-input engine activation and the absence of loaded cookies are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c05"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both discard session cookies while loading a cookie file with --junk-session-cookies.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c06"
+          ],
+          "prediction_indices": [
+            11,
+            12
+          ],
+          "reason": "The non-failing jar-write error and the --verbose warning are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c07"
+          ],
+          "prediction_indices": [
+            13
+          ],
+          "reason": "Both explain that domainless Set-Cookie-format input is not sent because no domain matches.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c08"
+          ],
+          "prediction_indices": [
+            14
+          ],
+          "reason": "Both require PSL build support for cookie public-suffix protection.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0015",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r39-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both let --cacert select a PEM file that may contain multiple CA certificates.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both preserve the non-Schannel condition for --cacert overriding CURL_CA_BUNDLE.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c03"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "reason": "The PEM-directory selection and OpenSSL c_rehash requirement are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c04"
+          ],
+          "prediction_indices": [
+            4,
+            5
+          ],
+          "reason": "Using the OS store with --ca-native and Schannel using it by default are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c05"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "reason": "OCSP stapling verification and its absent/invalid/revoked-response failure conditions are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c06"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both identify OpenSSL and GnuTLS as the documented --cert-status backend support in this snapshot.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c07"
+          ],
+          "prediction_indices": [
+            9,
+            10
+          ],
+          "reason": "General peer-verification skipping and the explicit SFTP/SCP known_hosts part are separated.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c08"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "reason": "Both preserve the possibility of trusting and reusing malicious-server HSTS or Alt-Svc information under --insecure.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0016",
+      "relations": [
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "This separately asserts only caller obligations; the full gold claim also requires compiler nonchecking and is accounted at prediction 1.",
+          "relation": "extra"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c01"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "The prediction states both extra caller obligations and that the compiler does not check those obligations.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both require unsafe-function documentation to explain its extra safety conditions.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c03"
+          ],
+          "prediction_indices": [
+            3,
+            4,
+            5
+          ],
+          "reason": "Permitting unsafe actions, asserting discharged obligations, and not obtaining a compiler proof are divided across three predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c04"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both impose extra implementation obligations through an unsafe trait.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c05"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "reason": "Both make unsafe impl assert that the unsafe-trait implementation satisfies its extra obligations.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c06"
+          ],
+          "prediction_indices": [
+            8,
+            9
+          ],
+          "reason": "The declarer's duty to ensure correct extern signatures and the undefined-behavior risk of incorrect signatures are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c07"
+          ],
+          "prediction_indices": [
+            10,
+            11
+          ],
+          "reason": "Compiler-unchecked attribute conditions and wrapping the attribute in unsafe(..) to assert compliance are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c08"
+          ],
+          "prediction_indices": [
+            12
+          ],
+          "reason": "Both allow extern blocks to omit unsafe before edition 2024.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0017",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r04-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both make generated dataclass __init__ call __post_init__.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both claim an automatic __post_init__ call after a handwritten __init__ returns.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "This contains only the no-base-initializer-call component; the complete gold scope including the __post_init__ remedy is accounted at prediction 4.",
+          "relation": "extra"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c03"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both state the generated initializer omits base initialization and permit needed non-dataclass base initialization from __post_init__.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c04"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both exclude ClassVar pseudo-fields from fields().",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c05"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "reason": "Exclusion of InitVar from fields() and acceptance as an initializer parameter are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Prediction 1 already states that generated __init__ passes InitVar arguments to __post_init__; prediction 8 repeats that forwarding action without the order detail.",
+          "relation": "duplicate"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c06"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Both call default_factory without arguments when a default value is needed.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c07"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both defer the factory of an init=False field until its first attribute read.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c08"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "reason": "Both emulate immutability using methods that raise FrozenInstanceError under frozen=True.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            12
+          ],
+          "reason": "Erratum candidate: the answer explicitly denies true object immutability, while the gold only states the emulation mechanism and raised exception.",
+          "relation": "extra"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c09"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both pass InitVar arguments from generated __init__ to __post_init__ in declaration order.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0018",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r21-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both describe restricted implicit type changes and preserve typed lets, function arguments, and function returns as coercion sites.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both assign method receivers separate coercion rules.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both preserve propagation through arrays, tuples, parentheses, and final blocks under the known-type condition.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c04",
+            "v2-test-r21-c05"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "One prediction joins mutable-to-shared reference coercion with noncapturing-closure-to-function-pointer coercion.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both permit array-to-slice unsizing and sized-implementor-to-dyn-compatible-trait-object unsizing.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both permit coercion from a trait object to its supertrait object.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both distinguish stable unsized conversions from Unsize and CoerceUnsized being unavailable for direct stable-trait use.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0019",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r20-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both permit a dyn-compatible trait to serve as a trait-object base.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both require dyn-compatible supertraits and exclude Sized as a supertrait.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both prohibit associated constants and generic associated types on a dyn-compatible trait.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c04",
+            "v2-test-r20-c05",
+            "v2-test-r20-c10"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "One prediction combines no-Self type-parameter permission, no-Self lifetime-parameter permission, and opaque-return exclusions for async/return-position impl Trait.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both use Self: Sized to mark a function explicitly non-dispatchable.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c07",
+            "v2-test-r20-c08"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "One prediction joins supertrait transitivity with the bound-only-exposes-own-items and explicit-supertrait-bound rule.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r20-c09"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both permit safe use after correct unsafe-trait implementation while requiring unsafe for the implementation.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0020",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r32-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both order warning summaries by source filename rather than test execution order.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "reason": "Ignoring, displaying, and erroring are divided into separate predictions for -W and filterwarnings; none covers both interfaces and all actions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c03"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "reason": "Both choose the last matching configured filter action.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c04"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both give a matching command-line -W filter precedence over a filterwarnings mark.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c05"
+          ],
+          "prediction_indices": [
+            9,
+            10
+          ],
+          "reason": "The case-insensitive regex-prefix and literal-prefix message rules are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c06"
+          ],
+          "prediction_indices": [
+            11,
+            12
+          ],
+          "reason": "Stopping capture with --disable-warnings and only hiding the summary by disabling the plugin are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c07"
+          ],
+          "prediction_indices": [
+            13
+          ],
+          "reason": "Both make pytest.warns fail when its expected warning is absent.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c08"
+          ],
+          "prediction_indices": [
+            14
+          ],
+          "reason": "Both reset warning filters at the end of a test with recwarn.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0021",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r21-c01"
+          ],
+          "prediction_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "reason": "The restricted implicit-change rule and its typed-let, function-argument, and function-return sites are spread over four predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c02"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both assign method receivers separate coercion rules.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c03"
+          ],
+          "prediction_indices": [
+            5,
+            6
+          ],
+          "reason": "Array/tuple/parenthesis propagation and final-block propagation are separated; both retain the known-surrounding-type condition.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c04"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "reason": "Both permit mutable-to-shared reference coercion in the &mut T to &T direction.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c05"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both permit noncapturing-closure-to-function-pointer coercion.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c06"
+          ],
+          "prediction_indices": [
+            9,
+            10
+          ],
+          "reason": "Array-to-slice unsizing and sized-implementor-to-dyn-compatible-trait-object unsizing are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c07"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "reason": "Both permit a trait object to coerce to its supertrait object.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r21-c08"
+          ],
+          "prediction_indices": [
+            12,
+            13
+          ],
+          "reason": "Stabilized conversions and the direct-use instability of Unsize/CoerceUnsized are separate predictions.",
+          "relation": "split"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0022",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r23-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both give unsafe-function callers extra conditions that the compiler does not check.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "The pronoun refers to the unsafe function; both require documentation of its extra safety conditions.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both permit unsafe actions and assert their discharged obligations without making the compiler prove them.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c04",
+            "v2-test-r23-c05"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "One prediction joins the unsafe trait's implementation obligations and unsafe impl asserting those obligations are satisfied.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both give the unsafe-extern declarer responsibility for correct signatures and preserve the undefined-behavior risk of incorrect ones.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both combine compiler-unchecked attribute conditions with unsafe(..) asserting compliance.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both permit extern blocks without unsafe before edition 2024.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0023",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r04-c01",
+            "v2-test-r04-c09"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Mixed merge/scope issue: the prediction combines hook calling and InitVar declaration order but adds when defined, absent from the unqualified gold call claim; the intended condition cannot be settled from these texts.",
+          "relation": "uncertain"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both claim an automatic __post_init__ call after a handwritten __init__ returns.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c03"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "reason": "Omitting base-initializer calls and allowing needed non-dataclass base initialization in __post_init__ are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both exclude ClassVar pseudo-fields from fields().",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c05"
+          ],
+          "prediction_indices": [
+            5,
+            6
+          ],
+          "reason": "InitVar exclusion from fields() and acceptance by the generated initializer are separate predictions; prediction 6 additionally mentions forwarding to the optional hook.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c06"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "reason": "Both call default_factory without arguments when a default value is needed.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c07"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both defer the factory of an init=False field until its first attribute read.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c08"
+          ],
+          "prediction_indices": [
+            9,
+            10
+          ],
+          "reason": "Immutability emulation and methods raising FrozenInstanceError are separated. Erratum candidate: prediction 9 also repeats the answer's explicit denial of true object immutability, absent as an explicit gold assertion.",
+          "relation": "split"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0024",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r23-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both give unsafe-function callers extra safety conditions not checked by the compiler.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both require unsafe-function documentation to explain the extra safety conditions.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c03"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "reason": "Permitting unsafe actions and asserting discharged obligations without a compiler proof are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both impose extra implementation obligations through an unsafe trait.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both make unsafe impl assert satisfaction of the unsafe-trait implementation obligations.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c06"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "reason": "The extern declarer's correct-signature duty and the undefined-behavior risk of incorrect signatures are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c07"
+          ],
+          "prediction_indices": [
+            8,
+            9
+          ],
+          "reason": "Compiler-unchecked attribute conditions and unsafe(..) asserting compliance are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r23-c08"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both permit extern blocks without unsafe before edition 2024.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0025",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r12-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both make Executor.submit return a Future for the scheduled callable.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "The visible answer resolves map as Executor.map; both state immediate input-iterable collection.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both restart the map timeout on every next-result request.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "The preceding map context identifies the result; both raise the callable exception at result retrieval.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c05"
+          ],
+          "prediction_indices": [
+            4,
+            5
+          ],
+          "reason": "The chunksize effect on ProcessPoolExecutor and non-effect on ThreadPoolExecutor are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c06"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "reason": "Immediate shutdown(wait=False) return and continued waiting before Python exit are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c07"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both claim that cancel_futures interrupts futures already executing in worker threads.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c08"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Both make executor context-manager completion wait as shutdown(wait=True) does.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c09"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both describe thread-pool deadlock when a waiting worker's Future dependency cannot obtain a worker.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0026",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r32-c01",
+            "v2-test-r32-c02"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "One prediction combines warning-summary source-filename ordering with the -W and configured filterwarnings action controls.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both choose the last matching configured warning-filter action.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c04"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both give a matching command-line -W filter precedence over a filterwarnings mark.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c05"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both contrast filterwarnings case-insensitive regex-prefix messages with -W literal-prefix messages.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r32-c06",
+            "v2-test-r32-c07",
+            "v2-test-r32-c08"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "One prediction joins --disable-warnings/plugin behavior, pytest.warns failing on an absent expected warning, and recwarn resetting filters at test end.",
+          "relation": "merged"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0027",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r09-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both raise CancelledError in the cancelled task at its next opportunity.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both identify BaseException as CancelledError's direct superclass.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c03"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "The prediction retains the general propagation recommendation and rationale but drops gold's if-explicitly-caught condition, broadening the stated recommendation.",
+          "relation": "scope_changed"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Prediction 2 already states that TaskGroup uses cancellation internally; prediction 3 repeats that complete rationale proposition.",
+          "relation": "duplicate"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Prediction 2 already states that timeout uses cancellation internally; prediction 4 repeats that complete rationale proposition.",
+          "relation": "duplicate"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c04"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both require TaskGroup to wait for all its tasks on exit.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c05"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both preserve Python 3.13, inactive TaskGroup, create_task, and closing the supplied coroutine.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c06"
+          ],
+          "prediction_indices": [
+            7,
+            8
+          ],
+          "reason": "Sibling cancellation and preventing additions after the first non-CancelledError child failure are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c07"
+          ],
+          "prediction_indices": [
+            9,
+            10
+          ],
+          "reason": "Grouping and raising non-cancellation failures after all children finish are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c08"
+          ],
+          "prediction_indices": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "reason": "Cancellation, waiting, and original-exception re-raising are divided into separate predictions for KeyboardInterrupt and SystemExit.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c09"
+          ],
+          "prediction_indices": [
+            17
+          ],
+          "reason": "Both preserve simultaneous external cancellation by cancelling the parent when an ExceptionGroup must also be raised.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0028",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r09-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both raise CancelledError in the cancelled task at its next opportunity.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c02",
+            "v2-test-r09-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "The prediction merges the superclass and cleanup-rationale golds but omits the explicit-catch condition on propagation; the mixed merge/scope broadening is not a clean merge of unchanged gold scopes.",
+          "relation": "uncertain"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c04",
+            "v2-test-r09-c05"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "One prediction joins waiting for all tasks on exit with the Python 3.13 inactive-group coroutine-closing rule.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c06"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both cancel siblings and prevent additions after a non-CancelledError child failure.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c07"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both group and raise non-cancellation failures after all children finish.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c08"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both cancel and wait for other tasks for KeyboardInterrupt/SystemExit, then re-raise the original exception.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r09-c09"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both preserve simultaneous external cancellation by cancelling the parent when an ExceptionGroup must also be raised.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0029",
+      "relations": [
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "This repeats only the PEM-file selection component; the complete multiple-CA-file gold scope is accounted at prediction 1.",
+          "relation": "extra"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c01"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "The prediction identifies the PEM file selected by --cacert and preserves its possible multiple CA certificates.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c02"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "Both preserve the non-Schannel condition for --cacert overriding CURL_CA_BUNDLE.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "This separately restates the PEM-directory selection setup; prediction 4 already includes the complete OpenSSL PEM-directory and c_rehash gold scope.",
+          "relation": "extra"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c03"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both identify OpenSSL capath PEM-certificate directories and require c_rehash processing.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c04"
+          ],
+          "prediction_indices": [
+            5,
+            6
+          ],
+          "reason": "Using the OS store with --ca-native and Schannel using it by default are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c05"
+          ],
+          "prediction_indices": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "reason": "OCSP stapling checking and the absent, invalid, and revoked-response failures are divided over four predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c06"
+          ],
+          "prediction_indices": [
+            11,
+            12
+          ],
+          "reason": "The predictions separately assert support by OpenSSL and GnuTLS but never preserve the gold limited-to exclusivity; this is a mixed split/scope-loss mapping, not a complete split or one-to-one scope change.",
+          "relation": "uncertain"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c07"
+          ],
+          "prediction_indices": [
+            13,
+            14,
+            15
+          ],
+          "reason": "General peer-verification skipping and known_hosts skipping for each of SFTP and SCP are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r39-c08"
+          ],
+          "prediction_indices": [
+            16,
+            17,
+            18,
+            19
+          ],
+          "reason": "Possible trust and reuse of malicious HSTS and Alt-Svc information are divided by information type and effect.",
+          "relation": "split"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0030",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r06-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both combine consecutive-key grouping and the general same-key sorting recommendation.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c02"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both assert independent group snapshots that remain available after the outer iterator advances.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c03",
+            "v2-test-r06-c09"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "One prediction joins islice positional selection with its negative start/stop/step prohibition.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c04"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both make pairwise empty with fewer than two input values.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c05",
+            "v2-test-r06-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "One prediction joins position-based permutation-element identity and input-defined lexicographic output order.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c07",
+            "v2-test-r06-c08"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "One prediction joins infinite streaming without a pool and rightmost-position advancement. Erratum candidate: it also includes the answer's per-next-tuple input-pulling mechanism, not separately present in gold.",
+          "relation": "merged"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0031",
+      "relations": [
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "This separately states the consecutive-key component; prediction 1 already contains the full grouping-and-sorting gold proposition.",
+          "relation": "extra"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c01"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both contain consecutive-key grouping and the general same-key sorting recommendation.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c02"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "reason": "Snapshot independence and availability after outer-iterator advancement are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c09"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both state that islice selects iterable positions.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c03"
+          ],
+          "prediction_indices": [
+            5,
+            6,
+            7
+          ],
+          "reason": "Negative start, stop, and step exclusions are divided into separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c04"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both make pairwise empty with fewer than two input values.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c05"
+          ],
+          "prediction_indices": [
+            9
+          ],
+          "reason": "Both distinguish permutation elements by position.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c06"
+          ],
+          "prediction_indices": [
+            10
+          ],
+          "reason": "Both emit permutation tuples in input-defined lexicographic order.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [],
+          "prediction_indices": [
+            11
+          ],
+          "reason": "Erratum candidate: the answer explicitly asserts per-next-tuple lazy input pulling, but no gold independently specifies that input-pulling schedule.",
+          "relation": "extra"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c07"
+          ],
+          "prediction_indices": [
+            12
+          ],
+          "reason": "The prediction adds a causal per-next-tuple lazy-pulling assertion; infinite streaming without a pool alone does not specify that mechanism. This added answer fact is an erratum candidate.",
+          "relation": "scope_changed"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r06-c08"
+          ],
+          "prediction_indices": [
+            13
+          ],
+          "reason": "Both advance product's rightmost position on every iteration.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0032",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r37-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both interpret a --cookie argument without = as a filename and activate the cookie engine.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "reason": "Input-only --cookie, post-operation jar writing, no jar reading, and sharing a filename are divided across four predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c03"
+          ],
+          "prediction_indices": [
+            5,
+            6
+          ],
+          "reason": "Netscape jar format and creation even with an empty store are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c04"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "reason": "Both activate the engine with empty cookie input without loading cookies.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c05"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both discard session cookies while loading a cookie file with --junk-session-cookies.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c06"
+          ],
+          "prediction_indices": [
+            9,
+            10
+          ],
+          "reason": "The non-failing jar-write error and the --verbose warning are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c07"
+          ],
+          "prediction_indices": [
+            11
+          ],
+          "reason": "Both explain that domainless Set-Cookie-format input is not sent because no domain matches.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r37-c08"
+          ],
+          "prediction_indices": [
+            12
+          ],
+          "reason": "Both require curl PSL build support for public-suffix protection.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0033",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r12-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both make Executor.submit return a Future for the scheduled callable.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c02",
+            "v2-test-r12-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "One prediction joins immediate map input collection and restarting the timeout for each next-result request.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c04"
+          ],
+          "prediction_indices": [
+            2
+          ],
+          "reason": "The map context identifies the result; both raise the callable exception at retrieval.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c05"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both make chunksize affect ProcessPoolExecutor but not ThreadPoolExecutor.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both combine immediate shutdown(wait=False) return with waiting for pending futures before Python can exit.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both claim that cancel_futures interrupts futures already executing in worker threads.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "Both make executor context-manager completion wait like shutdown(wait=True).",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r12-c09"
+          ],
+          "prediction_indices": [
+            7
+          ],
+          "reason": "Both describe thread-pool deadlock when a waiting worker's Future dependency cannot obtain a worker.",
+          "relation": "equivalent"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0034",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r04-c01",
+            "v2-test-r04-c02",
+            "v2-test-r04-c09"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "One prediction joins generated __init__ calling __post_init__, declaration-ordered InitVar passing, and the automatic post-return call for handwritten __init__.",
+          "relation": "merged"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c03"
+          ],
+          "prediction_indices": [
+            1
+          ],
+          "reason": "Both omit generated base-initializer calls and permit required non-dataclass base initialization from __post_init__.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c04",
+            "v2-test-r04-c05"
+          ],
+          "prediction_indices": [
+            2,
+            3
+          ],
+          "reason": "Many-to-many overlap: prediction 2 joins ClassVar exclusion and the exclusion half of the InitVar gold, while prediction 3 supplies InitVar acceptance plus forwarding; no valid pure one-to-one, merge, or split partitions these two golds and predictions.",
+          "relation": "uncertain"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c06"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both call default_factory without arguments when a default is needed.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c07"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "The antecedent identifies the factory field; both defer its init=False factory until first attribute read.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r04-c08"
+          ],
+          "prediction_indices": [
+            6
+          ],
+          "reason": "The prediction adds the independently checkable denial of true Python-object immutability beyond the gold emulation-and-exception mechanism. That explicit answer fact is an erratum candidate.",
+          "relation": "scope_changed"
+        }
+      ]
+    },
+    {
+      "item_id": "item-0035",
+      "relations": [
+        {
+          "gold_ids": [
+            "v2-test-r08-c01"
+          ],
+          "prediction_indices": [
+            0
+          ],
+          "reason": "Both assign increasing IntEnum auto integers beginning at one.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c02"
+          ],
+          "prediction_indices": [
+            1,
+            2
+          ],
+          "reason": "The powers-of-two-from-one auto-value rule is stated separately for Flag and IntFlag.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c03"
+          ],
+          "prediction_indices": [
+            3
+          ],
+          "reason": "Both make a Flag truthy when it contains any member.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c04"
+          ],
+          "prediction_indices": [
+            4
+          ],
+          "reason": "Both make Flag length count contained members.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c05"
+          ],
+          "prediction_indices": [
+            5
+          ],
+          "reason": "Both make inversion return flags absent from the value.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c06"
+          ],
+          "prediction_indices": [
+            6,
+            7
+          ],
+          "reason": "Preserving IntFlag for valid bitwise results and depending on FlagBoundary for invalid results are separate predictions.",
+          "relation": "split"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c07"
+          ],
+          "prediction_indices": [
+            8
+          ],
+          "reason": "Both state that arithmetic loses IntFlag status, using integer addition as an example.",
+          "relation": "equivalent"
+        },
+        {
+          "gold_ids": [
+            "v2-test-r08-c08"
+          ],
+          "prediction_indices": [
+            9,
+            10
+          ],
+          "reason": "Prediction 9 supplies the Python 3.11 boundary but not the replacement purpose; prediction 10 supplies the purpose but not the time boundary. Neither states the full gold scope.",
+          "relation": "split"
+        }
+      ]
+    }
+  ],
+  "packet_sha256": "a07827cc79b8893cdd4d1dd633be744217d3e5a48fe68cc09b88513c60a3d9ff",
+  "reviewer": {
+    "completed_at": "2026-10-21T01:30:27.509581Z",
+    "exposure": "alignment_text_only",
+    "id": "semantic-auditor-b",
+    "kind": "ai",
+    "model": "gpt-6.1-sol (configured), max reasoning"
+  }
+}
