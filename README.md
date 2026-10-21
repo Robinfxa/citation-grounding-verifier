@@ -10,7 +10,7 @@ The [final report](reports/eval-v2/README.md) exposes valid paraphrases rejected
 
 A [controlled development change](reports/eval-v2/ablation-20261020/README.md) added one Minimal citation instruction: pooled strict evidence F1 **0.2845 → 0.6384**. In the complete second observation, output tokens rose **22.6%** and total operation time **23.1%**. Known condition-citation gaps improved, while longer quotations and residual extraction issues limit the claim. Minimal remains the default for its measured resource advantage, without asserting factual superiority.
 
-Saved results are replayable within their documented public/private boundaries. The [release-candidate review](reports/eval-v2/release-readiness.md) records the verified results and unresolved annotation limits; it does not claim human review or a v2 release on `main`.
+Saved results are replayable within their documented public/private boundaries. The [release-candidate review](reports/eval-v2/release-readiness.md) records the verified results and unresolved annotation limits; v2 has been merged into `main`, while human review remains pending.
 
 ## Try it offline
 
