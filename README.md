@@ -4,9 +4,13 @@ An HTTP service that extracts factual claims from an answer, checks them only ag
 
 ## Current evaluation status
 
-`datasets/main.jsonl` now contains **72 real-document cases / 668 gold claims**, split into 24 development and 48 held-out cases. Contexts contain 3,905–15,959 characters; answers contain 8–14 annotated claims. Sources are pinned, licensed documentation from CPython, Rust, PostgreSQL, pytest and curl. The answers are AI-authored summaries and controlled mutations, not natural production responses. See the [data card](reports/eval-v2/data-card.md) and [independent annotation evidence](datasets/v2/realistic-draft/review-evidence/README.md).
+`datasets/main.jsonl` now contains **72 real-document cases / 668 gold claims**, split into 24 development and 48 held-out cases. Contexts contain 3,905–15,959 characters; answers contain 8–14 annotated claims. Sources are pinned, licensed CPython, Rust, PostgreSQL, pytest and curl documentation. Main answers are AI-authored summaries or controlled mutations; **nine natural RAGTruth responses** are measured separately. See the [data card](reports/eval-v2/data-card.md).
 
-The [12-case development comparison](reports/eval-v2/completion-dev-20261020/README.md) retained an original protocol failure and completed the previously unattempted jobs. A [controlled prompt experiment](reports/eval-v2/ablation-20261020/README.md) supported one Minimal citation instruction, with higher output usage and latency; that exact change is now applied. **The full held-out run, stability subset, semantic audit and separate RAGTruth measurement are complete and independently replayed.** Main retained 479 successes and one protocol failure across 480 jobs; the nine natural RAGTruth responses / 125 reviewed claims completed all 54 jobs. Three ambiguous RAGTruth responses remain non-scored diagnostics. The [final report](reports/eval-v2/README.md) keeps these populations separate, explains the strict-matching floor and documents actual extraction/evidence failures. Oracle classification remains near its ceiling; this work does not establish broadly difficult factual judgment.
+The [final report](reports/eval-v2/README.md) exposes valid paraphrases rejected by strict matching, claim-granularity mismatches, and missing citation identity/conditions. Oracle classification remains near ceiling; low strict end-to-end F1 is **not a general factual-error rate**. Main retained 479 successes and one protocol failure across 480 jobs. AI semantic review also required two corrections and leaves interpretation questions unresolved.
+
+A [controlled development change](reports/eval-v2/ablation-20261020/README.md) added one Minimal citation instruction: pooled strict evidence F1 **0.2845 → 0.6384**. In the complete second observation, output tokens rose **22.6%** and total operation time **23.1%**. Known condition-citation gaps improved, while longer quotations and residual extraction issues limit the claim. Minimal remains the default for its measured resource advantage, without asserting factual superiority.
+
+Saved results are replayable within their documented public/private boundaries. The [release-candidate review](reports/eval-v2/release-readiness.md) records the verified results and unresolved annotation limits; it does not claim human review or a v2 release on `main`.
 
 ## Try it offline
 
@@ -103,6 +107,6 @@ Blank answers return empty claims without inference. Limits include a 1 MiB body
 
 - [Engineering verification](reports/eval-v2/verification.json) and [evaluation requirements](openspec/changes/evaluation-v2/specs/evaluation-v2/spec.md)
 - [Architecture](docs/architecture.md), [source research](docs/research/eval-v2-sources.md), and [AI use/workflow](AI_used.md)
-- [Code walkthrough](docs/code-walkthrough.zh-CN.md), [interview self-check](docs/interview-self-check.zh-CN.md), and [human review queue](reports/eval-v2/human-review.md)
+- [Code walkthrough](docs/code-walkthrough.zh-CN.md) and [annotation review queue](reports/eval-v2/human-review.md)
 
 AI authorship, non-author AI review, program checks and human review are reported separately. Public-document contamination, annotation bias and scoring proxies limit any eventual result. OpenAI API-key inference was not measured live. The earlier provider authentication/streaming increment's independent review was stopped by a platform risk check and remains incomplete; the new evaluator review does not certify that scope.

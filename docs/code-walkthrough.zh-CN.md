@@ -2,7 +2,7 @@
 
 版本绑定：请在包含本文的同一 Git 提交中打开下列相对链接；用 `git rev-parse HEAD` 确认正在阅读的版本。实验运行另有 `config.json` 中的逐文件指纹，不能用今天的代码解释成另一个版本已经运行过。当前第二轮的真实实验进度见[协议](../reports/eval-v2/protocol.md)。
 
-建议先自己追踪一次请求，再读测试。不要把“能复述本文”当成已经会修改、调试项目；最后的动手练习由 Robin 本人完成。
+本文说明实际调用链、边界不变量和失败语义；运行证据与语义质量结论仍以相应评测记录为准。
 
 ## 一、从 HTTP 请求到报告
 
@@ -28,6 +28,10 @@
 - 引用“窗口在 10 点关闭”不能证明“窗口在 9 点关闭”。`validate_report` 只能证明引文存在，语义正确性需要评测。
 - 60 秒操作上限、最多 6 次尝试、响应字节上限与输出 token 上限是不同限制。Codex 路径没有应用所请求的输出 token cap；配置如实保存 requested/effective。
 
+默认服务的 provider/operation 截止时间为 **30/60 秒**；最终评测显式采用 **120/240 秒**。HTTP 的外层截止时间包括读取 body，verifier 的内层截止时间覆盖验证操作；不能把二者相加。`_provider_attempt` 只有在错误允许重试且预算足够时才重试；外层单次调用计时器触发的超时被设为不可重试，因为无法确认上游是否已完成。Optimized 每个结构化阶段最多一次内容修复，总调用仍受同一个六次预算约束。协议失败不会走语义上的 U 分支。
+
+这里的 Minimal 是 LLM 单次抽取并判断。**规则切句只用于实验性的 `jev_minimal`**（以及 heuristic 的规则抽取）；不能把 Jev 的设计误说成主榜 Minimal 的实现。Jev 的低置信度降级和协议异常也不同：合法低置信度决定可按配置降级，协议异常保留为操作错误。
+
 ## 二、从数据文件到可复算实验
 
 | 节点与真实符号 | 输入 → 输出；重要不变量 | 正常路径 / 失败路径 |
@@ -48,5 +52,7 @@
 当前主集有 72 个真实文档案例、668 条断言。新增 60 个案例把问题保留为 `generated_answer` 中的 `Question: ...\n\nAnswer: ...`，实际 verifier 可以看到提问范围；问题不加入 `context_passages`，也不当成证据。字段中的断言锚点以这份完整输入为准。独立复核、原始版本、裁决和许可映射见[数据卡](../reports/eval-v2/data-card.md)。RAGTruth 原始模型回答作为单独的辅助集合，不能和这些代理创作答案混称自然分布。
 
 端到端 joint label F1 是 `2 × 对齐且标签正确的事实数 / (gold 数 + predicted 数)`。输出很少不能只靠“输出的都正确”得到高分。S/C→证据覆盖只谈需要证据的事实；C/U→S false-support 应同时看它的分母、判断覆盖和请求失败，不能靠不作答降低危险错误率后宣称变好。
+
+`read_saved_run` 先校验 config/records/cases 的哈希，再检查 `SCORING_FILES` 的实际文件指纹、数据快照和完整运行状态。内部发现 `scorer_version_changed` 会被统一包装为公开的 `run_artifact_invalid`；CLI 退出码为 2。只看错误字符串不能区分所有损坏原因，需要核对冻结指纹。`regenerate_report` 会写回 `summary.json`，所以学习时先复制 run；不是所有离线 replay 都只读。复算保存输出能验证分数与记录一致，不能证明原模型输出或 AI 审阅本身正确，也不能复现下一次非确定模型调用。
 
 阅读顺序建议：先追一个 `examples/wal.json` 请求；再读 `tests/service/test_verifiers.py` 的固定 ID 与失败用例；最后追 `tests/evaluation/fixtures/measurement-calibration.jsonl` 的独立评分边界和一个保存 run。涉及真实模型的操作需明确预算；本导读不要求为学习额外消耗额度。

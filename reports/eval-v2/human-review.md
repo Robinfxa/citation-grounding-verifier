@@ -1,10 +1,10 @@
-# Human review and interview checklist
+# Annotation review queue
 
-**Status: pending human review.** AI authorship, non-author AI review and program checks have occurred; Robin has not been recorded as reviewing these annotations or completing the exercises. This checklist does not add an approval gate to ordinary implementation work.
+**Status: pending human annotation review.** This project record lists unresolved annotation and evidence questions. AI reviews and deterministic checks do not establish human verification. Personal exercises and interview preparation are stored separately from this repository.
 
 Use the [revised pilot](../../datasets/v2/pilot.jsonl), [original draft](../../datasets/v2/pilot-author-draft-1.jsonl), [source mappings](../../datasets/v2/pilot.manifest.json) and [full disagreement records](annotation-review/comparison.json). Claim IDs below refer to the original draft; the revision metadata maps split claims to their new IDs.
 
-| Check | Original claim(s) | What Robin should verify |
+| Check | Original claim(s) | Source-based question to resolve |
 | --- | --- | --- |
 | Missing evidence versus contradiction | p04-c09; p06-c09/c10 | Explain why an unqualified default-settings claim needs the flags exception, and why hash verification or a 15-minute cache cannot be inferred from a documented field/API. Identify what would constitute direct counterevidence. |
 | Answer scope | p04-c10 | Find “later arithmetic” in the original answer and explain why an exact substring anchor still omitted a material assertion. Check the revised conversion-only wording. |
@@ -17,21 +17,11 @@ Use the [revised pilot](../../datasets/v2/pilot.jsonl), [original draft](../../d
 
 The [original AI review queue](annotation-review/human-review-queue.json) retains all issues and priorities. A later human record should include reviewer identity, time, case/claim IDs, decision, source-based reason and unresolved questions. Do not change its human status merely because an AI revision passed.
 
-## Explain and operate the project
-
-- [ ] Follow one request through the [code walkthrough](../../docs/code-walkthrough.zh-CN.md) using the actual symbols.
-- [ ] Answer the [16 interview questions](../../docs/interview-self-check.zh-CN.md) without reading the prepared answer first.
-- [ ] Complete the three exercises in a disposable copy: irrelevant but legal quotation, a scoring regression that genuinely fails, and a C/U boundary with the evidence needed to settle it.
-- [ ] Distinguish historical v1 measurements, the completed [development comparison](completion-dev-20261020/README.md), the [C01 prompt experiment](ablation-20261020/README.md), and final test work. Explain why a strict evidence-score increase is not by itself semantic improvement, and account for the measured token/latency increase.
-- [ ] Reproduce a saved report without inference, then explain why changing its scorer should reject replay.
-
-No boxes are pre-checked. Producing learning material is not evidence of interview readiness.
-
-The main dataset has since expanded to 72 cases / 668 claims. Its [additional 60-case independent AI review](../../datasets/v2/realistic-draft/review-evidence/README.md) preserves original blind judgments, locked comparisons and affected acceptance. The examples above remain useful development exercises; they are not evidence that a human reviewed the new test population.
+The main dataset has since expanded to 72 cases / 668 claims. Its [additional 60-case independent AI review](../../datasets/v2/realistic-draft/review-evidence/README.md) preserves original blind judgments, locked comparisons and affected acceptance. The cases above identify annotation boundaries; they are not evidence that a human reviewed the new test population.
 
 ## 最终结果高风险人工入口（仍未审）
 
-以下全部保持未勾选。程序重放、父端有限代理抽查和原代理澄清均不等于 Robin 已完成逐项人工审阅；原 pilot 练习继续保留。
+以下全部保持未勾选。程序重放、父端有限代理抽查和原代理澄清均不等于 Robin 已完成逐项人工审阅。开发集标注问题继续保留。
 
 - [ ] 核对[实际例子 E01/E02 及直接证据定位](final-20261020/failure-examples.md)：有效改述为何被 strict 漏计，Counter 的 gold 合写与预测三条拆写为何按冻结规则判 split；说明 split/extra 不自动等于事实错误，审计 F1 也不是通用 faithfulness 排名。
 - [ ] 逐读[两条已确认审阅纠错](final-20261020/semantic-audit-adjudication.json)：A/r34-c07 与 B/r20-c10 为什么已有足够证据；核原票仍在，并核[独立敏感性](final-20261020/semantic-audit-correction-sensitivity.json)只把 Optimized evidence 100→102、保持分母 546。不得据两次定点发现估计全部 371 对的审阅误差率。

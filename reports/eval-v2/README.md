@@ -2,6 +2,8 @@
 
 The original short fictional benchmark is retained as history. **The main dataset has been replaced with 72 reviewed real-document cases / 668 claims**, split into 24 dev and 48 held-out cases. The development comparison, controlled citation-prompt experiment, full held-out run, fixed stability subset, preselected semantic audit and separate natural-response measurement are complete. Both final populations were independently replayed against the fixed source checkpoint.
 
+The key findings are extraction/granularity and citation-scope limitations, alongside a severe strict-alignment floor; oracle factual labels remain near ceiling. C01's one-instruction development change improved strict evidence F1 **0.2845 → 0.6384**, with **+22.6% output tokens / +23.1% total operation time** in the complete second observation. This is not proof of general semantic-accuracy improvement. The [release-candidate review](release-readiness.md) checks those claims and records the remaining annotation and measurement limits.
+
 ## What changed
 
 Sources are pinned documentation from CPython, Rust, PostgreSQL, pytest and curl. Contexts contain 3,905–15,959 characters and answers contain 8–14 annotated claims. Question context, source mappings, controlled changes and answer anchors are explicit. The [data card](data-card.md) describes the actual population, label imbalance, limited cross-passage coverage and source dependence. Independent AI annotations were locked before author-label exposure; [public review evidence](../../datasets/v2/realistic-draft/review-evidence/README.md) preserves the disagreements and accepted revisions. Human review remains pending.
@@ -21,7 +23,7 @@ The [original full run](final-20261020/full-test/summary.json) completed all **2
 | End-to-end strict joint gold-evidence F1 | 0.0000 | 0.0065 | 0.0093 |
 | End-to-end exact cases | 0/48 | 0/48 | 0/48 |
 
-**The strict end-to-end floor is largely a measurement limitation, not evidence of 97% factual failure.** Only 16 Minimal and 18 Optimized assertions matched the frozen text inventory; they produced 517 and 671 assertions respectively. Correct unregistered paraphrases and granularity differences are penalized. The preselected semantic audit below examines those effects without changing the main scores. Oracle label accuracy remains near its ceiling, so longer documents have not established broadly hard classification on this population.
+**At this matching coverage, strict end-to-end F1 cannot be interpreted as a factual error rate.** Only 16 Minimal and 18 Optimized assertions matched the frozen text inventory; they produced 517 and 671 assertions respectively. Correct unregistered paraphrases and granularity differences are penalized. The preselected semantic audit below examines those effects without changing the main scores. Oracle label accuracy remains near its ceiling, so longer documents have not established broadly hard classification on this population.
 
 Oracle false-support counts are 4/54 for Minimal and 2/54 for Optimized, with all 54 non-supported gold claims judged. In contrast, strict end-to-end non-supported judgment coverage is only 0/54 and 2/54; zero observed false support there is not a safety result. Claims missing strict matches remain in the denominator.
 
@@ -128,9 +130,9 @@ For saved results, use the [main fixed-source replay recipe](final-20261020/READ
 
 - [Main data card](data-card.md), [experiment protocol](protocol.md), [main promotion receipt](final-20261020/main-promotion.json)
 - [Development records and fixed-source replay](completion-dev-20261020/README.md), [single-factor experiment and replay](ablation-20261020/README.md)
-- [Original pilot review](annotation-review/README.md), [new independent reviews](../../datasets/v2/realistic-draft/review-evidence/README.md), [human queue](human-review.md)
+- [Original pilot review](annotation-review/README.md), [new independent reviews](../../datasets/v2/realistic-draft/review-evidence/README.md), [annotation review queue](human-review.md)
 - [Historical v1 report](../2026-10-15/README.md), [fixed-source replay checks](baseline-checks.json)
 - [Earlier partial pilot](pilot-resume-20261020.md), [staged recovery](pilot-recovery-20261020.md); their 63/150 historical counter is preserved separately
-- [AI use/workflow](../../AI_used.md), [code walkthrough](../../docs/code-walkthrough.zh-CN.md), [interview exercises](../../docs/interview-self-check.zh-CN.md)
+- [AI use/workflow](../../AI_used.md), [code walkthrough](../../docs/code-walkthrough.zh-CN.md), [technical audit](release-readiness.md)
 
 The [final fresh installation](final-offline-verification.json) passed 861 tests, lint and main validation with locked dependencies in a new environment. [Real long-development-input consumers](final-consumer-verification.json) passed HTTP success → safe rejection → recovery and byte-identical CLI report replay without inference. The earlier 510-test [offline receipt](verification.json) and [model-error-stop review](model-error-stop-verification.json) remain valid only for their stated code/inputs. Optional Jev smoke records remain supplementary and do not establish calibration or a cost/speed advantage.
