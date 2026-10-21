@@ -10,13 +10,47 @@ from grounding_eval.scoring import aggregate, ratio, score_case
 from grounding_eval.uncertainty import bootstrap, percentile
 
 LIMITATIONS = [
-    "Agent-authored synthetic English benchmark; independent review is recorded separately. Not a production accuracy estimate.",
     "Strict whitespace-only text/alias matching can undercount valid paraphrases; unmatched predictions are retained.",
     "Literal quotation validity and gold-span coverage do not establish semantic entailment.",
     "A gold span must be contained in one returned quote; alternate sufficient quotations may be undercounted.",
     "Bootstrap intervals describe case/family sample sensitivity, not annotation uncertainty or model randomness.",
     "Offline protocol fixtures are not live model measurements. Subscription tokens have no inferred dollar price.",
 ]
+
+
+def limitations(cases: list[Case]) -> list[str]:
+    real = any(case.provenance.kind == "real_source" for case in cases)
+    legacy = any(case.provenance.kind == "original_fixture" for case in cases)
+    population = []
+    if real:
+        population.append("Real public-source English benchmark; answer origins are reported separately. "
+                          "Document familiarity and related sources can bias results. AI annotation can share "
+                          "model biases; independent and human review states are recorded separately.")
+    if legacy:
+        population.append("Includes agent-authored fictional fixtures; these are not production accuracy estimates.")
+    return population + LIMITATIONS
+
+
+def slices(cases: dict[str, Case], scores: list[dict]) -> dict:
+    """Descriptive slices share cases; do not spend headline bootstrap draws per tag."""
+    members: dict[str, dict[str, list[dict]]] = {"category": {}, "tag": {}, "origin": {}}
+    for score in scores:
+        case = cases[score["case_id"]]
+        origin = case.provenance.origin if case.provenance.kind == "real_source" else "original_fixture"
+        for dimension, values in (("category", [case.category]), ("tag", sorted(set(case.tags))),
+                                  ("origin", [origin])):
+            for value in values:
+                members[dimension].setdefault(value, []).append(score)
+    return {
+        dimension: {
+            name: {"requested_cases": len(subset),
+                   "independent_families": len({score["family_id"] for score in subset}),
+                   "failure_inclusive_quality": aggregate(subset),
+                   "uncertainty": None,
+                   "uncertainty_note": "Descriptive overlapping slice; no per-slice bootstrap."}
+            for name, subset in sorted(values.items())
+        } for dimension, values in members.items()
+    }
 
 
 def validate_prices(prices: dict | None) -> dict | None:
@@ -111,10 +145,19 @@ def build_summary(config: dict, records: list[dict], cases: list[Case]) -> dict:
                 "request_success": ratio(statuses["OK"], len(selected)),
                 "errors": dict(sorted(Counter(r["error_code"] for r in selected if r["error_code"]).items())),
                 "quality": None if status == "NOT_RUN" else aggregate(scores),
+                "failure_inclusive_quality": aggregate(scores),
+                "slices": slices(lookup, scores),
                 "uncertainty": None if status == "NOT_RUN" else bootstrap(
                     scores, seed=config["seed"], samples=config["bootstrap_samples"]),
-                "resources": resources(selected, config.get("prices")),
+                "resources": resources(selected, config.get("prices") if config["format_version"] != 3 else None),
             }
+            if config["format_version"] == 3:
+                from grounding_eval.confidence import routing_summary
+                from grounding_eval.hybrid import mixed_resources
+
+                groups[key]["resources"] = mixed_resources(selected, config.get("prices"))
+                if approach.startswith("jev_"):
+                    groups[key]["routing"] = routing_summary(selected, lookup)
     paired = {}
     for track in config["tracks"]:
         optimized, minimal = f"optimized/{track}", f"minimal/{track}"
@@ -124,10 +167,23 @@ def build_summary(config: dict, records: list[dict], cases: list[Case]) -> dict:
             else:
                 paired[track] = bootstrap(scores_by_group[optimized], paired_scores=scores_by_group[minimal],
                                           seed=config["seed"], samples=config["bootstrap_samples"])
-    return {
-        "format_version": 1, "measurement_kind": config["measurement_kind"],
+    result = {
+        "format_version": config["format_version"], "measurement_kind": config["measurement_kind"],
+        "schema_version": config["schema_version"], "dataset_version": config["dataset_version"],
+        "annotation_version": config["annotation_version"], "scorer_version": config["scorer_version"],
         "split": config["split"], "dataset_sha256": config["dataset_sha256"],
         "code_sha256": config["fingerprints"]["code_sha256"],
         "groups": groups, "paired_optimized_minus_minimal": paired,
-        "limitations": LIMITATIONS,
+        "limitations": limitations(cases),
     }
+    if config["format_version"] == 3:
+        result["paired_jev_optimized_minus_jev_minimal"] = {
+            track: bootstrap(scores_by_group[f"jev_optimized/{track}"],
+                             paired_scores=scores_by_group[f"jev_minimal/{track}"],
+                             seed=config["seed"], samples=config["bootstrap_samples"])
+            for track in config["tracks"]
+            if all(f"{a}/{track}" in groups and not groups[f"{a}/{track}"]["statuses"].get("NOT_RUN")
+                   for a in ("jev_minimal", "jev_optimized"))}
+        result["comparison_note"] = "Jev oracle variants share one algorithm; differences are sampling/operations, " \
+                                    "not extraction gains. Comparisons with old methods change workflow/model/policy."
+    return result

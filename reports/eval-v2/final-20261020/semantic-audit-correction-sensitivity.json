@@ -1,0 +1,221 @@
+{
+  "scope": "Supplemental sensitivity for exactly two confirmed review corrections only; original audit aggregate remains the reported raw review.",
+  "original_analysis_sha256": "a7e285302f5a79a0460d170efd11dd6a0c2678fb429e72e6053d5a39fff9f065",
+  "adjudication_sha256": "8c322bbc2ba86a1e1808274dccebaa781f59ecb0e3f4d810b0bbad50efeb11e2",
+  "groups": {
+    "heuristic": {
+      "counts": {
+        "cases": 24,
+        "equivalent": 113,
+        "evidence_correct": 1,
+        "failed": 0,
+        "gold": 203,
+        "label_correct": 1,
+        "predicted": 158,
+        "redundant_quotes": 0,
+        "relation_equivalent": 113,
+        "relation_merged": 35,
+        "relation_scope_changed": 5,
+        "relation_uncertain": 4,
+        "uncertain_evidence": 0,
+        "uncertain_labels": 0
+      },
+      "original_joint_evidence": {
+        "f1": {
+          "denominator": 361,
+          "numerator": 2,
+          "value": 0.00554016620498615
+        },
+        "precision": {
+          "denominator": 158,
+          "numerator": 1,
+          "value": 0.006329113924050633
+        },
+        "recall": {
+          "denominator": 203,
+          "numerator": 1,
+          "value": 0.0049261083743842365
+        }
+      },
+      "sensitivity_joint_evidence": {
+        "precision": {
+          "numerator": 1,
+          "denominator": 158,
+          "value": 0.006329113924050633
+        },
+        "recall": {
+          "numerator": 1,
+          "denominator": 203,
+          "value": 0.0049261083743842365
+        },
+        "f1": {
+          "numerator": 2,
+          "denominator": 361,
+          "value": 0.00554016620498615
+        }
+      },
+      "equivalent_pair_judgment_counts": {
+        "evidence": {
+          "insufficient": 112,
+          "not_applicable": 1
+        },
+        "label": {
+          "correct": 1,
+          "incorrect": 112
+        },
+        "quote_economy": {
+          "not_applicable": 113
+        }
+      },
+      "applied_confirmed_corrections": 0
+    },
+    "minimal": {
+      "counts": {
+        "cases": 24,
+        "equivalent": 139,
+        "evidence_correct": 132,
+        "failed": 0,
+        "gold": 203,
+        "label_correct": 138,
+        "predicted": 262,
+        "redundant_quotes": 26,
+        "relation_duplicate": 1,
+        "relation_equivalent": 139,
+        "relation_extra": 4,
+        "relation_merged": 1,
+        "relation_scope_changed": 7,
+        "relation_split": 50,
+        "relation_uncertain": 4,
+        "uncertain_evidence": 0,
+        "uncertain_labels": 0
+      },
+      "original_joint_evidence": {
+        "f1": {
+          "denominator": 465,
+          "numerator": 264,
+          "value": 0.567741935483871
+        },
+        "precision": {
+          "denominator": 262,
+          "numerator": 132,
+          "value": 0.5038167938931297
+        },
+        "recall": {
+          "denominator": 203,
+          "numerator": 132,
+          "value": 0.6502463054187192
+        }
+      },
+      "sensitivity_joint_evidence": {
+        "precision": {
+          "numerator": 132,
+          "denominator": 262,
+          "value": 0.5038167938931297
+        },
+        "recall": {
+          "numerator": 132,
+          "denominator": 203,
+          "value": 0.6502463054187192
+        },
+        "f1": {
+          "numerator": 264,
+          "denominator": 465,
+          "value": 0.567741935483871
+        }
+      },
+      "equivalent_pair_judgment_counts": {
+        "evidence": {
+          "insufficient": 6,
+          "not_applicable": 6,
+          "sufficient": 127
+        },
+        "label": {
+          "correct": 138,
+          "incorrect": 1
+        },
+        "quote_economy": {
+          "compact": 108,
+          "not_applicable": 5,
+          "redundant": 26
+        }
+      },
+      "applied_confirmed_corrections": 0
+    },
+    "optimized": {
+      "counts": {
+        "cases": 24,
+        "equivalent": 119,
+        "evidence_correct": 102,
+        "failed": 0,
+        "gold": 203,
+        "label_correct": 118,
+        "predicted": 343,
+        "redundant_quotes": 16,
+        "relation_duplicate": 6,
+        "relation_equivalent": 119,
+        "relation_extra": 24,
+        "relation_merged": 1,
+        "relation_scope_changed": 5,
+        "relation_split": 74,
+        "relation_uncertain": 3,
+        "uncertain_evidence": 0,
+        "uncertain_labels": 1
+      },
+      "original_joint_evidence": {
+        "f1": {
+          "denominator": 546,
+          "numerator": 200,
+          "value": 0.3663003663003663
+        },
+        "precision": {
+          "denominator": 343,
+          "numerator": 100,
+          "value": 0.2915451895043732
+        },
+        "recall": {
+          "denominator": 203,
+          "numerator": 100,
+          "value": 0.49261083743842365
+        }
+      },
+      "sensitivity_joint_evidence": {
+        "precision": {
+          "numerator": 102,
+          "denominator": 343,
+          "value": 0.29737609329446063
+        },
+        "recall": {
+          "numerator": 102,
+          "denominator": 203,
+          "value": 0.5024630541871922
+        },
+        "f1": {
+          "numerator": 204,
+          "denominator": 546,
+          "value": 0.37362637362637363
+        }
+      },
+      "equivalent_pair_judgment_counts": {
+        "evidence": {
+          "insufficient": 17,
+          "not_applicable": 5,
+          "sufficient": 97
+        },
+        "label": {
+          "correct": 118,
+          "uncertain": 1
+        },
+        "quote_economy": {
+          "compact": 97,
+          "not_applicable": 6,
+          "redundant": 16
+        }
+      },
+      "applied_confirmed_corrections": 2
+    }
+  },
+  "same_gold_and_prediction_denominators": true,
+  "all_other_judgments_retained": true,
+  "no_exhaustive_correctness_claim": true,
+  "new_benchmark_provider_calls": 0
+}

@@ -1,0 +1,510 @@
+{
+  "status": "PREPARED_WAITING_PARENT_PUBLICATION_NARROW_REVIEW_AND_MAIN_TERMINAL",
+  "frozen_at": "2026-10-20T23:52:34.985914+00:00",
+  "source_commit": "324559dccba4624dfa803849f5fd26284c7b27f4",
+  "source_fingerprints": {
+    "code_sha256": "cd15430a02b364c2f6ddef034e6ef046b335dd99b3678d3dada5186e31dd89a6",
+    "files": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "efe9880e6f6691702c764654344532af21b39d252dd4392bb69fbc14eb612d81",
+      "grounding/contracts.py": "736c5e1e2db6f9bc0ff42d4ad2f93e502e5927b57f5a07515130537408f52417",
+      "grounding/diagnostics.py": "b29774e3b94587604b02de928932a374de4ac634cd41e5f47e142380f2853921",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/jev_evidence.py": "9fa033259e3f9a10bf2f59c5df438984a5d025cd2b3e13c3b3aa3dc3253cbf66",
+      "grounding/jev_provider.py": "b43d13f2a0c792c6f75000bdb0b66c8c15f874086e52bb5e86c6d7f50c06a9c4",
+      "grounding/jev_verifier.py": "c69c1427b57f3d976a61a0d7e8dba6544de412d85b52666580c10b81edda760b",
+      "grounding/prompts.py": "2bc178dc2996cfb83e4a5f6332b0908d50e92f409e234ad46e50dcc89e80bb59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "bb68cddb38d1194649448e410e6296d9cc2a9038bfe202dfd0f452e34315ffdf",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/audit.py": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+      "grounding_eval/cli.py": "079a5f9f1ac45da03d16814a1a87252d57bb2e69aeb0f6eb4d03e825dfc119ab",
+      "grounding_eval/confidence.py": "8b821bc658b14d7a7397e697dc5813e34463d305d00f7e020aa2d776f1e42c5d",
+      "grounding_eval/dataset.py": "1b5aae47a713ad8c71935859fe4e6b6fa6374584780515f6e8d959141aec8df2",
+      "grounding_eval/diagnostics.py": "b07bfe37d9f65abedd9432d3ebf51e2397afdf591d57685abde050b9574ecdb9",
+      "grounding_eval/hybrid.py": "b5f64a823700d120e9b5f6202901a296c5e367671b918e1c39f4c17ae23e2e13",
+      "grounding_eval/provenance.py": "7243c31ea04e8b37e543b56a7d3e96a6701631d6b178ed0576fee47ae801cd33",
+      "grounding_eval/repeated.py": "74c9f3de20d1d61c1715e22180652feae366b65233d681e92672ce1652a2cee8",
+      "grounding_eval/reporting.py": "3f61282bacc04399d3fb876395abe6bfcc68f4f232e83333f96957cfc8369122",
+      "grounding_eval/runner.py": "785db293bf0ba1bb17afdf2e2f7d4b29f8e444d9c0bec9127e37127d17caa40d",
+      "grounding_eval/scoring.py": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e",
+      "grounding_eval/uncertainty.py": "c6bfbdcb8155acf2fdfdd31ea74eaea4fa8d7a18750e26ca0c3546f49c85f674"
+    },
+    "prompt_files": {
+      "grounding/prompts.py": "2bc178dc2996cfb83e4a5f6332b0908d50e92f409e234ad46e50dcc89e80bb59"
+    }
+  },
+  "settings": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "provider_timeout": 120.0,
+    "operation_timeout": 240.0,
+    "max_provider_attempts": 6,
+    "transport_retries": 0,
+    "retry_delay": 0.25,
+    "max_output_tokens": {
+      "requested": 8192,
+      "effective": null,
+      "application": "not_applied"
+    },
+    "diagnostics": true,
+    "endpoint_sha256": "d9617135d6fdd0a2cde722d637a1dfcc3da37515708b3ea5d66ae607c8ac785e"
+  },
+  "format_version": 2,
+  "seed": 20261015,
+  "bootstrap_samples": 10000,
+  "approaches": [
+    "heuristic",
+    "minimal",
+    "optimized"
+  ],
+  "tracks": [
+    "oracle",
+    "end-to-end"
+  ],
+  "dataset_sha256": "7223830a37eded12168e304ff078bb168a850ea8b393088c08e77386ad615d2d",
+  "manifest_sha256": "67b65b1ea5a7892817971b4378f5b7ad8d4e500ccd8135636dfe0aef3ddcd3fa",
+  "dataset_version": "ragtruth-claim-recipe.reviewed-1",
+  "annotation_version": "ragtruth-private-revised-1",
+  "case_ids": [
+    "ragtruth-response-972",
+    "ragtruth-response-2053",
+    "ragtruth-response-3343",
+    "ragtruth-response-2143",
+    "ragtruth-response-3086",
+    "ragtruth-response-5375",
+    "ragtruth-response-5315",
+    "ragtruth-response-4069",
+    "ragtruth-response-4292"
+  ],
+  "cases": 9,
+  "gold_claims_per_method_track": 125,
+  "independent_source_families": 9,
+  "verdict_counts": {
+    "SUPPORTED": 111,
+    "UNSUPPORTED": 12,
+    "CONTRADICTED": 2
+  },
+  "natural_responses": 9,
+  "complete_diagnostic_population_cases": 12,
+  "non_scoring_diagnostic_case_ids": [
+    "ragtruth-response-2660",
+    "ragtruth-response-4100",
+    "ragtruth-response-5639"
+  ],
+  "pre_result_exclusions": [
+    {
+      "case_id": "ragtruth-response-2660",
+      "reason_category": "shared_year_attachment_and_source_attribution_scope",
+      "decisions": [
+        "RA05",
+        "RA06",
+        "RA07",
+        "RA08"
+      ]
+    },
+    {
+      "case_id": "ragtruth-response-4100",
+      "reason_category": "causal_modifier_attachment",
+      "decisions": [
+        "RA11"
+      ]
+    },
+    {
+      "case_id": "ragtruth-response-5639",
+      "reason_category": "speed_modifier_and_Chinese_jet_UAP_actor_binding",
+      "decisions": [
+        "RA12"
+      ]
+    }
+  ],
+  "membership_policy": "Fixed12 remain complete original-input diagnostic reconstruction. Exclude whole cases with non-unique text interpretation from primary scoring because the schema has no claim-ignore mask; never drop ambiguous gold while scoring the same full answer.",
+  "membership_timing": "Pre-verifier-results, after independent blind annotation and before auxiliary live calls; no saved verifier predictions read.",
+  "requested_jobs": 54,
+  "requested_model_jobs": 36,
+  "expected_calls_before_repairs": 45,
+  "new_total_attempt_ceiling": 90,
+  "per_operation_attempts": 6,
+  "transport_retries": 0,
+  "stop_on_model_error": false,
+  "stop_policy": "Retain ordinary ERROR while continuing original jobs; native quota/budget stops preserve NOT_RUN. No relaunch, replacement or extra availability request.",
+  "launch_gate": "All three original main blocks must be valid terminal with no pause/unknown condition. No concurrent benchmark inference.",
+  "historical_allocations": "This new finite90 is separate from main600 and every historical allowance.",
+  "job_order": [
+    {
+      "sequence": 0,
+      "case_id": "ragtruth-response-4292",
+      "approach": "heuristic",
+      "track": "oracle"
+    },
+    {
+      "sequence": 1,
+      "case_id": "ragtruth-response-2143",
+      "approach": "minimal",
+      "track": "oracle"
+    },
+    {
+      "sequence": 2,
+      "case_id": "ragtruth-response-3343",
+      "approach": "minimal",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 3,
+      "case_id": "ragtruth-response-2053",
+      "approach": "heuristic",
+      "track": "oracle"
+    },
+    {
+      "sequence": 4,
+      "case_id": "ragtruth-response-2053",
+      "approach": "optimized",
+      "track": "oracle"
+    },
+    {
+      "sequence": 5,
+      "case_id": "ragtruth-response-5315",
+      "approach": "heuristic",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 6,
+      "case_id": "ragtruth-response-2053",
+      "approach": "minimal",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 7,
+      "case_id": "ragtruth-response-2143",
+      "approach": "heuristic",
+      "track": "oracle"
+    },
+    {
+      "sequence": 8,
+      "case_id": "ragtruth-response-4069",
+      "approach": "heuristic",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 9,
+      "case_id": "ragtruth-response-4069",
+      "approach": "minimal",
+      "track": "oracle"
+    },
+    {
+      "sequence": 10,
+      "case_id": "ragtruth-response-4069",
+      "approach": "optimized",
+      "track": "oracle"
+    },
+    {
+      "sequence": 11,
+      "case_id": "ragtruth-response-4292",
+      "approach": "minimal",
+      "track": "oracle"
+    },
+    {
+      "sequence": 12,
+      "case_id": "ragtruth-response-2143",
+      "approach": "optimized",
+      "track": "oracle"
+    },
+    {
+      "sequence": 13,
+      "case_id": "ragtruth-response-3343",
+      "approach": "optimized",
+      "track": "oracle"
+    },
+    {
+      "sequence": 14,
+      "case_id": "ragtruth-response-4292",
+      "approach": "minimal",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 15,
+      "case_id": "ragtruth-response-3086",
+      "approach": "minimal",
+      "track": "oracle"
+    },
+    {
+      "sequence": 16,
+      "case_id": "ragtruth-response-3086",
+      "approach": "optimized",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 17,
+      "case_id": "ragtruth-response-3086",
+      "approach": "heuristic",
+      "track": "oracle"
+    },
+    {
+      "sequence": 18,
+      "case_id": "ragtruth-response-4292",
+      "approach": "optimized",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 19,
+      "case_id": "ragtruth-response-5375",
+      "approach": "optimized",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 20,
+      "case_id": "ragtruth-response-5375",
+      "approach": "minimal",
+      "track": "oracle"
+    },
+    {
+      "sequence": 21,
+      "case_id": "ragtruth-response-2143",
+      "approach": "optimized",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 22,
+      "case_id": "ragtruth-response-4069",
+      "approach": "optimized",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 23,
+      "case_id": "ragtruth-response-4292",
+      "approach": "heuristic",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 24,
+      "case_id": "ragtruth-response-972",
+      "approach": "optimized",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 25,
+      "case_id": "ragtruth-response-4069",
+      "approach": "minimal",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 26,
+      "case_id": "ragtruth-response-2143",
+      "approach": "heuristic",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 27,
+      "case_id": "ragtruth-response-2053",
+      "approach": "minimal",
+      "track": "oracle"
+    },
+    {
+      "sequence": 28,
+      "case_id": "ragtruth-response-2053",
+      "approach": "heuristic",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 29,
+      "case_id": "ragtruth-response-2143",
+      "approach": "minimal",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 30,
+      "case_id": "ragtruth-response-5375",
+      "approach": "optimized",
+      "track": "oracle"
+    },
+    {
+      "sequence": 31,
+      "case_id": "ragtruth-response-972",
+      "approach": "optimized",
+      "track": "oracle"
+    },
+    {
+      "sequence": 32,
+      "case_id": "ragtruth-response-3343",
+      "approach": "optimized",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 33,
+      "case_id": "ragtruth-response-5315",
+      "approach": "optimized",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 34,
+      "case_id": "ragtruth-response-2053",
+      "approach": "optimized",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 35,
+      "case_id": "ragtruth-response-5315",
+      "approach": "minimal",
+      "track": "oracle"
+    },
+    {
+      "sequence": 36,
+      "case_id": "ragtruth-response-972",
+      "approach": "minimal",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 37,
+      "case_id": "ragtruth-response-5375",
+      "approach": "heuristic",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 38,
+      "case_id": "ragtruth-response-3343",
+      "approach": "minimal",
+      "track": "oracle"
+    },
+    {
+      "sequence": 39,
+      "case_id": "ragtruth-response-4069",
+      "approach": "heuristic",
+      "track": "oracle"
+    },
+    {
+      "sequence": 40,
+      "case_id": "ragtruth-response-5315",
+      "approach": "optimized",
+      "track": "oracle"
+    },
+    {
+      "sequence": 41,
+      "case_id": "ragtruth-response-5315",
+      "approach": "heuristic",
+      "track": "oracle"
+    },
+    {
+      "sequence": 42,
+      "case_id": "ragtruth-response-3086",
+      "approach": "heuristic",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 43,
+      "case_id": "ragtruth-response-3086",
+      "approach": "minimal",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 44,
+      "case_id": "ragtruth-response-5375",
+      "approach": "minimal",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 45,
+      "case_id": "ragtruth-response-4292",
+      "approach": "optimized",
+      "track": "oracle"
+    },
+    {
+      "sequence": 46,
+      "case_id": "ragtruth-response-5315",
+      "approach": "minimal",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 47,
+      "case_id": "ragtruth-response-972",
+      "approach": "heuristic",
+      "track": "end-to-end"
+    },
+    {
+      "sequence": 48,
+      "case_id": "ragtruth-response-972",
+      "approach": "minimal",
+      "track": "oracle"
+    },
+    {
+      "sequence": 49,
+      "case_id": "ragtruth-response-972",
+      "approach": "heuristic",
+      "track": "oracle"
+    },
+    {
+      "sequence": 50,
+      "case_id": "ragtruth-response-5375",
+      "approach": "heuristic",
+      "track": "oracle"
+    },
+    {
+      "sequence": 51,
+      "case_id": "ragtruth-response-3086",
+      "approach": "optimized",
+      "track": "oracle"
+    },
+    {
+      "sequence": 52,
+      "case_id": "ragtruth-response-3343",
+      "approach": "heuristic",
+      "track": "oracle"
+    },
+    {
+      "sequence": 53,
+      "case_id": "ragtruth-response-3343",
+      "approach": "heuristic",
+      "track": "end-to-end"
+    }
+  ],
+  "public_input_hashes": {
+    "datasets/v2/realistic-draft/auxiliary/ragtruth-claim-recipe.reviewed-1.json": "da5367f6df0eada7d52cfdfda6294823c12c5dae75dd34fa0e6879bce28466a4",
+    "datasets/v2/realistic-draft/auxiliary/rebuild_ragtruth_scoring.py": "deb803c0825ca2fe1d88bfd8b794bce0e8c1b5aceabdb004720225a880c5304a",
+    "datasets/v2/realistic-draft/auxiliary/ragtruth-review-status.reviewed-1.json": "a796eb5f5c2af13ef5013983bf45341abca414b04e89b5994bd340e153d4d9e4",
+    "datasets/v2/realistic-draft/auxiliary/ragtruth-scoring-membership.reviewed-1.json": "d5b8bc356c285b241faa9ce5c4dce6d078cf3fca88ce920f039ebc98adf1a3d1",
+    "reports/eval-v2/ragtruth-20261020/case-ids.json": "94f02324d6c34f92cf49ce88fa3fc047ec925fe3d5b22403565e3d32f06c3986",
+    "reports/eval-v2/ragtruth-20261020/publication-policy.json": "fb2f34bc6ebb42ab48bd8c2e338a20e3d17a565aabd643f42648cf82c3999311"
+  },
+  "private_input_hashes": {
+    "frozen-input/scoring-cases.manifest.json": "67b65b1ea5a7892817971b4378f5b7ad8d4e500ccd8135636dfe0aef3ddcd3fa",
+    "frozen-input/scoring-cases.jsonl": "7223830a37eded12168e304ff078bb168a850ea8b393088c08e77386ad615d2d",
+    "frozen-input/licenses/RAGTruth-MIT": "b7fd7d6bdfe0cbba63c63a310914beb4a4acb8bf08da73849219f45385f5b244",
+    "frozen-input/raw-contexts/13886.txt": "6850d526243a69fcf447508e6d9126ee8472b96fdb95d2d6a369f6872daba577",
+    "frozen-input/raw-contexts/12024.txt": "c2b336212ffce486e65e09b8e4ea3c5889ae03deda83f2e81f865dc1b8048f2f",
+    "frozen-input/raw-contexts/11980.txt": "73e925793be82b07cf1df3bd1514133aa3925a1503fb6e33fb06b50258a2fe0b",
+    "frozen-input/raw-contexts/11822.txt": "d700f8ed8d79fc2ba0efd28a2efd38aaeda8b995e84bbcd8ca4c5f6dd87a5aab",
+    "frozen-input/raw-contexts/13541.txt": "466ad955c9cdb0c7ffeb336238b12e612768479d0bbb348719a1cb6c6567db9c",
+    "frozen-input/raw-contexts/13551.txt": "ea3c0872ffd4abac4b1d603d0622ea4535099ab3eee6edc979f59b899062e6aa",
+    "frozen-input/raw-contexts/11806.txt": "cb450494e2351d11198c4a48675654aa21777685b1a54fb9e1e1be134e2c5e2a",
+    "frozen-input/raw-contexts/15755.txt": "bb55736e21b4edba30ba83c75d204f0be10f83d45a362d9e86db5a1b6a1a0c1e",
+    "frozen-input/raw-contexts/13849.txt": "942b71b47631461c1dfeb72422bac65e65c597e58b2e72f0e2ee4cefbaa04439",
+    "frozen-evidence/provenance-acceptance.json": "977da7b3ccfe85245933633f9e2b5d7bcbd2a3a9cfcd7021764b6bfede4749ba",
+    "frozen-evidence/semantic-acceptance.json": "bffbdf1b2b74b156c3eeb3b82ee74cfc6979062aa87fd1af1bdf5357cb101f06",
+    "frozen-evidence/accepted-handoff.json": "a29c618466cb0ac5d943f4a9333d8ea49fb5d1ace98cf74ec24669e7bf08e996",
+    "frozen-source/pyproject.toml": "7878fcb37e55429ae27066cb699cb6794a3bb4dc8785ac0074d018c4ea593d9f",
+    "frozen-source/uv.lock": "11756c62fcab5ccf50828739ab9d5bd5b6ba304241e5721600bca8fe0e636b92"
+  },
+  "wrapper_sha256": "dc5a1b5d9200aee2abfda50c2afdaf71b47f126d969d67007531963ce0ef79c1",
+  "common_helper_sha256": "d3ff67c5e1635a4f5803cf3ecc0e64a4118c30353c59919e624ae0bb0e427e73",
+  "data_gate": {
+    "status": "accepted_no_open_blockers",
+    "provenance_receipt_sha256": "977da7b3ccfe85245933633f9e2b5d7bcbd2a3a9cfcd7021764b6bfede4749ba",
+    "independent_AI_annotation": "accepted_after_original197_blind_lock",
+    "human_review": "not_performed"
+  },
+  "publication_policy_sha256": "fb2f34bc6ebb42ab48bd8c2e338a20e3d17a565aabd643f42648cf82c3999311",
+  "raw_output_storage": "Private local files only; no full raw run or dataset publication.",
+  "dollar_total_usd": null,
+  "dollar_policy": "Codex subscription tokens are not inferred dollar cost.",
+  "limitations": [
+    "No human signoff.",
+    "Nine purposive Summary cases are not representative of all RAGTruth.",
+    "Three non-unique-reading complete cases remain diagnostic only.",
+    "Underlying news/response text is private; repository MIT is not third-party redistribution clearance.",
+    "No inference or measurement result claimed by this author."
+  ],
+  "preparer_sha256": "e781aad01824e7541a019809eb20187793af4b0eab6d2d730214d42680f9ddf7"
+}

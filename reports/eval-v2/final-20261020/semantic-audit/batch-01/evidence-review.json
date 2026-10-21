@@ -1,0 +1,1656 @@
+{
+  "packet_sha256": "84d2fe2aa4abe96de2b01034456e7561f50549aa43f82028c668b96101865a3d",
+  "reviewer": {
+    "id": "independent-semantic-reviewer-a",
+    "kind": "ai",
+    "model": "gpt-6.1-sol (configured), max reasoning",
+    "completed_at": "2026-10-21T01:43:39Z",
+    "exposure": "locked_alignment_and_evidence"
+  },
+  "items": [
+    {
+      "item_id": "item-0000",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r34-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Context explicitly accepts subclasses, contradicting exact-class-only acceptance; the quote names pytest.raises and includes subclasses."
+        },
+        {
+          "gold_id": "v2-test-r34-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "Context supports raises matching the exception string with re.search. Both quoted fragments omit the pytest.raises identity; the identifying context-manager example remains unquoted."
+        },
+        {
+          "gold_id": "v2-test-r34-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "The supplied matching/search/notes documentation neither states nor denies NFC normalization. U is correct and citation-free."
+        },
+        {
+          "gold_id": "v2-test-r34-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names group_contains, recursive nested search and depth restriction, covering the whole supported rule."
+        },
+        {
+          "gold_id": "v2-test-r34-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly links pre-execution rewriting to introspection in assertion failures."
+        },
+        {
+          "gold_id": "v2-test-r34-c06",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted register_assert_rewrite instructions require registration before import, contrary to retrospective rewriting."
+        },
+        {
+          "gold_id": "v2-test-r34-c07",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "Context preserves introspection when caching fails, so S is correct. The quote only says rewriting skips caching; the explicit retained-introspection statement and its link are unquoted."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0001",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r47-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The --form heading, HTTP condition and multipart/form-data POST sentence establish the supported behavior and its subject."
+        },
+        {
+          "gold_id": "v2-test-r47-c06",
+          "prediction_index": 12,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The sentence explicitly names filename= and the file upload part name field; the command example repeats that already sufficient rule."
+        },
+        {
+          "gold_id": "v2-test-r47-c08",
+          "prediction_index": 15,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly includes base64 encoding and the 76-character line limit."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0002",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r01-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly allows zero and negative counts for hashable Counter keys; U is wrong and no evidence is quoted."
+        },
+        {
+          "gold_id": "v2-test-r01-c06",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Both the multiset paragraph and restrictions note explicitly exclude nonpositive output counts; U is wrong and citation-free."
+        },
+        {
+          "gold_id": "v2-test-r01-c07",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The Counter.elements note explicitly requires integer counts and ignores zero/negative counts; U is wrong with no evidence."
+        },
+        {
+          "gold_id": "v2-test-r01-c08",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The rich-comparison passage explicitly supports missing-as-zero equality and the example; U is wrong with no citations."
+        },
+        {
+          "gold_id": "v2-test-r01-c09",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "most_common explicitly preserves encounter order for ties; U is wrong and the citation set is empty."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0003",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r25-c03",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The cache note explicitly links one cached instance to repeated parametrized invocation; U is wrong and no evidence is quoted."
+        },
+        {
+          "gold_id": "v2-test-r25-c04",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The callable-scope definition and repeated-invocation note establish one-time scope determination despite recreation; U is wrong with no citations."
+        },
+        {
+          "gold_id": "v2-test-r25-c05",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly describes reverse fixture traversal running post-yield code; U is wrong with no citations."
+        },
+        {
+          "gold_id": "v2-test-r25-c08",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The finalizer paragraph states both execution after later failure and registration only after cleanup state exists; U is wrong without evidence."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0004",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r30-c01",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names --log-disable, logger names and repeatability, supporting multi-logger disabling."
+        },
+        {
+          "gold_id": "v2-test-r30-c04",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted options, fallback formats, omission condition and console-only scope cover the rule."
+        },
+        {
+          "gold_id": "v2-test-r30-c05",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote includes relative log-file paths, both CLI/config-file provenance and cwd resolution."
+        },
+        {
+          "gold_id": "v2-test-r30-c08",
+          "prediction_index": 14,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The first sentence identifies set_log_path as the antecedent of the experimental qualification."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0005",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r13-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quotes identify the match scrutinee and explicitly require scrutinee/pattern type equality."
+        },
+        {
+          "gold_id": "v2-test-r13-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote preserves the value-expression condition, temporary evaluation and first matching arm."
+        },
+        {
+          "gold_id": "v2-test-r13-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted scope sentence explicitly identifies pattern bindings, match guard and arm expression."
+        },
+        {
+          "gold_id": "v2-test-r13-c07",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly names | alternatives and possible repeated guard side effects."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0006",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r47-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The --form context explicitly specifies HTTP multipart/form-data; U is wrong and no evidence is quoted."
+        },
+        {
+          "gold_id": "v2-test-r47-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context directly contrasts @ file attachment and < text-field loading; U is wrong and the quotation set is empty."
+        },
+        {
+          "gold_id": "v2-test-r47-c04",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly joins nonregular transmission-time reading, unknown size, HTTP chunks and IMAP rejection; U is wrong with no citations."
+        },
+        {
+          "gold_id": "v2-test-r47-c05",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The --form-string passage explicitly gives literal @, < and ;type= behavior; U is wrong with no citations."
+        },
+        {
+          "gold_id": "v2-test-r47-c08",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The encoder paragraph explicitly states the base64 76-character line limit; U is wrong and unsupported by any quote."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0007",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r17-c02",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote includes both independence conditions and definition-time checking."
+        },
+        {
+          "gold_id": "v2-test-r17-c03",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly identifies implicit Sized relaxation, permitted parameter/associated-type locations and exclusion of other types."
+        },
+        {
+          "gold_id": "v2-test-r17-c04",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly defines the lifetime outlives relation with the correct at-least-as-long direction."
+        },
+        {
+          "gold_id": "v2-test-r17-c05",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted higher-ranked bounds definition explicitly quantifies over all lifetimes."
+        },
+        {
+          "gold_id": "v2-test-r17-c06",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted function signature and in-body comment/call show &'a T implying T: 'a within the function."
+        },
+        {
+          "gold_id": "v2-test-r17-c07",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quotation explicitly limits implied bounds to lifetimes and requires trait bounds to be added explicitly."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0008",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r42-c02",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names --connect-timeout and explicitly lets curl continue after connecting within the period."
+        },
+        {
+          "gold_id": "v2-test-r42-c03",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "redundant",
+          "reason": "The full context resets --max-time on every retry, so C is correct. The quote omits --max-time identity and includes unrelated --retry-max-time advice."
+        },
+        {
+          "gold_id": "v2-test-r42-c04",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The named --speed-time exclusion of slow connects plus the DNS-as-connection quote contradict the claim. Default-threshold and recommendation details are unnecessary."
+        },
+        {
+          "gold_id": "v2-test-r42-c05",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "No supplied passage specifies the first response-body byte as the measurement start or denies that timing; citation-free U is correct."
+        },
+        {
+          "gold_id": "v2-test-r42-c06",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote includes speed-time use, default speed-limit 1, the explicit-limit exception and bytes/second units."
+        },
+        {
+          "gold_id": "v2-test-r42-c08",
+          "prediction_index": 12,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The full --limit-rate context gives precedence, but the quote only names speed-limit and generic rate-limiting; the --limit-rate identity is not quoted."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0009",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r25-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted scope-list entry explicitly identifies function as the default and names the fixture."
+        },
+        {
+          "gold_id": "v2-test-r25-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote links scope=module to the shared instance across test functions. SMTP setup details and the separate default-function parenthesis are unnecessary."
+        },
+        {
+          "gold_id": "v2-test-r25-c03",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote states the single-instance cache limitation and its repeated-parametrized-invocation consequence in the same scope."
+        },
+        {
+          "gold_id": "v2-test-r25-c06",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly covers failing before yield and skipping that fixture own post-yield teardown."
+        },
+        {
+          "gold_id": "v2-test-r25-c07",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "The context promises only an attempt at normal teardown of successful fixtures, not successful completion asserted by the gold wording. It neither guarantees completion nor says teardown fails; citation-free U is appropriate."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0010",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r45-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The --continue-at heading and following offset definition give byte units and source-beginning origin."
+        },
+        {
+          "gold_id": "v2-test-r45-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names -C - and the input/output files used to infer the resume location."
+        },
+        {
+          "gold_id": "v2-test-r45-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "Context supports the range-feature rule. The quote leaves this feature anaphoric; it describes requesting a range but does not quote the antecedent identifying the disabled server feature."
+        },
+        {
+          "gold_id": "v2-test-r45-c06",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Both FTP/SFTP, exclusive start-stop syntax and optional endpoints are directly quoted."
+        },
+        {
+          "gold_id": "v2-test-r45-c07",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The metadata quote maps --output to -o and a file argument; the second gives the order-independent first-URL association."
+        },
+        {
+          "gold_id": "v2-test-r45-c08",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The heading identifies --remove-on-error and both error deletion and the regular-file restriction are quoted. Partial-file prevention repeats the deletion consequence."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0011",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r16-c02",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted concrete PartialEq implementation for Foo<T> directly requires T: PartialEq."
+        },
+        {
+          "gold_id": "v2-test-r16-c03",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote identifies Foo PartialEq::eq and explicitly conjoins equality of a and b."
+        },
+        {
+          "gold_id": "v2-test-r16-c04",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted Foo<T> Clone implementation header directly gives T: Clone."
+        },
+        {
+          "gold_id": "v2-test-r16-c05",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote identifies Clone for Foo and constructs a new Foo from clone calls on both a and b."
+        },
+        {
+          "gold_id": "v2-test-r16-c07",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The two quoted sentences directly permit repetition and invoke every macro across attributes."
+        },
+        {
+          "gold_id": "v2-test-r16-c09",
+          "prediction_index": 12,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quotation names automatically_derived and ties it to possible detection by tools/diagnostic lints."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0012",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r34-c04",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly documents recursive group_contains search and depth restriction, so U is wrong; no supporting quotation is supplied."
+        },
+        {
+          "gold_id": "v2-test-r34-c05",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly links rewriting before execution to introspection, so U is wrong and the empty citation set is insufficient."
+        },
+        {
+          "gold_id": "v2-test-r34-c08",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly documents global --assert=plain and per-module docstring disabling; U is wrong and neither rule is quoted."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0013",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r16-c06",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The derive example explicitly identifies generated impl items and leaves Foo fields in the struct; U is wrong and no quote is supplied."
+        },
+        {
+          "gold_id": "v2-test-r16-c07",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The repeated-attributes rule explicitly invokes all listed macros; U is wrong and evidence is empty."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0014",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r30-c01",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Named logger disabling and repeated option use are directly quoted."
+        },
+        {
+          "gold_id": "v2-test-r30-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote includes stdout/stderr/logs, failed tests, reporting suppression and the exact --show-capture=no command."
+        },
+        {
+          "gold_id": "v2-test-r30-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The named option, console threshold and acceptance of names or numeric levels are all quoted."
+        },
+        {
+          "gold_id": "v2-test-r30-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote includes both console format options and their omitted-option fallbacks."
+        },
+        {
+          "gold_id": "v2-test-r30-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Both config-file inclusion and cwd-relative resolution are explicit in the quote."
+        },
+        {
+          "gold_id": "v2-test-r30-c08",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote connects the named set_log_path functionality to its experimental status."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0015",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r13-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote supplies the match-scrutinee identity and same-type requirement."
+        },
+        {
+          "gold_id": "v2-test-r13-c04",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly covers binding scope over the guard and arm expression."
+        },
+        {
+          "gold_id": "v2-test-r13-c07",
+          "prediction_index": 13,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted | operator warning establishes possible repeated side-effecting guard execution."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0016",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r01-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names Counter objects and directly gives zero for missing items."
+        },
+        {
+          "gold_id": "v2-test-r01-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted sentence explicitly says setting a counter count to zero does not remove the element."
+        },
+        {
+          "gold_id": "v2-test-r01-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote establishes Counter as the class and update as the method adding rather than replacing counts; the intervening fromkeys discussion is irrelevant."
+        },
+        {
+          "gold_id": "v2-test-r01-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The explicit Counter.subtract clause independently permits zero and negative outputs despite the initial anaphoric phrase."
+        },
+        {
+          "gold_id": "v2-test-r01-c06",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote identifies Counter multiset operations and excludes nonpositive output. Detailed addition/intersection/equality descriptions are not needed for that output policy."
+        },
+        {
+          "gold_id": "v2-test-r01-c08",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names Counters and equality among the comparisons treating missing elements as zero; the gold example follows directly."
+        },
+        {
+          "gold_id": "v2-test-r01-c09",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The method name and tie-order sentence suffice; ranking direction and optional-n behavior add unrelated method details."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0017",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r34-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted pytest.raises sentence accepts subclasses and directly contradicts the exact-class requirement."
+        },
+        {
+          "gold_id": "v2-test-r34-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote includes exception-string matching, re.search and a pytest.raises example identifying the subject; function definitions and most example setup are unnecessary."
+        },
+        {
+          "gold_id": "v2-test-r34-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "No supplied passage specifies NFC normalization or its absence; the U prediction has no citations."
+        },
+        {
+          "gold_id": "v2-test-r34-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The named group_contains quote includes recursion and the conditional depth restriction."
+        },
+        {
+          "gold_id": "v2-test-r34-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly supplies both pre-execution rewriting and resulting introspection."
+        },
+        {
+          "gold_id": "v2-test-r34-c06",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The named registration API and required before-import ordering are both quoted, contradicting retroactivity."
+        },
+        {
+          "gold_id": "v2-test-r34-c07",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "S matches the full context. The selected skip-caching sentence does not include the explicit assurance that introspection remains available, needed for the locked gold scope."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0018",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r17-c02",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Both the absence of item parameters/higher-ranked lifetimes and the definition-time check are quoted."
+        },
+        {
+          "gold_id": "v2-test-r17-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The full permitted scope of ?Sized and its implicit Sized target are quoted."
+        },
+        {
+          "gold_id": "v2-test-r17-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote preserves the ordered lifetime names and the inclusive outlives relation."
+        },
+        {
+          "gold_id": "v2-test-r17-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The named higher-ranked property and all-lifetimes quantifier are both quoted."
+        },
+        {
+          "gold_id": "v2-test-r17-c06",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The two quotes identify the &'a T parameter, required T: 'a inference, and permission to assume it inside the named function."
+        },
+        {
+          "gold_id": "v2-test-r17-c07",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly denies implied trait bounds while allowing implied lifetime bounds."
+        },
+        {
+          "gold_id": "v2-test-r17-c08",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly extends inferred lifetime bounds to definitions and impl blocks."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0019",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r16-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly identifies the derive macro output Foo<T> PartialEq implementation and its T: PartialEq bound."
+        },
+        {
+          "gold_id": "v2-test-r16-c03",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted Foo equality implementation directly compares both a and b."
+        },
+        {
+          "gold_id": "v2-test-r16-c04",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The impl header directly establishes T: Clone; the quoted cloning method body is unnecessary to that bound."
+        },
+        {
+          "gold_id": "v2-test-r16-c05",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted Clone implementation constructs Foo with cloned a and b, preserving both fields and the new result."
+        },
+        {
+          "gold_id": "v2-test-r16-c06",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The generated-impl statement and shown unchanged Foo layout establish the output form. Detailed equality and clone bodies exceed what is needed to show impl generation rather than field changes."
+        },
+        {
+          "gold_id": "v2-test-r16-c07",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quoted repetition rule and invocation of all macros cover the supported proposition."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0020",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r47-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote contains the --form identity, HTTP scope and multipart/form-data content type."
+        },
+        {
+          "gold_id": "v2-test-r47-c05",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The named option and literal treatment of all three strings are quoted. The final preference/recommendation sentence adds material unnecessary to that rule."
+        },
+        {
+          "gold_id": "v2-test-r47-c06",
+          "prediction_index": 7,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The filename= name-field sentence is sufficient; the additional command merely illustrates the same setting."
+        },
+        {
+          "gold_id": "v2-test-r47-c07",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The --form-escape heading and its one behavior sentence cover both fields/files and the backslash-versus-percent distinction."
+        },
+        {
+          "gold_id": "v2-test-r47-c08",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote explicitly supports base64 and 76 characters; descriptions of binary, 8bit and 7bit encoders are unnecessary."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0021",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r30-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context directly supports repeated --log-disable use for named loggers; U is wrong and no citations are supplied."
+        },
+        {
+          "gold_id": "v2-test-r30-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The failed-test captured-content suppression rule is explicit in context; U is wrong and the evidence set is empty."
+        },
+        {
+          "gold_id": "v2-test-r30-c03",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly gives --log-cli-level console thresholds with names or numbers; U is wrong without evidence."
+        },
+        {
+          "gold_id": "v2-test-r30-c04",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly gives console-format fallback when omitted; U is wrong and no quote supports the claim."
+        },
+        {
+          "gold_id": "v2-test-r30-c05",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The cwd rule explicitly includes config-file relative log paths; U is wrong with no evidence."
+        },
+        {
+          "gold_id": "v2-test-r30-c06",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context names separate log-file level/format options; U is wrong and supplies no quotation."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0022",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r42-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The two quotes name --connect-timeout, limit it to connection and include DNS and requested TCP/TLS/QUIC handshakes."
+        },
+        {
+          "gold_id": "v2-test-r42-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The named option quote explicitly permits continuation after timely connection completion."
+        },
+        {
+          "gold_id": "v2-test-r42-c03",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The --max-time heading and reset-per-retry sentence directly contradict the claim. Batch-job, decimal-value and retry-max-time advice are surplus."
+        },
+        {
+          "gold_id": "v2-test-r42-c04",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quotes establish speed-time does not cover slow connects and DNS belongs to connection. The threshold/default and connect-timeout recommendation add unnecessary detail."
+        },
+        {
+          "gold_id": "v2-test-r42-c05",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "Context describes speed thresholds/duration but never anchors the window to a first body byte; U is correct without citations."
+        },
+        {
+          "gold_id": "v2-test-r42-c06",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The named speed-time quote supplies the one-byte-per-second default and the condition that no speed-limit is set."
+        },
+        {
+          "gold_id": "v2-test-r42-c08",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The first quote establishes --limit-rate as the option; the second states speed-limit precedence when both are used."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0023",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r45-c03",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The range examples explicitly give first 500 as 0-499 and last 500 as -500; U is wrong with no evidence."
+        },
+        {
+          "gold_id": "v2-test-r45-c04",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The range context explicitly describes whole-document fallback without the feature; U is wrong without evidence."
+        },
+        {
+          "gold_id": "v2-test-r45-c06",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly restricts FTP/SFTP range syntax to start-stop with optional endpoints; U is wrong without citations."
+        },
+        {
+          "gold_id": "v2-test-r45-c07",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The output passage explicitly gives positional first-filename/first-URL association independent of placement; U is wrong without citations."
+        },
+        {
+          "gold_id": "v2-test-r45-c08",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The remove-on-error context explicitly limits error cleanup to regular files; U is wrong and the evidence set is empty."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0024",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r28-c09",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The full context supports pytest stdout/stderr capture. The selected generic test-execution sentence does not quote pytest as the capturing system."
+        },
+        {
+          "gold_id": "v2-test-r28-c01",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The two quotes establish default fd capture, descriptors one/two and subprocesses, but omit the sentence identifying these capture methods as pytest methods."
+        },
+        {
+          "gold_id": "v2-test-r28-c03",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote names tee-sys and includes capture plus live pass-through. Plugin/junitxml and introduction-version details are unnecessary."
+        },
+        {
+          "gold_id": "v2-test-r28-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "Context supports pytest null stdin/read failure. The quote names stdin but does not identify pytest as the system replacing it."
+        },
+        {
+          "gold_id": "v2-test-r28-c05",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly names capfd and library/subprocess writes to operating-system FD1/FD2."
+        },
+        {
+          "gold_id": "v2-test-r28-c08",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Both fixture names, disabled(), context-manager use and temporary capture suspension are quoted."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0025",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r13-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The scrutinee-constraint passage explicitly requires equal types; U is wrong and citation-free."
+        },
+        {
+          "gold_id": "v2-test-r13-c04",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Pattern variable scope is explicitly stated; U is wrong and no evidence is quoted."
+        },
+        {
+          "gold_id": "v2-test-r13-c05",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The two binding restrictions explicitly require the same names, types and modes; U is wrong without evidence."
+        },
+        {
+          "gold_id": "v2-test-r13-c06",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Context explicitly gives guard execution after a match and continuation including same-arm alternatives; U is wrong with no citations."
+        },
+        {
+          "gold_id": "v2-test-r13-c07",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The | alternatives note explicitly permits repeated guard side effects; U is wrong with no evidence."
+        },
+        {
+          "gold_id": "v2-test-r13-c08",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Shared-reference access and moving/copying only after success are explicit in context; U is wrong and no citations are supplied."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0026",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r42-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The connection option and completion definition explicitly include DNS and requested handshakes; U is wrong without citations."
+        },
+        {
+          "gold_id": "v2-test-r42-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The connect-timeout paragraph explicitly permits continuation after timely connection; U is wrong and evidence is empty."
+        },
+        {
+          "gold_id": "v2-test-r42-c03",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The max-time passage explicitly resets the counter at each retry, contradicting the claim; U is wrong without evidence."
+        },
+        {
+          "gold_id": "v2-test-r42-c07",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The limit-rate passage explicitly gives both directions, multi-second averaging and 1024-based suffixes; U is wrong with no quotes."
+        },
+        {
+          "gold_id": "v2-test-r42-c08",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The limit-rate passage explicitly gives speed-limit precedence; U is wrong with no evidence."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0027",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r44-c04",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The metadata identifies noproxy and the second quote explicitly overrides both no_proxy and NO_PROXY."
+        },
+        {
+          "gold_id": "v2-test-r44-c06",
+          "prediction_index": 8,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The named --preproxy quote directly reverses the claimed order: SOCKS first, then HTTP(S) through SOCKS."
+        },
+        {
+          "gold_id": "v2-test-r44-c07",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The --socks5 heading and behavior sentence directly establish local hostname resolution in this proxy-selection context."
+        },
+        {
+          "gold_id": "v2-test-r44-c08",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "not_applicable",
+          "quote_economy": "not_applicable",
+          "reason": "Context describes credentials encoded within proxy strings, but neither specifies nor denies inheritance from the HTTP proxy when preproxy credentials are absent. Citation-free U is correct."
+        },
+        {
+          "gold_id": "v2-test-r44-c09",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The --proxy-user heading resolves the option argument, and the quoted warning explicitly retains momentary credential visibility despite hiding."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0028",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r44-c06",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "Context clearly contradicts HTTP(S)-before-SOCKS ordering. The selected paragraph gives the reverse chain but omits the --preproxy identity needed to link it to the claimed option."
+        },
+        {
+          "gold_id": "v2-test-r44-c07",
+          "prediction_index": 12,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names --socks5 and directly states local hostname resolution."
+        },
+        {
+          "gold_id": "v2-test-r44-c09",
+          "prediction_index": 15,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The warning supports transient exposure, but the quote leaves the given option argument unidentified; --proxy-user identity is unquoted."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0029",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r17-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The introduction restricts generic types/lifetimes and the satisfaction section requires bounds at use; U is wrong and no citations are supplied."
+        },
+        {
+          "gold_id": "v2-test-r17-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The trivial-bounds paragraph explicitly gives the definition-time condition; U is wrong with no evidence."
+        },
+        {
+          "gold_id": "v2-test-r17-c03",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The ?Sized section explicitly gives this limited relaxation; U is wrong and the citation set is empty."
+        },
+        {
+          "gold_id": "v2-test-r17-c04",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The lifetime section directly defines a: b as a lasting at least as long; U is wrong with no citations."
+        },
+        {
+          "gold_id": "v2-test-r17-c05",
+          "prediction_index": 4,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "Higher-ranked bounds are explicitly defined over all lifetimes; U is wrong with no evidence."
+        },
+        {
+          "gold_id": "v2-test-r17-c06",
+          "prediction_index": 5,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The signature and implied-bounds explanation explicitly establish &'a T -> T: 'a inside the function; U is wrong without citations."
+        },
+        {
+          "gold_id": "v2-test-r17-c07",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The context explicitly says only lifetime bounds are implied and trait bounds remain explicit; U is wrong with no evidence."
+        },
+        {
+          "gold_id": "v2-test-r17-c08",
+          "prediction_index": 7,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The context directly extends inferred lifetime bounds to type definitions and impls; U is wrong without evidence."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0030",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r01-c02",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly establishes the missing Counter item zero count."
+        },
+        {
+          "gold_id": "v2-test-r01-c03",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The first quoted sentence proves zero assignment retains the entry; the following del instruction adds a separate deletion procedure."
+        },
+        {
+          "gold_id": "v2-test-r01-c04",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The full context supports Counter.update accumulation, but the selected method excerpt never identifies Counter as the class; the class-linking sentence is unquoted."
+        },
+        {
+          "gold_id": "v2-test-r01-c08",
+          "prediction_index": 12,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names Counters, includes equality, the missing-as-zero rule and exactly the zero-valued-key example."
+        },
+        {
+          "gold_id": "v2-test-r01-c09",
+          "prediction_index": 14,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote identifies most_common and its tie rule, but also includes unnecessary ranking and optional-n details."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0031",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r28-c04",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "redundant",
+          "reason": "The full context supplies pytest stdin behavior, but the excerpt omits pytest identity. Its explanation about undesired interactive waiting is also unnecessary to null/read-failure behavior."
+        },
+        {
+          "gold_id": "v2-test-r28-c05",
+          "prediction_index": 11,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote names capfd and explicitly covers library direct output-descriptor writes."
+        },
+        {
+          "gold_id": "v2-test-r28-c06",
+          "prediction_index": 13,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly says readouterr snapshots while capturing continues, and restores original streams only after the test, contradicting both parts of the claim."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0032",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r45-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The full context supports --continue-at byte offsets, but the quote omits the option name; only an unidentified resume operation is quoted."
+        },
+        {
+          "gold_id": "v2-test-r45-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote directly names -C - and the given input/output files used for automatic resuming."
+        },
+        {
+          "gold_id": "v2-test-r45-c04",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "The full range context supports S; the excerpt leaves this feature without its identifying antecedent, despite describing a requested range and whole-document response."
+        },
+        {
+          "gold_id": "v2-test-r45-c05",
+          "prediction_index": 6,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The HTTP multiple-range example anchors the starred note, which explicitly says curl returns multipart as-is and the caller parses it."
+        },
+        {
+          "gold_id": "v2-test-r45-c07",
+          "prediction_index": 9,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "compact",
+          "reason": "Context supports --output ordering; the quote only names -o, omitting the --output/-o alias mapping needed to identify the gold option."
+        },
+        {
+          "gold_id": "v2-test-r45-c08",
+          "prediction_index": 10,
+          "label": "correct",
+          "evidence": "insufficient",
+          "quote_economy": "redundant",
+          "reason": "The quote gives the error/regular-file conditions but never names --remove-on-error, leaving this option unresolved. Its partial-file-prevention explanation also repeats the deletion consequence."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0033",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r28-c04",
+          "prediction_index": 2,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The stdin null/read-failure behavior is explicit in context; U is wrong with no citations."
+        },
+        {
+          "gold_id": "v2-test-r28-c05",
+          "prediction_index": 3,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The capfd paragraph explicitly covers direct library descriptor writes; U is wrong with no evidence."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0034",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r25-c01",
+          "prediction_index": 0,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote identifies fixture scopes and explicitly calls function the default."
+        },
+        {
+          "gold_id": "v2-test-r25-c02",
+          "prediction_index": 1,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "redundant",
+          "reason": "The module-setting and shared-instance link are complete; SMTP responsibilities and default-function details are surplus to module sharing."
+        },
+        {
+          "gold_id": "v2-test-r25-c03",
+          "prediction_index": 2,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "Both one cached instance and possible repeated parametrized invocation in the scope are quoted."
+        },
+        {
+          "gold_id": "v2-test-r25-c04",
+          "prediction_index": 3,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The two quotes jointly supply one-time definition-time callable evaluation and possible repeated fixture invocation despite that fixed scope."
+        },
+        {
+          "gold_id": "v2-test-r25-c05",
+          "prediction_index": 4,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The quote explicitly identifies pytest reverse fixture traversal and execution after yield."
+        },
+        {
+          "gold_id": "v2-test-r25-c06",
+          "prediction_index": 5,
+          "label": "correct",
+          "evidence": "sufficient",
+          "quote_economy": "compact",
+          "reason": "The complete before-yield-failure condition and omission of that fixture teardown are quoted."
+        },
+        {
+          "gold_id": "v2-test-r25-c07",
+          "prediction_index": 6,
+          "label": "incorrect",
+          "evidence": "not_applicable",
+          "quote_economy": "compact",
+          "reason": "The quote only guarantees pytest will attempt teardown of previously successful fixtures, not that teardown completes. S overstates that modality; frozen gold U has no applicable positive evidence sufficiency judgment."
+        }
+      ]
+    },
+    {
+      "item_id": "item-0035",
+      "judgments": [
+        {
+          "gold_id": "v2-test-r44-c01",
+          "prediction_index": 0,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The --proxy passage explicitly supplies HTTP and port 1080 defaults; U is wrong without evidence."
+        },
+        {
+          "gold_id": "v2-test-r44-c02",
+          "prediction_index": 1,
+          "label": "incorrect",
+          "evidence": "insufficient",
+          "quote_economy": "not_applicable",
+          "reason": "The --proxy passage explicitly states environment override and empty-string disabling; U is wrong and citation-free."
+        }
+      ]
+    }
+  ]
+}

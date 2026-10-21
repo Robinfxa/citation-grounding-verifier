@@ -1,0 +1,26 @@
+{
+  "locked_at_utc": "2026-10-20T22:45:51.680165+00:00",
+  "reviewer_type": "independent non-author AI; not human",
+  "reviewer_model": "gpt-6.1-sol",
+  "reviewer_reasoning_effort": "max",
+  "case_count": 24,
+  "claim_count": 275,
+  "input_blind_sha256": "c613287c5db7ca5b8fe1a72a03765e2667157ef0576cedbb9e63f1007cc97f49",
+  "input_packet_lock_sha256": "7be36e7f0aced15c25ecaaf900b0a943216681f59d8d2d2b8dfa360a3ea450a9",
+  "expected_sealed_gold_sha256_from_packet_only": "f6fa3f9d51a9e7716eec777b8e5f95db900ae258778a398a35a5eb119d97f863",
+  "author_test_claims_labels_aliases_rationales_seen": false,
+  "test_predictions_seen": false,
+  "prior_exposure": "Completed separate dev blind review before dev gold exposure; only author cohort size 24/199 was known for this test batch.",
+  "files": {
+    "test-first24-blind-annotations.jsonl": "7d4dd35d732dad4b1a37bf8d4c5abb11e69399740315b99e4ea6a5977ab4a8fb",
+    "test-first24-blind-validation.json": "b21711353318bb2ef786f43d4a45508699389211de545e0dfafe2e8e23cb37d2",
+    "test-first24-prelock-revisions.json": "fcb18a0bc8bfdb58ca7403c6211520d3c9b8d0c6a4e30cfebfd06686ce6d878c",
+    "test-first24-session.json": "79d9ca5a605fbd58a433a55ec85575a2304000a69efcff450be215a52a05cd17"
+  },
+  "immutability": "The files in files are the original blind record. Any later author comparison or adjudication is written to separate files and never silently rewrites these records.",
+  "limitations": [
+    "AI-only non-author annotation, not human review.",
+    "No model benchmark or external source/version/license audit.",
+    "Strict conditional-scope and undefined-term ambiguities are explicitly preserved for adjudication."
+  ]
+}

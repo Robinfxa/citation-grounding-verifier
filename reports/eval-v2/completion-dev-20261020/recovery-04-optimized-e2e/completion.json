@@ -1,0 +1,11 @@
+{
+  "cleanup_errors": [],
+  "config_sha256": "9fb49c3717f3b99937e59b4d6e86203ee7d69db725415e648f1a7d831bba7bac",
+  "provider_attempts_charged": 20,
+  "record_count": 10,
+  "records_sha256": "e916a3cbb3c3d17c27f3a8d1a2302369d58d15b7f8935d897060a69133ee5406",
+  "source_changed_during_run": false,
+  "status": "COMPLETE",
+  "stopped_after_attempt_budget_exhausted": false,
+  "stopped_after_quota_exhausted": false
+}

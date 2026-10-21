@@ -1,0 +1,793 @@
+{
+  "annotation_version": "v2-realistic-reviewed-1",
+  "dataset_file": "cases.jsonl",
+  "dataset_sha256": "f63b63f7365511ac0cbec1e1e33b3e71f0d574e918da6eab3a0f9a333b9d5b81",
+  "dataset_version": "v2-realistic-candidate-1",
+  "format_version": 2,
+  "layout": [
+    {
+      "cases": 5,
+      "category": "extrinsic",
+      "split": "test"
+    },
+    {
+      "cases": 2,
+      "category": "subtle_distortion",
+      "split": "test"
+    },
+    {
+      "cases": 8,
+      "category": "supported",
+      "split": "test"
+    },
+    {
+      "cases": 1,
+      "category": "synthesis",
+      "split": "test"
+    }
+  ],
+  "passage_maps": [
+    {
+      "case_id": "v2-test-r01",
+      "end": 12875,
+      "passage_index": 0,
+      "source_id": "python-collections-collections",
+      "start": 9408,
+      "text_sha256": "908d46f14429c63505afc1652d7dffd33c1132f2c006a2ecb07566d042cdbda1"
+    },
+    {
+      "case_id": "v2-test-r01",
+      "end": 15791,
+      "passage_index": 1,
+      "source_id": "python-collections-collections",
+      "start": 12875,
+      "text_sha256": "aabf1937a24696489937bb56398b17aa55dc2cb9b2cac60d43a65a398549e849"
+    },
+    {
+      "case_id": "v2-test-r01",
+      "end": 18879,
+      "passage_index": 2,
+      "source_id": "python-collections-collections",
+      "start": 15791,
+      "text_sha256": "21cbb223e3ffa768610a24df2b161fd0f400a6abd62af9efe1af2c40fde13b83"
+    },
+    {
+      "case_id": "v2-test-r04",
+      "end": 25462,
+      "passage_index": 0,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 21985,
+      "text_sha256": "ded05e71c9fca4b4774af4019187e9d32051e3494d137d5d503613bda4b6440c"
+    },
+    {
+      "case_id": "v2-test-r04",
+      "end": 28740,
+      "passage_index": 1,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 25462,
+      "text_sha256": "97901edeb1400a1845521df24a9ee88e5717017fcd02a4234237a7837e8ef6d4"
+    },
+    {
+      "case_id": "v2-test-r04",
+      "end": 32211,
+      "passage_index": 2,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 28740,
+      "text_sha256": "0bc06f0d8ec9ed345e4f252b53e9034fcfb7697aacb6b986a8bdf1d8c2f59e00"
+    },
+    {
+      "case_id": "v2-test-r04",
+      "end": 32884,
+      "passage_index": 3,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 32211,
+      "text_sha256": "965670743fe2a501bda15a8616fb8272b5d840de05574ec93a8a789b73bd4ba5"
+    },
+    {
+      "case_id": "v2-test-r06",
+      "end": 21238,
+      "passage_index": 0,
+      "source_id": "python-itertools-itertools",
+      "start": 17864,
+      "text_sha256": "d5018e8883336973d06ca14a342f1250016d2d72bbf6a4c79469581ca0f321e8"
+    },
+    {
+      "case_id": "v2-test-r06",
+      "end": 24560,
+      "passage_index": 1,
+      "source_id": "python-itertools-itertools",
+      "start": 21238,
+      "text_sha256": "c343868ff0e9117415fe907a826e6d8e82a5f0c7b57ca2116f4caaa107c63082"
+    },
+    {
+      "case_id": "v2-test-r06",
+      "end": 25810,
+      "passage_index": 2,
+      "source_id": "python-itertools-itertools",
+      "start": 24560,
+      "text_sha256": "d4570e36fea910f9a50d269dab75ea2d292af70b5b64c00af1ab55fd18b5eb8e"
+    },
+    {
+      "case_id": "v2-test-r08",
+      "end": 18856,
+      "passage_index": 0,
+      "source_id": "python-enum-enum",
+      "start": 15375,
+      "text_sha256": "08ae6ddeb65ada71602129d562d6ebcc0e5cb4f2134cbeebe93b440455b94800"
+    },
+    {
+      "case_id": "v2-test-r08",
+      "end": 21573,
+      "passage_index": 1,
+      "source_id": "python-enum-enum",
+      "start": 18856,
+      "text_sha256": "c2e8ae73d925fe758192426fbd7d56cad87c7a853ebb4f5df185c4e12687fcae"
+    },
+    {
+      "case_id": "v2-test-r09",
+      "end": 11129,
+      "passage_index": 0,
+      "source_id": "python-asyncio-task-asyncio-task",
+      "start": 7774,
+      "text_sha256": "a0e4379daca538815c41ab37e3a1fbb323aa6f62c9ed6729a7bf8f8b43cfbb79"
+    },
+    {
+      "case_id": "v2-test-r09",
+      "end": 13066,
+      "passage_index": 1,
+      "source_id": "python-asyncio-task-asyncio-task",
+      "start": 11129,
+      "text_sha256": "72f57fb5041e08d4fd9128e2e3a6e68eb750d60651807265db3f21c5803c461e"
+    },
+    {
+      "case_id": "v2-test-r12",
+      "end": 2998,
+      "passage_index": 0,
+      "source_id": "python-concurrent.futures-concurrent.futures",
+      "start": 0,
+      "text_sha256": "8ca345fe9909fad989723f6f3f2c02ff7154e05485188fbe1706ad323c6a28ff"
+    },
+    {
+      "case_id": "v2-test-r12",
+      "end": 6248,
+      "passage_index": 1,
+      "source_id": "python-concurrent.futures-concurrent.futures",
+      "start": 2998,
+      "text_sha256": "a5b2f8a25b70d2206e6c223e3ae39b4cfdd0b22b5c6c93bd289e2cd780709d25"
+    },
+    {
+      "case_id": "v2-test-r12",
+      "end": 9061,
+      "passage_index": 2,
+      "source_id": "python-concurrent.futures-concurrent.futures",
+      "start": 6248,
+      "text_sha256": "623708d6f7e40cc1148326fd384b35e4a4086bde49e59ab9f1dd9366ac300bbf"
+    },
+    {
+      "case_id": "v2-test-r16",
+      "end": 3378,
+      "passage_index": 0,
+      "source_id": "rust-attributes-derive-derive",
+      "start": 0,
+      "text_sha256": "59a8a32cc328755150d6e7d319596981f454a3f37ef8e815fb21151eba5701c8"
+    },
+    {
+      "case_id": "v2-test-r16",
+      "end": 3905,
+      "passage_index": 1,
+      "source_id": "rust-attributes-derive-derive",
+      "start": 3378,
+      "text_sha256": "acebfe6ec58707de536179bb15263da9b545ed42b12eeaf7cfebe3e247830a8d"
+    },
+    {
+      "case_id": "v2-test-r23",
+      "end": 3338,
+      "passage_index": 0,
+      "source_id": "rust-unsafe-keyword-unsafe-keyword",
+      "start": 0,
+      "text_sha256": "a46da871cf5131110a87c40d1acfee12cee244c4e5a1c0f1582e75b3cb2dcf2e"
+    },
+    {
+      "case_id": "v2-test-r23",
+      "end": 5988,
+      "passage_index": 1,
+      "source_id": "rust-unsafe-keyword-unsafe-keyword",
+      "start": 3338,
+      "text_sha256": "0f450596f2a9b492cb0e195cab63477713d655576b70f98c1df122293dca533f"
+    },
+    {
+      "case_id": "v2-test-r25",
+      "end": 12557,
+      "passage_index": 0,
+      "source_id": "pytest-fixtures-fixtures",
+      "start": 9237,
+      "text_sha256": "52bcf1462f7ae386fea81c8d26c902877364b27fa2f7146390a124a0872bd5fe"
+    },
+    {
+      "case_id": "v2-test-r25",
+      "end": 15999,
+      "passage_index": 1,
+      "source_id": "pytest-fixtures-fixtures",
+      "start": 12557,
+      "text_sha256": "073b8aa9531f329d9c306b380c9f1bc4af3810a0f068fb436ace1e5e8b893b54"
+    },
+    {
+      "case_id": "v2-test-r25",
+      "end": 19360,
+      "passage_index": 2,
+      "source_id": "pytest-fixtures-fixtures",
+      "start": 15999,
+      "text_sha256": "1c4cf15cc4ec420cbce2e6d2d70722d095c66d731e6efb79e434529781c0ece9"
+    },
+    {
+      "case_id": "v2-test-r25",
+      "end": 22776,
+      "passage_index": 3,
+      "source_id": "pytest-fixtures-fixtures",
+      "start": 19360,
+      "text_sha256": "2d33c899ee05ed96d10ac53f29d1c84e7f6da22740457f7a6ec7941a7961ea73"
+    },
+    {
+      "case_id": "v2-test-r25",
+      "end": 25196,
+      "passage_index": 4,
+      "source_id": "pytest-fixtures-fixtures",
+      "start": 22776,
+      "text_sha256": "f38ebc9f6d3f4ed3724d34ed7324ae9b6a74b519316aa7f1fa1bd1402e1e572e"
+    },
+    {
+      "case_id": "v2-test-r28",
+      "end": 3308,
+      "passage_index": 0,
+      "source_id": "pytest-capture-stdout-stderr-capture-stdout-stderr",
+      "start": 0,
+      "text_sha256": "74e454e4f9ec4f82d7d65472c1df3f262e771841816a40490d2c65e6d028e1da"
+    },
+    {
+      "case_id": "v2-test-r28",
+      "end": 5941,
+      "passage_index": 1,
+      "source_id": "pytest-capture-stdout-stderr-capture-stdout-stderr",
+      "start": 3308,
+      "text_sha256": "8f048e3d1b81e28384e8752264e0512612067824b424a05a097f7bf1978b8f02"
+    },
+    {
+      "case_id": "v2-test-r30",
+      "end": 3438,
+      "passage_index": 0,
+      "source_id": "pytest-logging-logging",
+      "start": 0,
+      "text_sha256": "8547c249359fd27ca001af7f04b290c03e4f0e3f66329f199c51300a49789abc"
+    },
+    {
+      "case_id": "v2-test-r30",
+      "end": 6522,
+      "passage_index": 1,
+      "source_id": "pytest-logging-logging",
+      "start": 3438,
+      "text_sha256": "0f84e7993de02e474794872ea21b3dcf9d4ced4c197a8eaf45ad01515f1ec0b8"
+    },
+    {
+      "case_id": "v2-test-r30",
+      "end": 9392,
+      "passage_index": 2,
+      "source_id": "pytest-logging-logging",
+      "start": 6522,
+      "text_sha256": "c3c56d04948aa8d0206220d5f28d6c94e15e254f9df77cc814f4ea29f790c080"
+    },
+    {
+      "case_id": "v2-test-r30",
+      "end": 10461,
+      "passage_index": 3,
+      "source_id": "pytest-logging-logging",
+      "start": 9392,
+      "text_sha256": "cdd0c0071df020732906ff7c1ad81017f71d5b227f1ee064d1a78a02ca4e6838"
+    },
+    {
+      "case_id": "v2-test-r32",
+      "end": 3453,
+      "passage_index": 0,
+      "source_id": "pytest-capture-warnings-capture-warnings",
+      "start": 0,
+      "text_sha256": "3163db18d5f0598a7bb0bc0b9f86073f79960f598e399d0b8e0bbd1864902a79"
+    },
+    {
+      "case_id": "v2-test-r32",
+      "end": 6870,
+      "passage_index": 1,
+      "source_id": "pytest-capture-warnings-capture-warnings",
+      "start": 3453,
+      "text_sha256": "cf85ce9d71d8498979a10e836fd8fd52d9783138d92097872f0a4ffcdc42a0bd"
+    },
+    {
+      "case_id": "v2-test-r32",
+      "end": 10345,
+      "passage_index": 2,
+      "source_id": "pytest-capture-warnings-capture-warnings",
+      "start": 6870,
+      "text_sha256": "45909a7aab795507eab04b18ddc0f89ca79bacf77e7a2cd4acd1db22bcbb0fda"
+    },
+    {
+      "case_id": "v2-test-r32",
+      "end": 13708,
+      "passage_index": 3,
+      "source_id": "pytest-capture-warnings-capture-warnings",
+      "start": 10345,
+      "text_sha256": "00816937810c02f8df078b2291255c9645bb811f3d12b90390dcbc9d97a0d093"
+    },
+    {
+      "case_id": "v2-test-r32",
+      "end": 15798,
+      "passage_index": 4,
+      "source_id": "pytest-capture-warnings-capture-warnings",
+      "start": 13708,
+      "text_sha256": "aad03d002fd9c6d9941cd4715852cfcadb87e6d9d924fd6057528fcef29fcfc1"
+    },
+    {
+      "case_id": "v2-test-r39",
+      "end": 776,
+      "passage_index": 0,
+      "source_id": "curl-tls-ca-native",
+      "start": 0,
+      "text_sha256": "63bbc7d75073f2a6348a7d6e9888cecd420711bd01b5342307c87d9590018f46"
+    },
+    {
+      "case_id": "v2-test-r39",
+      "end": 1627,
+      "passage_index": 1,
+      "source_id": "curl-tls-cacert",
+      "start": 0,
+      "text_sha256": "a1688f98ce18430df010fe6ee17c97bed67863ddf0d9772d6c9698096495995b"
+    },
+    {
+      "case_id": "v2-test-r39",
+      "end": 871,
+      "passage_index": 2,
+      "source_id": "curl-tls-capath",
+      "start": 0,
+      "text_sha256": "ade27bf2a177beefbdd42777955c2856e01fa468caec826af13d5fb957f3f538"
+    },
+    {
+      "case_id": "v2-test-r39",
+      "end": 710,
+      "passage_index": 3,
+      "source_id": "curl-tls-cert-status",
+      "start": 0,
+      "text_sha256": "a56b9520bb670682eec4024b8800478b258f56222a8ae1dc320f83024ff6772c"
+    },
+    {
+      "case_id": "v2-test-r39",
+      "end": 1413,
+      "passage_index": 4,
+      "source_id": "curl-tls-insecure",
+      "start": 0,
+      "text_sha256": "f14af147d90f774c0d6ff6dff90bdb6dca1289c70c0960f782518bd1ce546a77"
+    },
+    {
+      "case_id": "v2-test-r42",
+      "end": 842,
+      "passage_index": 0,
+      "source_id": "curl-timeouts-connect-timeout",
+      "start": 0,
+      "text_sha256": "f0dc4d7cbb253bf57aee6f980b4e3ffa11b7f606acd1e07e9187ddb6732ee05d"
+    },
+    {
+      "case_id": "v2-test-r42",
+      "end": 1208,
+      "passage_index": 1,
+      "source_id": "curl-timeouts-limit-rate",
+      "start": 0,
+      "text_sha256": "c5b293b7df99fc72a7e7300327282b7304784e1fd5c4dfe2f3f292c63d4a18dd"
+    },
+    {
+      "case_id": "v2-test-r42",
+      "end": 884,
+      "passage_index": 2,
+      "source_id": "curl-timeouts-max-time",
+      "start": 0,
+      "text_sha256": "36ffc3a4f0b6615359c480f9bc1bb5e5f22d5a59cfbcd6439e0a363d4b8b948b"
+    },
+    {
+      "case_id": "v2-test-r42",
+      "end": 531,
+      "passage_index": 3,
+      "source_id": "curl-timeouts-speed-limit",
+      "start": 0,
+      "text_sha256": "b9dc88c518ea58982744f2e7ca98979a0540562c042d0dfd493cb500886ddfb2"
+    },
+    {
+      "case_id": "v2-test-r42",
+      "end": 706,
+      "passage_index": 4,
+      "source_id": "curl-timeouts-speed-time",
+      "start": 0,
+      "text_sha256": "3531213576b51de358fa6fe25374b5b0cac0fb2f875c69e5edb002c810bcbd13"
+    },
+    {
+      "case_id": "v2-test-r45",
+      "end": 726,
+      "passage_index": 0,
+      "source_id": "curl-ranges-continue-at",
+      "start": 0,
+      "text_sha256": "893330b33c5055c60ff51b9b0bbce5176c9c2c4bf23a6f66384e6361613fabeb"
+    },
+    {
+      "case_id": "v2-test-r45",
+      "end": 1810,
+      "passage_index": 1,
+      "source_id": "curl-ranges-output",
+      "start": 0,
+      "text_sha256": "9ebb57bc2d399e134d9454700f46cc0abcc5e4502893ce0d4b810783d102f6c4"
+    },
+    {
+      "case_id": "v2-test-r45",
+      "end": 1529,
+      "passage_index": 2,
+      "source_id": "curl-ranges-range",
+      "start": 0,
+      "text_sha256": "1efa707c781d99443b717707d0c30a40035c204f3caa1279f0d5a3b7b6d6a7f2"
+    },
+    {
+      "case_id": "v2-test-r45",
+      "end": 548,
+      "passage_index": 3,
+      "source_id": "curl-ranges-remove-on-error",
+      "start": 0,
+      "text_sha256": "c55f4d1628d6af7788ddcc863441654a93a006a451afde998bff80ebd3f93765"
+    },
+    {
+      "case_id": "v2-test-r47",
+      "end": 453,
+      "passage_index": 0,
+      "source_id": "curl-multipart-form-escape",
+      "start": 0,
+      "text_sha256": "59c5d847dd468b6554beb16c4b6aabb5691099b500766373d943287f12906234"
+    },
+    {
+      "case_id": "v2-test-r47",
+      "end": 663,
+      "passage_index": 1,
+      "source_id": "curl-multipart-form-string",
+      "start": 0,
+      "text_sha256": "621839c2fa14fff9b62849f9444f225f58e68941b13b6952a00083cc767d9cf2"
+    },
+    {
+      "case_id": "v2-test-r47",
+      "end": 3314,
+      "passage_index": 2,
+      "source_id": "curl-multipart-form",
+      "start": 0,
+      "text_sha256": "65187083ea4115aeb570c9f6d963450e6b152f63420e7a78a9c0124084b5a9db"
+    },
+    {
+      "case_id": "v2-test-r47",
+      "end": 5199,
+      "passage_index": 3,
+      "source_id": "curl-multipart-form",
+      "start": 3314,
+      "text_sha256": "72d320889a20b44ccb34b883aeadf420ec9f02e319855b170be0beab8da21674"
+    }
+  ],
+  "schema_version": "2",
+  "sources": [
+    {
+      "family_id": "v2-real-python-collections",
+      "id": "python-collections-collections",
+      "license": "Python-2.0",
+      "license_path": "dataset/v2/realistic-draft/licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/python-collections/collections.rst",
+      "raw_sha256": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/collections.rst"
+    },
+    {
+      "family_id": "v2-real-python-dataclasses",
+      "id": "python-dataclasses-dataclasses",
+      "license": "Python-2.0",
+      "license_path": "dataset/v2/realistic-draft/licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+      "raw_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst"
+    },
+    {
+      "family_id": "v2-real-python-itertools",
+      "id": "python-itertools-itertools",
+      "license": "Python-2.0",
+      "license_path": "dataset/v2/realistic-draft/licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/python-itertools/itertools.rst",
+      "raw_sha256": "4daebb6755c23ae2a6791f508028836f2b5c2589287cc954c17dc498a9dc2eeb",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/itertools.rst"
+    },
+    {
+      "family_id": "v2-real-python-enum",
+      "id": "python-enum-enum",
+      "license": "Python-2.0",
+      "license_path": "dataset/v2/realistic-draft/licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/python-enum/enum.rst",
+      "raw_sha256": "ecd67b943a2728c589fab5934159a7da63be57fdb68d17df3fef1b59a6339945",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/enum.rst"
+    },
+    {
+      "family_id": "v2-real-python-asyncio-task",
+      "id": "python-asyncio-task-asyncio-task",
+      "license": "Python-2.0",
+      "license_path": "dataset/v2/realistic-draft/licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/python-asyncio-task/asyncio-task.rst",
+      "raw_sha256": "f3cbb9d7f174f152127bb4eaea37784484f4a8c2db866d21aaf31edfce7ec7a1",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/asyncio-task.rst"
+    },
+    {
+      "family_id": "v2-real-python-concurrent.futures",
+      "id": "python-concurrent.futures-concurrent.futures",
+      "license": "Python-2.0",
+      "license_path": "dataset/v2/realistic-draft/licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/python-concurrent.futures/concurrent.futures.rst",
+      "raw_sha256": "b7badfc7248121ef632865bcecec4ce344fdd79818adeb94a65f5859376512f8",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/concurrent.futures.rst"
+    },
+    {
+      "family_id": "v2-real-rust-attributes-derive",
+      "id": "rust-attributes-derive-derive",
+      "license": "MIT",
+      "license_path": "dataset/v2/realistic-draft/licenses/reference/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/rust-attributes-derive/derive.md",
+      "raw_sha256": "1948fc4eb6cda6d58dcad87db2480b1954f545cf843263d16d5a11f6b9773990",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/attributes/derive.md"
+    },
+    {
+      "family_id": "v2-real-rust-unsafe-keyword",
+      "id": "rust-unsafe-keyword-unsafe-keyword",
+      "license": "MIT",
+      "license_path": "dataset/v2/realistic-draft/licenses/reference/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/rust-unsafe-keyword/unsafe-keyword.md",
+      "raw_sha256": "376c811498b91d3ff8403df1742c3d97963309bc1028cf23922ddde0dfe56502",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/unsafe-keyword.md"
+    },
+    {
+      "family_id": "v2-real-pytest-fixtures",
+      "id": "pytest-fixtures-fixtures",
+      "license": "MIT",
+      "license_path": "dataset/v2/realistic-draft/licenses/pytest/LICENSE",
+      "license_sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+      "raw_sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304",
+      "revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/fixtures.rst"
+    },
+    {
+      "family_id": "v2-real-pytest-capture-stdout-stderr",
+      "id": "pytest-capture-stdout-stderr-capture-stdout-stderr",
+      "license": "MIT",
+      "license_path": "dataset/v2/realistic-draft/licenses/pytest/LICENSE",
+      "license_sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/pytest-capture-stdout-stderr/capture-stdout-stderr.rst",
+      "raw_sha256": "8b332b3d0277f3753ded5f754a159e6adf4a014ea6d3db4b80ca144c46e65a26",
+      "revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/capture-stdout-stderr.rst"
+    },
+    {
+      "family_id": "v2-real-pytest-logging",
+      "id": "pytest-logging-logging",
+      "license": "MIT",
+      "license_path": "dataset/v2/realistic-draft/licenses/pytest/LICENSE",
+      "license_sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/pytest-logging/logging.rst",
+      "raw_sha256": "f6d13578fd06f3e34ae6e38858e81b313c94aee1f21e678c884491d7c6565647",
+      "revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/logging.rst"
+    },
+    {
+      "family_id": "v2-real-pytest-capture-warnings",
+      "id": "pytest-capture-warnings-capture-warnings",
+      "license": "MIT",
+      "license_path": "dataset/v2/realistic-draft/licenses/pytest/LICENSE",
+      "license_sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst",
+      "raw_sha256": "177068a737b89f624962d35a55420d2585509fa0249af7a9f9f840b700d2497e",
+      "revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/capture-warnings.rst"
+    },
+    {
+      "family_id": "v2-real-curl-tls",
+      "id": "curl-tls-ca-native",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-tls/ca-native.md",
+      "raw_sha256": "63bbc7d75073f2a6348a7d6e9888cecd420711bd01b5342307c87d9590018f46",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/ca-native.md"
+    },
+    {
+      "family_id": "v2-real-curl-tls",
+      "id": "curl-tls-cacert",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-tls/cacert.md",
+      "raw_sha256": "a1688f98ce18430df010fe6ee17c97bed67863ddf0d9772d6c9698096495995b",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/cacert.md"
+    },
+    {
+      "family_id": "v2-real-curl-tls",
+      "id": "curl-tls-capath",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-tls/capath.md",
+      "raw_sha256": "ade27bf2a177beefbdd42777955c2856e01fa468caec826af13d5fb957f3f538",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/capath.md"
+    },
+    {
+      "family_id": "v2-real-curl-tls",
+      "id": "curl-tls-cert-status",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-tls/cert-status.md",
+      "raw_sha256": "a56b9520bb670682eec4024b8800478b258f56222a8ae1dc320f83024ff6772c",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/cert-status.md"
+    },
+    {
+      "family_id": "v2-real-curl-tls",
+      "id": "curl-tls-insecure",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-tls/insecure.md",
+      "raw_sha256": "f14af147d90f774c0d6ff6dff90bdb6dca1289c70c0960f782518bd1ce546a77",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/insecure.md"
+    },
+    {
+      "family_id": "v2-real-curl-timeouts",
+      "id": "curl-timeouts-connect-timeout",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/connect-timeout.md",
+      "raw_sha256": "f0dc4d7cbb253bf57aee6f980b4e3ffa11b7f606acd1e07e9187ddb6732ee05d",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/connect-timeout.md"
+    },
+    {
+      "family_id": "v2-real-curl-timeouts",
+      "id": "curl-timeouts-limit-rate",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/limit-rate.md",
+      "raw_sha256": "c5b293b7df99fc72a7e7300327282b7304784e1fd5c4dfe2f3f292c63d4a18dd",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/limit-rate.md"
+    },
+    {
+      "family_id": "v2-real-curl-timeouts",
+      "id": "curl-timeouts-max-time",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/max-time.md",
+      "raw_sha256": "36ffc3a4f0b6615359c480f9bc1bb5e5f22d5a59cfbcd6439e0a363d4b8b948b",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/max-time.md"
+    },
+    {
+      "family_id": "v2-real-curl-timeouts",
+      "id": "curl-timeouts-speed-limit",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/speed-limit.md",
+      "raw_sha256": "b9dc88c518ea58982744f2e7ca98979a0540562c042d0dfd493cb500886ddfb2",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/speed-limit.md"
+    },
+    {
+      "family_id": "v2-real-curl-timeouts",
+      "id": "curl-timeouts-speed-time",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/speed-time.md",
+      "raw_sha256": "3531213576b51de358fa6fe25374b5b0cac0fb2f875c69e5edb002c810bcbd13",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/speed-time.md"
+    },
+    {
+      "family_id": "v2-real-curl-ranges",
+      "id": "curl-ranges-continue-at",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-ranges/continue-at.md",
+      "raw_sha256": "893330b33c5055c60ff51b9b0bbce5176c9c2c4bf23a6f66384e6361613fabeb",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/continue-at.md"
+    },
+    {
+      "family_id": "v2-real-curl-ranges",
+      "id": "curl-ranges-output",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-ranges/output.md",
+      "raw_sha256": "9ebb57bc2d399e134d9454700f46cc0abcc5e4502893ce0d4b810783d102f6c4",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/output.md"
+    },
+    {
+      "family_id": "v2-real-curl-ranges",
+      "id": "curl-ranges-range",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-ranges/range.md",
+      "raw_sha256": "1efa707c781d99443b717707d0c30a40035c204f3caa1279f0d5a3b7b6d6a7f2",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/range.md"
+    },
+    {
+      "family_id": "v2-real-curl-ranges",
+      "id": "curl-ranges-remove-on-error",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-ranges/remove-on-error.md",
+      "raw_sha256": "c55f4d1628d6af7788ddcc863441654a93a006a451afde998bff80ebd3f93765",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/remove-on-error.md"
+    },
+    {
+      "family_id": "v2-real-curl-multipart",
+      "id": "curl-multipart-form-escape",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-multipart/form-escape.md",
+      "raw_sha256": "59c5d847dd468b6554beb16c4b6aabb5691099b500766373d943287f12906234",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/form-escape.md"
+    },
+    {
+      "family_id": "v2-real-curl-multipart",
+      "id": "curl-multipart-form-string",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-multipart/form-string.md",
+      "raw_sha256": "621839c2fa14fff9b62849f9444f225f58e68941b13b6952a00083cc767d9cf2",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/form-string.md"
+    },
+    {
+      "family_id": "v2-real-curl-multipart",
+      "id": "curl-multipart-form",
+      "license": "curl",
+      "license_path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "dataset/v2/realistic-draft/sources/test/curl-multipart/form.md",
+      "raw_sha256": "1c57890e69bdacbdbf285f5d0339a0eb648ccd3ec345b112a8d75c630f42feb6",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/form.md"
+    }
+  ]
+}

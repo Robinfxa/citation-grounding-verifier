@@ -1,0 +1,1234 @@
+{
+  "format_version": 1,
+  "dataset_file": "main-candidate.jsonl",
+  "dataset_sha256": "d2c809677180d5400dcb23a0d7d322198b2cea057e42427410e5a77fd779aee5",
+  "annotation_version": "v2-realistic-candidate-1",
+  "status": "annotation_accepted_candidate_ready_for_parent_freeze",
+  "components": [
+    {
+      "name": "legacy_pilot",
+      "dataset_path": "datasets/v2/pilot.jsonl",
+      "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "manifest_path": "datasets/v2/pilot.manifest.json",
+      "manifest_sha256": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+      "original_annotation_version": "v2-pilot-reviewed-1",
+      "cases": 12
+    },
+    {
+      "name": "new_dev",
+      "dataset_path": "datasets/v2/realistic-draft/dev-revised-2.jsonl",
+      "dataset_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "manifest_path": "datasets/v2/realistic-draft/dev-revised-2.manifest.json",
+      "manifest_sha256": "b560cc522d3b0ec65d71f67034e4762d392f580d0a820d5e5e34cffe30cef701",
+      "original_annotation_version": "v2-realistic-author-draft-1",
+      "cases": 12
+    },
+    {
+      "name": "test_first24",
+      "dataset_path": "datasets/v2/realistic-draft/test-first24-revised-2.jsonl",
+      "dataset_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "manifest_path": "datasets/v2/realistic-draft/test-first24-revised-2.manifest.json",
+      "manifest_sha256": "84617f051d01a4b73aff5ead21b91a8d7a13f7fe62afc80bf5116be4ec823a4b",
+      "original_annotation_version": "v2-realistic-author-draft-1",
+      "cases": 24
+    },
+    {
+      "name": "test_second24",
+      "dataset_path": "datasets/v2/realistic-draft/test-second24-revised-1.jsonl",
+      "dataset_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "manifest_path": "datasets/v2/realistic-draft/test-second24-revised-1.manifest.json",
+      "manifest_sha256": "6588ed9dabda34952548ab13e2448d59fe2b0ac245097b92f2566cb1dd384e6b",
+      "original_annotation_version": "v2-realistic-author-draft-1",
+      "cases": 24
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "split": "dev",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "cpython-tarfile"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "5aed44bbc21785b6efd98c301d578b2e38614ddcdfd6b9a84e96c49d27c1abd5"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "cpython-sqlite3"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "20fb6cf4155598bf06f4aa836ae9a66a193f636b01ec009b84982c2e6f86459b"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "split": "dev",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "cpython-pathlib"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "f9524ba5f37d431b6f4bb229aa2718a3a3b7c846a8bbfda049869ea6d7df793d"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "cpython-decimal"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "93d8265e6c19e55594c0b4bff2e79346583699eaa8d964c65eef977a4fac2ded"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "cpython-queue"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "bae2683459210125b472215fbdfbc51ae2374f1b8bbf668c8c601e3031c3af32"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "split": "dev",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "cpython-metadata"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "eac8626fa03146ee61cfd225433876548054e4ec4c02461f1365c056ee49ab24"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-visibility"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "254b2850be38d0ed3afc704a282e730d0db4b6822aa06a1aca0fa4a34e853c65"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "split": "dev",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "rust-destructors"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "012713beeeab2be70122bb4033105bdc13ca4340d8467e41f82bca7980147e28"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "split": "dev",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "rust-testing"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "566ca99de111fc150e27f42203a67c6353c3778c74f9c99b42f39d3ba9c4ff62"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "postgres-isolation"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "be3631357b3eb0c6d177a393009f1d006dfd736e134b379f36ff084aac548c31"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "postgres-backup"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "8f02dc5d6a8bc1171264e0b08a4e2f5607b28d5e6b259da8512864fe4fd98e9c"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "split": "dev",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "postgres-privileges"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "e7dbcf9738b4e9319b3c8f5b26768a49faa8eab12520ff202c59d940d8d1aab0"
+    },
+    {
+      "case_id": "v2-dev-r01",
+      "family_id": "v2-real-python-bisect",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-bisect-bisect"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "27d390d025b79558d6470aa6b153503d0c8034660cb2a4637228699e82fb2b42"
+    },
+    {
+      "case_id": "v2-dev-r02",
+      "family_id": "v2-real-python-copy",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-copy-copy"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "ecc018789e0848bda910a8db331b6655a15e9f58a65ab0bb8732fb5fbb89c6cb"
+    },
+    {
+      "case_id": "v2-dev-r03",
+      "family_id": "v2-real-python-graphlib",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-graphlib-graphlib"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "dd6676e77af8a199a81f0ff22b998b01fb8eae718fc7733541341494e84d9431"
+    },
+    {
+      "case_id": "v2-dev-r04",
+      "family_id": "v2-real-python-functools",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-functools-functools"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "cbd21fc47f2cb839cb4ffe32c17233e2b362271335e5d1904bd6eb7592bed4c1"
+    },
+    {
+      "case_id": "v2-dev-r05",
+      "family_id": "v2-real-python-weakref",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-weakref-weakref"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "ebd46294d24a5fc3dbd51ea394943fdc807c9adaf5b000f0683babfc9f587297"
+    },
+    {
+      "case_id": "v2-dev-r06",
+      "family_id": "v2-real-python-heapq",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-heapq-heapq"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "a08aee99bd9fd51232174680eefd52ac3d661cdab7dc1018e2ecbee849183e19"
+    },
+    {
+      "case_id": "v2-dev-r07",
+      "family_id": "v2-real-pytest-parametrize",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-parametrize-parametrize"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "f9120e58f755ffb13fc9a4fdff391ee1b2f7624fa5762579738d0734f3108000"
+    },
+    {
+      "case_id": "v2-dev-r08",
+      "family_id": "v2-real-pytest-monkeypatch",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-monkeypatch-monkeypatch"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "64a81454172d65b4c91cfd5dc19afc8d8ca7e8b25fdb98da91b4b32a6c72882c"
+    },
+    {
+      "case_id": "v2-dev-r09",
+      "family_id": "v2-real-pytest-tmp_path",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-tmp_path-tmp_path"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "b35021813d8e1aff6351f2b6a9640e4cf28bcebde1162f857e469b4d855b561a"
+    },
+    {
+      "case_id": "v2-dev-r10",
+      "family_id": "v2-real-curl-retry",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-retry-fail-with-body",
+        "curl-retry-fail",
+        "curl-retry-retry-all-errors",
+        "curl-retry-retry-connrefused",
+        "curl-retry-retry-delay",
+        "curl-retry-retry-max-time",
+        "curl-retry-retry"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "34071d20e28fa2408734f2d9635dc07d5357a926e4801b519cdd2f8febcd1b58"
+    },
+    {
+      "case_id": "v2-dev-r11",
+      "family_id": "v2-real-curl-redirect",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-redirect-location-trusted",
+        "curl-redirect-location",
+        "curl-redirect-max-redirs",
+        "curl-redirect-post301",
+        "curl-redirect-post302",
+        "curl-redirect-post303",
+        "curl-redirect-proto-redir"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "fb8f62b601137a434129cacd6ec85d549603770e32fafefba8862507a419ef6c"
+    },
+    {
+      "case_id": "v2-dev-r12",
+      "family_id": "v2-real-curl-upload",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-upload-data-binary",
+        "curl-upload-get",
+        "curl-upload-header",
+        "curl-upload-request",
+        "curl-upload-upload-file"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "764d0d2d8bdad659cfb1a9c054b336d9e051b05d76f8ee498c19e90d9aabef25"
+    },
+    {
+      "case_id": "v2-test-r01",
+      "family_id": "v2-real-python-collections",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-collections-collections"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "9af8bb4855de8942f2c1f7e8018a404e9c91c9558219097a08de594af2e37c65"
+    },
+    {
+      "case_id": "v2-test-r02",
+      "family_id": "v2-real-python-collections",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-collections-collections"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "b0373cedc92df34bd82e5f83c6c3dbd4962db6af0a6ccdbce1ece48dcae10f19"
+    },
+    {
+      "case_id": "v2-test-r03",
+      "family_id": "v2-real-python-dataclasses",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-dataclasses-dataclasses"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "2499ac961d30697905f1b10ef38fce7f8bd4d13c0b0e2ed40bd6984ac3dbb5a4"
+    },
+    {
+      "case_id": "v2-test-r04",
+      "family_id": "v2-real-python-dataclasses",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "python-dataclasses-dataclasses"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "5dee6b8456ee590e3f49f0071076c683ac223878fe130fba847c0dfecc6e9f07"
+    },
+    {
+      "case_id": "v2-test-r05",
+      "family_id": "v2-real-python-itertools",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-itertools-itertools"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "9e4de3189ba4cf5f7921d39a03cb5901ede8901007c45ef880f7e5abe74a2e29"
+    },
+    {
+      "case_id": "v2-test-r06",
+      "family_id": "v2-real-python-itertools",
+      "split": "test",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "python-itertools-itertools"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "fc583110be8ef607af81f11c8b1235144af4fadb14278b9508f5257a21e424f2"
+    },
+    {
+      "case_id": "v2-test-r07",
+      "family_id": "v2-real-python-enum",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-enum-enum"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "85aa34d95364a350db73c796346b71f9d074608d99e888b2e6e9a9193feda47d"
+    },
+    {
+      "case_id": "v2-test-r08",
+      "family_id": "v2-real-python-enum",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-enum-enum"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "1ca39180e11c3dc2d20e267e875c5ecafad18d5da9e8c8e0b262360e19946633"
+    },
+    {
+      "case_id": "v2-test-r09",
+      "family_id": "v2-real-python-asyncio-task",
+      "split": "test",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-asyncio-task-asyncio-task"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "55263c0d042b68e9261687e000ce83ec45b2b9ed2fc7c1f8af2107ba270d7be7"
+    },
+    {
+      "case_id": "v2-test-r10",
+      "family_id": "v2-real-python-asyncio-task",
+      "split": "test",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "python-asyncio-task-asyncio-task"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "86e75e6c9a4ee83454944f0e53a4f99d95af8a8eed06d6c91018c60fb713294f"
+    },
+    {
+      "case_id": "v2-test-r11",
+      "family_id": "v2-real-python-concurrent.futures",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-concurrent.futures-concurrent.futures"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "182b1a10c800f8fbf31d916b7fac1aa2711d833b2544f6ad967e8ce462f9dc80"
+    },
+    {
+      "case_id": "v2-test-r12",
+      "family_id": "v2-real-python-concurrent.futures",
+      "split": "test",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "python-concurrent.futures-concurrent.futures"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "cb671212b18f2d442d322aa9d1f5891e8c7da6c4401bc30b03a76a2d11121f45"
+    },
+    {
+      "case_id": "v2-test-r13",
+      "family_id": "v2-real-rust-expressions-match-expr",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-expressions-match-expr-match-expr"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "51ceaa5c97ba15005399142fd34f44bc501fa35490a6d1ebdfe383243e7baaad"
+    },
+    {
+      "case_id": "v2-test-r14",
+      "family_id": "v2-real-rust-expressions-match-expr",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "rust-expressions-match-expr-match-expr"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "19527e1b1e90bc5d6f6d64e2ea317b4889e15082c817264876edf98f7079d929"
+    },
+    {
+      "case_id": "v2-test-r15",
+      "family_id": "v2-real-rust-attributes-derive",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-attributes-derive-derive"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "702c669aa5ade5219e6ba52c98163591bbc0b146c47ca8346ce6e497d08b5245"
+    },
+    {
+      "case_id": "v2-test-r16",
+      "family_id": "v2-real-rust-attributes-derive",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-attributes-derive-derive"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "cd5f1fdd97aa61267a48f1774150dca0b171997cd708ceddd3624c3ce20f446d"
+    },
+    {
+      "case_id": "v2-test-r17",
+      "family_id": "v2-real-rust-trait-bounds",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-trait-bounds-trait-bounds"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "37dabbd3987b65106940a742fc8b8bebef7e0e35981cc07a4991daaaa09291fd"
+    },
+    {
+      "case_id": "v2-test-r18",
+      "family_id": "v2-real-rust-trait-bounds",
+      "split": "test",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "rust-trait-bounds-trait-bounds"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "350aa391b5129d46cb27869b8d16d6ee470026524f04f703a1b5c8136fca8bac"
+    },
+    {
+      "case_id": "v2-test-r19",
+      "family_id": "v2-real-rust-items-traits",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-items-traits-traits"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "444fb36cadb89cd3cd44372d4746c442fd1bd39442f8fa7b78f5ae9a90dd073b"
+    },
+    {
+      "case_id": "v2-test-r20",
+      "family_id": "v2-real-rust-items-traits",
+      "split": "test",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "rust-items-traits-traits"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "7754d7c90d3fd268b629c19e2236d03acf3691f2dbe0577e4b77473aaeba9f1c"
+    },
+    {
+      "case_id": "v2-test-r21",
+      "family_id": "v2-real-rust-type-coercions",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-type-coercions-type-coercions"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "6acf0d40728eef0419377141e7ad58ab90c133818ba406bef487d5d6d226c8f1"
+    },
+    {
+      "case_id": "v2-test-r22",
+      "family_id": "v2-real-rust-type-coercions",
+      "split": "test",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "rust-type-coercions-type-coercions"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "a6b822804cb8ae66a07056691ac8bc8f2817bb664204219590b4fde358368d85"
+    },
+    {
+      "case_id": "v2-test-r23",
+      "family_id": "v2-real-rust-unsafe-keyword",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-unsafe-keyword-unsafe-keyword"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "915742b47d4ab331a7e2e6b8c8fa2ac164d30f3bdb7bfe83e4f24d929c358c1b"
+    },
+    {
+      "case_id": "v2-test-r24",
+      "family_id": "v2-real-rust-unsafe-keyword",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-unsafe-keyword-unsafe-keyword"
+      ],
+      "component": "test_first24",
+      "source_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "d72f5184a658b513c94373357afe16af70f1f1758c09c487438602ad392c24f8"
+    },
+    {
+      "case_id": "v2-test-r25",
+      "family_id": "v2-real-pytest-fixtures",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-fixtures-fixtures"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "c9ed3490d82ed3fef682d2d46ca911f10ae758153f8edcef2588ff3ab564a9d5"
+    },
+    {
+      "case_id": "v2-test-r26",
+      "family_id": "v2-real-pytest-fixtures",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "pytest-fixtures-fixtures"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "804addbc77527cce199a4b0f23c3fee8902e338c55a78eb65ff2db95168dec50"
+    },
+    {
+      "case_id": "v2-test-r27",
+      "family_id": "v2-real-pytest-capture-stdout-stderr",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-capture-stdout-stderr-capture-stdout-stderr"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "eccac9c591382f82c8309c397551bdefe04b71ddcf9bd6c3c205f1a3b84166ab"
+    },
+    {
+      "case_id": "v2-test-r28",
+      "family_id": "v2-real-pytest-capture-stdout-stderr",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "pytest-capture-stdout-stderr-capture-stdout-stderr"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "dfaef75a47f5eb22bf9a15cfdfbafebbde6d227e24dce14b944be96a0bf87765"
+    },
+    {
+      "case_id": "v2-test-r29",
+      "family_id": "v2-real-pytest-logging",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-logging-logging"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "4d3e5998a7db5620576cbabe709e6abcd8e324ecbab361100d7444e3578d8aae"
+    },
+    {
+      "case_id": "v2-test-r30",
+      "family_id": "v2-real-pytest-logging",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-logging-logging"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "2837bea3c1e233d92fb5cc3a6d03a552c425beb824f08bc4b2d50870fc54f8b2"
+    },
+    {
+      "case_id": "v2-test-r31",
+      "family_id": "v2-real-pytest-capture-warnings",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-capture-warnings-capture-warnings"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "267df079a6656cf994fe67ff0efb9310e05f5278f0348090ee43b34fea1df5eb"
+    },
+    {
+      "case_id": "v2-test-r32",
+      "family_id": "v2-real-pytest-capture-warnings",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "pytest-capture-warnings-capture-warnings"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "f0e34cbee19e64f50059228d27fd0be8520cd79d46450315ad37f2d0a6775c76"
+    },
+    {
+      "case_id": "v2-test-r33",
+      "family_id": "v2-real-pytest-assert",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-assert-assert"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "c9627acb5ae19a7cedd365fe5e815653da0010f20de86be24acf7fae47055bff"
+    },
+    {
+      "case_id": "v2-test-r34",
+      "family_id": "v2-real-pytest-assert",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "pytest-assert-assert"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "a07b4ffde20293ffc274067bb28e0a8406659f2d68149d25ae251bc7442f9e18"
+    },
+    {
+      "case_id": "v2-test-r35",
+      "family_id": "v2-real-pytest-skipping",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-skipping-skipping"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "b197bf25f5c7d0fefb59925c8aedb618cd97a311866d95035422c8bbdfbe75a3"
+    },
+    {
+      "case_id": "v2-test-r36",
+      "family_id": "v2-real-pytest-skipping",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "pytest-skipping-skipping"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "c55fcc982999342bbe382984a404483e425b397344ac9fa57dc089f8e0a2c99a"
+    },
+    {
+      "case_id": "v2-test-r37",
+      "family_id": "v2-real-curl-cookie",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-cookie-cookie-jar",
+        "curl-cookie-cookie",
+        "curl-cookie-junk-session-cookies"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "915b746752b279f989da331fbc09bda61ce887f8f33e4c5c236d895118d501e0"
+    },
+    {
+      "case_id": "v2-test-r38",
+      "family_id": "v2-real-curl-cookie",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "curl-cookie-cookie-jar",
+        "curl-cookie-cookie",
+        "curl-cookie-junk-session-cookies"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "6a0ceac8ed686e010a4ed40d9862dc75da766bf72dbb99f0b9db3d809f2d9daf"
+    },
+    {
+      "case_id": "v2-test-r39",
+      "family_id": "v2-real-curl-tls",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-tls-ca-native",
+        "curl-tls-cacert",
+        "curl-tls-capath",
+        "curl-tls-cert-status",
+        "curl-tls-insecure"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "59928e8180a8cb316b3d4b577149479042c0af3dc622d9cb73eb193d8afcb3b6"
+    },
+    {
+      "case_id": "v2-test-r40",
+      "family_id": "v2-real-curl-tls",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-tls-ca-native",
+        "curl-tls-cacert",
+        "curl-tls-capath",
+        "curl-tls-cert-status",
+        "curl-tls-insecure"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "ade1536c3fc88dcfff2cd0b55cbfbae80b00dc9ba7b013fef3a9a5fc182e75d0"
+    },
+    {
+      "case_id": "v2-test-r41",
+      "family_id": "v2-real-curl-timeouts",
+      "split": "test",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-timeouts-connect-timeout",
+        "curl-timeouts-limit-rate",
+        "curl-timeouts-max-time",
+        "curl-timeouts-speed-limit",
+        "curl-timeouts-speed-time"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "bc6fdd964b21eaa791c661995a2193a0f5cf5287c9743c226db75cae7839b5ba"
+    },
+    {
+      "case_id": "v2-test-r42",
+      "family_id": "v2-real-curl-timeouts",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "curl-timeouts-connect-timeout",
+        "curl-timeouts-limit-rate",
+        "curl-timeouts-max-time",
+        "curl-timeouts-speed-limit",
+        "curl-timeouts-speed-time"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "d986aeb6d914bba2ef3d9cae97b4d98b82037f32117ebed9ab888ab53f3ff558"
+    },
+    {
+      "case_id": "v2-test-r43",
+      "family_id": "v2-real-curl-proxy",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-proxy-noproxy",
+        "curl-proxy-preproxy",
+        "curl-proxy-proxy-user",
+        "curl-proxy-proxy",
+        "curl-proxy-socks5"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "da7f7b7f3ab199080bd19554721fe5067062e878787298295fb207bcbb755c09"
+    },
+    {
+      "case_id": "v2-test-r44",
+      "family_id": "v2-real-curl-proxy",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "curl-proxy-noproxy",
+        "curl-proxy-preproxy",
+        "curl-proxy-proxy-user",
+        "curl-proxy-proxy",
+        "curl-proxy-socks5"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "923fc4d41825b10f27173afcd8fbfba1f54b2442a7e7c4f510af0db73128e428"
+    },
+    {
+      "case_id": "v2-test-r45",
+      "family_id": "v2-real-curl-ranges",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-ranges-continue-at",
+        "curl-ranges-output",
+        "curl-ranges-range",
+        "curl-ranges-remove-on-error"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "4481669be915cb2ef56444db352ce0b14f4a77cc768d1cfbc0be801ab7fc9c73"
+    },
+    {
+      "case_id": "v2-test-r46",
+      "family_id": "v2-real-curl-ranges",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "curl-ranges-continue-at",
+        "curl-ranges-output",
+        "curl-ranges-range",
+        "curl-ranges-remove-on-error"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "c53f4a19371831eba994ae21d46f2547bcbe8edb8632f33340cf51099c25b23e"
+    },
+    {
+      "case_id": "v2-test-r47",
+      "family_id": "v2-real-curl-multipart",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-multipart-form-escape",
+        "curl-multipart-form-string",
+        "curl-multipart-form"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "3f2b6fb34a3569ef874e69c3319527726f551113a79b47e329bb3e76a1825161"
+    },
+    {
+      "case_id": "v2-test-r48",
+      "family_id": "v2-real-curl-multipart",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "curl-multipart-form-escape",
+        "curl-multipart-form-string",
+        "curl-multipart-form"
+      ],
+      "component": "test_second24",
+      "source_component_sha256": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "c1c794378121fb30467dac768a505ccc9d10cf6e696018b1c9f8bec040d93151"
+    }
+  ],
+  "statistics": {
+    "cases": 72,
+    "families": 48,
+    "splits": {
+      "dev": 24,
+      "test": 48
+    },
+    "categories": {
+      "extrinsic": 18,
+      "subtle_distortion": 9,
+      "supported": 34,
+      "synthesis": 11
+    },
+    "claims_by_split": {
+      "dev": {
+        "SUPPORTED": 242,
+        "CONTRADICTED": 10,
+        "UNSUPPORTED": 6
+      },
+      "test": {
+        "SUPPORTED": 356,
+        "CONTRADICTED": 37,
+        "UNSUPPORTED": 17
+      }
+    },
+    "origins": {
+      "controlled_mutation": 24,
+      "generated_from_real_source": 48
+    },
+    "claims": 668,
+    "verdict_counts": {
+      "CONTRADICTED": 47,
+      "SUPPORTED": 598,
+      "UNSUPPORTED": 23
+    },
+    "verdict_family_counts": {
+      "SUPPORTED": 48,
+      "CONTRADICTED": 21,
+      "UNSUPPORTED": 15
+    }
+  },
+  "assembly_change": "Only the derived provenance.annotation_version is unified; every other original case field, including pilot gold payload, is exactly preserved from its named component.",
+  "source_mapping": "Original source IDs, revisions, URL, hashes and exact Unicode passage maps retained. Pilot assets copied byte-for-byte under pilot-import so this manifest loads offline within its directory.",
+  "review_evidence": [
+    {
+      "path": "reports/eval-v2/annotation-review/affected-review.json",
+      "sha256": "3cbcb776c313ae9640c4c31ba9f6711637f9799a87546e3ae412faf2060501ba"
+    },
+    {
+      "path": "reports/eval-v2/annotation-review/affected-review.md",
+      "sha256": "ba93132e5113c341960d3034801b5d3ff59d5810b4d9d74f8e6f92375597f3e2"
+    },
+    {
+      "path": "reports/eval-v2/annotation-review/affected-review-receipt.json",
+      "sha256": "77d82e9c0634a3c6205b0f7950b2168f1d8c85249a04f92c8e925f1b03524578"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/dev-revised-1-followup.json",
+      "sha256": "caff32e566bcf13dfdacc969c9b9580061b11fb57a8c85092a531bf7c1f4d424"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/dev-revised-2-DR01-followup.json",
+      "sha256": "82b6342be7b0999abdf28f9cee3c109c05451136e9fb1fa1c56c256ff3bcb1ca"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/test-first24-revised-1-followup.private.json",
+      "sha256": "25db286d739b6b012ae6abc9678abc70576f12da143c2222a5be4d8576ad2d53"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/test-first24-revised-2-followup.private.json",
+      "sha256": "d5f3729cc14851eb5e019b95d95926d0f8e00983ddd5854f9d834beeef5755b3"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/formal-batches-annotation-readiness.json",
+      "sha256": "4c6ac0bfb31b791e5bdab01fdff5c6e2c6bd03f64430738451415183186ad409"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-b/affected-review-1.json",
+      "sha256": "ed3c4375c624f84483680b79daae09d6205691eab36a352786aaf61ea4d33f8d"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-b/source-separation-review.json",
+      "sha256": "85c31c6126830cf2cfc0f61394a38d92573475318a336e8c5f6a46d1619cb93e"
+    }
+  ],
+  "inherited_pilot_review": "Later affected-review acceptance supersedes old preserved pilot handoff pending status: 81 affected claims accepted; 45 unchanged fields reused. Old pilot files are not edited.",
+  "independent_review_type": "AI blind extraction before sealed gold plus affected revision review; no human signoff and no measured verifier accuracy.",
+  "pending_review": null,
+  "open_annotation_requests": 0,
+  "provenance_review": "Independent source/assembly checks passed; final report and metadata-only auxiliary scoring recipe checks are separately linked in the final handoff.",
+  "naturality": "Main answers are AI-authored from real licensed documentation, with explicit controlled mutations. None are claimed as recorded natural benchmark responses. RAGTruth12 is separate private-acquisition auxiliary.",
+  "original_preservation": [
+    {
+      "component": "legacy_pilot",
+      "path": "datasets/v2/pilot.jsonl",
+      "sha256_before": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "sha256_after": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "original_unchanged": true,
+      "all_case_fields_equal_except_derived_annotation_version": true
+    },
+    {
+      "component": "new_dev",
+      "path": "datasets/v2/realistic-draft/dev-revised-2.jsonl",
+      "sha256_before": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "sha256_after": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "original_unchanged": true,
+      "all_case_fields_equal_except_derived_annotation_version": true
+    },
+    {
+      "component": "test_first24",
+      "path": "datasets/v2/realistic-draft/test-first24-revised-2.jsonl",
+      "sha256_before": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "sha256_after": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+      "original_unchanged": true,
+      "all_case_fields_equal_except_derived_annotation_version": true
+    },
+    {
+      "component": "test_second24",
+      "path": "datasets/v2/realistic-draft/test-second24-revised-1.jsonl",
+      "sha256_before": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "sha256_after": "e9fb9453b7d19d5b8a9ce3bd2918ecbfca6c22547694c7009e18efcf37b24778",
+      "original_unchanged": true,
+      "all_case_fields_equal_except_derived_annotation_version": true
+    }
+  ]
+}

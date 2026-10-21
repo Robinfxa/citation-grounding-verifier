@@ -1,0 +1,222 @@
+{
+  "decisions": [
+    {
+      "issue_id": "B01",
+      "decision": "accepted semantic boundary; original answer retained and affected claims changed S to U rather than repairing natural text",
+      "affected_claims": [
+        "v2-test-r25-c07",
+        "v2-test-r26-c07"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B02",
+      "decision": "accepted semantic boundary; original answer retained and affected claims changed S to U rather than repairing natural text",
+      "affected_claims": [
+        "v2-test-r37-c04",
+        "v2-test-r38-c04"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B03",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B04",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r28-c07"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B05",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r38-c02"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B06",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r43-c01",
+        "v2-test-r44-c01"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B07",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r45-c08",
+        "v2-test-r46-c08"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B08",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r35-c06",
+        "v2-test-r36-c06"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B09",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r30-c02"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B10",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r31-c06",
+        "v2-test-r32-c06"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B11",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r31-c07",
+        "v2-test-r32-c07"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B12",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r27-c07"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B13",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r27-c05",
+        "v2-test-r28-c05"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B14",
+      "decision": "retain original wording and S under shared contextual reading of upload part name as transmitted uploaded filename; ambiguity explicitly retained, no silent rewrite",
+      "affected_claims": [
+        "v2-test-r47-c06",
+        "v2-test-r48-c06"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B15",
+      "decision": "accepted; claim preserves may without changing verdict",
+      "affected_claims": [
+        "v2-test-r41-c02",
+        "v2-test-r42-c02"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B16",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r45-c05",
+        "v2-test-r46-c05"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B17",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r43-c08"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    },
+    {
+      "issue_id": "B18",
+      "decision": "accepted; evidence/claim coverage repaired without changing answer",
+      "affected_claims": [
+        "v2-test-r29-c02",
+        "v2-test-r29-c03",
+        "v2-test-r33-c02",
+        "v2-test-r33-c03",
+        "v2-test-r34-c02",
+        "v2-test-r35-c01",
+        "v2-test-r35-c03",
+        "v2-test-r35-c08",
+        "v2-test-r36-c01",
+        "v2-test-r36-c03",
+        "v2-test-r37-c01",
+        "v2-test-r37-c03",
+        "v2-test-r37-c05",
+        "v2-test-r38-c01",
+        "v2-test-r38-c03",
+        "v2-test-r38-c05",
+        "v2-test-r39-c01",
+        "v2-test-r39-c02",
+        "v2-test-r39-c04",
+        "v2-test-r39-c05",
+        "v2-test-r39-c06",
+        "v2-test-r39-c07",
+        "v2-test-r40-c02",
+        "v2-test-r40-c03",
+        "v2-test-r40-c04",
+        "v2-test-r41-c01",
+        "v2-test-r41-c02",
+        "v2-test-r41-c03",
+        "v2-test-r41-c04",
+        "v2-test-r41-c07",
+        "v2-test-r41-c08",
+        "v2-test-r42-c01",
+        "v2-test-r42-c02",
+        "v2-test-r42-c03",
+        "v2-test-r42-c04",
+        "v2-test-r42-c07",
+        "v2-test-r42-c08",
+        "v2-test-r43-c02",
+        "v2-test-r43-c03",
+        "v2-test-r43-c04",
+        "v2-test-r43-c07",
+        "v2-test-r43-c09",
+        "v2-test-r44-c02",
+        "v2-test-r44-c03",
+        "v2-test-r44-c04",
+        "v2-test-r44-c07",
+        "v2-test-r44-c09",
+        "v2-test-r45-c01",
+        "v2-test-r45-c03",
+        "v2-test-r45-c07",
+        "v2-test-r46-c01",
+        "v2-test-r46-c03",
+        "v2-test-r47-c01",
+        "v2-test-r47-c02",
+        "v2-test-r47-c03",
+        "v2-test-r47-c04",
+        "v2-test-r47-c05",
+        "v2-test-r47-c07",
+        "v2-test-r48-c01",
+        "v2-test-r48-c02",
+        "v2-test-r48-c03",
+        "v2-test-r48-c04",
+        "v2-test-r48-c05",
+        "v2-test-r48-c07"
+      ],
+      "status": "author_revised_pending_same_reviewer_check"
+    }
+  ],
+  "source_original_sha256": "82c4afea530b56cd880ae7d96df60b3b7d9d7d6c065ab8c0500147b60e0ca9c0",
+  "gold_change_details": "See cohort author-to-accepted diff for final field changes; intermediate accepted stages remain in the original affected-review copies."
+}

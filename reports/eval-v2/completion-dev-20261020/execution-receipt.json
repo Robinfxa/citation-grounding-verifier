@@ -1,0 +1,2262 @@
+{
+  "status": "STOPPED_NO_MORE_INFERENCE",
+  "source_commit": "45d01e2a3d7142f4d8a5737a53e1743a921ea294",
+  "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+  "dataset_version": "v2-pilot-reviewed-1",
+  "annotation_version": "v2-pilot-reviewed-1",
+  "source_code_sha256": "353c9d50f6035dadf76006913708123f4fbe525f79d74c70e9245e919413239e",
+  "settings": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "provider_timeout": 120.0,
+    "operation_timeout": 240.0,
+    "max_provider_attempts": 6,
+    "transport_retries": 0,
+    "retry_delay": 0.25,
+    "max_output_tokens": {
+      "requested": 8192,
+      "effective": null,
+      "application": "not_applied"
+    },
+    "diagnostics": true,
+    "endpoint_sha256": "d9617135d6fdd0a2cde722d637a1dfcc3da37515708b3ea5d66ae607c8ac785e"
+  },
+  "budget": {
+    "new_limit": 320,
+    "charged_attempts": 20,
+    "remaining": 300,
+    "checks_charged": 2,
+    "matrix_charged": 18,
+    "prior_pilot_63_of_150_separate": true,
+    "prior_jev_8_of_12_separate": true,
+    "all_repairs_included": true,
+    "transport_retries": 0,
+    "per_operation_attempts": 6
+  },
+  "known_usage": {
+    "input_tokens": 62461,
+    "output_tokens": 16156,
+    "cached_input_tokens": 0
+  },
+  "usage_complete": false,
+  "dollar_total_usd": null,
+  "dollar_note": "Codex subscription usage has no invented per-token dollar price.",
+  "cli_wall_ms_total": 425067.75008514524,
+  "stages": [
+    {
+      "stage": "check-oracle",
+      "status": "COMPLETE",
+      "cli_exit_code": 0,
+      "wrapper_timeout": false,
+      "cli_wall_ms": 21557.834201026708,
+      "finished_at": "2026-10-20T22:02:35.781522+00:00",
+      "charged_attempts": 1,
+      "provider_calls": 1,
+      "retries": 0,
+      "repairs": 0,
+      "status_counts": {
+        "OK": 1
+      },
+      "attempted_error_counts": {},
+      "returned_models": [
+        "gpt-6.1-sol"
+      ],
+      "known_usage": {
+        "input_tokens": 2719,
+        "output_tokens": 684,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": true,
+      "stats_known_for_all_records": true,
+      "source_unchanged": true,
+      "completion": {
+        "cleanup_errors": [],
+        "config_sha256": "c1acd8628a72dcf595b139eaaccec9a261147c9a0e654fa0c3d38cf5cf42532a",
+        "provider_attempts_charged": 1,
+        "record_count": 1,
+        "records_sha256": "2ac4fb967fac0d3c6797f892bd862d74e0d5fa4df7460e49b87e557ba0b73e7b",
+        "source_changed_during_run": false,
+        "status": "COMPLETE",
+        "stopped_after_attempt_budget_exhausted": false,
+        "stopped_after_quota_exhausted": false
+      },
+      "groups": {
+        "minimal/oracle": {
+          "status": "COMPLETE",
+          "statuses": {
+            "OK": 1
+          },
+          "requested_cases": 1,
+          "gold_claims": 8,
+          "quality": {
+            "counts": {
+              "citation_characters": 1294,
+              "citation_gold_relevant": 8,
+              "citation_literal_valid": 10,
+              "citation_total": 10,
+              "duplicate": 0,
+              "evidence_correct": 3,
+              "evidence_correct_non_unsupported": 3,
+              "exact": 0,
+              "extra": 0,
+              "false_support": 0,
+              "gold": 8,
+              "gold_non_supported": 3,
+              "gold_non_unsupported": 8,
+              "label_correct": 8,
+              "matched": 8,
+              "matched_non_supported": 3,
+              "omitted": 0,
+              "predicted": 8,
+              "predicted_non_unsupported": 8,
+              "requested": 1,
+              "succeeded": 1
+            },
+            "strict_decomposition": {
+              "f1": {
+                "denominator": 16,
+                "numerator": 16,
+                "value": 1.0
+              },
+              "precision": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              },
+              "recall": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              }
+            },
+            "joint_label": {
+              "f1": {
+                "denominator": 16,
+                "numerator": 16,
+                "value": 1.0
+              },
+              "precision": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              },
+              "recall": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              }
+            },
+            "joint_evidence": {
+              "f1": {
+                "denominator": 16,
+                "numerator": 6,
+                "value": 0.375
+              },
+              "precision": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "recall": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              }
+            },
+            "oracle_accuracy": {
+              "denominator": 8,
+              "numerator": 8,
+              "value": 1.0
+            },
+            "macro_f1": null,
+            "false_support_rate": {
+              "denominator": 3,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "non_supported_judgment_coverage": {
+              "denominator": 3,
+              "numerator": 3,
+              "value": 1.0
+            },
+            "gold_evidence_coverage": {
+              "denominator": 8,
+              "numerator": 3,
+              "value": 0.375
+            },
+            "literal_citation_validity": {
+              "denominator": 10,
+              "numerator": 10,
+              "value": 1.0
+            },
+            "case_exact": {
+              "denominator": 1,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "confusion": {
+              "CONTRADICTED": {
+                "CONTRADICTED": 3,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "EXTRA": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "SUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 5,
+                "UNSUPPORTED": 0
+              },
+              "UNSUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              }
+            }
+          },
+          "resources": {
+            "attempted_requests": 1,
+            "dollar_cost": {
+              "currency": "USD",
+              "reason": "subscription_usage_not_dollar_cost",
+              "value": null
+            },
+            "elapsed_ms": {
+              "count": 1,
+              "includes_failures": true,
+              "median": 17989.86343992874,
+              "p95": 17989.86343992874,
+              "sum": 17989.86343992874
+            },
+            "known_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 2719,
+              "output_tokens": 684
+            },
+            "not_attempted_requests": 0,
+            "provider_calls_known": 1,
+            "repairs_known": 0,
+            "requested_models": [
+              "gpt-6.1-sol"
+            ],
+            "requests_with_repair": 0,
+            "requests_with_unknown_stats": 0,
+            "requests_with_unknown_usage": 0,
+            "retries_known": 0,
+            "returned_models": [
+              "gpt-6.1-sol"
+            ],
+            "total_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 2719,
+              "output_tokens": 684
+            },
+            "usage_complete": true
+          },
+          "uncertainty": {
+            "confidence": 0.95,
+            "independent_units": 1,
+            "intervals": {
+              "case_exact": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.0,
+                "high": 0.0,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_evidence_f1": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.375,
+                "high": 0.375,
+                "low": 0.375,
+                "undefined_resamples": 0
+              },
+              "joint_label_f1": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 1.0,
+                "high": 1.0,
+                "low": 1.0,
+                "undefined_resamples": 0
+              },
+              "macro_f1": {
+                "defined_resamples": 0,
+                "degenerate": false,
+                "estimate": null,
+                "high": null,
+                "low": null,
+                "undefined_resamples": 10000
+              },
+              "strict_decomposition_f1": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 1.0,
+                "high": 1.0,
+                "low": 1.0,
+                "undefined_resamples": 0
+              }
+            },
+            "limitations": "Family sample sensitivity only; excludes annotation bias and unobserved model randomness. Degenerate intervals do not demonstrate zero uncertainty. Undefined draws are counted.",
+            "method": "family_percentile",
+            "observations": 1,
+            "repetitions": [],
+            "samples": 10000,
+            "seed": 20261015,
+            "unit": "family"
+          }
+        }
+      },
+      "paired_optimized_minus_minimal": {},
+      "failures": [],
+      "diagnostics": {
+        "records": 20,
+        "inference_attempt_starts": 1,
+        "max_record_bytes": 217,
+        "auth_refresh_success": true
+      },
+      "replay": {
+        "exit_code": 0,
+        "wall_ms": 1125.0546597875655,
+        "inference_calls": 0,
+        "network_settings_credentials_guarded": true,
+        "all_run_files_byte_identical": 23,
+        "artifact_hashes": {
+          "cases.jsonl": "2bfa5e5b4a8ffa1ee66f583117ce91c5ff13331b431f96301325f3c668ddbf59",
+          "cases.manifest.json": "89a64db5d2ea648e090bbaa5500e1e0d399bd6b1be713c9e21a06bcf347ebfcd",
+          "completion.json": "980b5cb1091836a7f954f9477b506007ca040caadeab500d9a38912f44e99084",
+          "config.json": "c1acd8628a72dcf595b139eaaccec9a261147c9a0e654fa0c3d38cf5cf42532a",
+          "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+          "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+          "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+          "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+          "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+          "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+          "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+          "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+          "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+          "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+          "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+          "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+          "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+          "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+          "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+          "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+          "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+          "records.jsonl": "2ac4fb967fac0d3c6797f892bd862d74e0d5fa4df7460e49b87e557ba0b73e7b",
+          "summary.json": "7d6a4d388fcd211721867c0813545a353d4c98ae664f274ecea218606bb1a735"
+        }
+      },
+      "bindings": {
+        "config.json": "c1acd8628a72dcf595b139eaaccec9a261147c9a0e654fa0c3d38cf5cf42532a",
+        "records.jsonl": "2ac4fb967fac0d3c6797f892bd862d74e0d5fa4df7460e49b87e557ba0b73e7b",
+        "summary.json": "7d6a4d388fcd211721867c0813545a353d4c98ae664f274ecea218606bb1a735",
+        "cases.jsonl": "2bfa5e5b4a8ffa1ee66f583117ce91c5ff13331b431f96301325f3c668ddbf59"
+      }
+    },
+    {
+      "stage": "check-e2e",
+      "status": "COMPLETE",
+      "cli_exit_code": 0,
+      "wrapper_timeout": false,
+      "cli_wall_ms": 19218.502743169665,
+      "finished_at": "2026-10-20T22:02:55.056970+00:00",
+      "charged_attempts": 1,
+      "provider_calls": 1,
+      "retries": 0,
+      "repairs": 0,
+      "status_counts": {
+        "OK": 1
+      },
+      "attempted_error_counts": {},
+      "returned_models": [
+        "gpt-6.1-sol"
+      ],
+      "known_usage": {
+        "input_tokens": 3644,
+        "output_tokens": 650,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": true,
+      "stats_known_for_all_records": true,
+      "source_unchanged": true,
+      "completion": {
+        "cleanup_errors": [],
+        "config_sha256": "10c74ca986506991f09bb7a3386ff2fc92c69e1a6548c00b56e64af502c58afa",
+        "provider_attempts_charged": 1,
+        "record_count": 1,
+        "records_sha256": "490aabcbabc8cc6830aa49175ac7e1f28af0fcb4f103aed8f7f8a0e0dbc48e3e",
+        "source_changed_during_run": false,
+        "status": "COMPLETE",
+        "stopped_after_attempt_budget_exhausted": false,
+        "stopped_after_quota_exhausted": false
+      },
+      "groups": {
+        "minimal/end-to-end": {
+          "status": "COMPLETE",
+          "statuses": {
+            "OK": 1
+          },
+          "requested_cases": 1,
+          "gold_claims": 11,
+          "quality": {
+            "counts": {
+              "citation_characters": 774,
+              "citation_gold_relevant": 3,
+              "citation_literal_valid": 8,
+              "citation_total": 8,
+              "duplicate": 0,
+              "evidence_correct": 5,
+              "evidence_correct_non_unsupported": 3,
+              "exact": 0,
+              "extra": 1,
+              "false_support": 0,
+              "gold": 11,
+              "gold_non_supported": 2,
+              "gold_non_unsupported": 9,
+              "label_correct": 9,
+              "matched": 9,
+              "matched_non_supported": 2,
+              "omitted": 2,
+              "predicted": 10,
+              "predicted_non_unsupported": 8,
+              "requested": 1,
+              "succeeded": 1
+            },
+            "strict_decomposition": {
+              "f1": {
+                "denominator": 21,
+                "numerator": 18,
+                "value": 0.8571428571428571
+              },
+              "precision": {
+                "denominator": 10,
+                "numerator": 9,
+                "value": 0.9
+              },
+              "recall": {
+                "denominator": 11,
+                "numerator": 9,
+                "value": 0.8181818181818182
+              }
+            },
+            "joint_label": {
+              "f1": {
+                "denominator": 21,
+                "numerator": 18,
+                "value": 0.8571428571428571
+              },
+              "precision": {
+                "denominator": 10,
+                "numerator": 9,
+                "value": 0.9
+              },
+              "recall": {
+                "denominator": 11,
+                "numerator": 9,
+                "value": 0.8181818181818182
+              }
+            },
+            "joint_evidence": {
+              "f1": {
+                "denominator": 21,
+                "numerator": 10,
+                "value": 0.47619047619047616
+              },
+              "precision": {
+                "denominator": 10,
+                "numerator": 5,
+                "value": 0.5
+              },
+              "recall": {
+                "denominator": 11,
+                "numerator": 5,
+                "value": 0.45454545454545453
+              }
+            },
+            "oracle_accuracy": {
+              "denominator": 11,
+              "numerator": 9,
+              "value": 0.8181818181818182
+            },
+            "macro_f1": null,
+            "false_support_rate": {
+              "denominator": 2,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "non_supported_judgment_coverage": {
+              "denominator": 2,
+              "numerator": 2,
+              "value": 1.0
+            },
+            "gold_evidence_coverage": {
+              "denominator": 9,
+              "numerator": 3,
+              "value": 0.3333333333333333
+            },
+            "literal_citation_validity": {
+              "denominator": 8,
+              "numerator": 8,
+              "value": 1.0
+            },
+            "case_exact": {
+              "denominator": 1,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "confusion": {
+              "CONTRADICTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "EXTRA": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 1,
+                "UNSUPPORTED": 0
+              },
+              "SUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 2,
+                "SUPPORTED": 7,
+                "UNSUPPORTED": 0
+              },
+              "UNSUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 2
+              }
+            }
+          },
+          "resources": {
+            "attempted_requests": 1,
+            "dollar_cost": {
+              "currency": "USD",
+              "reason": "subscription_usage_not_dollar_cost",
+              "value": null
+            },
+            "elapsed_ms": {
+              "count": 1,
+              "includes_failures": true,
+              "median": 16883.339476771653,
+              "p95": 16883.339476771653,
+              "sum": 16883.339476771653
+            },
+            "known_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 3644,
+              "output_tokens": 650
+            },
+            "not_attempted_requests": 0,
+            "provider_calls_known": 1,
+            "repairs_known": 0,
+            "requested_models": [
+              "gpt-6.1-sol"
+            ],
+            "requests_with_repair": 0,
+            "requests_with_unknown_stats": 0,
+            "requests_with_unknown_usage": 0,
+            "retries_known": 0,
+            "returned_models": [
+              "gpt-6.1-sol"
+            ],
+            "total_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 3644,
+              "output_tokens": 650
+            },
+            "usage_complete": true
+          },
+          "uncertainty": {
+            "confidence": 0.95,
+            "independent_units": 1,
+            "intervals": {
+              "case_exact": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.0,
+                "high": 0.0,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_evidence_f1": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.47619047619047616,
+                "high": 0.47619047619047616,
+                "low": 0.47619047619047616,
+                "undefined_resamples": 0
+              },
+              "joint_label_f1": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.8571428571428571,
+                "high": 0.8571428571428571,
+                "low": 0.8571428571428571,
+                "undefined_resamples": 0
+              },
+              "macro_f1": {
+                "defined_resamples": 0,
+                "degenerate": false,
+                "estimate": null,
+                "high": null,
+                "low": null,
+                "undefined_resamples": 10000
+              },
+              "strict_decomposition_f1": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.8571428571428571,
+                "high": 0.8571428571428571,
+                "low": 0.8571428571428571,
+                "undefined_resamples": 0
+              }
+            },
+            "limitations": "Family sample sensitivity only; excludes annotation bias and unobserved model randomness. Degenerate intervals do not demonstrate zero uncertainty. Undefined draws are counted.",
+            "method": "family_percentile",
+            "observations": 1,
+            "repetitions": [],
+            "samples": 10000,
+            "seed": 20261015,
+            "unit": "family"
+          }
+        }
+      },
+      "paired_optimized_minus_minimal": {},
+      "failures": [],
+      "diagnostics": {
+        "records": 14,
+        "inference_attempt_starts": 1,
+        "max_record_bytes": 217,
+        "auth_refresh_success": false
+      },
+      "replay": {
+        "exit_code": 0,
+        "wall_ms": 912.4542670324445,
+        "inference_calls": 0,
+        "network_settings_credentials_guarded": true,
+        "all_run_files_byte_identical": 23,
+        "artifact_hashes": {
+          "cases.jsonl": "214ceadbfa259a422c43698d2df9f28187700763f98cbc140a0b056882f159cf",
+          "cases.manifest.json": "46fefe9ba2aa3988c7902f63f7853b42a6d22e9ccfb09f69cb74089498103c47",
+          "completion.json": "86eb3bfec62442f39b2e99465130947611401ffcb2132091a99d502c1a7132d5",
+          "config.json": "10c74ca986506991f09bb7a3386ff2fc92c69e1a6548c00b56e64af502c58afa",
+          "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+          "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+          "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+          "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+          "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+          "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+          "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+          "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+          "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+          "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+          "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+          "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+          "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+          "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+          "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+          "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+          "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+          "records.jsonl": "490aabcbabc8cc6830aa49175ac7e1f28af0fcb4f103aed8f7f8a0e0dbc48e3e",
+          "summary.json": "679fa04a59f64a72da7b7e54fe33d70a7f30b50e54355688427cd95beddf76f8"
+        }
+      },
+      "bindings": {
+        "config.json": "10c74ca986506991f09bb7a3386ff2fc92c69e1a6548c00b56e64af502c58afa",
+        "records.jsonl": "490aabcbabc8cc6830aa49175ac7e1f28af0fcb4f103aed8f7f8a0e0dbc48e3e",
+        "summary.json": "679fa04a59f64a72da7b7e54fe33d70a7f30b50e54355688427cd95beddf76f8",
+        "cases.jsonl": "214ceadbfa259a422c43698d2df9f28187700763f98cbc140a0b056882f159cf"
+      }
+    },
+    {
+      "stage": "matrix",
+      "status": "STOPPED",
+      "cli_exit_code": 2,
+      "wrapper_timeout": false,
+      "cli_wall_ms": 384291.41314094886,
+      "finished_at": "2026-10-20T22:09:19.434428+00:00",
+      "charged_attempts": 18,
+      "provider_calls": 18,
+      "retries": 0,
+      "repairs": 0,
+      "status_counts": {
+        "OK": 39,
+        "ERROR": 1,
+        "NOT_RUN": 32
+      },
+      "attempted_error_counts": {
+        "provider_protocol_error": 1
+      },
+      "returned_models": [
+        "gpt-6.1-sol"
+      ],
+      "known_usage": {
+        "input_tokens": 56098,
+        "output_tokens": 14822,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": false,
+      "stats_known_for_all_records": true,
+      "source_unchanged": true,
+      "completion": {
+        "cleanup_errors": [],
+        "config_sha256": "be153ba82864648c8ac148d6b6cefab5e782b936273b36e3aa4be8e653f15c7c",
+        "provider_attempts_charged": 18,
+        "record_count": 72,
+        "records_sha256": "e579128c7b0aa6ec88c064c438d1c19a304a759460cb0dbdcb1b35f209e29b5a",
+        "source_changed_during_run": false,
+        "status": "COMPLETED_WITH_ERRORS",
+        "stopped_after_attempt_budget_exhausted": false,
+        "stopped_after_quota_exhausted": false
+      },
+      "groups": {
+        "heuristic/end-to-end": {
+          "status": "COMPLETE",
+          "statuses": {
+            "OK": 12
+          },
+          "requested_cases": 12,
+          "gold_claims": 126,
+          "quality": {
+            "counts": {
+              "citation_characters": 85,
+              "citation_gold_relevant": 1,
+              "citation_literal_valid": 1,
+              "citation_total": 1,
+              "duplicate": 0,
+              "evidence_correct": 7,
+              "evidence_correct_non_unsupported": 1,
+              "exact": 0,
+              "extra": 39,
+              "false_support": 0,
+              "gold": 126,
+              "gold_non_supported": 16,
+              "gold_non_unsupported": 120,
+              "label_correct": 7,
+              "matched": 63,
+              "matched_non_supported": 14,
+              "omitted": 63,
+              "predicted": 102,
+              "predicted_non_unsupported": 1,
+              "requested": 12,
+              "succeeded": 12
+            },
+            "strict_decomposition": {
+              "f1": {
+                "denominator": 228,
+                "numerator": 126,
+                "value": 0.5526315789473685
+              },
+              "precision": {
+                "denominator": 102,
+                "numerator": 63,
+                "value": 0.6176470588235294
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 63,
+                "value": 0.5
+              }
+            },
+            "joint_label": {
+              "f1": {
+                "denominator": 228,
+                "numerator": 14,
+                "value": 0.06140350877192982
+              },
+              "precision": {
+                "denominator": 102,
+                "numerator": 7,
+                "value": 0.06862745098039216
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 7,
+                "value": 0.05555555555555555
+              }
+            },
+            "joint_evidence": {
+              "f1": {
+                "denominator": 228,
+                "numerator": 14,
+                "value": 0.06140350877192982
+              },
+              "precision": {
+                "denominator": 102,
+                "numerator": 7,
+                "value": 0.06862745098039216
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 7,
+                "value": 0.05555555555555555
+              }
+            },
+            "oracle_accuracy": {
+              "denominator": 126,
+              "numerator": 7,
+              "value": 0.05555555555555555
+            },
+            "macro_f1": 0.043389183576099465,
+            "false_support_rate": {
+              "denominator": 16,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "non_supported_judgment_coverage": {
+              "denominator": 16,
+              "numerator": 14,
+              "value": 0.875
+            },
+            "gold_evidence_coverage": {
+              "denominator": 120,
+              "numerator": 1,
+              "value": 0.008333333333333333
+            },
+            "literal_citation_validity": {
+              "denominator": 1,
+              "numerator": 1,
+              "value": 1.0
+            },
+            "case_exact": {
+              "denominator": 12,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "confusion": {
+              "CONTRADICTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 2,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 8
+              },
+              "EXTRA": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 39
+              },
+              "SUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 61,
+                "SUPPORTED": 1,
+                "UNSUPPORTED": 48
+              },
+              "UNSUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 6
+              }
+            }
+          },
+          "resources": {
+            "attempted_requests": 12,
+            "dollar_cost": {
+              "currency": "USD",
+              "reason": "no_provider_calls_excludes_compute",
+              "value": 0.0
+            },
+            "elapsed_ms": {
+              "count": 12,
+              "includes_failures": true,
+              "median": 65.46887452714145,
+              "p95": 91.30852699745446,
+              "sum": 761.2565630115569
+            },
+            "known_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 0,
+              "output_tokens": 0
+            },
+            "not_attempted_requests": 0,
+            "provider_calls_known": 0,
+            "repairs_known": 0,
+            "requested_models": [],
+            "requests_with_repair": 0,
+            "requests_with_unknown_stats": 0,
+            "requests_with_unknown_usage": 0,
+            "retries_known": 0,
+            "returned_models": [],
+            "total_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 0,
+              "output_tokens": 0
+            },
+            "usage_complete": true
+          },
+          "uncertainty": {
+            "confidence": 0.95,
+            "independent_units": 12,
+            "intervals": {
+              "case_exact": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.0,
+                "high": 0.0,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_evidence_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.06140350877192982,
+                "high": 0.11404764664966362,
+                "low": 0.017167381974248927,
+                "undefined_resamples": 0
+              },
+              "joint_label_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.06140350877192982,
+                "high": 0.11404764664966362,
+                "low": 0.017167381974248927,
+                "undefined_resamples": 0
+              },
+              "macro_f1": {
+                "defined_resamples": 9678,
+                "degenerate": false,
+                "estimate": 0.043389183576099465,
+                "high": 0.07760573769140741,
+                "low": 0.012461059190031152,
+                "undefined_resamples": 322
+              },
+              "strict_decomposition_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.5526315789473685,
+                "high": 0.6968325791855203,
+                "low": 0.42105263157894735,
+                "undefined_resamples": 0
+              }
+            },
+            "limitations": "Family sample sensitivity only; excludes annotation bias and unobserved model randomness. Degenerate intervals do not demonstrate zero uncertainty. Undefined draws are counted.",
+            "method": "family_percentile",
+            "observations": 12,
+            "repetitions": [],
+            "samples": 10000,
+            "seed": 20261015,
+            "unit": "family"
+          }
+        },
+        "heuristic/oracle": {
+          "status": "COMPLETE",
+          "statuses": {
+            "OK": 12
+          },
+          "requested_cases": 12,
+          "gold_claims": 126,
+          "quality": {
+            "counts": {
+              "citation_characters": 85,
+              "citation_gold_relevant": 1,
+              "citation_literal_valid": 1,
+              "citation_total": 1,
+              "duplicate": 0,
+              "evidence_correct": 7,
+              "evidence_correct_non_unsupported": 1,
+              "exact": 0,
+              "extra": 0,
+              "false_support": 0,
+              "gold": 126,
+              "gold_non_supported": 16,
+              "gold_non_unsupported": 120,
+              "label_correct": 7,
+              "matched": 126,
+              "matched_non_supported": 16,
+              "omitted": 0,
+              "predicted": 126,
+              "predicted_non_unsupported": 1,
+              "requested": 12,
+              "succeeded": 12
+            },
+            "strict_decomposition": {
+              "f1": {
+                "denominator": 252,
+                "numerator": 252,
+                "value": 1.0
+              },
+              "precision": {
+                "denominator": 126,
+                "numerator": 126,
+                "value": 1.0
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 126,
+                "value": 1.0
+              }
+            },
+            "joint_label": {
+              "f1": {
+                "denominator": 252,
+                "numerator": 14,
+                "value": 0.05555555555555555
+              },
+              "precision": {
+                "denominator": 126,
+                "numerator": 7,
+                "value": 0.05555555555555555
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 7,
+                "value": 0.05555555555555555
+              }
+            },
+            "joint_evidence": {
+              "f1": {
+                "denominator": 252,
+                "numerator": 14,
+                "value": 0.05555555555555555
+              },
+              "precision": {
+                "denominator": 126,
+                "numerator": 7,
+                "value": 0.05555555555555555
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 7,
+                "value": 0.05555555555555555
+              }
+            },
+            "oracle_accuracy": {
+              "denominator": 126,
+              "numerator": 7,
+              "value": 0.05555555555555555
+            },
+            "macro_f1": 0.03654035715104417,
+            "false_support_rate": {
+              "denominator": 16,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "non_supported_judgment_coverage": {
+              "denominator": 16,
+              "numerator": 16,
+              "value": 1.0
+            },
+            "gold_evidence_coverage": {
+              "denominator": 120,
+              "numerator": 1,
+              "value": 0.008333333333333333
+            },
+            "literal_citation_validity": {
+              "denominator": 1,
+              "numerator": 1,
+              "value": 1.0
+            },
+            "case_exact": {
+              "denominator": 12,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "confusion": {
+              "CONTRADICTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 10
+              },
+              "EXTRA": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "SUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 1,
+                "UNSUPPORTED": 109
+              },
+              "UNSUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 6
+              }
+            }
+          },
+          "resources": {
+            "attempted_requests": 12,
+            "dollar_cost": {
+              "currency": "USD",
+              "reason": "no_provider_calls_excludes_compute",
+              "value": 0.0
+            },
+            "elapsed_ms": {
+              "count": 12,
+              "includes_failures": true,
+              "median": 93.48111972212791,
+              "p95": 172.24280287045983,
+              "sum": 1124.0295912139118
+            },
+            "known_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 0,
+              "output_tokens": 0
+            },
+            "not_attempted_requests": 0,
+            "provider_calls_known": 0,
+            "repairs_known": 0,
+            "requested_models": [],
+            "requests_with_repair": 0,
+            "requests_with_unknown_stats": 0,
+            "requests_with_unknown_usage": 0,
+            "retries_known": 0,
+            "returned_models": [],
+            "total_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 0,
+              "output_tokens": 0
+            },
+            "usage_complete": true
+          },
+          "uncertainty": {
+            "confidence": 0.95,
+            "independent_units": 12,
+            "intervals": {
+              "case_exact": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.0,
+                "high": 0.0,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_evidence_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.05555555555555555,
+                "high": 0.1031878306878305,
+                "low": 0.015264284061993988,
+                "undefined_resamples": 0
+              },
+              "joint_label_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.05555555555555555,
+                "high": 0.1031878306878305,
+                "low": 0.015264284061993988,
+                "undefined_resamples": 0
+              },
+              "macro_f1": {
+                "defined_resamples": 9678,
+                "degenerate": false,
+                "estimate": 0.03654035715104417,
+                "high": 0.06526806526806526,
+                "low": 0.010025062656641603,
+                "undefined_resamples": 322
+              },
+              "strict_decomposition_f1": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 1.0,
+                "high": 1.0,
+                "low": 1.0,
+                "undefined_resamples": 0
+              }
+            },
+            "limitations": "Family sample sensitivity only; excludes annotation bias and unobserved model randomness. Degenerate intervals do not demonstrate zero uncertainty. Undefined draws are counted.",
+            "method": "family_percentile",
+            "observations": 12,
+            "repetitions": [],
+            "samples": 10000,
+            "seed": 20261015,
+            "unit": "family"
+          }
+        },
+        "minimal/end-to-end": {
+          "status": "PARTIAL_ERRORS",
+          "statuses": {
+            "ERROR": 1,
+            "NOT_RUN": 8,
+            "OK": 3
+          },
+          "requested_cases": 12,
+          "gold_claims": 126,
+          "quality": {
+            "counts": {
+              "citation_characters": 3848,
+              "citation_gold_relevant": 12,
+              "citation_literal_valid": 29,
+              "citation_total": 29,
+              "duplicate": 0,
+              "evidence_correct": 11,
+              "evidence_correct_non_unsupported": 9,
+              "exact": 0,
+              "extra": 9,
+              "false_support": 0,
+              "gold": 126,
+              "gold_non_supported": 16,
+              "gold_non_unsupported": 120,
+              "label_correct": 21,
+              "matched": 21,
+              "matched_non_supported": 2,
+              "omitted": 105,
+              "predicted": 30,
+              "predicted_non_unsupported": 28,
+              "requested": 12,
+              "succeeded": 3
+            },
+            "strict_decomposition": {
+              "f1": {
+                "denominator": 156,
+                "numerator": 42,
+                "value": 0.2692307692307692
+              },
+              "precision": {
+                "denominator": 30,
+                "numerator": 21,
+                "value": 0.7
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 21,
+                "value": 0.16666666666666666
+              }
+            },
+            "joint_label": {
+              "f1": {
+                "denominator": 156,
+                "numerator": 42,
+                "value": 0.2692307692307692
+              },
+              "precision": {
+                "denominator": 30,
+                "numerator": 21,
+                "value": 0.7
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 21,
+                "value": 0.16666666666666666
+              }
+            },
+            "joint_evidence": {
+              "f1": {
+                "denominator": 156,
+                "numerator": 22,
+                "value": 0.14102564102564102
+              },
+              "precision": {
+                "denominator": 30,
+                "numerator": 11,
+                "value": 0.36666666666666664
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 11,
+                "value": 0.0873015873015873
+              }
+            },
+            "oracle_accuracy": {
+              "denominator": 126,
+              "numerator": 21,
+              "value": 0.16666666666666666
+            },
+            "macro_f1": 0.2584541062801932,
+            "false_support_rate": {
+              "denominator": 16,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "non_supported_judgment_coverage": {
+              "denominator": 16,
+              "numerator": 2,
+              "value": 0.125
+            },
+            "gold_evidence_coverage": {
+              "denominator": 120,
+              "numerator": 9,
+              "value": 0.075
+            },
+            "literal_citation_validity": {
+              "denominator": 29,
+              "numerator": 29,
+              "value": 1.0
+            },
+            "case_exact": {
+              "denominator": 12,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "confusion": {
+              "CONTRADICTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 10,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "EXTRA": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 9,
+                "UNSUPPORTED": 0
+              },
+              "SUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 80,
+                "MISSING": 11,
+                "SUPPORTED": 19,
+                "UNSUPPORTED": 0
+              },
+              "UNSUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 4,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 2
+              }
+            }
+          },
+          "resources": {
+            "attempted_requests": 4,
+            "dollar_cost": {
+              "currency": "USD",
+              "reason": "subscription_usage_not_dollar_cost",
+              "value": null
+            },
+            "elapsed_ms": {
+              "count": 4,
+              "includes_failures": true,
+              "median": 21247.15655995533,
+              "p95": 28345.928399497643,
+              "sum": 82088.46319885924
+            },
+            "known_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 9755,
+              "output_tokens": 2910
+            },
+            "not_attempted_requests": 8,
+            "provider_calls_known": 4,
+            "repairs_known": 0,
+            "requested_models": [
+              "gpt-6.1-sol"
+            ],
+            "requests_with_repair": 0,
+            "requests_with_unknown_stats": 0,
+            "requests_with_unknown_usage": 1,
+            "retries_known": 0,
+            "returned_models": [
+              "gpt-6.1-sol"
+            ],
+            "total_usage": null,
+            "usage_complete": false
+          },
+          "uncertainty": {
+            "confidence": 0.95,
+            "independent_units": 12,
+            "intervals": {
+              "case_exact": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.0,
+                "high": 0.0,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_evidence_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.14102564102564102,
+                "high": 0.24598930481283424,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_label_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.2692307692307692,
+                "high": 0.49143335993615317,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "macro_f1": {
+                "defined_resamples": 9368,
+                "degenerate": false,
+                "estimate": 0.2584541062801932,
+                "high": 0.4610904255319147,
+                "low": 0.0,
+                "undefined_resamples": 632
+              },
+              "strict_decomposition_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.2692307692307692,
+                "high": 0.49143335993615317,
+                "low": 0.0,
+                "undefined_resamples": 0
+              }
+            },
+            "limitations": "Family sample sensitivity only; excludes annotation bias and unobserved model randomness. Degenerate intervals do not demonstrate zero uncertainty. Undefined draws are counted.",
+            "method": "family_percentile",
+            "observations": 12,
+            "repetitions": [],
+            "samples": 10000,
+            "seed": 20261015,
+            "unit": "family"
+          }
+        },
+        "minimal/oracle": {
+          "status": "PARTIAL_ERRORS",
+          "statuses": {
+            "NOT_RUN": 8,
+            "OK": 4
+          },
+          "requested_cases": 12,
+          "gold_claims": 126,
+          "quality": {
+            "counts": {
+              "citation_characters": 6310,
+              "citation_gold_relevant": 36,
+              "citation_literal_valid": 50,
+              "citation_total": 50,
+              "duplicate": 0,
+              "evidence_correct": 15,
+              "evidence_correct_non_unsupported": 15,
+              "exact": 0,
+              "extra": 0,
+              "false_support": 0,
+              "gold": 126,
+              "gold_non_supported": 16,
+              "gold_non_unsupported": 120,
+              "label_correct": 43,
+              "matched": 43,
+              "matched_non_supported": 0,
+              "omitted": 83,
+              "predicted": 43,
+              "predicted_non_unsupported": 43,
+              "requested": 12,
+              "succeeded": 4
+            },
+            "strict_decomposition": {
+              "f1": {
+                "denominator": 169,
+                "numerator": 86,
+                "value": 0.5088757396449705
+              },
+              "precision": {
+                "denominator": 43,
+                "numerator": 43,
+                "value": 1.0
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 43,
+                "value": 0.3412698412698413
+              }
+            },
+            "joint_label": {
+              "f1": {
+                "denominator": 169,
+                "numerator": 86,
+                "value": 0.5088757396449705
+              },
+              "precision": {
+                "denominator": 43,
+                "numerator": 43,
+                "value": 1.0
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 43,
+                "value": 0.3412698412698413
+              }
+            },
+            "joint_evidence": {
+              "f1": {
+                "denominator": 169,
+                "numerator": 30,
+                "value": 0.17751479289940827
+              },
+              "precision": {
+                "denominator": 43,
+                "numerator": 15,
+                "value": 0.3488372093023256
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 15,
+                "value": 0.11904761904761904
+              }
+            },
+            "oracle_accuracy": {
+              "denominator": 126,
+              "numerator": 43,
+              "value": 0.3412698412698413
+            },
+            "macro_f1": 0.18736383442265794,
+            "false_support_rate": {
+              "denominator": 16,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "non_supported_judgment_coverage": {
+              "denominator": 16,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "gold_evidence_coverage": {
+              "denominator": 120,
+              "numerator": 15,
+              "value": 0.125
+            },
+            "literal_citation_validity": {
+              "denominator": 50,
+              "numerator": 50,
+              "value": 1.0
+            },
+            "case_exact": {
+              "denominator": 12,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "confusion": {
+              "CONTRADICTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 10,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "EXTRA": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "SUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 67,
+                "MISSING": 0,
+                "SUPPORTED": 43,
+                "UNSUPPORTED": 0
+              },
+              "UNSUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 6,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              }
+            }
+          },
+          "resources": {
+            "attempted_requests": 4,
+            "dollar_cost": {
+              "currency": "USD",
+              "reason": "subscription_usage_not_dollar_cost",
+              "value": null
+            },
+            "elapsed_ms": {
+              "count": 4,
+              "includes_failures": true,
+              "median": 18629.199779825285,
+              "p95": 20214.473971375264,
+              "sum": 74213.31066451967
+            },
+            "known_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 14225,
+              "output_tokens": 3294
+            },
+            "not_attempted_requests": 8,
+            "provider_calls_known": 4,
+            "repairs_known": 0,
+            "requested_models": [
+              "gpt-6.1-sol"
+            ],
+            "requests_with_repair": 0,
+            "requests_with_unknown_stats": 0,
+            "requests_with_unknown_usage": 0,
+            "retries_known": 0,
+            "returned_models": [
+              "gpt-6.1-sol"
+            ],
+            "total_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 14225,
+              "output_tokens": 3294
+            },
+            "usage_complete": true
+          },
+          "uncertainty": {
+            "confidence": 0.95,
+            "independent_units": 12,
+            "intervals": {
+              "case_exact": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.0,
+                "high": 0.0,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_evidence_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.17751479289940827,
+                "high": 0.3076923076923077,
+                "low": 0.027392600875966826,
+                "undefined_resamples": 0
+              },
+              "joint_label_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.5088757396449705,
+                "high": 0.76,
+                "low": 0.14492753623188406,
+                "undefined_resamples": 0
+              },
+              "macro_f1": {
+                "defined_resamples": 9368,
+                "degenerate": false,
+                "estimate": 0.18736383442265794,
+                "high": 0.26526393814858595,
+                "low": 0.05769230769230769,
+                "undefined_resamples": 632
+              },
+              "strict_decomposition_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.5088757396449705,
+                "high": 0.76,
+                "low": 0.14492753623188406,
+                "undefined_resamples": 0
+              }
+            },
+            "limitations": "Family sample sensitivity only; excludes annotation bias and unobserved model randomness. Degenerate intervals do not demonstrate zero uncertainty. Undefined draws are counted.",
+            "method": "family_percentile",
+            "observations": 12,
+            "repetitions": [],
+            "samples": 10000,
+            "seed": 20261015,
+            "unit": "family"
+          }
+        },
+        "optimized/end-to-end": {
+          "status": "PARTIAL_ERRORS",
+          "statuses": {
+            "NOT_RUN": 10,
+            "OK": 2
+          },
+          "requested_cases": 12,
+          "gold_claims": 126,
+          "quality": {
+            "counts": {
+              "citation_characters": 5209,
+              "citation_gold_relevant": 12,
+              "citation_literal_valid": 25,
+              "citation_total": 25,
+              "duplicate": 0,
+              "evidence_correct": 12,
+              "evidence_correct_non_unsupported": 12,
+              "exact": 0,
+              "extra": 11,
+              "false_support": 0,
+              "gold": 126,
+              "gold_non_supported": 16,
+              "gold_non_unsupported": 120,
+              "label_correct": 12,
+              "matched": 12,
+              "matched_non_supported": 0,
+              "omitted": 114,
+              "predicted": 23,
+              "predicted_non_unsupported": 23,
+              "requested": 12,
+              "succeeded": 2
+            },
+            "strict_decomposition": {
+              "f1": {
+                "denominator": 149,
+                "numerator": 24,
+                "value": 0.1610738255033557
+              },
+              "precision": {
+                "denominator": 23,
+                "numerator": 12,
+                "value": 0.5217391304347826
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 12,
+                "value": 0.09523809523809523
+              }
+            },
+            "joint_label": {
+              "f1": {
+                "denominator": 149,
+                "numerator": 24,
+                "value": 0.1610738255033557
+              },
+              "precision": {
+                "denominator": 23,
+                "numerator": 12,
+                "value": 0.5217391304347826
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 12,
+                "value": 0.09523809523809523
+              }
+            },
+            "joint_evidence": {
+              "f1": {
+                "denominator": 149,
+                "numerator": 24,
+                "value": 0.1610738255033557
+              },
+              "precision": {
+                "denominator": 23,
+                "numerator": 12,
+                "value": 0.5217391304347826
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 12,
+                "value": 0.09523809523809523
+              }
+            },
+            "oracle_accuracy": {
+              "denominator": 126,
+              "numerator": 12,
+              "value": 0.09523809523809523
+            },
+            "macro_f1": 0.06015037593984962,
+            "false_support_rate": {
+              "denominator": 16,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "non_supported_judgment_coverage": {
+              "denominator": 16,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "gold_evidence_coverage": {
+              "denominator": 120,
+              "numerator": 12,
+              "value": 0.1
+            },
+            "literal_citation_validity": {
+              "denominator": 25,
+              "numerator": 25,
+              "value": 1.0
+            },
+            "case_exact": {
+              "denominator": 12,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "confusion": {
+              "CONTRADICTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 10,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "EXTRA": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 11,
+                "UNSUPPORTED": 0
+              },
+              "SUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 87,
+                "MISSING": 11,
+                "SUPPORTED": 12,
+                "UNSUPPORTED": 0
+              },
+              "UNSUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 6,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              }
+            }
+          },
+          "resources": {
+            "attempted_requests": 2,
+            "dollar_cost": {
+              "currency": "USD",
+              "reason": "subscription_usage_not_dollar_cost",
+              "value": null
+            },
+            "elapsed_ms": {
+              "count": 2,
+              "includes_failures": true,
+              "median": 36170.370805310085,
+              "p95": 37018.779706186615,
+              "sum": 72340.74161062017
+            },
+            "known_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 8111,
+              "output_tokens": 2981
+            },
+            "not_attempted_requests": 10,
+            "provider_calls_known": 4,
+            "repairs_known": 0,
+            "requested_models": [
+              "gpt-6.1-sol"
+            ],
+            "requests_with_repair": 0,
+            "requests_with_unknown_stats": 0,
+            "requests_with_unknown_usage": 0,
+            "retries_known": 0,
+            "returned_models": [
+              "gpt-6.1-sol"
+            ],
+            "total_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 8111,
+              "output_tokens": 2981
+            },
+            "usage_complete": true
+          },
+          "uncertainty": {
+            "confidence": 0.95,
+            "independent_units": 12,
+            "intervals": {
+              "case_exact": {
+                "defined_resamples": 10000,
+                "degenerate": true,
+                "estimate": 0.0,
+                "high": 0.0,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_evidence_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.1610738255033557,
+                "high": 0.34375,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_label_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.1610738255033557,
+                "high": 0.34375,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "macro_f1": {
+                "defined_resamples": 9368,
+                "degenerate": false,
+                "estimate": 0.06015037593984962,
+                "high": 0.12422360248447205,
+                "low": 0.0,
+                "undefined_resamples": 632
+              },
+              "strict_decomposition_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.1610738255033557,
+                "high": 0.34375,
+                "low": 0.0,
+                "undefined_resamples": 0
+              }
+            },
+            "limitations": "Family sample sensitivity only; excludes annotation bias and unobserved model randomness. Degenerate intervals do not demonstrate zero uncertainty. Undefined draws are counted.",
+            "method": "family_percentile",
+            "observations": 12,
+            "repetitions": [],
+            "samples": 10000,
+            "seed": 20261015,
+            "unit": "family"
+          }
+        },
+        "optimized/oracle": {
+          "status": "PARTIAL_ERRORS",
+          "statuses": {
+            "NOT_RUN": 6,
+            "OK": 6
+          },
+          "requested_cases": 12,
+          "gold_claims": 126,
+          "quality": {
+            "counts": {
+              "citation_characters": 12723,
+              "citation_gold_relevant": 65,
+              "citation_literal_valid": 67,
+              "citation_total": 67,
+              "duplicate": 0,
+              "evidence_correct": 55,
+              "evidence_correct_non_unsupported": 53,
+              "exact": 2,
+              "extra": 0,
+              "false_support": 0,
+              "gold": 126,
+              "gold_non_supported": 16,
+              "gold_non_unsupported": 120,
+              "label_correct": 60,
+              "matched": 60,
+              "matched_non_supported": 9,
+              "omitted": 66,
+              "predicted": 60,
+              "predicted_non_unsupported": 58,
+              "requested": 12,
+              "succeeded": 6
+            },
+            "strict_decomposition": {
+              "f1": {
+                "denominator": 186,
+                "numerator": 120,
+                "value": 0.6451612903225806
+              },
+              "precision": {
+                "denominator": 60,
+                "numerator": 60,
+                "value": 1.0
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 60,
+                "value": 0.47619047619047616
+              }
+            },
+            "joint_label": {
+              "f1": {
+                "denominator": 186,
+                "numerator": 120,
+                "value": 0.6451612903225806
+              },
+              "precision": {
+                "denominator": 60,
+                "numerator": 60,
+                "value": 1.0
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 60,
+                "value": 0.47619047619047616
+              }
+            },
+            "joint_evidence": {
+              "f1": {
+                "denominator": 186,
+                "numerator": 110,
+                "value": 0.5913978494623656
+              },
+              "precision": {
+                "denominator": 60,
+                "numerator": 55,
+                "value": 0.9166666666666666
+              },
+              "recall": {
+                "denominator": 126,
+                "numerator": 55,
+                "value": 0.4365079365079365
+              }
+            },
+            "oracle_accuracy": {
+              "denominator": 126,
+              "numerator": 60,
+              "value": 0.47619047619047616
+            },
+            "macro_f1": 0.6523565948118377,
+            "false_support_rate": {
+              "denominator": 16,
+              "numerator": 0,
+              "value": 0.0
+            },
+            "non_supported_judgment_coverage": {
+              "denominator": 16,
+              "numerator": 9,
+              "value": 0.5625
+            },
+            "gold_evidence_coverage": {
+              "denominator": 120,
+              "numerator": 53,
+              "value": 0.44166666666666665
+            },
+            "literal_citation_validity": {
+              "denominator": 67,
+              "numerator": 67,
+              "value": 1.0
+            },
+            "case_exact": {
+              "denominator": 12,
+              "numerator": 2,
+              "value": 0.16666666666666666
+            },
+            "confusion": {
+              "CONTRADICTED": {
+                "CONTRADICTED": 7,
+                "ERROR": 3,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "EXTRA": {
+                "CONTRADICTED": 0,
+                "ERROR": 0,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 0
+              },
+              "SUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 59,
+                "MISSING": 0,
+                "SUPPORTED": 51,
+                "UNSUPPORTED": 0
+              },
+              "UNSUPPORTED": {
+                "CONTRADICTED": 0,
+                "ERROR": 4,
+                "MISSING": 0,
+                "SUPPORTED": 0,
+                "UNSUPPORTED": 2
+              }
+            }
+          },
+          "resources": {
+            "attempted_requests": 6,
+            "dollar_cost": {
+              "currency": "USD",
+              "reason": "subscription_usage_not_dollar_cost",
+              "value": null
+            },
+            "elapsed_ms": {
+              "count": 6,
+              "includes_failures": true,
+              "median": 22547.691852552816,
+              "p95": 23919.07274897676,
+              "sum": 126457.37841445953
+            },
+            "known_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 24007,
+              "output_tokens": 5637
+            },
+            "not_attempted_requests": 6,
+            "provider_calls_known": 6,
+            "repairs_known": 0,
+            "requested_models": [
+              "gpt-6.1-sol"
+            ],
+            "requests_with_repair": 0,
+            "requests_with_unknown_stats": 0,
+            "requests_with_unknown_usage": 0,
+            "retries_known": 0,
+            "returned_models": [
+              "gpt-6.1-sol"
+            ],
+            "total_usage": {
+              "cached_input_tokens": 0,
+              "input_tokens": 24007,
+              "output_tokens": 5637
+            },
+            "usage_complete": true
+          },
+          "uncertainty": {
+            "confidence": 0.95,
+            "independent_units": 12,
+            "intervals": {
+              "case_exact": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.16666666666666666,
+                "high": 0.4166666666666667,
+                "low": 0.0,
+                "undefined_resamples": 0
+              },
+              "joint_evidence_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.5913978494623656,
+                "high": 0.7981231425248739,
+                "low": 0.3181742925948224,
+                "undefined_resamples": 0
+              },
+              "joint_label_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.6451612903225806,
+                "high": 0.8611111111111112,
+                "low": 0.34615384615384615,
+                "undefined_resamples": 0
+              },
+              "macro_f1": {
+                "defined_resamples": 9368,
+                "degenerate": false,
+                "estimate": 0.6523565948118377,
+                "high": 0.9007836138273143,
+                "low": 0.22564659977703458,
+                "undefined_resamples": 632
+              },
+              "strict_decomposition_f1": {
+                "defined_resamples": 10000,
+                "degenerate": false,
+                "estimate": 0.6451612903225806,
+                "high": 0.8611111111111112,
+                "low": 0.34615384615384615,
+                "undefined_resamples": 0
+              }
+            },
+            "limitations": "Family sample sensitivity only; excludes annotation bias and unobserved model randomness. Degenerate intervals do not demonstrate zero uncertainty. Undefined draws are counted.",
+            "method": "family_percentile",
+            "observations": 12,
+            "repetitions": [],
+            "samples": 10000,
+            "seed": 20261015,
+            "unit": "family"
+          }
+        }
+      },
+      "paired_optimized_minus_minimal": {
+        "end-to-end": {
+          "reason": "both_systems_must_measure_the_same_population",
+          "status": "NOT_RUN"
+        },
+        "oracle": {
+          "reason": "both_systems_must_measure_the_same_population",
+          "status": "NOT_RUN"
+        }
+      },
+      "failures": [
+        {
+          "sequence": 23,
+          "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+          "case_id": "v2-dev-p07",
+          "approach": "minimal",
+          "track": "end-to-end",
+          "error_code": "provider_protocol_error",
+          "elapsed_ms": 10389.497552067041,
+          "provider_attempts_charged": 1,
+          "safe_events": [
+            {
+              "stage": "codex_inference",
+              "event": "end",
+              "outcome": "failure",
+              "error_code": "provider_protocol_error",
+              "elapsed_ms": 10388.654
+            },
+            {
+              "stage": "minimal",
+              "event": "provider_attempt",
+              "outcome": "failure",
+              "error_code": "provider_protocol_error",
+              "elapsed_ms": 10388.9,
+              "provider_calls": 1,
+              "repairs": 0,
+              "retries": 0
+            },
+            {
+              "stage": "verification",
+              "event": "end",
+              "outcome": "failure",
+              "error_code": "provider_protocol_error",
+              "elapsed_ms": 10389.165,
+              "provider_calls": 1,
+              "repairs": 0,
+              "retries": 0
+            },
+            {
+              "stage": "eval_case",
+              "event": "end",
+              "outcome": "failure",
+              "error_code": "provider_protocol_error",
+              "elapsed_ms": 10390.11
+            }
+          ]
+        }
+      ],
+      "diagnostics": {
+        "records": 363,
+        "inference_attempt_starts": 18,
+        "max_record_bytes": 253,
+        "auth_refresh_success": false
+      },
+      "replay": {
+        "exit_code": 2,
+        "wall_ms": 16473.300613928586,
+        "inference_calls": 0,
+        "network_settings_credentials_guarded": true,
+        "all_run_files_byte_identical": 23,
+        "artifact_hashes": {
+          "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+          "cases.manifest.json": "43b39b666e40fdc25dcca23dd1de33648448d8d034ca1b719756648134a39b56",
+          "completion.json": "c6b0d6509c6c89485f3e7daf2b5893881b8b21ef23bfa8dce463260a6df4b002",
+          "config.json": "be153ba82864648c8ac148d6b6cefab5e782b936273b36e3aa4be8e653f15c7c",
+          "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+          "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+          "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+          "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+          "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+          "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+          "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+          "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+          "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+          "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+          "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+          "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+          "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+          "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+          "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+          "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+          "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+          "records.jsonl": "e579128c7b0aa6ec88c064c438d1c19a304a759460cb0dbdcb1b35f209e29b5a",
+          "summary.json": "6517a58485459703c8bef3b5e776fc4044ae47ce50cf52ff72f37188e06a0162"
+        }
+      },
+      "bindings": {
+        "config.json": "be153ba82864648c8ac148d6b6cefab5e782b936273b36e3aa4be8e653f15c7c",
+        "records.jsonl": "e579128c7b0aa6ec88c064c438d1c19a304a759460cb0dbdcb1b35f209e29b5a",
+        "summary.json": "6517a58485459703c8bef3b5e776fc4044ae47ce50cf52ff72f37188e06a0162",
+        "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf"
+      }
+    }
+  ],
+  "old_protected_files_unchanged": 442,
+  "source_files_unchanged": 28,
+  "no_heldout_content_read": true,
+  "strict_evidence_is_gold_span_proxy_not_semantic_audit": true,
+  "execution_order_clarification": "execution-order-clarification.json",
+  "private_pre_inference_freeze_sha256": "08567bd46aa0cebe978d55695276035a43242da421f284aff518faceaae331f9",
+  "public_commands": "experiment-plan.json; portable examples, not original private argv",
+  "independent_parent_review": "pending; replay here is evaluator-owned guarded CLI evidence"
+}

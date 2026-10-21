@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "command": "uv sync --frozen",
+      "exit_code": 0
+    },
+    {
+      "command": "uv run --frozen pytest -q",
+      "duration_seconds": 243.76,
+      "exit_code": 0,
+      "passed": 861
+    },
+    {
+      "command": "uv run --frozen ruff check .",
+      "exit_code": 0
+    },
+    {
+      "cases": 72,
+      "claims": 668,
+      "command": "uv run --frozen grounding-eval validate --dataset datasets/main.jsonl",
+      "exit_code": 0
+    }
+  ],
+  "code_sha256": "cd15430a02b364c2f6ddef034e6ef046b335dd99b3678d3dada5186e31dd89a6",
+  "date": "2026-10-20",
+  "dependency_lock_sha256": "11756c62fcab5ccf50828739ab9d5bd5b6ba304241e5721600bca8fe0e636b92",
+  "environment": {
+    "credentials_exported": false,
+    "dependencies_installed": 30,
+    "installation": "new virtual environment in an isolated source export; uv sync --frozen; existing dependency cache available",
+    "python": "CPython 3.11.9"
+  },
+  "main_dataset_sha256": "b103f0ee127728f0fdfc5d58f3f5cbcf7c39e89d09b1369d1e7b9baf22b1b845",
+  "private_log_sha256": {
+    "install.log": "28cef40cfe8559f289c848d6d6c5ead831a08aed0ace03a395623d54d22dfb92",
+    "main-validate.json": "24bff3943b006802c20bb797ca6ec7574c12f6145242f542d7d74b3f226d2205",
+    "pytest.log": "6cadc5890414b42474072948a51220e3936d3fcf6c647be50fdf9ce1014bdc9d",
+    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "provider_inference_calls": 0,
+  "source_files": 28,
+  "source_parent_commit_at_export": "45d01e2a3d7142f4d8a5737a53e1743a921ea294",
+  "status": "PASS",
+  "tested_uncommitted_change": "Only the adopted C01 Minimal sentence changes runtime source from the parent commit. Dataset and public evidence are also included.",
+  "verification_scope": "Offline engineering, source equality, main schema/provenance and fresh locked install. Not measured model quality. HTTP/CLI consumer evidence is recorded separately."
+}

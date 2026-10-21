@@ -1,0 +1,59 @@
+{
+  "status": "PORTABLE_PUBLIC_OFFLINE_REPLAY_PASS",
+  "actual_exit_code": 0,
+  "started_at": "2026-10-21T02:17:11.694452+00:00",
+  "finished_at": "2026-10-21T02:23:39.091778+00:00",
+  "wall_ms": 387391.73499075696,
+  "source_commit": "324559dccba4624dfa803849f5fd26284c7b27f4",
+  "code_sha256": "cd15430a02b364c2f6ddef034e6ef046b335dd99b3678d3dada5186e31dd89a6",
+  "public_replay_script_sha256": "dc58eef441a58d52ce03e398a192a3f0e0d9268e16ea972db0ab04bb2fd825dc",
+  "execution_receipt_sha256": "bf93dc741861c28b154523f6aec6096d8fea5ae8e881c61df803f6f290be0a9a",
+  "repeated_analysis_sha256": "a2e0656844f8ead84685f0c26d5b90e0e036325e3b5fcc356f7e3b2f2ffc09c0",
+  "audit_analysis_sha256": "a7e285302f5a79a0460d170efd11dd6a0c2678fb429e72e6053d5a39fff9f065",
+  "adjudication_sha256": "8c322bbc2ba86a1e1808274dccebaa781f59ecb0e3f4d810b0bbad50efeb11e2",
+  "correction_sensitivity_sha256": "e74428e6a2baac141fe3a2a7a172b706e371078643c01d57eef10779535770dd",
+  "source_recipe": "Export src from the pinned commit, then run replay-results.py with that archive on PYTHONPATH.",
+  "portable_replay_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=\"$final_replay_source/src\" python reports/eval-v2/final-20261020/replay-results.py",
+  "consumer_events": [
+    {
+      "run": "full-test",
+      "byte_identical_files": 98,
+      "new_inference_calls": 0
+    },
+    {
+      "run": "repeat-02",
+      "byte_identical_files": 98,
+      "new_inference_calls": 0
+    },
+    {
+      "run": "repeat-03",
+      "byte_identical_files": 98,
+      "new_inference_calls": 0
+    },
+    {
+      "repeated_groups": 8,
+      "status": "IDENTICAL",
+      "new_inference_calls": 0
+    },
+    {
+      "targeted_correction_sensitivity": "IDENTICAL",
+      "corrections": 2,
+      "semantic_judgments_not_reperformed": true,
+      "new_inference_calls": 0
+    },
+    {
+      "audit_batches": 2,
+      "fixed_cases": 24,
+      "status": "IDENTICAL",
+      "new_inference_calls": 0
+    },
+    {
+      "status": "OFFLINE_REPLAY_COMPLETE",
+      "new_inference_calls": 0
+    }
+  ],
+  "all_294_original_run_files_byte_identical": true,
+  "network_inference_settings_and_credentials_guarded": true,
+  "new_benchmark_provider_calls": 0,
+  "semantic_judgments_not_reperformed": true
+}

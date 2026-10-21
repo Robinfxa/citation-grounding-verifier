@@ -1,0 +1,83 @@
+{
+  "schema_version": "affected-review-receipt/v1",
+  "validated_at_utc": "2026-10-16T16:36:37.522466+00:00",
+  "status": "pass",
+  "review_stage": "post_gold_affected_claim_review",
+  "reviewer": {
+    "id": "/root/v2_annotation_review",
+    "role": "non-author LLM annotation reviewer",
+    "configured_model": "gpt-6.1-sol",
+    "configured_reasoning_effort": "max",
+    "configuration_basis": "Parent dispatch / explicit continuation instructions",
+    "runtime_model_build": "unknown",
+    "runtime_model_version": "unknown"
+  },
+  "final_inputs": [
+    {
+      "artifact": "pilot.jsonl",
+      "sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "bytes": 219498
+    },
+    {
+      "artifact": "pilot.manifest.json",
+      "sha256": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+      "bytes": 20116
+    },
+    {
+      "artifact": "pilot-reviewed-1.change-map.json",
+      "sha256": "7b40a182be5631bf74a9e57ad9d0114764204de7880c12a9c0542a6f6af223bf",
+      "bytes": 8864
+    },
+    {
+      "artifact": "pilot-reviewed-1.affected-recheck.input.jsonl",
+      "sha256": "ab2b8a79c53668fa7d6dd6a751d7a368f34b5687cc98ad83ba2846d7d403595b",
+      "bytes": 162593
+    },
+    {
+      "artifact": "pilot.revisions.json",
+      "sha256": "22c949b05ff812bde3974072f8d57627331544cb9688a3b62a9b0424c683d598",
+      "bytes": 220717
+    },
+    {
+      "artifact": "pilot.audit.json",
+      "sha256": "b8cec76119c5754514ecff6a7b73030c02782ff04ce3e08c42fffd7f7d91f19b",
+      "bytes": 15369
+    },
+    {
+      "artifact": "pilot.metadata.json",
+      "sha256": "9b48efc9f806befa6c8f9a57858525349397da07bea807d0e695a85983a5d166",
+      "bytes": 47545
+    }
+  ],
+  "outputs": {
+    "affected-review.json": {
+      "sha256": "3cbcb776c313ae9640c4c31ba9f6711637f9799a87546e3ae412faf2060501ba",
+      "bytes": 361629
+    },
+    "affected-review.md": {
+      "sha256": "ba93132e5113c341960d3034801b5d3ff59d5810b4d9d74f8e6f92375597f3e2",
+      "bytes": 2016
+    }
+  },
+  "affected_claims_pass": 81,
+  "unchanged_claims_reused_by_exact_field_equality": 45,
+  "changed_original_claims": 78,
+  "affected_citation_spans_validated": 145,
+  "whole_dataset_numeric_checks": {
+    "source_passages": 52,
+    "answer_anchors": 126,
+    "citation_spans": 186
+  },
+  "economy_decisions_pass": 68,
+  "necessary_cross_passage_cases": 2,
+  "case_count": 12,
+  "last_change_only": "/1/gold_claims/3/rationale",
+  "original_locked_and_comparison_hashes_unchanged": true,
+  "local_personal_paths_present_in_review_artifacts": false,
+  "unresolved_gaps": [],
+  "human_review_status": "pendinghuman",
+  "model_api_calls": 0,
+  "verifier_outputs_read": false,
+  "future_test_read": false,
+  "limitation": "Affected review after author-gold exposure; no renewed blindness, human validation or verifier accuracy is claimed."
+}

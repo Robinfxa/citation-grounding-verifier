@@ -1,106 +1,112 @@
 # Citation Grounding & Faithfulness Verifier
 
-An HTTP service that splits an answer into factual claims, checks them against supplied passages, and attaches exact quotations. It distinguishes **SUPPORTED**, **CONTRADICTED**, and **UNSUPPORTED** without external knowledge.
+An HTTP service that extracts factual claims from an answer, checks them only against supplied passages, and returns **SUPPORTED**, **CONTRADICTED**, or **UNSUPPORTED** with exact quotations. A heuristic, a minimal single-call LLM verifier (the default), and an optional extraction/judgment pipeline share the same interface and safety checks.
 
-Three approaches share one interface: a deterministic heuristic, a minimal single-call LLM verifier (**the default**), and an optimized decomposition/judgment pipeline. The [frozen experiment](reports/2026-10-15/README.md) found no clear overall quality advantage for the larger pipeline, while minimal used less time and fewer tokens.
+## Current evaluation status
+
+`datasets/main.jsonl` now contains **72 real-document cases / 668 gold claims**, split into 24 development and 48 held-out cases. Contexts contain 3,905–15,959 characters; answers contain 8–14 annotated claims. Sources are pinned, licensed CPython, Rust, PostgreSQL, pytest and curl documentation. Main answers are AI-authored summaries or controlled mutations; **nine natural RAGTruth responses** are measured separately. See the [data card](reports/eval-v2/data-card.md).
+
+The [final report](reports/eval-v2/README.md) exposes valid paraphrases rejected by strict matching, claim-granularity mismatches, and missing citation identity/conditions. Oracle classification remains near ceiling; low strict end-to-end F1 is **not a general factual-error rate**. Main retained 479 successes and one protocol failure across 480 jobs. AI semantic review also required two corrections and leaves interpretation questions unresolved.
+
+A [controlled development change](reports/eval-v2/ablation-20261020/README.md) added one Minimal citation instruction: pooled strict evidence F1 **0.2845 → 0.6384**. In the complete second observation, output tokens rose **22.6%** and total operation time **23.1%**. Known condition-citation gaps improved, while longer quotations and residual extraction issues limit the claim. Minimal remains the default for its measured resource advantage, without asserting factual superiority.
+
+Saved results are replayable within their documented public/private boundaries. The [release-candidate review](reports/eval-v2/release-readiness.md) records the verified results and unresolved annotation limits; it does not claim human review or a v2 release on `main`.
 
 ## Try it offline
 
-Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/). No credential or network inference is needed for these checks; installation downloads the locked dependencies.
-
-If your platform needs to build `cryptography` from source, install its [C/Rust and OpenSSL build prerequisites](https://cryptography.io/en/latest/installation/#building-cryptography-on-macos) first.
+Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/). Installation downloads locked dependencies; these checks perform no model inference.
 
 ```bash
 uv sync --frozen
 uv run pytest
-uv run grounding-eval validate
-uv run grounding-eval run --approaches heuristic --split dev --track both \
-  --output reports/runs/heuristic-dev
+uv run ruff check .
+uv run grounding-eval validate --dataset datasets/main.jsonl
+uv run grounding-eval run --dataset datasets/main.jsonl \
+  --approaches heuristic --split dev --track both \
+  --output reports/runs/main-dev-offline
+uv run grounding-eval report reports/runs/main-dev-offline
 ```
 
-Use a fresh output directory for every run. To try the HTTP service without credentials, start it with `GROUNDING_APPROACH=heuristic` as shown below. The heuristic is a limited lexical baseline, not a substitute for measured LLM quality.
+Use a **new output directory for every run**. The heuristic is a lexical baseline; its successful execution does not validate model quality. Platforms building `cryptography` from source need its [build prerequisites](https://cryptography.io/en/latest/installation/#building-cryptography-on-macos).
 
-## Configure a model
+## Configure and run the service
 
-```bash
-cp .env.example .env
-```
+Copy `.env.example` to `.env`. For the OpenAI API route, configure `GROUNDING_PROVIDER=openai`, `GROUNDING_MODEL` and `OPENAI_API_KEY`. For the existing ChatGPT-plan route, run `uv run grounding-auth login` and `uv run grounding-auth models`, then configure `GROUNDING_PROVIDER=codex` and an available model. The application obtains its own authorization and stores credentials outside the repository; see [setup and limitations](docs/codex-provider.md).
 
-| Route | Setup | Accounting |
-| --- | --- | --- |
-| ChatGPT plan (`codex`) | Run `uv run grounding-auth login`, then `uv run grounding-auth models`; set `GROUNDING_PROVIDER=codex` and an available `GROUNDING_MODEL` in `.env` | Authorized ChatGPT/Codex plan usage; dollar cost remains unknown |
-| OpenAI API (`openai`) | Set `GROUNDING_PROVIDER=openai`, `GROUNDING_MODEL` and `OPENAI_API_KEY` in `.env` | Measured provider tokens; dollar estimates require explicit matching prices |
+`GROUNDING_APPROACH=minimal` remains the default; `optimized` selects the two-stage method. `GROUNDING_MAX_OUTPUT_TOKENS` applies to the OpenAI API route. The Codex route does not apply that cap: saved evaluations distinguish requested and effective limits, with the effective token limit unknown. Time, byte and attempt bounds are separate.
 
-`GROUNDING_APPROACH=minimal` is the default; set `optimized` to opt into two-stage verification. The ChatGPT-plan adapter targets macOS/Linux and obtains this application's own authorization, keeping tokens outside the repository. See [authentication setup and limitations](docs/codex-provider.md).
-
-`GROUNDING_MAX_OUTPUT_TOKENS` is sent to the OpenAI API route. The Codex route **does not apply this token cap**. New evaluation configurations distinguish the requested limit from the effective limit (`null` / not applied for Codex); time, response-byte and attempt bounds remain separate.
-
-## Run the service
+Two optional experimental methods use TypeSafe's pinned `jev-1.14.0`: **`jev_minimal` splits sentences with rules**, while **`jev_optimized` uses LLM atomic extraction**. Both use typed Jev decisions, exact source windows and a separate check of the selected quotations; uncertain claims escalate to one fixed-ID LLM batch. See [Jev configuration, confidence limits and evaluation](docs/jev-provider.md). The original default is unchanged. The [first live smoke](reports/jev/smoke-20261020/README.md) and [continuation](reports/jev/resume-20261020/README.md) failed protocol validation; the latter identified `probability_sum`. After adding bounded numeric diagnostics, one [fixed Optimized development run](reports/jev/numeric-diagnostic-20261020/run-01/summary.json) completed extraction, both Jev rounds and LLM fallback in four attempts, bringing cumulative use to 8/12. It did not reproduce the sum error, so the earlier deviations remain unknown. One successful Optimized case does not establish both-method acceptance, calibration or a speed/cost advantage.
 
 ```bash
-# Use the configured model and default minimal approach:
+# Configured model:
 uv run uvicorn grounding.app:app --host 127.0.0.1 --port 8000 --no-access-log
 
-# Or, without model credentials:
+# Alternatively, no model credentials:
 GROUNDING_APPROACH=heuristic uv run uvicorn grounding.app:app \
   --host 127.0.0.1 --port 8000 --no-access-log
 ```
 
-Run one server command, then in a second terminal:
+Choose one server command. In a second terminal:
 
 ```bash
 curl --fail-with-body http://127.0.0.1:8000/verify \
   -H 'Content-Type: application/json' --data-binary @examples/wal.json
 ```
 
-Interactive API documentation is at `/docs`. The request has only `context_passages` and `generated_answer`; each response claim contains `claim_text`, `verdict`, `reasoning`, and `citations` of `{index, quote}`.
+The request contains `context_passages` and `generated_answer`; each response claim contains `claim_text`, `verdict`, `reasoning`, and `citations` of `{index, quote}`. Interactive documentation is at `/docs`.
 
-## Measured results
+## Run bounded evaluations
 
-The **2026-10-15** frozen comparison used real Codex / `gpt-6.1-sol` calls on **24 held-out cases / 50 claims**, with sequential seeded execution. All 144 approach/track/case jobs completed without errors, retries, repairs or unknown usage. These are single observed trials on agent-authored synthetic English data.
-
-| End-to-end approach | Joint label F1 | Joint label + evidence F1 | Exact cases | Median latency | Input / output tokens |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Heuristic | 0.3299 | 0.3299 | 6/24 | 0.60 ms | 0 / 0 |
-| Minimal | 0.9800 | 0.9600 | 22/24 | 4.50 s | 8,972 / 3,614 |
-| Optimized | 0.9600 | 0.9600 | 23/24 | 7.82 s | 26,293 / 5,198 |
-
-Joint F1 counts correctly aligned claims against **all gold and predicted claims**, including omissions and extras. Exact cases also require every claim and citation to satisfy the frozen evidence proxy. Both LLM oracle tracks labeled **50/50** supplied claims correctly and covered **35/35** non-UNSUPPORTED evidence sets.
-
-The paired optimized-minus-minimal joint-label F1 difference was **−0.0200**, with a 95% family-bootstrap interval **[−0.1200, +0.0577]**. It spans zero: minimal is the lower-latency, lower-token default, without a claim of proven accuracy superiority. Codex dollar cost is `null`, not zero; token usage is not a remaining-quota estimate.
-
-Minimal made one real unknown-versus-contradicted judgment error and lost one conservative full-quote match. Optimized produced two plural rewrites unmatched by the frozen claims/aliases, with possible scope ambiguity. No held-out aliases or scores were changed. Development v1→v2 changed annotations, transport and the judge prompt together, so it was **not a controlled prompt-only A/B experiment**. The [full report](reports/2026-10-15/README.md) retains predictions, errors, resource tables, confidence intervals and failure analysis.
-
-## Run evaluations and diagnostics
+Model runs require an explicit total attempt allowance, including retries and repairs. Set the following shell variable to your approved integer allowance before running; it is not read from `.env`. This example does not constitute a frozen final experiment.
 
 ```bash
-# After configuring a provider; each output directory must be new.
-uv run grounding-eval run --approaches heuristic,minimal,optimized \
-  --split dev --track both --output reports/runs/development
-uv run grounding-eval run --approaches heuristic,minimal,optimized \
-  --split test --track both --output reports/runs/held-out
-uv run grounding-eval report reports/runs/held-out
+uv run grounding-eval run --dataset datasets/v2/pilot.jsonl \
+  --approaches heuristic,minimal,optimized --split dev --track both \
+  --stop-on-model-error \
+  --max-total-provider-attempts "${EVAL_ATTEMPTS:?Set an approved attempt allowance}" \
+  --output reports/runs/pilot-models
+uv run grounding-eval report reports/runs/pilot-models
 
-# Separate edge cases; never included in --split all or the main leaderboard.
+# Edge cases are separate from the main population.
 uv run grounding-eval run --dataset datasets/diagnostic.jsonl \
-  --approaches heuristic,minimal,optimized --split diagnostic --track both \
-  --output reports/runs/diagnostic
+  --approaches heuristic --split diagnostic --track both \
+  --output reports/runs/diagnostic-offline
 ```
 
-The [dataset card](datasets/README.md) describes 32 main cases / 68 claims, with disjoint development (8 cases) and test (24 cases) families, balanced categories, and six separate diagnostics. `--split all` means dev and test only. Oracle evaluation fixes the input claims; end-to-end evaluation includes extraction. Frozen text/alias matching is verdict-blind and one-to-one; correct unregistered paraphrases can be undercounted.
+`--split all` selects dev/test only. `--case-ids-file` accepts a frozen JSON array of unique IDs for a subset within the selected split. Before a model job, the runner reserves that operation's maximum attempts; it charges known actual calls, or conservatively keeps the reservation when statistics are missing. Insufficient budget produces explicit NOT_RUN records with all gold facts retained. Jobs and provider calls are different units.
 
-The [separate diagnostic run](reports/2026-10-15/diagnostic-final/README.md) completed 36/36 jobs: minimal and optimized each matched all six cases in both tracks; heuristic matched four. These fixtures are not added to the main scores, and historical run files remain unchanged.
+`--stop-on-model-error` stops subsequent model jobs after the first model failure while continuing heuristic work. The triggering job can use its existing bounded retries; later uncalled jobs retain their gold facts and consume no attempts. Omitting the option preserves the earlier execution policy. Carry prior spending forward when setting another run's allowance.
 
-Runs preserve failures in the denominators and save configuration, dataset/prompt/code fingerprints, actual latency, usage and model IDs. Gold evidence coverage is a conservative span proxy, not an independent semantic judge. Zero denominators remain undefined. Small-sample bootstrap intervals do not account for annotation bias or model stochasticity.
+Oracle runs supply gold claim **texts**, never verdicts or evidence. End-to-end runs receive only passages and the answer. Strict text/registered-alias matching is verdict-blind and one-to-one; omissions, extras, duplicate predictions and operational failures remain in the relevant denominators. Correct unregistered paraphrases can be undercounted. False-support rate is accompanied by non-supported judgment coverage and failure counts. S/C evidence coverage, literal quotation validity and semantic sufficiency are distinct.
 
-## Contract and engineering checks
+The [two-stage audit policy](reports/eval-v2/audit-policy.md) supplements strict scores: anonymous claim alignment is locked before labels and evidence are shown. The [completed 24-case audit](reports/eval-v2/final-20261020/semantic-audit-analysis.json) preserves both original AI reviews. [Two acknowledged review errors](reports/eval-v2/final-20261020/semantic-audit-adjudication.json) have a separate correction sensitivity; method clues in generated reasoning also limited blinding. Source-family resampling keeps repeated observations together; claims or repeated runs are not additional independent sources.
 
-SUPPORTED means fully entailed by context; CONTRADICTED means directly refuted; UNSUPPORTED includes missing evidence and unresolved equal-scope conflicts. Supported/contradicted claims require exact source citations; unsupported claims have none. Code enforces strict integer indices, bounds, nonblank quotes and case-sensitive substring membership without normalization. **A genuine quotation does not prove a correct judgment.**
+## Historical results and replay
 
-Blank answers return `{"claims": []}` without inference. Other no-fact answers require successful extraction. Model failures never become fabricated unsupported claims. Limits include a 1 MiB body, 32 passages, 64 claims, a 60-second operation deadline and six provider attempts. Safe errors distinguish invalid input (422/413), unavailable configuration/provider (503), invalid/refused/incomplete output (502), and deadline expiry (504). Local diagnostics exclude input text, quotes, credentials and raw upstream errors. Use the service on loopback.
+The [2026-10-15 report](reports/2026-10-15/README.md) retains the original Codex / `gpt-6.1-sol` measurements on **24 fictional held-out cases / 50 claims**. Minimal and optimized strict joint-label F1 were 0.98 and 0.96; the paired interval crossed zero. Minimal used fewer tokens and less time, which motivated the current default. These are v1 observations, not evidence of v2 quality or proven accuracy superiority. That round's combined annotation, transport and prompt change was not a controlled prompt-only ablation.
+
+The original 32-case dataset is preserved byte-for-byte at `datasets/legacy/main-v1.jsonl`; all historical run files remain unchanged. Replay them with their fixed original source, not the new scorer. From this repository:
 
 ```bash
-uv run ruff check .
+legacy_checkout=$(mktemp -d)
+git archive 8b0b0fe70c7a5d19c1fce14fc77cea68e233e90e | tar -x -C "$legacy_checkout"
+(
+  cd "$legacy_checkout"
+  uv sync --frozen
+  uv run grounding-eval report reports/2026-10-15/held-out
+)
 ```
 
-See [architecture and research sources](docs/architecture.md), [annotation history](docs/dataset-review.md), and [verification evidence](openspec/changes/citation-grounding/verification.md). Service, evaluator and dataset received independent agent reviews. New provider authentication/streaming increments have author tests and live acceptance, but their independent review was stopped by a platform risk check; no independent approval is claimed. OpenAI API-key inference has offline transport coverage and was not measured live. Deterministic guards do not guarantee semantic accuracy, extraction completeness or universal prompt-injection resistance.
+[Baseline checks](reports/eval-v2/baseline-checks.json) reproduced all four historical runs without changing any copied artifact bytes. The original development-v1 run still exits 2 because its recorded failures are preserved. New v2 records replay with the new code and frozen source snapshots; changing the scorer or damaging an artifact is expected to reject replay.
+
+## Contract, evidence and learning materials
+
+SUPPORTED requires complete context entailment; CONTRADICTED requires direct same-scope refutation; UNSUPPORTED includes missing evidence and unresolved equal-scope conflict. S/C require exact quotations with valid integer indices; U requires no citations. **A genuine quotation does not establish a correct judgment.**
+
+Blank answers return empty claims without inference. Limits include a 1 MiB body, 32 passages, 96,000 total context characters, 12,000 answer characters, 64 claims, a 60-second operation deadline and six provider attempts. Failures remain errors, with safe status codes and diagnostics that exclude input text, quotes, credentials and raw upstream errors. Use the service on loopback.
+
+- [Engineering verification](reports/eval-v2/verification.json) and [evaluation requirements](openspec/changes/evaluation-v2/specs/evaluation-v2/spec.md)
+- [Architecture](docs/architecture.md), [source research](docs/research/eval-v2-sources.md), and [AI use/workflow](AI_used.md)
+- [Code walkthrough](docs/code-walkthrough.zh-CN.md) and [annotation review queue](reports/eval-v2/human-review.md)
+
+AI authorship, non-author AI review, program checks and human review are reported separately. Public-document contamination, annotation bias and scoring proxies limit any eventual result. OpenAI API-key inference was not measured live. The earlier provider authentication/streaming increment's independent review was stopped by a platform risk check and remains incomplete; the new evaluator review does not certify that scope.

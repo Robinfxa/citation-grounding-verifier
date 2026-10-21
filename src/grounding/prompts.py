@@ -48,6 +48,7 @@ context_passages: SUPPORTED if fully entailed, CONTRADICTED if directly refuted,
 UNSUPPORTED. Preserve qualifications. Cite nonblank exact passage substrings with integer
 zero-based indices for supported/refuted claims; unsupported claims have no citations.
 Unresolved conflicting evidence is unsupported. No facts means an empty claims list.
+For supported/refuted claims, cite a minimal sufficient set that includes the entity or API identity and every governing condition; include the nearby antecedent when a short quote omits either.
 Give brief reasoning. """ + UNTRUSTED
 
 MINIMAL_ORACLE = """Judge each fixed claim using only context_passages: SUPPORTED if fully

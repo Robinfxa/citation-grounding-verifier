@@ -1,0 +1,436 @@
+{
+  "format_version": 1,
+  "dataset_file": "pilot.jsonl",
+  "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+  "annotation_version": "v2-pilot-reviewed-1",
+  "status": "author_revision_frozen_pending_affected_independent_recheck",
+  "cases": 12,
+  "claims": 126,
+  "families": 12,
+  "splits": {
+    "dev": 12
+  },
+  "categories": {
+    "subtle_distortion": 3,
+    "synthesis": 3,
+    "supported": 3,
+    "extrinsic": 3
+  },
+  "labels": {
+    "CONTRADICTED": 10,
+    "SUPPORTED": 110,
+    "UNSUPPORTED": 6
+  },
+  "origins": {
+    "natural_response": 0,
+    "controlled_mutation": 6,
+    "generated_from_real_source": 6
+  },
+  "natural_response_fraction": 0.0,
+  "controlled_mutation_count": 15,
+  "claim_count_range": [
+    8,
+    13
+  ],
+  "answer_word_range": [
+    74,
+    135
+  ],
+  "all_claims_supported_cases": 6,
+  "context_estimated_token_range": [
+    1651,
+    3886
+  ],
+  "token_method": "Rounded decoded Unicode source-context characters divided by four; estimates only, not a model tokenizer or provider usage.",
+  "necessary_cross_passage_cases": 2,
+  "necessary_cross_passage_claim_ids": [
+    "v2-dev-p01-c03",
+    "v2-dev-p10-c05",
+    "v2-dev-p10-c06"
+  ],
+  "single_passage_alternatives": {
+    "v2-dev-p02-c04": [
+      [
+        1
+      ],
+      [
+        4
+      ]
+    ],
+    "v2-dev-p05-c08": [
+      [
+        3
+      ],
+      [
+        2
+      ]
+    ]
+  },
+  "duplicate_audit": {
+    "population": "12 development pilot contexts only",
+    "method": "Set Jaccard similarity of lowercase ASCII alphanumeric/underscore five-word shingles; a diagnostic, not a semantic independence proof.",
+    "exact_context_duplicates": 0,
+    "families_crossing_splits": 0,
+    "pairs_compared": 66,
+    "top_pairs": [
+      {
+        "a": "v2-dev-p10",
+        "b": "v2-dev-p12",
+        "word5_shingle_jaccard": 0.0008949880668257757
+      },
+      {
+        "a": "v2-dev-p10",
+        "b": "v2-dev-p11",
+        "word5_shingle_jaccard": 0.0005506607929515419
+      },
+      {
+        "a": "v2-dev-p06",
+        "b": "v2-dev-p08",
+        "word5_shingle_jaccard": 0.00038226299694189603
+      },
+      {
+        "a": "v2-dev-p04",
+        "b": "v2-dev-p06",
+        "word5_shingle_jaccard": 0.00037650602409638556
+      },
+      {
+        "a": "v2-dev-p01",
+        "b": "v2-dev-p02",
+        "word5_shingle_jaccard": 0.0
+      }
+    ]
+  },
+  "source_scope": {
+    "projects": {
+      "CPython": 6,
+      "Rust Reference": 3,
+      "PostgreSQL": 3
+    },
+    "family_definition": "One source document/function-topic cluster. Overlapping passages, mirrors or versions belong to the same family.",
+    "limitation": "These families share three upstream projects and related programming/documentation concepts; neither project-level independence nor complete semantic topic independence is claimed."
+  },
+  "review": {
+    "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+    "original_claim_count": 123,
+    "original_label_agreements": 122,
+    "original_label_disagreement": {
+      "claim_id": "v2-dev-p04-c09",
+      "author": "SUPPORTED",
+      "independent": "UNSUPPORTED"
+    },
+    "revised_affected_claim_recheck": "pending",
+    "human_review": "not_performed",
+    "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+    "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+  },
+  "revision_counts": {
+    "changed_old_claims": 78,
+    "affected_new_claims": 81,
+    "evidence_economy_decisions": 68
+  },
+  "author_draft": {
+    "dataset_file": "pilot-author-draft-1.jsonl",
+    "dataset_sha256": "e6b4ef286e0fda9bde702cf68e27566ca9b931c7c38758cae43e619571866b5f",
+    "byte_identical_to_frozen_author_draft": true,
+    "claims": 123,
+    "labels": {
+      "CONTRADICTED": 10,
+      "SUPPORTED": 107,
+      "UNSUPPORTED": 6
+    },
+    "purpose": "Review traceability only; not an additional evaluation population."
+  },
+  "preservation": {
+    "original_protected_files": 13,
+    "original_protected_hashes_unchanged": true,
+    "raw_source_files_unchanged": true,
+    "all_12_context_collections_unchanged": true
+  },
+  "verification": {
+    "actual_cli_commands": [
+      "uv run grounding-eval validate --dataset datasets/v2/pilot.jsonl",
+      "uv run grounding-eval validate --dataset datasets/v2/pilot-author-draft-1.jsonl"
+    ],
+    "observed_exit_codes": [
+      0,
+      0
+    ],
+    "scope": "Typed dataset and manifest, declared layout, input limits, exact answer anchors/citations, source/license hashes and raw Unicode passage mappings. Semantic correctness requires annotation review."
+  },
+  "accounting": {
+    "author": {
+      "type": "AI",
+      "configured_model": "gpt-6.1-sol",
+      "configured_reasoning_effort": "max",
+      "runtime_build": null,
+      "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+    },
+    "product_provider_calls": 0,
+    "author_token_usage": null,
+    "author_cost": null,
+    "candidate_verifier_outputs_read": false,
+    "held_out_test_content_read": false,
+    "test_cases_generated": 0,
+    "limitation": "Public upstream sources may be present in model pretraining; process separation cannot establish absence of pretraining exposure."
+  },
+  "reproduce": {
+    "validation": [
+      "uv run grounding-eval validate --dataset datasets/v2/pilot.jsonl",
+      "uv run grounding-eval validate --dataset datasets/v2/pilot-author-draft-1.jsonl"
+    ],
+    "checksum_example": "shasum -a 256 datasets/v2/pilot.jsonl datasets/v2/pilot-author-draft-1.jsonl",
+    "audit_method": "The per-case lengths and label/origin counts are direct deterministic counts of the JSONL fields. Duplicate diagnostics use the explicitly stated five-word-shingle method."
+  },
+  "per_case": [
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "passages": 6,
+      "context_unicode_characters": 8418,
+      "context_whitespace_words": 1075,
+      "context_estimated_tokens_chars_div_4": 2104,
+      "answer_unicode_characters": 653,
+      "answer_whitespace_words": 86,
+      "gold_claims": 8,
+      "labels": {
+        "CONTRADICTED": 3,
+        "SUPPORTED": 5
+      },
+      "all_claims_supported": false,
+      "necessary_cross_passage": true
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "passages": 5,
+      "context_unicode_characters": 10726,
+      "context_whitespace_words": 1157,
+      "context_estimated_tokens_chars_div_4": 2682,
+      "answer_unicode_characters": 752,
+      "answer_whitespace_words": 91,
+      "gold_claims": 9,
+      "labels": {
+        "SUPPORTED": 9
+      },
+      "all_claims_supported": true,
+      "necessary_cross_passage": false
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "passages": 4,
+      "context_unicode_characters": 8452,
+      "context_whitespace_words": 1052,
+      "context_estimated_tokens_chars_div_4": 2113,
+      "answer_unicode_characters": 584,
+      "answer_whitespace_words": 74,
+      "gold_claims": 9,
+      "labels": {
+        "CONTRADICTED": 4,
+        "SUPPORTED": 5
+      },
+      "all_claims_supported": false,
+      "necessary_cross_passage": false
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "passages": 5,
+      "context_unicode_characters": 9431,
+      "context_whitespace_words": 1228,
+      "context_estimated_tokens_chars_div_4": 2358,
+      "answer_unicode_characters": 765,
+      "answer_whitespace_words": 101,
+      "gold_claims": 13,
+      "labels": {
+        "SUPPORTED": 13
+      },
+      "all_claims_supported": true,
+      "necessary_cross_passage": false
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "passages": 5,
+      "context_unicode_characters": 11016,
+      "context_whitespace_words": 1506,
+      "context_estimated_tokens_chars_div_4": 2754,
+      "answer_unicode_characters": 627,
+      "answer_whitespace_words": 87,
+      "gold_claims": 10,
+      "labels": {
+        "SUPPORTED": 10
+      },
+      "all_claims_supported": true,
+      "necessary_cross_passage": false
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "passages": 5,
+      "context_unicode_characters": 11856,
+      "context_whitespace_words": 1278,
+      "context_estimated_tokens_chars_div_4": 2964,
+      "answer_unicode_characters": 710,
+      "answer_whitespace_words": 85,
+      "gold_claims": 11,
+      "labels": {
+        "SUPPORTED": 9,
+        "UNSUPPORTED": 2
+      },
+      "all_claims_supported": false,
+      "necessary_cross_passage": false
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "passages": 4,
+      "context_unicode_characters": 9630,
+      "context_whitespace_words": 1455,
+      "context_estimated_tokens_chars_div_4": 2408,
+      "answer_unicode_characters": 836,
+      "answer_whitespace_words": 135,
+      "gold_claims": 12,
+      "labels": {
+        "SUPPORTED": 12
+      },
+      "all_claims_supported": true,
+      "necessary_cross_passage": false
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "passages": 4,
+      "context_unicode_characters": 9522,
+      "context_whitespace_words": 1297,
+      "context_estimated_tokens_chars_div_4": 2380,
+      "answer_unicode_characters": 701,
+      "answer_whitespace_words": 100,
+      "gold_claims": 9,
+      "labels": {
+        "SUPPORTED": 6,
+        "CONTRADICTED": 3
+      },
+      "all_claims_supported": false,
+      "necessary_cross_passage": false
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "passages": 3,
+      "context_unicode_characters": 6603,
+      "context_whitespace_words": 905,
+      "context_estimated_tokens_chars_div_4": 1651,
+      "answer_unicode_characters": 548,
+      "answer_whitespace_words": 85,
+      "gold_claims": 11,
+      "labels": {
+        "SUPPORTED": 9,
+        "UNSUPPORTED": 2
+      },
+      "all_claims_supported": false,
+      "necessary_cross_passage": false
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "passages": 3,
+      "context_unicode_characters": 15546,
+      "context_whitespace_words": 1813,
+      "context_estimated_tokens_chars_div_4": 3886,
+      "answer_unicode_characters": 903,
+      "answer_whitespace_words": 126,
+      "gold_claims": 10,
+      "labels": {
+        "SUPPORTED": 10
+      },
+      "all_claims_supported": true,
+      "necessary_cross_passage": true
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "passages": 4,
+      "context_unicode_characters": 14720,
+      "context_whitespace_words": 1604,
+      "context_estimated_tokens_chars_div_4": 3680,
+      "answer_unicode_characters": 804,
+      "answer_whitespace_words": 118,
+      "gold_claims": 12,
+      "labels": {
+        "SUPPORTED": 12
+      },
+      "all_claims_supported": true,
+      "necessary_cross_passage": false
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "passages": 4,
+      "context_unicode_characters": 12442,
+      "context_whitespace_words": 1370,
+      "context_estimated_tokens_chars_div_4": 3110,
+      "answer_unicode_characters": 737,
+      "answer_whitespace_words": 109,
+      "gold_claims": 12,
+      "labels": {
+        "SUPPORTED": 10,
+        "UNSUPPORTED": 2
+      },
+      "all_claims_supported": false,
+      "necessary_cross_passage": false
+    }
+  ],
+  "package_sha256_excluding_this_audit": {
+    "NOTICE": "8be96fdaa63022abd039ea2df4722bbf6dfa4d91d2402c35a85f310a200f1c67",
+    "licenses/cpython/DOCUMENTATION-LICENSE.rst": "fde6c4707ae1b5a637285ca44162602bd94fa388a6f6157f1e4aceac113b8bde",
+    "licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+    "licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+    "licenses/rust/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+    "licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+    "pilot-author-draft-1.jsonl": "e6b4ef286e0fda9bde702cf68e27566ca9b931c7c38758cae43e619571866b5f",
+    "pilot-author-draft-1.manifest.json": "797704bf4493b76f2de18a3f14f4dcf79f642431bdbff0d6ee94a126aa0f0459",
+    "pilot-author-draft-1.metadata.json": "5b4dda555be609b6750a3cdf3b10b1701e614462ec31abeba10145e1cec439b8",
+    "pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+    "pilot.metadata.json": "9b48efc9f806befa6c8f9a57858525349397da07bea807d0e695a85983a5d166",
+    "pilot.revisions.json": "22c949b05ff812bde3974072f8d57627331544cb9688a3b62a9b0424c683d598",
+    "source-metadata.json": "7ea05d352b300040db4fa952df2b93746827c12ec6c4032bf38b822f7a217d70",
+    "sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+    "sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+    "sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+    "sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+    "sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+    "sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+    "sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+    "sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+    "sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+    "sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+    "sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+    "sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5"
+  }
+}

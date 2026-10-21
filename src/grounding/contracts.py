@@ -109,6 +109,56 @@ class TokenUsage:
 
 
 @dataclass(frozen=True)
+class ChoiceDecision:
+    """Validated native decision; derived scores are not calibrated correctness."""
+
+    choice: str
+    confidence: float
+    probabilities: dict[str, float]
+
+    @property
+    def derived_confidence(self) -> float:
+        count = len(self.probabilities)
+        if count < 2:
+            raise ValueError("choice_requires_multiple_options")
+        value = (max(self.probabilities.values()) - 1 / count) / (1 - 1 / count)
+        return max(0.0, min(1.0, value))
+
+    @property
+    def gate_score(self) -> float:
+        # AIDEV-NOTE: parser rounding tolerance must never lower the acceptance threshold.
+        return min(self.confidence, self.derived_confidence)
+
+
+@dataclass(frozen=True)
+class ProviderAttempt:
+    stage: str
+    provider: str
+    requested_model: str | None
+    response_models: tuple[str, ...] = ()
+    outcome: str = "success"
+    usage: TokenUsage = field(default_factory=lambda: TokenUsage(complete=False))
+    latency_ms: float = 0.0
+    question_count: int = 0
+    error_code: str | None = None
+    retry: bool = False
+    repair: bool = False
+
+
+@dataclass(frozen=True)
+class ClaimDecisionTrace:
+    """Evaluation-only routing evidence. Contains no source or generated answer text."""
+
+    claim_id: int
+    relation: ChoiceDecision | None = None
+    selection: ChoiceDecision | None = None
+    unsupported_reason: ChoiceDecision | None = None
+    evidence: ChoiceDecision | None = None
+    fallback_reason: str | None = None
+    final_origin: str | None = None
+
+
+@dataclass(frozen=True)
 class RunStats:
     provider: str = "heuristic"
     requested_model: str | None = None
@@ -118,6 +168,9 @@ class RunStats:
     repairs: int = 0
     usage: TokenUsage = field(default_factory=TokenUsage)
     latency_ms: float = 0.0
+    # Legacy saved runs omit these fields; the evaluator owns explicit format selection.
+    attempts: tuple[ProviderAttempt, ...] = ()
+    claim_decisions: tuple[ClaimDecisionTrace, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -145,6 +198,7 @@ ERRORS: dict[str, tuple[int, str, bool]] = {
     "model_refused": (502, "The model declined the verification request.", False),
     "model_incomplete": (502, "The model response was incomplete.", False),
     "invalid_model_output": (502, "The model output failed verification checks.", False),
+    "confidence_unresolved": (502, "The verification decision requires further review.", False),
     "internal_error": (500, "The verification operation failed internally.", False),
 }
 
@@ -180,6 +234,28 @@ class StructuredProvider(Protocol):
     model: str | None
 
     async def generate(self, request: StructuredRequest) -> ProviderResult: ...
+
+    async def aclose(self) -> None: ...
+
+
+@dataclass(frozen=True)
+class DecisionRequest:
+    state: Any
+    questions: dict[str, dict[str, Any]]
+
+
+@dataclass(frozen=True)
+class DecisionResult:
+    answers: dict[str, ChoiceDecision]
+    usage: TokenUsage = field(default_factory=lambda: TokenUsage(complete=False))
+    model: str | None = None
+
+
+class DecisionProvider(Protocol):
+    name: str
+    model: str | None
+
+    async def decide(self, request: DecisionRequest) -> DecisionResult: ...
 
     async def aclose(self) -> None: ...
 

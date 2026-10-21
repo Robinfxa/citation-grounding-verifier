@@ -1,0 +1,582 @@
+{
+  "annotation_version": "v2-pilot-reviewed-1",
+  "dataset_file": "cases.jsonl",
+  "dataset_sha256": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+  "dataset_version": "v2-pilot-reviewed-1",
+  "format_version": 2,
+  "layout": [
+    {
+      "cases": 3,
+      "category": "extrinsic",
+      "split": "dev"
+    },
+    {
+      "cases": 3,
+      "category": "subtle_distortion",
+      "split": "dev"
+    },
+    {
+      "cases": 3,
+      "category": "supported",
+      "split": "dev"
+    },
+    {
+      "cases": 3,
+      "category": "synthesis",
+      "split": "dev"
+    }
+  ],
+  "passage_maps": [
+    {
+      "case_id": "v2-dev-p01",
+      "end": 105,
+      "passage_index": 0,
+      "source_id": "cpython-tarfile",
+      "start": 0,
+      "text_sha256": "909068aa3cbc0c2da4b66abcf4f22f24759508a8b29d14bb9216f81b225c195a"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 36189,
+      "passage_index": 1,
+      "source_id": "cpython-tarfile",
+      "start": 33477,
+      "text_sha256": "005552b48384dcdbad5395f351f9943b480dd7f0a262e896159a49f8082a7ed1"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 37233,
+      "passage_index": 2,
+      "source_id": "cpython-tarfile",
+      "start": 36191,
+      "text_sha256": "73ec1a7f0818e43bd56a4d2e7b8285c51be6fd0f0a18295fb5628a1ec1ce1da2"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 38476,
+      "passage_index": 3,
+      "source_id": "cpython-tarfile",
+      "start": 37235,
+      "text_sha256": "2818ee71c6282d4b1c1dd0ac1970a808f9323318fd3eb49c513321737c7cd125"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 40417,
+      "passage_index": 4,
+      "source_id": "cpython-tarfile",
+      "start": 38511,
+      "text_sha256": "147fac13cc83f9501cde95ab076fb449d99cb447611368eb35862da8ef6c045d"
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "end": 41832,
+      "passage_index": 5,
+      "source_id": "cpython-tarfile",
+      "start": 40420,
+      "text_sha256": "77ff6c74b874cbb7e92f60c813736cf9d2e4ae5854f0d2908294683d4394be42"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "end": 123,
+      "passage_index": 0,
+      "source_id": "cpython-sqlite3",
+      "start": 0,
+      "text_sha256": "c05788634d361f4fcd3f116365b08fe9bee21804f16e851a7af6fbdbe1cbd0cb"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "end": 13318,
+      "passage_index": 1,
+      "source_id": "cpython-sqlite3",
+      "start": 8726,
+      "text_sha256": "23686940ff2b0f198d3276ab41bc2d892ff3618bfd29273b384802901d5b2e63"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "end": 83889,
+      "passage_index": 2,
+      "source_id": "cpython-sqlite3",
+      "start": 82126,
+      "text_sha256": "797b54234ab888fa81d961faaa3f5786b910dd6f8ccc4ff342181fe568f6a2d9"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "end": 91532,
+      "passage_index": 3,
+      "source_id": "cpython-sqlite3",
+      "start": 89577,
+      "text_sha256": "c2783086f44dbdc9eeb8a330a281e61c5fb846e9b5ee4d54b15e66ea513be74e"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "end": 93878,
+      "passage_index": 4,
+      "source_id": "cpython-sqlite3",
+      "start": 91585,
+      "text_sha256": "9ebe82f7f118b29c892e820b71897de35069ecc86e92875291c2faa0b712acec"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "end": 105,
+      "passage_index": 0,
+      "source_id": "cpython-pathlib",
+      "start": 0,
+      "text_sha256": "f35945fb22a9cd1dc1b9e1ed8c7474db054f0bed28f3211c82cbb72ba92f4212"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "end": 29933,
+      "passage_index": 1,
+      "source_id": "cpython-pathlib",
+      "start": 27197,
+      "text_sha256": "36fa37aff2ca9d56b10ebe41d254218a1cb5fc3c279f7a47937e43939e3437cd"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "end": 32110,
+      "passage_index": 2,
+      "source_id": "cpython-pathlib",
+      "start": 29936,
+      "text_sha256": "3c7d957b2238d2bef0f53911d5a15ff5875f28ee7a67c77072710f3d21dc3447"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "end": 35550,
+      "passage_index": 3,
+      "source_id": "cpython-pathlib",
+      "start": 32113,
+      "text_sha256": "d8a497658658d966784729fe06108c6737ef509889a8ba8db76148c819b13912"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 139,
+      "passage_index": 0,
+      "source_id": "cpython-decimal",
+      "start": 0,
+      "text_sha256": "3a33fd6d3dc4a819e0aa35be65795e97620064ead7089360ee754e6f8c32f4ea"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 40134,
+      "passage_index": 1,
+      "source_id": "cpython-decimal",
+      "start": 38126,
+      "text_sha256": "c901a52ae64ebdba0ae4466f46b32e23c9f17338991f2e64448f718c1f24f0bf"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 42245,
+      "passage_index": 2,
+      "source_id": "cpython-decimal",
+      "start": 40136,
+      "text_sha256": "c72ea1c9b2e8548981dd8fafeb0819e3c7e6e63595c411b141f1bb9aebe34c87"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 45088,
+      "passage_index": 3,
+      "source_id": "cpython-decimal",
+      "start": 42247,
+      "text_sha256": "47858a456df5747a1e0c27d974564f0d8275364c8e12158d652b4ec2915da72d"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "end": 47425,
+      "passage_index": 4,
+      "source_id": "cpython-decimal",
+      "start": 45091,
+      "text_sha256": "e94d51afb2ba0e93afe7855de9776c1262255c3486929af9a4dc5e43f6d7f937"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 3843,
+      "passage_index": 0,
+      "source_id": "cpython-queue",
+      "start": 0,
+      "text_sha256": "27e16633547fc1fb65a532f2e67869d081586cafba67f6d69585d9a5d31d4446"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 6569,
+      "passage_index": 1,
+      "source_id": "cpython-queue",
+      "start": 3845,
+      "text_sha256": "0fb4f9b5af85cf2c4953047b62d8be0ad167a6f51fc1140fd71a14ca6e0a3fe5"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 8340,
+      "passage_index": 2,
+      "source_id": "cpython-queue",
+      "start": 6571,
+      "text_sha256": "a4746c09dfd9aff0f5725f774132a1b20ca542633ee3f2edcaeb04eee239979d"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 9062,
+      "passage_index": 3,
+      "source_id": "cpython-queue",
+      "start": 8343,
+      "text_sha256": "fa676248cd7aab7ea3de86f796a3357cbe1d42323deef25cba2829eb90958d80"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "end": 11026,
+      "passage_index": 4,
+      "source_id": "cpython-queue",
+      "start": 9065,
+      "text_sha256": "49831172f306dcdf815d8aa49b83d4ce1a8c18d4d7c63aaae89daded2414be85"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "end": 4287,
+      "passage_index": 0,
+      "source_id": "cpython-metadata",
+      "start": 69,
+      "text_sha256": "ff2526f31e41a1a5e04ddec63838c4001a568f6a37a3cd0dabebbbb2e6ee52b1"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "end": 7346,
+      "passage_index": 1,
+      "source_id": "cpython-metadata",
+      "start": 4290,
+      "text_sha256": "ac4a4cb7a7350add93682c9a4dbf6cb006a8575f412e117aba23165e36ee5202"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "end": 8975,
+      "passage_index": 2,
+      "source_id": "cpython-metadata",
+      "start": 7363,
+      "text_sha256": "36ef20a4feca92339794340da1920cbede4f2d02e8c5acfa23019c25a8361d52"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "end": 10764,
+      "passage_index": 3,
+      "source_id": "cpython-metadata",
+      "start": 8990,
+      "text_sha256": "c544bfe7e2e0d47ea2122230985d71bf7ee62056181505f06bdbff8454bc2947"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "end": 11981,
+      "passage_index": 4,
+      "source_id": "cpython-metadata",
+      "start": 10785,
+      "text_sha256": "625f8683cb349ea433e725f2f4a59b93e2fa73473716f0e4b2db9c6bef55af50"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "end": 3808,
+      "passage_index": 0,
+      "source_id": "rust-visibility",
+      "start": 0,
+      "text_sha256": "f38dbbeb2e62f0ca13a386e78c609d3c5950ac48f030c81456560efa334a7b27"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "end": 5665,
+      "passage_index": 1,
+      "source_id": "rust-visibility",
+      "start": 3810,
+      "text_sha256": "bc0c865342c555f5332bf98fb388e33e1068852be37346c91a31b16447eccdac"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "end": 8760,
+      "passage_index": 2,
+      "source_id": "rust-visibility",
+      "start": 5667,
+      "text_sha256": "47cb03fe7657d81aa5c7f2e6fe33d3883893df0699b9265a2fddfb6a956cbf2a"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "end": 9636,
+      "passage_index": 3,
+      "source_id": "rust-visibility",
+      "start": 8762,
+      "text_sha256": "248b0151156cfc82853b55b15ca0a3584dbf783f8906f5e21fe2eabba08a818c"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "end": 2083,
+      "passage_index": 0,
+      "source_id": "rust-destructors",
+      "start": 0,
+      "text_sha256": "df838ad808215cf7dae30ba622ef061d3bed272f694222455e8586d63e67fe88"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "end": 4585,
+      "passage_index": 1,
+      "source_id": "rust-destructors",
+      "start": 2085,
+      "text_sha256": "10eed0757f000a9984ef22310ad3335969c04bdf224ed639ad716ee7a0535ecc"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "end": 5353,
+      "passage_index": 2,
+      "source_id": "rust-destructors",
+      "start": 4587,
+      "text_sha256": "e155a87737999ff19f9429bc17fed5216456039592811f4aebd1328d3bbcd16e"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "end": 9528,
+      "passage_index": 3,
+      "source_id": "rust-destructors",
+      "start": 5355,
+      "text_sha256": "7b07f22da4aaa4d199d9ce4fbdab3096348e48752aabe9895c2a40b689a0d4ee"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "end": 2796,
+      "passage_index": 0,
+      "source_id": "rust-testing",
+      "start": 0,
+      "text_sha256": "9c53f8a214fb2cb05e8fd1523389e91711711a2f4d3bf15ef68d5a10f02a03f9"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "end": 4244,
+      "passage_index": 1,
+      "source_id": "rust-testing",
+      "start": 2798,
+      "text_sha256": "2efbb26708b7296b476ab3099ae5ae0d1a2bc48912c04f15a847b8375cd2f912"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "end": 6607,
+      "passage_index": 2,
+      "source_id": "rust-testing",
+      "start": 4246,
+      "text_sha256": "c1865b6057a3449ec246a65613df3c91650c5b1d62a6d1481d05fc5f9513d0a8"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "end": 9226,
+      "passage_index": 0,
+      "source_id": "postgres-isolation",
+      "start": 3015,
+      "text_sha256": "8aca1aa2824abed55c4afa9d00ec03fba949c28efd8c4e236f6b8dc2d348472b"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "end": 12949,
+      "passage_index": 1,
+      "source_id": "postgres-isolation",
+      "start": 9228,
+      "text_sha256": "57e4efbcec749cb6810c7584a8dd0986c053043ac2ac15b2538ffbf039869f8c"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "end": 23662,
+      "passage_index": 2,
+      "source_id": "postgres-isolation",
+      "start": 18048,
+      "text_sha256": "d1440afe1b13910b8fa4de2d096b99e0930bbf7fdb6d32a5d9895232ad7c67a8"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "end": 4891,
+      "passage_index": 0,
+      "source_id": "postgres-backup",
+      "start": 897,
+      "text_sha256": "a4ef4505fd8f3532976088d21956c9b45d7fc1d980856589427915353187dea0"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "end": 9102,
+      "passage_index": 1,
+      "source_id": "postgres-backup",
+      "start": 4893,
+      "text_sha256": "2484e85471e43b13d1256df31974587455fbfe21a9056d1c0338973d7e751354"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "end": 11180,
+      "passage_index": 2,
+      "source_id": "postgres-backup",
+      "start": 9104,
+      "text_sha256": "458cf2704157c63bc6236796bff58989f1019830271eb34e20243f429e57b38f"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "end": 15623,
+      "passage_index": 3,
+      "source_id": "postgres-backup",
+      "start": 11182,
+      "text_sha256": "062b29a331b4ae7fe453151e4c71d57a40af65f18bcbd15f72d1ddad678512bf"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "end": 68318,
+      "passage_index": 0,
+      "source_id": "postgres-privileges",
+      "start": 63899,
+      "text_sha256": "12c4ade0bcc81446a2aae0687a7215b1caf3a394438276d9642be2269bb4cde0"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "end": 71052,
+      "passage_index": 1,
+      "source_id": "postgres-privileges",
+      "start": 68381,
+      "text_sha256": "1cbc4a2d7d154210f978580d3950dcf5a49972247e294e97bc162fe6ba9d2f92"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "end": 78279,
+      "passage_index": 2,
+      "source_id": "postgres-privileges",
+      "start": 77054,
+      "text_sha256": "0f0989c6cad2ff976c67a3e00f7ebfc8a6710526dbb0709e46f727789d40d01c"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "end": 89960,
+      "passage_index": 3,
+      "source_id": "postgres-privileges",
+      "start": 85833,
+      "text_sha256": "24d038c4d1ea92139c5c82f0fa859a4545cb19244f00ea68851396553325edfc"
+    }
+  ],
+  "schema_version": "2",
+  "sources": [
+    {
+      "family_id": "v2-cpython-decimal",
+      "id": "cpython-decimal",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-decimal/raw.rst",
+      "raw_sha256": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/decimal.rst"
+    },
+    {
+      "family_id": "v2-cpython-metadata",
+      "id": "cpython-metadata",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-metadata/raw.rst",
+      "raw_sha256": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/importlib.metadata.rst"
+    },
+    {
+      "family_id": "v2-cpython-pathlib",
+      "id": "cpython-pathlib",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-pathlib/raw.rst",
+      "raw_sha256": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/pathlib.rst"
+    },
+    {
+      "family_id": "v2-cpython-queue",
+      "id": "cpython-queue",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-queue/raw.rst",
+      "raw_sha256": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/queue.rst"
+    },
+    {
+      "family_id": "v2-cpython-sqlite3",
+      "id": "cpython-sqlite3",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-sqlite3/raw.rst",
+      "raw_sha256": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/sqlite3.rst"
+    },
+    {
+      "family_id": "v2-cpython-tarfile",
+      "id": "cpython-tarfile",
+      "license": "Python-2.0",
+      "license_path": "dataset/licenses/cpython/LICENSE.txt",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "dataset/sources/cpython-tarfile/raw.rst",
+      "raw_sha256": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/tarfile.rst"
+    },
+    {
+      "family_id": "v2-postgres-backup",
+      "id": "postgres-backup",
+      "license": "PostgreSQL",
+      "license_path": "dataset/licenses/postgresql/COPYRIGHT",
+      "license_sha256": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+      "raw_path": "dataset/sources/postgres-backup/raw.sgml",
+      "raw_sha256": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+      "revision": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/doc/src/sgml/backup.sgml"
+    },
+    {
+      "family_id": "v2-postgres-isolation",
+      "id": "postgres-isolation",
+      "license": "PostgreSQL",
+      "license_path": "dataset/licenses/postgresql/COPYRIGHT",
+      "license_sha256": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+      "raw_path": "dataset/sources/postgres-isolation/raw.sgml",
+      "raw_sha256": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+      "revision": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/doc/src/sgml/mvcc.sgml"
+    },
+    {
+      "family_id": "v2-postgres-privileges",
+      "id": "postgres-privileges",
+      "license": "PostgreSQL",
+      "license_path": "dataset/licenses/postgresql/COPYRIGHT",
+      "license_sha256": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+      "raw_path": "dataset/sources/postgres-privileges/raw.sgml",
+      "raw_sha256": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+      "revision": "d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/d7ec59a63d745ba74fba0e280bbf85dc6d1caa3e/doc/src/sgml/ddl.sgml"
+    },
+    {
+      "family_id": "v2-rust-destructors",
+      "id": "rust-destructors",
+      "license": "MIT",
+      "license_path": "dataset/licenses/rust/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "dataset/sources/rust-destructors/raw.md",
+      "raw_sha256": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/destructors.md"
+    },
+    {
+      "family_id": "v2-rust-testing",
+      "id": "rust-testing",
+      "license": "MIT",
+      "license_path": "dataset/licenses/rust/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "dataset/sources/rust-testing/raw.md",
+      "raw_sha256": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/attributes/testing.md"
+    },
+    {
+      "family_id": "v2-rust-visibility",
+      "id": "rust-visibility",
+      "license": "MIT",
+      "license_path": "dataset/licenses/rust/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "dataset/sources/rust-visibility/raw.md",
+      "raw_sha256": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/visibility-and-privacy.md"
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 import time
 import uuid
@@ -22,9 +23,21 @@ class Operation:
 
 
 _current: ContextVar[Operation | None] = ContextVar("grounding_operation", default=None)
-_STAGES = {"http", "verification", "extraction", "judgment", "minimal", "heuristic"}
-_EVENTS = {"start", "end", "provider_attempt", "validation", "repair", "retry"}
+_STAGES = {
+    "http", "verification", "extraction", "judgment", "minimal", "heuristic",
+    "jev_judgment", "jev_evidence", "jev_decision", "fallback",
+}
+_EVENTS = {"start", "end", "provider_attempt", "validation", "repair", "retry", "routing"}
 _OUTCOMES = {"started", "success", "failure", "cancelled"}
+_PROTOCOL_REASONS = {
+    "duplicate_json_key", "returned_model", "answer_coverage", "answer_type",
+    "choice_not_declared", "confidence_invalid", "probability_keys",
+    "probability_invalid", "probability_sum", "choice_not_argmax", "confidence_formula",
+}
+_ROUTING_REASONS = {
+    "label_uncertain", "unsupported_reason_uncertain", "candidate_missing",
+    "quote_uncertain", "quote_disagreement",
+}
 
 
 @contextmanager
@@ -56,6 +69,11 @@ def emit(
     retries: int | None = None,
     repairs: int | None = None,
     claims: int | None = None,
+    routing_reason: str | None = None,
+    protocol_reason: str | None = None,
+    probability_count: int | None = None,
+    probability_sum: int | float | None = None,
+    probability_sum_tolerance: int | float | None = None,
 ) -> None:
     current = _current.get()
     if current is None or not current.enabled:
@@ -71,6 +89,27 @@ def emit(
     }
     if error_code in ERRORS:
         record["error_code"] = error_code
+    if routing_reason in _ROUTING_REASONS:
+        record["routing_reason"] = routing_reason
+    if isinstance(protocol_reason, str) and protocol_reason in _PROTOCOL_REASONS:
+        record["protocol_reason"] = protocol_reason
+    # AIDEV-NOTE: accept one coherent aggregate bundle; never coerce or retain distribution entries.
+    if (
+        stage == "jev_decision" and event == "validation" and outcome == "failure"
+        and record.get("error_code") == "provider_protocol_error"
+        and record.get("protocol_reason") == "probability_sum"
+        and type(probability_count) is int and 1 <= probability_count <= 255
+        and type(probability_sum) in (int, float) and 0 <= probability_sum <= probability_count
+        and math.isfinite(probability_sum)
+        and type(probability_sum_tolerance) in (int, float)
+        and 0 <= probability_sum_tolerance <= 1 and math.isfinite(probability_sum_tolerance)
+    ):
+        delta = probability_sum - 1
+        if abs(delta) > probability_sum_tolerance:
+            record.update(
+                probability_count=probability_count, probability_sum=probability_sum,
+                probability_sum_delta=delta, probability_sum_tolerance=probability_sum_tolerance,
+            )
     for key, value in (
         ("provider_calls", provider_calls), ("retries", retries),
         ("repairs", repairs), ("claims", claims),

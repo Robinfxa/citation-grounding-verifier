@@ -1,0 +1,721 @@
+{
+  "format_version": 2,
+  "schema_version": "2",
+  "dataset_version": "v2-realistic-author-draft-1",
+  "annotation_version": "v2-realistic-author-draft-1",
+  "dataset_file": "test-first24.jsonl",
+  "dataset_sha256": "cfd36432b794b70ed0802660f604c5601c45ab2901cd4c0a9263b816bd1ff864",
+  "layout": [
+    {
+      "split": "test",
+      "category": "subtle_distortion",
+      "cases": 8
+    },
+    {
+      "split": "test",
+      "category": "supported",
+      "cases": 15
+    },
+    {
+      "split": "test",
+      "category": "synthesis",
+      "cases": 1
+    }
+  ],
+  "sources": [
+    {
+      "id": "python-collections-collections",
+      "family_id": "v2-real-python-collections",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/collections.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/test/python-collections/collections.rst",
+      "raw_sha256": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b"
+    },
+    {
+      "id": "python-dataclasses-dataclasses",
+      "family_id": "v2-real-python-dataclasses",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/dataclasses.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/test/python-dataclasses/dataclasses.rst",
+      "raw_sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23"
+    },
+    {
+      "id": "python-itertools-itertools",
+      "family_id": "v2-real-python-itertools",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/itertools.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/test/python-itertools/itertools.rst",
+      "raw_sha256": "4daebb6755c23ae2a6791f508028836f2b5c2589287cc954c17dc498a9dc2eeb"
+    },
+    {
+      "id": "python-enum-enum",
+      "family_id": "v2-real-python-enum",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/enum.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/test/python-enum/enum.rst",
+      "raw_sha256": "ecd67b943a2728c589fab5934159a7da63be57fdb68d17df3fef1b59a6339945"
+    },
+    {
+      "id": "python-asyncio-task-asyncio-task",
+      "family_id": "v2-real-python-asyncio-task",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/asyncio-task.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/test/python-asyncio-task/asyncio-task.rst",
+      "raw_sha256": "f3cbb9d7f174f152127bb4eaea37784484f4a8c2db866d21aaf31edfce7ec7a1"
+    },
+    {
+      "id": "python-concurrent.futures-concurrent.futures",
+      "family_id": "v2-real-python-concurrent.futures",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/concurrent.futures.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/test/python-concurrent.futures/concurrent.futures.rst",
+      "raw_sha256": "b7badfc7248121ef632865bcecec4ce344fdd79818adeb94a65f5859376512f8"
+    },
+    {
+      "id": "rust-expressions-match-expr-match-expr",
+      "family_id": "v2-real-rust-expressions-match-expr",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/expressions/match-expr.md",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "license": "MIT",
+      "license_path": "licenses/reference/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "sources/test/rust-expressions-match-expr/match-expr.md",
+      "raw_sha256": "f355120a9f7ed51b017f1e790032bd1f49e9ba42e68c0abc85ccc288d60f9b1e"
+    },
+    {
+      "id": "rust-attributes-derive-derive",
+      "family_id": "v2-real-rust-attributes-derive",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/attributes/derive.md",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "license": "MIT",
+      "license_path": "licenses/reference/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "sources/test/rust-attributes-derive/derive.md",
+      "raw_sha256": "1948fc4eb6cda6d58dcad87db2480b1954f545cf843263d16d5a11f6b9773990"
+    },
+    {
+      "id": "rust-trait-bounds-trait-bounds",
+      "family_id": "v2-real-rust-trait-bounds",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/trait-bounds.md",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "license": "MIT",
+      "license_path": "licenses/reference/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "sources/test/rust-trait-bounds/trait-bounds.md",
+      "raw_sha256": "edc5e61dc4c0c1b90659256026a8c6a99cef5c321d3ef01ffd167b01ee1db749"
+    },
+    {
+      "id": "rust-items-traits-traits",
+      "family_id": "v2-real-rust-items-traits",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/items/traits.md",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "license": "MIT",
+      "license_path": "licenses/reference/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "sources/test/rust-items-traits/traits.md",
+      "raw_sha256": "c26d6c4c44718d3a2e6872ba76335071e55ecfc1f9e659b01b8130b0d33c9883"
+    },
+    {
+      "id": "rust-type-coercions-type-coercions",
+      "family_id": "v2-real-rust-type-coercions",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/type-coercions.md",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "license": "MIT",
+      "license_path": "licenses/reference/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "sources/test/rust-type-coercions/type-coercions.md",
+      "raw_sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1"
+    },
+    {
+      "id": "rust-unsafe-keyword-unsafe-keyword",
+      "family_id": "v2-real-rust-unsafe-keyword",
+      "url": "https://raw.githubusercontent.com/rust-lang/reference/2dafab96d919d6ab2884488e970bf95610ff83eb/src/unsafe-keyword.md",
+      "revision": "2dafab96d919d6ab2884488e970bf95610ff83eb",
+      "license": "MIT",
+      "license_path": "licenses/reference/LICENSE-MIT",
+      "license_sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "raw_path": "sources/test/rust-unsafe-keyword/unsafe-keyword.md",
+      "raw_sha256": "376c811498b91d3ff8403df1742c3d97963309bc1028cf23922ddde0dfe56502"
+    }
+  ],
+  "passage_maps": [
+    {
+      "passage_index": 0,
+      "source_id": "python-collections-collections",
+      "start": 9408,
+      "end": 12875,
+      "text_sha256": "908d46f14429c63505afc1652d7dffd33c1132f2c006a2ecb07566d042cdbda1",
+      "case_id": "v2-test-r01"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-collections-collections",
+      "start": 12875,
+      "end": 15791,
+      "text_sha256": "aabf1937a24696489937bb56398b17aa55dc2cb9b2cac60d43a65a398549e849",
+      "case_id": "v2-test-r01"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-collections-collections",
+      "start": 15791,
+      "end": 18879,
+      "text_sha256": "21cbb223e3ffa768610a24df2b161fd0f400a6abd62af9efe1af2c40fde13b83",
+      "case_id": "v2-test-r01"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-collections-collections",
+      "start": 9408,
+      "end": 12875,
+      "text_sha256": "908d46f14429c63505afc1652d7dffd33c1132f2c006a2ecb07566d042cdbda1",
+      "case_id": "v2-test-r02"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-collections-collections",
+      "start": 12875,
+      "end": 15791,
+      "text_sha256": "aabf1937a24696489937bb56398b17aa55dc2cb9b2cac60d43a65a398549e849",
+      "case_id": "v2-test-r02"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-collections-collections",
+      "start": 15791,
+      "end": 18879,
+      "text_sha256": "21cbb223e3ffa768610a24df2b161fd0f400a6abd62af9efe1af2c40fde13b83",
+      "case_id": "v2-test-r02"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 21985,
+      "end": 25462,
+      "text_sha256": "ded05e71c9fca4b4774af4019187e9d32051e3494d137d5d503613bda4b6440c",
+      "case_id": "v2-test-r03"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 25462,
+      "end": 28740,
+      "text_sha256": "97901edeb1400a1845521df24a9ee88e5717017fcd02a4234237a7837e8ef6d4",
+      "case_id": "v2-test-r03"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 28740,
+      "end": 32211,
+      "text_sha256": "0bc06f0d8ec9ed345e4f252b53e9034fcfb7697aacb6b986a8bdf1d8c2f59e00",
+      "case_id": "v2-test-r03"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 32211,
+      "end": 32884,
+      "text_sha256": "965670743fe2a501bda15a8616fb8272b5d840de05574ec93a8a789b73bd4ba5",
+      "case_id": "v2-test-r03"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 21985,
+      "end": 25462,
+      "text_sha256": "ded05e71c9fca4b4774af4019187e9d32051e3494d137d5d503613bda4b6440c",
+      "case_id": "v2-test-r04"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 25462,
+      "end": 28740,
+      "text_sha256": "97901edeb1400a1845521df24a9ee88e5717017fcd02a4234237a7837e8ef6d4",
+      "case_id": "v2-test-r04"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 28740,
+      "end": 32211,
+      "text_sha256": "0bc06f0d8ec9ed345e4f252b53e9034fcfb7697aacb6b986a8bdf1d8c2f59e00",
+      "case_id": "v2-test-r04"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "python-dataclasses-dataclasses",
+      "start": 32211,
+      "end": 32884,
+      "text_sha256": "965670743fe2a501bda15a8616fb8272b5d840de05574ec93a8a789b73bd4ba5",
+      "case_id": "v2-test-r04"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-itertools-itertools",
+      "start": 17864,
+      "end": 21238,
+      "text_sha256": "d5018e8883336973d06ca14a342f1250016d2d72bbf6a4c79469581ca0f321e8",
+      "case_id": "v2-test-r05"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-itertools-itertools",
+      "start": 21238,
+      "end": 24560,
+      "text_sha256": "c343868ff0e9117415fe907a826e6d8e82a5f0c7b57ca2116f4caaa107c63082",
+      "case_id": "v2-test-r05"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-itertools-itertools",
+      "start": 24560,
+      "end": 25810,
+      "text_sha256": "d4570e36fea910f9a50d269dab75ea2d292af70b5b64c00af1ab55fd18b5eb8e",
+      "case_id": "v2-test-r05"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-itertools-itertools",
+      "start": 17864,
+      "end": 21238,
+      "text_sha256": "d5018e8883336973d06ca14a342f1250016d2d72bbf6a4c79469581ca0f321e8",
+      "case_id": "v2-test-r06"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-itertools-itertools",
+      "start": 21238,
+      "end": 24560,
+      "text_sha256": "c343868ff0e9117415fe907a826e6d8e82a5f0c7b57ca2116f4caaa107c63082",
+      "case_id": "v2-test-r06"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-itertools-itertools",
+      "start": 24560,
+      "end": 25810,
+      "text_sha256": "d4570e36fea910f9a50d269dab75ea2d292af70b5b64c00af1ab55fd18b5eb8e",
+      "case_id": "v2-test-r06"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-enum-enum",
+      "start": 15375,
+      "end": 18856,
+      "text_sha256": "08ae6ddeb65ada71602129d562d6ebcc0e5cb4f2134cbeebe93b440455b94800",
+      "case_id": "v2-test-r07"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-enum-enum",
+      "start": 18856,
+      "end": 21573,
+      "text_sha256": "c2e8ae73d925fe758192426fbd7d56cad87c7a853ebb4f5df185c4e12687fcae",
+      "case_id": "v2-test-r07"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-enum-enum",
+      "start": 15375,
+      "end": 18856,
+      "text_sha256": "08ae6ddeb65ada71602129d562d6ebcc0e5cb4f2134cbeebe93b440455b94800",
+      "case_id": "v2-test-r08"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-enum-enum",
+      "start": 18856,
+      "end": 21573,
+      "text_sha256": "c2e8ae73d925fe758192426fbd7d56cad87c7a853ebb4f5df185c4e12687fcae",
+      "case_id": "v2-test-r08"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-asyncio-task-asyncio-task",
+      "start": 7774,
+      "end": 11129,
+      "text_sha256": "a0e4379daca538815c41ab37e3a1fbb323aa6f62c9ed6729a7bf8f8b43cfbb79",
+      "case_id": "v2-test-r09"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-asyncio-task-asyncio-task",
+      "start": 11129,
+      "end": 13066,
+      "text_sha256": "72f57fb5041e08d4fd9128e2e3a6e68eb750d60651807265db3f21c5803c461e",
+      "case_id": "v2-test-r09"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-asyncio-task-asyncio-task",
+      "start": 7774,
+      "end": 11129,
+      "text_sha256": "a0e4379daca538815c41ab37e3a1fbb323aa6f62c9ed6729a7bf8f8b43cfbb79",
+      "case_id": "v2-test-r10"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-asyncio-task-asyncio-task",
+      "start": 11129,
+      "end": 13066,
+      "text_sha256": "72f57fb5041e08d4fd9128e2e3a6e68eb750d60651807265db3f21c5803c461e",
+      "case_id": "v2-test-r10"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-concurrent.futures-concurrent.futures",
+      "start": 0,
+      "end": 2998,
+      "text_sha256": "8ca345fe9909fad989723f6f3f2c02ff7154e05485188fbe1706ad323c6a28ff",
+      "case_id": "v2-test-r11"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-concurrent.futures-concurrent.futures",
+      "start": 2998,
+      "end": 6248,
+      "text_sha256": "a5b2f8a25b70d2206e6c223e3ae39b4cfdd0b22b5c6c93bd289e2cd780709d25",
+      "case_id": "v2-test-r11"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-concurrent.futures-concurrent.futures",
+      "start": 6248,
+      "end": 9061,
+      "text_sha256": "623708d6f7e40cc1148326fd384b35e4a4086bde49e59ab9f1dd9366ac300bbf",
+      "case_id": "v2-test-r11"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-concurrent.futures-concurrent.futures",
+      "start": 0,
+      "end": 2998,
+      "text_sha256": "8ca345fe9909fad989723f6f3f2c02ff7154e05485188fbe1706ad323c6a28ff",
+      "case_id": "v2-test-r12"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-concurrent.futures-concurrent.futures",
+      "start": 2998,
+      "end": 6248,
+      "text_sha256": "a5b2f8a25b70d2206e6c223e3ae39b4cfdd0b22b5c6c93bd289e2cd780709d25",
+      "case_id": "v2-test-r12"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-concurrent.futures-concurrent.futures",
+      "start": 6248,
+      "end": 9061,
+      "text_sha256": "623708d6f7e40cc1148326fd384b35e4a4086bde49e59ab9f1dd9366ac300bbf",
+      "case_id": "v2-test-r12"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-expressions-match-expr-match-expr",
+      "start": 0,
+      "end": 3407,
+      "text_sha256": "d2299da99fec09fa8eecbc78855531b55220d5f9248cb9924a9500f4b2957373",
+      "case_id": "v2-test-r13"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-expressions-match-expr-match-expr",
+      "start": 3407,
+      "end": 6586,
+      "text_sha256": "e5f46e14ecb80affe787f7ee1e9958dccf108f90a32070974ee2a1508f57325d",
+      "case_id": "v2-test-r13"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "rust-expressions-match-expr-match-expr",
+      "start": 6586,
+      "end": 9821,
+      "text_sha256": "50d3dcbca759a69a0794957f034b66dfe4d318d66875e6e13ba49b24e9767f5f",
+      "case_id": "v2-test-r13"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-expressions-match-expr-match-expr",
+      "start": 0,
+      "end": 3407,
+      "text_sha256": "d2299da99fec09fa8eecbc78855531b55220d5f9248cb9924a9500f4b2957373",
+      "case_id": "v2-test-r14"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-expressions-match-expr-match-expr",
+      "start": 3407,
+      "end": 6586,
+      "text_sha256": "e5f46e14ecb80affe787f7ee1e9958dccf108f90a32070974ee2a1508f57325d",
+      "case_id": "v2-test-r14"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "rust-expressions-match-expr-match-expr",
+      "start": 6586,
+      "end": 9821,
+      "text_sha256": "50d3dcbca759a69a0794957f034b66dfe4d318d66875e6e13ba49b24e9767f5f",
+      "case_id": "v2-test-r14"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-attributes-derive-derive",
+      "start": 0,
+      "end": 3378,
+      "text_sha256": "59a8a32cc328755150d6e7d319596981f454a3f37ef8e815fb21151eba5701c8",
+      "case_id": "v2-test-r15"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-attributes-derive-derive",
+      "start": 3378,
+      "end": 3905,
+      "text_sha256": "acebfe6ec58707de536179bb15263da9b545ed42b12eeaf7cfebe3e247830a8d",
+      "case_id": "v2-test-r15"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-attributes-derive-derive",
+      "start": 0,
+      "end": 3378,
+      "text_sha256": "59a8a32cc328755150d6e7d319596981f454a3f37ef8e815fb21151eba5701c8",
+      "case_id": "v2-test-r16"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-attributes-derive-derive",
+      "start": 3378,
+      "end": 3905,
+      "text_sha256": "acebfe6ec58707de536179bb15263da9b545ed42b12eeaf7cfebe3e247830a8d",
+      "case_id": "v2-test-r16"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-trait-bounds-trait-bounds",
+      "start": 0,
+      "end": 3426,
+      "text_sha256": "29bf7b02b92b61b39e8fa5b7cfa40031c2d3acc0b56c43b58710cd466cbe3d23",
+      "case_id": "v2-test-r17"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-trait-bounds-trait-bounds",
+      "start": 3426,
+      "end": 6877,
+      "text_sha256": "c78b00993f8f01168c2e9bbcad34e4ae3795e57ba7620213bb9f1fc869254404",
+      "case_id": "v2-test-r17"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "rust-trait-bounds-trait-bounds",
+      "start": 6877,
+      "end": 8814,
+      "text_sha256": "12b40f28881314c0df241af108db1fb13f7de3b6eda6e4073a9f9ac17be94774",
+      "case_id": "v2-test-r17"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-trait-bounds-trait-bounds",
+      "start": 0,
+      "end": 3426,
+      "text_sha256": "29bf7b02b92b61b39e8fa5b7cfa40031c2d3acc0b56c43b58710cd466cbe3d23",
+      "case_id": "v2-test-r18"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-trait-bounds-trait-bounds",
+      "start": 3426,
+      "end": 6877,
+      "text_sha256": "c78b00993f8f01168c2e9bbcad34e4ae3795e57ba7620213bb9f1fc869254404",
+      "case_id": "v2-test-r18"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "rust-trait-bounds-trait-bounds",
+      "start": 6877,
+      "end": 8814,
+      "text_sha256": "12b40f28881314c0df241af108db1fb13f7de3b6eda6e4073a9f9ac17be94774",
+      "case_id": "v2-test-r18"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-items-traits-traits",
+      "start": 0,
+      "end": 3367,
+      "text_sha256": "7a4656b2c5fd0e85e4ea1ee46abafb1b97b88102b72f1fe76aea9ed9a4ff9a98",
+      "case_id": "v2-test-r19"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-items-traits-traits",
+      "start": 3367,
+      "end": 6793,
+      "text_sha256": "f7fd82ea4ffebaf9360c6dc3a63f9a53e828042ac686bfbff66bd94f73bcdbf6",
+      "case_id": "v2-test-r19"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "rust-items-traits-traits",
+      "start": 6793,
+      "end": 10264,
+      "text_sha256": "2c0ba0106472734ead3b3cd190495db0e2aefeb7f8e8a550da9e2bbfb677cad0",
+      "case_id": "v2-test-r19"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "rust-items-traits-traits",
+      "start": 10264,
+      "end": 13440,
+      "text_sha256": "15c28856eadd1b68d4867147b852f7521da2a8fc33d2f7cd86e85f17d3c38874",
+      "case_id": "v2-test-r19"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-items-traits-traits",
+      "start": 0,
+      "end": 3367,
+      "text_sha256": "7a4656b2c5fd0e85e4ea1ee46abafb1b97b88102b72f1fe76aea9ed9a4ff9a98",
+      "case_id": "v2-test-r20"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-items-traits-traits",
+      "start": 3367,
+      "end": 6793,
+      "text_sha256": "f7fd82ea4ffebaf9360c6dc3a63f9a53e828042ac686bfbff66bd94f73bcdbf6",
+      "case_id": "v2-test-r20"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "rust-items-traits-traits",
+      "start": 6793,
+      "end": 10264,
+      "text_sha256": "2c0ba0106472734ead3b3cd190495db0e2aefeb7f8e8a550da9e2bbfb677cad0",
+      "case_id": "v2-test-r20"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "rust-items-traits-traits",
+      "start": 10264,
+      "end": 13440,
+      "text_sha256": "15c28856eadd1b68d4867147b852f7521da2a8fc33d2f7cd86e85f17d3c38874",
+      "case_id": "v2-test-r20"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-type-coercions-type-coercions",
+      "start": 0,
+      "end": 3265,
+      "text_sha256": "21b4024f2b850fefad194c53bc3d1d6d6c9d3da389b8cf915b1f2399893b7dbd",
+      "case_id": "v2-test-r21"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-type-coercions-type-coercions",
+      "start": 3265,
+      "end": 6763,
+      "text_sha256": "e5c4f4da0137d0fb0b7fa83d02dad537bae5504f2c003ac352a71a9cf9ecf775",
+      "case_id": "v2-test-r21"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "rust-type-coercions-type-coercions",
+      "start": 6763,
+      "end": 9903,
+      "text_sha256": "73692bc59022634f63188c49dd17bc18db47146e0b02855a7651be8008b7c95b",
+      "case_id": "v2-test-r21"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "rust-type-coercions-type-coercions",
+      "start": 9903,
+      "end": 10520,
+      "text_sha256": "a0822a48b337accbe2dec6f8f0a7272c418e9a11e3c9ad571bfaea5529d71dab",
+      "case_id": "v2-test-r21"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-type-coercions-type-coercions",
+      "start": 0,
+      "end": 3265,
+      "text_sha256": "21b4024f2b850fefad194c53bc3d1d6d6c9d3da389b8cf915b1f2399893b7dbd",
+      "case_id": "v2-test-r22"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-type-coercions-type-coercions",
+      "start": 3265,
+      "end": 6763,
+      "text_sha256": "e5c4f4da0137d0fb0b7fa83d02dad537bae5504f2c003ac352a71a9cf9ecf775",
+      "case_id": "v2-test-r22"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "rust-type-coercions-type-coercions",
+      "start": 6763,
+      "end": 9903,
+      "text_sha256": "73692bc59022634f63188c49dd17bc18db47146e0b02855a7651be8008b7c95b",
+      "case_id": "v2-test-r22"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "rust-type-coercions-type-coercions",
+      "start": 9903,
+      "end": 10520,
+      "text_sha256": "a0822a48b337accbe2dec6f8f0a7272c418e9a11e3c9ad571bfaea5529d71dab",
+      "case_id": "v2-test-r22"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-unsafe-keyword-unsafe-keyword",
+      "start": 0,
+      "end": 3338,
+      "text_sha256": "a46da871cf5131110a87c40d1acfee12cee244c4e5a1c0f1582e75b3cb2dcf2e",
+      "case_id": "v2-test-r23"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-unsafe-keyword-unsafe-keyword",
+      "start": 3338,
+      "end": 5988,
+      "text_sha256": "0f450596f2a9b492cb0e195cab63477713d655576b70f98c1df122293dca533f",
+      "case_id": "v2-test-r23"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "rust-unsafe-keyword-unsafe-keyword",
+      "start": 0,
+      "end": 3338,
+      "text_sha256": "a46da871cf5131110a87c40d1acfee12cee244c4e5a1c0f1582e75b3cb2dcf2e",
+      "case_id": "v2-test-r24"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "rust-unsafe-keyword-unsafe-keyword",
+      "start": 3338,
+      "end": 5988,
+      "text_sha256": "0f450596f2a9b492cb0e195cab63477713d655576b70f98c1df122293dca533f",
+      "case_id": "v2-test-r24"
+    }
+  ]
+}

@@ -1,0 +1,2297 @@
+{
+  "annotation_version": "v2-realistic-reviewed-1",
+  "approaches": [
+    "heuristic",
+    "minimal",
+    "optimized"
+  ],
+  "bootstrap_samples": 10000,
+  "case_ids": [
+    "v2-test-r01",
+    "v2-test-r02",
+    "v2-test-r03",
+    "v2-test-r04",
+    "v2-test-r05",
+    "v2-test-r06",
+    "v2-test-r07",
+    "v2-test-r08",
+    "v2-test-r09",
+    "v2-test-r10",
+    "v2-test-r11",
+    "v2-test-r12",
+    "v2-test-r13",
+    "v2-test-r14",
+    "v2-test-r15",
+    "v2-test-r16",
+    "v2-test-r17",
+    "v2-test-r18",
+    "v2-test-r19",
+    "v2-test-r20",
+    "v2-test-r21",
+    "v2-test-r22",
+    "v2-test-r23",
+    "v2-test-r24",
+    "v2-test-r25",
+    "v2-test-r26",
+    "v2-test-r27",
+    "v2-test-r28",
+    "v2-test-r29",
+    "v2-test-r30",
+    "v2-test-r31",
+    "v2-test-r32",
+    "v2-test-r33",
+    "v2-test-r34",
+    "v2-test-r35",
+    "v2-test-r36",
+    "v2-test-r37",
+    "v2-test-r38",
+    "v2-test-r39",
+    "v2-test-r40",
+    "v2-test-r41",
+    "v2-test-r42",
+    "v2-test-r43",
+    "v2-test-r44",
+    "v2-test-r45",
+    "v2-test-r46",
+    "v2-test-r47",
+    "v2-test-r48"
+  ],
+  "created_at": "2026-10-20T23:41:32.819447+00:00",
+  "dataset_sha256": "b103f0ee127728f0fdfc5d58f3f5cbcf7c39e89d09b1369d1e7b9baf22b1b845",
+  "dataset_snapshot": {
+    "dependencies": [
+      {
+        "path": "dataset/v2/realistic-draft/licenses/cpython/LICENSE",
+        "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/licenses/curl/COPYING",
+        "sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/licenses/pytest/LICENSE",
+        "sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/licenses/reference/LICENSE-MIT",
+        "sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/licenses/cpython/LICENSE.txt",
+        "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/licenses/postgresql/COPYRIGHT",
+        "sha256": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/licenses/rust/LICENSE-MIT",
+        "sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/cpython-decimal/raw.rst",
+        "sha256": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/cpython-metadata/raw.rst",
+        "sha256": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/cpython-pathlib/raw.rst",
+        "sha256": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/cpython-queue/raw.rst",
+        "sha256": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/cpython-sqlite3/raw.rst",
+        "sha256": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/cpython-tarfile/raw.rst",
+        "sha256": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/postgres-backup/raw.sgml",
+        "sha256": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/postgres-isolation/raw.sgml",
+        "sha256": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/postgres-privileges/raw.sgml",
+        "sha256": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/rust-destructors/raw.md",
+        "sha256": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/rust-testing/raw.md",
+        "sha256": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/pilot-import/sources/rust-visibility/raw.md",
+        "sha256": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-redirect/location-trusted.md",
+        "sha256": "1b4d31f01d5089354f542298032415513d61dbd7ad5f4e1bafd37924546a9fd4"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-redirect/location.md",
+        "sha256": "f9242acc3a6bb75cbff18d59ef86b4ffc11efa541d4423b0673ac6ecc96f6ea4"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-redirect/max-redirs.md",
+        "sha256": "b85b10ff9c08c458736bff490666fe1229ed83e4eafb4f99b0c40557ff992d24"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-redirect/post301.md",
+        "sha256": "58cccf996abbbca0dbb415a6a466dcf150f14e523583b85b36db0981f3739b95"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-redirect/post302.md",
+        "sha256": "c3c1b7a2c1606e0d7e49bbd93ac01b9354d13569c1d4458ed5f3b5939d063c62"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-redirect/post303.md",
+        "sha256": "f5344ae27174e3eeafdf5f85aa07bd0f1d068d5d2d7a8f2e8b91dc137c4681d3"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-redirect/proto-redir.md",
+        "sha256": "1ea97b058c06e86987a5f67bbd8f7e760531a11efea48951beb4874c475a53cf"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-retry/fail-with-body.md",
+        "sha256": "76754bbc3cf336c31e5826642bb18f8cba261f6878378a1c72e33b4172d09488"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-retry/fail.md",
+        "sha256": "1c6ea656161a83257ad346aab0bb6e38d476e7a2785656aa3a24df501fcd0966"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-retry/retry-all-errors.md",
+        "sha256": "a98f60938760f9d35232b3da2f7b45da4aa239411a142a52e5e8dccf6a5fb916"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-retry/retry-connrefused.md",
+        "sha256": "0f1f5c3bcd63340bc74395d50400945fd01d51ceedefcbf3871f2b37788de513"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-retry/retry-delay.md",
+        "sha256": "1a595221622a10d316d7e6f2d6d39dcd451c1230cc6fe5bd56022ade2f82f822"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-retry/retry-max-time.md",
+        "sha256": "9505140824bf47fe04d4c8b929c16b3371e02399301c153b9f1071718ae53f33"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-retry/retry.md",
+        "sha256": "d164104079fbac52eefc1147bfb1eb152bfbb1d883e6c0f963df25a4e7a505e2"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-upload/data-binary.md",
+        "sha256": "0a13757b573ab911dfe6a80249bd4ce1b17e80aa993c3d4f660c41668069ed68"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-upload/get.md",
+        "sha256": "33dcc8682ac5df6dd6e7c38df6fc47776d9f03f0b33d5a75b5cb5b99bf949da4"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-upload/header.md",
+        "sha256": "b2cdd75693813f0aec178bb04bba344d30c19bae4a764eff227c4974ac1afcca"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-upload/request.md",
+        "sha256": "33b43ebcd8d40f388b92018eaf822e731fbe755793ed87527f4423bab924b2bd"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/curl-upload/upload-file.md",
+        "sha256": "f9d0b70ff60e0bc1b1337875d19bccfadcbf5b4948bfacce9ec1bbb00e4c7cb0"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/pytest-monkeypatch/monkeypatch.rst",
+        "sha256": "6218e09da0c38d4f80346bcb67781a065afd5434ee0ae761102eb4097324f33f"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/pytest-parametrize/parametrize.rst",
+        "sha256": "3c4e488b25aaac11a12953da55616c5a76e09c2237c0b2298121dad7c96f21dd"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/pytest-tmp_path/tmp_path.rst",
+        "sha256": "4cc3888e67f883a4b8dbee68ab987d6f49763b1d3d32dcadfdacfe95cf534381"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/python-bisect/bisect.rst",
+        "sha256": "1fb2fa097a86e3bd92049f3e6b791a9bbf3bdf54a1098fcbb369d3e0e5c56a5c"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/python-copy/copy.rst",
+        "sha256": "935088f74e08fa47f652f9d803ab512ca5a961de655739eaa21919a6623ecfba"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/python-functools/functools.rst",
+        "sha256": "a3f0dffd4973d3c0902107dbb67ead54af934a1d43ba5552e590c69f233f817a"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/python-graphlib/graphlib.rst",
+        "sha256": "4bad5b7eb3c24538907c6358ab2223e23f75bc127b4402bfe14241e33e9f4f3e"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/python-heapq/heapq.rst",
+        "sha256": "c9d819c44d892c812f65b07ab9de1d13ec30dcdfc8af8423a754c2506d136e53"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/dev/python-weakref/weakref.rst",
+        "sha256": "0ef492312caae331776ef5f24dca5cb8c23df5cb17b3847c562eed6046528c03"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-cookie/cookie-jar.md",
+        "sha256": "154d8137051090dc9298aaeba6eedddd36a148dff67c916e5d6d55f35e0aebc6"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-cookie/cookie.md",
+        "sha256": "d1db62cae04a9c5652658583c7153793f2a94441ea594a34a9740b92dbb7c21a"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-cookie/junk-session-cookies.md",
+        "sha256": "5d01994c2e9931c09338eac4f346858cd23ff2bcf42a361260ec71aed64cb557"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-multipart/form-escape.md",
+        "sha256": "59c5d847dd468b6554beb16c4b6aabb5691099b500766373d943287f12906234"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-multipart/form-string.md",
+        "sha256": "621839c2fa14fff9b62849f9444f225f58e68941b13b6952a00083cc767d9cf2"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-multipart/form.md",
+        "sha256": "1c57890e69bdacbdbf285f5d0339a0eb648ccd3ec345b112a8d75c630f42feb6"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-proxy/noproxy.md",
+        "sha256": "26340294c6c50d8bb495564e2b081793011904dcafd94738f5fb7697dfc6e463"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-proxy/preproxy.md",
+        "sha256": "ea9d61f5efb706bc6d693fe6eb6541d1b307b4e91a72c7c00934d3532f15d54f"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-proxy/proxy-user.md",
+        "sha256": "ac0d5b44fef838fc528e2463ec8fdbc6968200eef129fb51fb6246521ff3dcf7"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-proxy/proxy.md",
+        "sha256": "b70e7bf6e4a44a1955e87c0bfdb4a78a479d6b0b7ca3f60f96591fd6c7efdc28"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-proxy/socks5.md",
+        "sha256": "901f3a50f6bd6dde1148fed2d1eec9b29d3a168bcc8b8cc437aaa1de1880d849"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-ranges/continue-at.md",
+        "sha256": "893330b33c5055c60ff51b9b0bbce5176c9c2c4bf23a6f66384e6361613fabeb"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-ranges/output.md",
+        "sha256": "9ebb57bc2d399e134d9454700f46cc0abcc5e4502893ce0d4b810783d102f6c4"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-ranges/range.md",
+        "sha256": "1efa707c781d99443b717707d0c30a40035c204f3caa1279f0d5a3b7b6d6a7f2"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-ranges/remove-on-error.md",
+        "sha256": "c55f4d1628d6af7788ddcc863441654a93a006a451afde998bff80ebd3f93765"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/connect-timeout.md",
+        "sha256": "f0dc4d7cbb253bf57aee6f980b4e3ffa11b7f606acd1e07e9187ddb6732ee05d"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/limit-rate.md",
+        "sha256": "c5b293b7df99fc72a7e7300327282b7304784e1fd5c4dfe2f3f292c63d4a18dd"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/max-time.md",
+        "sha256": "36ffc3a4f0b6615359c480f9bc1bb5e5f22d5a59cfbcd6439e0a363d4b8b948b"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/speed-limit.md",
+        "sha256": "b9dc88c518ea58982744f2e7ca98979a0540562c042d0dfd493cb500886ddfb2"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-timeouts/speed-time.md",
+        "sha256": "3531213576b51de358fa6fe25374b5b0cac0fb2f875c69e5edb002c810bcbd13"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-tls/ca-native.md",
+        "sha256": "63bbc7d75073f2a6348a7d6e9888cecd420711bd01b5342307c87d9590018f46"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-tls/cacert.md",
+        "sha256": "a1688f98ce18430df010fe6ee17c97bed67863ddf0d9772d6c9698096495995b"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-tls/capath.md",
+        "sha256": "ade27bf2a177beefbdd42777955c2856e01fa468caec826af13d5fb957f3f538"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-tls/cert-status.md",
+        "sha256": "a56b9520bb670682eec4024b8800478b258f56222a8ae1dc320f83024ff6772c"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/curl-tls/insecure.md",
+        "sha256": "f14af147d90f774c0d6ff6dff90bdb6dca1289c70c0960f782518bd1ce546a77"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/pytest-assert/assert.rst",
+        "sha256": "91fd04a591076e73fbe64c22d4b63a241ea1c76bce570a61ef389d2f59340372"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/pytest-capture-stdout-stderr/capture-stdout-stderr.rst",
+        "sha256": "8b332b3d0277f3753ded5f754a159e6adf4a014ea6d3db4b80ca144c46e65a26"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/pytest-capture-warnings/capture-warnings.rst",
+        "sha256": "177068a737b89f624962d35a55420d2585509fa0249af7a9f9f840b700d2497e"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/pytest-fixtures/fixtures.rst",
+        "sha256": "f936a74fcf71982c59f721f3a1a4aca0dbc1e012b7c451336069c76829826304"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/pytest-logging/logging.rst",
+        "sha256": "f6d13578fd06f3e34ae6e38858e81b313c94aee1f21e678c884491d7c6565647"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/pytest-skipping/skipping.rst",
+        "sha256": "3cf0500a6b7daf72f11e3e0fa35af89c914921ff17910c1bb83d11c721ca78e6"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/python-asyncio-task/asyncio-task.rst",
+        "sha256": "f3cbb9d7f174f152127bb4eaea37784484f4a8c2db866d21aaf31edfce7ec7a1"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/python-collections/collections.rst",
+        "sha256": "cce0d2738e494bd96d046392e5524a63f615405c7768cbc1bd1700bc178a454b"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/python-concurrent.futures/concurrent.futures.rst",
+        "sha256": "b7badfc7248121ef632865bcecec4ce344fdd79818adeb94a65f5859376512f8"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/python-dataclasses/dataclasses.rst",
+        "sha256": "4939498e58fbf1d346e8d89a1d44d1264d818a9648eb2714e3762ec0e9a77c23"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/python-enum/enum.rst",
+        "sha256": "ecd67b943a2728c589fab5934159a7da63be57fdb68d17df3fef1b59a6339945"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/python-itertools/itertools.rst",
+        "sha256": "4daebb6755c23ae2a6791f508028836f2b5c2589287cc954c17dc498a9dc2eeb"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/rust-attributes-derive/derive.md",
+        "sha256": "1948fc4eb6cda6d58dcad87db2480b1954f545cf843263d16d5a11f6b9773990"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/rust-expressions-match-expr/match-expr.md",
+        "sha256": "f355120a9f7ed51b017f1e790032bd1f49e9ba42e68c0abc85ccc288d60f9b1e"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/rust-items-traits/traits.md",
+        "sha256": "c26d6c4c44718d3a2e6872ba76335071e55ecfc1f9e659b01b8130b0d33c9883"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/rust-trait-bounds/trait-bounds.md",
+        "sha256": "edc5e61dc4c0c1b90659256026a8c6a99cef5c321d3ef01ffd167b01ee1db749"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/rust-type-coercions/type-coercions.md",
+        "sha256": "75d07f1492ec3af3011b25aee419aac4583ce17eb91b58d42cefe5e1e01b96f1"
+      },
+      {
+        "path": "dataset/v2/realistic-draft/sources/test/rust-unsafe-keyword/unsafe-keyword.md",
+        "sha256": "376c811498b91d3ff8403df1742c3d97963309bc1028cf23922ddde0dfe56502"
+      }
+    ],
+    "manifest_path": "dataset/main.manifest.json",
+    "manifest_sha256": "3fbbba049fb20bed381ebaf24a993d35a69490498a8d2bdb52cc7b074cf8b9c5",
+    "path": "dataset/main.jsonl",
+    "selected_manifest_sha256": "24bf9e280b65343dd97865a9852d0123803ca8fd611830f0e79fe1ed0d6f59da",
+    "sha256": "b103f0ee127728f0fdfc5d58f3f5cbcf7c39e89d09b1369d1e7b9baf22b1b845"
+  },
+  "dataset_version": "v2-realistic-candidate-1",
+  "execution": {
+    "budget_policy": "reserve_operation_max_charge_known_calls_else_reservation",
+    "cache": "none",
+    "concurrency": 1,
+    "jobs": [
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r10",
+        "sequence": 0,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r32",
+        "sequence": 1,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r42",
+        "sequence": 2,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r24",
+        "sequence": 3,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r21",
+        "sequence": 4,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r43",
+        "sequence": 5,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r44",
+        "sequence": 6,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r33",
+        "sequence": 7,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r20",
+        "sequence": 8,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r06",
+        "sequence": 9,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r11",
+        "sequence": 10,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r36",
+        "sequence": 11,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r25",
+        "sequence": 12,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r12",
+        "sequence": 13,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r27",
+        "sequence": 14,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r10",
+        "sequence": 15,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r30",
+        "sequence": 16,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r36",
+        "sequence": 17,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r23",
+        "sequence": 18,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r08",
+        "sequence": 19,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r46",
+        "sequence": 20,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r33",
+        "sequence": 21,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r08",
+        "sequence": 22,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r16",
+        "sequence": 23,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r46",
+        "sequence": 24,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r32",
+        "sequence": 25,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r40",
+        "sequence": 26,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r06",
+        "sequence": 27,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r02",
+        "sequence": 28,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r41",
+        "sequence": 29,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r23",
+        "sequence": 30,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r14",
+        "sequence": 31,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r12",
+        "sequence": 32,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r36",
+        "sequence": 33,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r27",
+        "sequence": 34,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r07",
+        "sequence": 35,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r28",
+        "sequence": 36,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r05",
+        "sequence": 37,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r14",
+        "sequence": 38,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r25",
+        "sequence": 39,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r37",
+        "sequence": 40,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r38",
+        "sequence": 41,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r20",
+        "sequence": 42,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r29",
+        "sequence": 43,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r22",
+        "sequence": 44,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r26",
+        "sequence": 45,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r42",
+        "sequence": 46,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r26",
+        "sequence": 47,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r28",
+        "sequence": 48,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r12",
+        "sequence": 49,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r29",
+        "sequence": 50,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r21",
+        "sequence": 51,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r41",
+        "sequence": 52,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r47",
+        "sequence": 53,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r10",
+        "sequence": 54,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r35",
+        "sequence": 55,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r10",
+        "sequence": 56,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r20",
+        "sequence": 57,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r10",
+        "sequence": 58,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r19",
+        "sequence": 59,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r28",
+        "sequence": 60,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r05",
+        "sequence": 61,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r35",
+        "sequence": 62,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r13",
+        "sequence": 63,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r19",
+        "sequence": 64,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r15",
+        "sequence": 65,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r35",
+        "sequence": 66,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r18",
+        "sequence": 67,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r01",
+        "sequence": 68,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r35",
+        "sequence": 69,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r04",
+        "sequence": 70,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r30",
+        "sequence": 71,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r24",
+        "sequence": 72,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r33",
+        "sequence": 73,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r04",
+        "sequence": 74,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r36",
+        "sequence": 75,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r03",
+        "sequence": 76,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r22",
+        "sequence": 77,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r17",
+        "sequence": 78,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r15",
+        "sequence": 79,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r39",
+        "sequence": 80,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r13",
+        "sequence": 81,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r16",
+        "sequence": 82,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r29",
+        "sequence": 83,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r11",
+        "sequence": 84,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r27",
+        "sequence": 85,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r07",
+        "sequence": 86,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r47",
+        "sequence": 87,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r18",
+        "sequence": 88,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r18",
+        "sequence": 89,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r38",
+        "sequence": 90,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r23",
+        "sequence": 91,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r20",
+        "sequence": 92,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r21",
+        "sequence": 93,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r26",
+        "sequence": 94,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r05",
+        "sequence": 95,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r06",
+        "sequence": 96,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r21",
+        "sequence": 97,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r09",
+        "sequence": 98,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r32",
+        "sequence": 99,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r34",
+        "sequence": 100,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r41",
+        "sequence": 101,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r34",
+        "sequence": 102,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r40",
+        "sequence": 103,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r12",
+        "sequence": 104,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r43",
+        "sequence": 105,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r47",
+        "sequence": 106,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r07",
+        "sequence": 107,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r15",
+        "sequence": 108,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r09",
+        "sequence": 109,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r15",
+        "sequence": 110,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r39",
+        "sequence": 111,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r09",
+        "sequence": 112,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r31",
+        "sequence": 113,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r42",
+        "sequence": 114,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r45",
+        "sequence": 115,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r28",
+        "sequence": 116,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r10",
+        "sequence": 117,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r24",
+        "sequence": 118,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r47",
+        "sequence": 119,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r36",
+        "sequence": 120,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r29",
+        "sequence": 121,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r13",
+        "sequence": 122,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r30",
+        "sequence": 123,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r02",
+        "sequence": 124,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r23",
+        "sequence": 125,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r27",
+        "sequence": 126,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r37",
+        "sequence": 127,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r19",
+        "sequence": 128,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r44",
+        "sequence": 129,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r48",
+        "sequence": 130,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r26",
+        "sequence": 131,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r08",
+        "sequence": 132,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r03",
+        "sequence": 133,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r38",
+        "sequence": 134,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r07",
+        "sequence": 135,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r23",
+        "sequence": 136,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r07",
+        "sequence": 137,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r04",
+        "sequence": 138,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r43",
+        "sequence": 139,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r39",
+        "sequence": 140,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r43",
+        "sequence": 141,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r16",
+        "sequence": 142,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r33",
+        "sequence": 143,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r29",
+        "sequence": 144,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r21",
+        "sequence": 145,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r25",
+        "sequence": 146,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r14",
+        "sequence": 147,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r33",
+        "sequence": 148,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r14",
+        "sequence": 149,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r11",
+        "sequence": 150,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r28",
+        "sequence": 151,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r06",
+        "sequence": 152,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r26",
+        "sequence": 153,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r35",
+        "sequence": 154,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r07",
+        "sequence": 155,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r48",
+        "sequence": 156,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r43",
+        "sequence": 157,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r14",
+        "sequence": 158,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r16",
+        "sequence": 159,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r13",
+        "sequence": 160,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r08",
+        "sequence": 161,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r22",
+        "sequence": 162,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r25",
+        "sequence": 163,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r08",
+        "sequence": 164,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r48",
+        "sequence": 165,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r44",
+        "sequence": 166,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r32",
+        "sequence": 167,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r04",
+        "sequence": 168,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r42",
+        "sequence": 169,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r44",
+        "sequence": 170,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r28",
+        "sequence": 171,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r15",
+        "sequence": 172,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r47",
+        "sequence": 173,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r18",
+        "sequence": 174,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r30",
+        "sequence": 175,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r09",
+        "sequence": 176,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r05",
+        "sequence": 177,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r41",
+        "sequence": 178,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r34",
+        "sequence": 179,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r48",
+        "sequence": 180,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r46",
+        "sequence": 181,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r26",
+        "sequence": 182,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r48",
+        "sequence": 183,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r31",
+        "sequence": 184,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r01",
+        "sequence": 185,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r29",
+        "sequence": 186,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r18",
+        "sequence": 187,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r40",
+        "sequence": 188,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r25",
+        "sequence": 189,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r32",
+        "sequence": 190,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r32",
+        "sequence": 191,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r45",
+        "sequence": 192,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r12",
+        "sequence": 193,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r17",
+        "sequence": 194,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r22",
+        "sequence": 195,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r19",
+        "sequence": 196,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r30",
+        "sequence": 197,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r27",
+        "sequence": 198,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r40",
+        "sequence": 199,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r11",
+        "sequence": 200,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r38",
+        "sequence": 201,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r13",
+        "sequence": 202,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r39",
+        "sequence": 203,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r42",
+        "sequence": 204,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r02",
+        "sequence": 205,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r41",
+        "sequence": 206,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r13",
+        "sequence": 207,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r01",
+        "sequence": 208,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r31",
+        "sequence": 209,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r40",
+        "sequence": 210,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r20",
+        "sequence": 211,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r45",
+        "sequence": 212,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r27",
+        "sequence": 213,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r18",
+        "sequence": 214,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r11",
+        "sequence": 215,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r44",
+        "sequence": 216,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r22",
+        "sequence": 217,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r17",
+        "sequence": 218,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r37",
+        "sequence": 219,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r02",
+        "sequence": 220,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r14",
+        "sequence": 221,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r05",
+        "sequence": 222,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r38",
+        "sequence": 223,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r39",
+        "sequence": 224,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r31",
+        "sequence": 225,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r47",
+        "sequence": 226,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r17",
+        "sequence": 227,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r11",
+        "sequence": 228,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r35",
+        "sequence": 229,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r36",
+        "sequence": 230,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r31",
+        "sequence": 231,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r12",
+        "sequence": 232,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r25",
+        "sequence": 233,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r08",
+        "sequence": 234,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r24",
+        "sequence": 235,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r40",
+        "sequence": 236,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r46",
+        "sequence": 237,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r01",
+        "sequence": 238,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r45",
+        "sequence": 239,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r09",
+        "sequence": 240,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r33",
+        "sequence": 241,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r44",
+        "sequence": 242,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r24",
+        "sequence": 243,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r19",
+        "sequence": 244,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r41",
+        "sequence": 245,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r02",
+        "sequence": 246,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r23",
+        "sequence": 247,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r09",
+        "sequence": 248,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r37",
+        "sequence": 249,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r03",
+        "sequence": 250,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r31",
+        "sequence": 251,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r46",
+        "sequence": 252,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r03",
+        "sequence": 253,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r22",
+        "sequence": 254,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r39",
+        "sequence": 255,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r02",
+        "sequence": 256,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r15",
+        "sequence": 257,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r37",
+        "sequence": 258,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r48",
+        "sequence": 259,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r01",
+        "sequence": 260,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r04",
+        "sequence": 261,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r03",
+        "sequence": 262,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r16",
+        "sequence": 263,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r34",
+        "sequence": 264,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r45",
+        "sequence": 265,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r21",
+        "sequence": 266,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r30",
+        "sequence": 267,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r06",
+        "sequence": 268,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r24",
+        "sequence": 269,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r06",
+        "sequence": 270,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r16",
+        "sequence": 271,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r46",
+        "sequence": 272,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r05",
+        "sequence": 273,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r43",
+        "sequence": 274,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r20",
+        "sequence": 275,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r34",
+        "sequence": 276,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r34",
+        "sequence": 277,
+        "track": "oracle"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r37",
+        "sequence": 278,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r45",
+        "sequence": 279,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r17",
+        "sequence": 280,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r03",
+        "sequence": 281,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r04",
+        "sequence": 282,
+        "track": "oracle"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r01",
+        "sequence": 283,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r42",
+        "sequence": 284,
+        "track": "oracle"
+      },
+      {
+        "approach": "minimal",
+        "case_id": "v2-test-r38",
+        "sequence": 285,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "optimized",
+        "case_id": "v2-test-r17",
+        "sequence": 286,
+        "track": "end-to-end"
+      },
+      {
+        "approach": "heuristic",
+        "case_id": "v2-test-r19",
+        "sequence": 287,
+        "track": "oracle"
+      }
+    ],
+    "lifecycle": "one_verifier_per_approach; no_warmup",
+    "order": "seeded_job_shuffle"
+  },
+  "fingerprints": {
+    "code_sha256": "cd15430a02b364c2f6ddef034e6ef046b335dd99b3678d3dada5186e31dd89a6",
+    "files": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "efe9880e6f6691702c764654344532af21b39d252dd4392bb69fbc14eb612d81",
+      "grounding/contracts.py": "736c5e1e2db6f9bc0ff42d4ad2f93e502e5927b57f5a07515130537408f52417",
+      "grounding/diagnostics.py": "b29774e3b94587604b02de928932a374de4ac634cd41e5f47e142380f2853921",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/jev_evidence.py": "9fa033259e3f9a10bf2f59c5df438984a5d025cd2b3e13c3b3aa3dc3253cbf66",
+      "grounding/jev_provider.py": "b43d13f2a0c792c6f75000bdb0b66c8c15f874086e52bb5e86c6d7f50c06a9c4",
+      "grounding/jev_verifier.py": "c69c1427b57f3d976a61a0d7e8dba6544de412d85b52666580c10b81edda760b",
+      "grounding/prompts.py": "2bc178dc2996cfb83e4a5f6332b0908d50e92f409e234ad46e50dcc89e80bb59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "bb68cddb38d1194649448e410e6296d9cc2a9038bfe202dfd0f452e34315ffdf",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/audit.py": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+      "grounding_eval/cli.py": "079a5f9f1ac45da03d16814a1a87252d57bb2e69aeb0f6eb4d03e825dfc119ab",
+      "grounding_eval/confidence.py": "8b821bc658b14d7a7397e697dc5813e34463d305d00f7e020aa2d776f1e42c5d",
+      "grounding_eval/dataset.py": "1b5aae47a713ad8c71935859fe4e6b6fa6374584780515f6e8d959141aec8df2",
+      "grounding_eval/diagnostics.py": "b07bfe37d9f65abedd9432d3ebf51e2397afdf591d57685abde050b9574ecdb9",
+      "grounding_eval/hybrid.py": "b5f64a823700d120e9b5f6202901a296c5e367671b918e1c39f4c17ae23e2e13",
+      "grounding_eval/provenance.py": "7243c31ea04e8b37e543b56a7d3e96a6701631d6b178ed0576fee47ae801cd33",
+      "grounding_eval/repeated.py": "74c9f3de20d1d61c1715e22180652feae366b65233d681e92672ce1652a2cee8",
+      "grounding_eval/reporting.py": "3f61282bacc04399d3fb876395abe6bfcc68f4f232e83333f96957cfc8369122",
+      "grounding_eval/runner.py": "785db293bf0ba1bb17afdf2e2f7d4b29f8e444d9c0bec9127e37127d17caa40d",
+      "grounding_eval/scoring.py": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e",
+      "grounding_eval/uncertainty.py": "c6bfbdcb8155acf2fdfdd31ea74eaea4fa8d7a18750e26ca0c3546f49c85f674"
+    },
+    "prompt_files": {
+      "grounding/prompts.py": "2bc178dc2996cfb83e4a5f6332b0908d50e92f409e234ad46e50dcc89e80bb59"
+    }
+  },
+  "format_version": 2,
+  "max_total_provider_attempts": 360,
+  "measurement_kind": "actual_verifier",
+  "prices": null,
+  "request_id": "4dd45a0c344c458eaf6842e4b110030c",
+  "runtime": {
+    "packages": {
+      "fastapi": "0.143.1",
+      "httpx": "0.28.1",
+      "pydantic": "2.14.1"
+    },
+    "python": "3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]"
+  },
+  "schema_version": "2",
+  "scorer_version": "2",
+  "seed": 20261015,
+  "selected_cases_sha256": "ba372957a3914170ad20413a67c10888940c804e1224ce6ce2bb9ae27059b55d",
+  "selection": {
+    "kind": "case_ids",
+    "requested_case_ids": [
+      "v2-test-r01",
+      "v2-test-r02",
+      "v2-test-r03",
+      "v2-test-r04",
+      "v2-test-r05",
+      "v2-test-r06",
+      "v2-test-r07",
+      "v2-test-r08",
+      "v2-test-r09",
+      "v2-test-r10",
+      "v2-test-r11",
+      "v2-test-r12",
+      "v2-test-r13",
+      "v2-test-r14",
+      "v2-test-r15",
+      "v2-test-r16",
+      "v2-test-r17",
+      "v2-test-r18",
+      "v2-test-r19",
+      "v2-test-r20",
+      "v2-test-r21",
+      "v2-test-r22",
+      "v2-test-r23",
+      "v2-test-r24",
+      "v2-test-r25",
+      "v2-test-r26",
+      "v2-test-r27",
+      "v2-test-r28",
+      "v2-test-r29",
+      "v2-test-r30",
+      "v2-test-r31",
+      "v2-test-r32",
+      "v2-test-r33",
+      "v2-test-r34",
+      "v2-test-r35",
+      "v2-test-r36",
+      "v2-test-r37",
+      "v2-test-r38",
+      "v2-test-r39",
+      "v2-test-r40",
+      "v2-test-r41",
+      "v2-test-r42",
+      "v2-test-r43",
+      "v2-test-r44",
+      "v2-test-r45",
+      "v2-test-r46",
+      "v2-test-r47",
+      "v2-test-r48"
+    ]
+  },
+  "settings": {
+    "diagnostics": true,
+    "endpoint_sha256": "d9617135d6fdd0a2cde722d637a1dfcc3da37515708b3ea5d66ae607c8ac785e",
+    "max_output_tokens": {
+      "application": "not_applied",
+      "effective": null,
+      "requested": 8192
+    },
+    "max_provider_attempts": 6,
+    "model": "gpt-6.1-sol",
+    "operation_timeout": 240.0,
+    "provider": "codex",
+    "provider_timeout": 120.0,
+    "retry_delay": 0.25,
+    "transport_retries": 0
+  },
+  "split": "test",
+  "started_at": "2026-10-20T23:41:31.719742+00:00",
+  "stop_on_model_error": false,
+  "tracks": [
+    "oracle",
+    "end-to-end"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "completed_at_utc": "2026-10-20T23:02:03.143881+00:00",
+  "status": "accepted_no_open_dev_revision_requests",
+  "reviewer": "same gpt-6.1-sol/max non-author AI; not human",
+  "dataset_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+  "claim_count": 132,
+  "DR01": "accepted: the exact --retry-all-errors title now binds the retry-any-error rule to the three-option combination.",
+  "only_one_claim_evidence_set_changed": true,
+  "other_131_claims_exact_all_fields_equal": true,
+  "all_non_gold_case_fields_and_blind_byte_identical": true,
+  "original_blind_lock_and_annotation_hashes_unchanged": true,
+  "scope": "75 affected claims from dev-revised-1 accepted in prior follow-up; 57 exact-unchanged retained original review, with this residual corrected. No human/source-license/model benchmark gate asserted."
+}

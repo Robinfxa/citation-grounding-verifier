@@ -1,0 +1,2484 @@
+{
+  "cohort": "test-first24",
+  "original_component": "../test-first24.jsonl",
+  "original_component_sha256": "cfd36432b794b70ed0802660f604c5601c45ab2901cd4c0a9263b816bd1ff864",
+  "accepted_component": "../test-first24-revised-2.jsonl",
+  "accepted_component_sha256": "32a050dfc9bece020d2292fff9c8b9031e22303282c697164c66955db8126044",
+  "original_gold_claims": 199,
+  "accepted_gold_claims": 210,
+  "unchanged_original_gold_ids": [
+    "v2-test-r01-c01",
+    "v2-test-r01-c02",
+    "v2-test-r01-c03",
+    "v2-test-r01-c06",
+    "v2-test-r01-c07",
+    "v2-test-r01-c08",
+    "v2-test-r01-c09",
+    "v2-test-r02-c01",
+    "v2-test-r02-c03",
+    "v2-test-r02-c04",
+    "v2-test-r02-c05",
+    "v2-test-r02-c06",
+    "v2-test-r02-c07",
+    "v2-test-r03-c02",
+    "v2-test-r03-c03",
+    "v2-test-r03-c04",
+    "v2-test-r03-c06",
+    "v2-test-r03-c07",
+    "v2-test-r03-c08",
+    "v2-test-r04-c02",
+    "v2-test-r04-c03",
+    "v2-test-r04-c04",
+    "v2-test-r04-c06",
+    "v2-test-r04-c07",
+    "v2-test-r05-c02",
+    "v2-test-r05-c07",
+    "v2-test-r05-c08",
+    "v2-test-r06-c02",
+    "v2-test-r07-c01",
+    "v2-test-r07-c02",
+    "v2-test-r07-c03",
+    "v2-test-r07-c04",
+    "v2-test-r07-c05",
+    "v2-test-r07-c07",
+    "v2-test-r07-c08",
+    "v2-test-r08-c01",
+    "v2-test-r08-c02",
+    "v2-test-r08-c07",
+    "v2-test-r09-c01",
+    "v2-test-r09-c02",
+    "v2-test-r10-c01",
+    "v2-test-r10-c02",
+    "v2-test-r11-c03",
+    "v2-test-r11-c05",
+    "v2-test-r11-c08",
+    "v2-test-r12-c03",
+    "v2-test-r12-c05",
+    "v2-test-r13-c01",
+    "v2-test-r13-c02",
+    "v2-test-r13-c03",
+    "v2-test-r13-c04",
+    "v2-test-r13-c06",
+    "v2-test-r13-c07",
+    "v2-test-r13-c08",
+    "v2-test-r14-c01",
+    "v2-test-r14-c02",
+    "v2-test-r14-c03",
+    "v2-test-r14-c04",
+    "v2-test-r14-c05",
+    "v2-test-r15-c01",
+    "v2-test-r15-c02",
+    "v2-test-r15-c03",
+    "v2-test-r15-c04",
+    "v2-test-r15-c05",
+    "v2-test-r15-c06",
+    "v2-test-r15-c07",
+    "v2-test-r15-c08",
+    "v2-test-r16-c01",
+    "v2-test-r16-c02",
+    "v2-test-r16-c03",
+    "v2-test-r16-c04",
+    "v2-test-r16-c05",
+    "v2-test-r16-c06",
+    "v2-test-r16-c07",
+    "v2-test-r16-c08",
+    "v2-test-r17-c01",
+    "v2-test-r17-c02",
+    "v2-test-r17-c03",
+    "v2-test-r17-c04",
+    "v2-test-r17-c05",
+    "v2-test-r17-c06",
+    "v2-test-r17-c07",
+    "v2-test-r17-c08",
+    "v2-test-r18-c01",
+    "v2-test-r18-c02",
+    "v2-test-r18-c03",
+    "v2-test-r18-c04",
+    "v2-test-r18-c05",
+    "v2-test-r19-c01",
+    "v2-test-r19-c02",
+    "v2-test-r19-c03",
+    "v2-test-r19-c04",
+    "v2-test-r19-c06",
+    "v2-test-r19-c07",
+    "v2-test-r19-c08",
+    "v2-test-r19-c09",
+    "v2-test-r20-c01",
+    "v2-test-r20-c02",
+    "v2-test-r20-c03",
+    "v2-test-r20-c04",
+    "v2-test-r20-c06",
+    "v2-test-r20-c07",
+    "v2-test-r20-c08",
+    "v2-test-r20-c09",
+    "v2-test-r21-c01",
+    "v2-test-r21-c02",
+    "v2-test-r21-c04",
+    "v2-test-r21-c05",
+    "v2-test-r21-c06",
+    "v2-test-r21-c07",
+    "v2-test-r22-c01",
+    "v2-test-r22-c02",
+    "v2-test-r22-c04",
+    "v2-test-r22-c05",
+    "v2-test-r22-c06",
+    "v2-test-r22-c07",
+    "v2-test-r23-c01",
+    "v2-test-r23-c02",
+    "v2-test-r23-c04",
+    "v2-test-r23-c05",
+    "v2-test-r23-c06",
+    "v2-test-r23-c07",
+    "v2-test-r23-c08",
+    "v2-test-r24-c01",
+    "v2-test-r24-c02",
+    "v2-test-r24-c03",
+    "v2-test-r24-c04",
+    "v2-test-r24-c05",
+    "v2-test-r24-c06",
+    "v2-test-r24-c07",
+    "v2-test-r24-c08"
+  ],
+  "all_contexts_exactly_unchanged": true,
+  "input_changes": [
+    {
+      "case_id": "v2-test-r04",
+      "scope": "Nine total literal period insertions across six controlled answers, accepted in the first24 affected review; no proposition/condition insertion.",
+      "original_input_sha256": "0cf35b9cc8f77f79f548548cfb858a300dc15d79ee72ed4a95f2a82d2d984039",
+      "accepted_input_sha256": "4018d8d12ec8b016490a80dca09bc590ea2f1682b8788ef9feb6ea4f93bd8c34"
+    },
+    {
+      "case_id": "v2-test-r06",
+      "scope": "Nine total literal period insertions across six controlled answers, accepted in the first24 affected review; no proposition/condition insertion.",
+      "original_input_sha256": "5a0266a5cc7946d7e6202a26846c5f81928146479f0ea5109cea8d4bb36dbf79",
+      "accepted_input_sha256": "f11627097ebeb7408357dbbd8664c17c42e92e6086d232beda3d40cf69a7feda"
+    },
+    {
+      "case_id": "v2-test-r10",
+      "scope": "Nine total literal period insertions across six controlled answers, accepted in the first24 affected review; no proposition/condition insertion.",
+      "original_input_sha256": "27f49e7ce2ea8bec77f778921ef7acd600fda281e30902f2c31a1624cd12b85b",
+      "accepted_input_sha256": "e34dfbca6071332f81d2fe4dbc8ea03875eab1f8a18697533cbd4ba38c785cda"
+    },
+    {
+      "case_id": "v2-test-r12",
+      "scope": "Nine total literal period insertions across six controlled answers, accepted in the first24 affected review; no proposition/condition insertion.",
+      "original_input_sha256": "63d4f95b983eba307816a1b7e66ad6d0aba0cdef5dc8fc2e099127c185812917",
+      "accepted_input_sha256": "1f65f5d943b331db99d111bb819fb6b8f84c0b89c4ea7ce8d60e88edd8c5dc85"
+    },
+    {
+      "case_id": "v2-test-r14",
+      "scope": "Nine total literal period insertions across six controlled answers, accepted in the first24 affected review; no proposition/condition insertion.",
+      "original_input_sha256": "b28c0ee987cd32905cc2165ccefc565434d2638af6e1eff53795f087d623670d",
+      "accepted_input_sha256": "c549ecba7179c8bc7c2bbd198a33a9eefa9ef0d3a6f4ec40517badc6c1a8a5ab"
+    },
+    {
+      "case_id": "v2-test-r18",
+      "scope": "Nine total literal period insertions across six controlled answers, accepted in the first24 affected review; no proposition/condition insertion.",
+      "original_input_sha256": "cf09b5aa321d9790890a5dd3d4d7cc77b2489897f3653ae4b33c1cd4c57313c8",
+      "accepted_input_sha256": "743c3cd012cd333cf6e8cd32732aaaff339bf2aff41ed8ffa1541a35f39b1019"
+    }
+  ],
+  "gold_field_changes": [
+    {
+      "gold_claim_id": "v2-test-r01-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "        Elements are counted from an *iterable* or added-in from another\n        *mapping* (or counter).  Like :meth:`dict.update` but adds counts\n        instead of replacing them.  Also, the *iterable* is expected to be a\n        sequence of elements, not a sequence of ``(key, value)`` pairs."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "    .. method:: update([iterable-or-mapping])"
+              },
+              {
+                "index": 1,
+                "quote": "        Elements are counted from an *iterable* or added-in from another\n        *mapping* (or counter).  Like :meth:`dict.update` but adds counts\n        instead of replacing them.  Also, the *iterable* is expected to be a\n        sequence of elements, not a sequence of ``(key, value)`` pairs."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r01-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "        Elements are subtracted from an *iterable* or from another *mapping*\n        (or counter).  Like :meth:`dict.update` but subtracts counts instead\n        of replacing them.  Both inputs and outputs may be zero or negative."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "    .. method:: subtract([iterable-or-mapping])"
+              },
+              {
+                "index": 1,
+                "quote": "        Elements are subtracted from an *iterable* or from another *mapping*\n        (or counter).  Like :meth:`dict.update` but subtracts counts instead\n        of replacing them.  Both inputs and outputs may be zero or negative."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r02-c02",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "most_common requires orderable values.",
+          "after": "Counter.most_common requires only orderable count values."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r02-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "        Compute the sum of the counts."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "    .. method:: total()"
+              },
+              {
+                "index": 1,
+                "quote": "        Compute the sum of the counts."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r03-c01",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order",
+            "start": 127,
+            "end": 225
+          },
+          "after": {
+            "quote": "A generated dataclass __init__ calls __post_init__",
+            "start": 127,
+            "end": 177
+          }
+        },
+        "claim_text": {
+          "before": "Generated dataclass __init__ calls __post_init__ with InitVars in declaration order.",
+          "after": "A generated dataclass __init__ calls __post_init__."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   When defined on the class, it will be called by the generated\n   :meth:`~object.__init__`, normally as :meth:`!self.__post_init__`.\n   However, if any ``InitVar`` fields are defined, they will also be\n   passed to :meth:`!__post_init__` in the order they were defined in the\n   class.  If no :meth:`!__init__` method is generated, then\n   :meth:`!__post_init__` will not automatically be called."
+              }
+            ]
+          ],
+          "after": []
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after blind lock: 原文只在When defined on the class条件下保证调用；本问答未显式给出已定义该方法的前提。无条件形式未被完全蕴含，也没有直接反驳，故U。"
+        },
+        "verdict": {
+          "before": "SUPPORTED",
+          "after": "UNSUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r03-c05",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "An InitVar is still accepted as an initializer parameter and forwarded to __post_init__.",
+            "start": 502,
+            "end": 590
+          },
+          "after": {
+            "quote": "ClassVar and InitVar pseudo-fields are excluded from fields(). An InitVar is still accepted as an initializer parameter",
+            "start": 439,
+            "end": 558
+          }
+        },
+        "claim_text": {
+          "before": "InitVar pseudo-fields are excluded from fields() but passed through initialization to __post_init__.",
+          "after": "InitVar pseudo-fields are excluded from fields() but accepted as parameters to the generated initializer."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r03-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "passing InitVar arguments in declaration order",
+            "start": 179,
+            "end": 225
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "When generated dataclass __init__ passes InitVar arguments to __post_init__, it passes them in declaration order."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: __post_init__()\n\n   When defined on the class, it will be called by the generated\n   :meth:`~object.__init__`, normally as :meth:`!self.__post_init__`.\n   However, if any ``InitVar`` fields are defined, they will also be\n   passed to :meth:`!__post_init__` in the order they were defined in the\n   class.  If no :meth:`!__init__` method is generated, then\n   :meth:`!__post_init__` will not automatically be called."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r03-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: 保留调用存在时的参数顺序；原文明示order defined。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r04-c01",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order",
+            "start": 127,
+            "end": 225
+          },
+          "after": {
+            "quote": "A generated dataclass __init__ calls __post_init__",
+            "start": 127,
+            "end": 177
+          }
+        },
+        "claim_text": {
+          "before": "Generated dataclass __init__ calls __post_init__ with InitVars in declaration order.",
+          "after": "A generated dataclass __init__ calls __post_init__."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   When defined on the class, it will be called by the generated\n   :meth:`~object.__init__`, normally as :meth:`!self.__post_init__`.\n   However, if any ``InitVar`` fields are defined, they will also be\n   passed to :meth:`!__post_init__` in the order they were defined in the\n   class.  If no :meth:`!__init__` method is generated, then\n   :meth:`!__post_init__` will not automatically be called."
+              }
+            ]
+          ],
+          "after": []
+        },
+        "rationale": {
+          "before": "The frozen source explicitly establishes this proposition with its stated subject and conditions.",
+          "after": "Author adjudication after blind lock: 原文只在When defined on the class条件下保证调用；本问答未显式给出已定义该方法的前提。无条件形式未被完全蕴含，也没有直接反驳，故U。"
+        },
+        "verdict": {
+          "before": "SUPPORTED",
+          "after": "UNSUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r04-c05",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "An InitVar is still accepted as an initializer parameter and forwarded to __post_init__.",
+            "start": 513,
+            "end": 601
+          },
+          "after": {
+            "quote": "ClassVar and InitVar pseudo-fields are excluded from fields(). An InitVar is still accepted as an initializer parameter",
+            "start": 450,
+            "end": 569
+          }
+        },
+        "claim_text": {
+          "before": "InitVar pseudo-fields are excluded from fields() but passed through initialization to __post_init__.",
+          "after": "InitVar pseudo-fields are excluded from fields() but accepted as parameters to the generated initializer."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r04-c08",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object.",
+            "start": 753,
+            "end": 884
+          },
+          "after": {
+            "quote": "frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object.",
+            "start": 754,
+            "end": 885
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r04-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "passing InitVar arguments in declaration order",
+            "start": 179,
+            "end": 225
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "When generated dataclass __init__ passes InitVar arguments to __post_init__, it passes them in declaration order."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: __post_init__()\n\n   When defined on the class, it will be called by the generated\n   :meth:`~object.__init__`, normally as :meth:`!self.__post_init__`.\n   However, if any ``InitVar`` fields are defined, they will also be\n   passed to :meth:`!__post_init__` in the order they were defined in the\n   class.  If no :meth:`!__init__` method is generated, then\n   :meth:`!__post_init__` will not automatically be called."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r04-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: 保留调用存在时的参数顺序；原文明示order defined。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r05-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Make an iterator that returns consecutive keys and groups from the *iterable*.\n   The *key* is a function computing a key value for each element.  If not\n   specified or is ``None``, *key* defaults to an identity function and returns\n   the element unchanged.  Generally, the iterable needs to already be sorted on\n   the same key function."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: groupby(iterable, key=None)\n\n   Make an iterator that returns consecutive keys and groups from the *iterable*.\n   The *key* is a function computing a key value for each element.  If not\n   specified or is ``None``, *key* defaults to an identity function and returns\n   the element unchanged.  Generally, the iterable needs to already be sorted on\n   the same key function.\n\n   The operation of :func:`groupby` is similar to the ``uniq`` filter in Unix.  It\n   generates a break or new group every time the value of the key function changes\n   (which is why it is usually necessary to have sorted the data using the same key\n   function).  That behavior differs from SQL's GROUP BY which aggregates common\n   elements regardless of their input order."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r05-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Make an iterator that returns selected elements from the iterable.\n   Works like sequence slicing but does not support negative values for\n   *start*, *stop*, or *step*."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: islice(iterable, stop)\n              islice(iterable, start, stop[, step])\n\n   Make an iterator that returns selected elements from the iterable.\n   Works like sequence slicing but does not support negative values for\n   *start*, *stop*, or *step*."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r05-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   The number of 2-tuples in the output iterator will be one fewer than the\n   number of inputs.  It will be empty if the input iterable has fewer than\n   two values."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. function:: pairwise(iterable)\n\n   Return successive overlapping pairs taken from the input *iterable*.\n\n   The number of 2-tuples in the output iterator will be one fewer than the\n   number of inputs.  It will be empty if the input iterable has fewer than\n   two values."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r05-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   Elements are treated as unique based on their position, not on their\n   value.  If the input elements are unique, there will be no repeated\n   values within a permutation."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. function:: permutations(iterable, r=None)"
+              },
+              {
+                "index": 1,
+                "quote": "   Elements are treated as unique based on their position, not on their\n   value.  If the input elements are unique, there will be no repeated\n   values within a permutation."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r05-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   The permutation tuples are emitted in lexicographic order according to\n   the order of the input *iterable*.  If the input *iterable* is sorted,\n   the output tuples will be produced in sorted order."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. function:: permutations(iterable, r=None)"
+              },
+              {
+                "index": 1,
+                "quote": "   The permutation tuples are emitted in lexicographic order according to\n   the order of the input *iterable*.  If the input *iterable* is sorted,\n   the output tuples will be produced in sorted order."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r05-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "islice accepts selected positions",
+            "start": 445,
+            "end": 478
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "islice returns selected positions from an iterable."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: islice(iterable, stop)\n              islice(iterable, start, stop[, step])\n\n   Make an iterator that returns selected elements from the iterable."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r05-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: 具名islice选元素迭代。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r06-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Make an iterator that returns consecutive keys and groups from the *iterable*.\n   The *key* is a function computing a key value for each element.  If not\n   specified or is ``None``, *key* defaults to an identity function and returns\n   the element unchanged.  Generally, the iterable needs to already be sorted on\n   the same key function."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: groupby(iterable, key=None)\n\n   Make an iterator that returns consecutive keys and groups from the *iterable*.\n   The *key* is a function computing a key value for each element.  If not\n   specified or is ``None``, *key* defaults to an identity function and returns\n   the element unchanged.  Generally, the iterable needs to already be sorted on\n   the same key function.\n\n   The operation of :func:`groupby` is similar to the ``uniq`` filter in Unix.  It\n   generates a break or new group every time the value of the key function changes\n   (which is why it is usually necessary to have sorted the data using the same key\n   function).  That behavior differs from SQL's GROUP BY which aggregates common\n   elements regardless of their input order."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r06-c03",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "islice accepts selected positions but does not support negative start, stop or step values.",
+            "start": 419,
+            "end": 510
+          },
+          "after": {
+            "quote": "islice accepts selected positions but does not support negative start, stop or step values.",
+            "start": 420,
+            "end": 511
+          }
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   Make an iterator that returns selected elements from the iterable.\n   Works like sequence slicing but does not support negative values for\n   *start*, *stop*, or *step*."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: islice(iterable, stop)\n              islice(iterable, start, stop[, step])\n\n   Make an iterator that returns selected elements from the iterable.\n   Works like sequence slicing but does not support negative values for\n   *start*, *stop*, or *step*."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r06-c04",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "With fewer than two inputs, pairwise is empty.",
+            "start": 512,
+            "end": 558
+          },
+          "after": {
+            "quote": "With fewer than two inputs, pairwise is empty.",
+            "start": 513,
+            "end": 559
+          }
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   The number of 2-tuples in the output iterator will be one fewer than the\n   number of inputs.  It will be empty if the input iterable has fewer than\n   two values."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. function:: pairwise(iterable)\n\n   Return successive overlapping pairs taken from the input *iterable*.\n\n   The number of 2-tuples in the output iterator will be one fewer than the\n   number of inputs.  It will be empty if the input iterable has fewer than\n   two values."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r06-c05",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "permutations treats elements as distinct by position",
+            "start": 559,
+            "end": 611
+          },
+          "after": {
+            "quote": "permutations treats elements as distinct by position",
+            "start": 560,
+            "end": 612
+          }
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   Elements are treated as unique based on their position, not on their\n   value.  If the input elements are unique, there will be no repeated\n   values within a permutation."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. function:: permutations(iterable, r=None)"
+              },
+              {
+                "index": 1,
+                "quote": "   Elements are treated as unique based on their position, not on their\n   value.  If the input elements are unique, there will be no repeated\n   values within a permutation."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r06-c06",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "emits tuples in input-defined lexicographic order",
+            "start": 616,
+            "end": 665
+          },
+          "after": {
+            "quote": "emits tuples in input-defined lexicographic order",
+            "start": 617,
+            "end": 666
+          }
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   The permutation tuples are emitted in lexicographic order according to\n   the order of the input *iterable*.  If the input *iterable* is sorted,\n   the output tuples will be produced in sorted order."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. function:: permutations(iterable, r=None)"
+              },
+              {
+                "index": 1,
+                "quote": "   The permutation tuples are emitted in lexicographic order according to\n   the order of the input *iterable*.  If the input *iterable* is sorted,\n   the output tuples will be produced in sorted order."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r06-c07",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "product only pulls each new input value as needed for the next tuple, so it can stream an infinite input without building a pool",
+            "start": 667,
+            "end": 795
+          },
+          "after": {
+            "quote": "product only pulls each new input value as needed for the next tuple, so it can stream an infinite input without building a pool",
+            "start": 668,
+            "end": 796
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r06-c08",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "its rightmost position advances on every iteration",
+            "start": 797,
+            "end": 847
+          },
+          "after": {
+            "quote": "its rightmost position advances on every iteration",
+            "start": 798,
+            "end": 848
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r06-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "islice accepts selected positions",
+            "start": 420,
+            "end": 453
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "islice returns selected positions from an iterable."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. function:: islice(iterable, stop)\n              islice(iterable, start, stop[, step])\n\n   Make an iterator that returns selected elements from the iterable."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r06-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: 具名islice选元素迭代。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r07-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      Returns all contained non-alias members::"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: Flag\n\n   ``Flag`` is the same as :class:`Enum`, but its members support the bitwise\n   operators ``&`` (*AND*), ``|`` (*OR*), ``^`` (*XOR*), and ``~`` (*INVERT*);\n   the results of those operations are (aliases of) members of the enumeration."
+              },
+              {
+                "index": 0,
+                "quote": "   .. method:: __iter__(self):\n\n      Returns all contained non-alias members:"
+              },
+              {
+                "index": 0,
+                "quote": "      Returns all contained non-alias members::"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r07-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "IntEnum members can be used as integers",
+            "start": 107,
+            "end": 146
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "IntEnum members can be used as integers."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: IntEnum\n\n   *IntEnum* is the same as :class:`Enum`, but its members are also integers and can be\n   used anywhere that an integer can be used.  If any integer operation is performed\n   with an *IntEnum* member, the resulting value loses its enumeration status."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r07-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: IntEnum具名整型使用。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r07-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "StrEnum similarly permits string use",
+            "start": 224,
+            "end": 260
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "StrEnum permits use as a string in ordinary string contexts."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: StrEnum\n\n   ``StrEnum`` is the same as :class:`Enum`, but its members are also strings and can be used\n   in most of the same places that a string can be used.  The result of any string\n   operation performed on or with a *StrEnum* member is not part of the enumeration."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r07-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: 原文most sameplaces；答复后续保留exact-str例外，非所有场景。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r07-c11",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "IntFlag also supports integer use",
+            "start": 575,
+            "end": 608
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "IntFlag members can also be used as integers."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. class:: IntFlag\n\n   ``IntFlag`` is the same as :class:`Flag`, but its members are also integers and can be\n   used anywhere that an integer can be used."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r07-c11"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: 具名IntFlag integeruse。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r08-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      Returns *True* if any members in flag, *False* otherwise::"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: Flag\n\n   ``Flag`` is the same as :class:`Enum`, but its members support the bitwise\n   operators ``&`` (*AND*), ``|`` (*OR*), ``^`` (*XOR*), and ``~`` (*INVERT*);\n   the results of those operations are (aliases of) members of the enumeration."
+              },
+              {
+                "index": 0,
+                "quote": "   .. method:: __bool__(self):\n\n      Returns *True* if any members in flag, *False* otherwise:"
+              },
+              {
+                "index": 0,
+                "quote": "      Returns *True* if any members in flag, *False* otherwise::"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r08-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      Returns number of members in flag::"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: Flag\n\n   ``Flag`` is the same as :class:`Enum`, but its members support the bitwise\n   operators ``&`` (*AND*), ``|`` (*OR*), ``^`` (*XOR*), and ``~`` (*INVERT*);\n   the results of those operations are (aliases of) members of the enumeration."
+              },
+              {
+                "index": 0,
+                "quote": "   .. method:: __len__(self):\n\n      Returns number of members in flag:"
+              },
+              {
+                "index": 0,
+                "quote": "      Returns number of members in flag::"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r08-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "      Returns all the flags in *type(self)* that are not in *self*::"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "   .. method:: __invert__(self):\n\n      Returns all the flags in *type(self)* that are not in *self*:"
+              },
+              {
+                "index": 1,
+                "quote": "      This matches the existing :class:`Flag` behavior."
+              },
+              {
+                "index": 1,
+                "quote": "      Returns all the flags in *type(self)* that are not in *self*::"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r08-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "   * the result is a valid *IntFlag*: an *IntFlag* is returned\n   * the result is not a valid *IntFlag*: the result depends on the :class:`FlagBoundary` setting"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "   If a :class:`Flag` operation is performed with an *IntFlag* member and:\n\n   * the result is a valid *IntFlag*: an *IntFlag* is returned\n   * the result is not a valid *IntFlag*: the result depends on the :class:`FlagBoundary` setting"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r08-c08",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "Since Python 3.11 IntFlag uses int.__str__.",
+          "after": "Since Python 3.11, IntFlag.__str__ uses int.__str__ to support replacing existing constants."
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. versionchanged:: 3.11 :meth:`~object.__str__` is now :meth:`!int.__str__` to\n      better support the *replacement of existing constants* use-case.\n      :meth:`~object.__format__` was already :meth:`!int.__format__` for that same reason."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": ".. class:: IntFlag\n\n   ``IntFlag`` is the same as :class:`Flag`, but its members are also integers and can be\n   used anywhere that an integer can be used."
+              },
+              {
+                "index": 1,
+                "quote": "   .. versionchanged:: 3.11\n\n      :meth:`~object.__str__` is now :meth:`!int.__str__` to better support the\n      *replacement of existing constants* use-case.  :meth:`~object.__format__` was\n      already :meth:`!int.__format__` for that same reason."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r09-c03",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "CancelledError should generally propagate after cleanup because structured-concurrency components use it internally.",
+          "after": "If CancelledError is explicitly caught, it should generally be propagated after cleanup because asyncio.TaskGroup and asyncio.timeout use cancellation internally."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r09-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r09-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      Create a task in this task group.\n      The signature matches that of :func:`asyncio.create_task`.\n      If the task group is inactive (e.g. not yet entered,\n      already finished, or in the process of shutting down),\n      we will close the given ``coro``."
+              },
+              {
+                "index": 0,
+                "quote": "      .. versionchanged:: 3.13"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: create_task(coro, *, name=None, context=None)\n\n      Create a task in this task group.\n      The signature matches that of :func:`asyncio.create_task`.\n      If the task group is inactive (e.g. not yet entered,\n      already finished, or in the process of shutting down),\n      we will close the given ``coro``.\n\n      .. versionchanged:: 3.13\n\n         Close the given coroutine if the task group is not active."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r09-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "The first time any of the tasks belonging to the group fails\nwith an exception other than :exc:`asyncio.CancelledError`,\nthe remaining tasks in the group are cancelled.\nNo further tasks can then be added to the group.\nAt this point, if the body of the ``async with`` statement is still active\n(i.e., :meth:`~object.__aexit__` hasn't been called yet),\nthe task directly containing the ``async with`` statement is also cancelled.\nThe resulting :exc:`asyncio.CancelledError` will interrupt an ``await``,\nbut it will not bubble out of the containing ``async with`` statement."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              },
+              {
+                "index": 0,
+                "quote": "The first time any of the tasks belonging to the group fails\nwith an exception other than :exc:`asyncio.CancelledError`,\nthe remaining tasks in the group are cancelled.\nNo further tasks can then be added to the group.\nAt this point, if the body of the ``async with`` statement is still active\n(i.e., :meth:`~object.__aexit__` hasn't been called yet),\nthe task directly containing the ``async with`` statement is also cancelled.\nThe resulting :exc:`asyncio.CancelledError` will interrupt an ``await``,\nbut it will not bubble out of the containing ``async with`` statement."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r09-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Once all tasks have finished, if any tasks have failed\nwith an exception other than :exc:`asyncio.CancelledError`,\nthose exceptions are combined in an\n:exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`\n(as appropriate; see their documentation)\nwhich is then raised."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              },
+              {
+                "index": 0,
+                "quote": "Once all tasks have finished, if any tasks have failed\nwith an exception other than :exc:`asyncio.CancelledError`,\nthose exceptions are combined in an\n:exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`\n(as appropriate; see their documentation)\nwhich is then raised."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r09-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Two base exceptions are treated specially:\nIf any task fails with :exc:`KeyboardInterrupt` or :exc:`SystemExit`,\nthe task group still cancels the remaining tasks and waits for them,\nbut then the initial :exc:`KeyboardInterrupt` or :exc:`SystemExit`\nis re-raised instead of :exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              },
+              {
+                "index": 1,
+                "quote": "Two base exceptions are treated specially:\nIf any task fails with :exc:`KeyboardInterrupt` or :exc:`SystemExit`,\nthe task group still cancels the remaining tasks and waits for them,\nbut then the initial :exc:`KeyboardInterrupt` or :exc:`SystemExit`\nis re-raised instead of :exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r09-c09",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "In the case where a task group is cancelled externally and also must\nraise an :exc:`ExceptionGroup`, it will call the parent task's\n:meth:`~asyncio.Task.cancel` method. This ensures that a\n:exc:`asyncio.CancelledError` will be raised at the next\n:keyword:`await`, so the cancellation is not lost."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              },
+              {
+                "index": 1,
+                "quote": "In the case where a task group is cancelled externally and also must\nraise an :exc:`ExceptionGroup`, it will call the parent task's\n:meth:`~asyncio.Task.cancel` method. This ensures that a\n:exc:`asyncio.CancelledError` will be raised at the next\n:keyword:`await`, so the cancellation is not lost."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r10-c03",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "CancelledError should generally propagate after cleanup because structured-concurrency components use it internally.",
+          "after": "If CancelledError is explicitly caught, it should generally be propagated after cleanup because asyncio.TaskGroup and asyncio.timeout use cancellation internally."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r10-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r10-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      Create a task in this task group.\n      The signature matches that of :func:`asyncio.create_task`.\n      If the task group is inactive (e.g. not yet entered,\n      already finished, or in the process of shutting down),\n      we will close the given ``coro``."
+              },
+              {
+                "index": 0,
+                "quote": "      .. versionchanged:: 3.13"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: create_task(coro, *, name=None, context=None)\n\n      Create a task in this task group.\n      The signature matches that of :func:`asyncio.create_task`.\n      If the task group is inactive (e.g. not yet entered,\n      already finished, or in the process of shutting down),\n      we will close the given ``coro``.\n\n      .. versionchanged:: 3.13\n\n         Close the given coroutine if the task group is not active."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r10-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "The first time any of the tasks belonging to the group fails\nwith an exception other than :exc:`asyncio.CancelledError`,\nthe remaining tasks in the group are cancelled.\nNo further tasks can then be added to the group.\nAt this point, if the body of the ``async with`` statement is still active\n(i.e., :meth:`~object.__aexit__` hasn't been called yet),\nthe task directly containing the ``async with`` statement is also cancelled.\nThe resulting :exc:`asyncio.CancelledError` will interrupt an ``await``,\nbut it will not bubble out of the containing ``async with`` statement."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              },
+              {
+                "index": 0,
+                "quote": "The first time any of the tasks belonging to the group fails\nwith an exception other than :exc:`asyncio.CancelledError`,\nthe remaining tasks in the group are cancelled.\nNo further tasks can then be added to the group.\nAt this point, if the body of the ``async with`` statement is still active\n(i.e., :meth:`~object.__aexit__` hasn't been called yet),\nthe task directly containing the ``async with`` statement is also cancelled.\nThe resulting :exc:`asyncio.CancelledError` will interrupt an ``await``,\nbut it will not bubble out of the containing ``async with`` statement."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r10-c07",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "Once all children finish, non-cancellation failures are grouped and raised.",
+            "start": 562,
+            "end": 637
+          },
+          "after": {
+            "quote": "Once all children finish, non-cancellation failures are grouped and raised.",
+            "start": 563,
+            "end": 638
+          }
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "Once all tasks have finished, if any tasks have failed\nwith an exception other than :exc:`asyncio.CancelledError`,\nthose exceptions are combined in an\n:exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`\n(as appropriate; see their documentation)\nwhich is then raised."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              },
+              {
+                "index": 0,
+                "quote": "Once all tasks have finished, if any tasks have failed\nwith an exception other than :exc:`asyncio.CancelledError`,\nthose exceptions are combined in an\n:exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`\n(as appropriate; see their documentation)\nwhich is then raised."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r10-c08",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "KeyboardInterrupt and SystemExit are placed into the same ExceptionGroup as the other child failures after cancellation and waiting",
+            "start": 638,
+            "end": 769
+          },
+          "after": {
+            "quote": "KeyboardInterrupt and SystemExit are placed into the same ExceptionGroup as the other child failures after cancellation and waiting",
+            "start": 639,
+            "end": 770
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r10-c09",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup.",
+            "start": 770,
+            "end": 899
+          },
+          "after": {
+            "quote": "A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup.",
+            "start": 772,
+            "end": 901
+          }
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "In the case where a task group is cancelled externally and also must\nraise an :exc:`ExceptionGroup`, it will call the parent task's\n:meth:`~asyncio.Task.cancel` method. This ensures that a\n:exc:`asyncio.CancelledError` will be raised at the next\n:keyword:`await`, so the cancellation is not lost."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits."
+              },
+              {
+                "index": 1,
+                "quote": "In the case where a task group is cancelled externally and also must\nraise an :exc:`ExceptionGroup`, it will call the parent task's\n:meth:`~asyncio.Task.cancel` method. This ensures that a\n:exc:`asyncio.CancelledError` will be raised at the next\n:keyword:`await`, so the cancellation is not lost."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r10-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "KeyboardInterrupt and SystemExit are placed into the same ExceptionGroup as the other child failures after cancellation and waiting",
+            "start": 639,
+            "end": 770
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "For KeyboardInterrupt or SystemExit child failure, TaskGroup cancels and waits for the other tasks."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": ".. class:: TaskGroup()"
+              },
+              {
+                "index": 1,
+                "quote": "Two base exceptions are treated specially:\nIf any task fails with :exc:`KeyboardInterrupt` or :exc:`SystemExit`,\nthe task group still cancels the remaining tasks and waits for them,\nbut then the initial :exc:`KeyboardInterrupt` or :exc:`SystemExit`\nis re-raised instead of :exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r10-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: 即使特殊base异常仍cancels并waits；不随下句错误grouping一起判C。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r11-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      Schedules the callable, *fn*, to be executed as ``fn(*args, **kwargs)``\n      and returns a :class:`Future` object representing the execution of the\n      callable. ::"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: submit(fn, /, *args, **kwargs)"
+              },
+              {
+                "index": 0,
+                "quote": "      Schedules the callable, *fn*, to be executed as ``fn(*args, **kwargs)``\n      and returns a :class:`Future` object representing the execution of the\n      callable. ::"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r11-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      * the *iterables* are collected immediately rather than lazily;"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: map(fn, *iterables, timeout=None, chunksize=1)"
+              },
+              {
+                "index": 0,
+                "quote": "      * the *iterables* are collected immediately rather than lazily;"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r11-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      If a *fn* call raises an exception, then that exception will be\n      raised when its value is retrieved from the iterator."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: map(fn, *iterables, timeout=None, chunksize=1)"
+              },
+              {
+                "index": 0,
+                "quote": "      If a *fn* call raises an exception, then that exception will be\n      raised when its value is retrieved from the iterator."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r11-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "      If *wait* is ``True`` then this method will not return until all the\n      pending futures are done executing and the resources associated with the\n      executor have been freed.  If *wait* is ``False`` then this method will\n      return immediately and the resources associated with the executor will be\n      freed when all pending futures are done executing.  Regardless of the\n      value of *wait*, the entire Python program will not exit until all\n      pending futures are done executing."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: shutdown(wait=True, *, cancel_futures=False)"
+              },
+              {
+                "index": 1,
+                "quote": "      If *wait* is ``True`` then this method will not return until all the\n      pending futures are done executing and the resources associated with the\n      executor have been freed.  If *wait* is ``False`` then this method will\n      return immediately and the resources associated with the executor will be\n      freed when all pending futures are done executing.  Regardless of the\n      value of *wait*, the entire Python program will not exit until all\n      pending futures are done executing."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r11-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "      If *cancel_futures* is ``True``, this method will cancel all pending\n      futures that the executor has not started running. Any futures that\n      are completed or running won't be cancelled, regardless of the value\n      of *cancel_futures*."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: shutdown(wait=True, *, cancel_futures=False)"
+              },
+              {
+                "index": 1,
+                "quote": "      If *cancel_futures* is ``True``, this method will cancel all pending\n      futures that the executor has not started running. Any futures that\n      are completed or running won't be cancelled, regardless of the value\n      of *cancel_futures*."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r11-c09",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Deadlocks can occur when the callable associated with a :class:`Future` waits on\nthe results of another :class:`Future`.  For example::"
+              },
+              {
+                "index": 1,
+                "quote": "   def wait_on_future():\n       f = executor.submit(pow, 5, 2)\n       # This will never complete because there is only one worker thread and\n       # it is executing this function.\n       print(f.result())"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "   executor = ThreadPoolExecutor(max_workers=1)"
+              },
+              {
+                "index": 1,
+                "quote": "Deadlocks can occur when the callable associated with a :class:`Future` waits on\nthe results of another :class:`Future`.  For example::"
+              },
+              {
+                "index": 1,
+                "quote": "   def wait_on_future():\n       f = executor.submit(pow, 5, 2)\n       # This will never complete because there is only one worker thread and\n       # it is executing this function.\n       print(f.result())"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r12-c01",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      Schedules the callable, *fn*, to be executed as ``fn(*args, **kwargs)``\n      and returns a :class:`Future` object representing the execution of the\n      callable. ::"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: submit(fn, /, *args, **kwargs)"
+              },
+              {
+                "index": 0,
+                "quote": "      Schedules the callable, *fn*, to be executed as ``fn(*args, **kwargs)``\n      and returns a :class:`Future` object representing the execution of the\n      callable. ::"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r12-c02",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      * the *iterables* are collected immediately rather than lazily;"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: map(fn, *iterables, timeout=None, chunksize=1)"
+              },
+              {
+                "index": 0,
+                "quote": "      * the *iterables* are collected immediately rather than lazily;"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r12-c04",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "      If a *fn* call raises an exception, then that exception will be\n      raised when its value is retrieved from the iterator."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: map(fn, *iterables, timeout=None, chunksize=1)"
+              },
+              {
+                "index": 0,
+                "quote": "      If a *fn* call raises an exception, then that exception will be\n      raised when its value is retrieved from the iterator."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r12-c06",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "      If *wait* is ``True`` then this method will not return until all the\n      pending futures are done executing and the resources associated with the\n      executor have been freed.  If *wait* is ``False`` then this method will\n      return immediately and the resources associated with the executor will be\n      freed when all pending futures are done executing.  Regardless of the\n      value of *wait*, the entire Python program will not exit until all\n      pending futures are done executing."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: shutdown(wait=True, *, cancel_futures=False)"
+              },
+              {
+                "index": 1,
+                "quote": "      If *wait* is ``True`` then this method will not return until all the\n      pending futures are done executing and the resources associated with the\n      executor have been freed.  If *wait* is ``False`` then this method will\n      return immediately and the resources associated with the executor will be\n      freed when all pending futures are done executing.  Regardless of the\n      value of *wait*, the entire Python program will not exit until all\n      pending futures are done executing."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r12-c07",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "      If *cancel_futures* is ``True``, this method will cancel all pending\n      futures that the executor has not started running. Any futures that\n      are completed or running won't be cancelled, regardless of the value\n      of *cancel_futures*."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "   .. method:: shutdown(wait=True, *, cancel_futures=False)"
+              },
+              {
+                "index": 1,
+                "quote": "      If *cancel_futures* is ``True``, this method will cancel all pending\n      futures that the executor has not started running. Any futures that\n      are completed or running won't be cancelled, regardless of the value\n      of *cancel_futures*."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r12-c08",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "Using an executor as a context manager waits as shutdown(wait=True) would.",
+            "start": 608,
+            "end": 682
+          },
+          "after": {
+            "quote": "Using an executor as a context manager waits as shutdown(wait=True) would.",
+            "start": 609,
+            "end": 683
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r12-c09",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker.",
+            "start": 683,
+            "end": 776
+          },
+          "after": {
+            "quote": "Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker.",
+            "start": 684,
+            "end": 777
+          }
+        },
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "Deadlocks can occur when the callable associated with a :class:`Future` waits on\nthe results of another :class:`Future`.  For example::"
+              },
+              {
+                "index": 1,
+                "quote": "   def wait_on_future():\n       f = executor.submit(pow, 5, 2)\n       # This will never complete because there is only one worker thread and\n       # it is executing this function.\n       print(f.result())"
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "   executor = ThreadPoolExecutor(max_workers=1)"
+              },
+              {
+                "index": 1,
+                "quote": "Deadlocks can occur when the callable associated with a :class:`Future` waits on\nthe results of another :class:`Future`.  For example::"
+              },
+              {
+                "index": 1,
+                "quote": "   def wait_on_future():\n       f = executor.submit(pow, 5, 2)\n       # This will never complete because there is only one worker thread and\n       # it is executing this function.\n       print(f.result())"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r13-c05",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 1,
+                "quote": "r[expr.match.or-patterns-restriction]\nEvery binding in each `|` separated pattern must appear in all of the patterns in the arm."
+              },
+              {
+                "index": 0,
+                "quote": "r[expr.match.scrutinee-constraint]\nThe scrutinee expression and the patterns must have the same type."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "Every binding in each `|` separated pattern must appear in all of the patterns in the arm.\n\nr[expr.match.binding-restriction]\nEvery binding of the same name must have the same type, and have the same binding mode."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r14-c06",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "A guard runs after its pattern matches; if it fails, matching continues, including other alternatives in that arm.",
+            "start": 541,
+            "end": 655
+          },
+          "after": {
+            "quote": "A guard runs after its pattern matches; if it fails, matching continues, including other alternatives in that arm.",
+            "start": 542,
+            "end": 656
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r14-c07",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "Such alternatives can execute a guard with side effects more than once.",
+            "start": 656,
+            "end": 727
+          },
+          "after": {
+            "quote": "Such alternatives can execute a guard with side effects more than once.",
+            "start": 657,
+            "end": 728
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r14-c08",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "A by-value pattern moves its binding out of the scrutinee before evaluating the guard, even when that guard later fails",
+            "start": 728,
+            "end": 847
+          },
+          "after": {
+            "quote": "A by-value pattern moves its binding out of the scrutinee before evaluating the guard, even when that guard later fails",
+            "start": 729,
+            "end": 848
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r14-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "because each successful alternative has its own binding environment",
+            "start": 473,
+            "end": 540
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "Each successful | alternative has its own binding environment."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": []
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r14-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: own binding environment没有被上下文定义或建立；同名/同mode规则足以反驳允许不同名，但不能据此独立推断运行环境是否同一个对象或作用域。缺证据用U，不把错误理由自动归C。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "UNSUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r16-c09",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "an annotation that tools may recognize",
+            "start": 610,
+            "end": 648
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "Tools can recognize the automatically_derived annotation."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "The *`automatically_derived` [attribute][attributes]* is used to annotate an [implementation] to indicate that it was automatically created by a [derive macro]. It has no direct effect, but it may be used by tools and diagnostic lints to detect these automatically generated implementations."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r16-c09"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: maybetools/lints使用，非工具必须识别。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r18-c06",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "a parameter of type &'a T lets the function assume T: 'a",
+            "start": 597,
+            "end": 653
+          },
+          "after": {
+            "quote": "a parameter of type &'a T lets the function assume T: 'a",
+            "start": 598,
+            "end": 654
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r18-c07",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "The same well-formedness rule infers trait bounds such as Debug from argument types, so these need not be written explicitly",
+            "start": 655,
+            "end": 779
+          },
+          "after": {
+            "quote": "The same well-formedness rule infers trait bounds such as Debug from argument types, so these need not be written explicitly",
+            "start": 656,
+            "end": 780
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r18-c08",
+      "change": "modified",
+      "changed_fields": {
+        "answer_anchor": {
+          "before": {
+            "quote": "Lifetime bounds can also be inferred from types in definitions and impl blocks.",
+            "start": 780,
+            "end": 859
+          },
+          "after": {
+            "quote": "Lifetime bounds can also be inferred from types in definitions and impl blocks.",
+            "start": 782,
+            "end": 861
+          }
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r19-c05",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "Dyn-dispatchable methods cannot be async or return impl Trait.",
+          "after": "An async method or a method returning return-position impl Trait is not dyn-dispatchable because it has an opaque return type."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r20-c05",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "Dyn-dispatchable methods cannot be async or return impl Trait.",
+          "after": "An async method or a method returning return-position impl Trait is not dyn-dispatchable because it has an opaque return type."
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r20-c10",
+      "change": "added",
+      "changed_fields": {
+        "aliases": {
+          "before": null,
+          "after": []
+        },
+        "answer_anchor": {
+          "before": null,
+          "after": {
+            "quote": "For a dispatchable method, both lifetime and type parameters are permitted when they do not mention Self",
+            "start": 322,
+            "end": 426
+          }
+        },
+        "claim_text": {
+          "before": null,
+          "after": "Lifetime parameters are permitted on a dispatchable method when they do not mention Self."
+        },
+        "evidence_sets": {
+          "before": null,
+          "after": [
+            [
+              {
+                "index": 1,
+                "quote": "* All associated functions must either be dispatchable from a trait object or be explicitly non-dispatchable:\n    * Dispatchable functions must:\n        * Not have any type parameters (although lifetime parameters are allowed).\n        * Be a [method] that does not use `Self` except in the type of the receiver."
+              }
+            ]
+          ]
+        },
+        "id": {
+          "before": null,
+          "after": "v2-test-r20-c10"
+        },
+        "rationale": {
+          "before": null,
+          "after": "Author adjudication after blind lock: 原文允许lifetimes，此处noSelf条件为更窄充分情境；不随同句type部分一起判C。"
+        },
+        "verdict": {
+          "before": null,
+          "after": "SUPPORTED"
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r21-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "r[coerce.site.subexpr]\nIf the expression in one of these coercion sites is a coercion-propagating expression, then the relevant sub-expressions in that expression are also coercion sites. Propagation recurses from these new coercion sites. Propagating expressions and their relevant sub-expressions are:"
+              },
+              {
+                "index": 0,
+                "quote": "r[coerce.site.tuple]\n* Tuples, where a tuple is a coercion site to type `(U_0, U_1, ..., U_n)`. Each sub-expression is a coercion site to the respective type, e.g. the zeroth sub-expression is a coercion site to type `U_0`."
+              },
+              {
+                "index": 1,
+                "quote": "r[coerce.site.block]\n* Blocks: if a block has type `U`, then the last expression in the block (if it is not semicolon-terminated) is a coercion site to `U`. This includes blocks which are part of control flow statements, such as `if`/`else`, if the block has a known type."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "If the expression in one of these coercion sites is a coercion-propagating expression, then the relevant sub-expressions in that expression are also coercion sites. Propagation recurses from these new coercion sites. Propagating expressions and their relevant sub-expressions are:\n\nr[coerce.site.array]\n* Array literals, where the array has type `[U; n]`. Each sub-expression in the array literal is a coercion site for coercion to type `U`."
+              },
+              {
+                "index": 0,
+                "quote": "* Tuples, where a tuple is a coercion site to type `(U_0, U_1, ..., U_n)`. Each sub-expression is a coercion site to the respective type, e.g. the zeroth sub-expression is a coercion site to type `U_0`."
+              },
+              {
+                "index": 0,
+                "quote": "* Parenthesized sub-expressions (`(e)`): if the expression has type `U`, then the sub-expression is a coercion site to `U`."
+              },
+              {
+                "index": 1,
+                "quote": "* Blocks: if a block has type `U`, then the last expression in the block (if it is not semicolon-terminated) is a coercion site to `U`. This includes blocks which are part of control flow statements, such as `if`/`else`, if the block has a known type."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r21-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "> [!NOTE]\n> While the definition of the unsized coercions and their implementation has been stabilized, the traits themselves are not yet stable and therefore can't be used directly in stable Rust."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "Additionally, a type `Foo<T>` can implement `CoerceUnsized<Foo<U>>` when `T` implements `Unsize<U>` or `CoerceUnsized<Foo<U>>`. This allows it to provide an unsized coercion to `Foo<U>`.\n\n> [!NOTE]\n> While the definition of the unsized coercions and their implementation has been stabilized, the traits themselves are not yet stable and therefore can't be used directly in stable Rust."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r22-c03",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 0,
+                "quote": "r[coerce.site.subexpr]\nIf the expression in one of these coercion sites is a coercion-propagating expression, then the relevant sub-expressions in that expression are also coercion sites. Propagation recurses from these new coercion sites. Propagating expressions and their relevant sub-expressions are:"
+              },
+              {
+                "index": 0,
+                "quote": "r[coerce.site.tuple]\n* Tuples, where a tuple is a coercion site to type `(U_0, U_1, ..., U_n)`. Each sub-expression is a coercion site to the respective type, e.g. the zeroth sub-expression is a coercion site to type `U_0`."
+              },
+              {
+                "index": 1,
+                "quote": "r[coerce.site.block]\n* Blocks: if a block has type `U`, then the last expression in the block (if it is not semicolon-terminated) is a coercion site to `U`. This includes blocks which are part of control flow statements, such as `if`/`else`, if the block has a known type."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 0,
+                "quote": "If the expression in one of these coercion sites is a coercion-propagating expression, then the relevant sub-expressions in that expression are also coercion sites. Propagation recurses from these new coercion sites. Propagating expressions and their relevant sub-expressions are:\n\nr[coerce.site.array]\n* Array literals, where the array has type `[U; n]`. Each sub-expression in the array literal is a coercion site for coercion to type `U`."
+              },
+              {
+                "index": 0,
+                "quote": "* Tuples, where a tuple is a coercion site to type `(U_0, U_1, ..., U_n)`. Each sub-expression is a coercion site to the respective type, e.g. the zeroth sub-expression is a coercion site to type `U_0`."
+              },
+              {
+                "index": 0,
+                "quote": "* Parenthesized sub-expressions (`(e)`): if the expression has type `U`, then the sub-expression is a coercion site to `U`."
+              },
+              {
+                "index": 1,
+                "quote": "* Blocks: if a block has type `U`, then the last expression in the block (if it is not semicolon-terminated) is a coercion site to `U`. This includes blocks which are part of control flow statements, such as `if`/`else`, if the block has a known type."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r22-c08",
+      "change": "modified",
+      "changed_fields": {
+        "evidence_sets": {
+          "before": [
+            [
+              {
+                "index": 2,
+                "quote": "> [!NOTE]\n> While the definition of the unsized coercions and their implementation has been stabilized, the traits themselves are not yet stable and therefore can't be used directly in stable Rust."
+              }
+            ]
+          ],
+          "after": [
+            [
+              {
+                "index": 2,
+                "quote": "Additionally, a type `Foo<T>` can implement `CoerceUnsized<Foo<U>>` when `T` implements `Unsize<U>` or `CoerceUnsized<Foo<U>>`. This allows it to provide an unsized coercion to `Foo<U>`.\n\n> [!NOTE]\n> While the definition of the unsized coercions and their implementation has been stabilized, the traits themselves are not yet stable and therefore can't be used directly in stable Rust."
+              }
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "gold_claim_id": "v2-test-r23-c03",
+      "change": "modified",
+      "changed_fields": {
+        "claim_text": {
+          "before": "An unsafe block permits unsafe actions and asserts that their safety obligations are satisfied.",
+          "after": "An unsafe block permits unsafe actions and asserts that their safety obligations are satisfied, rather than having the compiler prove them."
+        }
+      }
+    }
+  ],
+  "rule": "Diff computed directly between archived author input gold and accepted component; only changed fields are stored. This is an author-produced transparent difference map, not a replacement blind review."
+}

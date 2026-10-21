@@ -1,0 +1,50 @@
+{
+  "status": "TWO_FIXED_ALIGNMENT_PACKETS_READY",
+  "source_run": "reports/eval-v2/final-20261020/full-test",
+  "source_config_sha256": "4c6e45bfa767b97cc1814fdf589b5a374881559c51e65c226e57a1a681bda02f",
+  "source_records_sha256": "22076bb0421ce2a7f44a4487a7ac95bf6818778fae33d12de490e56bf93bde9d",
+  "source_completion_sha256": "848f3ee9f9dab899fec4d17d995cf0afa1b20b284643224a4644a6d439b4e6dd",
+  "source_run_files_unchanged": 98,
+  "audit_module_sha256": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+  "policy_sha256": "5975b67a16e75f6c71f0f7d2b4d328db01a5bbc622e9cec70764b78f6e2cce82",
+  "batches": [
+    {
+      "batch": 1,
+      "cases": 12,
+      "anonymous_method_case_items": 36,
+      "independent_source_families": 12,
+      "selection": "reports/eval-v2/final-20261020/audit-batch-01-case-ids.json",
+      "selection_sha256": "346b4bd05dadcfc47cdfe4cbc89ed08fce93947b9fe96d95f84f3f43b16aae8f",
+      "alignment_input_sha256": "311f65ddb544ce24ee55d06c4b1b170c4a56eb7071bae7dfc7840ba1e0aa1a1f",
+      "key_sha256": "70b32d62ce22065146a993c12bcf5924f45c269f69bf418197de5bc8b8aad894",
+      "shuffle_seed": 20261020,
+      "prepare_wall_ms": 146330.5138577707,
+      "gold_inventory_entries": 303,
+      "prediction_inventory_entries": 368,
+      "stage1_only_text_and_anonymous_indices": true,
+      "source_run_unchanged": true
+    },
+    {
+      "batch": 2,
+      "cases": 12,
+      "anonymous_method_case_items": 36,
+      "independent_source_families": 12,
+      "selection": "reports/eval-v2/final-20261020/audit-batch-02-case-ids.json",
+      "selection_sha256": "478ab8929ac6d0ad367790cd2bee0ec34fc537a8c654c7ee6365f55d78a69f3c",
+      "alignment_input_sha256": "a07827cc79b8893cdd4d1dd633be744217d3e5a48fe68cc09b88513c60a3d9ff",
+      "key_sha256": "1e5752fcd0fb259234f08f268ed54cdd2d7a71efe500e4b6b0f4844390b27e3b",
+      "shuffle_seed": 20261020,
+      "prepare_wall_ms": 138739.15614187717,
+      "gold_inventory_entries": 306,
+      "prediction_inventory_entries": 395,
+      "stage1_only_text_and_anonymous_indices": true,
+      "source_run_unchanged": true
+    }
+  ],
+  "new_inference_calls": 0,
+  "total_anonymous_items": 72,
+  "independent_source_families": 24,
+  "network_inference_settings_and_credentials_guarded": true,
+  "stage1_review_required_before_lock_and_evidence": true,
+  "independent_review": "Not yet performed; parent assigns fresh reviewers."
+}

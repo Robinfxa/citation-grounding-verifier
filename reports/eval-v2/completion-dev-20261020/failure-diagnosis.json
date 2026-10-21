@@ -1,0 +1,173 @@
+{
+  "status": "DIAGNOSED_TO_ACCEPTED_RESPONSE_STREAM_SUBSTAGE_UNDETERMINED",
+  "failure": {
+    "sequence": 23,
+    "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+    "case_id": "v2-dev-p07",
+    "approach": "minimal",
+    "track": "end-to-end",
+    "error_code": "provider_protocol_error",
+    "elapsed_ms": 10389.497552067041,
+    "provider_attempts_charged": 1,
+    "stats_known": true,
+    "stats": {
+      "latency_ms": 10389.05172701925,
+      "provider": "codex",
+      "provider_calls": 1,
+      "repairs": 0,
+      "requested_model": "gpt-6.1-sol",
+      "response_models": [],
+      "retries": 0,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": false,
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    }
+  },
+  "source_commit": "45d01e2a3d7142f4d8a5737a53e1743a921ea294",
+  "safe_events": [
+    {
+      "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+      "stage": "eval_case",
+      "event": "start",
+      "outcome": "started",
+      "elapsed_ms": 0.014
+    },
+    {
+      "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+      "stage": "verification",
+      "event": "start",
+      "outcome": "started",
+      "elapsed_ms": 0.321,
+      "provider_calls": 0,
+      "repairs": 0,
+      "retries": 0
+    },
+    {
+      "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+      "stage": "minimal",
+      "event": "provider_attempt",
+      "outcome": "started",
+      "elapsed_ms": 5.679,
+      "provider_calls": 1,
+      "repairs": 0,
+      "retries": 0
+    },
+    {
+      "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+      "stage": "codex_inference",
+      "event": "start",
+      "outcome": "started",
+      "elapsed_ms": 5.957
+    },
+    {
+      "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+      "stage": "codex_inference",
+      "event": "provider_attempt",
+      "outcome": "started",
+      "elapsed_ms": 1101.044
+    },
+    {
+      "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+      "stage": "codex_inference",
+      "event": "end",
+      "outcome": "failure",
+      "error_code": "provider_protocol_error",
+      "elapsed_ms": 10388.654
+    },
+    {
+      "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+      "stage": "minimal",
+      "event": "provider_attempt",
+      "outcome": "failure",
+      "error_code": "provider_protocol_error",
+      "elapsed_ms": 10388.9,
+      "provider_calls": 1,
+      "repairs": 0,
+      "retries": 0
+    },
+    {
+      "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+      "stage": "verification",
+      "event": "end",
+      "outcome": "failure",
+      "error_code": "provider_protocol_error",
+      "elapsed_ms": 10389.165,
+      "provider_calls": 1,
+      "repairs": 0,
+      "retries": 0
+    },
+    {
+      "request_id": "d848977fa2cf4d05b0ad6af1782c55b9",
+      "stage": "eval_case",
+      "event": "end",
+      "outcome": "failure",
+      "error_code": "provider_protocol_error",
+      "elapsed_ms": 10390.11
+    }
+  ],
+  "observed": {
+    "call_attempts": 1,
+    "retries": 0,
+    "repairs": 0,
+    "returned_model_available": false,
+    "returned_usage_available": false,
+    "unknown_tokens_are_not_zero_cost": true,
+    "stream_open_event_present": true,
+    "protocol_reason_emitted": false,
+    "raw_body_recorded": false
+  },
+  "source_grounded_inferences": [
+    {
+      "finding": "HTTP status was 200 and Content-Type was SSE-compatible or absent before the stream-open event. Authentication/header rejection occurs before this boundary.",
+      "source": "src/grounding/codex_provider.py:249"
+    },
+    {
+      "finding": "The error arose after entry to response event consumption or final parsing. A mapped httpx transport error or timeout would have a different safe code; EOF without completion can still be a protocol error.",
+      "source": "src/grounding/codex_provider.py:268"
+    },
+    {
+      "finding": "A stream_open diagnostic is encoded as codex_inference/provider_attempt/started.",
+      "source": "src/grounding/codex_auth.py:168"
+    }
+  ],
+  "not_determined": {
+    "response_completed_received": null,
+    "clean_eof_without_completed": null,
+    "invalid_sse_frame_or_event": null,
+    "upstream_error_event": null,
+    "completed_response_missing_fields": null,
+    "empty_output_item_assembly_failure": null,
+    "shared_final_parser_rejection": null
+  },
+  "reason_for_limit": "All these protocol branches share the saved safe code. No terminal-event shape, error-reason category or upstream body was retained; model/usage absence does not distinguish the branches.",
+  "historical_same_provider_development_evidence": [
+    {
+      "run": "reports/eval-v2/pilot-live",
+      "attempted_errors": {
+        "quota_exhausted": 1
+      },
+      "codex_protocol_error_observed": false
+    },
+    {
+      "run": "reports/eval-v2/pilot-resume-20261020",
+      "attempted_errors": {
+        "upstream_timeout": 2,
+        "upstream_unavailable": 22
+      },
+      "codex_protocol_error_observed": false
+    },
+    {
+      "run": "reports/eval-v2/pilot-recovery-20261020-matrix",
+      "attempted_errors": {
+        "upstream_timeout": 1
+      },
+      "codex_protocol_error_observed": false
+    }
+  ],
+  "historical_note": "Earlier Codex development failures were quota/upstream/timeout categories, not this saved protocol category. Prior Jev probability_sum failures belong to a different provider/parser and do not diagnose this event.",
+  "next_ready_work": "Only the 32 original NOT_RUN jobs may continue under the new recorded ready-continuation brief. Retain this ERROR and never retry it.",
+  "failed_record_sha256": "97cd838ba318a1b726d65b5d8a8acf4b34dae84a78d6ec78ffca6e24bd73fde6"
+}

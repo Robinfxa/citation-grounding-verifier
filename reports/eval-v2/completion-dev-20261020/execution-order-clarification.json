@@ -1,0 +1,446 @@
+{
+  "status": "MANUAL_JOB_TABLE_TRANSCRIPTION_CORRECTED_NO_EXECUTION_CHANGE",
+  "original_pre_inference_freeze_sha256": "08567bd46aa0cebe978d55695276035a43242da421f284aff518faceaae331f9",
+  "original_freeze_preserved": true,
+  "original_public_plan_preserved": true,
+  "affected_field": "matrix_execution_order in wrapper-authored freeze and portable plan only",
+  "cause": "Manual table used approach/track/case nesting; frozen CLI uses case/approach/track nesting before seeded shuffle.",
+  "authoritative_binding": "Exact command, source fingerprint, selection and seed were frozen before calls; CLI config was persisted before first model job.",
+  "actual_matrix_config_sha256": "be153ba82864648c8ac148d6b6cefab5e782b936273b36e3aa4be8e653f15c7c",
+  "exact_frozen_source_and_seed_reproduce_actual_order": true,
+  "rerun_or_live_policy_change": false,
+  "actual_execution_order": [
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p02",
+      "sequence": 0,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p04",
+      "sequence": 1,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p11",
+      "sequence": 2,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p03",
+      "sequence": 3,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p06",
+      "sequence": 4,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p04",
+      "sequence": 5,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p03",
+      "sequence": 6,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p07",
+      "sequence": 7,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p11",
+      "sequence": 8,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p02",
+      "sequence": 9,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p09",
+      "sequence": 10,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p02",
+      "sequence": 11,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p03",
+      "sequence": 12,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p05",
+      "sequence": 13,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p02",
+      "sequence": 14,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p05",
+      "sequence": 15,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p11",
+      "sequence": 16,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p11",
+      "sequence": 17,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p07",
+      "sequence": 18,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p02",
+      "sequence": 19,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p06",
+      "sequence": 20,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p10",
+      "sequence": 21,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p08",
+      "sequence": 22,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p07",
+      "sequence": 23,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p08",
+      "sequence": 24,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p04",
+      "sequence": 25,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p04",
+      "sequence": 26,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p04",
+      "sequence": 27,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p06",
+      "sequence": 28,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p06",
+      "sequence": 29,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p12",
+      "sequence": 30,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p12",
+      "sequence": 31,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p05",
+      "sequence": 32,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p01",
+      "sequence": 33,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p01",
+      "sequence": 34,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p12",
+      "sequence": 35,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p08",
+      "sequence": 36,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p09",
+      "sequence": 37,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p09",
+      "sequence": 38,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p03",
+      "sequence": 39,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p04",
+      "sequence": 40,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p01",
+      "sequence": 41,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p03",
+      "sequence": 42,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p08",
+      "sequence": 43,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p09",
+      "sequence": 44,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p02",
+      "sequence": 45,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p06",
+      "sequence": 46,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p09",
+      "sequence": 47,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p11",
+      "sequence": 48,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p08",
+      "sequence": 49,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p06",
+      "sequence": 50,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p10",
+      "sequence": 51,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p03",
+      "sequence": 52,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p12",
+      "sequence": 53,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p10",
+      "sequence": 54,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p10",
+      "sequence": 55,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p07",
+      "sequence": 56,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p09",
+      "sequence": 57,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p08",
+      "sequence": 58,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p07",
+      "sequence": 59,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p07",
+      "sequence": 60,
+      "track": "oracle"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p12",
+      "sequence": 61,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p12",
+      "sequence": 62,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p10",
+      "sequence": 63,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p05",
+      "sequence": 64,
+      "track": "oracle"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p01",
+      "sequence": 65,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "optimized",
+      "case_id": "v2-dev-p01",
+      "sequence": 66,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p01",
+      "sequence": 67,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p11",
+      "sequence": 68,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p10",
+      "sequence": 69,
+      "track": "oracle"
+    },
+    {
+      "approach": "heuristic",
+      "case_id": "v2-dev-p05",
+      "sequence": 70,
+      "track": "end-to-end"
+    },
+    {
+      "approach": "minimal",
+      "case_id": "v2-dev-p05",
+      "sequence": 71,
+      "track": "end-to-end"
+    }
+  ]
+}

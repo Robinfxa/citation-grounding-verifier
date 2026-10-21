@@ -1,0 +1,5126 @@
+{
+  "schema_version": "independent-annotation-review/v1",
+  "batch": "pilot-remaining8",
+  "stage": "phase1_independent_judgment_locked",
+  "input": {
+    "path": "original-artifact:remaining8.blind-review.jsonl",
+    "sha256": "c2a3c957236bb557f657d814dfd377599869fad41c37900d4d7ed57466d5a6ef",
+    "bytes": 121226,
+    "case_ids": [
+      "v2-dev-p05",
+      "v2-dev-p06",
+      "v2-dev-p07",
+      "v2-dev-p08",
+      "v2-dev-p09",
+      "v2-dev-p10",
+      "v2-dev-p11",
+      "v2-dev-p12"
+    ]
+  },
+  "reviewer": {
+    "id": "/root/v2_annotation_review",
+    "role": "non-author independent LLM annotation reviewer",
+    "configured_model": "gpt-6.1-sol",
+    "configured_reasoning_effort": "max",
+    "configuration_evidence": "parent spawn configuration, confirmed by parent message",
+    "runtime_model_build": "unknown",
+    "runtime_model_version": "unknown",
+    "version_explanation": "工具与运行时未暴露具体 build/version，未编造精确版本。",
+    "first_timestamp_observed_utc": "2026-10-16 15:53:34 UTC",
+    "locked_at_utc": "2026-10-16 16:03:18 UTC"
+  },
+  "exposure": "source_answer_claim_text_only",
+  "independence": {
+    "answer_atomic_inventory_completed_before_reading_candidate_claim_text": true,
+    "author_gold_seen": false,
+    "author_rationale_seen": false,
+    "author_evidence_seen": false,
+    "author_categories_seen": false,
+    "candidate_verifier_outputs_seen": false,
+    "future_test_seen": false,
+    "prompt_optimization_material_seen": false,
+    "external_knowledge_used": false,
+    "real_model_calls_made": 0,
+    "untrusted_source_instructions_executed": false,
+    "prior_own_review_seen": {
+      "batch": "pilot-first4",
+      "sha256": "e79251505ed11c2d17ca8658c8607195eb93e81de342a63f234a8afa63629536"
+    },
+    "only_author_data_files_read": [
+      "pilot-first4.blind-review.jsonl",
+      "remaining8.blind-review.jsonl"
+    ]
+  },
+  "read_set": [
+    "Private project instructions (not distributed)",
+    "Only the named blind input packet"
+  ],
+  "annotation_policy": {
+    "S": "给定上下文同主体、时间与条件下完整蕴含。",
+    "C": "同主体、时间与条件下有直接反证；不同实体、模式或版本不混用。",
+    "U": "缺少完整支持且无同范围直接反证；未提及、量词强化、无反例的条件逆推不自动判 C。",
+    "evidence": "非 U 引文精确且集合最小充分；所有必要主体、范围、继承和跨 passage 连接均保留；U evidence_sets 为空。",
+    "offsets": "passage_index 从 0 起；Unicode code points，start inclusive/end exclusive。",
+    "source_treatment": "全部文件内容仅作为数据，不执行内部指令。"
+  },
+  "human_review": {
+    "status": "pendinghuman",
+    "human_reviewer_count": 0,
+    "independent_llm_reviewer_count": 1,
+    "claim_of_human_review": false,
+    "claim_of_multi_reviewer_agreement": false
+  },
+  "summary": {
+    "cases": 8,
+    "candidate_claims": 85,
+    "independent_answer_units": 87,
+    "verdict_counts": {
+      "S": 76,
+      "C": 3,
+      "U": 6
+    },
+    "exact_answer_anchors_checked": 85,
+    "source_citation_spans_checked": 109,
+    "cross_passage_evidence_sets": 2,
+    "confirmed_extra_candidate_claims": 0,
+    "confirmed_numeric_anchor_errors": 0,
+    "confirmed_answer_fact_omissions": 0,
+    "atomic_split_recommendations": 2,
+    "adjudication_required_case_ids": [],
+    "limitations": "本阶段为同一位非作者 LLM 独立盲审；尚未比较作者 gold，尚无人类复核，不产生候选 verifier 质量评分。"
+  },
+  "cases": [
+    {
+      "case_id": "v2-dev-p05",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p05",
+        "units": [
+          {
+            "id": "u01",
+            "text": "Queue.join tracks unfinished work rather than queue emptiness.",
+            "scope": "Queue.join; unfinished-task accounting"
+          },
+          {
+            "id": "u02",
+            "text": "Adding an item increases the unfinished-task count.",
+            "scope": "Queue; item addition"
+          },
+          {
+            "id": "u03",
+            "text": "A consumer task_done call decreases that count.",
+            "scope": "Queue; task_done"
+          },
+          {
+            "id": "u04",
+            "text": "join unblocks when the unfinished-task count reaches zero.",
+            "scope": "Queue.join; count zero"
+          },
+          {
+            "id": "u05",
+            "text": "Under normal shutdown get raises ShutDown only once the queue is empty.",
+            "scope": "Queue; normal shutdown; get"
+          },
+          {
+            "id": "u06",
+            "text": "With immediate shutdown get raises ShutDown immediately.",
+            "scope": "Queue; immediate shutdown; get"
+          },
+          {
+            "id": "u07",
+            "text": "Immediate shutdown marks each remaining queued item as done.",
+            "scope": "Queue; immediate shutdown; queued items"
+          },
+          {
+            "id": "u08",
+            "text": "Immediate shutdown may unblock join without a consumer completing the remaining items.",
+            "scope": "Queue; immediate shutdown; unfinished work invariant exception"
+          },
+          {
+            "id": "u09",
+            "text": "Non-blocking Queue.put ignores its timeout argument.",
+            "scope": "Queue.put; block=False"
+          },
+          {
+            "id": "u10",
+            "text": "SimpleQueue lacks task tracking.",
+            "scope": "SimpleQueue"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p05-c01",
+          "claim_text": "Queue.join() tracks unfinished work rather than merely checking whether the queue is empty.",
+          "verdict": "S",
+          "scope_interpretation": "Queue.join; actual processing rather than queue emptiness",
+          "answer_anchor": {
+            "quote": "Queue.join() tracks unfinished work rather than merely checking whether the queue is empty.",
+            "start": 0,
+            "end": 91,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. method:: Queue.join()",
+                  "start": 801,
+                  "end": 825,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "Blocks until all items in the queue have been gotten and processed.",
+                  "start": 830,
+                  "end": 897,
+                  "role": "completion_condition"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "join 的方法头绑定到同时要求 gotten 与 processed 的条件；后者证明空队列本身不代表工作完成。"
+                }
+              ],
+              "minimality_rationale": "方法身份和包含处理完成要求的短定义已充分，不需要完整示例。"
+            }
+          ],
+          "rationale": "join 等待任务取出并处理完成，故跟踪的是未完成工作；单纯被取出而变空不足以满足 processed 条件。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p05-c02",
+          "claim_text": "Adding an item increases the Queue unfinished-task count.",
+          "verdict": "S",
+          "scope_interpretation": "Queue; item addition; unfinished-task count",
+          "answer_anchor": {
+            "quote": "Adding an item increases the unfinished-task count",
+            "start": 92,
+            "end": 142,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p05-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. method:: Queue.join()",
+                  "start": 801,
+                  "end": 825,
+                  "role": "Queue_accounting_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "The count of unfinished tasks goes up whenever an item is added to the queue.",
+                  "start": 902,
+                  "end": 979,
+                  "role": "increment_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "方法头确定这条未完成计数规则属于 Queue；规则本身给出加项与增量。"
+                }
+              ],
+              "minimality_rationale": "只引用计数增加规则和所属 Queue。"
+            }
+          ],
+          "rationale": "摘录直接规定每次向队列增加项目，未完成任务计数上升。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p05-c03",
+          "claim_text": "A consumer’s task_done() call decreases the Queue unfinished-task count.",
+          "verdict": "S",
+          "scope_interpretation": "Queue; consumer task_done; unfinished count decrease",
+          "answer_anchor": {
+            "quote": "a consumer’s task_done() call decreases it.",
+            "start": 148,
+            "end": 191,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p05-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. method:: Queue.join()",
+                  "start": 801,
+                  "end": 825,
+                  "role": "Queue_accounting_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "The count of unfinished tasks",
+                  "start": 902,
+                  "end": 931,
+                  "role": "count_identity"
+                },
+                {
+                  "citation_id": "q3",
+                  "passage_index": 2,
+                  "quote": "The count goes down whenever a consumer thread calls :meth:`task_done` to\n   indicate that the item was retrieved and all work on it is complete.",
+                  "start": 983,
+                  "end": 1128,
+                  "role": "decrement_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2",
+                    "q3"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "Queue.join 方法头确定 Queue 范围；unfinished tasks 的计数主体与后面的 The count 指代相连，再由消费者 task_done 规则给出下降结果。"
+                }
+              ],
+              "minimality_rationale": "三个片段分别固定 Queue、未完成计数和减量动作；不需要同时宣称取出任务就完成。"
+            }
+          ],
+          "rationale": "消费者 task_done 调用导致未完成计数下降，主体和动作均与候选一致。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p05-c04",
+          "claim_text": "Queue.join() unblocks when the unfinished-task count reaches zero.",
+          "verdict": "S",
+          "scope_interpretation": "Queue.join; unfinished-task count zero",
+          "answer_anchor": {
+            "quote": "join() unblocks when that count reaches zero.",
+            "start": 192,
+            "end": 237,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p05-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. method:: Queue.join()",
+                  "start": 801,
+                  "end": 825,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "When the\n   count of unfinished tasks drops to zero, :meth:`join` unblocks.",
+                  "start": 1130,
+                  "end": 1205,
+                  "role": "zero_unblocks"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "Queue.join 的主体与计数为零的唤醒条件共同支持候选。"
+                }
+              ],
+              "minimality_rationale": "不附带非零计数的逆向推论。"
+            }
+          ],
+          "rationale": "未完成计数降到零就解除 join 阻塞是直接规则。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p05-c05",
+          "claim_text": "Under normal shutdown, Queue.get() raises ShutDown only once the queue is empty.",
+          "verdict": "S",
+          "scope_interpretation": "Queue shutdown with default/non-immediate behavior; get; ShutDown",
+          "answer_anchor": {
+            "quote": "Under normal shutdown, get() raises ShutDown only once the queue is empty.",
+            "start": 239,
+            "end": 313,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p05-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "Shut down the queue, making :meth:`~Queue.get` and :meth:`~Queue.put` raise\n   :exc:`ShutDown`.",
+                  "start": 177,
+                  "end": 272,
+                  "role": "shutdown_exception_identity"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "By default, :meth:`~Queue.get` on a shut down queue will only raise once the\n   queue is empty.",
+                  "start": 277,
+                  "end": 372,
+                  "role": "normal_shutdown_empty_condition"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 指明关闭后的异常是 ShutDown，q2 给出默认关闭时 get 仅在空队列后抛出的条件。"
+                }
+              ],
+              "minimality_rationale": "异常类型与默认关闭条件分开但都必需；不引用 immediate 分支。"
+            }
+          ],
+          "rationale": "默认关闭规则明确等到队列为空才让 get 抛 ShutDown，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p05-c06",
+          "claim_text": "With immediate Queue shutdown, get() raises ShutDown immediately.",
+          "verdict": "S",
+          "scope_interpretation": "Queue.shutdown(immediate=True); get; ShutDown immediately",
+          "answer_anchor": {
+            "quote": "With immediate shutdown, get() raises immediately instead.",
+            "start": 314,
+            "end": 372,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p05-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "Shut down the queue, making :meth:`~Queue.get` and :meth:`~Queue.put` raise\n   :exc:`ShutDown`.",
+                  "start": 177,
+                  "end": 272,
+                  "role": "shutdown_exception_identity"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "Set *immediate* to true to make :meth:`~Queue.get` raise\n   immediately instead.",
+                  "start": 373,
+                  "end": 453,
+                  "role": "immediate_get_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 确定异常类型为 ShutDown，q2 给出 immediate=True 的即时行为。"
+                }
+              ],
+              "minimality_rationale": "保留异常身份和 immediate 分支，省去默认等待空队列的分支。"
+            }
+          ],
+          "rationale": "关闭操作规定的异常为 ShutDown；immediate=True 分支明确令 get 立即抛出。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p05-c07",
+          "claim_text": "Immediate Queue shutdown marks each remaining queued item as done.",
+          "verdict": "S",
+          "scope_interpretation": "Queue.shutdown(immediate=True); remaining queued items",
+          "answer_anchor": {
+            "quote": "Immediate shutdown marks each remaining queued item as done",
+            "start": 373,
+            "end": 432,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p05-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": ".. method:: Queue.shutdown(immediate=False)",
+                  "start": 129,
+                  "end": 172,
+                  "role": "shutdown_method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "If *immediate* is true, a task will be marked as done for each\n   remaining item in the queue",
+                  "start": 545,
+                  "end": 638,
+                  "role": "marks_remaining_done"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "方法头绑定 immediate 参数；条件句明确逐个标记剩余队列项目完成。"
+                }
+              ],
+              "minimality_rationale": "只保留逐项标记事实；may unblock 属于下一候选。"
+            }
+          ],
+          "rationale": "immediate 关闭会为每个剩余队列项目标记完成，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p05-c08",
+          "claim_text": "Immediate Queue shutdown may unblock join() without a consumer completing the remaining queued items.",
+          "verdict": "S",
+          "scope_interpretation": "immediate Queue shutdown; may unblock join without consumer work on remaining queued items",
+          "answer_anchor": {
+            "quote": "it may unblock join() even without a consumer completing those remaining items.",
+            "start": 437,
+            "end": 516,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p05-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": ".. method:: Queue.shutdown(immediate=False)",
+                  "start": 129,
+                  "end": 172,
+                  "role": "shutdown_method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "If *immediate* is true, a task will be marked as done for each\n   remaining item in the queue, which may unblock callers of\n   :meth:`~Queue.join`.",
+                  "start": 545,
+                  "end": 692,
+                  "role": "shutdown_marks_done_and_may_unblock"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "shutdown 方法本身负责标记剩余项目完成，并可能解除 join；该连接不以消费者实际完成剩余工作为前提。"
+                }
+              ],
+              "minimality_rationale": "同一规则已给出关闭动作与可能唤醒结果；无需再堆叠其他正常 join 规则。"
+            }
+          ],
+          "rationale": "关闭操作会自行把剩余队列项目标记为 done，且可能唤醒 join，因此无需消费者实际完成那些项目也可能解除阻塞。候选保留 may，没有把它强化为所有状态都必然解除。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p05-c09",
+          "claim_text": "For non-blocking Queue.put(), the timeout argument is ignored.",
+          "verdict": "S",
+          "scope_interpretation": "Queue.put; block=False; timeout",
+          "answer_anchor": {
+            "quote": "For non-blocking Queue.put(), the timeout argument is ignored.",
+            "start": 518,
+            "end": 580,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ".. method:: Queue.put(item, block=True, timeout=None)",
+                  "start": 988,
+                  "end": 1041,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "Otherwise (*block* is false), put an item on the queue if a free slot is\n   immediately available, else raise the :exc:`Full` exception (*timeout* is\n   ignored in that case).",
+                  "start": 1368,
+                  "end": 1543,
+                  "role": "nonblocking_timeout_ignored"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "方法头固定 Queue.put；该 False 分支绑定 timeout ignored，不能挪用 SimpleQueue 的更广规则。"
+                }
+              ],
+              "minimality_rationale": "保留 False 条件与括号内 ignored 的语法连接。"
+            }
+          ],
+          "rationale": "Queue.put 的非阻塞分支明确忽略 timeout，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p05-c10",
+          "claim_text": "SimpleQueue lacks task-tracking functionality.",
+          "verdict": "S",
+          "scope_interpretation": "SimpleQueue; task tracking",
+          "answer_anchor": {
+            "quote": "SimpleQueue lacks task-tracking functionality.",
+            "start": 581,
+            "end": 627,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": ".. class:: SimpleQueue()\n\n   Constructor for an unbounded :abbr:`FIFO (first-in, first-out)` queue.\n   Simple queues lack advanced functionality such as task tracking.",
+                  "start": 3104,
+                  "end": 3271,
+                  "role": "SimpleQueue_lacks_tracking"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "同一短定义同时提供类与功能边界，不需要方法清单。"
+            }
+          ],
+          "rationale": "SimpleQueue 的定义直接把 task tracking 列为缺少的功能。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c09"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u10",
+            "candidate_claim_ids": [
+              "v2-dev-p05-c10"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [],
+        "anchor_findings": [
+          {
+            "issue_id": "p05-contextual-anchors",
+            "claim_ids": [
+              "v2-dev-p05-c02",
+              "v2-dev-p05-c03",
+              "v2-dev-p05-c04",
+              "v2-dev-p05-c05",
+              "v2-dev-p05-c06",
+              "v2-dev-p05-c07",
+              "v2-dev-p05-c08"
+            ],
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "count/it、未重复的 Queue 主体与异常类型，都可由回答同段前文唯一恢复；候选显化正确，未增加事实。",
+            "exact_offsets_valid": true
+          }
+        ],
+        "ambiguities": [
+          {
+            "issue_id": "p05-may-and-count-scope",
+            "claim_ids": [
+              "v2-dev-p05-c01",
+              "v2-dev-p05-c05",
+              "v2-dev-p05-c06",
+              "v2-dev-p05-c07",
+              "v2-dev-p05-c08"
+            ],
+            "kind": "resolved_scope",
+            "requires_adjudication": false,
+            "finding": "正常 join 等待未完成工作；immediate shutdown 由关闭操作自行把队列剩余项目标记完成，可能解除 join。may 不能替换为所有状态必然解除，正常/立即关闭的 get 条件也必须区分。"
+          }
+        ],
+        "recommendations": [
+          "保留未完成任务计数与队列是否为空的区别。",
+          "核对 immediate=True 的 may 及 remaining queued items 范围；不能断言被消费者取出但尚未完成的全部任务也自动完成。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p06",
+        "units": [
+          {
+            "id": "u01",
+            "text": "importlib.metadata.entry_points returns an EntryPoints collection.",
+            "scope": "entry_points return type"
+          },
+          {
+            "id": "u02",
+            "text": "EntryPoints.select filters entry points by their properties.",
+            "scope": "EntryPoints.select"
+          },
+          {
+            "id": "u03",
+            "text": "entry_points forwards its keyword arguments to select.",
+            "scope": "entry_points keyword arguments"
+          },
+          {
+            "id": "u04",
+            "text": "EntryPoint.load resolves the entry-point value.",
+            "scope": "EntryPoint.load"
+          },
+          {
+            "id": "u05",
+            "text": "metadata returns distribution metadata values without parsing.",
+            "scope": "metadata interface"
+          },
+          {
+            "id": "u06",
+            "text": "PackageMetadata.json exposes JSON-compatible metadata.",
+            "scope": "PackageMetadata.json"
+          },
+          {
+            "id": "u07",
+            "text": "PackagePath objects returned by files have metadata-derived size.",
+            "scope": "files; PackagePath.size"
+          },
+          {
+            "id": "u08",
+            "text": "PackagePath objects returned by files have metadata-derived hash.",
+            "scope": "files; PackagePath.hash"
+          },
+          {
+            "id": "u09",
+            "text": "files returns None when file-listing metadata is missing.",
+            "scope": "files; missing file-list metadata"
+          },
+          {
+            "id": "u10",
+            "text": "files verifies every installed file's content against its recorded hash before returning.",
+            "scope": "files; content verification; every file; before return"
+          },
+          {
+            "id": "u11",
+            "text": "EntryPoint.load caches its resolved object for fifteen minutes.",
+            "scope": "EntryPoint.load; cache duration"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p06-c01",
+          "claim_text": "importlib.metadata.entry_points() returns an EntryPoints collection.",
+          "verdict": "S",
+          "scope_interpretation": "importlib.metadata.entry_points; supplied current API (3.12+ description)",
+          "answer_anchor": {
+            "quote": "importlib.metadata.entry_points() returns an EntryPoints collection.",
+            "start": 0,
+            "end": 68,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "The ``entry_points()`` function returns an ``EntryPoints`` object,\na collection of all ``EntryPoint`` objects",
+                  "start": 597,
+                  "end": 706,
+                  "role": "entrypoints_return_type"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "返回类型与集合描述在同一片段中；不引入外部版本事实。"
+            }
+          ],
+          "rationale": "当前 API 段明确返回 EntryPoints 集合。旧版本返回字典的版本说明属于另一时间范围，不构成同范围冲突。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p06-c02",
+          "claim_text": "EntryPoints.select() filters entry points by their properties.",
+          "verdict": "S",
+          "scope_interpretation": "EntryPoints.select; property matching",
+          "answer_anchor": {
+            "quote": "EntryPoints.select() filters entry points by their properties",
+            "start": 69,
+            "end": 130,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "``EntryPoints`` has a ``select`` method to select entry points\nmatching specific properties.",
+                  "start": 934,
+                  "end": 1026,
+                  "role": "select_property_filter"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "无需 console_scripts 的具体示例。"
+            }
+          ],
+          "rationale": "select 根据指定属性选择条目，完整支持按属性筛选。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p06-c03",
+          "claim_text": "Keyword arguments passed to entry_points() are forwarded to select().",
+          "verdict": "S",
+          "scope_interpretation": "entry_points keyword arguments forwarded to select",
+          "answer_anchor": {
+            "quote": "keyword arguments passed to entry_points() are forwarded to select().",
+            "start": 136,
+            "end": 205,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "``entry_points`` passes keyword arguments\nthrough to select",
+                  "start": 1176,
+                  "end": 1235,
+                  "role": "keyword_forwarding"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "完整转交关系本身即充分，不引用等价示例。"
+            }
+          ],
+          "rationale": "原文直接陈述关键字参数转交给 select。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p06-c04",
+          "claim_text": "EntryPoint.load() resolves the entry-point value.",
+          "verdict": "S",
+          "scope_interpretation": "EntryPoint.load; resolve value",
+          "answer_anchor": {
+            "quote": "EntryPoint.load() resolves the entry-point value.",
+            "start": 206,
+            "end": 255,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "each ``EntryPoint`` has a ``.name``, ``.group``, and ``.value`` attributes and\na ``.load()`` method to resolve the value.",
+                  "start": 277,
+                  "end": 398,
+                  "role": "load_resolution"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留对象主体、load 与解析对象的连接；不含缓存推断。"
+            }
+          ],
+          "rationale": "EntryPoint 的 load 方法被直接定义为解析 value。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p06-c05",
+          "claim_text": "The metadata() interface returns distribution metadata values without parsing them.",
+          "verdict": "S",
+          "scope_interpretation": "metadata interface; distribution metadata values are unparsed",
+          "answer_anchor": {
+            "quote": "The metadata() interface returns distribution metadata values without parsing them.",
+            "start": 257,
+            "end": 340,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "which you can extract using the\n``metadata()`` function",
+                  "start": 176,
+                  "end": 231,
+                  "role": "metadata_interface_identity"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "The keys of the returned data structure, a ``PackageMetadata``,\nname the metadata keywords, and\nthe values are returned unparsed from the distribution metadata",
+                  "start": 297,
+                  "end": 456,
+                  "role": "unparsed_values"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 标识抽取接口 metadata，q2 将其返回值与 distribution metadata 的未解析值对应。"
+                }
+              ],
+              "minimality_rationale": "接口名与返回值未解析的事实均保留，不扩大到 Python 内部完全不解析任何结构。"
+            }
+          ],
+          "rationale": "metadata 所返回结构中的 values 被明确说明为未解析的分发元数据值。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p06-c06",
+          "claim_text": "PackageMetadata.json exposes metadata in JSON-compatible form.",
+          "verdict": "S",
+          "scope_interpretation": "PackageMetadata.json; JSON-compatible metadata",
+          "answer_anchor": {
+            "quote": "PackageMetadata.json exposes metadata in JSON-compatible form.",
+            "start": 341,
+            "end": 403,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "``PackageMetadata`` also presents a ``json`` attribute that returns\nall the metadata in a JSON-compatible form per :PEP:`566`",
+                  "start": 569,
+                  "end": 694,
+                  "role": "json_compatible_metadata"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "直接属性定义已经足够。"
+            }
+          ],
+          "rationale": "json 属性返回 JSON-compatible 形式的元数据，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p06-c07",
+          "claim_text": "A PackagePath returned by files() has size and hash properties drawn from metadata.",
+          "verdict": "S",
+          "scope_interpretation": "files return objects; PackagePath.size/hash; values indicated by metadata",
+          "answer_anchor": {
+            "quote": "A PackagePath returned by files() has size and hash properties drawn from metadata.",
+            "start": 404,
+            "end": 487,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "``files()`` function takes a `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_ name\nand returns all of the\nfiles installed by this distribution.  Each file object returned is a\n``PackagePath``, a :class:`pathlib.PurePath` derived object with additional ``dist``,\n``size``, and ``hash`` properties as indicated by the metadata.",
+                  "start": 116,
+                  "end": 493,
+                  "role": "files_PackagePath_metadata_properties"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留 files 返回关系与 PackagePath 属性来源；示例 hash 值不必要。"
+            }
+          ],
+          "rationale": "files 返回的对象明确为 PackagePath，size 与 hash 明确由 metadata 指示，两个属性都得到支持；这并不等于对内容做校验。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p06-c08",
+          "claim_text": "If the file-listing metadata is missing, files() returns None.",
+          "verdict": "S",
+          "scope_interpretation": "files; missing RECORD/SOURCES.txt listing metadata",
+          "answer_anchor": {
+            "quote": "If the file-listing metadata is missing, files() returns None.",
+            "start": 488,
+            "end": 550,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "In the case where the metadata file listing files\n(RECORD or SOURCES.txt) is missing, ``files()`` will\nreturn ``None``.",
+                  "start": 1382,
+                  "end": 1501,
+                  "role": "missing_listing_returns_none"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "无需调用方 always_iterable 的处理建议。"
+            }
+          ],
+          "rationale": "缺少列出文件的元数据时 files 返回 None，条件与结果完全相同。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p06-c09",
+          "claim_text": "Before returning, files() verifies each installed file’s contents against its recorded hash.",
+          "verdict": "U",
+          "scope_interpretation": "files; verification of every file content against recorded hash before return",
+          "answer_anchor": {
+            "quote": "Before returning, files() verifies each installed file’s contents against its recorded hash.",
+            "start": 552,
+            "end": 644,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [],
+          "rationale": "材料只说明返回 metadata 指示的 hash 属性和可另行读取内容，没有说明 files 会逐个校验内容，更没有规定返回前的校验时序。也没有直接声明它绝不校验，因此 U，不能以“未提及”判 C。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p06-c10",
+          "claim_text": "EntryPoint.load() caches its resolved object for fifteen minutes.",
+          "verdict": "U",
+          "scope_interpretation": "EntryPoint.load; resolved-object cache; exact fifteen-minute duration",
+          "answer_anchor": {
+            "quote": "EntryPoint.load() caches its resolved object for fifteen minutes.",
+            "start": 645,
+            "end": 710,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [],
+          "rationale": "材料只定义 load 解析 value，未给出缓存机制或十五分钟期限；没有同条件直接反证。完整断言无依据，判 U。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c07"
+            ],
+            "coverage": "full_candidate_text_size_component"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c07"
+            ],
+            "coverage": "full_candidate_text_hash_component"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u10",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c09"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u11",
+            "candidate_claim_ids": [
+              "v2-dev-p06-c10"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [
+          {
+            "issue_id": "p06-properties-atomicity",
+            "claim_ids": [
+              "v2-dev-p06-c07"
+            ],
+            "severity": "recommendation",
+            "finding": "size 与 hash 的元数据来源各可独立判断，候选合并两个属性事实；两者均已核实，没有漏标。若严格要求单谓词对象，应拆为两条；若允许同来源属性列表，则可保留。",
+            "suggested_claims": [
+              {
+                "claim_text": "A PackagePath returned by files() has a metadata-derived size property.",
+                "verdict": "S"
+              },
+              {
+                "claim_text": "A PackagePath returned by files() has a metadata-derived hash property.",
+                "verdict": "S"
+              }
+            ]
+          }
+        ],
+        "anchor_findings": [],
+        "ambiguities": [
+          {
+            "issue_id": "p06-current-return-version",
+            "claim_ids": [
+              "v2-dev-p06-c01"
+            ],
+            "kind": "resolved_version_scope",
+            "requires_adjudication": false,
+            "finding": "当前 API 明确返回 EntryPoints；此前版本字典行为有单独版本边界，不能制造同范围冲突。"
+          },
+          {
+            "issue_id": "p06-hash-is-metadata",
+            "claim_ids": [
+              "v2-dev-p06-c07",
+              "v2-dev-p06-c09",
+              "v2-dev-p06-c10"
+            ],
+            "kind": "resolved_evidence_boundary",
+            "requires_adjudication": false,
+            "finding": "metadata 提供 hash 值并不蕴含 files 校验文件内容；load 解析功能也不蕴含缓存或期限。无明文支持与无反证的新增机制均判 U。"
+          }
+        ],
+        "recommendations": [
+          "c09 与 c10 保持 U 且无引文，不以邻近的 hash 或 load 引文冒充完整支持。",
+          "按原子性合同决定是否拆分 c07 的两个属性；当前覆盖没有遗漏。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p07",
+        "units": [
+          {
+            "id": "u01",
+            "text": "Associated items of a public trait are public by default.",
+            "scope": "Rust; public trait associated items"
+          },
+          {
+            "id": "u02",
+            "text": "Variants of a public enum are public by default.",
+            "scope": "Rust; public enum variants"
+          },
+          {
+            "id": "u03",
+            "text": "A private item is accessible to its own module and descendants.",
+            "scope": "Rust; private item"
+          },
+          {
+            "id": "u04",
+            "text": "External access to a public item by its normal path requires access to every ancestor module.",
+            "scope": "Rust; public item normal path; external access"
+          },
+          {
+            "id": "u05",
+            "text": "pub(in path) must resolve to an ancestor module.",
+            "scope": "Rust; pub(in path)"
+          },
+          {
+            "id": "u06",
+            "text": "pub(in path) components must directly name modules rather than names introduced by use.",
+            "scope": "Rust; pub(in path) components"
+          },
+          {
+            "id": "u07",
+            "text": "pub(crate) restricts visibility to the current crate.",
+            "scope": "Rust; pub(crate)"
+          },
+          {
+            "id": "u08",
+            "text": "pub(self) is equivalent to leaving pub off.",
+            "scope": "Rust; pub(self)"
+          },
+          {
+            "id": "u09",
+            "text": "Since edition 2018 a pub(in path) path must start with crate, self or super.",
+            "scope": "Rust >=2018 edition; pub(in path)"
+          },
+          {
+            "id": "u10",
+            "text": "Restricted pub syntax does not guarantee access from all parts of the specified scope.",
+            "scope": "Rust; restricted visibility"
+          },
+          {
+            "id": "u11",
+            "text": "In the supplied public re-export example an external crate may use api::f.",
+            "scope": "Rust; example re-export"
+          },
+          {
+            "id": "u12",
+            "text": "In that example external use of implementation::api::f violates privacy.",
+            "scope": "Rust; example original path"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p07-c01",
+          "claim_text": "Associated items in a public Rust trait are public by default.",
+          "verdict": "S",
+          "scope_interpretation": "Rust; associated items of public trait",
+          "answer_anchor": {
+            "quote": "Rust exposes the associated items of a public trait by default",
+            "start": 0,
+            "end": 62,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "Associated items in a `pub` Trait are public by default",
+                  "start": 1098,
+                  "end": 1153,
+                  "role": "public_trait_items"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "不需连带引用 enum 例外。"
+            }
+          ],
+          "rationale": "公开 trait 的关联项默认公开是明确列出的默认私有规则例外。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c02",
+          "claim_text": "Variants of a public Rust enum are public by default.",
+          "verdict": "S",
+          "scope_interpretation": "Rust; variants of public enum",
+          "answer_anchor": {
+            "quote": "as it does the variants of a public enum.",
+            "start": 64,
+            "end": 105,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p07-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "Enum variants in a `pub` enum are also public by default.",
+                  "start": 1155,
+                  "end": 1212,
+                  "role": "public_enum_variants"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "只保留 enum 例外。"
+            }
+          ],
+          "rationale": "公开 enum 的 variants 默认公开由原文直接陈述。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c03",
+          "claim_text": "A private item is accessible to its own module and that module’s descendants.",
+          "verdict": "S",
+          "scope_interpretation": "Rust; private item; defining/current module and descendants",
+          "answer_anchor": {
+            "quote": "A private item is accessible to its own module and that module’s descendants.",
+            "start": 106,
+            "end": 183,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "If an item is private, it may be accessed by the current module and its descendants.",
+                  "start": 1945,
+                  "end": 2029,
+                  "role": "private_access_rule"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "不附带 public 访问条件。"
+            }
+          ],
+          "rationale": "私有项的当前模块及后代模块访问规则与候选一致。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c04",
+          "claim_text": "External access to a public item through its normal path requires access to all its ancestor modules.",
+          "verdict": "S",
+          "scope_interpretation": "Rust; external access through normal hierarchy path; excluding re-export shortcut",
+          "answer_anchor": {
+            "quote": "External access to a public item through its normal path requires access to all its ancestor modules.",
+            "start": 184,
+            "end": 285,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "anything which is usable externally must be `pub` from the root down to the destination item. Any private item in the chain will disallow external accesses.",
+                  "start": 2389,
+                  "end": 2545,
+                  "role": "ancestor_chain_necessity"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "选取 must/any private item 的必要性明文，避免仅凭第一个 if 规则证明逆命题。"
+            }
+          ],
+          "rationale": "摘录不只给出 ancestors 可访问时的充分条件，还明确说普通层级路径必须从根到目标全为 pub，且链上私有项阻止外部访问；因此 requires 得到支持，不是擅自把 if 逆推。候选的 normal path 保留了 re-export 的例外边界。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c05",
+          "claim_text": "For pub(in path), the path must resolve to an ancestor module.",
+          "verdict": "S",
+          "scope_interpretation": "Rust pub(in path); item's ancestor module",
+          "answer_anchor": {
+            "quote": "For pub(in path), the path must resolve to an ancestor module",
+            "start": 287,
+            "end": 348,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "`pub(in path)` makes an item visible within the provided `path`. `path` must be a simple path which resolves to an ancestor module of the item whose visibility is being declared.",
+                  "start": 277,
+                  "end": 455,
+                  "role": "pub_in_ancestor"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留 pub(in path) 主体、path 指代和 ancestor 规则。"
+            }
+          ],
+          "rationale": "path 必须解析到被声明可见性项目的祖先模块，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c06",
+          "claim_text": "Each component of a pub(in path) path must name a module directly rather than a name introduced by use.",
+          "verdict": "S",
+          "scope_interpretation": "Rust pub(in path); direct module identifiers; no use aliases",
+          "answer_anchor": {
+            "quote": "its components must name modules directly rather than names introduced by use.",
+            "start": 350,
+            "end": 428,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p07-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "`pub(in path)` makes an item visible within the provided `path`.",
+                  "start": 277,
+                  "end": 341,
+                  "role": "path_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "Each identifier in `path` must refer directly to a module (not to a name introduced by a `use` statement).",
+                  "start": 456,
+                  "end": 562,
+                  "role": "direct_identifier_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 指明 path 属于 pub(in path)，q2 明确其每个标识符必须直接引用模块。"
+                }
+              ],
+              "minimality_rationale": "无需祖先模块的另一个独立限制。"
+            }
+          ],
+          "rationale": "直接模块名称、不能使用 use 引入名称的限制与候选一致。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c07",
+          "claim_text": "pub(crate) restricts visibility to the current crate.",
+          "verdict": "S",
+          "scope_interpretation": "Rust pub(crate); current crate",
+          "answer_anchor": {
+            "quote": "pub(crate) restricts visibility to the current crate",
+            "start": 429,
+            "end": 481,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "`pub(crate)` makes an item visible within the current crate.",
+                  "start": 586,
+                  "end": 646,
+                  "role": "crate_visibility"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "单句完整规则。"
+            }
+          ],
+          "rationale": "pub(crate) 的当前 crate 范围直接支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c08",
+          "claim_text": "pub(self) is equivalent to leaving pub off.",
+          "verdict": "S",
+          "scope_interpretation": "Rust pub(self); equivalence to no pub",
+          "answer_anchor": {
+            "quote": "pub(self) is equivalent to leaving pub off.",
+            "start": 489,
+            "end": 532,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "`pub(self)` makes an item visible to the current module. This is equivalent to `pub(in self)` or not using `pub` at all.",
+                  "start": 788,
+                  "end": 908,
+                  "role": "self_visibility_equivalence"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留 This 的 antecedent 与等价结论。"
+            }
+          ],
+          "rationale": "定义直接说明 pub(self) 等价于不使用 pub。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c09",
+          "claim_text": "Starting with the 2018 edition, a pub(in path) path must begin with crate, self or super.",
+          "verdict": "S",
+          "scope_interpretation": "Rust edition 2018 onward; pub(in path) prefix",
+          "answer_anchor": {
+            "quote": "Starting with the 2018 edition, a pub(in path) path must begin with crate, self or super.",
+            "start": 533,
+            "end": 622,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "Starting with the 2018 edition, paths for `pub(in path)` must start with `crate`, `self`, or `super`.",
+                  "start": 956,
+                  "end": 1057,
+                  "role": "edition2018_prefix"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "只引用目标版本范围的规则。"
+            }
+          ],
+          "rationale": "2018 edition 起的路径前缀限制被直接说明；没有把 2015 的可选路径并入同范围。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c10",
+          "claim_text": "Restricted pub syntax does not guarantee access from every part of the specified scope.",
+          "verdict": "S",
+          "scope_interpretation": "Rust restricted pub syntax; specified visibility scope is still constrained by parents",
+          "answer_anchor": {
+            "quote": "Restricted pub syntax still does not guarantee access from every part of the specified scope.",
+            "start": 624,
+            "end": 717,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "## `pub(in path)`, `pub(crate)`, `pub(super)`, and `pub(self)`",
+                  "start": 14,
+                  "end": 76,
+                  "role": "restricted_pub_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "This syntax only adds another restriction to the visibility of an item. It does not guarantee that the item is visible within all parts of the specified scope.",
+                  "start": 2836,
+                  "end": 2995,
+                  "role": "not_guaranteed_whole_scope"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "标题将 This syntax 绑定到受限 pub 形式；第二片段给出不保证整个范围可见的结论。"
+                }
+              ],
+              "minimality_rationale": "主体范围与直接 not guarantee 结论已充分；无需整个示例。"
+            }
+          ],
+          "rationale": "受限 pub 只是增加限制，不能保证指定范围任何位置都可访问，这是明文否定保证。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c11",
+          "claim_text": "In the public re-export example, an external crate may use api::f.",
+          "verdict": "S",
+          "scope_interpretation": "Rust supplied public re-export example; external api::f",
+          "answer_anchor": {
+            "quote": "In the public re-export example, an external crate may use api::f",
+            "start": 718,
+            "end": 783,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "This means that any external crate referencing `implementation::api::f` would receive a privacy violation, while the path `api::f` would be allowed.",
+                  "start": 492,
+                  "end": 640,
+                  "role": "example_external_path_contrast"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留外部主体与 api::f 的允许结论；while 两分支同句避免丢失作用对象。"
+            }
+          ],
+          "rationale": "同一示例明确允许外部 crate 使用 api::f，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p07-c12",
+          "claim_text": "In the public re-export example, an external crate using implementation::api::f would violate privacy.",
+          "verdict": "S",
+          "scope_interpretation": "Rust same public re-export example; external implementation::api::f",
+          "answer_anchor": {
+            "quote": "implementation::api::f would violate privacy.",
+            "start": 791,
+            "end": 836,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p07-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "any external crate referencing `implementation::api::f` would receive a privacy violation",
+                  "start": 508,
+                  "end": 597,
+                  "role": "example_original_path_private"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "无需 re-export 代码整体或允许路径的另一个分支。"
+            }
+          ],
+          "rationale": "示例直接说明外部 crate 沿原始 implementation::api::f 路径访问会违反隐私。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c09"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u10",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c10"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u11",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c11"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u12",
+            "candidate_claim_ids": [
+              "v2-dev-p07-c12"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [],
+        "anchor_findings": [
+          {
+            "issue_id": "p07-contextual-anchors",
+            "claim_ids": [
+              "v2-dev-p07-c02",
+              "v2-dev-p07-c06",
+              "v2-dev-p07-c12"
+            ],
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "as it does、its components、以及原路径分支的 external crate 主体可从同句/前句唯一恢复；候选显化正确。",
+            "exact_offsets_valid": true
+          }
+        ],
+        "ambiguities": [
+          {
+            "issue_id": "p07-necessary-path-rule",
+            "claim_ids": [
+              "v2-dev-p07-c04",
+              "v2-dev-p07-c10",
+              "v2-dev-p07-c11",
+              "v2-dev-p07-c12"
+            ],
+            "kind": "resolved_logical_scope",
+            "requires_adjudication": false,
+            "finding": "c04 的 normal path 排除了 re-export shortcut；源材料有 must 与 private chain disallow 的必要性明文，故不靠充分条件逆推。受限 pub 的额外限制与 public re-export 的捷径分别有不同作用范围。"
+          }
+        ],
+        "recommendations": [
+          "c04 不要仅以 if ancestors accessible then externally accessible 的充分条件句作 requires 的唯一证据；应保留必要性明文。",
+          "2015 与 2018+ 路径前缀规则分别处理，示例 re-export 路径须保留 external crate 范围。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p08",
+        "units": [
+          {
+            "id": "u01",
+            "text": "For a type implementing Drop, Drop::drop runs before recursive field destruction.",
+            "scope": "Rust; destructor sequence; Drop implemented"
+          },
+          {
+            "id": "u02",
+            "text": "Struct fields are dropped in reverse declaration order.",
+            "scope": "Rust; struct fields"
+          },
+          {
+            "id": "u03",
+            "text": "Variables captured by move in a closure have unspecified drop order.",
+            "scope": "Rust; closure move captures"
+          },
+          {
+            "id": "u04",
+            "text": "Assignment destroys an already-initialized left-hand operand.",
+            "scope": "Rust; assignment; initialized LHS"
+          },
+          {
+            "id": "u05",
+            "text": "Leaving one drop scope drops its variables in declaration order.",
+            "scope": "Rust; one drop scope; local variables"
+          },
+          {
+            "id": "u06",
+            "text": "Leaving nested scopes at once drops variables from the inside outward.",
+            "scope": "Rust; multiple nested drop scopes"
+          },
+          {
+            "id": "u07",
+            "text": "A function parameter is dropped before bindings introduced by its pattern.",
+            "scope": "Rust; function parameter and pattern bindings"
+          },
+          {
+            "id": "u08",
+            "text": "Variables within a pattern are dropped in reverse declaration order.",
+            "scope": "Rust; bindings within a pattern"
+          },
+          {
+            "id": "u09",
+            "text": "An or-pattern uses the first subpattern's binding order even when the second subpattern matches.",
+            "scope": "Rust; or-pattern binding/drop order"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p08-c01",
+          "claim_text": "For a type implementing Drop, Rust calls Drop::drop before recursively destroying its fields.",
+          "verdict": "S",
+          "scope_interpretation": "Rust; T:Drop; destructor operation order",
+          "answer_anchor": {
+            "quote": "For a type implementing Drop, Rust calls Drop::drop before recursively destroying its fields.",
+            "start": 0,
+            "end": 93,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The destructor of a type `T` consists of:\n\n1. If `T: Drop`, calling [`<T as core::ops::Drop>::drop`](core::ops::Drop::drop)\n2. Recursively running the destructor of all of its fields.",
+                  "start": 380,
+                  "end": 563,
+                  "role": "drop_then_fields_sequence"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留有序步骤及 T:Drop 条件，未附加每类字段的内部顺序。"
+            }
+          ],
+          "rationale": "编号步骤先调用实现 Drop 类型的 drop，再递归析构全部字段，完整支持 before 的顺序关系。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p08-c02",
+          "claim_text": "Struct fields are dropped in reverse declaration order.",
+          "verdict": "C",
+          "scope_interpretation": "Rust; struct fields; declaration order",
+          "answer_anchor": {
+            "quote": "Struct fields are dropped in reverse declaration order.",
+            "start": 94,
+            "end": 149,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The fields of a [struct] are dropped in declaration order.",
+                  "start": 570,
+                  "end": 628,
+                  "role": "struct_field_forward_order"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "同主体、同顺序维度的直接反证单句足够。"
+            }
+          ],
+          "rationale": "结构体字段按声明顺序析构，直接反证 reverse declaration order；没有将局部变量的相反规则移到字段。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p08-c03",
+          "claim_text": "Variables captured by move in a closure have unspecified drop order.",
+          "verdict": "S",
+          "scope_interpretation": "Rust; variables captured by move in closure",
+          "answer_anchor": {
+            "quote": "Variables captured by move in a closure have unspecified drop order.",
+            "start": 150,
+            "end": 218,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The variables that a [closure] captures by move are dropped in an unspecified order.",
+                  "start": 865,
+                  "end": 949,
+                  "role": "closure_unspecified_order"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "不借用 struct 字段顺序作类比。"
+            }
+          ],
+          "rationale": "move 捕获变量的析构顺序未指定，由原文明说。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p08-c04",
+          "claim_text": "Assignment destroys an already-initialized left-hand operand.",
+          "verdict": "S",
+          "scope_interpretation": "Rust assignment; initialized left-hand operand",
+          "answer_anchor": {
+            "quote": "Assignment destroys an already-initialized left-hand operand.",
+            "start": 219,
+            "end": 280,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "[Assignment] also runs the destructor of its left-hand operand, if it's initialized.",
+                  "start": 182,
+                  "end": 266,
+                  "role": "assignment_lhs_destructor"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "不扩展到未初始化的左操作数。"
+            }
+          ],
+          "rationale": "赋值对已初始化左操作数运行析构，条件与结果均对应。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p08-c05",
+          "claim_text": "When control leaves one drop scope, its variables are dropped in declaration order.",
+          "verdict": "C",
+          "scope_interpretation": "Rust; variables associated with a drop scope when control leaves it",
+          "answer_anchor": {
+            "quote": "When control leaves one drop scope, its variables are dropped in declaration order.",
+            "start": 282,
+            "end": 365,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "When control flow leaves a drop scope all variables associated to that scope are dropped in reverse order of declaration (for variables) or creation (for temporaries).",
+                  "start": 124,
+                  "end": 291,
+                  "role": "scope_reverse_variable_order"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留变量与临时值的条件括号，明确本条反证对应变量。"
+            }
+          ],
+          "rationale": "离开 drop scope 时变量按逆声明顺序析构，直接反证候选中的声明顺序。临时值另按逆创建顺序，不与变量混用。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p08-c06",
+          "claim_text": "Leaving nested scopes at once drops variables from the inside outward.",
+          "verdict": "S",
+          "scope_interpretation": "Rust; multiple nested drop scopes left at once",
+          "answer_anchor": {
+            "quote": "Leaving nested scopes at once drops variables from the inside outward.",
+            "start": 366,
+            "end": 436,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "When multiple scopes are left at once, such as when returning from a function, variables are dropped from the inside outwards.",
+                  "start": 2374,
+                  "end": 2500,
+                  "role": "nested_inside_out"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "单句含条件与顺序。"
+            }
+          ],
+          "rationale": "同时退出多个嵌套作用域时从内向外析构是直接规则。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p08-c07",
+          "claim_text": "A function parameter is dropped before bindings introduced by that parameter’s pattern.",
+          "verdict": "C",
+          "scope_interpretation": "Rust; actual function parameter versus bindings from its pattern",
+          "answer_anchor": {
+            "quote": "A function parameter is dropped before bindings introduced by that parameter’s pattern.",
+            "start": 437,
+            "end": 524,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "Each actual function parameter is dropped after any bindings introduced in that parameter's pattern.",
+                  "start": 183,
+                  "end": 283,
+                  "role": "parameter_after_bindings"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "只保留同一参数与绑定之间的时序，不用其他作用域规则推断。"
+            }
+          ],
+          "rationale": "实际参数在该参数模式引入的绑定之后析构，直接否定 before。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p08-c08",
+          "claim_text": "Within a pattern, variables are dropped in reverse declaration order.",
+          "verdict": "S",
+          "scope_interpretation": "Rust; variables within one pattern",
+          "answer_anchor": {
+            "quote": "Within a pattern, variables are dropped in reverse declaration order.",
+            "start": 526,
+            "end": 595,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "Variables in patterns are dropped in reverse order of declaration within the pattern.",
+                  "start": 2549,
+                  "end": 2634,
+                  "role": "pattern_reverse_bindings"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "不需示例程序的打印文字。"
+            }
+          ],
+          "rationale": "模式内变量逆声明顺序析构由原文直接支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p08-c09",
+          "claim_text": "For an or-pattern, binding order comes from the first subpattern even when the second subpattern matches.",
+          "verdict": "S",
+          "scope_interpretation": "Rust; or-pattern drop-order binding order; first subpattern even when second matches",
+          "answer_anchor": {
+            "quote": "For an or-pattern, binding order comes from the first subpattern even when the second subpattern matches.",
+            "start": 596,
+            "end": 701,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "For the purpose of drop order, [or-patterns] declare bindings in the order given by the first subpattern.",
+                  "start": 2946,
+                  "end": 3051,
+                  "role": "first_subpattern_rule"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "一般规则已涵盖任一子模式匹配，无需冗余附加第二分支的示例注释。"
+            }
+          ],
+          "rationale": "一般规则按第一子模式确定 or-pattern 的绑定声明顺序，不以实际命中哪一子模式为条件，因而第二子模式匹配时也适用。这里是决定 drop 顺序所用的声明顺序，而非声明最终按正序 drop。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p08-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p08-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p08-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p08-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p08-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p08-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p08-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p08-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p08-c09"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [],
+        "anchor_findings": [],
+        "ambiguities": [
+          {
+            "issue_id": "p08-drop-entity-boundaries",
+            "claim_ids": [
+              "v2-dev-p08-c02",
+              "v2-dev-p08-c05",
+              "v2-dev-p08-c07",
+              "v2-dev-p08-c08",
+              "v2-dev-p08-c09"
+            ],
+            "kind": "resolved_entity_scope",
+            "requires_adjudication": false,
+            "finding": "struct fields 正声明顺序、scope variables 逆声明顺序、actual parameters 在 pattern bindings 之后，是三个不同主体/比较关系。or-pattern 的第一子模式声明顺序用于决定绑定顺序，不表示最终按正序析构。"
+          }
+        ],
+        "recommendations": [
+          "三条 C 均有同主体的直接相反顺序，不能用其他类别的析构规则替代反证。",
+          "c09 的一般规则已涵盖第二子模式匹配，最小证据不需要重复整段示例。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p09",
+        "units": [
+          {
+            "id": "u01",
+            "text": "The Rust test attribute is restricted to free functions.",
+            "scope": "Rust; test attribute"
+          },
+          {
+            "id": "u02",
+            "text": "A test function must be monomorphic.",
+            "scope": "Rust; test functions"
+          },
+          {
+            "id": "u03",
+            "text": "A test function must take no arguments.",
+            "scope": "Rust; test functions"
+          },
+          {
+            "id": "u04",
+            "text": "A test function's return type must implement Termination.",
+            "scope": "Rust; test return type"
+          },
+          {
+            "id": "u05",
+            "text": "A non-terminating test neither passes nor fails.",
+            "scope": "Rust; test status; nontermination"
+          },
+          {
+            "id": "u06",
+            "text": "Ignored tests are still compiled in test mode.",
+            "scope": "Rust; ignored tests"
+          },
+          {
+            "id": "u07",
+            "text": "The harness can run ignored tests with --include-ignored.",
+            "scope": "Rust; test harness flag"
+          },
+          {
+            "id": "u08",
+            "text": "should_panic expected text is matched as a substring of the panic message.",
+            "scope": "Rust; should_panic(expected)"
+          },
+          {
+            "id": "u09",
+            "text": "A test carrying should_panic must return ().",
+            "scope": "Rust; should_panic return type"
+          },
+          {
+            "id": "u10",
+            "text": "The harness automatically retries a failing test twice.",
+            "scope": "Rust; test harness; retry count"
+          },
+          {
+            "id": "u11",
+            "text": "Test functions run in lexical source order.",
+            "scope": "Rust; harness execution order"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p09-c01",
+          "claim_text": "The Rust test attribute is restricted to free functions.",
+          "verdict": "S",
+          "scope_interpretation": "Rust test attribute; free functions only",
+          "answer_anchor": {
+            "quote": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments.",
+            "start": 0,
+            "end": 99,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p09-shared-atomic-anchor"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The `test` attribute may only be applied to [free functions]",
+                  "start": 871,
+                  "end": 931,
+                  "role": "free_function_restriction"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "其他 monomorphic/参数/返回值限制由不同原子断言覆盖。"
+            }
+          ],
+          "rationale": "may only 限制到 free functions，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c02",
+          "claim_text": "Functions bearing the Rust test attribute must be monomorphic.",
+          "verdict": "S",
+          "scope_interpretation": "Rust test attribute; monomorphic functions",
+          "answer_anchor": {
+            "quote": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments.",
+            "start": 0,
+            "end": 99,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p09-shared-atomic-anchor"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The `test` attribute may only be applied to [free functions] that are monomorphic",
+                  "start": 871,
+                  "end": 952,
+                  "role": "monomorphic_restriction"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留 test 主体与 monomorphic 条件，省去后续独立限制。"
+            }
+          ],
+          "rationale": "被 test 标注的函数必须 monomorphic，是同一位置限制中的明确条件。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c03",
+          "claim_text": "Functions bearing the Rust test attribute take no arguments.",
+          "verdict": "S",
+          "scope_interpretation": "Rust test attribute; no arguments",
+          "answer_anchor": {
+            "quote": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments.",
+            "start": 0,
+            "end": 99,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p09-shared-atomic-anchor"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The `test` attribute may only be applied to [free functions]",
+                  "start": 871,
+                  "end": 931,
+                  "role": "test_function_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 0,
+                  "quote": "that take no arguments",
+                  "start": 954,
+                  "end": 976,
+                  "role": "no_arguments_restriction"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "test 只能应用的函数主体与同一约束句的 no arguments 从句相连。"
+                }
+              ],
+              "minimality_rationale": "主体和参数条件是必要片段，不附带另外的 monomorphic/return 限制。"
+            }
+          ],
+          "rationale": "允许标注 test 的函数必须不带参数，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c04",
+          "claim_text": "The return type of a Rust test function must implement Termination.",
+          "verdict": "S",
+          "scope_interpretation": "Rust test function; return type implements Termination",
+          "answer_anchor": {
+            "quote": "Their return type must implement Termination.",
+            "start": 100,
+            "end": 145,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p09-pronoun-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The `test` attribute may only be applied to [free functions]",
+                  "start": 871,
+                  "end": 931,
+                  "role": "test_function_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 0,
+                  "quote": "where the return type implements the [`Termination`] trait.",
+                  "start": 982,
+                  "end": 1041,
+                  "role": "Termination_restriction"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "同一 allowed-positions 句将 test 函数与返回类型的 Termination 条件相连。"
+                }
+              ],
+              "minimality_rationale": "保留函数主体与返回类型条件，不把列举的实现类型误当唯一允许类型。"
+            }
+          ],
+          "rationale": "返回类型实现 Termination 是 test 函数的明确必要限制。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c05",
+          "claim_text": "A test that does not terminate neither passes nor fails.",
+          "verdict": "S",
+          "scope_interpretation": "Rust tests; nontermination; classification",
+          "answer_anchor": {
+            "quote": "A test that does not terminate neither passes nor fails.",
+            "start": 146,
+            "end": 202,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "Tests that do not terminate neither pass nor fail.",
+                  "start": 2389,
+                  "end": 2439,
+                  "role": "nontermination_no_passfail"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "无需推断超时机制；本条也不声明存在超时。"
+            }
+          ],
+          "rationale": "不终止的测试既不通过也不失败，原文直接说明。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c06",
+          "claim_text": "Ignored tests are still compiled in test mode.",
+          "verdict": "S",
+          "scope_interpretation": "Rust ignored tests; test-mode compilation",
+          "answer_anchor": {
+            "quote": "Ignored tests are still compiled in test mode",
+            "start": 204,
+            "end": 249,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "Ignored tests are still compiled when in test mode",
+                  "start": 1368,
+                  "end": 1418,
+                  "role": "ignored_compilation"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "只保留编译事实；默认不执行另属于运行控制。"
+            }
+          ],
+          "rationale": "ignored 测试在 test mode 仍被编译是明文规则。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c07",
+          "claim_text": "The Rust test harness can force execution of ignored tests with --include-ignored.",
+          "verdict": "S",
+          "scope_interpretation": "Rust rustc test harness; --include-ignored",
+          "answer_anchor": {
+            "quote": "the harness can force their execution with --include-ignored.",
+            "start": 255,
+            "end": 316,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p09-pronoun-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "The `rustc` test harness supports the `--include-ignored` flag to force ignored tests to be run.",
+                  "start": 397,
+                  "end": 493,
+                  "role": "include_ignored_flag"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "不需通用 test 模式解释或示例函数。"
+            }
+          ],
+          "rationale": "该 flag 可强制运行 ignored 测试的能力直接得到支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c08",
+          "claim_text": "The expected text in should_panic is matched as a substring of the panic message.",
+          "verdict": "S",
+          "scope_interpretation": "Rust should_panic expected string; substring in panic message",
+          "answer_anchor": {
+            "quote": "The expected text in should_panic is matched as a substring of the panic message.",
+            "start": 317,
+            "end": 398,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "## The `should_panic` attribute",
+                  "start": 64,
+                  "end": 95,
+                  "role": "attribute_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "When the [MetaNameValueStr] form or the [MetaListNameValueStr] form with the `expected` key is used, the given string must appear somewhere within the panic message for the test to pass.",
+                  "start": 1804,
+                  "end": 1990,
+                  "role": "expected_substring_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "should_panic 属性头与 expected 字符串在消息内出现的规则共同确定比较对象与形式。"
+                }
+              ],
+              "minimality_rationale": "使用明确的 expected 规则，不需要根据示例猜测。"
+            }
+          ],
+          "rationale": "given string 出现在 panic message 内的描述支持子串匹配，不要求整个消息完全相等。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c09",
+          "claim_text": "A test carrying should_panic must return ().",
+          "verdict": "S",
+          "scope_interpretation": "Rust should_panic test return type",
+          "answer_anchor": {
+            "quote": "A test carrying should_panic must return ().",
+            "start": 399,
+            "end": 443,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "## The `should_panic` attribute",
+                  "start": 64,
+                  "end": 95,
+                  "role": "attribute_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "The return type of the test function must be `()`.",
+                  "start": 2034,
+                  "end": 2084,
+                  "role": "unit_return_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "返回单位类型限制位于 should_panic 段；属性头不能丢失，否则会错误泛化到所有 test。"
+                }
+              ],
+              "minimality_rationale": "属性身份与返回类型必要规则均保留。"
+            }
+          ],
+          "rationale": "should_panic 测试必须返回 ()；不会把该限定套到只要求 Termination 的普通测试。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c10",
+          "claim_text": "The harness automatically retries a failing test twice.",
+          "verdict": "U",
+          "scope_interpretation": "Rust harness; automatic two retries after test failure",
+          "answer_anchor": {
+            "quote": "The harness automatically retries a failing test twice.",
+            "start": 445,
+            "end": 500,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [],
+          "rationale": "材料描述测试执行及成功失败分类，没有两次自动重试的行为或次数，也没有明确禁止重试的反证；判 U。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p09-c11",
+          "claim_text": "Test functions execute in lexical source order.",
+          "verdict": "U",
+          "scope_interpretation": "Rust test-function execution; lexical source order",
+          "answer_anchor": {
+            "quote": "Test functions execute in lexical source order.",
+            "start": 501,
+            "end": 548,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [],
+          "rationale": "材料没有规定词法源顺序或其他执行顺序。缺少支持，也没有同范围直接相反顺序，判 U，不使用对实际 harness 的外部知识。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c09"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u10",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c10"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u11",
+            "candidate_claim_ids": [
+              "v2-dev-p09-c11"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [],
+        "anchor_findings": [
+          {
+            "issue_id": "p09-shared-atomic-anchor",
+            "claim_ids": [
+              "v2-dev-p09-c01",
+              "v2-dev-p09-c02",
+              "v2-dev-p09-c03"
+            ],
+            "kind": "shared_sentence_anchor",
+            "severity": "informational",
+            "finding": "free functions、monomorphic、no arguments 三个可独立事实已正确拆开；共用完整句子的 anchor 合法。",
+            "exact_offsets_valid": true
+          },
+          {
+            "issue_id": "p09-pronoun-anchors",
+            "claim_ids": [
+              "v2-dev-p09-c04",
+              "v2-dev-p09-c07"
+            ],
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "Their 指 test functions，their execution 指 ignored tests；候选显化与原回答一致。",
+            "exact_offsets_valid": true
+          }
+        ],
+        "ambiguities": [
+          {
+            "issue_id": "p09-harness-missing-mechanisms",
+            "claim_ids": [
+              "v2-dev-p09-c10",
+              "v2-dev-p09-c11"
+            ],
+            "kind": "resolved_U_boundary",
+            "requires_adjudication": false,
+            "finding": "源材料没有重试次数与词法运行顺序，也没有直接相反规则；两条均 U，不引用实际 Rust harness 的外部知识制造 C。"
+          }
+        ],
+        "recommendations": [
+          "普通 test 的 Termination 返回类型和 should_panic 的 () 返回类型分别限定，不制造条件不同的冲突。",
+          "U 的自动重试和运行顺序不接受仅说明 harness 存在的引文。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p10",
+        "units": [
+          {
+            "id": "u01",
+            "text": "The SQL standard defines four isolation levels.",
+            "scope": "SQL standard; isolation levels"
+          },
+          {
+            "id": "u02",
+            "text": "PostgreSQL implements three distinct isolation behaviors.",
+            "scope": "PostgreSQL; distinct implemented behaviors"
+          },
+          {
+            "id": "u03",
+            "text": "PostgreSQL Read Uncommitted behaves as Read Committed.",
+            "scope": "PostgreSQL; Read Uncommitted mapping"
+          },
+          {
+            "id": "u04",
+            "text": "PostgreSQL Repeatable Read does not allow phantom reads.",
+            "scope": "PostgreSQL; Repeatable Read"
+          },
+          {
+            "id": "u05",
+            "text": "Two ordinary SELECTs in Read Uncommitted may see different data when another transaction commits between them.",
+            "scope": "PostgreSQL; Read Uncommitted; successive plain SELECTs"
+          },
+          {
+            "id": "u06",
+            "text": "A Read Uncommitted SELECT sees its own transaction's earlier updates before commit.",
+            "scope": "PostgreSQL; Read Uncommitted; own earlier updates"
+          },
+          {
+            "id": "u07",
+            "text": "A Repeatable Read query uses a snapshot from the first non-transaction-control statement in its transaction.",
+            "scope": "PostgreSQL; Repeatable Read; snapshot boundary"
+          },
+          {
+            "id": "u08",
+            "text": "Read-only Repeatable Read transactions never have serialization conflicts.",
+            "scope": "PostgreSQL; read-only Repeatable Read"
+          },
+          {
+            "id": "u09",
+            "text": "A stable Repeatable Read view need not match any serial execution of concurrent transactions.",
+            "scope": "PostgreSQL; Repeatable Read; serializability"
+          },
+          {
+            "id": "u10",
+            "text": "After a Repeatable Read serialization failure due to a concurrent update, retry the whole transaction from its start.",
+            "scope": "PostgreSQL; Repeatable Read; concurrent-update failure recovery"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p10-c01",
+          "claim_text": "The SQL standard defines four transaction isolation levels.",
+          "verdict": "S",
+          "scope_interpretation": "SQL standard; count of isolation levels",
+          "answer_anchor": {
+            "quote": "The SQL standard defines four isolation levels",
+            "start": 0,
+            "end": 46,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The <acronym>SQL</acronym> standard defines four levels of\n    transaction isolation.",
+                  "start": 163,
+                  "end": 248,
+                  "role": "SQL_four_levels"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "单句包含标准主体与数量。"
+            }
+          ],
+          "rationale": "SQL 标准定义四个事务隔离级别的数量被直接说明。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p10-c02",
+          "claim_text": "PostgreSQL implements three distinct transaction isolation behaviors.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL; distinct implemented isolation behaviors",
+          "answer_anchor": {
+            "quote": "PostgreSQL implements three distinct behaviors.",
+            "start": 54,
+            "end": 101,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "In <productname>PostgreSQL</productname>, you can request any of\n    the four standard transaction isolation levels, but internally only\n    three distinct isolation levels are implemented",
+                  "start": 4664,
+                  "end": 4852,
+                  "role": "PostgreSQL_three_behaviors"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留请求名称数量与内部不同实现的区分，避免误说只接受三个级别名称。"
+            }
+          ],
+          "rationale": "虽然可请求四种标准名称，内部只有三种不同实现；候选的 three distinct behaviors 准确保留这一差别。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p10-c03",
+          "claim_text": "PostgreSQL Read Uncommitted behaves like Read Committed.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL; Read Uncommitted mapping",
+          "answer_anchor": {
+            "quote": "PostgreSQL Read Uncommitted behaves like Read Committed.",
+            "start": 102,
+            "end": 158,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "PostgreSQL's\n    Read Uncommitted mode behaves like Read Committed.",
+                  "start": 4860,
+                  "end": 4927,
+                  "role": "RU_equals_RC"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "映射关系单句即可。"
+            }
+          ],
+          "rationale": "PostgreSQL 的 Read Uncommitted 行为等同 Read Committed 是直接映射。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p10-c04",
+          "claim_text": "PostgreSQL Repeatable Read does not allow phantom reads.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL Repeatable Read; phantom reads",
+          "answer_anchor": {
+            "quote": "PostgreSQL Repeatable Read does not allow phantom reads.",
+            "start": 159,
+            "end": 215,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The table also shows that PostgreSQL's Repeatable Read implementation\n    does not allow phantom reads.",
+                  "start": 5107,
+                  "end": 5210,
+                  "role": "RR_no_phantom"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "使用直接文字结论，无需冗余整张表。"
+            }
+          ],
+          "rationale": "PostgreSQL 实现的 Repeatable Read 不允许 phantom reads，原文明说；不会把 SQL 标准允许的较弱保证混入此实现。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p10-c05",
+          "claim_text": "Two ordinary SELECTs in a Read Uncommitted transaction may see different data if another transaction commits changes between them.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL Read Uncommitted; ordinary SELECTs within one transaction; intervening committed changes",
+          "answer_anchor": {
+            "quote": "two ordinary SELECTs in a Read Uncommitted transaction may see different data if another transaction commits changes between them.",
+            "start": 231,
+            "end": 361,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "PostgreSQL's\n    Read Uncommitted mode behaves like Read Committed.",
+                  "start": 4860,
+                  "end": 4927,
+                  "role": "mode_mapping"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "<title>Read Committed Isolation Level</title>",
+                  "start": 38,
+                  "end": 83,
+                  "role": "mapped_rule_scope"
+                },
+                {
+                  "citation_id": "q3",
+                  "passage_index": 1,
+                  "quote": "two successive\n    <command>SELECT</command> commands can see different data, even\n    though they are within a single transaction, if other transactions\n    commit changes after the first <command>SELECT</command> starts and\n    before the second <command>SELECT</command> starts.",
+                  "start": 1038,
+                  "end": 1319,
+                  "role": "successive_select_visibility"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q2",
+                  "to": "q3",
+                  "relation": "Read Committed section owns the successive-SELECT rule",
+                  "necessity": "q3 本身没有重写隔离级别名称，不能脱离 q2 泛化。"
+                },
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2",
+                    "q3"
+                  ],
+                  "relation": "Read Uncommitted behaves as Read Committed, so inherits this visibility behavior",
+                  "necessity": "没有 q1 就只能证明 Read Committed；没有 q2/q3 就缺少被继承性质。"
+                }
+              ],
+              "minimality_rationale": "映射、性质的级别身份、具体性质三环均必要；不再附加无关的更新命令规则。"
+            }
+          ],
+          "rationale": "在 Read Committed 中，两次普通 SELECT 可因其间其他事务提交而读到不同数据；结合 RU=RC 映射，该可能性也适用于 Read Uncommitted。候选保留 may，没有把相关提交提升成必然改变结果。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p10-c06",
+          "claim_text": "A Read Uncommitted SELECT can see earlier updates made by its own transaction before they commit.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL Read Uncommitted SELECT; earlier updates in its own transaction; uncommitted",
+          "answer_anchor": {
+            "quote": "A Read Uncommitted SELECT can also see earlier updates made by its own transaction before they commit.",
+            "start": 362,
+            "end": 464,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "PostgreSQL's\n    Read Uncommitted mode behaves like Read Committed.",
+                  "start": 4860,
+                  "end": 4927,
+                  "role": "mode_mapping"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "<title>Read Committed Isolation Level</title>",
+                  "start": 38,
+                  "end": 83,
+                  "role": "mapped_rule_scope"
+                },
+                {
+                  "citation_id": "q3",
+                  "passage_index": 1,
+                  "quote": "<command>SELECT</command> does see the effects\n    of previous updates executed within its own transaction, even\n    though they are not yet committed.",
+                  "start": 870,
+                  "end": 1021,
+                  "role": "own_updates_visible"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q2",
+                  "to": "q3",
+                  "relation": "Read Committed section owns the own-update visibility rule",
+                  "necessity": "q3 的查询性质必须绑定到 RC。"
+                },
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2",
+                    "q3"
+                  ],
+                  "relation": "RU=RC transfers this own-transaction visibility behavior",
+                  "necessity": "q1 是转用于 RU 的必要连接，不能只引用 RC 的事实。"
+                }
+              ],
+              "minimality_rationale": "三个片段完成模式映射及具体可见性，不能删掉映射或主体段标题。"
+            }
+          ],
+          "rationale": "RC 的 SELECT 能看到自己事务先前未提交更新；由 RU=RC 映射可完整推出候选。这里的 own updates 与其他事务未提交的脏读不是同一条件。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p10-c07",
+          "claim_text": "A Repeatable Read query uses a snapshot from the first non-transaction-control statement of its transaction.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL Repeatable Read; snapshot boundary",
+          "answer_anchor": {
+            "quote": "A Repeatable Read query instead uses a snapshot from the first non-transaction-control statement of its transaction.",
+            "start": 466,
+            "end": 582,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "a query in a\n    repeatable read transaction sees a snapshot as of the start of the\n    first non-transaction-control statement in the\n    <emphasis>transaction</emphasis>",
+                  "start": 1202,
+                  "end": 1373,
+                  "role": "RR_snapshot_first_noncontrol"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "以精确边界句为据，不以泛称 transaction began 替代。"
+            }
+          ],
+          "rationale": "RR 查询的快照起点明确是事务内第一条非事务控制语句的开始，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p10-c08",
+          "claim_text": "Read-only Repeatable Read transactions never have serialization conflicts.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL read-only Repeatable Read; serialization conflicts",
+          "answer_anchor": {
+            "quote": "Read-only Repeatable Read transactions never have serialization conflicts.",
+            "start": 583,
+            "end": 657,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "<title>Repeatable Read Isolation Level</title>",
+                  "start": 39,
+                  "end": 85,
+                  "role": "RR_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "read-only\n    transactions will never have serialization conflicts.",
+                  "start": 3600,
+                  "end": 3667,
+                  "role": "readonly_no_conflicts"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "RR 段标题确定所讨论的隔离级别；never-conflicts 规则的主体限定 read-only。"
+                }
+              ],
+              "minimality_rationale": "隔离级别和只读无冲突规则均保留，避免泛化到 Serializable 或更新事务。"
+            }
+          ],
+          "rationale": "该 RR 段明确说只读事务永无 serialization conflicts，完整支持；没有用稍后读视图可能有序列化异常的事实制造冲突。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p10-c09",
+          "claim_text": "A stable Repeatable Read view need not correspond to a serial execution of concurrent transactions.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL Repeatable Read; stable view; possible nonserializable view",
+          "answer_anchor": {
+            "quote": "A stable Repeatable Read view need not correspond to a serial execution of concurrent transactions.",
+            "start": 658,
+            "end": 757,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "The Repeatable Read mode provides a rigorous guarantee that each\n    transaction sees a completely stable view of the database.  However,\n    this view will not necessarily always be consistent with some serial\n    (one at a time) execution of concurrent transactions of the same level.",
+                  "start": 3694,
+                  "end": 3980,
+                  "role": "RR_stable_not_necessarily_serial"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "同一片段同时定义 stable view 的主体和不保证串行一致的结论。"
+            }
+          ],
+          "rationale": "文档明确指出稳定 RR 视图不必总对应同级并发事务的某种串行执行，完整支持 need not。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p10-c10",
+          "claim_text": "After a serialization failure caused by a concurrent update at Repeatable Read, the application should retry the whole transaction from its beginning.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL Repeatable Read; serialization error due to concurrent update; full transaction retry",
+          "answer_anchor": {
+            "quote": "After a serialization failure caused by a concurrent update at that level, the application should retry the whole transaction from its beginning.",
+            "start": 758,
+            "end": 903,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p10-level-pronoun"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "then the repeatable read transaction will be rolled back with the message\n\n<screen>\nERROR:  could not serialize access due to concurrent update\n</screen>",
+                  "start": 2769,
+                  "end": 2922,
+                  "role": "RR_concurrent_update_error"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "When an application receives this error message, it should abort\n    the current transaction and retry the whole transaction from\n    the beginning.",
+                  "start": 3098,
+                  "end": 3246,
+                  "role": "whole_transaction_retry"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 将并发更新序列化错误绑定到 RR；q2 的 this error message 指回 q1 并给出恢复范围。"
+                }
+              ],
+              "minimality_rationale": "错误身份和 this error 的重试规则均必要；其余并发等待细节不属于候选。"
+            }
+          ],
+          "rationale": "同一 RR 并发更新错误的恢复规则是中止当前事务并从头重试整个事务，而非只重试失败语句。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c09"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u10",
+            "candidate_claim_ids": [
+              "v2-dev-p10-c10"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [],
+        "anchor_findings": [
+          {
+            "issue_id": "p10-level-pronoun",
+            "claim_ids": [
+              "v2-dev-p10-c10"
+            ],
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "that level 的先行词是同段 Repeatable Read；候选补明级别正确。",
+            "exact_offsets_valid": true
+          }
+        ],
+        "ambiguities": [
+          {
+            "issue_id": "p10-conflict-versus-anomaly",
+            "claim_ids": [
+              "v2-dev-p10-c08",
+              "v2-dev-p10-c09"
+            ],
+            "kind": "resolved_concept_boundary",
+            "requires_adjudication": false,
+            "finding": "read-only RR 无 serialization conflicts 与其稳定视图未必对应串行执行，分别讨论冲突与视图可串行性；源材料同时明确二者，不是同范围语义冲突。"
+          },
+          {
+            "issue_id": "p10-mode-transfer",
+            "claim_ids": [
+              "v2-dev-p10-c05",
+              "v2-dev-p10-c06"
+            ],
+            "kind": "required_cross_passage_link",
+            "requires_adjudication": false,
+            "finding": "给 RU 赋予 RC 的两个 SELECT 性质必须保留 RU=RC 映射及 RC 段落身份。每条引文集均保留三个必要片段。"
+          }
+        ],
+        "recommendations": [
+          "复核 c05/c06 的证据集必须包含模式映射，不能只引 RC 的 SELECT 规则。",
+          "保留 c07 第一条非事务控制语句的精确快照边界；不要用笼统的事务开始替代。",
+          "c10 的错误身份与恢复范围须连接，重试对象是整个事务。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p11",
+        "units": [
+          {
+            "id": "u01",
+            "text": "pg_dump captures a consistent snapshot from when it began running.",
+            "scope": "pg_dump; snapshot time"
+          },
+          {
+            "id": "u02",
+            "text": "pg_dump permits other database operations except ones requiring an exclusive lock.",
+            "scope": "pg_dump; concurrent database operations"
+          },
+          {
+            "id": "u03",
+            "text": "pg_dump output can generally be reloaded into newer PostgreSQL versions.",
+            "scope": "pg_dump output; forward major-version restore"
+          },
+          {
+            "id": "u04",
+            "text": "For a text dump restored with psql the target database must already exist.",
+            "scope": "psql; text dump; precreated target database"
+          },
+          {
+            "id": "u05",
+            "text": "psql continues after an SQL error by default.",
+            "scope": "psql; default error handling"
+          },
+          {
+            "id": "u06",
+            "text": "ON_ERROR_STOP makes psql exit with status 3 on an SQL error.",
+            "scope": "psql; ON_ERROR_STOP; exit status"
+          },
+          {
+            "id": "u07",
+            "text": "A single-transaction restore fully completes or is fully rolled back.",
+            "scope": "psql restore; single transaction"
+          },
+          {
+            "id": "u08",
+            "text": "pg_dump omits cluster-wide role definitions.",
+            "scope": "pg_dump; cluster-wide roles"
+          },
+          {
+            "id": "u09",
+            "text": "pg_dumpall preserves cluster-wide role definitions.",
+            "scope": "pg_dumpall; cluster-wide roles"
+          },
+          {
+            "id": "u10",
+            "text": "Different database snapshots in one pg_dumpall output are not synchronized.",
+            "scope": "pg_dumpall; cross-database snapshots"
+          },
+          {
+            "id": "u11",
+            "text": "Custom-format dumps must be restored with pg_restore.",
+            "scope": "custom dump format; restore tool"
+          },
+          {
+            "id": "u12",
+            "text": "Parallel dumping is supported only for directory archives.",
+            "scope": "pg_dump parallel; directory archive restriction"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p11-c01",
+          "claim_text": "pg_dump captures a consistent database snapshot as of when it began running.",
+          "verdict": "S",
+          "scope_interpretation": "pg_dump; internally consistent snapshot; start of run",
+          "answer_anchor": {
+            "quote": "pg_dump captures a consistent database snapshot as of when it began running.",
+            "start": 0,
+            "end": 76,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "Dumps created by <application>pg_dump</application> are internally consistent,\n   meaning, the dump represents a snapshot of the database at the time\n   <application>pg_dump</application> began running.",
+                  "start": 3536,
+                  "end": 3738,
+                  "role": "pgdump_consistent_start_snapshot"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留一致性及开始时点两个关联维度。"
+            }
+          ],
+          "rationale": "pg_dump 的一致快照对应开始运行时点，原文直接说明。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c02",
+          "claim_text": "pg_dump permits other database operations while working, apart from operations requiring an exclusive lock.",
+          "verdict": "S",
+          "scope_interpretation": "pg_dump concurrent operations; exclusive-lock exception",
+          "answer_anchor": {
+            "quote": "It permits other database operations while working, apart from operations requiring an exclusive lock.",
+            "start": 77,
+            "end": 179,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p11-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "<application>pg_dump</application> does not\n   block other operations on the database while it is working.\n   (Exceptions are those operations that need to operate with an\n   exclusive lock",
+                  "start": 3739,
+                  "end": 3928,
+                  "role": "pgdump_concurrency_exception"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "不截去例外而夸大并行能力；不需要 ALTER TABLE 的具体示例。"
+            }
+          ],
+          "rationale": "运行时不阻止其他操作，但需排除独占锁操作；候选明确保留例外，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c03",
+          "claim_text": "pg_dump output can generally be reloaded into newer PostgreSQL versions.",
+          "verdict": "S",
+          "scope_interpretation": "pg_dump output; generally reloadable into newer PostgreSQL",
+          "answer_anchor": {
+            "quote": "Its output can generally be reloaded into newer PostgreSQL versions.",
+            "start": 180,
+            "end": 248,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p11-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "<application>pg_dump</application>'s output can\n   generally be re-loaded into newer versions of <productname>PostgreSQL</productname>",
+                  "start": 3080,
+                  "end": 3214,
+                  "role": "newer_version_reload"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "主体、方向及限定词均在同一片段。"
+            }
+          ],
+          "rationale": "候选与原文一样保留 generally，并未宣称任意版本全部必然兼容。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c04",
+          "claim_text": "For a text dump restored with psql, the target database must already have been created.",
+          "verdict": "S",
+          "scope_interpretation": "text pg_dump file restored with psql; target database exists before invocation",
+          "answer_anchor": {
+            "quote": "For a text dump restored with psql, the target database must already have been created.",
+            "start": 250,
+            "end": 337,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "Text files created by <application>pg_dump</application> are intended to\n    be read in by the <application>psql</application> program.",
+                  "start": 87,
+                  "end": 222,
+                  "role": "text_restore_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "The database <replaceable\n    class=\"parameter\">dbname</replaceable> will not be created by this\n    command, so you must create it yourself from <literal>template0</literal>\n    before executing <application>psql</application>",
+                  "start": 550,
+                  "end": 777,
+                  "role": "precreated_target_database"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 绑定 text dump/psql 场景，q2 指该命令不会创建目标数据库而要求事先创建。"
+                }
+              ],
+              "minimality_rationale": "保留 text/psql 条件和先创建结论；不推广到所有备份格式或工具。"
+            }
+          ],
+          "rationale": "在该文本 psql 恢复场景，目标数据库必须先行创建，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c05",
+          "claim_text": "By default psql continues after an SQL error.",
+          "verdict": "S",
+          "scope_interpretation": "psql script; default SQL-error handling",
+          "answer_anchor": {
+            "quote": "By default psql continues after an SQL error",
+            "start": 338,
+            "end": 382,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "By default, the <application>psql</application> script will continue to\n    execute after an SQL error is encountered.",
+                  "start": 1618,
+                  "end": 1736,
+                  "role": "psql_default_continue"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "不附带 ON_ERROR_STOP 选项。"
+            }
+          ],
+          "rationale": "默认 SQL 错误后继续执行由原文直接支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c06",
+          "claim_text": "Setting ON_ERROR_STOP makes psql exit with status 3 on an SQL error.",
+          "verdict": "S",
+          "scope_interpretation": "psql; ON_ERROR_STOP set; SQL error; exit status 3",
+          "answer_anchor": {
+            "quote": "setting ON_ERROR_STOP makes it exit with status 3 on that error.",
+            "start": 384,
+            "end": 448,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p11-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "<application>psql</application> with\n    the <literal>ON_ERROR_STOP</literal> variable set to alter that\n    behavior and have <application>psql</application> exit with an\n    exit status of 3 if an SQL error occurs",
+                  "start": 1763,
+                  "end": 1978,
+                  "role": "ON_ERROR_STOP_status3"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留选项被设置、错误条件与退出码；不靠命令示例单独推断。"
+            }
+          ],
+          "rationale": "设置 ON_ERROR_STOP 后 SQL 错误导致 psql 以 3 退出，条件和状态码均明确。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c07",
+          "claim_text": "A single-transaction psql restore is either completed fully or rolled back fully.",
+          "verdict": "S",
+          "scope_interpretation": "psql restore; single transaction; all or rollback",
+          "answer_anchor": {
+            "quote": "A single-transaction restore is either completed fully or rolled back fully.",
+            "start": 449,
+            "end": 525,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p11-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "the whole dump should be\n    restored as a single transaction, so the restore is either fully\n    completed or fully rolled back.",
+                  "start": 2224,
+                  "end": 2353,
+                  "role": "single_transaction_atomicity"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "This mode can be specified by\n    passing the <option>-1</option> or <option>--single-transaction</option>\n    command-line options to <application>psql</application>.",
+                  "start": 2354,
+                  "end": 2521,
+                  "role": "psql_mode_binding"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 给出单事务恢复的全成全退结果，q2 把该 mode 绑定到候选补明的 psql。"
+                }
+              ],
+              "minimality_rationale": "结果与工具身份各有必要；不附带运行时长警示。"
+            }
+          ],
+          "rationale": "单事务 psql 恢复可以全量完成或全量回滚，完整支持；没有宣称默认就启用该模式。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c08",
+          "claim_text": "pg_dump omits cluster-wide role definitions.",
+          "verdict": "S",
+          "scope_interpretation": "pg_dump; cluster-wide role definitions",
+          "answer_anchor": {
+            "quote": "pg_dump omits cluster-wide role definitions",
+            "start": 527,
+            "end": 570,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "<application>pg_dump</application> dumps only a single database at a time,\n    and it does not dump information about roles or tablespaces\n    (because those are cluster-wide rather than per-database).",
+                  "start": 108,
+                  "end": 309,
+                  "role": "pgdump_no_roles"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "角色信息省略与 cluster-wide 原因在同一短句中。"
+            }
+          ],
+          "rationale": "pg_dump 不转储 cluster-wide roles，原文直接支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c09",
+          "claim_text": "pg_dumpall preserves cluster-wide role definitions.",
+          "verdict": "S",
+          "scope_interpretation": "pg_dumpall; cluster-wide role definitions",
+          "answer_anchor": {
+            "quote": "pg_dumpall preserves them.",
+            "start": 580,
+            "end": 606,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p11-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "<application>pg_dumpall</application> backs up each database in a given\n    cluster, and also preserves cluster-wide data such as role and\n    tablespace definitions.",
+                  "start": 456,
+                  "end": 622,
+                  "role": "pgdumpall_preserves_roles"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "无需 pg_dumpall 恢复权限的其他条件。"
+            }
+          ],
+          "rationale": "pg_dumpall 还保存角色定义等 cluster-wide 数据，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c10",
+          "claim_text": "The snapshots of different databases in one pg_dumpall output are not synchronized.",
+          "verdict": "S",
+          "scope_interpretation": "one pg_dumpall output; per-database snapshots not synchronized",
+          "answer_anchor": {
+            "quote": "The snapshots of different databases in one pg_dumpall output are not synchronized.",
+            "start": 607,
+            "end": 690,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "<application>pg_dumpall</application> works by emitting commands to re-create\n    roles, tablespaces, and empty databases, then invoking\n    <application>pg_dump</application> for each database.  This means that while\n    each database will be internally consistent, the snapshots of\n    different databases are not synchronized.",
+                  "start": 1432,
+                  "end": 1761,
+                  "role": "pgdumpall_cross_database_snapshots"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "同一片段绑定 pg_dumpall、逐数据库过程和不同时快照结论，避免把单库内部一致误当跨库一致。"
+            }
+          ],
+          "rationale": "pg_dumpall 对每个数据库调用 pg_dump，因此各库内部一致，但不同库快照不同时；候选完整保留跨数据库范围。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c11",
+          "claim_text": "A custom-format dump must be restored with pg_restore.",
+          "verdict": "S",
+          "scope_interpretation": "custom-format dump; pg_restore",
+          "answer_anchor": {
+            "quote": "A custom-format dump must be restored with pg_restore.",
+            "start": 691,
+            "end": 745,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "A custom-format dump is not a script for <application>psql</application>, but\n     instead must be restored with <application>pg_restore</application>",
+                  "start": 2880,
+                  "end": 3030,
+                  "role": "custom_requires_pgrestore"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "无需压缩库条件；它只影响前面压缩说明，不是该恢复工具结论的条件。"
+            }
+          ],
+          "rationale": "custom 格式必须用 pg_restore 恢复是直接结论。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p11-c12",
+          "claim_text": "Parallel dumping is supported only for directory archives.",
+          "verdict": "S",
+          "scope_interpretation": "pg_dump parallel dumping; directory archives only",
+          "answer_anchor": {
+            "quote": "Parallel dumping is supported only for directory archives.",
+            "start": 746,
+            "end": 804,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "<application>pg_dump</application>'s parallel mode.",
+                  "start": 3663,
+                  "end": 3714,
+                  "role": "dump_tool_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "Parallel dumps\n     are only supported for the \"directory\" archive format.",
+                  "start": 3858,
+                  "end": 3932,
+                  "role": "directory_only_parallel_dump"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 固定 pg_dump 的导出并行模式，q2 给出目录格式的 only 限制。"
+                }
+              ],
+              "minimality_rationale": "保留导出工具/模式身份与 only 限制，避免引用恢复模式替代导出模式。"
+            }
+          ],
+          "rationale": "并行导出仅支持 directory 格式，直接支持。后文 pg_restore 可并行恢复 custom/directory 是不同操作，不构成矛盾。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c09"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u10",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c10"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u11",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c11"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u12",
+            "candidate_claim_ids": [
+              "v2-dev-p11-c12"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [],
+        "anchor_findings": [
+          {
+            "issue_id": "p11-contextual-anchors",
+            "claim_ids": [
+              "v2-dev-p11-c02",
+              "v2-dev-p11-c03",
+              "v2-dev-p11-c06",
+              "v2-dev-p11-c07",
+              "v2-dev-p11-c09"
+            ],
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "It/Its 对应 pg_dump，ON_ERROR_STOP 的 it 与 that error 对应 psql/SQL error，them 对应 cluster-wide roles；单事务恢复的 psql 场景由上一句固定。候选显化均正确。",
+            "exact_offsets_valid": true
+          }
+        ],
+        "ambiguities": [
+          {
+            "issue_id": "p11-parallel-dump-versus-restore",
+            "claim_ids": [
+              "v2-dev-p11-c11",
+              "v2-dev-p11-c12"
+            ],
+            "kind": "resolved_operation_scope",
+            "requires_adjudication": false,
+            "finding": "pg_dump 并行导出只支持 directory；pg_restore 并行恢复可以支持 custom/directory。操作不同，不将其当同范围冲突。"
+          },
+          {
+            "issue_id": "p11-snapshot-boundary",
+            "claim_ids": [
+              "v2-dev-p11-c01",
+              "v2-dev-p11-c10"
+            ],
+            "kind": "resolved_database_scope",
+            "requires_adjudication": false,
+            "finding": "单个数据库 dump 内部一致与 pg_dumpall 多库快照不同时均可成立，不能把前者扩展为全 cluster 同步快照。"
+          }
+        ],
+        "recommendations": [
+          "保留 generally 的新版本恢复限定，以及独占锁操作的并发例外。",
+          "c04 的先创建数据库限定于 text/psql 场景；c07 单事务模式不是默认保证。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p12",
+        "units": [
+          {
+            "id": "u01",
+            "text": "An object's owner is normally its creating role.",
+            "scope": "PostgreSQL; ordinary object ownership"
+          },
+          {
+            "id": "u02",
+            "text": "Granting a privilege to PUBLIC grants it to every role.",
+            "scope": "PostgreSQL; PUBLIC"
+          },
+          {
+            "id": "u03",
+            "text": "Referencing existing column values in UPDATE requires SELECT privilege.",
+            "scope": "PostgreSQL; UPDATE reading existing values"
+          },
+          {
+            "id": "u04",
+            "text": "An owner may revoke their own ordinary privileges.",
+            "scope": "PostgreSQL; owner; ordinary privileges"
+          },
+          {
+            "id": "u05",
+            "text": "An owner can always grant ordinary privileges back because ownership retains grant options.",
+            "scope": "PostgreSQL; ownership grant options"
+          },
+          {
+            "id": "u06",
+            "text": "A blank Access privileges column means built-in default privileges.",
+            "scope": "PostgreSQL; psql privilege display; blank"
+          },
+          {
+            "id": "u07",
+            "text": "An explicit (none) means no ordinary privileges even for the owner.",
+            "scope": "PostgreSQL; psql privilege display; (none)"
+          },
+          {
+            "id": "u08",
+            "text": "Functions receive PUBLIC EXECUTE by default.",
+            "scope": "PostgreSQL; function default grants"
+          },
+          {
+            "id": "u09",
+            "text": "Procedures receive PUBLIC EXECUTE by default.",
+            "scope": "PostgreSQL; procedure default grants"
+          },
+          {
+            "id": "u10",
+            "text": "In calvin=r*w/hobbes, calvin has SELECT with grant option from hobbes.",
+            "scope": "PostgreSQL; ACL example; r* from hobbes"
+          },
+          {
+            "id": "u11",
+            "text": "PostgreSQL retains privilege-change audit records for seven years.",
+            "scope": "PostgreSQL; audit retention; seven years"
+          },
+          {
+            "id": "u12",
+            "text": "Changing a role's privileges sends it an email notification.",
+            "scope": "PostgreSQL; privilege changes; email"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p12-c01",
+          "claim_text": "An object’s owner is normally the role that created it.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL object owner; normal creator role",
+          "answer_anchor": {
+            "quote": "An object’s owner is normally the role that created it.",
+            "start": 0,
+            "end": 55,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "When an object is created, it is assigned an owner. The\n   owner is normally the role that executed the creation statement.",
+                  "start": 644,
+                  "end": 767,
+                  "role": "creator_normally_owner"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "不提升为不可更改或所有情况下绝对成立。"
+            }
+          ],
+          "rationale": "对象 owner 通常是执行创建语句的角色；normally 被准确保留。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c02",
+          "claim_text": "Granting a privilege to PUBLIC grants it to every role.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL privilege grants to PUBLIC; every role",
+          "answer_anchor": {
+            "quote": "Granting a privilege to PUBLIC grants it to every role.",
+            "start": 56,
+            "end": 111,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "The special <quote>role</quote> name <literal>PUBLIC</literal> can\n   be used to grant a privilege to every role on the system.",
+                  "start": 3066,
+                  "end": 3193,
+                  "role": "PUBLIC_every_role"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "单句包含 PUBLIC 与每角色关系。"
+            }
+          ],
+          "rationale": "PUBLIC 可向系统每个角色授予权限，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c03",
+          "claim_text": "Referencing existing column values in UPDATE requires SELECT privilege.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL UPDATE; existing column values; SELECT privilege",
+          "answer_anchor": {
+            "quote": "Referencing existing column values in UPDATE requires SELECT privilege.",
+            "start": 112,
+            "end": 183,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "<term><literal>SELECT</literal></term>",
+                  "start": 45,
+                  "end": 83,
+                  "role": "privilege_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "This privilege is also needed to reference existing column values in\n       <command>UPDATE</command>",
+                  "start": 333,
+                  "end": 434,
+                  "role": "UPDATE_existing_values_requirement"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 将 This privilege 固定为 SELECT；q2 给出读取 UPDATE 中现有列值的必要性。"
+                }
+              ],
+              "minimality_rationale": "权限名称与必要条件均保留，省去 DELETE/MERGE 的并列条件。"
+            }
+          ],
+          "rationale": "引用 UPDATE 中已有列值必须有 SELECT 权限，明确得到支持；不说所有不读取列值的 UPDATE 也必然需要 SELECT。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c04",
+          "claim_text": "An owner may revoke their own ordinary privileges.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL owner; revoking own ordinary privileges",
+          "answer_anchor": {
+            "quote": "An owner may revoke their own ordinary privileges",
+            "start": 185,
+            "end": 234,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "An object's owner can choose to revoke their own ordinary privileges",
+                  "start": 4149,
+                  "end": 4217,
+                  "role": "owner_can_revoke"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留 ordinary 范围。"
+            }
+          ],
+          "rationale": "owner 可以撤销自己的普通权限，原文直接支持；不等于可剥夺 inherent ownership 权利。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c05",
+          "claim_text": "An owner can always grant their ordinary privileges back because ownership retains grant options.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL owner; implicit grant options; re-grant own ordinary privileges",
+          "answer_anchor": {
+            "quote": "can always grant them back because ownership retains grant options.",
+            "start": 240,
+            "end": 307,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p12-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 0,
+                  "quote": "owners are always treated as holding all grant options, so they\n   can always re-grant their own privileges.",
+                  "start": 4301,
+                  "end": 4409,
+                  "role": "owner_grant_options_regrant"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "同一片段完整保留原因与结果。"
+            }
+          ],
+          "rationale": "owner 始终被视为持有 grant options，因而始终能重新授予自己的权限，因果关系被明确说明。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c06",
+          "claim_text": "A blank Access privileges column means built-in default privileges.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL Access privileges display; blank; built-in default",
+          "answer_anchor": {
+            "quote": "A blank Access privileges column means built-in default privileges",
+            "start": 308,
+            "end": 374,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "If the <quote>Access privileges</quote> column is empty for a given\n   object, it means the object has default privileges",
+                  "start": 2366,
+                  "end": 2487,
+                  "role": "blank_means_default"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "(Note: for this purpose, <quote>default privileges</quote> always means\n   the built-in default privileges for the object's type.",
+                  "start": 3111,
+                  "end": 3240,
+                  "role": "default_means_builtin"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 先将空栏映射为 default，q2 的 for this purpose 将该 default 限定为内置默认；两个定义链接均必要。"
+                }
+              ],
+              "minimality_rationale": "不能只留空栏/default 句而丢掉 built-in 的定义连接。"
+            }
+          ],
+          "rationale": "空栏代表 default privileges，且同段明确这里 default 指内置默认，所以完整支持 built-in；不混入 ALTER DEFAULT PRIVILEGES 的显式条目。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c07",
+          "claim_text": "An explicit (none) in Access privileges means no ordinary privileges are granted even to the owner.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL Access privileges display; explicit (none); no ordinary privileges even owner",
+          "answer_anchor": {
+            "quote": "an explicit (none) means no ordinary privileges are granted even to the owner.",
+            "start": 376,
+            "end": 454,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p12-contextual-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "The <quote>Access privileges</quote> column\n   shows <literal>(none)</literal> when the object's privileges entry is\n   non-null but empty.  This means that no privileges are granted at all,\n   even to the object's owner",
+                  "start": 3721,
+                  "end": 3941,
+                  "role": "none_no_ordinary_privileges"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "保留显示值、空 ACL 和 owner 都无普通权限的连接。"
+            }
+          ],
+          "rationale": "显式 (none) 对应非 null 但空的 ACL，连 owner 都没有普通授予权限；相邻说明仍保留 owner 的隐含 grant options，与候选 ordinary 限定相容。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c08",
+          "claim_text": "Functions and procedures receive PUBLIC EXECUTE by default.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL default PUBLIC grants; functions and procedures; EXECUTE",
+          "answer_anchor": {
+            "quote": "Functions and procedures receive PUBLIC EXECUTE by default.",
+            "start": 455,
+            "end": 514,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "For other types of objects, the default privileges\n   granted to <literal>PUBLIC</literal> are as follows:",
+                  "start": 403,
+                  "end": 509,
+                  "role": "default_PUBLIC_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "<literal>EXECUTE</literal> privilege for functions and procedures",
+                  "start": 631,
+                  "end": 696,
+                  "role": "routine_EXECUTE_default"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "q1 确定列表讨论默认给 PUBLIC 的权限，q2 给出函数/过程的 EXECUTE 条目。"
+                }
+              ],
+              "minimality_rationale": "受益者/default 与列表具体条目均必要；不附加其他对象的默认权限。"
+            }
+          ],
+          "rationale": "函数和过程都在默认 PUBLIC EXECUTE 条目中，两个对象类型均完整支持；默认值仍可依文档被修改。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c09",
+          "claim_text": "In the ACL example calvin=r*w/hobbes, calvin has SELECT with grant option from hobbes.",
+          "verdict": "S",
+          "scope_interpretation": "PostgreSQL ACL example calvin=r*w/hobbes; SELECT with grant option; grantor hobbes",
+          "answer_anchor": {
+            "quote": "In the ACL example calvin=r*w/hobbes, calvin has SELECT with grant option from hobbes.",
+            "start": 516,
+            "end": 602,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "<literal>calvin=r*w/hobbes</literal> specifies that the role\n   <literal>calvin</literal> has the privilege\n   <literal>SELECT</literal> (<literal>r</literal>) with grant option\n   (<literal>*</literal>)",
+                  "start": 804,
+                  "end": 1007,
+                  "role": "ACL_SELECT_grant_option"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "both granted\n   by the role <literal>hobbes</literal>.",
+                  "start": 1100,
+                  "end": 1154,
+                  "role": "ACL_grantor"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": [
+                    "q2"
+                  ],
+                  "relation": "necessary identity, scope, or referent connection",
+                  "necessity": "同一例句中 both granted 的两个权限包含前面的 SELECT；q1 固定 grantee 与 r*，q2 补齐 grantor hobbes。省去的 UPDATE 不改变该 SELECT 的授予来源。"
+                }
+              ],
+              "minimality_rationale": "只引用 SELECT/grant option 与 grantor 两部分；不用整个 ACL 表或额外 UPDATE 内容作证据。"
+            }
+          ],
+          "rationale": "例子明确把 calvin 的 r* 解释为 SELECT with grant option，且 SELECT 与 UPDATE 都由 hobbes 授予，完整支持所问 SELECT 事实。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c10",
+          "claim_text": "PostgreSQL retains privilege-change audit records for seven years.",
+          "verdict": "U",
+          "scope_interpretation": "PostgreSQL privilege-change audit-record retention; seven years",
+          "answer_anchor": {
+            "quote": "PostgreSQL retains privilege-change audit records for seven years.",
+            "start": 603,
+            "end": 669,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [],
+          "rationale": "材料说明权限规则、默认值及 ACL 显示，没有审计记录保留机制或七年期限，也没有直接相反保留期限。判 U。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p12-c11",
+          "claim_text": "Changing a role’s privileges sends that role an email notification.",
+          "verdict": "U",
+          "scope_interpretation": "PostgreSQL role privilege changes; email notification",
+          "answer_anchor": {
+            "quote": "Changing a role’s privileges sends that role an email notification.",
+            "start": 670,
+            "end": 737,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [],
+          "rationale": "材料没有权限变化会发送邮件的规定，也未明确禁止或否定此类通知。不能借外部产品经验判断，判 U。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c08"
+            ],
+            "coverage": "full_candidate_text_functions_component"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c08"
+            ],
+            "coverage": "full_candidate_text_procedures_component"
+          },
+          {
+            "answer_unit_id": "u10",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c09"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u11",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c10"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u12",
+            "candidate_claim_ids": [
+              "v2-dev-p12-c11"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [
+          {
+            "issue_id": "p12-routine-types-atomicity",
+            "claim_ids": [
+              "v2-dev-p12-c08"
+            ],
+            "severity": "recommendation",
+            "finding": "functions 和 procedures 是两个可分别核实的对象类型，当前均受同一条默认 PUBLIC EXECUTE 规则支持，无事实遗漏。严格逐对象原子合同下可拆分，允许并列对象共享谓词时可保留。",
+            "suggested_claims": [
+              {
+                "claim_text": "Functions receive PUBLIC EXECUTE by default.",
+                "verdict": "S"
+              },
+              {
+                "claim_text": "Procedures receive PUBLIC EXECUTE by default.",
+                "verdict": "S"
+              }
+            ]
+          }
+        ],
+        "anchor_findings": [
+          {
+            "issue_id": "p12-contextual-anchors",
+            "claim_ids": [
+              "v2-dev-p12-c05",
+              "v2-dev-p12-c07"
+            ],
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "grant them back 的主语和宾语是前句 owner/ordinary privileges；(none) 对应同句 Access privileges 栏。候选恢复正确。",
+            "exact_offsets_valid": true
+          }
+        ],
+        "ambiguities": [
+          {
+            "issue_id": "p12-blank-versus-none",
+            "claim_ids": [
+              "v2-dev-p12-c05",
+              "v2-dev-p12-c06",
+              "v2-dev-p12-c07"
+            ],
+            "kind": "resolved_privilege_scope",
+            "requires_adjudication": false,
+            "finding": "空栏是内置默认权限；显式 (none) 是空 ACL、无普通权限。owner 隐含 grant options 仍存在，因此普通权限为零与可重新授予并不冲突。"
+          },
+          {
+            "issue_id": "p12-no-audit-notification-evidence",
+            "claim_ids": [
+              "v2-dev-p12-c10",
+              "v2-dev-p12-c11"
+            ],
+            "kind": "resolved_U_boundary",
+            "requires_adjudication": false,
+            "finding": "源材料没有七年审计保留或邮件通知机制，也无相反机制规定；两条均 U。"
+          }
+        ],
+        "recommendations": [
+          "c06 需同时保留 default 的空栏规则和 built-in 的定义连接。",
+          "c08 的 default 不能提升为用户不能修改的固定权限；保留 funcs/procedures 两类覆盖。",
+          "c09 的 calvin r* 与 hobbes grantor 均须有证据，不将额外的 UPDATE 例子误计为回答遗漏。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    }
+  ],
+  "validation": {
+    "semantic_review": "同一非作者 LLM 逐条阅读源材料后判断；不冒称人工复核。",
+    "mechanical_review_planned": "落盘后以独立程序核对输入哈希、全部候选与 anchor、精确引文/偏移、U 无引文、证据链接、原子覆盖映射及 first4 锁定文件未变。",
+    "important_runtime_logging": "不适用：仅写审查附件，未改产品运行路径。"
+  },
+  "lock": {
+    "policy": "本阶段一文件固定，后续 gold 比较写其他附件，不改写独立判断。",
+    "sha256_sidecar": "remaining8-independent.json.sha256"
+  }
+}

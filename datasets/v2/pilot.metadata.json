@@ -1,0 +1,1373 @@
+{
+  "format_version": 1,
+  "dataset_file": "pilot.jsonl",
+  "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+  "cases": [
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "source_id": "cpython-tarfile",
+      "source_title": "CPython 3.13.0 library documentation: tarfile",
+      "origin": "controlled_mutation",
+      "drafted_at": "2026-10-16T15:44:49.291663+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": "With both extraction-filter settings left at None, tarfile falls back to the fully_trusted filter. The fully_trusted filter returns the member metadata unchanged. Choosing data also rejects a member whose resolved absolute path would escape the extraction destination.\n\nFor directories, data disables application of permission bits. At errorlevel=0, extraction continues after a filter refusal. If extractall is aborted, it does not attempt to clean up any partially extracted files.\n\nThe data filter does not prevent denial-of-service attacks. Availability of extraction filters should be checked with hasattr(tarfile, 'data_filter') rather than a Python-version comparison.",
+      "mutations": [
+        {
+          "type": "default_target_swap",
+          "before": "falls back to the fully_trusted filter",
+          "after": "falls back to the data filter",
+          "answer_start": 59,
+          "answer_end": 88,
+          "reason": "Moves an announced future default into the both-None fallback."
+        },
+        {
+          "type": "cleanup_negation_reversal",
+          "before": "it does not attempt to clean up any partially extracted files",
+          "after": "it automatically cleans up any partially extracted files",
+          "answer_start": 412,
+          "answer_end": 468,
+          "reason": "Reverses the explicit cleanup limitation."
+        },
+        {
+          "type": "guarantee_reversal",
+          "before": "does not prevent denial-of-service attacks",
+          "after": "prevents denial-of-service attacks",
+          "answer_start": 487,
+          "answer_end": 521,
+          "reason": "Reverses a security limitation, without changing the real context."
+        }
+      ],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": true,
+        "claim_ids": [
+          "v2-dev-p01-c03"
+        ],
+        "kind": "filter_rule_inheritance",
+        "explanation": "data inherits tar_filter restrictions across passages 3 and 2; both the inheritance and the outside-destination restriction are needed."
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p01-c01",
+          "new_claim_ids": [
+            "v2-dev-p01-c01"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p01-c02",
+          "new_claim_ids": [
+            "v2-dev-p01-c02"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p01-c03",
+          "new_claim_ids": [
+            "v2-dev-p01-c03"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p01-c04",
+          "new_claim_ids": [
+            "v2-dev-p01-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p01-c05",
+          "new_claim_ids": [
+            "v2-dev-p01-c05"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p01-c07",
+          "new_claim_ids": [
+            "v2-dev-p01-c07"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "source_id": "cpython-sqlite3",
+      "source_title": "CPython 3.13.0 library documentation: sqlite3",
+      "origin": "generated_from_real_source",
+      "drafted_at": "2026-10-16T15:44:49.292158+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "claim_ids": [
+          "v2-dev-p02-c04"
+        ],
+        "kind": "conditional_scope_reasoning",
+        "explanation": "The isolation_level parameter's LEGACY-only effect rule in passage 1 is already sufficient. The unchanged longer context is not a requirement to cite several passages."
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p02-c01",
+          "new_claim_ids": [
+            "v2-dev-p02-c01"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p02-c02",
+          "new_claim_ids": [
+            "v2-dev-p02-c02"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p02-c03",
+          "new_claim_ids": [
+            "v2-dev-p02-c03"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p02-c04",
+          "new_claim_ids": [
+            "v2-dev-p02-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets",
+            "rationale"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p02-c06",
+          "new_claim_ids": [
+            "v2-dev-p02-c06"
+          ],
+          "changed_fields": [
+            "claim_text",
+            "evidence_sets",
+            "rationale",
+            "answer_anchor"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p02-c07",
+          "new_claim_ids": [
+            "v2-dev-p02-c07"
+          ],
+          "changed_fields": [
+            "evidence_sets",
+            "answer_anchor"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p02-c08",
+          "new_claim_ids": [
+            "v2-dev-p02-c08"
+          ],
+          "changed_fields": [
+            "evidence_sets",
+            "answer_anchor"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p02-c09",
+          "new_claim_ids": [
+            "v2-dev-p02-c09"
+          ],
+          "changed_fields": [
+            "evidence_sets",
+            "answer_anchor"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "source_id": "cpython-pathlib",
+      "source_title": "CPython 3.13.0 library documentation: pathlib",
+      "origin": "controlled_mutation",
+      "drafted_at": "2026-10-16T15:44:49.292225+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": "Path.absolute() makes the path absolute without normalization or resolving symbolic links. Path.resolve() eliminates double-dot components. When resolve(strict=False) encounters a missing path, it appends the unresolved remainder without checking whether that remainder exists.\n\nSince Python 3.13, a symlink loop raises no exception in non-strict resolve mode. Path.lstat() reports the symbolic link itself rather than its target. Each Path.stat() call looks up a fresh result.\n\nPath.is_file() propagates permission errors. Passing follow_symlinks=False to Path.exists() checks the symlink itself.",
+      "mutations": [
+        {
+          "type": "method_behavior_reversal",
+          "before": "Path.absolute() makes the path absolute without normalization or resolving symbolic links.",
+          "after": "Path.absolute() normalizes the path and resolves symbolic links.",
+          "answer_start": 0,
+          "answer_end": 64,
+          "reason": "Transfers resolve behavior to absolute; two separately atomized errors."
+        },
+        {
+          "type": "version_scope_transfer",
+          "before": "Since Python 3.13, a symlink loop raises no exception in non-strict resolve mode.",
+          "after": "Since Python 3.13, a symlink loop still raises RuntimeError in non-strict resolve mode.",
+          "answer_start": 253,
+          "answer_end": 340,
+          "reason": "Transfers the explicitly historical RuntimeError behavior into the new non-strict branch."
+        },
+        {
+          "type": "error_behavior_reversal",
+          "before": "Path.is_file() propagates permission errors.",
+          "after": "Path.is_file() converts permission errors to False.",
+          "answer_start": 459,
+          "answer_end": 510,
+          "reason": "Changes a propagated error to the False result specified only for other cases."
+        }
+      ],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "kind": "within_passage_scope_or_relation_reasoning",
+        "claim_ids": []
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p03-c01",
+          "new_claim_ids": [
+            "v2-dev-p03-c01"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p03-c02",
+          "new_claim_ids": [
+            "v2-dev-p03-c02"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p03-c03",
+          "new_claim_ids": [
+            "v2-dev-p03-c03"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p03-c04",
+          "new_claim_ids": [
+            "v2-dev-p03-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p03-c05",
+          "new_claim_ids": [
+            "v2-dev-p03-c05"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p03-c07",
+          "new_claim_ids": [
+            "v2-dev-p03-c07"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p03-c08",
+          "new_claim_ids": [
+            "v2-dev-p03-c08"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p03-c09",
+          "new_claim_ids": [
+            "v2-dev-p03-c09"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "source_id": "cpython-decimal",
+      "source_title": "CPython 3.13.0 library documentation: decimal",
+      "origin": "generated_from_real_source",
+      "drafted_at": "2026-10-16T15:44:49.292298+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "kind": "within_passage_scope_or_relation_reasoning",
+        "claim_ids": []
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p04-c01",
+          "new_claim_ids": [
+            "v2-dev-p04-c01"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c02",
+          "new_claim_ids": [
+            "v2-dev-p04-c02"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c03",
+          "new_claim_ids": [
+            "v2-dev-p04-c03"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c04",
+          "new_claim_ids": [
+            "v2-dev-p04-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c05",
+          "new_claim_ids": [
+            "v2-dev-p04-c05"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c06",
+          "new_claim_ids": [
+            "v2-dev-p04-c06"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c07",
+          "new_claim_ids": [
+            "v2-dev-p04-c07"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c08",
+          "new_claim_ids": [
+            "v2-dev-p04-c08"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c09",
+          "new_claim_ids": [
+            "v2-dev-p04-c09"
+          ],
+          "changed_fields": [
+            "claim_text",
+            "evidence_sets",
+            "rationale",
+            "answer_anchor"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c10",
+          "new_claim_ids": [
+            "v2-dev-p04-c10a",
+            "v2-dev-p04-c10b"
+          ],
+          "changed_fields": [
+            "id",
+            "aliases",
+            "claim_text",
+            "verdict",
+            "evidence_sets",
+            "rationale",
+            "answer_anchor"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c11",
+          "new_claim_ids": [
+            "v2-dev-p04-c11"
+          ],
+          "changed_fields": [
+            "evidence_sets",
+            "answer_anchor"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p04-c12",
+          "new_claim_ids": [
+            "v2-dev-p04-c12"
+          ],
+          "changed_fields": [
+            "evidence_sets",
+            "answer_anchor"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "source_id": "cpython-queue",
+      "source_title": "CPython 3.13.0 library documentation: queue",
+      "origin": "generated_from_real_source",
+      "drafted_at": "2026-10-16T15:44:49.292357+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "claim_ids": [
+          "v2-dev-p05-c08"
+        ],
+        "kind": "conditional_scope_and_causal_reasoning",
+        "explanation": "The shutdown rule in passage 3 itself marks remaining queued items done and may unblock join; a normal join-count passage is useful context but not required proof."
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p05-c01",
+          "new_claim_ids": [
+            "v2-dev-p05-c01"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p05-c02",
+          "new_claim_ids": [
+            "v2-dev-p05-c02"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p05-c03",
+          "new_claim_ids": [
+            "v2-dev-p05-c03"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p05-c04",
+          "new_claim_ids": [
+            "v2-dev-p05-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p05-c05",
+          "new_claim_ids": [
+            "v2-dev-p05-c05"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p05-c06",
+          "new_claim_ids": [
+            "v2-dev-p05-c06"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p05-c07",
+          "new_claim_ids": [
+            "v2-dev-p05-c07"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p05-c08",
+          "new_claim_ids": [
+            "v2-dev-p05-c08"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p05-c09",
+          "new_claim_ids": [
+            "v2-dev-p05-c09"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "source_id": "cpython-metadata",
+      "source_title": "CPython 3.13.0 library documentation: importlib.metadata",
+      "origin": "controlled_mutation",
+      "drafted_at": "2026-10-16T15:44:49.292419+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": "importlib.metadata.entry_points() returns an EntryPoints collection. EntryPoints.select() filters entry points by their properties, and keyword arguments passed to entry_points() are forwarded to select(). EntryPoint.load() resolves the entry-point value.\n\nThe metadata() interface returns distribution metadata values without parsing them. PackageMetadata.json exposes metadata in JSON-compatible form. A PackagePath returned by files() has size and hash properties drawn from metadata. If the file-listing metadata is missing, files() returns None.\n\n ",
+      "mutations": [
+        {
+          "type": "unsupported_addition",
+          "before": "",
+          "after": "Before returning, files() verifies each installed file’s contents against its recorded hash.",
+          "answer_start": 552,
+          "answer_end": 644,
+          "reason": "Adds an unmentioned integrity-checking guarantee to a metadata listing API."
+        },
+        {
+          "type": "unsupported_addition",
+          "before": "",
+          "after": "EntryPoint.load() caches its resolved object for fifteen minutes.",
+          "answer_start": 645,
+          "answer_end": 710,
+          "reason": "Adds an unmentioned caching policy and duration."
+        }
+      ],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "kind": "within_passage_scope_or_relation_reasoning",
+        "claim_ids": []
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p06-c01",
+          "new_claim_ids": [
+            "v2-dev-p06-c01"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p06-c04",
+          "new_claim_ids": [
+            "v2-dev-p06-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p06-c05",
+          "new_claim_ids": [
+            "v2-dev-p06-c05"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p06-c07",
+          "new_claim_ids": [
+            "v2-dev-p06-c07a",
+            "v2-dev-p06-c07b"
+          ],
+          "changed_fields": [
+            "id",
+            "aliases",
+            "claim_text",
+            "verdict",
+            "evidence_sets",
+            "rationale",
+            "answer_anchor"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "source_id": "rust-visibility",
+      "source_title": "Rust Reference: Visibility and privacy",
+      "origin": "generated_from_real_source",
+      "drafted_at": "2026-10-16T15:44:49.292586+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "kind": "within_passage_scope_or_relation_reasoning",
+        "claim_ids": []
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p07-c01",
+          "new_claim_ids": [
+            "v2-dev-p07-c01"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p07-c02",
+          "new_claim_ids": [
+            "v2-dev-p07-c02"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p07-c04",
+          "new_claim_ids": [
+            "v2-dev-p07-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p07-c06",
+          "new_claim_ids": [
+            "v2-dev-p07-c06"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p07-c10",
+          "new_claim_ids": [
+            "v2-dev-p07-c10"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p07-c11",
+          "new_claim_ids": [
+            "v2-dev-p07-c11"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p07-c12",
+          "new_claim_ids": [
+            "v2-dev-p07-c12"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "source_id": "rust-destructors",
+      "source_title": "Rust Reference: Destructors",
+      "origin": "controlled_mutation",
+      "drafted_at": "2026-10-16T15:44:49.292655+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": "For a type implementing Drop, Rust calls Drop::drop before recursively destroying its fields. Struct fields are dropped in declaration order. Variables captured by move in a closure have unspecified drop order. Assignment destroys an already-initialized left-hand operand.\n\nWhen control leaves one drop scope, its variables are dropped in reverse declaration order. Leaving nested scopes at once drops variables from the inside outward. A function parameter is dropped after bindings introduced by that parameter’s pattern.\n\nWithin a pattern, variables are dropped in reverse declaration order. For an or-pattern, binding order comes from the first subpattern even when the second subpattern matches.",
+      "mutations": [
+        {
+          "type": "field_sequence_reversal",
+          "before": "Struct fields are dropped in declaration order.",
+          "after": "Struct fields are dropped in reverse declaration order.",
+          "answer_start": 94,
+          "answer_end": 149,
+          "reason": "Confuses field destruction with local-variable destruction."
+        },
+        {
+          "type": "scope_sequence_reversal",
+          "before": "When control leaves one drop scope, its variables are dropped in reverse declaration order.",
+          "after": "When control leaves one drop scope, its variables are dropped in declaration order.",
+          "answer_start": 282,
+          "answer_end": 365,
+          "reason": "Transfers struct-field ordering to scope-local variables."
+        },
+        {
+          "type": "parameter_sequence_reversal",
+          "before": "A function parameter is dropped after bindings introduced by that parameter’s pattern.",
+          "after": "A function parameter is dropped before bindings introduced by that parameter’s pattern.",
+          "answer_start": 437,
+          "answer_end": 524,
+          "reason": "Reverses the explicit parameter/pattern ordering."
+        }
+      ],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "kind": "within_passage_scope_or_relation_reasoning",
+        "claim_ids": []
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p08-c05",
+          "new_claim_ids": [
+            "v2-dev-p08-c05"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p08-c07",
+          "new_claim_ids": [
+            "v2-dev-p08-c07"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p08-c09",
+          "new_claim_ids": [
+            "v2-dev-p08-c09"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "source_id": "rust-testing",
+      "source_title": "Rust Reference: Testing attributes",
+      "origin": "controlled_mutation",
+      "drafted_at": "2026-10-16T15:44:49.292721+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": "The Rust test attribute is restricted to free functions that are monomorphic and take no arguments. Their return type must implement Termination. A test that does not terminate neither passes nor fails.\n\nIgnored tests are still compiled in test mode, and the harness can force their execution with --include-ignored. The expected text in should_panic is matched as a substring of the panic message. A test carrying should_panic must return ().\n\n ",
+      "mutations": [
+        {
+          "type": "unsupported_addition",
+          "before": "",
+          "after": "The harness automatically retries a failing test twice.",
+          "answer_start": 445,
+          "answer_end": 500,
+          "reason": "Adds an execution retry policy absent from the reference."
+        },
+        {
+          "type": "unsupported_addition",
+          "before": "",
+          "after": "Test functions execute in lexical source order.",
+          "answer_start": 501,
+          "answer_end": 548,
+          "reason": "Adds an ordering guarantee not described by the source."
+        }
+      ],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "kind": "within_passage_scope_or_relation_reasoning",
+        "claim_ids": []
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p09-c01",
+          "new_claim_ids": [
+            "v2-dev-p09-c01"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p09-c02",
+          "new_claim_ids": [
+            "v2-dev-p09-c02"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p09-c03",
+          "new_claim_ids": [
+            "v2-dev-p09-c03"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p09-c04",
+          "new_claim_ids": [
+            "v2-dev-p09-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p09-c06",
+          "new_claim_ids": [
+            "v2-dev-p09-c06"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p09-c08",
+          "new_claim_ids": [
+            "v2-dev-p09-c08"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "source_id": "postgres-isolation",
+      "source_title": "PostgreSQL 17: Concurrency Control / Transaction Isolation",
+      "origin": "generated_from_real_source",
+      "drafted_at": "2026-10-16T15:44:49.292819+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": true,
+        "claim_ids": [
+          "v2-dev-p10-c05",
+          "v2-dev-p10-c06"
+        ],
+        "kind": "isolation_mode_mapping",
+        "explanation": "The RU=RC mapping in passage 0 is joined to the explicitly titled Read Committed visibility rules in passage 1."
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p10-c05",
+          "new_claim_ids": [
+            "v2-dev-p10-c05"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p10-c06",
+          "new_claim_ids": [
+            "v2-dev-p10-c06"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p10-c07",
+          "new_claim_ids": [
+            "v2-dev-p10-c07"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p10-c08",
+          "new_claim_ids": [
+            "v2-dev-p10-c08"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p10-c10",
+          "new_claim_ids": [
+            "v2-dev-p10-c10"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "source_id": "postgres-backup",
+      "source_title": "PostgreSQL 17: Backup and Restore",
+      "origin": "generated_from_real_source",
+      "drafted_at": "2026-10-16T15:44:49.292902+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": null,
+      "mutations": [],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "kind": "within_passage_scope_or_relation_reasoning",
+        "claim_ids": []
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p11-c02",
+          "new_claim_ids": [
+            "v2-dev-p11-c02"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p11-c03",
+          "new_claim_ids": [
+            "v2-dev-p11-c03"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p11-c04",
+          "new_claim_ids": [
+            "v2-dev-p11-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p11-c12",
+          "new_claim_ids": [
+            "v2-dev-p11-c12"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "source_id": "postgres-privileges",
+      "source_title": "PostgreSQL 17: Data Definition / Privileges",
+      "origin": "controlled_mutation",
+      "drafted_at": "2026-10-16T15:44:49.293006+00:00",
+      "author": {
+        "type": "AI",
+        "configured_model": "gpt-6.1-sol",
+        "configured_reasoning_effort": "max",
+        "runtime_build": null,
+        "identity_limit": "Configured model identity is recorded; an exact runtime build identifier was not exposed."
+      },
+      "baseline_answer_before_controlled_mutation": "An object’s owner is normally the role that created it. Granting a privilege to PUBLIC grants it to every role. Referencing existing column values in UPDATE requires SELECT privilege.\n\nAn owner may revoke their own ordinary privileges, but can always grant them back because ownership retains grant options. A blank Access privileges column means built-in default privileges; an explicit (none) means no ordinary privileges are granted even to the owner. Functions and procedures receive PUBLIC EXECUTE by default.\n\nIn the ACL example calvin=r*w/hobbes, calvin has SELECT with grant option from hobbes.  ",
+      "mutations": [
+        {
+          "type": "unsupported_addition",
+          "before": "",
+          "after": "PostgreSQL retains privilege-change audit records for seven years.",
+          "answer_start": 603,
+          "answer_end": 669,
+          "reason": "Adds an unmentioned audit retention policy."
+        },
+        {
+          "type": "unsupported_addition",
+          "before": "",
+          "after": "Changing a role’s privileges sends that role an email notification.",
+          "answer_start": 670,
+          "answer_end": 737,
+          "reason": "Adds an unmentioned notification side effect."
+        }
+      ],
+      "mutation_offsets_apply_to": "pilot.jsonl",
+      "review": {
+        "original_draft_independent_ai_review": "completed_and_locked_before_author_gold_exposure",
+        "original_claim_count": 123,
+        "original_label_agreements": 122,
+        "original_label_disagreement": {
+          "claim_id": "v2-dev-p04-c09",
+          "author": "SUPPORTED",
+          "independent": "UNSUPPORTED"
+        },
+        "revised_affected_claim_recheck": "pending",
+        "human_review": "not_performed",
+        "comparison_sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+        "verification_limit": "The locked review covers the original 123 candidates; it is not an independent review of all revised 126 claims and is not verifier accuracy."
+      },
+      "annotation_version": "v2-pilot-reviewed-1",
+      "revised_at": "2026-10-16T16:19:14Z",
+      "reasoning": {
+        "necessary_cross_passage": false,
+        "kind": "within_passage_scope_or_relation_reasoning",
+        "claim_ids": []
+      },
+      "revisions": [
+        {
+          "old_claim_id": "v2-dev-p12-c03",
+          "new_claim_ids": [
+            "v2-dev-p12-c03"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p12-c04",
+          "new_claim_ids": [
+            "v2-dev-p12-c04"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p12-c06",
+          "new_claim_ids": [
+            "v2-dev-p12-c06"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p12-c07",
+          "new_claim_ids": [
+            "v2-dev-p12-c07"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p12-c08",
+          "new_claim_ids": [
+            "v2-dev-p12-c08a",
+            "v2-dev-p12-c08b"
+          ],
+          "changed_fields": [
+            "id",
+            "aliases",
+            "claim_text",
+            "verdict",
+            "evidence_sets",
+            "rationale",
+            "answer_anchor"
+          ]
+        },
+        {
+          "old_claim_id": "v2-dev-p12-c09",
+          "new_claim_ids": [
+            "v2-dev-p12-c09"
+          ],
+          "changed_fields": [
+            "evidence_sets"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "scope": "Every saved ERROR, preserving unknown usage and safe existing diagnostics.",
+  "errors": [
+    {
+      "block": "repeat-02",
+      "sequence": 20,
+      "request_id": "d629ae80f0f74c4aa2f087271d7db574",
+      "case_id": "v2-test-r08",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "error_code": "provider_protocol_error",
+      "elapsed_ms": 10052.09963209927,
+      "stats": {
+        "latency_ms": 10051.480481866747,
+        "provider": "codex",
+        "provider_calls": 1,
+        "repairs": 0,
+        "requested_model": "gpt-6.1-sol",
+        "response_models": [],
+        "retries": 0,
+        "usage": {
+          "cached_input_tokens": 0,
+          "complete": false,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "stats_known": true,
+      "provider_attempts_charged": 1,
+      "safe_events": [
+        {
+          "stage": "eval_case",
+          "event": "start",
+          "outcome": "started",
+          "elapsed_ms": 0.014
+        },
+        {
+          "stage": "verification",
+          "event": "start",
+          "outcome": "started",
+          "elapsed_ms": 0.372,
+          "provider_calls": 0,
+          "repairs": 0,
+          "retries": 0
+        },
+        {
+          "stage": "minimal",
+          "event": "provider_attempt",
+          "outcome": "started",
+          "elapsed_ms": 6.049,
+          "provider_calls": 1,
+          "repairs": 0,
+          "retries": 0
+        },
+        {
+          "stage": "codex_inference",
+          "event": "start",
+          "outcome": "started",
+          "elapsed_ms": 6.375
+        },
+        {
+          "stage": "codex_inference",
+          "event": "provider_attempt",
+          "outcome": "started",
+          "elapsed_ms": 1077.769
+        },
+        {
+          "stage": "codex_inference",
+          "event": "end",
+          "outcome": "failure",
+          "error_code": "provider_protocol_error",
+          "elapsed_ms": 10049.979
+        },
+        {
+          "stage": "minimal",
+          "event": "provider_attempt",
+          "outcome": "failure",
+          "error_code": "provider_protocol_error",
+          "elapsed_ms": 10050.838,
+          "provider_calls": 1,
+          "repairs": 0,
+          "retries": 0
+        },
+        {
+          "stage": "verification",
+          "event": "end",
+          "outcome": "failure",
+          "error_code": "provider_protocol_error",
+          "elapsed_ms": 10051.388,
+          "provider_calls": 1,
+          "repairs": 0,
+          "retries": 0
+        },
+        {
+          "stage": "eval_case",
+          "event": "end",
+          "outcome": "failure",
+          "error_code": "provider_protocol_error",
+          "elapsed_ms": 10053.353
+        }
+      ]
+    }
+  ],
+  "unknown_outcome": false,
+  "raw_upstream_bodies_captured": false,
+  "reason_limit": "Absent protocol_reason or terminal-event detail remains unknown; no inferred root cause."
+}

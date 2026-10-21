@@ -1,0 +1,79 @@
+{
+  "kind": "CONDITIONAL_PRE_INFERENCE_ESTIMATE_NOT_MEASURED_FINAL_RESULTS",
+  "expected_provider_calls_before_repairs": 400,
+  "new_finite_ceiling": 600,
+  "block_ceilings": [
+    360,
+    120,
+    120
+  ],
+  "historical_mean_operation_projection_hours": 2.221399740029247,
+  "rough_working_estimate": "约2–4小时；不是置信区间或完成时限。",
+  "per_group": [
+    {
+      "approach": "heuristic",
+      "track": "oracle",
+      "historical_operations": 12,
+      "historical_mean_operation_ms": 93.66913260115932,
+      "final_planned_operations": 80,
+      "conditional_operation_time_projection_ms": 7493.530608092746,
+      "observed_provider_calls_per_operation": 0.0
+    },
+    {
+      "approach": "heuristic",
+      "track": "end-to-end",
+      "historical_operations": 12,
+      "historical_mean_operation_ms": 63.43804691762974,
+      "final_planned_operations": 80,
+      "conditional_operation_time_projection_ms": 5075.043753410379,
+      "observed_provider_calls_per_operation": 0.0
+    },
+    {
+      "approach": "minimal",
+      "track": "oracle",
+      "historical_operations": 12,
+      "historical_mean_operation_ms": 17850.006916793063,
+      "final_planned_operations": 80,
+      "conditional_operation_time_projection_ms": 1428000.553343445,
+      "observed_provider_calls_per_operation": 1.0
+    },
+    {
+      "approach": "minimal",
+      "track": "end-to-end",
+      "historical_operations": 24,
+      "historical_mean_operation_ms": 26359.227699053008,
+      "final_planned_operations": 80,
+      "conditional_operation_time_projection_ms": 2108738.2159242406,
+      "observed_provider_calls_per_operation": 1.0
+    },
+    {
+      "approach": "optimized",
+      "track": "oracle",
+      "historical_operations": 12,
+      "historical_mean_operation_ms": 21615.050620166585,
+      "final_planned_operations": 80,
+      "conditional_operation_time_projection_ms": 1729204.0496133268,
+      "observed_provider_calls_per_operation": 1.0
+    },
+    {
+      "approach": "optimized",
+      "track": "end-to-end",
+      "historical_operations": 12,
+      "historical_mean_operation_ms": 33981.59588578468,
+      "final_planned_operations": 80,
+      "conditional_operation_time_projection_ms": 2718527.6708627744,
+      "observed_provider_calls_per_operation": 2.0
+    }
+  ],
+  "input_size_context": {
+    "pilot_mean_context_characters": 10696.833333333334,
+    "final_test_mean_context_characters": 8625.958333333334
+  },
+  "limits": [
+    "Only historical successful operations support this conditional estimate; all primary failure-inclusive results remain unchanged.",
+    "The final cases, input lengths, decomposition, returned citation lengths and provider load differ; repairs/failures may change time and usage.",
+    "CLI summary generation, offline replay, final semantic audit and preparation add time. No subscription-dollar estimate."
+  ],
+  "startup_plan": "One durable live_final.py process, three fixed sequential existing CLI children. Each child saves PID/start/exit/raw logs and complete original outputs; block gate decides subsequent launch. No test inference before accepted frozen commit and parent narrow review.",
+  "test_inference_started": false
+}

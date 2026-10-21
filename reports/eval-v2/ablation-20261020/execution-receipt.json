@@ -1,0 +1,302 @@
+{
+  "status": "COMPLETE",
+  "charged_attempts": 36,
+  "new_shared_ceiling": 216,
+  "remaining": 180,
+  "blocks": [
+    {
+      "block": "candidate1",
+      "condition": "candidate",
+      "cli_exit_code": 0,
+      "wrapper_timeout": false,
+      "finished_at": "2026-10-20T22:54:10.571028+00:00",
+      "cli_wall_ms": 318158.3956568502,
+      "status": "COMPLETE",
+      "statuses": {
+        "OK": 12
+      },
+      "charged_attempts": 12,
+      "cumulative_charged": 12,
+      "remaining_shared_allowance": 204,
+      "known_usage": {
+        "input_tokens": 39436,
+        "output_tokens": 14232,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": true,
+      "returned_models": [
+        "gpt-6.1-sol"
+      ],
+      "retries": 0,
+      "repairs": 0,
+      "model_errors": [],
+      "run_artifact_hashes": {
+        "summary.json": "42eb4b2e6f4f243dd5577f528c3330c4e3e93af307c9dc1331d502b6165317d5",
+        "config.json": "062cdd3f1f34ad68c9439a5ec988d3d1b964e6600348fc2d249b081a515ff03a",
+        "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+        "cases.manifest.json": "43b39b666e40fdc25dcca23dd1de33648448d8d034ca1b719756648134a39b56",
+        "records.jsonl": "8d769a31841645ea9c0164f5357f0a5777ef8b4eff7b5196083853ede0558828",
+        "completion.json": "6b09be65ce37d6b03c23be7ea25441c3f8327c1a9475adc329cef143a788a734",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+      }
+    },
+    {
+      "block": "control2",
+      "condition": "control",
+      "cli_exit_code": 0,
+      "wrapper_timeout": false,
+      "finished_at": "2026-10-20T22:58:32.060992+00:00",
+      "cli_wall_ms": 261398.55396328494,
+      "status": "COMPLETE",
+      "statuses": {
+        "OK": 12
+      },
+      "charged_attempts": 12,
+      "cumulative_charged": 24,
+      "remaining_shared_allowance": 192,
+      "known_usage": {
+        "input_tokens": 39004,
+        "output_tokens": 11772,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": true,
+      "returned_models": [
+        "gpt-6.1-sol"
+      ],
+      "retries": 0,
+      "repairs": 0,
+      "model_errors": [],
+      "run_artifact_hashes": {
+        "summary.json": "1ec23de98fba9143cf491a51d26aba185ef76f238b3107d1dd571f7c9639b0d2",
+        "config.json": "1595fbaa452ab1dc251df68e2da9f425beda7a39ec5419ce07734b88e7efd502",
+        "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+        "cases.manifest.json": "43b39b666e40fdc25dcca23dd1de33648448d8d034ca1b719756648134a39b56",
+        "records.jsonl": "bb776713ff770fd3e2f8db9c6c4a1eaa78117ca1bc9a64d84d89a5ae58073493",
+        "completion.json": "7a38dea5c3fc23d6b391f2eeaeb147deab5091dac11cca74352db4cf151c1a63",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+      }
+    },
+    {
+      "block": "candidate2",
+      "condition": "candidate",
+      "cli_exit_code": 0,
+      "wrapper_timeout": false,
+      "finished_at": "2026-10-20T23:03:58.584472+00:00",
+      "cli_wall_ms": 326391.2292551249,
+      "status": "COMPLETE",
+      "statuses": {
+        "OK": 12
+      },
+      "charged_attempts": 12,
+      "cumulative_charged": 36,
+      "remaining_shared_allowance": 180,
+      "known_usage": {
+        "input_tokens": 39436,
+        "output_tokens": 14435,
+        "cached_input_tokens": 0
+      },
+      "usage_complete": true,
+      "returned_models": [
+        "gpt-6.1-sol"
+      ],
+      "retries": 0,
+      "repairs": 0,
+      "model_errors": [],
+      "run_artifact_hashes": {
+        "summary.json": "cf083482f408bf5e5a2ec591eba4ed9de84a622574c21328259a8a713e5c33ce",
+        "config.json": "f49e95040a641fd91fc7507698430e79fe0b8621fae4e5b4e0eecf1a802599db",
+        "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+        "cases.manifest.json": "43b39b666e40fdc25dcca23dd1de33648448d8d034ca1b719756648134a39b56",
+        "records.jsonl": "42b89bdfae1a0049499c94e29da08ef02147d88390f0fc3300e9dc00d026dfde",
+        "completion.json": "1c2e12b5ed024a10142888a6c12242c93e0ae95e70e63d312528bb7a9b619e21",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+      }
+    }
+  ],
+  "replays": [
+    {
+      "block": "candidate1",
+      "condition": "candidate",
+      "exit_code": 0,
+      "wall_ms": 4520.876843947917,
+      "all_run_files_byte_identical": 23,
+      "inference_calls": 0,
+      "network_settings_credentials_guarded": true,
+      "artifact_hashes": {
+        "summary.json": "42eb4b2e6f4f243dd5577f528c3330c4e3e93af307c9dc1331d502b6165317d5",
+        "config.json": "062cdd3f1f34ad68c9439a5ec988d3d1b964e6600348fc2d249b081a515ff03a",
+        "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+        "cases.manifest.json": "43b39b666e40fdc25dcca23dd1de33648448d8d034ca1b719756648134a39b56",
+        "records.jsonl": "8d769a31841645ea9c0164f5357f0a5777ef8b4eff7b5196083853ede0558828",
+        "completion.json": "6b09be65ce37d6b03c23be7ea25441c3f8327c1a9475adc329cef143a788a734",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+      },
+      "diagnostics": {
+        "records": 124,
+        "auth_refresh_success": false,
+        "max_record_bytes": 220
+      }
+    },
+    {
+      "block": "control2",
+      "condition": "control",
+      "exit_code": 0,
+      "wall_ms": 4112.069230992347,
+      "all_run_files_byte_identical": 23,
+      "inference_calls": 0,
+      "network_settings_credentials_guarded": true,
+      "artifact_hashes": {
+        "summary.json": "1ec23de98fba9143cf491a51d26aba185ef76f238b3107d1dd571f7c9639b0d2",
+        "config.json": "1595fbaa452ab1dc251df68e2da9f425beda7a39ec5419ce07734b88e7efd502",
+        "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+        "cases.manifest.json": "43b39b666e40fdc25dcca23dd1de33648448d8d034ca1b719756648134a39b56",
+        "records.jsonl": "bb776713ff770fd3e2f8db9c6c4a1eaa78117ca1bc9a64d84d89a5ae58073493",
+        "completion.json": "7a38dea5c3fc23d6b391f2eeaeb147deab5091dac11cca74352db4cf151c1a63",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+      },
+      "diagnostics": {
+        "records": 124,
+        "auth_refresh_success": false,
+        "max_record_bytes": 220
+      }
+    },
+    {
+      "block": "candidate2",
+      "condition": "candidate",
+      "exit_code": 0,
+      "wall_ms": 4988.190704956651,
+      "all_run_files_byte_identical": 23,
+      "inference_calls": 0,
+      "network_settings_credentials_guarded": true,
+      "artifact_hashes": {
+        "summary.json": "cf083482f408bf5e5a2ec591eba4ed9de84a622574c21328259a8a713e5c33ce",
+        "config.json": "f49e95040a641fd91fc7507698430e79fe0b8621fae4e5b4e0eecf1a802599db",
+        "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+        "cases.manifest.json": "43b39b666e40fdc25dcca23dd1de33648448d8d034ca1b719756648134a39b56",
+        "records.jsonl": "42b89bdfae1a0049499c94e29da08ef02147d88390f0fc3300e9dc00d026dfde",
+        "completion.json": "1c2e12b5ed024a10142888a6c12242c93e0ae95e70e63d312528bb7a9b619e21",
+        "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+        "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+        "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+        "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+        "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+        "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+        "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+        "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+        "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+        "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+        "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+        "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+        "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+        "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+        "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+        "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+        "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+      },
+      "diagnostics": {
+        "records": 130,
+        "auth_refresh_success": true,
+        "max_record_bytes": 220
+      }
+    }
+  ],
+  "model_errors": [],
+  "known_usage": {
+    "input_tokens": 117876,
+    "output_tokens": 40439,
+    "cached_input_tokens": 0
+  },
+  "usage_complete": true,
+  "dollar_total_usd": null,
+  "product_prompt_changed": false,
+  "baseline_62_of_320_unchanged": true,
+  "prior_baseline_public_files_unchanged": 182,
+  "candidate_adoption": "PENDING_INDEPENDENT_CITATION_REGRESSION_AND_RESOURCE_REVIEW",
+  "parent_single_factor_review": {
+    "status": "accepted",
+    "source_freeze_sha256": "ca5ea3f282cc197667ad1630adb91c58dc9e2c96d5a52bcc01a0da86aba97c22",
+    "candidate_code_sha256": "cd15430a02b364c2f6ddef034e6ef046b335dd99b3678d3dada5186e31dd89a6",
+    "execution_freeze_sha256": "885e5ef88fe57f4950daa8ce48b6874590de543101f52bb24f38de9b32dfa728"
+  },
+  "source_freeze_sha256": "ca5ea3f282cc197667ad1630adb91c58dc9e2c96d5a52bcc01a0da86aba97c22"
+}

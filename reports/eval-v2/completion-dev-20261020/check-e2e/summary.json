@@ -1,0 +1,1935 @@
+{
+  "annotation_version": "v2-pilot-reviewed-1",
+  "code_sha256": "353c9d50f6035dadf76006913708123f4fbe525f79d74c70e9245e919413239e",
+  "completion": {
+    "cleanup_errors": [],
+    "config_sha256": "10c74ca986506991f09bb7a3386ff2fc92c69e1a6548c00b56e64af502c58afa",
+    "provider_attempts_charged": 1,
+    "record_count": 1,
+    "records_sha256": "490aabcbabc8cc6830aa49175ac7e1f28af0fcb4f103aed8f7f8a0e0dbc48e3e",
+    "source_changed_during_run": false,
+    "status": "COMPLETE",
+    "stopped_after_attempt_budget_exhausted": false,
+    "stopped_after_quota_exhausted": false
+  },
+  "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+  "dataset_version": "v2-pilot-reviewed-1",
+  "format_version": 2,
+  "groups": {
+    "minimal/end-to-end": {
+      "errors": {},
+      "failure_inclusive_quality": {
+        "case_exact": {
+          "denominator": 1,
+          "numerator": 0,
+          "value": 0.0
+        },
+        "confusion": {
+          "CONTRADICTED": {
+            "CONTRADICTED": 0,
+            "ERROR": 0,
+            "MISSING": 0,
+            "SUPPORTED": 0,
+            "UNSUPPORTED": 0
+          },
+          "EXTRA": {
+            "CONTRADICTED": 0,
+            "ERROR": 0,
+            "MISSING": 0,
+            "SUPPORTED": 1,
+            "UNSUPPORTED": 0
+          },
+          "SUPPORTED": {
+            "CONTRADICTED": 0,
+            "ERROR": 0,
+            "MISSING": 2,
+            "SUPPORTED": 7,
+            "UNSUPPORTED": 0
+          },
+          "UNSUPPORTED": {
+            "CONTRADICTED": 0,
+            "ERROR": 0,
+            "MISSING": 0,
+            "SUPPORTED": 0,
+            "UNSUPPORTED": 2
+          }
+        },
+        "counts": {
+          "citation_characters": 774,
+          "citation_gold_relevant": 3,
+          "citation_literal_valid": 8,
+          "citation_total": 8,
+          "duplicate": 0,
+          "evidence_correct": 5,
+          "evidence_correct_non_unsupported": 3,
+          "exact": 0,
+          "extra": 1,
+          "false_support": 0,
+          "gold": 11,
+          "gold_non_supported": 2,
+          "gold_non_unsupported": 9,
+          "label_correct": 9,
+          "matched": 9,
+          "matched_non_supported": 2,
+          "omitted": 2,
+          "predicted": 10,
+          "predicted_non_unsupported": 8,
+          "requested": 1,
+          "succeeded": 1
+        },
+        "errors": {},
+        "extraction_diagnostics": {
+          "duplicate_predictions": 0,
+          "extra_predictions": 1,
+          "note": "Duplicates are repeated normalized text or a second alias for an already matched gold. Merges, splits and scope loss require the separate semantic audit.",
+          "omitted_gold": 2
+        },
+        "false_support_note": "C/U gold matched to SUPPORTED, divided by all C/U gold. Missing/error claims remain in the denominator, never count as false support; read with judgment coverage and request failures.",
+        "false_support_rate": {
+          "denominator": 2,
+          "numerator": 0,
+          "value": 0.0
+        },
+        "gold_evidence_coverage": {
+          "denominator": 9,
+          "numerator": 3,
+          "value": 0.3333333333333333
+        },
+        "gold_relevant_citation_precision": {
+          "denominator": 8,
+          "numerator": 3,
+          "value": 0.375
+        },
+        "joint_evidence": {
+          "f1": {
+            "denominator": 21,
+            "numerator": 10,
+            "value": 0.47619047619047616
+          },
+          "precision": {
+            "denominator": 10,
+            "numerator": 5,
+            "value": 0.5
+          },
+          "recall": {
+            "denominator": 11,
+            "numerator": 5,
+            "value": 0.45454545454545453
+          }
+        },
+        "joint_label": {
+          "f1": {
+            "denominator": 21,
+            "numerator": 18,
+            "value": 0.8571428571428571
+          },
+          "precision": {
+            "denominator": 10,
+            "numerator": 9,
+            "value": 0.9
+          },
+          "recall": {
+            "denominator": 11,
+            "numerator": 9,
+            "value": 0.8181818181818182
+          }
+        },
+        "literal_citation_validity": {
+          "denominator": 8,
+          "numerator": 8,
+          "value": 1.0
+        },
+        "macro_f1": null,
+        "macro_f1_note": "Fixed three-class mean; null if any class has no gold or prediction.",
+        "non_supported_judgment_coverage": {
+          "denominator": 2,
+          "numerator": 2,
+          "value": 1.0
+        },
+        "oracle_accuracy": {
+          "denominator": 11,
+          "numerator": 9,
+          "value": 0.8181818181818182
+        },
+        "per_class": {
+          "CONTRADICTED": {
+            "f1": {
+              "denominator": 0,
+              "numerator": 0,
+              "value": null
+            },
+            "precision": {
+              "denominator": 0,
+              "numerator": 0,
+              "value": null
+            },
+            "recall": {
+              "denominator": 0,
+              "numerator": 0,
+              "value": null
+            }
+          },
+          "SUPPORTED": {
+            "f1": {
+              "denominator": 17,
+              "numerator": 14,
+              "value": 0.8235294117647058
+            },
+            "precision": {
+              "denominator": 8,
+              "numerator": 7,
+              "value": 0.875
+            },
+            "recall": {
+              "denominator": 9,
+              "numerator": 7,
+              "value": 0.7777777777777778
+            }
+          },
+          "UNSUPPORTED": {
+            "f1": {
+              "denominator": 4,
+              "numerator": 4,
+              "value": 1.0
+            },
+            "precision": {
+              "denominator": 2,
+              "numerator": 2,
+              "value": 1.0
+            },
+            "recall": {
+              "denominator": 2,
+              "numerator": 2,
+              "value": 1.0
+            }
+          }
+        },
+        "prediction_gold_evidence_coverage": {
+          "denominator": 8,
+          "numerator": 3,
+          "value": 0.375
+        },
+        "quote_characters_per_covered_non_unsupported_claim": {
+          "denominator": 3,
+          "numerator": 774,
+          "value": 258.0
+        },
+        "request_success": {
+          "denominator": 1,
+          "numerator": 1,
+          "value": 1.0
+        },
+        "strict_decomposition": {
+          "f1": {
+            "denominator": 21,
+            "numerator": 18,
+            "value": 0.8571428571428571
+          },
+          "precision": {
+            "denominator": 10,
+            "numerator": 9,
+            "value": 0.9
+          },
+          "recall": {
+            "denominator": 11,
+            "numerator": 9,
+            "value": 0.8181818181818182
+          }
+        }
+      },
+      "gold_claims": 11,
+      "quality": {
+        "case_exact": {
+          "denominator": 1,
+          "numerator": 0,
+          "value": 0.0
+        },
+        "confusion": {
+          "CONTRADICTED": {
+            "CONTRADICTED": 0,
+            "ERROR": 0,
+            "MISSING": 0,
+            "SUPPORTED": 0,
+            "UNSUPPORTED": 0
+          },
+          "EXTRA": {
+            "CONTRADICTED": 0,
+            "ERROR": 0,
+            "MISSING": 0,
+            "SUPPORTED": 1,
+            "UNSUPPORTED": 0
+          },
+          "SUPPORTED": {
+            "CONTRADICTED": 0,
+            "ERROR": 0,
+            "MISSING": 2,
+            "SUPPORTED": 7,
+            "UNSUPPORTED": 0
+          },
+          "UNSUPPORTED": {
+            "CONTRADICTED": 0,
+            "ERROR": 0,
+            "MISSING": 0,
+            "SUPPORTED": 0,
+            "UNSUPPORTED": 2
+          }
+        },
+        "counts": {
+          "citation_characters": 774,
+          "citation_gold_relevant": 3,
+          "citation_literal_valid": 8,
+          "citation_total": 8,
+          "duplicate": 0,
+          "evidence_correct": 5,
+          "evidence_correct_non_unsupported": 3,
+          "exact": 0,
+          "extra": 1,
+          "false_support": 0,
+          "gold": 11,
+          "gold_non_supported": 2,
+          "gold_non_unsupported": 9,
+          "label_correct": 9,
+          "matched": 9,
+          "matched_non_supported": 2,
+          "omitted": 2,
+          "predicted": 10,
+          "predicted_non_unsupported": 8,
+          "requested": 1,
+          "succeeded": 1
+        },
+        "errors": {},
+        "extraction_diagnostics": {
+          "duplicate_predictions": 0,
+          "extra_predictions": 1,
+          "note": "Duplicates are repeated normalized text or a second alias for an already matched gold. Merges, splits and scope loss require the separate semantic audit.",
+          "omitted_gold": 2
+        },
+        "false_support_note": "C/U gold matched to SUPPORTED, divided by all C/U gold. Missing/error claims remain in the denominator, never count as false support; read with judgment coverage and request failures.",
+        "false_support_rate": {
+          "denominator": 2,
+          "numerator": 0,
+          "value": 0.0
+        },
+        "gold_evidence_coverage": {
+          "denominator": 9,
+          "numerator": 3,
+          "value": 0.3333333333333333
+        },
+        "gold_relevant_citation_precision": {
+          "denominator": 8,
+          "numerator": 3,
+          "value": 0.375
+        },
+        "joint_evidence": {
+          "f1": {
+            "denominator": 21,
+            "numerator": 10,
+            "value": 0.47619047619047616
+          },
+          "precision": {
+            "denominator": 10,
+            "numerator": 5,
+            "value": 0.5
+          },
+          "recall": {
+            "denominator": 11,
+            "numerator": 5,
+            "value": 0.45454545454545453
+          }
+        },
+        "joint_label": {
+          "f1": {
+            "denominator": 21,
+            "numerator": 18,
+            "value": 0.8571428571428571
+          },
+          "precision": {
+            "denominator": 10,
+            "numerator": 9,
+            "value": 0.9
+          },
+          "recall": {
+            "denominator": 11,
+            "numerator": 9,
+            "value": 0.8181818181818182
+          }
+        },
+        "literal_citation_validity": {
+          "denominator": 8,
+          "numerator": 8,
+          "value": 1.0
+        },
+        "macro_f1": null,
+        "macro_f1_note": "Fixed three-class mean; null if any class has no gold or prediction.",
+        "non_supported_judgment_coverage": {
+          "denominator": 2,
+          "numerator": 2,
+          "value": 1.0
+        },
+        "oracle_accuracy": {
+          "denominator": 11,
+          "numerator": 9,
+          "value": 0.8181818181818182
+        },
+        "per_class": {
+          "CONTRADICTED": {
+            "f1": {
+              "denominator": 0,
+              "numerator": 0,
+              "value": null
+            },
+            "precision": {
+              "denominator": 0,
+              "numerator": 0,
+              "value": null
+            },
+            "recall": {
+              "denominator": 0,
+              "numerator": 0,
+              "value": null
+            }
+          },
+          "SUPPORTED": {
+            "f1": {
+              "denominator": 17,
+              "numerator": 14,
+              "value": 0.8235294117647058
+            },
+            "precision": {
+              "denominator": 8,
+              "numerator": 7,
+              "value": 0.875
+            },
+            "recall": {
+              "denominator": 9,
+              "numerator": 7,
+              "value": 0.7777777777777778
+            }
+          },
+          "UNSUPPORTED": {
+            "f1": {
+              "denominator": 4,
+              "numerator": 4,
+              "value": 1.0
+            },
+            "precision": {
+              "denominator": 2,
+              "numerator": 2,
+              "value": 1.0
+            },
+            "recall": {
+              "denominator": 2,
+              "numerator": 2,
+              "value": 1.0
+            }
+          }
+        },
+        "prediction_gold_evidence_coverage": {
+          "denominator": 8,
+          "numerator": 3,
+          "value": 0.375
+        },
+        "quote_characters_per_covered_non_unsupported_claim": {
+          "denominator": 3,
+          "numerator": 774,
+          "value": 258.0
+        },
+        "request_success": {
+          "denominator": 1,
+          "numerator": 1,
+          "value": 1.0
+        },
+        "strict_decomposition": {
+          "f1": {
+            "denominator": 21,
+            "numerator": 18,
+            "value": 0.8571428571428571
+          },
+          "precision": {
+            "denominator": 10,
+            "numerator": 9,
+            "value": 0.9
+          },
+          "recall": {
+            "denominator": 11,
+            "numerator": 9,
+            "value": 0.8181818181818182
+          }
+        }
+      },
+      "request_success": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "requested_cases": 1,
+      "resources": {
+        "attempted_requests": 1,
+        "dollar_cost": {
+          "currency": "USD",
+          "reason": "subscription_usage_not_dollar_cost",
+          "value": null
+        },
+        "elapsed_ms": {
+          "count": 1,
+          "includes_failures": true,
+          "median": 16883.339476771653,
+          "p95": 16883.339476771653,
+          "sum": 16883.339476771653
+        },
+        "known_usage": {
+          "cached_input_tokens": 0,
+          "input_tokens": 3644,
+          "output_tokens": 650
+        },
+        "not_attempted_requests": 0,
+        "provider_calls_known": 1,
+        "repairs_known": 0,
+        "requested_models": [
+          "gpt-6.1-sol"
+        ],
+        "requests_with_repair": 0,
+        "requests_with_unknown_stats": 0,
+        "requests_with_unknown_usage": 0,
+        "retries_known": 0,
+        "returned_models": [
+          "gpt-6.1-sol"
+        ],
+        "total_usage": {
+          "cached_input_tokens": 0,
+          "input_tokens": 3644,
+          "output_tokens": 650
+        },
+        "usage_complete": true
+      },
+      "slices": {
+        "category": {
+          "extrinsic": {
+            "failure_inclusive_quality": {
+              "case_exact": {
+                "denominator": 1,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "confusion": {
+                "CONTRADICTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 0
+                },
+                "EXTRA": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 1,
+                  "UNSUPPORTED": 0
+                },
+                "SUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 2,
+                  "SUPPORTED": 7,
+                  "UNSUPPORTED": 0
+                },
+                "UNSUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 2
+                }
+              },
+              "counts": {
+                "citation_characters": 774,
+                "citation_gold_relevant": 3,
+                "citation_literal_valid": 8,
+                "citation_total": 8,
+                "duplicate": 0,
+                "evidence_correct": 5,
+                "evidence_correct_non_unsupported": 3,
+                "exact": 0,
+                "extra": 1,
+                "false_support": 0,
+                "gold": 11,
+                "gold_non_supported": 2,
+                "gold_non_unsupported": 9,
+                "label_correct": 9,
+                "matched": 9,
+                "matched_non_supported": 2,
+                "omitted": 2,
+                "predicted": 10,
+                "predicted_non_unsupported": 8,
+                "requested": 1,
+                "succeeded": 1
+              },
+              "errors": {},
+              "extraction_diagnostics": {
+                "duplicate_predictions": 0,
+                "extra_predictions": 1,
+                "note": "Duplicates are repeated normalized text or a second alias for an already matched gold. Merges, splits and scope loss require the separate semantic audit.",
+                "omitted_gold": 2
+              },
+              "false_support_note": "C/U gold matched to SUPPORTED, divided by all C/U gold. Missing/error claims remain in the denominator, never count as false support; read with judgment coverage and request failures.",
+              "false_support_rate": {
+                "denominator": 2,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "gold_evidence_coverage": {
+                "denominator": 9,
+                "numerator": 3,
+                "value": 0.3333333333333333
+              },
+              "gold_relevant_citation_precision": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "joint_evidence": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 10,
+                  "value": 0.47619047619047616
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 5,
+                  "value": 0.5
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 5,
+                  "value": 0.45454545454545453
+                }
+              },
+              "joint_label": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              },
+              "literal_citation_validity": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              },
+              "macro_f1": null,
+              "macro_f1_note": "Fixed three-class mean; null if any class has no gold or prediction.",
+              "non_supported_judgment_coverage": {
+                "denominator": 2,
+                "numerator": 2,
+                "value": 1.0
+              },
+              "oracle_accuracy": {
+                "denominator": 11,
+                "numerator": 9,
+                "value": 0.8181818181818182
+              },
+              "per_class": {
+                "CONTRADICTED": {
+                  "f1": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "precision": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "recall": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  }
+                },
+                "SUPPORTED": {
+                  "f1": {
+                    "denominator": 17,
+                    "numerator": 14,
+                    "value": 0.8235294117647058
+                  },
+                  "precision": {
+                    "denominator": 8,
+                    "numerator": 7,
+                    "value": 0.875
+                  },
+                  "recall": {
+                    "denominator": 9,
+                    "numerator": 7,
+                    "value": 0.7777777777777778
+                  }
+                },
+                "UNSUPPORTED": {
+                  "f1": {
+                    "denominator": 4,
+                    "numerator": 4,
+                    "value": 1.0
+                  },
+                  "precision": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  },
+                  "recall": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  }
+                }
+              },
+              "prediction_gold_evidence_coverage": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "quote_characters_per_covered_non_unsupported_claim": {
+                "denominator": 3,
+                "numerator": 774,
+                "value": 258.0
+              },
+              "request_success": {
+                "denominator": 1,
+                "numerator": 1,
+                "value": 1.0
+              },
+              "strict_decomposition": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              }
+            },
+            "independent_families": 1,
+            "requested_cases": 1,
+            "uncertainty": null,
+            "uncertainty_note": "Descriptive overlapping slice; no per-slice bootstrap."
+          }
+        },
+        "origin": {
+          "controlled_mutation": {
+            "failure_inclusive_quality": {
+              "case_exact": {
+                "denominator": 1,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "confusion": {
+                "CONTRADICTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 0
+                },
+                "EXTRA": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 1,
+                  "UNSUPPORTED": 0
+                },
+                "SUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 2,
+                  "SUPPORTED": 7,
+                  "UNSUPPORTED": 0
+                },
+                "UNSUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 2
+                }
+              },
+              "counts": {
+                "citation_characters": 774,
+                "citation_gold_relevant": 3,
+                "citation_literal_valid": 8,
+                "citation_total": 8,
+                "duplicate": 0,
+                "evidence_correct": 5,
+                "evidence_correct_non_unsupported": 3,
+                "exact": 0,
+                "extra": 1,
+                "false_support": 0,
+                "gold": 11,
+                "gold_non_supported": 2,
+                "gold_non_unsupported": 9,
+                "label_correct": 9,
+                "matched": 9,
+                "matched_non_supported": 2,
+                "omitted": 2,
+                "predicted": 10,
+                "predicted_non_unsupported": 8,
+                "requested": 1,
+                "succeeded": 1
+              },
+              "errors": {},
+              "extraction_diagnostics": {
+                "duplicate_predictions": 0,
+                "extra_predictions": 1,
+                "note": "Duplicates are repeated normalized text or a second alias for an already matched gold. Merges, splits and scope loss require the separate semantic audit.",
+                "omitted_gold": 2
+              },
+              "false_support_note": "C/U gold matched to SUPPORTED, divided by all C/U gold. Missing/error claims remain in the denominator, never count as false support; read with judgment coverage and request failures.",
+              "false_support_rate": {
+                "denominator": 2,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "gold_evidence_coverage": {
+                "denominator": 9,
+                "numerator": 3,
+                "value": 0.3333333333333333
+              },
+              "gold_relevant_citation_precision": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "joint_evidence": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 10,
+                  "value": 0.47619047619047616
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 5,
+                  "value": 0.5
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 5,
+                  "value": 0.45454545454545453
+                }
+              },
+              "joint_label": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              },
+              "literal_citation_validity": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              },
+              "macro_f1": null,
+              "macro_f1_note": "Fixed three-class mean; null if any class has no gold or prediction.",
+              "non_supported_judgment_coverage": {
+                "denominator": 2,
+                "numerator": 2,
+                "value": 1.0
+              },
+              "oracle_accuracy": {
+                "denominator": 11,
+                "numerator": 9,
+                "value": 0.8181818181818182
+              },
+              "per_class": {
+                "CONTRADICTED": {
+                  "f1": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "precision": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "recall": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  }
+                },
+                "SUPPORTED": {
+                  "f1": {
+                    "denominator": 17,
+                    "numerator": 14,
+                    "value": 0.8235294117647058
+                  },
+                  "precision": {
+                    "denominator": 8,
+                    "numerator": 7,
+                    "value": 0.875
+                  },
+                  "recall": {
+                    "denominator": 9,
+                    "numerator": 7,
+                    "value": 0.7777777777777778
+                  }
+                },
+                "UNSUPPORTED": {
+                  "f1": {
+                    "denominator": 4,
+                    "numerator": 4,
+                    "value": 1.0
+                  },
+                  "precision": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  },
+                  "recall": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  }
+                }
+              },
+              "prediction_gold_evidence_coverage": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "quote_characters_per_covered_non_unsupported_claim": {
+                "denominator": 3,
+                "numerator": 774,
+                "value": 258.0
+              },
+              "request_success": {
+                "denominator": 1,
+                "numerator": 1,
+                "value": 1.0
+              },
+              "strict_decomposition": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              }
+            },
+            "independent_families": 1,
+            "requested_cases": 1,
+            "uncertainty": null,
+            "uncertainty_note": "Descriptive overlapping slice; no per-slice bootstrap."
+          }
+        },
+        "tag": {
+          "api_guarantees": {
+            "failure_inclusive_quality": {
+              "case_exact": {
+                "denominator": 1,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "confusion": {
+                "CONTRADICTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 0
+                },
+                "EXTRA": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 1,
+                  "UNSUPPORTED": 0
+                },
+                "SUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 2,
+                  "SUPPORTED": 7,
+                  "UNSUPPORTED": 0
+                },
+                "UNSUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 2
+                }
+              },
+              "counts": {
+                "citation_characters": 774,
+                "citation_gold_relevant": 3,
+                "citation_literal_valid": 8,
+                "citation_total": 8,
+                "duplicate": 0,
+                "evidence_correct": 5,
+                "evidence_correct_non_unsupported": 3,
+                "exact": 0,
+                "extra": 1,
+                "false_support": 0,
+                "gold": 11,
+                "gold_non_supported": 2,
+                "gold_non_unsupported": 9,
+                "label_correct": 9,
+                "matched": 9,
+                "matched_non_supported": 2,
+                "omitted": 2,
+                "predicted": 10,
+                "predicted_non_unsupported": 8,
+                "requested": 1,
+                "succeeded": 1
+              },
+              "errors": {},
+              "extraction_diagnostics": {
+                "duplicate_predictions": 0,
+                "extra_predictions": 1,
+                "note": "Duplicates are repeated normalized text or a second alias for an already matched gold. Merges, splits and scope loss require the separate semantic audit.",
+                "omitted_gold": 2
+              },
+              "false_support_note": "C/U gold matched to SUPPORTED, divided by all C/U gold. Missing/error claims remain in the denominator, never count as false support; read with judgment coverage and request failures.",
+              "false_support_rate": {
+                "denominator": 2,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "gold_evidence_coverage": {
+                "denominator": 9,
+                "numerator": 3,
+                "value": 0.3333333333333333
+              },
+              "gold_relevant_citation_precision": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "joint_evidence": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 10,
+                  "value": 0.47619047619047616
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 5,
+                  "value": 0.5
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 5,
+                  "value": 0.45454545454545453
+                }
+              },
+              "joint_label": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              },
+              "literal_citation_validity": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              },
+              "macro_f1": null,
+              "macro_f1_note": "Fixed three-class mean; null if any class has no gold or prediction.",
+              "non_supported_judgment_coverage": {
+                "denominator": 2,
+                "numerator": 2,
+                "value": 1.0
+              },
+              "oracle_accuracy": {
+                "denominator": 11,
+                "numerator": 9,
+                "value": 0.8181818181818182
+              },
+              "per_class": {
+                "CONTRADICTED": {
+                  "f1": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "precision": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "recall": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  }
+                },
+                "SUPPORTED": {
+                  "f1": {
+                    "denominator": 17,
+                    "numerator": 14,
+                    "value": 0.8235294117647058
+                  },
+                  "precision": {
+                    "denominator": 8,
+                    "numerator": 7,
+                    "value": 0.875
+                  },
+                  "recall": {
+                    "denominator": 9,
+                    "numerator": 7,
+                    "value": 0.7777777777777778
+                  }
+                },
+                "UNSUPPORTED": {
+                  "f1": {
+                    "denominator": 4,
+                    "numerator": 4,
+                    "value": 1.0
+                  },
+                  "precision": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  },
+                  "recall": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  }
+                }
+              },
+              "prediction_gold_evidence_coverage": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "quote_characters_per_covered_non_unsupported_claim": {
+                "denominator": 3,
+                "numerator": 774,
+                "value": 258.0
+              },
+              "request_success": {
+                "denominator": 1,
+                "numerator": 1,
+                "value": 1.0
+              },
+              "strict_decomposition": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              }
+            },
+            "independent_families": 1,
+            "requested_cases": 1,
+            "uncertainty": null,
+            "uncertainty_note": "Descriptive overlapping slice; no per-slice bootstrap."
+          },
+          "hash_metadata_vs_validation": {
+            "failure_inclusive_quality": {
+              "case_exact": {
+                "denominator": 1,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "confusion": {
+                "CONTRADICTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 0
+                },
+                "EXTRA": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 1,
+                  "UNSUPPORTED": 0
+                },
+                "SUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 2,
+                  "SUPPORTED": 7,
+                  "UNSUPPORTED": 0
+                },
+                "UNSUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 2
+                }
+              },
+              "counts": {
+                "citation_characters": 774,
+                "citation_gold_relevant": 3,
+                "citation_literal_valid": 8,
+                "citation_total": 8,
+                "duplicate": 0,
+                "evidence_correct": 5,
+                "evidence_correct_non_unsupported": 3,
+                "exact": 0,
+                "extra": 1,
+                "false_support": 0,
+                "gold": 11,
+                "gold_non_supported": 2,
+                "gold_non_unsupported": 9,
+                "label_correct": 9,
+                "matched": 9,
+                "matched_non_supported": 2,
+                "omitted": 2,
+                "predicted": 10,
+                "predicted_non_unsupported": 8,
+                "requested": 1,
+                "succeeded": 1
+              },
+              "errors": {},
+              "extraction_diagnostics": {
+                "duplicate_predictions": 0,
+                "extra_predictions": 1,
+                "note": "Duplicates are repeated normalized text or a second alias for an already matched gold. Merges, splits and scope loss require the separate semantic audit.",
+                "omitted_gold": 2
+              },
+              "false_support_note": "C/U gold matched to SUPPORTED, divided by all C/U gold. Missing/error claims remain in the denominator, never count as false support; read with judgment coverage and request failures.",
+              "false_support_rate": {
+                "denominator": 2,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "gold_evidence_coverage": {
+                "denominator": 9,
+                "numerator": 3,
+                "value": 0.3333333333333333
+              },
+              "gold_relevant_citation_precision": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "joint_evidence": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 10,
+                  "value": 0.47619047619047616
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 5,
+                  "value": 0.5
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 5,
+                  "value": 0.45454545454545453
+                }
+              },
+              "joint_label": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              },
+              "literal_citation_validity": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              },
+              "macro_f1": null,
+              "macro_f1_note": "Fixed three-class mean; null if any class has no gold or prediction.",
+              "non_supported_judgment_coverage": {
+                "denominator": 2,
+                "numerator": 2,
+                "value": 1.0
+              },
+              "oracle_accuracy": {
+                "denominator": 11,
+                "numerator": 9,
+                "value": 0.8181818181818182
+              },
+              "per_class": {
+                "CONTRADICTED": {
+                  "f1": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "precision": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "recall": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  }
+                },
+                "SUPPORTED": {
+                  "f1": {
+                    "denominator": 17,
+                    "numerator": 14,
+                    "value": 0.8235294117647058
+                  },
+                  "precision": {
+                    "denominator": 8,
+                    "numerator": 7,
+                    "value": 0.875
+                  },
+                  "recall": {
+                    "denominator": 9,
+                    "numerator": 7,
+                    "value": 0.7777777777777778
+                  }
+                },
+                "UNSUPPORTED": {
+                  "f1": {
+                    "denominator": 4,
+                    "numerator": 4,
+                    "value": 1.0
+                  },
+                  "precision": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  },
+                  "recall": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  }
+                }
+              },
+              "prediction_gold_evidence_coverage": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "quote_characters_per_covered_non_unsupported_claim": {
+                "denominator": 3,
+                "numerator": 774,
+                "value": 258.0
+              },
+              "request_success": {
+                "denominator": 1,
+                "numerator": 1,
+                "value": 1.0
+              },
+              "strict_decomposition": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              }
+            },
+            "independent_families": 1,
+            "requested_cases": 1,
+            "uncertainty": null,
+            "uncertainty_note": "Descriptive overlapping slice; no per-slice bootstrap."
+          },
+          "missing_metadata": {
+            "failure_inclusive_quality": {
+              "case_exact": {
+                "denominator": 1,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "confusion": {
+                "CONTRADICTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 0
+                },
+                "EXTRA": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 1,
+                  "UNSUPPORTED": 0
+                },
+                "SUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 2,
+                  "SUPPORTED": 7,
+                  "UNSUPPORTED": 0
+                },
+                "UNSUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 2
+                }
+              },
+              "counts": {
+                "citation_characters": 774,
+                "citation_gold_relevant": 3,
+                "citation_literal_valid": 8,
+                "citation_total": 8,
+                "duplicate": 0,
+                "evidence_correct": 5,
+                "evidence_correct_non_unsupported": 3,
+                "exact": 0,
+                "extra": 1,
+                "false_support": 0,
+                "gold": 11,
+                "gold_non_supported": 2,
+                "gold_non_unsupported": 9,
+                "label_correct": 9,
+                "matched": 9,
+                "matched_non_supported": 2,
+                "omitted": 2,
+                "predicted": 10,
+                "predicted_non_unsupported": 8,
+                "requested": 1,
+                "succeeded": 1
+              },
+              "errors": {},
+              "extraction_diagnostics": {
+                "duplicate_predictions": 0,
+                "extra_predictions": 1,
+                "note": "Duplicates are repeated normalized text or a second alias for an already matched gold. Merges, splits and scope loss require the separate semantic audit.",
+                "omitted_gold": 2
+              },
+              "false_support_note": "C/U gold matched to SUPPORTED, divided by all C/U gold. Missing/error claims remain in the denominator, never count as false support; read with judgment coverage and request failures.",
+              "false_support_rate": {
+                "denominator": 2,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "gold_evidence_coverage": {
+                "denominator": 9,
+                "numerator": 3,
+                "value": 0.3333333333333333
+              },
+              "gold_relevant_citation_precision": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "joint_evidence": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 10,
+                  "value": 0.47619047619047616
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 5,
+                  "value": 0.5
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 5,
+                  "value": 0.45454545454545453
+                }
+              },
+              "joint_label": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              },
+              "literal_citation_validity": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              },
+              "macro_f1": null,
+              "macro_f1_note": "Fixed three-class mean; null if any class has no gold or prediction.",
+              "non_supported_judgment_coverage": {
+                "denominator": 2,
+                "numerator": 2,
+                "value": 1.0
+              },
+              "oracle_accuracy": {
+                "denominator": 11,
+                "numerator": 9,
+                "value": 0.8181818181818182
+              },
+              "per_class": {
+                "CONTRADICTED": {
+                  "f1": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "precision": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "recall": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  }
+                },
+                "SUPPORTED": {
+                  "f1": {
+                    "denominator": 17,
+                    "numerator": 14,
+                    "value": 0.8235294117647058
+                  },
+                  "precision": {
+                    "denominator": 8,
+                    "numerator": 7,
+                    "value": 0.875
+                  },
+                  "recall": {
+                    "denominator": 9,
+                    "numerator": 7,
+                    "value": 0.7777777777777778
+                  }
+                },
+                "UNSUPPORTED": {
+                  "f1": {
+                    "denominator": 4,
+                    "numerator": 4,
+                    "value": 1.0
+                  },
+                  "precision": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  },
+                  "recall": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  }
+                }
+              },
+              "prediction_gold_evidence_coverage": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "quote_characters_per_covered_non_unsupported_claim": {
+                "denominator": 3,
+                "numerator": 774,
+                "value": 258.0
+              },
+              "request_success": {
+                "denominator": 1,
+                "numerator": 1,
+                "value": 1.0
+              },
+              "strict_decomposition": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              }
+            },
+            "independent_families": 1,
+            "requested_cases": 1,
+            "uncertainty": null,
+            "uncertainty_note": "Descriptive overlapping slice; no per-slice bootstrap."
+          },
+          "unsupported_additions": {
+            "failure_inclusive_quality": {
+              "case_exact": {
+                "denominator": 1,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "confusion": {
+                "CONTRADICTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 0
+                },
+                "EXTRA": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 1,
+                  "UNSUPPORTED": 0
+                },
+                "SUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 2,
+                  "SUPPORTED": 7,
+                  "UNSUPPORTED": 0
+                },
+                "UNSUPPORTED": {
+                  "CONTRADICTED": 0,
+                  "ERROR": 0,
+                  "MISSING": 0,
+                  "SUPPORTED": 0,
+                  "UNSUPPORTED": 2
+                }
+              },
+              "counts": {
+                "citation_characters": 774,
+                "citation_gold_relevant": 3,
+                "citation_literal_valid": 8,
+                "citation_total": 8,
+                "duplicate": 0,
+                "evidence_correct": 5,
+                "evidence_correct_non_unsupported": 3,
+                "exact": 0,
+                "extra": 1,
+                "false_support": 0,
+                "gold": 11,
+                "gold_non_supported": 2,
+                "gold_non_unsupported": 9,
+                "label_correct": 9,
+                "matched": 9,
+                "matched_non_supported": 2,
+                "omitted": 2,
+                "predicted": 10,
+                "predicted_non_unsupported": 8,
+                "requested": 1,
+                "succeeded": 1
+              },
+              "errors": {},
+              "extraction_diagnostics": {
+                "duplicate_predictions": 0,
+                "extra_predictions": 1,
+                "note": "Duplicates are repeated normalized text or a second alias for an already matched gold. Merges, splits and scope loss require the separate semantic audit.",
+                "omitted_gold": 2
+              },
+              "false_support_note": "C/U gold matched to SUPPORTED, divided by all C/U gold. Missing/error claims remain in the denominator, never count as false support; read with judgment coverage and request failures.",
+              "false_support_rate": {
+                "denominator": 2,
+                "numerator": 0,
+                "value": 0.0
+              },
+              "gold_evidence_coverage": {
+                "denominator": 9,
+                "numerator": 3,
+                "value": 0.3333333333333333
+              },
+              "gold_relevant_citation_precision": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "joint_evidence": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 10,
+                  "value": 0.47619047619047616
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 5,
+                  "value": 0.5
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 5,
+                  "value": 0.45454545454545453
+                }
+              },
+              "joint_label": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              },
+              "literal_citation_validity": {
+                "denominator": 8,
+                "numerator": 8,
+                "value": 1.0
+              },
+              "macro_f1": null,
+              "macro_f1_note": "Fixed three-class mean; null if any class has no gold or prediction.",
+              "non_supported_judgment_coverage": {
+                "denominator": 2,
+                "numerator": 2,
+                "value": 1.0
+              },
+              "oracle_accuracy": {
+                "denominator": 11,
+                "numerator": 9,
+                "value": 0.8181818181818182
+              },
+              "per_class": {
+                "CONTRADICTED": {
+                  "f1": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "precision": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  },
+                  "recall": {
+                    "denominator": 0,
+                    "numerator": 0,
+                    "value": null
+                  }
+                },
+                "SUPPORTED": {
+                  "f1": {
+                    "denominator": 17,
+                    "numerator": 14,
+                    "value": 0.8235294117647058
+                  },
+                  "precision": {
+                    "denominator": 8,
+                    "numerator": 7,
+                    "value": 0.875
+                  },
+                  "recall": {
+                    "denominator": 9,
+                    "numerator": 7,
+                    "value": 0.7777777777777778
+                  }
+                },
+                "UNSUPPORTED": {
+                  "f1": {
+                    "denominator": 4,
+                    "numerator": 4,
+                    "value": 1.0
+                  },
+                  "precision": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  },
+                  "recall": {
+                    "denominator": 2,
+                    "numerator": 2,
+                    "value": 1.0
+                  }
+                }
+              },
+              "prediction_gold_evidence_coverage": {
+                "denominator": 8,
+                "numerator": 3,
+                "value": 0.375
+              },
+              "quote_characters_per_covered_non_unsupported_claim": {
+                "denominator": 3,
+                "numerator": 774,
+                "value": 258.0
+              },
+              "request_success": {
+                "denominator": 1,
+                "numerator": 1,
+                "value": 1.0
+              },
+              "strict_decomposition": {
+                "f1": {
+                  "denominator": 21,
+                  "numerator": 18,
+                  "value": 0.8571428571428571
+                },
+                "precision": {
+                  "denominator": 10,
+                  "numerator": 9,
+                  "value": 0.9
+                },
+                "recall": {
+                  "denominator": 11,
+                  "numerator": 9,
+                  "value": 0.8181818181818182
+                }
+              }
+            },
+            "independent_families": 1,
+            "requested_cases": 1,
+            "uncertainty": null,
+            "uncertainty_note": "Descriptive overlapping slice; no per-slice bootstrap."
+          }
+        }
+      },
+      "status": "COMPLETE",
+      "statuses": {
+        "OK": 1
+      },
+      "uncertainty": {
+        "confidence": 0.95,
+        "independent_units": 1,
+        "intervals": {
+          "case_exact": {
+            "defined_resamples": 10000,
+            "degenerate": true,
+            "estimate": 0.0,
+            "high": 0.0,
+            "low": 0.0,
+            "undefined_resamples": 0
+          },
+          "joint_evidence_f1": {
+            "defined_resamples": 10000,
+            "degenerate": true,
+            "estimate": 0.47619047619047616,
+            "high": 0.47619047619047616,
+            "low": 0.47619047619047616,
+            "undefined_resamples": 0
+          },
+          "joint_label_f1": {
+            "defined_resamples": 10000,
+            "degenerate": true,
+            "estimate": 0.8571428571428571,
+            "high": 0.8571428571428571,
+            "low": 0.8571428571428571,
+            "undefined_resamples": 0
+          },
+          "macro_f1": {
+            "defined_resamples": 0,
+            "degenerate": false,
+            "estimate": null,
+            "high": null,
+            "low": null,
+            "undefined_resamples": 10000
+          },
+          "strict_decomposition_f1": {
+            "defined_resamples": 10000,
+            "degenerate": true,
+            "estimate": 0.8571428571428571,
+            "high": 0.8571428571428571,
+            "low": 0.8571428571428571,
+            "undefined_resamples": 0
+          }
+        },
+        "limitations": "Family sample sensitivity only; excludes annotation bias and unobserved model randomness. Degenerate intervals do not demonstrate zero uncertainty. Undefined draws are counted.",
+        "method": "family_percentile",
+        "observations": 1,
+        "repetitions": [],
+        "samples": 10000,
+        "seed": 20261015,
+        "unit": "family"
+      }
+    }
+  },
+  "limitations": [
+    "Real public-source English benchmark; answer origins are reported separately. Document familiarity and related sources can bias results. AI annotation can share model biases; independent and human review states are recorded separately.",
+    "Strict whitespace-only text/alias matching can undercount valid paraphrases; unmatched predictions are retained.",
+    "Literal quotation validity and gold-span coverage do not establish semantic entailment.",
+    "A gold span must be contained in one returned quote; alternate sufficient quotations may be undercounted.",
+    "Bootstrap intervals describe case/family sample sensitivity, not annotation uncertainty or model randomness.",
+    "Offline protocol fixtures are not live model measurements. Subscription tokens have no inferred dollar price."
+  ],
+  "measurement_kind": "actual_verifier",
+  "paired_optimized_minus_minimal": {},
+  "schema_version": "2",
+  "scorer_version": "2",
+  "split": "dev"
+}

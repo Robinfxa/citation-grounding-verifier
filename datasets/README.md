@@ -1,8 +1,30 @@
-# Original grounding benchmark
+# Dataset versions
 
-`main.jsonl` contains 32 original English cases about deliberately fictional systems: 8 development and 24 held-out cases, with 2 dev / 6 test cases in each of `supported`, `subtle_distortion`, `extrinsic`, and `synthesis`. Each case has a distinct family. There are 68 gold claims: 18 dev (8 supported, 3 contradicted, 7 unsupported) and 50 test (20 supported, 15 contradicted, 15 unsupported). The two causal examples each separately cover the supported timing fact, the unsupported occurrence of the alleged cause, and the unsupported causal relation, alongside their other original claim, giving four claims in those cases. `diagnostic.jsonl` contains separate edge cases and must not be merged into the quality leaderboard.
+| Asset | Purpose | Current status |
+| --- | --- | --- |
+| `v2/pilot.jsonl` + `v2/pilot.manifest.json` | Dense answers over frozen licensed documentation | Development pilot; no final test population or LLM result yet |
+| `v2/pilot-author-draft-1.jsonl` | Original author draft retained for annotation comparisons | Historical input, not the revised pilot |
+| `legacy/main-v1.jsonl` | Byte-identical original main dataset | 32 fictional cases / 68 facts; frozen |
+| `main.jsonl` | Default main input | Still v1; switches only after v2 pilot/resource acceptance and final split freeze |
+| `diagnostic.jsonl` | Six safety and edge cases | Separate `diagnostic` split; excluded by `--split all` |
 
-Run the diagnostic file explicitly into a fresh directory; saved configuration and summaries identify its split as `diagnostic`. `--split all` selects only dev/test, even if an input file also contains diagnostic cases. With a configured provider, select `minimal,optimized` instead of `heuristic` to measure the LLM approaches separately from the frozen main benchmark.
+Use the explicit pilot path for new work. See the [v2 data card](../reports/eval-v2/data-card.md) for measured composition, licenses, annotation disputes and limitations, and the [current experiment status](../reports/eval-v2/README.md) for unfinished work.
+
+## Real-source representation
+
+Each real-source case records its source IDs, family, origin (`natural_response`, `generated_from_real_source`, or `controlled_mutation`), generator and annotation version. Gold claims have exact answer anchors with Unicode code-point offsets, start inclusive and end exclusive. Overlapping sentence anchors are allowed when separate facts share the sentence. The public HTTP request remains unchanged.
+
+A neighboring typed manifest binds the JSONL bytes, layout, versions, source revision/URL, raw text and license hashes, and every passage's exact raw Unicode slice. Paths stay inside the dataset directory. Unknown fields, mismatched hashes, invalid anchors/quotes, cross-split families and identical sources disguised as different families are rejected. This verifies recorded relationships, not semantic truth or all possible near-duplicates.
+
+Raw reStructuredText/Markdown/SGML is retained. No hidden cleanup removes qualifiers, tables or code examples. Full upstream notices and excerpt/change explanations are in [v2/NOTICE](v2/NOTICE). Token counts use a named estimate where the matching provider tokenizer is unavailable; estimates are not measured provider usage.
+
+The pilot is authored and reviewed by AI. The reviewer locked judgments before seeing author labels, then compared and requested corrections. [Original judgments, disagreements and publication hashes](../reports/eval-v2/annotation-review/README.md) remain available. Human review is pending. Metadata, labels and review notes never enter the end-to-end verifier payload.
+
+## Historical v1 annotation notes
+
+`legacy/main-v1.jsonl` contains 32 original English cases about deliberately fictional systems: 8 development and 24 held-out cases, with 2 dev / 6 test cases in each of `supported`, `subtle_distortion`, `extrinsic`, and `synthesis`. Each case has a distinct family. There are 68 gold claims: 18 dev (8 supported, 3 contradicted, 7 unsupported) and 50 test (20 supported, 15 contradicted, 15 unsupported). The two causal examples each separately cover the supported timing fact, the unsupported occurrence of the alleged cause, and the unsupported causal relation, alongside their other original claim, giving four claims in those cases. `diagnostic.jsonl` contains separate edge cases and must not be merged into the quality leaderboard.
+
+Run the diagnostic file explicitly into a fresh directory; saved configuration and summaries identify its split as `diagnostic`. `--split all` selects only dev/test, even if an input file also contains diagnostic cases. Model runs also require an explicit `--max-total-provider-attempts` allowance; keep diagnostics separate from quality comparisons.
 
 ```sh
 uv run grounding-eval run --dataset datasets/diagnostic.jsonl --split diagnostic \

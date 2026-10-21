@@ -1,0 +1,63 @@
+{
+  "fixed_acquisition_cases": 12,
+  "ordered_all_ids": [
+    "ragtruth-response-972",
+    "ragtruth-response-2053",
+    "ragtruth-response-3343",
+    "ragtruth-response-2143",
+    "ragtruth-response-2660",
+    "ragtruth-response-3086",
+    "ragtruth-response-5375",
+    "ragtruth-response-5315",
+    "ragtruth-response-4069",
+    "ragtruth-response-4292",
+    "ragtruth-response-4100",
+    "ragtruth-response-5639"
+  ],
+  "ordered_scoring_ids": [
+    "ragtruth-response-972",
+    "ragtruth-response-2053",
+    "ragtruth-response-3343",
+    "ragtruth-response-2143",
+    "ragtruth-response-3086",
+    "ragtruth-response-5375",
+    "ragtruth-response-5315",
+    "ragtruth-response-4069",
+    "ragtruth-response-4292"
+  ],
+  "ordered_non_scoring_diagnostic_ids": [
+    "ragtruth-response-2660",
+    "ragtruth-response-4100",
+    "ragtruth-response-5639"
+  ],
+  "exclusions": [
+    {
+      "case_id": "ragtruth-response-2660",
+      "reason_category": "shared_year_attachment_and_source_attribution_scope",
+      "decisions": [
+        "RA05",
+        "RA06",
+        "RA07",
+        "RA08"
+      ]
+    },
+    {
+      "case_id": "ragtruth-response-4100",
+      "reason_category": "causal_modifier_attachment",
+      "decisions": [
+        "RA11"
+      ]
+    },
+    {
+      "case_id": "ragtruth-response-5639",
+      "reason_category": "speed_modifier_and_Chinese_jet_UAP_actor_binding",
+      "decisions": [
+        "RA12"
+      ]
+    }
+  ],
+  "policy": "Fixed12 remain complete original-input diagnostic reconstruction. Exclude whole cases with non-unique text interpretation from primary scoring because the schema has no claim-ignore mask; never drop ambiguous gold while scoring the same full answer.",
+  "membership_timing": "Pre-verifier-results, after independent blind annotation and before auxiliary live calls; no saved verifier predictions read.",
+  "original_natural_input_rewritten": false,
+  "generalization": "Nine-case purposive auxiliary subset only, not representative of all RAGTruth or a replacement for main72."
+}

@@ -1,0 +1,1307 @@
+{
+  "schema_version": 1,
+  "review_kind": "non_author_bounded_development_error_attribution",
+  "created_at": "2026-10-20T06:58:34.332347+00:00",
+  "language": "zh-CN",
+  "packet_sha256": "22e7591bbe1da12e5671a996342bf7124bb72047de2b461643b84c9df48bafc3",
+  "packet_purpose": "Exploratory development failure attribution, not a blinded test audit or representative semantic score.",
+  "packet_selection": "All successful model end-to-end outputs available at packet creation; no quality selection.",
+  "scope": {
+    "case_ids": [
+      "v2-dev-p01",
+      "v2-dev-p02",
+      "v2-dev-p06"
+    ],
+    "track": "end-to-end",
+    "not_blinded": true,
+    "gold_visible_during_review": true,
+    "semantic_overall_score_generated": false,
+    "strict_or_gold_or_alias_mutated": false,
+    "new_inference_or_network_or_authentication": false,
+    "runtime_change": false,
+    "logging_review": "不适用：仅复核已有输出，无新增或修改运行路径。"
+  },
+  "policy_references": [
+    {
+      "path": "docs/architecture.md",
+      "lines": "82-89",
+      "rule": "strict 仅空白标准化的一对一文本/已登记 alias 匹配；gold quotation coverage 为保守代理；merged/uncertain 不静默满分。"
+    },
+    {
+      "path": "src/grounding_eval/scoring.py",
+      "lines": "42-51,67-83,93-105",
+      "rule": "先 verdict-blind exact 文本配对，再比较标签及完整 gold span 是否包含于返回引文；整段 source 不能代替 returned quotation。"
+    },
+    {
+      "path": "src/grounding/prompts.py",
+      "lines": "7-18,21-43,46-51",
+      "rule": "EXTRACT 已要求并列原子化与保留主体/条件；JUDGE 已要求引文先行词及控制条件；MINIMAL 已要求 atomic/qualifications，但只显式要求 exact 引文。"
+    }
+  ],
+  "current_read_files": [
+    {
+      "path": "docs/architecture.md",
+      "sha256": "75be01333667b3a8e0840769ad52be66cebe7e5a54100aa6d3fc4fac3ca26499"
+    },
+    {
+      "path": "src/grounding_eval/scoring.py",
+      "sha256": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e"
+    },
+    {
+      "path": "src/grounding/prompts.py",
+      "sha256": "03430945bed38972974c7cf9f6acf315b1c5313732db2eaea9a5dfcaa7671e59"
+    }
+  ],
+  "fingerprint_limit": "以上为本次读取的工作区文件哈希；未额外读取 run config，未将它们宣称为该次推理的 frozen prompt/code 哈希。",
+  "assessment_rules": [
+    "标签按完整 supplied context 判断；不查网页真相，也不把缺乏支持当直接反驳。",
+    "引用充分性按 returned citation set 判断主体、谓词及控制条件；来源 passage index 不自动补齐未返回文字。",
+    "文本配对、原子粒度、标签、引用语义、proxy 包含分别判断；同一 prediction 可有独立的多个问题。",
+    "本案篇章主题可帮助识别实体省略的成因，但实体隐含、merged 和证据边界不确定项不自动取得完全语义信用。"
+  ],
+  "case_reviews": [
+    {
+      "case_id": "v2-dev-p01",
+      "packet_item_index": 0,
+      "approach": "optimized",
+      "record_sequence": 0,
+      "request_id": "f5527f8c197e47dd9dc8c2775531e091",
+      "original_strict_counts": {
+        "gold": 8,
+        "predicted": 8,
+        "matched": 7,
+        "omitted": 1,
+        "extra": 1,
+        "label_correct": 7,
+        "evidence_correct": 7
+      },
+      "original_missing_gold_ids": [
+        "v2-dev-p01-c03"
+      ],
+      "original_unmatched_prediction_indices": [
+        2
+      ],
+      "assessments": [
+        {
+          "gold_id": "v2-dev-p01-c01",
+          "prediction_index": 0,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "CONTRADICTED",
+          "prediction_verdict": "CONTRADICTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p01-c02",
+          "prediction_index": 1,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p01-c03",
+          "prediction_index": 2,
+          "relation": "surface_equivalent",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": [
+            "F01"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p01-c04",
+          "prediction_index": 3,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p01-c05",
+          "prediction_index": 4,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p01-c06",
+          "prediction_index": 5,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "CONTRADICTED",
+          "prediction_verdict": "CONTRADICTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p01-c07",
+          "prediction_index": 6,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "CONTRADICTED",
+          "prediction_verdict": "CONTRADICTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p01-c08",
+          "prediction_index": 7,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "packet_item_index": 1,
+      "approach": "minimal",
+      "record_sequence": 1,
+      "request_id": "6d770cd3b50a45d8b4665084de24d1f8",
+      "original_strict_counts": {
+        "gold": 9,
+        "predicted": 9,
+        "matched": 4,
+        "omitted": 5,
+        "extra": 5,
+        "label_correct": 4,
+        "evidence_correct": 4
+      },
+      "original_missing_gold_ids": [
+        "v2-dev-p02-c01",
+        "v2-dev-p02-c02",
+        "v2-dev-p02-c03",
+        "v2-dev-p02-c07",
+        "v2-dev-p02-c09"
+      ],
+      "original_unmatched_prediction_indices": [
+        0,
+        1,
+        2,
+        6,
+        8
+      ],
+      "assessments": [
+        {
+          "gold_id": "v2-dev-p02-c01",
+          "prediction_index": 0,
+          "relation": "contextually_equivalent_entity_implicit",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "likely_sufficient_proxy_undercount",
+          "finding_ids": [
+            "F02",
+            "F04"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p02-c02",
+          "prediction_index": 1,
+          "relation": "contextually_equivalent_entity_implicit",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "governing_condition_missing",
+          "finding_ids": [
+            "F02",
+            "F05"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p02-c03",
+          "prediction_index": 2,
+          "relation": "contextually_equivalent_entity_implicit",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "governing_condition_missing",
+          "finding_ids": [
+            "F02",
+            "F05"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p02-c04",
+          "prediction_index": 3,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p02-c05",
+          "prediction_index": 4,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p02-c06",
+          "prediction_index": 5,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p02-c07",
+          "prediction_index": 6,
+          "relation": "contextually_equivalent_entity_implicit",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "governing_condition_missing",
+          "finding_ids": [
+            "F02",
+            "F05"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p02-c08",
+          "prediction_index": 7,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p02-c09",
+          "prediction_index": 8,
+          "relation": "surface_equivalent",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "entity_link_missing_boundary_uncertain",
+          "finding_ids": [
+            "F03",
+            "F06"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "packet_item_index": 2,
+      "approach": "minimal",
+      "record_sequence": 6,
+      "request_id": "19ce69fe1e1f4076b5a32ae75891456a",
+      "original_strict_counts": {
+        "gold": 11,
+        "predicted": 10,
+        "matched": 9,
+        "omitted": 2,
+        "extra": 1,
+        "label_correct": 9,
+        "evidence_correct": 5
+      },
+      "original_missing_gold_ids": [
+        "v2-dev-p06-c07a",
+        "v2-dev-p06-c07b"
+      ],
+      "original_unmatched_prediction_indices": [
+        6
+      ],
+      "assessments": [
+        {
+          "gold_id": "v2-dev-p06-c01",
+          "prediction_index": 0,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "collection_detail_missing_boundary_uncertain",
+          "finding_ids": [
+            "F09"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p06-c02",
+          "prediction_index": 1,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p06-c03",
+          "prediction_index": 2,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient_proxy_undercount",
+          "finding_ids": [
+            "F10"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p06-c04",
+          "prediction_index": 3,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p06-c05",
+          "prediction_index": 4,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "entity_link_missing",
+          "finding_ids": [
+            "F11"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p06-c06",
+          "prediction_index": 5,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient_proxy_undercount",
+          "finding_ids": [
+            "F12"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p06-c07a",
+          "prediction_index": 6,
+          "relation": "merged",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "entity_link_missing",
+          "finding_ids": [
+            "F07",
+            "F08"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p06-c07b",
+          "prediction_index": 6,
+          "relation": "merged",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "entity_link_missing",
+          "finding_ids": [
+            "F07",
+            "F08"
+          ]
+        },
+        {
+          "gold_id": "v2-dev-p06-c08",
+          "prediction_index": 7,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "SUPPORTED",
+          "prediction_verdict": "SUPPORTED",
+          "returned_quotation_assessment": "sufficient",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p06-c09",
+          "prediction_index": 8,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "UNSUPPORTED",
+          "prediction_verdict": "UNSUPPORTED",
+          "returned_quotation_assessment": "no_citation_correct_for_unsupported",
+          "finding_ids": []
+        },
+        {
+          "gold_id": "v2-dev-p06-c10",
+          "prediction_index": 9,
+          "relation": "strict_exact",
+          "full_context_verdict_assessment": "no_label_change_found",
+          "gold_verdict": "UNSUPPORTED",
+          "prediction_verdict": "UNSUPPORTED",
+          "returned_quotation_assessment": "no_citation_correct_for_unsupported",
+          "finding_ids": []
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "category": "strict_surface_mismatch",
+      "title": "p01 删除 also，含义及跨段继承证据保留",
+      "confidence": "high",
+      "details": [
+        {
+          "case_id": "v2-dev-p01",
+          "gold_ids": [
+            "v2-dev-p01-c03"
+          ],
+          "prediction_index": 2,
+          "answer_quotes": [
+            "Choosing data also rejects a member whose resolved absolute path would escape the extraction destination."
+          ],
+          "gold_claim_texts": [
+            "Choosing data also rejects a member whose resolved absolute path would escape the extraction destination."
+          ],
+          "prediction_claim_text": "Choosing data rejects a member whose resolved absolute path would escape the extraction destination.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 3,
+              "quote": ".. function:: data_filter(member, path)\n\n  Implements the ``'data'`` filter.\n  In addition to what ``tar_filter`` does:"
+            },
+            {
+              "index": 2,
+              "quote": ".. function:: tar_filter(member, path)\n\n  Implements the ``'tar'`` filter.\n\n  - Strip leading slashes (``/`` and :data:`os.sep`) from filenames.\n  - :ref:`Refuse <tarfile-extraction-refuse>` to extract files with absolute\n    paths (in case the name is absolute\n    even after stripping slashes, e.g. ``C:/foo`` on Windows).\n    This raises :class:`~tarfile.AbsolutePathError`.\n  - :ref:`Refuse <tarfile-extraction-refuse>` to extract files whose absolute\n    path (after following symlinks) would end up outside the destination.\n    This raises :class:`~tarfile.OutsideDestinationError`."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 2,
+              "quote": ".. function:: tar_filter(member, path)"
+            },
+            {
+              "index": 2,
+              "quote": ":ref:`Refuse <tarfile-extraction-refuse>` to extract files whose absolute\n    path (after following symlinks) would end up outside the destination."
+            },
+            {
+              "index": 3,
+              "quote": "Implements the ``'data'`` filter.\n  In addition to what ``tar_filter`` does:"
+            }
+          ]
+        }
+      ],
+      "analysis": "gold 与 prediction 唯一内容差异是 Choosing data also rejects / Choosing data rejects；also 在这里承接前文，不改变拒绝行为、路径解析或目的地范围。返回的两条引文同时给出 data 继承 tar_filter、tar_filter 的主体，以及跟随 symlink 后越界即拒绝的规则。strict 因文本不同记 1 omitted 与 1 extra，但不是实际漏掉该事实。",
+      "action": "保留 strict 原记录；在开发归因说明此一对的表面失配，不添加 alias，不为追逐 exact 文本改 prompt。",
+      "uncertainty": "这是非盲态人工定性关系，未转为官方语义匹配或补分。",
+      "affected_dimensions": [
+        "strict_alignment"
+      ]
+    },
+    {
+      "id": "F02",
+      "category": "contextual_equivalence_entity_implicit",
+      "title": "p02 多个 strict 失配含实体隐含性，不能静默全额补分",
+      "confidence": "medium",
+      "details": [
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c01"
+          ],
+          "prediction_index": 0,
+          "answer_quotes": [
+            "setting autocommit=False keeps a transaction open."
+          ],
+          "gold_claim_texts": [
+            "Setting sqlite3 autocommit=False keeps a transaction open."
+          ],
+          "prediction_claim_text": "Setting autocommit=False keeps a transaction open.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 3,
+              "quote": "It is suggested to set *autocommit* to ``False``,"
+            },
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` ensures that a transaction is always open,"
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 3,
+              "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:"
+            },
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` ensures that a transaction is always open,"
+            }
+          ],
+          "specific_note": "claim_text 省略了 gold 中显式的 sqlite3；原答案开头 For sqlite3 transaction control 明确了篇章实体。False/legacy/None 等决定行为的条件仍在 prediction 中。"
+        },
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c02"
+          ],
+          "prediction_index": 1,
+          "answer_quotes": [
+            "In that mode, commit() opens a replacement transaction immediately after closing the pending one"
+          ],
+          "gold_claim_texts": [
+            "With sqlite3 autocommit=False, commit() opens a replacement transaction immediately after closing the pending one."
+          ],
+          "prediction_claim_text": "With autocommit=False, commit() opens a replacement transaction immediately after closing the pending one.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 3,
+              "quote": "so :func:`connect`, :meth:`Connection.commit`, and :meth:`Connection.rollback`\n  will implicitly open a new transaction\n  (immediately after closing the pending one, for the latter two)."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 3,
+              "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:"
+            },
+            {
+              "index": 3,
+              "quote": ":func:`connect`, :meth:`Connection.commit`, and :meth:`Connection.rollback`\n  will implicitly open a new transaction\n  (immediately after closing the pending one, for the latter two)."
+            }
+          ],
+          "specific_note": "claim_text 省略了 gold 中显式的 sqlite3；原答案开头 For sqlite3 transaction control 明确了篇章实体。False/legacy/None 等决定行为的条件仍在 prediction 中。"
+        },
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c03"
+          ],
+          "prediction_index": 2,
+          "answer_quotes": [
+            "those transactions use BEGIN DEFERRED."
+          ],
+          "gold_claim_texts": [
+            "Transactions opened under sqlite3 autocommit=False use BEGIN DEFERRED."
+          ],
+          "prediction_claim_text": "Transactions opened with autocommit=False use BEGIN DEFERRED.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` uses ``BEGIN DEFERRED`` statements when opening transactions."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 3,
+              "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:"
+            },
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` uses ``BEGIN DEFERRED`` statements when opening transactions."
+            }
+          ],
+          "specific_note": "省略 sqlite3，并把 opened under 改为 opened with；autocommit=False 和 BEGIN DEFERRED 均保留。"
+        },
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c07"
+          ],
+          "prediction_index": 6,
+          "answer_quotes": [
+            "With legacy control and isolation_level=None, it opens no transactions implicitly."
+          ],
+          "gold_claim_texts": [
+            "With legacy control and isolation_level=None, sqlite3 opens no transactions implicitly."
+          ],
+          "prediction_claim_text": "With legacy control and isolation_level=None, no transactions are opened implicitly.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 4,
+              "quote": "If :attr:`~Connection.isolation_level` is set to ``None``,\nno transactions are implicitly opened at all."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 4,
+              "quote": "If :attr:`Connection.autocommit` is set to\n:data:`LEGACY_TRANSACTION_CONTROL` (the default),\ntransaction behaviour is controlled using\nthe :attr:`Connection.isolation_level` attribute."
+            },
+            {
+              "index": 4,
+              "quote": "If :attr:`~Connection.isolation_level` is set to ``None``,\nno transactions are implicitly opened at all."
+            }
+          ],
+          "specific_note": "claim_text 省略了 gold 中显式的 sqlite3；原答案开头 For sqlite3 transaction control 明确了篇章实体。False/legacy/None 等决定行为的条件仍在 prediction 中。"
+        }
+      ],
+      "analysis": "这些 prediction 的谓词、模式和时间限定可与对应 gold 一一对齐；本案只有 sqlite3 这一事务 API 主题。p06 等独立 API 也没有混入本案。但四条 claim_text 均未显式写出 sqlite3，故“在本 case 内语义相同”不等于“脱离 case 仍是完整独立实体断言”。c07 另有主被动语序改写。未发现 mode 被从 claim_text 删掉的反例。",
+      "action": "把四对保留为 contextually equivalent / entity implicit 的开发归因；若未来明确要求每条 claim 独立自足，先在合同与验收例子中厘清实体显式性，再检验，不能靠加 alias 消除边界。",
+      "uncertainty": "实体可否由回答的篇章主题继承，是本次最主要的匹配边界不确定性。未把四对自动提升为无条件的完全等价。",
+      "affected_dimensions": [
+        "strict_alignment",
+        "entity_explicitness"
+      ]
+    },
+    {
+      "id": "F03",
+      "category": "strict_surface_mismatch",
+      "title": "p02 connection context manager 的所有格改写",
+      "confidence": "high",
+      "details": [
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c09"
+          ],
+          "prediction_index": 8,
+          "answer_quotes": [
+            "Leaving its block does not close the connection."
+          ],
+          "gold_claim_texts": [
+            "Leaving the connection context manager block does not close the connection."
+          ],
+          "prediction_claim_text": "Leaving the connection context manager's block does not close the connection.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 2,
+              "quote": "The context manager neither implicitly opens a new transaction\n   nor closes the connection."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 2,
+              "quote": "A :class:`Connection` object can be used as a context manager that"
+            },
+            {
+              "index": 2,
+              "quote": "The context manager neither implicitly opens a new transaction\n   nor closes the connection."
+            }
+          ]
+        }
+      ],
+      "analysis": "gold 的 Leaving the connection context manager block 与 prediction 的 Leaving the connection context manager's block 指同一退出动作；does not close the connection 的否定及实体均保留。strict 失配不是抽取遗漏。引文主体链接单列 F06，不因文本等价而自动判足。",
+      "action": "保留 strict 结果并说明表面失配；无需为此改变 gold、alias 或约束否定词的提示。",
+      "uncertainty": "引文充分性仍有 F06 的独立边界，不能由此给整条断言全额证据信用。",
+      "affected_dimensions": [
+        "strict_alignment"
+      ]
+    },
+    {
+      "id": "F04",
+      "category": "evidence_proxy_undercount_likely",
+      "title": "p02 False 条件与事务开放行为都已引用，gold 要求更长衔接语",
+      "confidence": "medium",
+      "details": [
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c01"
+          ],
+          "prediction_index": 0,
+          "answer_quotes": [
+            "setting autocommit=False keeps a transaction open."
+          ],
+          "gold_claim_texts": [
+            "Setting sqlite3 autocommit=False keeps a transaction open."
+          ],
+          "prediction_claim_text": "Setting autocommit=False keeps a transaction open.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 3,
+              "quote": "It is suggested to set *autocommit* to ``False``,"
+            },
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` ensures that a transaction is always open,"
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 3,
+              "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:"
+            },
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` ensures that a transaction is always open,"
+            }
+          ]
+        }
+      ],
+      "analysis": "返回两个引文分别明确 set autocommit to False 和 sqlite3 ensures a transaction is always open。gold 的第一跨度还要求 which implies PEP249-compliant transaction control / This means。核心模式和行为均在返回引用中，较可能是 gold-span 包含代理保守，而不是缺失整个 False 条件。由于 strict 未配对，官方 evidence 未对这一对执行；该观察仅是定性归因。",
+      "action": "不改正式分数；不要把本项与 F05 的“完全没引模式条件”混为一类。未来按同一主体/条件充分性规则复核即可。",
+      "uncertainty": "两个引用删去了连接句；若合同要求引用内显式展示 This means 这一逻辑桥，仍可判为证据链略短。此项不作为最强的代理漏扣实例。",
+      "affected_dimensions": [
+        "evidence_proxy"
+      ]
+    },
+    {
+      "id": "F05",
+      "category": "quotation_governing_condition_missing",
+      "title": "p02 三处引用缺失控制模式条件",
+      "confidence": "high",
+      "details": [
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c02"
+          ],
+          "prediction_index": 1,
+          "answer_quotes": [
+            "In that mode, commit() opens a replacement transaction immediately after closing the pending one"
+          ],
+          "gold_claim_texts": [
+            "With sqlite3 autocommit=False, commit() opens a replacement transaction immediately after closing the pending one."
+          ],
+          "prediction_claim_text": "With autocommit=False, commit() opens a replacement transaction immediately after closing the pending one.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 3,
+              "quote": "so :func:`connect`, :meth:`Connection.commit`, and :meth:`Connection.rollback`\n  will implicitly open a new transaction\n  (immediately after closing the pending one, for the latter two)."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 3,
+              "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:"
+            },
+            {
+              "index": 3,
+              "quote": ":func:`connect`, :meth:`Connection.commit`, and :meth:`Connection.rollback`\n  will implicitly open a new transaction\n  (immediately after closing the pending one, for the latter two)."
+            }
+          ],
+          "specific_note": "返回引文保留 commit、immediately after closing，但没有 autocommit=False 的上位段落；claim_text 本身保留 False。"
+        },
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c03"
+          ],
+          "prediction_index": 2,
+          "answer_quotes": [
+            "those transactions use BEGIN DEFERRED."
+          ],
+          "gold_claim_texts": [
+            "Transactions opened under sqlite3 autocommit=False use BEGIN DEFERRED."
+          ],
+          "prediction_claim_text": "Transactions opened with autocommit=False use BEGIN DEFERRED.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` uses ``BEGIN DEFERRED`` statements when opening transactions."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 3,
+              "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:"
+            },
+            {
+              "index": 3,
+              "quote": ":mod:`!sqlite3` uses ``BEGIN DEFERRED`` statements when opening transactions."
+            }
+          ],
+          "specific_note": "返回引用仅是 uses BEGIN DEFERRED 句，缺少它属于 autocommit=False 分支的上位条件；claim_text 保留 False。"
+        },
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c07"
+          ],
+          "prediction_index": 6,
+          "answer_quotes": [
+            "With legacy control and isolation_level=None, it opens no transactions implicitly."
+          ],
+          "gold_claim_texts": [
+            "With legacy control and isolation_level=None, sqlite3 opens no transactions implicitly."
+          ],
+          "prediction_claim_text": "With legacy control and isolation_level=None, no transactions are opened implicitly.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 4,
+              "quote": "If :attr:`~Connection.isolation_level` is set to ``None``,\nno transactions are implicitly opened at all."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 4,
+              "quote": "If :attr:`Connection.autocommit` is set to\n:data:`LEGACY_TRANSACTION_CONTROL` (the default),\ntransaction behaviour is controlled using\nthe :attr:`Connection.isolation_level` attribute."
+            },
+            {
+              "index": 4,
+              "quote": "If :attr:`~Connection.isolation_level` is set to ``None``,\nno transactions are implicitly opened at all."
+            }
+          ],
+          "specific_note": "返回引用有 isolation_level=None，但缺少 LEGACY_TRANSACTION_CONTROL 的外层条件；claim_text 保留 legacy。"
+        }
+      ],
+      "analysis": "完整 supplied context 支持这些标签，问题在 returned quotation set：同一个 sqlite3 源中明确区分 False、True 和 LEGACY，isolation_level 又只在 legacy 生效。把模式段落切掉，使引文无法独立展示为何应将该行为绑定到断言的模式。这不是标签错误，也不是抽取条件丢失，更不是单纯 gold 多要求标点。",
+      "action": "若做下一轮开发实验，只向 MINIMAL 增加一句引用须带主体/API 与 governing conditions 的要求；引用现有短模式段落及行为句即可，无需整段灌入。",
+      "uncertainty": "原上下文中的行为并未相互否定；不能把“引文不完整”改判为 UNSUPPORTED，也不能借来源 passage index 自动补足未返回的文字。",
+      "affected_dimensions": [
+        "quotation_sufficiency"
+      ]
+    },
+    {
+      "id": "F06",
+      "category": "quotation_entity_link_missing",
+      "title": "p02 context manager 引文未展示 Connection 主体链接",
+      "confidence": "medium",
+      "details": [
+        {
+          "case_id": "v2-dev-p02",
+          "gold_ids": [
+            "v2-dev-p02-c09"
+          ],
+          "prediction_index": 8,
+          "answer_quotes": [
+            "Leaving its block does not close the connection."
+          ],
+          "gold_claim_texts": [
+            "Leaving the connection context manager block does not close the connection."
+          ],
+          "prediction_claim_text": "Leaving the connection context manager's block does not close the connection.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 2,
+              "quote": "The context manager neither implicitly opens a new transaction\n   nor closes the connection."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 2,
+              "quote": "A :class:`Connection` object can be used as a context manager that"
+            },
+            {
+              "index": 2,
+              "quote": "The context manager neither implicitly opens a new transaction\n   nor closes the connection."
+            }
+          ]
+        }
+      ],
+      "analysis": "返回 The context manager neither ... nor closes the connection 正确涵盖不关闭，但没有引用 A Connection object can be used as a context manager 这一主体链接。完整 passage 的主题使指代很容易恢复，故危害小于 F05；在要求引文集合自带先行词的边界下仍是实质缺口。",
+      "action": "在需要独立审读的引用中追加短的 Connection/context manager 主体句，而不是追加无关示例。",
+      "uncertainty": "若评审规则允许由来源段落标题或完整 passage 自动恢复唯一 context manager，可能视为代理保守。这里按 architecture 的完整引文语义及 JUDGE 的先行词要求保留为中等置信缺口，不作无争议错误统计。",
+      "affected_dimensions": [
+        "quotation_sufficiency",
+        "evidence_boundary_uncertainty"
+      ]
+    },
+    {
+      "id": "F07",
+      "category": "atomicity_merge",
+      "title": "p06 size 与 hash 合并，事实未漏但粒度不符",
+      "confidence": "high",
+      "details": [
+        {
+          "case_id": "v2-dev-p06",
+          "gold_ids": [
+            "v2-dev-p06-c07a",
+            "v2-dev-p06-c07b"
+          ],
+          "prediction_index": 6,
+          "answer_quotes": [
+            "A PackagePath returned by files() has size and hash properties drawn from metadata."
+          ],
+          "gold_claim_texts": [
+            "A PackagePath returned by files() has a metadata-derived size property.",
+            "A PackagePath returned by files() has a metadata-derived hash property."
+          ],
+          "prediction_claim_text": "A PackagePath returned by files() has size and hash properties drawn from metadata.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 3,
+              "quote": "Each file object returned is a\n``PackagePath``, a :class:`pathlib.PurePath` derived object with additional ``dist``,\n``size``, and ``hash`` properties as indicated by the metadata."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 3,
+              "quote": "``files()`` function takes a `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_ name\nand returns all of the\nfiles installed by this distribution.  Each file object returned is a\n``PackagePath``, a :class:`pathlib.PurePath` derived object with additional ``dist``,\n``size``, and ``hash`` properties as indicated by the metadata."
+            }
+          ]
+        }
+      ],
+      "analysis": "prediction 明确包含 size、hash、metadata-derived 三项内容，没有丢失两个属性中的任意一个；但 size 与 hash 可分别核验，gold 因而拆成两条。一个 prediction 对两个 gold 的关系属于 merged，不能当成普通一对一表面改写，也不能静默各给一份完整信用。",
+      "action": "保留 strict 的两条 missing 与一条 extra，并在归因里标 merged。MINIMAL 已要求 atomic；若另做单变量实验，可单独增强“可分别核验的并列属性分别输出”的例子，不能与引用改动同时测试，也不要合并 gold。",
+      "uncertainty": "该观察证明本例粒度不一致，不证明普遍漏抽事实；单条结果不能估计发生率。",
+      "affected_dimensions": [
+        "atomicity",
+        "strict_alignment"
+      ]
+    },
+    {
+      "id": "F08",
+      "category": "quotation_entity_link_missing",
+      "title": "p06 合并属性引文缺少 files() 返回值链接",
+      "confidence": "high",
+      "details": [
+        {
+          "case_id": "v2-dev-p06",
+          "gold_ids": [
+            "v2-dev-p06-c07a",
+            "v2-dev-p06-c07b"
+          ],
+          "prediction_index": 6,
+          "answer_quotes": [
+            "A PackagePath returned by files() has size and hash properties drawn from metadata."
+          ],
+          "gold_claim_texts": [
+            "A PackagePath returned by files() has a metadata-derived size property.",
+            "A PackagePath returned by files() has a metadata-derived hash property."
+          ],
+          "prediction_claim_text": "A PackagePath returned by files() has size and hash properties drawn from metadata.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 3,
+              "quote": "Each file object returned is a\n``PackagePath``, a :class:`pathlib.PurePath` derived object with additional ``dist``,\n``size``, and ``hash`` properties as indicated by the metadata."
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 3,
+              "quote": "``files()`` function takes a `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_ name\nand returns all of the\nfiles installed by this distribution.  Each file object returned is a\n``PackagePath``, a :class:`pathlib.PurePath` derived object with additional ``dist``,\n``size``, and ``hash`` properties as indicated by the metadata."
+            }
+          ]
+        }
+      ],
+      "analysis": "引文从 Each file object returned is a PackagePath 开始，完整展示属性及 metadata 来源，但未给出哪个 API 返回这些对象。claim_text 的 A PackagePath returned by files() 因此仍缺 files()→returned objects 的引文链接。此问题独立于 F07 原子性。",
+      "action": "引用同段紧邻的 files() function ... returns all of the files installed by this distribution 与现有属性句，形成短的连贯证据链。",
+      "uncertainty": "完整 passage 很明确，标签应继续为 SUPPORTED；不能把实际引文的接口链接缺口误报成源资料不支持。",
+      "affected_dimensions": [
+        "quotation_sufficiency"
+      ]
+    },
+    {
+      "id": "F09",
+      "category": "quotation_property_detail_missing_borderline",
+      "title": "p06 EntryPoints 引文少 collection 释义",
+      "confidence": "medium",
+      "details": [
+        {
+          "case_id": "v2-dev-p06",
+          "gold_ids": [
+            "v2-dev-p06-c01"
+          ],
+          "prediction_index": 0,
+          "answer_quotes": [
+            "importlib.metadata.entry_points() returns an EntryPoints collection."
+          ],
+          "gold_claim_texts": [
+            "importlib.metadata.entry_points() returns an EntryPoints collection."
+          ],
+          "prediction_claim_text": "importlib.metadata.entry_points() returns an EntryPoints collection.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 1,
+              "quote": "The ``entry_points()`` function returns an ``EntryPoints`` object,"
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 1,
+              "quote": "The ``entry_points()`` function returns an ``EntryPoints`` object,\na collection of all ``EntryPoint`` objects"
+            }
+          ]
+        }
+      ],
+      "analysis": "返回引文仅说明 returns an EntryPoints object；gold 和原断言另外写明 collection。来源紧接的 a collection of all EntryPoint objects 是该属性的直接证据，但未被返回。若不靠类型名本身或外部知识推断，当前引文未完整自证 collection。",
+      "action": "优先延长到同一句的 collection 释义；不要为了覆盖 gold 尾巴而机械扩大所有引文。",
+      "uncertainty": "EntryPoints 这个类型名本身可能被读者理解为集合，故此项是中等置信的属性定义不足，而不是确定的标签误判或 gold 标签歧义。若允许类型名语义，此项可归代理保守。",
+      "affected_dimensions": [
+        "quotation_sufficiency",
+        "evidence_boundary_uncertainty"
+      ]
+    },
+    {
+      "id": "F10",
+      "category": "evidence_proxy_undercount",
+      "title": "p06 keyword forwarding 引文已含完整关系",
+      "confidence": "high",
+      "details": [
+        {
+          "case_id": "v2-dev-p06",
+          "gold_ids": [
+            "v2-dev-p06-c03"
+          ],
+          "prediction_index": 2,
+          "answer_quotes": [
+            "keyword arguments passed to entry_points() are forwarded to select()."
+          ],
+          "gold_claim_texts": [
+            "Keyword arguments passed to entry_points() are forwarded to select()."
+          ],
+          "prediction_claim_text": "Keyword arguments passed to entry_points() are forwarded to select().",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 1,
+              "quote": "``entry_points`` passes keyword arguments\nthrough to select"
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 1,
+              "quote": "``entry_points`` passes keyword arguments\nthrough to select"
+            }
+          ]
+        }
+      ],
+      "analysis": "entry_points passes keyword arguments through to select 已明确主体、参数和目标。gold 的 Equivalently, since 前缀及 :: 结尾没有增加断言所需关系；按 exact gold-span containment 记 false 是保守代理漏扣。",
+      "action": "保留正式 proxy 分数，报告短引文语义充分；不改 gold、alias 或提示以强迫引用该衔接语。",
+      "uncertainty": "仅限此具体源句和此断言，不推出所有短引文都足够。",
+      "affected_dimensions": [
+        "evidence_proxy"
+      ]
+    },
+    {
+      "id": "F11",
+      "category": "quotation_entity_link_missing",
+      "title": "p06 unparsed values 引文缺少 metadata() 接口链接",
+      "confidence": "high",
+      "details": [
+        {
+          "case_id": "v2-dev-p06",
+          "gold_ids": [
+            "v2-dev-p06-c05"
+          ],
+          "prediction_index": 4,
+          "answer_quotes": [
+            "The metadata() interface returns distribution metadata values without parsing them."
+          ],
+          "gold_claim_texts": [
+            "The metadata() interface returns distribution metadata values without parsing them."
+          ],
+          "prediction_claim_text": "The metadata() interface returns distribution metadata values without parsing them.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 2,
+              "quote": "the values are returned unparsed from the distribution metadata"
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 2,
+              "quote": "Every `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_ includes some metadata,\nwhich you can extract using the\n``metadata()`` function"
+            },
+            {
+              "index": 2,
+              "quote": "The keys of the returned data structure, a ``PackageMetadata``,\nname the metadata keywords, and\nthe values are returned unparsed from the distribution metadata"
+            }
+          ]
+        }
+      ],
+      "analysis": "the values are returned unparsed from the distribution metadata 表达了 unparsed，但未说明这些 values 由 metadata() 取出。完整 source 用 metadata() function、returned data structure/PackageMetadata 与 values 建立链条。返回 reasoning 自行提到 metadata interface 不能替代缺少的引用。",
+      "action": "保留 unparsed 句并追加 metadata() 与返回结构的短链接；与 F05/F08 共同检验主体/条件引用候选。",
+      "uncertainty": "这是引用集合缺口，非完整上下文中的标签缺口；gold 的 API 层措辞没有声称实际返回类型是稳定实现，未见 gold 标签歧义。",
+      "affected_dimensions": [
+        "quotation_sufficiency"
+      ]
+    },
+    {
+      "id": "F12",
+      "category": "evidence_proxy_undercount",
+      "title": "p06 JSON-compatible 已完整引用，PEP 尾语非必需",
+      "confidence": "high",
+      "details": [
+        {
+          "case_id": "v2-dev-p06",
+          "gold_ids": [
+            "v2-dev-p06-c06"
+          ],
+          "prediction_index": 5,
+          "answer_quotes": [
+            "PackageMetadata.json exposes metadata in JSON-compatible form."
+          ],
+          "gold_claim_texts": [
+            "PackageMetadata.json exposes metadata in JSON-compatible form."
+          ],
+          "prediction_claim_text": "PackageMetadata.json exposes metadata in JSON-compatible form.",
+          "prediction_verdict": "SUPPORTED",
+          "returned_citations": [
+            {
+              "index": 2,
+              "quote": "``PackageMetadata`` also presents a ``json`` attribute that returns\nall the metadata in a JSON-compatible form"
+            }
+          ],
+          "minimum_source_evidence": [
+            {
+              "index": 2,
+              "quote": "``PackageMetadata`` also presents a ``json`` attribute that returns\nall the metadata in a JSON-compatible form"
+            }
+          ]
+        }
+      ],
+      "analysis": "PackageMetadata、json attribute、all metadata、JSON-compatible form 均在返回引文中。gold 多要求 per PEP566::，而断言没有声称遵循某一 PEP；截掉该尾语没有删掉待证属性，是清楚的代理漏扣。",
+      "action": "保留原始 strict/proxy 记录，只在归因里说明；无需扩大引文、改 gold 或调整标签规则。",
+      "uncertainty": "该结论不适用于另一个明确声称 PEP566 合规的断言。",
+      "affected_dimensions": [
+        "evidence_proxy"
+      ]
+    }
+  ],
+  "label_reasoning_controls": [
+    {
+      "case_id": "v2-dev-p01",
+      "gold_ids": [
+        "v2-dev-p01-c01"
+      ],
+      "prediction_index": 0,
+      "verdict": "CONTRADICTED",
+      "logic": "上下文明确双 None 时回退 fully_trusted；未来版本 data 默认值不改变此段的当前分支。",
+      "evidence": [
+        {
+          "index": 1,
+          "quote": "* ``None`` (default): Use :attr:`TarFile.extraction_filter`."
+        },
+        {
+          "index": 1,
+          "quote": "If that is also ``None`` (the default), raise a ``DeprecationWarning``,\n  and fall back to the ``'fully_trusted'`` filter"
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "gold_ids": [
+        "v2-dev-p01-c06"
+      ],
+      "prediction_index": 5,
+      "verdict": "CONTRADICTED",
+      "logic": "aborted extraction does not attempt to clean up 是直接反驳，非仅缺支持。",
+      "evidence": [
+        {
+          "index": 1,
+          "quote": "Note that when extraction is aborted, :meth:`~TarFile.extractall` may leave\n    the archive partially extracted. It does not attempt to clean up."
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "gold_ids": [
+        "v2-dev-p01-c07"
+      ],
+      "prediction_index": 6,
+      "verdict": "CONTRADICTED",
+      "logic": "Even with data 与 pre-defined filters do not prevent denial-of-service 联合直接反驳。",
+      "evidence": [
+        {
+          "index": 4,
+          "quote": "Even with ``filter='data'``, *tarfile* is not suited for extracting untrusted\nfiles without prior inspection.\nAmong other issues, the pre-defined filters do not prevent denial-of-service\nattacks."
+        }
+      ]
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "gold_ids": [
+        "v2-dev-p06-c09"
+      ],
+      "prediction_index": 8,
+      "verdict": "UNSUPPORTED",
+      "logic": "properties as indicated by metadata 不能推出 files() 在返回前验证所有文件内容；源也没有直接否定验证行为。",
+      "evidence": [
+        {
+          "index": 3,
+          "quote": "``size``, and ``hash`` properties as indicated by the metadata."
+        }
+      ],
+      "evidence_role": "相关上下文，不是不存在验证行为的证明"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "gold_ids": [
+        "v2-dev-p06-c10"
+      ],
+      "prediction_index": 9,
+      "verdict": "UNSUPPORTED",
+      "logic": "load resolves value 的描述没有十五分钟缓存或直接反驳缓存的内容；不把缺证据判为 CONTRADICTED。",
+      "evidence": [
+        {
+          "index": 1,
+          "quote": "a ``.load()`` method to resolve the value."
+        }
+      ],
+      "evidence_role": "相关上下文，不是不存在缓存的证明"
+    }
+  ],
+  "gold_review": {
+    "label_ambiguity_found": false,
+    "note": "本 packet 未发现需改 gold verdict 的实质歧义；p06 size/hash 拆分符合可独立核验的原子性。实体隐含及短引文类型语义是评分/证据边界的不确定性，已保留，未据此改 gold 或 alias。"
+  },
+  "prompt_candidates": [
+    {
+      "id": "C01",
+      "priority": "first_if_more_development_inference_is_authorized",
+      "target": "MINIMAL only",
+      "single_variable": "只增补引用充分性/主体条件链接要求；保持模型、抽取规则、scorer、gold 与其他设置相同。",
+      "proposed_sentence": "For supported/refuted claims, cite a minimal sufficient set that includes the entity or API identity and every governing condition; include the nearby antecedent when a short quote omits either.",
+      "existing_requirements": "MINIMAL 已要求 atomic factual claims、fully entailed、Preserve qualifications、exact quotations；该候选不是首次引入保留条件。JUDGE 已明确有此引用链要求，不建议向 JUDGE 重复追加。",
+      "motivation_findings": [
+        "F05",
+        "F08",
+        "F11"
+      ],
+      "secondary_boundary_findings": [
+        "F06",
+        "F09"
+      ],
+      "acceptance": "比较同一 dev 消费者输出，模式条件与 API 链接需实际出现在引用中；保留逐字合法性与有限长度。已有充分短引文 F10/F12 不强制复制 gold 非必要前后缀。",
+      "status": "未实施、未推理验证；不能声明改善，不能从本报告自动推出额外 provider 调用。"
+    },
+    {
+      "id": "C02",
+      "priority": "separate_optional_experiment_after_C01",
+      "target": "MINIMAL only",
+      "single_variable": "只增加可分别核验的并列属性分条例子；不得与 C01 同时改。",
+      "proposed_sentence": "Return separately checkable properties as separate claims, even when the answer lists them together with and.",
+      "existing_requirements": "MINIMAL 已要求 atomic，因此这是对现有要求的具体化；EXTRACT 已显式要求拆分 independently judgeable conjunctions，无需重复修改。",
+      "motivation_findings": [
+        "F07"
+      ],
+      "acceptance": "size 与 hash 式独立属性各有一条 claim，限定与各自证据保留；不通过合并 gold 或新增 alias 实现通过。",
+      "status": "未实施、未推理验证；单例不足以要求一定修改。"
+    }
+  ],
+  "recommendation": "保留本次 strict 与 proxy 原始分数，只补开发归因。若未来有开发推理授权，先单变量测试 C01；不要依据这三条输出给方法排总名次，也不要为适配输出改 gold/alias。",
+  "mechanical_validation": {
+    "answer_anchor_exactness": "全部 packet gold anchor 与原答案切片相符。",
+    "gold_citation_literal_validity": "全部 packet gold evidence quote 均是所指 passage 的精确子串。",
+    "prediction_citation_literal_validity": "全部 packet returned citation 均是所指 passage 的精确子串；该事实不证明语义充分。",
+    "coverage": "每个 packet gold ID 和每个 prediction index 均有 qualitative assessment；p06 prediction 6 显式映射两个 gold。"
+  },
+  "unverified_scope": [
+    "非盲态、无独立锁定标签的正式 test audit，也无语义总体分数或置信区间。",
+    "仅 packet 的3条成功端到端输出；未审2条 oracle 输出、heuristic、超时、upstream_unavailable、预算 NOT_RUN 或其他 case。",
+    "未验证方法总体比较、失败根因、时延/成本、provider 行为或新 prompt 效果。",
+    "未核该次运行 frozen config 与当前提示文件完全一致；未重新运行模型。",
+    "未作网页或原始许可证/数据来源复核；事实判断仅限 packet 冻结 context。"
+  ],
+  "additional_materials_required": false,
+  "public_record_provenance": {
+    "original_review_sha256": "67c9f60f43412569b6f6bfa308555be315c90422ba8c5d17642ca04848cfec2c",
+    "records_path": "reports/eval-v2/pilot-resume-20261020/records.jsonl",
+    "cases_path": "reports/eval-v2/pilot-resume-20261020/cases.jsonl",
+    "selection": "All successful non-heuristic end-to-end records in saved sequence order: optimized/p01, minimal/p02, minimal/p06. Join case_id to cases.id.",
+    "normalization": "Replaced the private packet path with public record reconstruction information; reviewer findings unchanged."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "status": "C01_DELIVERED_AUTHOR_RECOMMENDS_ADOPTION_PARENT_DECISION_PENDING",
+  "new_calls": 36,
+  "new_ceiling": 216,
+  "remaining": 180,
+  "new_rows": 36,
+  "new_ok": 36,
+  "new_error": 0,
+  "analysis_rows": 48,
+  "analysis_ok": 47,
+  "analysis_original_error": 1,
+  "source_families": 12,
+  "known_new_usage": {
+    "input_tokens": 117876,
+    "output_tokens": 40439,
+    "cached_input_tokens": 0
+  },
+  "new_usage_complete": true,
+  "dollar_total_usd": null,
+  "all_three_raw_replays_byte_identical": true,
+  "raw_run_files_unchanged": 69,
+  "public_paired_replay": {
+    "exit_code": 0,
+    "status": "IDENTICAL_PAIRED_ANALYSIS",
+    "inference_calls": 0,
+    "credential_reads": 0,
+    "network_calls": 0
+  },
+  "public_replay_ruff": "passed",
+  "production_source_or_data_changed": false,
+  "artifacts_sha256": {
+    "experiment-plan.json": "2fbfc3d20e1ec0f0503e6f1f5a909d0af939ddc338ece659077c803297da55c8",
+    "candidate.patch": "00c101b2946724359103a2bb58ad4f0a0a5bf9f59e80adf4804d6a5e56ce70ce",
+    "selection.json": "6a116012fbd755277c6399ec1fc298efa211685bc7563bdae9d248a72b56a51d",
+    "execution-receipt.json": "d27fecaee11c7997380ace548eacbbbec39a15dbf162177391bdeaa2723db16e",
+    "analysis.json": "8de556cc23a035f1d61d2347dbcdee1be5279e073cc61c15eacf1977e67d6665",
+    "analysis-row-map.json": "7f23560e3266ef3aaaa1aa51a0d1144c7c42d4f00d62c7d1365558acd53490db",
+    "changed-outcomes.json": "2e129c602213fbcd039fad164729d14b48c7dbfef7fe293cb8932e397162477c",
+    "qualitative-review.json": "bcecbcac47d39f7ad0e79ff6264e211152790760004d60f11b30fb3927daa0dc",
+    "replay-analysis.py": "53ef2c6801303297d0abd20fe61d1a0264c82cae36fa005263d3f42b9001fe30",
+    "README.md": "df6798ea91245a2a11ff12ecfa09bbfd05c247881501ed553d50eadde55af198"
+  },
+  "baseline_format_amendment": "reports/eval-v2/completion-dev-20261020/replay-format-amendment.json",
+  "final_test_inference_started": false,
+  "adoption_decision": "PENDING_PARENT"
+}

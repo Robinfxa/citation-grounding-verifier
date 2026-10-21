@@ -1,0 +1,275 @@
+{
+  "status": "METADATA_SELECTION_FIXED_BEFORE_TEST_INFERENCE",
+  "seed": 20261020,
+  "algorithm": "Largest-remainder proportional category/origin quotas for 24 cases, remainder ties favor smaller strata then lexical key. Seeded within-family order and deterministic memoized first feasible choice select one case per family. Stability samples 16 of these cases by proportional category quota; seeded shuffle assigns disjoint audit batches. No answer, claim text, verdict, evidence or prediction is used.",
+  "source_dataset_sha256": "b103f0ee127728f0fdfc5d58f3f5cbcf7c39e89d09b1369d1e7b9baf22b1b845",
+  "audit_case_ids": [
+    "v2-test-r01",
+    "v2-test-r04",
+    "v2-test-r06",
+    "v2-test-r08",
+    "v2-test-r09",
+    "v2-test-r12",
+    "v2-test-r13",
+    "v2-test-r16",
+    "v2-test-r17",
+    "v2-test-r20",
+    "v2-test-r21",
+    "v2-test-r23",
+    "v2-test-r25",
+    "v2-test-r28",
+    "v2-test-r30",
+    "v2-test-r32",
+    "v2-test-r34",
+    "v2-test-r35",
+    "v2-test-r37",
+    "v2-test-r39",
+    "v2-test-r42",
+    "v2-test-r44",
+    "v2-test-r45",
+    "v2-test-r47"
+  ],
+  "repeat_case_ids": [
+    "v2-test-r01",
+    "v2-test-r04",
+    "v2-test-r06",
+    "v2-test-r08",
+    "v2-test-r09",
+    "v2-test-r12",
+    "v2-test-r16",
+    "v2-test-r23",
+    "v2-test-r25",
+    "v2-test-r28",
+    "v2-test-r30",
+    "v2-test-r32",
+    "v2-test-r39",
+    "v2-test-r42",
+    "v2-test-r45",
+    "v2-test-r47"
+  ],
+  "audit_batches": [
+    [
+      "v2-test-r01",
+      "v2-test-r13",
+      "v2-test-r16",
+      "v2-test-r17",
+      "v2-test-r25",
+      "v2-test-r28",
+      "v2-test-r30",
+      "v2-test-r34",
+      "v2-test-r42",
+      "v2-test-r44",
+      "v2-test-r45",
+      "v2-test-r47"
+    ],
+    [
+      "v2-test-r04",
+      "v2-test-r06",
+      "v2-test-r08",
+      "v2-test-r09",
+      "v2-test-r12",
+      "v2-test-r20",
+      "v2-test-r21",
+      "v2-test-r23",
+      "v2-test-r32",
+      "v2-test-r35",
+      "v2-test-r37",
+      "v2-test-r39"
+    ]
+  ],
+  "audit_category_counts": {
+    "supported": 12,
+    "extrinsic": 8,
+    "subtle_distortion": 3,
+    "synthesis": 1
+  },
+  "audit_origin_counts": {
+    "generated_from_real_source": 15,
+    "controlled_mutation": 9
+  },
+  "repeat_category_counts": {
+    "extrinsic": 5,
+    "subtle_distortion": 2,
+    "supported": 8,
+    "synthesis": 1
+  },
+  "repeat_origin_counts": {
+    "controlled_mutation": 6,
+    "generated_from_real_source": 10
+  },
+  "metadata_selected": [
+    {
+      "id": "v2-test-r01",
+      "family_id": "v2-real-python-collections",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r04",
+      "family_id": "v2-real-python-dataclasses",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation"
+    },
+    {
+      "id": "v2-test-r06",
+      "family_id": "v2-real-python-itertools",
+      "split": "test",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation"
+    },
+    {
+      "id": "v2-test-r08",
+      "family_id": "v2-real-python-enum",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r09",
+      "family_id": "v2-real-python-asyncio-task",
+      "split": "test",
+      "category": "synthesis",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r12",
+      "family_id": "v2-real-python-concurrent.futures",
+      "split": "test",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation"
+    },
+    {
+      "id": "v2-test-r13",
+      "family_id": "v2-real-rust-expressions-match-expr",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r16",
+      "family_id": "v2-real-rust-attributes-derive",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r17",
+      "family_id": "v2-real-rust-trait-bounds",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r20",
+      "family_id": "v2-real-rust-items-traits",
+      "split": "test",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation"
+    },
+    {
+      "id": "v2-test-r21",
+      "family_id": "v2-real-rust-type-coercions",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r23",
+      "family_id": "v2-real-rust-unsafe-keyword",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r25",
+      "family_id": "v2-real-pytest-fixtures",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r28",
+      "family_id": "v2-real-pytest-capture-stdout-stderr",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation"
+    },
+    {
+      "id": "v2-test-r30",
+      "family_id": "v2-real-pytest-logging",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r32",
+      "family_id": "v2-real-pytest-capture-warnings",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation"
+    },
+    {
+      "id": "v2-test-r34",
+      "family_id": "v2-real-pytest-assert",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation"
+    },
+    {
+      "id": "v2-test-r35",
+      "family_id": "v2-real-pytest-skipping",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r37",
+      "family_id": "v2-real-curl-cookie",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r39",
+      "family_id": "v2-real-curl-tls",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r42",
+      "family_id": "v2-real-curl-timeouts",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation"
+    },
+    {
+      "id": "v2-test-r44",
+      "family_id": "v2-real-curl-proxy",
+      "split": "test",
+      "category": "extrinsic",
+      "origin": "controlled_mutation"
+    },
+    {
+      "id": "v2-test-r45",
+      "family_id": "v2-real-curl-ranges",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    },
+    {
+      "id": "v2-test-r47",
+      "family_id": "v2-real-curl-multipart",
+      "split": "test",
+      "category": "supported",
+      "origin": "generated_from_real_source"
+    }
+  ],
+  "selector_sha256": "f0e9dea18c170dd27d3f2b5eb072a127c8e3fb84669c9efa9965fea031284f7d",
+  "prior_reviewed_candidate_sha256": "d2c809677180d5400dcb23a0d7d322198b2cea057e42427410e5a77fd779aee5",
+  "selected_ids_identical_after_metadata_only_promotion": true,
+  "runtime_order_and_bootstrap_seed": 20261015,
+  "selection_seed_is_separate_from_runtime_seed": true
+}

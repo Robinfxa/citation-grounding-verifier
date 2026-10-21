@@ -1,0 +1,338 @@
+{
+  "status": "COMPLETE",
+  "source_commit": "926d5a1b990bb2a4dbcd47577b27287af2d54e61",
+  "cli_exit_code": 0,
+  "cli_wall_ms": 28404.394699260592,
+  "case_ids": [
+    "v2-dev-p01"
+  ],
+  "records": [
+    {
+      "approach": "jev_optimized",
+      "status": "OK",
+      "error_code": null,
+      "attempted": true,
+      "elapsed_ms": 25942.29601882398,
+      "gold": 8,
+      "report_present": true,
+      "trace_count": 8,
+      "validated_choice_decision_count": 31
+    }
+  ],
+  "stages": [
+    {
+      "stage": "extraction",
+      "provider": "codex",
+      "requested_model": "gpt-6.1-sol",
+      "response_models": [
+        "gpt-6.1-sol"
+      ],
+      "outcome": "success",
+      "error_code": null,
+      "question_count": 0,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": true,
+        "input_tokens": 462,
+        "output_tokens": 301
+      },
+      "latency_ms": 9688.3179936558,
+      "retry": false,
+      "repair": false
+    },
+    {
+      "stage": "jev_judgment",
+      "provider": "typesafe",
+      "requested_model": "jev-1.14.0",
+      "response_models": [
+        "jev-1.14.0"
+      ],
+      "outcome": "success",
+      "error_code": null,
+      "question_count": 24,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": true,
+        "input_tokens": 18763,
+        "output_tokens": 3593
+      },
+      "latency_ms": 355.1832758821547,
+      "retry": false,
+      "repair": false
+    },
+    {
+      "stage": "jev_evidence",
+      "provider": "typesafe",
+      "requested_model": "jev-1.14.0",
+      "response_models": [
+        "jev-1.14.0"
+      ],
+      "outcome": "success",
+      "error_code": null,
+      "question_count": 7,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": true,
+        "input_tokens": 2043,
+        "output_tokens": 367
+      },
+      "latency_ms": 119.51528582721949,
+      "retry": false,
+      "repair": false
+    },
+    {
+      "stage": "fallback",
+      "provider": "codex",
+      "requested_model": "gpt-6.1-sol",
+      "response_models": [
+        "gpt-6.1-sol"
+      ],
+      "outcome": "success",
+      "error_code": null,
+      "question_count": 0,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": true,
+        "input_tokens": 2936,
+        "output_tokens": 635
+      },
+      "latency_ms": 15722.259128000587,
+      "retry": false,
+      "repair": false
+    }
+  ],
+  "per_provider_attempts": {
+    "codex": 2,
+    "typesafe": 2
+  },
+  "budget": {
+    "total_limit": 6,
+    "per_operation_limit": 6,
+    "per_provider_allocations": {
+      "codex": 6,
+      "typesafe": 6
+    },
+    "charged": 4,
+    "remaining_shared_allowance": 2,
+    "remaining_original_allowance": 4,
+    "original_remaining_before_run": 8,
+    "prior_smoke_attempts": 4,
+    "cumulative_consumed": 8,
+    "cumulative_limit": 12,
+    "remaining_is_not_authorization_to_relaunch": true,
+    "old_pilot_allowance_consumed": 0,
+    "dollar_policy": "measured_only_no_hard_limit",
+    "cap_is_suballocation_of_original_allowance": true
+  },
+  "total_usage": {
+    "input_tokens": 24204,
+    "output_tokens": 4896,
+    "cached_input_tokens": 0
+  },
+  "usage_complete": true,
+  "dollar_total_usd": null,
+  "dollar_note": "No price snapshot; subscription/unpriced costs unknown.",
+  "routing": {
+    "jev_optimized/end-to-end": {
+      "alignment_note": "Oracle uses direct input identity. End-to-end uses frozen verdict-blind text alignment; unaligned and missing traces remain explicit, not semantically certified errors. Automatic coverage counts Jev-origin decisions; deterministic empty-context origins are separate.",
+      "automatic_false_support_full_non_supported_gold": {
+        "denominator": 3,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "automatic_gold_coverage": {
+        "denominator": 8,
+        "numerator": 4,
+        "value": 0.5
+      },
+      "automatic_prediction_fraction": {
+        "denominator": 8,
+        "numerator": 4,
+        "value": 0.5
+      },
+      "conditional_label_error_aligned": {
+        "denominator": 4,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "counts": {
+        "automatic_aligned": 4,
+        "automatic_decisions": 4,
+        "automatic_false_support": 0,
+        "automatic_label_errors": 0,
+        "cases_missing_trace": 0,
+        "final_false_support": 0,
+        "gold": 8,
+        "gold_non_supported": 3,
+        "predictions": 8,
+        "predictions_missing_trace": 0,
+        "traces": 8,
+        "unattempted_cases": 0
+      },
+      "fallback_fraction_of_traces": {
+        "denominator": 8,
+        "numerator": 4,
+        "value": 0.5
+      },
+      "fallback_outcomes": {
+        "success": 4
+      },
+      "fallback_reasons": {
+        "label_uncertain": 1,
+        "quote_uncertain": 3
+      },
+      "final_false_support_full_non_supported_gold": {
+        "denominator": 3,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "final_origins": {
+        "jev": 4,
+        "llm": 4
+      },
+      "strict_automatic_error_including_unaligned": {
+        "denominator": 4,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "sweep_routes": {}
+    }
+  },
+  "replay": {
+    "exit_code": 0,
+    "wall_ms": 1870.0430882163346,
+    "all_saved_run_files_unchanged": {
+      "summary.json": "b4e7a35e4669111fb0cdff84a9ec9736b9ea9babc9aa4f9651201aef305428fe",
+      "config.json": "fbdbb28cdb5f64d31a549c261706845c4d2a4c89b2940242409c24d9d87c9144",
+      "cases.jsonl": "2bfa5e5b4a8ffa1ee66f583117ce91c5ff13331b431f96301325f3c668ddbf59",
+      "cases.manifest.json": "89a64db5d2ea648e090bbaa5500e1e0d399bd6b1be713c9e21a06bcf347ebfcd",
+      "records.jsonl": "20463679898f70b895f807901fa02ebef8e8b973581eaaa10ad7accf702e4e17",
+      "completion.json": "08033bad2a46ea1e2a83c470f67bbfc21fc673818f6df2a593dee40c4b2a82b8",
+      "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+      "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+      "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+      "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+      "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+      "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+      "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+      "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+      "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+      "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+      "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+      "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+      "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+      "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+      "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2"
+    },
+    "inference_calls": 0,
+    "reproduction_command": {
+      "kind": "portable_example_not_original_replay_command",
+      "inference": false,
+      "argv": [
+        "uv",
+        "run",
+        "grounding-eval",
+        "report",
+        "reports/jev/numeric-diagnostic-20261020/run-01"
+      ],
+      "source_requirement": "Computation fingerprints must match saved config."
+    }
+  },
+  "bindings": {
+    "config_sha256": "fbdbb28cdb5f64d31a549c261706845c4d2a4c89b2940242409c24d9d87c9144",
+    "records_sha256": "20463679898f70b895f807901fa02ebef8e8b973581eaaa10ad7accf702e4e17",
+    "summary_sha256": "b4e7a35e4669111fb0cdff84a9ec9736b9ea9babc9aa4f9651201aef305428fe",
+    "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "selected_cases_sha256": "2bfa5e5b4a8ffa1ee66f583117ce91c5ff13331b431f96301325f3c668ddbf59",
+    "policy_sha256": "5e1f8021d0e82c795ec824734b476b9b2627daf87ce37633d58a703cdcda3aaa",
+    "freeze_sha256": "ea5c6befe7d79ab55af37d0267d57e25686f82da8515f0d3283587eaa4a0ce8f"
+  },
+  "numeric_diagnostic": {
+    "status": "not_observed",
+    "values": null,
+    "source_commit": "926d5a1b990bb2a4dbcd47577b27287af2d54e61",
+    "event_request_id": null,
+    "error_code": null,
+    "protocol_reason": null
+  },
+  "diagnostics": {
+    "records": 29,
+    "secret_values_found": false,
+    "protocol_reason_counts": {},
+    "protocol_validation_events": [],
+    "max_record_bytes": 217,
+    "auth_refresh_success": false,
+    "run_terminal": {
+      "stage": "eval_run",
+      "event": "end",
+      "outcome": "success",
+      "completed": 1,
+      "requested": 1,
+      "failed_requests": 0
+    }
+  },
+  "limits": [
+    "One optimized operation; numeric guard aggregates are absent unless that guard is observed.",
+    "No accuracy, comparative speed or cost generalization from this case.",
+    "No source changes, transport retry or second live launch."
+  ],
+  "reproduction_command": {
+    "kind": "portable_example_not_original_launch_command",
+    "requires_new_live_authorization": true,
+    "cwd": "repository root at frozen source commit",
+    "environment": {
+      "GROUNDING_PROVIDER": "codex",
+      "GROUNDING_MODEL": "gpt-6.1-sol",
+      "TYPESAFE_MODEL": "jev-1.14.0",
+      "GROUNDING_TRANSPORT_RETRIES": "0",
+      "GROUNDING_MAX_PROVIDER_ATTEMPTS": "6",
+      "GROUNDING_PROVIDER_TIMEOUT": "30",
+      "GROUNDING_OPERATION_TIMEOUT": "60",
+      "GROUNDING_MAX_OUTPUT_TOKENS": "8192",
+      "GROUNDING_JEV_LABEL_THRESHOLD": "0.8",
+      "GROUNDING_JEV_EVIDENCE_THRESHOLD": "0.8",
+      "GROUNDING_JEV_REASON_THRESHOLD": "0.8",
+      "GROUNDING_JEV_FALLBACK": "true",
+      "GROUNDING_JEV_MAX_REQUEST_BYTES": "256000",
+      "GROUNDING_JEV_MAX_QUESTION_BYTES": "128000",
+      "GROUNDING_DIAGNOSTICS": "true"
+    },
+    "argv": [
+      "uv",
+      "run",
+      "grounding-eval",
+      "run",
+      "--dataset",
+      "datasets/v2/pilot.jsonl",
+      "--case-ids-file",
+      "reports/jev/numeric-diagnostic-20261020/case-ids.json",
+      "--split",
+      "dev",
+      "--approaches",
+      "jev_optimized",
+      "--track",
+      "end-to-end",
+      "--format-version",
+      "3",
+      "--provider-budgets",
+      "reports/jev/numeric-diagnostic-20261020/budget.json",
+      "--max-total-provider-attempts",
+      "6",
+      "--stop-on-model-error",
+      "--seed",
+      "20261015",
+      "--bootstrap-samples",
+      "10000",
+      "--output",
+      "reports/jev/numeric-reproduction-new"
+    ],
+    "note": "Not the executed command. Do not relaunch under any remaining allowance without new authorization."
+  },
+  "ci_gate": {
+    "run_id": "39430155877",
+    "result": "success",
+    "basis": "Explicit parent confirmation before launch; not independently queried by this evaluator."
+  }
+}

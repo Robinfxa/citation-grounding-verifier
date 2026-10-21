@@ -1,0 +1,23 @@
+# Staged pilot recovery — 2026-10-20
+
+**The two recovery checks succeeded; the full pilot stopped at its first model error.** The approved sequence used 8 provider attempts, bringing cumulative pilot use to **63/150**, with **87 unspent**. No further inference was attempted after the stop. This is not a completed method comparison.
+
+The [approved budget](pilot-recovery-budget.md), [pre-inference plan](pilot-recovery-20261020-plan.json) and [execution receipt](pilot-recovery-20261020-receipt.json) bind the selections, original seeded order, code, settings and carried-forward allowance. The only runtime change from the earlier continuation is the optional model-error stop in the CLI/runner. Its [offline acceptance](model-error-stop-verification.json) includes 93 related product regression tests and 78 independent audit assertions; these are different evidence types, not a new combined test count. Prompts, provider, transport, timeouts, data, annotations and scorer were unchanged.
+
+| Stage | Actual outcome | Attempts / retries / repairs | Known input / output tokens |
+| --- | --- | --- | --- |
+| [p01 minimal/oracle](pilot-recovery-20261020-oracle/summary.json) | COMPLETE; CLI exit 0 | 1 / 0 / 0 | 2,719 / 646; complete |
+| [p06 minimal/end-to-end](pilot-recovery-20261020-e2e/summary.json) | COMPLETE; CLI exit 0 | 1 / 0 / 0 | 3,644 / 875; complete |
+| [Original 72-job matrix](pilot-recovery-20261020-matrix/summary.json) | 24 heuristic OK; 3 model OK, 1 ERROR, 44 NOT_RUN; CLI exit 2 | 6 / 0 / 0 | 9,913 / 3,722; incomplete |
+
+The checks used deliberately selected, previously successful development cases to test availability. They do not establish representative accuracy. Their success permitted the original matrix under its remaining 93-attempt allowance. Every method/track in that matrix retains the original 12 cases and 126 gold facts, including failed and uncalled jobs.
+
+The first failing job was sequence 4 (zero-based), optimized/end-to-end on p02. Safe diagnostics locate `upstream_timeout` in the judgment stage, after the extraction stage had returned. The entire operation took about 50.89 seconds and recorded two provider calls, zero retries and zero repairs. Its known 487 input / 958 output tokens are partial; the failed stage's usage is unavailable. This identifies the failed stage, not the deeper upstream cause. The subsequent 44 model jobs made zero calls, while all heuristic jobs completed. Their inherited timeout reason does not mean that 44 additional requests timed out.
+
+Across all three stages, known usage is 16,276 input / 5,243 output tokens. Total usage and subscription dollar cost remain unknown. Requested output limit 8,192 is still not applied by the Codex adapter. The actual limits were 30 seconds per provider call, 60 seconds per verification operation and six attempts per operation, with each run also bounded by its explicit allowance.
+
+Both matrix paired comparisons remain NOT_RUN because minimal and optimized did not measure the same successful population. The three successful model outputs are retained in full; they must not be combined with earlier runs by choosing the best output per case or treating repeated cases as independent sources. No prompt improvement, semantic accuracy advantage or usable final-matrix cost forecast is claimed.
+
+[Independent offline review](pilot-recovery-20261020-review.json) passed 447 local audit assertions. Guarded public CLI replay returned 0/0/2 for the three runs and preserved all 23 files in each run byte-for-byte. No new inference, network access or credential access occurred during review. This verifies saved-record consistency, not semantic quality or external-provider authenticity. For a local reproduction without inference, use a disposable copy of each run and `uv run --frozen grounding-eval report <copied-run-directory>`. The two checks should exit 0; the matrix should exit 2 and retain its failures.
+
+The [earlier partial continuation](pilot-resume-20261020.md) remains unchanged. The approved stop condition now blocks further real calls in this sequence despite the unspent allowance. A stable, explicitly agreed continuation is needed before another run; changing the timeout or transport would change an experimental condition and is not silently applied. Controlled development ablation, final dataset expansion/freeze, held-out comparison and semantic test audit remain incomplete. The provisional final comparison and repeats would still need about 400 ideal calls before retries and development ablation, but that is a count floor, not a reliable estimate or an authorization.

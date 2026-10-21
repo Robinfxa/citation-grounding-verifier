@@ -1,0 +1,18 @@
+{
+  "reviewer": "gpt-6.1-sol / max; non-author pilot_resume_integrity",
+  "scope": "frozen-run integrity and guarded offline CLI replay; no provider/auth implementation review or semantic quality claim",
+  "status": "PASS_WITH_MEASUREMENT_LIMITATIONS",
+  "checks_passed": 238,
+  "checks_failed": 0,
+  "run_exit_code": 2,
+  "offline_report_exit_code": 2,
+  "artifact_count": 23,
+  "all_artifacts_byte_identical": true,
+  "network_provider_auth_or_credential_attempts": 0,
+  "original_review_sha256": "b0388651e8a008fee2f596e9f197d00c56cb3a6c77b14d14d4e1d802dce52aec",
+  "limitations": [
+    "Incomplete model population; paired comparisons NOT_RUN.",
+    "Unknown usage remains unknown.",
+    "Review predates the optional fail-fast implementation."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "status": "ALL_EIGHT_EXAMPLES_AND_DIRECT_LOCATORS_PASS",
+  "verified_at": "2026-10-21T02:08:14.234176+00:00",
+  "examples_sha256": "c2a25a369697ad7415a050b9ad2b6bc08d56a68cd182e4e193543ae6556da4b7",
+  "clickable_index_sha256": "a29df0bd85085ce62a463a032dd5a80aa944df9661514aecf69e24cbb70c674f",
+  "examples": 8,
+  "all_primary_and_related_observations_have_case_context_record_and_source_locators": true,
+  "all_source_bytes_passage_offsets_text_hashes_and_line_bounds_verified": true,
+  "previous_without_locators_examples_sha256": "590aaf4f9e6a19bcea3cf607f171bc79ebaf8a0680e219b99d2c6019c5fc4c4f",
+  "previous_verification_sha256": "4df18f52ce0df18e5d9b5296a148c88c0c8a64b929116c4eaa96516947b4012d",
+  "original_source_files_changed": false,
+  "scope": "Structural source/record/case/gold/context/manifest/pinned-source locator verification only; no new semantic review or inference.",
+  "new_benchmark_provider_calls": 0,
+  "previous_clickable_index_sha256": "b923559e917a6a8f2c531033649b9f743bd08d14f7d217bee55242ec654103c8",
+  "clickable_index_language": "English",
+  "index_language_revision_verified_at": "2026-10-21T02:10:16.147814+00:00"
+}

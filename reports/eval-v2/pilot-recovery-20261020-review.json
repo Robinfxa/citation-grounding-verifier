@@ -1,0 +1,156 @@
+{
+  "status": "PASS_WITH_INCOMPLETE_PILOT",
+  "started_at": "2026-10-20T09:35:07.818105+00:00",
+  "finished_at": "2026-10-20T09:35:47.491945+00:00",
+  "checks": {
+    "failed": [],
+    "passed": 447,
+    "total": 447
+  },
+  "budget": {
+    "ceiling": 150,
+    "cumulative": 63,
+    "matrix": 6,
+    "prior_attempts": 55,
+    "recovery_e2e": 1,
+    "recovery_oracle": 1,
+    "remaining": 87,
+    "unknown_reservations_counted": true
+  },
+  "code_sha256": "abd41b2f67a83134a25c4f3684c81dd0fb01e5f4921414e78dd4193dbcd7ffaa",
+  "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+  "plan_sha256": "e8e12208bb8e73a069e9a4bca0a59b4f12018524a668db8fabde3c69c6bb20a6",
+  "runs": {
+    "e2e": {
+      "all_artifacts_byte_identical": true,
+      "allocation": 6,
+      "artifact_count": 23,
+      "attempts_charged": 1,
+      "cleanup_errors": [],
+      "completion_status": "COMPLETE",
+      "config_sha256": "dc9f2f18226a779482056216d174c9e5ebd7c2a1fb09b1331b1ee297eec5b6f2",
+      "cumulative_attempts": 57,
+      "forbidden_guard_attempts": {
+        "credential_file_attempts": 0,
+        "network_attempts": 0,
+        "outside_read_allowlist": 0,
+        "outside_scratch_writes": 0,
+        "process_launch_attempts": 0,
+        "provider_or_auth_module_imports": 0
+      },
+      "new_inference_calls_during_review": 0,
+      "records": 1,
+      "records_sha256": "0d3feead9f7d8d83d0979942d6ea7753b45cf36daa1ab5f2509022b64fe3467c",
+      "replay_exit_code": 0,
+      "run_directory": "reports/eval-v2/pilot-recovery-20261020-e2e",
+      "run_exit_code": 0,
+      "source_changed": false,
+      "status_counts": {
+        "OK": 1
+      },
+      "subscription_dollar_cost": null,
+      "summary_sha256": "972b4843ea32ca7a2d2f3ca141ff81b4f8a17f5cf25db58fdd5f03b1a9ed3024",
+      "unknown_usage_records": 0,
+      "usage_complete": true
+    },
+    "matrix": {
+      "all_artifacts_byte_identical": true,
+      "allocation": 93,
+      "artifact_count": 23,
+      "attempts_charged": 6,
+      "cleanup_errors": [],
+      "completion_status": "COMPLETED_WITH_ERRORS",
+      "config_sha256": "f175a487874767d0b132a94628e5798424c7344f8781bb04b786f288bdc87615",
+      "cumulative_attempts": 63,
+      "forbidden_guard_attempts": {
+        "credential_file_attempts": 0,
+        "network_attempts": 0,
+        "outside_read_allowlist": 0,
+        "outside_scratch_writes": 0,
+        "process_launch_attempts": 0,
+        "provider_or_auth_module_imports": 0
+      },
+      "new_inference_calls_during_review": 0,
+      "records": 72,
+      "records_sha256": "b312c38e538f39991a96abe51f90b75e27f79b0f102f01417b7b2459fe0d59e3",
+      "replay_exit_code": 2,
+      "run_directory": "reports/eval-v2/pilot-recovery-20261020-matrix",
+      "run_exit_code": 2,
+      "source_changed": false,
+      "status_counts": {
+        "ERROR": 1,
+        "NOT_RUN": 44,
+        "OK": 27
+      },
+      "subscription_dollar_cost": null,
+      "summary_sha256": "ec0e9e2af3349e6179ef936902b133ab7e267d84181d9190e322df895c4a537a",
+      "unknown_usage_records": 1,
+      "usage_complete": false
+    },
+    "oracle": {
+      "all_artifacts_byte_identical": true,
+      "allocation": 6,
+      "artifact_count": 23,
+      "attempts_charged": 1,
+      "cleanup_errors": [],
+      "completion_status": "COMPLETE",
+      "config_sha256": "c08d9e4dfb513c0e6e74c3e4716b8b8719163fda378ef63a9d7143bf22800c74",
+      "cumulative_attempts": 56,
+      "forbidden_guard_attempts": {
+        "credential_file_attempts": 0,
+        "network_attempts": 0,
+        "outside_read_allowlist": 0,
+        "outside_scratch_writes": 0,
+        "process_launch_attempts": 0,
+        "provider_or_auth_module_imports": 0
+      },
+      "new_inference_calls_during_review": 0,
+      "records": 1,
+      "records_sha256": "e1feda51feea7dba483a02776d31c6e5e36ee732c2f1692339d61610e0a2fcd4",
+      "replay_exit_code": 0,
+      "run_directory": "reports/eval-v2/pilot-recovery-20261020-oracle",
+      "run_exit_code": 0,
+      "source_changed": false,
+      "status_counts": {
+        "OK": 1
+      },
+      "subscription_dollar_cost": null,
+      "summary_sha256": "2cdc549533d754bb8327f47d9e4b9ab4ec54c089140763deb555ff0dea108a32",
+      "unknown_usage_records": 0,
+      "usage_complete": true
+    }
+  },
+  "matrix_stop": {
+    "approach": "optimized",
+    "case_id": "v2-dev-p02",
+    "error_code": "upstream_timeout",
+    "full_denominators_retained": true,
+    "heuristic_ok": 24,
+    "not_run_model_jobs": 44,
+    "paired_comparison": "NOT_RUN",
+    "sequence": 4,
+    "subsequent_model_calls": 0,
+    "track": "end-to-end",
+    "trigger_attempts": 2
+  },
+  "limitations": [
+    "The two deliberately selected recovery jobs establish availability only, not an accuracy sample.",
+    "The stopped matrix is incomplete and cannot support a controlled method comparison.",
+    "Timeout remains upstream_timeout; root cause is not established by these saved records.",
+    "The timeout has incomplete usage; known counters are partial and subscription dollar cost remains unknown.",
+    "Earlier runs remain separate; only attempt consumption is accumulated, not duplicate quality observations.",
+    "Local saved-artifact consistency is checked, not authenticated external-provider provenance."
+  ],
+  "reviewer_kind": "non-author AI",
+  "original_review_sha256": "46d1f2399e53dcfb514659fbdc4bc2e481653138ded8a054bc6fb47c3ee9d6fc",
+  "actual_review_exit_code": 0,
+  "scope": {
+    "new_inference_calls": 0,
+    "offline_only": true,
+    "product_changes": false,
+    "provider_auth_source": "hash-only binding; no module import or source audit",
+    "reused": "Independent model-stop and prior-run accounting evidence; no model-stop/full-suite/semantic rerun"
+  },
+  "reproduction": "Copy each published run to a disposable directory, then execute uv run --frozen grounding-eval report <copy>. Expected exits: oracle 0, e2e 0, matrix 2. Compare every file before and after. The private audit also blocked network, credential access, provider/auth imports, subprocesses and writes outside its scratch directory.",
+  "interpretation": "447 local audit assertions are not product test cases or a semantic-quality evaluation."
+}

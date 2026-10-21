@@ -1,0 +1,724 @@
+{
+  "format_version": 2,
+  "schema_version": "2",
+  "dataset_version": "v2-realistic-author-draft-1",
+  "annotation_version": "v2-realistic-author-draft-1",
+  "dataset_file": "dev-revised-1.jsonl",
+  "dataset_sha256": "077810f11e85527e70deb983be0f1dbc4e6536395700e666ac5abbb7bcd3d8e3",
+  "layout": [
+    {
+      "split": "dev",
+      "category": "supported",
+      "cases": 6
+    },
+    {
+      "split": "dev",
+      "category": "synthesis",
+      "cases": 6
+    }
+  ],
+  "sources": [
+    {
+      "id": "python-bisect-bisect",
+      "family_id": "v2-real-python-bisect",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/bisect.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/dev/python-bisect/bisect.rst",
+      "raw_sha256": "1fb2fa097a86e3bd92049f3e6b791a9bbf3bdf54a1098fcbb369d3e0e5c56a5c"
+    },
+    {
+      "id": "python-copy-copy",
+      "family_id": "v2-real-python-copy",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/copy.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/dev/python-copy/copy.rst",
+      "raw_sha256": "935088f74e08fa47f652f9d803ab512ca5a961de655739eaa21919a6623ecfba"
+    },
+    {
+      "id": "python-graphlib-graphlib",
+      "family_id": "v2-real-python-graphlib",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/graphlib.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/dev/python-graphlib/graphlib.rst",
+      "raw_sha256": "4bad5b7eb3c24538907c6358ab2223e23f75bc127b4402bfe14241e33e9f4f3e"
+    },
+    {
+      "id": "python-functools-functools",
+      "family_id": "v2-real-python-functools",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/functools.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/dev/python-functools/functools.rst",
+      "raw_sha256": "a3f0dffd4973d3c0902107dbb67ead54af934a1d43ba5552e590c69f233f817a"
+    },
+    {
+      "id": "python-weakref-weakref",
+      "family_id": "v2-real-python-weakref",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/weakref.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/dev/python-weakref/weakref.rst",
+      "raw_sha256": "0ef492312caae331776ef5f24dca5cb8c23df5cb17b3847c562eed6046528c03"
+    },
+    {
+      "id": "python-heapq-heapq",
+      "family_id": "v2-real-python-heapq",
+      "url": "https://raw.githubusercontent.com/python/cpython/60403a5409ff2c3f3b07dd2ca91a7a3e096839c7/Doc/library/heapq.rst",
+      "revision": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+      "license": "Python-2.0",
+      "license_path": "licenses/cpython/LICENSE",
+      "license_sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+      "raw_path": "sources/dev/python-heapq/heapq.rst",
+      "raw_sha256": "c9d819c44d892c812f65b07ab9de1d13ec30dcdfc8af8423a754c2506d136e53"
+    },
+    {
+      "id": "pytest-parametrize-parametrize",
+      "family_id": "v2-real-pytest-parametrize",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/parametrize.rst",
+      "revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+      "license": "MIT",
+      "license_path": "licenses/pytest/LICENSE",
+      "license_sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "raw_path": "sources/dev/pytest-parametrize/parametrize.rst",
+      "raw_sha256": "3c4e488b25aaac11a12953da55616c5a76e09c2237c0b2298121dad7c96f21dd"
+    },
+    {
+      "id": "pytest-monkeypatch-monkeypatch",
+      "family_id": "v2-real-pytest-monkeypatch",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/monkeypatch.rst",
+      "revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+      "license": "MIT",
+      "license_path": "licenses/pytest/LICENSE",
+      "license_sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "raw_path": "sources/dev/pytest-monkeypatch/monkeypatch.rst",
+      "raw_sha256": "6218e09da0c38d4f80346bcb67781a065afd5434ee0ae761102eb4097324f33f"
+    },
+    {
+      "id": "pytest-tmp_path-tmp_path",
+      "family_id": "v2-real-pytest-tmp_path",
+      "url": "https://raw.githubusercontent.com/pytest-dev/pytest/d0f136fe64f9374f18a04562305b178fb380d1ec/doc/en/how-to/tmp_path.rst",
+      "revision": "d0f136fe64f9374f18a04562305b178fb380d1ec",
+      "license": "MIT",
+      "license_path": "licenses/pytest/LICENSE",
+      "license_sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "raw_path": "sources/dev/pytest-tmp_path/tmp_path.rst",
+      "raw_sha256": "4cc3888e67f883a4b8dbee68ab987d6f49763b1d3d32dcadfdacfe95cf534381"
+    },
+    {
+      "id": "curl-retry-fail-with-body",
+      "family_id": "v2-real-curl-retry",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/fail-with-body.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-retry/fail-with-body.md",
+      "raw_sha256": "76754bbc3cf336c31e5826642bb18f8cba261f6878378a1c72e33b4172d09488"
+    },
+    {
+      "id": "curl-retry-fail",
+      "family_id": "v2-real-curl-retry",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/fail.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-retry/fail.md",
+      "raw_sha256": "1c6ea656161a83257ad346aab0bb6e38d476e7a2785656aa3a24df501fcd0966"
+    },
+    {
+      "id": "curl-retry-retry-all-errors",
+      "family_id": "v2-real-curl-retry",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/retry-all-errors.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-retry/retry-all-errors.md",
+      "raw_sha256": "a98f60938760f9d35232b3da2f7b45da4aa239411a142a52e5e8dccf6a5fb916"
+    },
+    {
+      "id": "curl-retry-retry-connrefused",
+      "family_id": "v2-real-curl-retry",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/retry-connrefused.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-retry/retry-connrefused.md",
+      "raw_sha256": "0f1f5c3bcd63340bc74395d50400945fd01d51ceedefcbf3871f2b37788de513"
+    },
+    {
+      "id": "curl-retry-retry-delay",
+      "family_id": "v2-real-curl-retry",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/retry-delay.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-retry/retry-delay.md",
+      "raw_sha256": "1a595221622a10d316d7e6f2d6d39dcd451c1230cc6fe5bd56022ade2f82f822"
+    },
+    {
+      "id": "curl-retry-retry-max-time",
+      "family_id": "v2-real-curl-retry",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/retry-max-time.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-retry/retry-max-time.md",
+      "raw_sha256": "9505140824bf47fe04d4c8b929c16b3371e02399301c153b9f1071718ae53f33"
+    },
+    {
+      "id": "curl-retry-retry",
+      "family_id": "v2-real-curl-retry",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/retry.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-retry/retry.md",
+      "raw_sha256": "d164104079fbac52eefc1147bfb1eb152bfbb1d883e6c0f963df25a4e7a505e2"
+    },
+    {
+      "id": "curl-redirect-location-trusted",
+      "family_id": "v2-real-curl-redirect",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/location-trusted.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-redirect/location-trusted.md",
+      "raw_sha256": "1b4d31f01d5089354f542298032415513d61dbd7ad5f4e1bafd37924546a9fd4"
+    },
+    {
+      "id": "curl-redirect-location",
+      "family_id": "v2-real-curl-redirect",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/location.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-redirect/location.md",
+      "raw_sha256": "f9242acc3a6bb75cbff18d59ef86b4ffc11efa541d4423b0673ac6ecc96f6ea4"
+    },
+    {
+      "id": "curl-redirect-max-redirs",
+      "family_id": "v2-real-curl-redirect",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/max-redirs.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-redirect/max-redirs.md",
+      "raw_sha256": "b85b10ff9c08c458736bff490666fe1229ed83e4eafb4f99b0c40557ff992d24"
+    },
+    {
+      "id": "curl-redirect-post301",
+      "family_id": "v2-real-curl-redirect",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/post301.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-redirect/post301.md",
+      "raw_sha256": "58cccf996abbbca0dbb415a6a466dcf150f14e523583b85b36db0981f3739b95"
+    },
+    {
+      "id": "curl-redirect-post302",
+      "family_id": "v2-real-curl-redirect",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/post302.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-redirect/post302.md",
+      "raw_sha256": "c3c1b7a2c1606e0d7e49bbd93ac01b9354d13569c1d4458ed5f3b5939d063c62"
+    },
+    {
+      "id": "curl-redirect-post303",
+      "family_id": "v2-real-curl-redirect",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/post303.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-redirect/post303.md",
+      "raw_sha256": "f5344ae27174e3eeafdf5f85aa07bd0f1d068d5d2d7a8f2e8b91dc137c4681d3"
+    },
+    {
+      "id": "curl-redirect-proto-redir",
+      "family_id": "v2-real-curl-redirect",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/proto-redir.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-redirect/proto-redir.md",
+      "raw_sha256": "1ea97b058c06e86987a5f67bbd8f7e760531a11efea48951beb4874c475a53cf"
+    },
+    {
+      "id": "curl-upload-data-binary",
+      "family_id": "v2-real-curl-upload",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/data-binary.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-upload/data-binary.md",
+      "raw_sha256": "0a13757b573ab911dfe6a80249bd4ce1b17e80aa993c3d4f660c41668069ed68"
+    },
+    {
+      "id": "curl-upload-get",
+      "family_id": "v2-real-curl-upload",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/get.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-upload/get.md",
+      "raw_sha256": "33dcc8682ac5df6dd6e7c38df6fc47776d9f03f0b33d5a75b5cb5b99bf949da4"
+    },
+    {
+      "id": "curl-upload-header",
+      "family_id": "v2-real-curl-upload",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/header.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-upload/header.md",
+      "raw_sha256": "b2cdd75693813f0aec178bb04bba344d30c19bae4a764eff227c4974ac1afcca"
+    },
+    {
+      "id": "curl-upload-request",
+      "family_id": "v2-real-curl-upload",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/request.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-upload/request.md",
+      "raw_sha256": "33b43ebcd8d40f388b92018eaf822e731fbe755793ed87527f4423bab924b2bd"
+    },
+    {
+      "id": "curl-upload-upload-file",
+      "family_id": "v2-real-curl-upload",
+      "url": "https://raw.githubusercontent.com/curl/curl/7eb8c048470ed2cc14dca75be9c1cdae7ac8498b/docs/cmdline-opts/upload-file.md",
+      "revision": "7eb8c048470ed2cc14dca75be9c1cdae7ac8498b",
+      "license": "curl",
+      "license_path": "licenses/curl/COPYING",
+      "license_sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+      "raw_path": "sources/dev/curl-upload/upload-file.md",
+      "raw_sha256": "f9d0b70ff60e0bc1b1337875d19bccfadcbf5b4948bfacce9ec1bbb00e4c7cb0"
+    }
+  ],
+  "passage_maps": [
+    {
+      "passage_index": 0,
+      "source_id": "python-bisect-bisect",
+      "start": 0,
+      "end": 3399,
+      "text_sha256": "e7cf6a0b7589b4d5932df16c3069fb956fc860ab881ff3ac6f8c9af337948abc",
+      "case_id": "v2-dev-r01"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-bisect-bisect",
+      "start": 3399,
+      "end": 6887,
+      "text_sha256": "6b18b36f93c27c0ec9b917990551194d7fa12ebafe1146e0526bf0a7e16fa74e",
+      "case_id": "v2-dev-r01"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-bisect-bisect",
+      "start": 6887,
+      "end": 9415,
+      "text_sha256": "10ac3a40833c4b9182847099aaad746cb4d02d0b49521088fcff8e4d6d2996c9",
+      "case_id": "v2-dev-r01"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-copy-copy",
+      "start": 0,
+      "end": 3281,
+      "text_sha256": "7d139d43ca87e532d99273484964517e2950919a39a0da126a74e1498d1b4860",
+      "case_id": "v2-dev-r02"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-copy-copy",
+      "start": 3281,
+      "end": 4309,
+      "text_sha256": "e74663fb5212c2bc88bae093065d6fefdac9c485fca85cc2255e7b0ee8962924",
+      "case_id": "v2-dev-r02"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-graphlib-graphlib",
+      "start": 0,
+      "end": 2884,
+      "text_sha256": "88177e957aed93a35223a22cb0268ddaffa2a9fd1716c6b5dee47779e7f7e7da",
+      "case_id": "v2-dev-r03"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-graphlib-graphlib",
+      "start": 2884,
+      "end": 6145,
+      "text_sha256": "02c26b8cbc79b713fb69e782096ae7427fcdafcbbf66cd38c56c0db4885a885b",
+      "case_id": "v2-dev-r03"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-graphlib-graphlib",
+      "start": 6145,
+      "end": 8714,
+      "text_sha256": "a36a084da59684350bcc88f7be3b394db82d35a4faa4ff50d41d45b4ea9a5b00",
+      "case_id": "v2-dev-r03"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-functools-functools",
+      "start": 0,
+      "end": 3468,
+      "text_sha256": "e042ffd491dc8e3eb390207418d78318910b996af4d83b71fbc998cf7e730bab",
+      "case_id": "v2-dev-r04"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-functools-functools",
+      "start": 3468,
+      "end": 6930,
+      "text_sha256": "c2e772b6cee72d0a0f584ada5904ba3b0d8588ca0eab4ca686a3c134541f4ea5",
+      "case_id": "v2-dev-r04"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-functools-functools",
+      "start": 6930,
+      "end": 10300,
+      "text_sha256": "107b0d828cb82b43c291971a14cee2875b680c63948857f8d5889857a8308dfd",
+      "case_id": "v2-dev-r04"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "python-functools-functools",
+      "start": 10300,
+      "end": 11724,
+      "text_sha256": "b2006455a5afc2f3cf3698259dc66b2f5f0d7be8bcd6f61e873d568afb5fbc14",
+      "case_id": "v2-dev-r04"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-weakref-weakref",
+      "start": 0,
+      "end": 3213,
+      "text_sha256": "55e817f35c548cee75080dc29d25c698316c64afb9fdd49033a9968a9b5b8e9a",
+      "case_id": "v2-dev-r05"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-weakref-weakref",
+      "start": 3213,
+      "end": 6480,
+      "text_sha256": "8c11bc728c3e963636aab724389698c92151a6b8f09b4782a819e4c43437ca72",
+      "case_id": "v2-dev-r05"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-weakref-weakref",
+      "start": 6480,
+      "end": 7611,
+      "text_sha256": "8b4f78ab40d29cb209425328b1d7b0e59f311bf12b1084eaaf60869350b2148b",
+      "case_id": "v2-dev-r05"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "python-heapq-heapq",
+      "start": 0,
+      "end": 3483,
+      "text_sha256": "2beecb11ab53d575e6a32323e9c0e867fcd6ae74e3e75817c63766c4760671b8",
+      "case_id": "v2-dev-r06"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "python-heapq-heapq",
+      "start": 3483,
+      "end": 6927,
+      "text_sha256": "c277fe2d19b73b39ded4ac35c2e0f7d8b6c51b8817d5f08f7e0aa18688dba448",
+      "case_id": "v2-dev-r06"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "python-heapq-heapq",
+      "start": 6927,
+      "end": 9949,
+      "text_sha256": "616c59ee1dce279b69ee64de6fbd10731a14f3cb45fd6334a3cf5dd71d6841cc",
+      "case_id": "v2-dev-r06"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "python-heapq-heapq",
+      "start": 9949,
+      "end": 13308,
+      "text_sha256": "20c404b87be2db4f5f761faeacdeadfede9521aa7fd5e5e4d5b0d38932b4d139",
+      "case_id": "v2-dev-r06"
+    },
+    {
+      "passage_index": 4,
+      "source_id": "python-heapq-heapq",
+      "start": 13308,
+      "end": 13979,
+      "text_sha256": "36929ac4deebbf5f1ac43c37f491cfe7fd6ca0f87483fb6ba36fc6dbcefcbf62",
+      "case_id": "v2-dev-r06"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "pytest-parametrize-parametrize",
+      "start": 0,
+      "end": 3500,
+      "text_sha256": "7aceb0b84284e714192aeb1ece1a6083cb3fd0dd967bf9a5652946a0f6d99d17",
+      "case_id": "v2-dev-r07"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "pytest-parametrize-parametrize",
+      "start": 3500,
+      "end": 6791,
+      "text_sha256": "ac18d492418f2349811bea810f74459559440e35d80ffa3a13cecfcc441d8f7d",
+      "case_id": "v2-dev-r07"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "pytest-parametrize-parametrize",
+      "start": 6791,
+      "end": 9828,
+      "text_sha256": "bb4b9414130f37e36dd8bb46e958e8845abab4c90ea71076d6bfd4497e3caef0",
+      "case_id": "v2-dev-r07"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "pytest-monkeypatch-monkeypatch",
+      "start": 0,
+      "end": 3469,
+      "text_sha256": "78617659a30526d4398858e9f65d904f472918d9b3c78f25afb70d7aa303cb47",
+      "case_id": "v2-dev-r08"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "pytest-monkeypatch-monkeypatch",
+      "start": 3469,
+      "end": 6940,
+      "text_sha256": "c8680ce9cfa18830f440e56ada91777b46daab958341d14d22e484e457d26a74",
+      "case_id": "v2-dev-r08"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "pytest-monkeypatch-monkeypatch",
+      "start": 6940,
+      "end": 10291,
+      "text_sha256": "7c78b2f9e2133cf4c359dae5c6e300fc36e2347120f7e213ec4d8965a14bf19a",
+      "case_id": "v2-dev-r08"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "pytest-monkeypatch-monkeypatch",
+      "start": 10291,
+      "end": 13760,
+      "text_sha256": "6edb8e96ab9e5996916fa6a44874693859edc55cc5e88015921f802c794386c3",
+      "case_id": "v2-dev-r08"
+    },
+    {
+      "passage_index": 4,
+      "source_id": "pytest-monkeypatch-monkeypatch",
+      "start": 13760,
+      "end": 15797,
+      "text_sha256": "9ad3732be5be00fb34005e0604a3c166064ad872455124322e4539e7d9acbd43",
+      "case_id": "v2-dev-r08"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "pytest-tmp_path-tmp_path",
+      "start": 0,
+      "end": 3459,
+      "text_sha256": "4904d9d1ef5e50548fac41cf874644be96e9e3f5b22401d11d92ba583202bea4",
+      "case_id": "v2-dev-r09"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "pytest-tmp_path-tmp_path",
+      "start": 3459,
+      "end": 5416,
+      "text_sha256": "d3c23fb897971a97ed04963b8cf196969303e74b40541f4bc40d62df2421eda0",
+      "case_id": "v2-dev-r09"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "curl-retry-fail-with-body",
+      "start": 0,
+      "end": 771,
+      "text_sha256": "76754bbc3cf336c31e5826642bb18f8cba261f6878378a1c72e33b4172d09488",
+      "case_id": "v2-dev-r10"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "curl-retry-fail",
+      "start": 0,
+      "end": 1082,
+      "text_sha256": "1c6ea656161a83257ad346aab0bb6e38d476e7a2785656aa3a24df501fcd0966",
+      "case_id": "v2-dev-r10"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "curl-retry-retry-all-errors",
+      "start": 0,
+      "end": 1763,
+      "text_sha256": "a98f60938760f9d35232b3da2f7b45da4aa239411a142a52e5e8dccf6a5fb916",
+      "case_id": "v2-dev-r10"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "curl-retry-retry-connrefused",
+      "start": 0,
+      "end": 469,
+      "text_sha256": "0f1f5c3bcd63340bc74395d50400945fd01d51ceedefcbf3871f2b37788de513",
+      "case_id": "v2-dev-r10"
+    },
+    {
+      "passage_index": 4,
+      "source_id": "curl-retry-retry-delay",
+      "start": 0,
+      "end": 591,
+      "text_sha256": "1a595221622a10d316d7e6f2d6d39dcd451c1230cc6fe5bd56022ade2f82f822",
+      "case_id": "v2-dev-r10"
+    },
+    {
+      "passage_index": 5,
+      "source_id": "curl-retry-retry-max-time",
+      "start": 0,
+      "end": 715,
+      "text_sha256": "9505140824bf47fe04d4c8b929c16b3371e02399301c153b9f1071718ae53f33",
+      "case_id": "v2-dev-r10"
+    },
+    {
+      "passage_index": 6,
+      "source_id": "curl-retry-retry",
+      "start": 0,
+      "end": 1088,
+      "text_sha256": "d164104079fbac52eefc1147bfb1eb152bfbb1d883e6c0f963df25a4e7a505e2",
+      "case_id": "v2-dev-r10"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "curl-redirect-location-trusted",
+      "start": 0,
+      "end": 839,
+      "text_sha256": "1b4d31f01d5089354f542298032415513d61dbd7ad5f4e1bafd37924546a9fd4",
+      "case_id": "v2-dev-r11"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "curl-redirect-location",
+      "start": 0,
+      "end": 1388,
+      "text_sha256": "f9242acc3a6bb75cbff18d59ef86b4ffc11efa541d4423b0673ac6ecc96f6ea4",
+      "case_id": "v2-dev-r11"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "curl-redirect-max-redirs",
+      "start": 0,
+      "end": 521,
+      "text_sha256": "b85b10ff9c08c458736bff490666fe1229ed83e4eafb4f99b0c40557ff992d24",
+      "case_id": "v2-dev-r11"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "curl-redirect-post301",
+      "start": 0,
+      "end": 691,
+      "text_sha256": "58cccf996abbbca0dbb415a6a466dcf150f14e523583b85b36db0981f3739b95",
+      "case_id": "v2-dev-r11"
+    },
+    {
+      "passage_index": 4,
+      "source_id": "curl-redirect-post302",
+      "start": 0,
+      "end": 691,
+      "text_sha256": "c3c1b7a2c1606e0d7e49bbd93ac01b9354d13569c1d4458ed5f3b5939d063c62",
+      "case_id": "v2-dev-r11"
+    },
+    {
+      "passage_index": 5,
+      "source_id": "curl-redirect-post303",
+      "start": 0,
+      "end": 563,
+      "text_sha256": "f5344ae27174e3eeafdf5f85aa07bd0f1d068d5d2d7a8f2e8b91dc137c4681d3",
+      "case_id": "v2-dev-r11"
+    },
+    {
+      "passage_index": 6,
+      "source_id": "curl-redirect-proto-redir",
+      "start": 0,
+      "end": 757,
+      "text_sha256": "1ea97b058c06e86987a5f67bbd8f7e760531a11efea48951beb4874c475a53cf",
+      "case_id": "v2-dev-r11"
+    },
+    {
+      "passage_index": 0,
+      "source_id": "curl-upload-data-binary",
+      "start": 0,
+      "end": 993,
+      "text_sha256": "0a13757b573ab911dfe6a80249bd4ce1b17e80aa993c3d4f660c41668069ed68",
+      "case_id": "v2-dev-r12"
+    },
+    {
+      "passage_index": 1,
+      "source_id": "curl-upload-get",
+      "start": 0,
+      "end": 716,
+      "text_sha256": "33dcc8682ac5df6dd6e7c38df6fc47776d9f03f0b33d5a75b5cb5b99bf949da4",
+      "case_id": "v2-dev-r12"
+    },
+    {
+      "passage_index": 2,
+      "source_id": "curl-upload-header",
+      "start": 0,
+      "end": 2744,
+      "text_sha256": "b2cdd75693813f0aec178bb04bba344d30c19bae4a764eff227c4974ac1afcca",
+      "case_id": "v2-dev-r12"
+    },
+    {
+      "passage_index": 3,
+      "source_id": "curl-upload-request",
+      "start": 0,
+      "end": 1940,
+      "text_sha256": "33b43ebcd8d40f388b92018eaf822e731fbe755793ed87527f4423bab924b2bd",
+      "case_id": "v2-dev-r12"
+    },
+    {
+      "passage_index": 4,
+      "source_id": "curl-upload-upload-file",
+      "start": 0,
+      "end": 1905,
+      "text_sha256": "f9d0b70ff60e0bc1b1337875d19bccfadcbf5b4948bfacce9ec1bbb00e4c7cb0",
+      "case_id": "v2-dev-r12"
+    }
+  ]
+}

@@ -5,9 +5,11 @@ import asyncio
 import hashlib
 import json
 import random
+import shutil
 import sys
 import time
-from dataclasses import asdict
+from collections import Counter
+from dataclasses import replace
 from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
@@ -31,14 +33,36 @@ from grounding.contracts import (
 from grounding.diagnostics import operation
 from grounding_eval.dataset import Case, DatasetError, file_hash, load_dataset
 from grounding_eval.diagnostics import emit
+from grounding_eval.hybrid import (
+    ALL_APPROACHES,
+    JEV_APPROACHES,
+    Attempt,
+    Budget,
+    Trace,
+    freeze_experiment,
+    serialize_stats,
+    validate_attempt_totals,
+    validate_price_book,
+    validate_routing,
+)
+from grounding_eval.provenance import (
+    SHA256,
+    LayoutEntry,
+    Manifest,
+    manifest_path,
+    relative_file,
+    strict_json,
+    verify_manifest,
+)
 from grounding_eval.reporting import build_summary, validate_prices
-from grounding_eval.scoring import score_case
+from grounding_eval.scoring import SCORER_VERSION, score_case
 
 APPROACHES = ("heuristic", "minimal", "optimized")
 TRACKS = ("oracle", "end-to-end")
 SCORING_FILES = (
     "grounding/contracts.py", "grounding_eval/dataset.py", "grounding_eval/scoring.py",
     "grounding_eval/uncertainty.py", "grounding_eval/reporting.py",
+    "grounding_eval/provenance.py", "grounding_eval/repeated.py",
 )
 
 
@@ -58,7 +82,39 @@ class SavedCompletion(StrictModel):
     cleanup_errors: list[CleanupFailure]
     source_changed_during_run: StrictBool
     stopped_after_quota_exhausted: StrictBool
+    stopped_after_attempt_budget_exhausted: StrictBool
+    provider_attempts_charged: StrictInt = Field(ge=0)
     status: Literal["COMPLETE", "COMPLETED_WITH_ERRORS"]
+
+
+class SavedUsage(StrictModel):
+    input_tokens: StrictInt = Field(ge=0)
+    output_tokens: StrictInt = Field(ge=0)
+    cached_input_tokens: StrictInt = Field(ge=0)
+    complete: StrictBool
+
+
+class SavedStats(StrictModel):
+    provider: StrictStr
+    requested_model: StrictStr | None
+    response_models: list[StrictStr]
+    provider_calls: StrictInt = Field(ge=0)
+    retries: StrictInt = Field(ge=0)
+    repairs: StrictInt = Field(ge=0)
+    usage: SavedUsage
+    latency_ms: float = Field(ge=0, allow_inf_nan=False)
+
+
+class SnapshotFile(StrictModel):
+    path: StrictStr
+    sha256: SHA256
+
+
+class DatasetSnapshot(SnapshotFile):
+    manifest_path: StrictStr | None
+    manifest_sha256: SHA256 | None
+    selected_manifest_sha256: SHA256 | None
+    dependencies: list[SnapshotFile]
 
 
 class SavedRecord(StrictModel):
@@ -73,10 +129,31 @@ class SavedRecord(StrictModel):
     report: VerificationReport | None
     rejected_report: VerificationReport | None
     elapsed_ms: float | None = Field(ge=0, allow_inf_nan=False)
+    started_at: StrictStr | None
     attempted: StrictBool
     stats_known: StrictBool
-    stats: dict[str, Any]
+    stats: SavedStats
+    provider_attempts_reserved: StrictInt = Field(ge=0)
+    provider_attempts_charged: StrictInt = Field(ge=0)
     score: dict[str, Any]
+
+
+class MixedStats(SavedStats):
+    attempts: list[Attempt]
+    claim_decisions: list[Trace]
+
+
+class MixedRecord(SavedRecord):
+    approach: Literal["heuristic", "minimal", "optimized", "jev_minimal", "jev_optimized"]
+    stats: MixedStats
+
+
+class MixedCleanup(CleanupFailure):
+    approach: Literal["heuristic", "minimal", "optimized", "jev_minimal", "jev_optimized"]
+
+
+class MixedCompletion(SavedCompletion):
+    cleanup_errors: list[MixedCleanup]
 
 
 def completion_status(records: list[dict], *, cleanup_errors: list,
@@ -89,8 +166,10 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
                          completion: SavedCompletion) -> None:
     """Check persisted relationships, not just hashes or editable success flags."""
     lookup = {case.id: case for case in cases}
+    mixed = config["format_version"] == 3
+    allowed = ALL_APPROACHES if mixed else APPROACHES
     if (not config["approaches"] or len(set(config["approaches"])) != len(config["approaches"])
-            or any(a not in APPROACHES for a in config["approaches"])
+            or any(a not in allowed for a in config["approaches"])
             or not config["tracks"] or len(set(config["tracks"])) != len(config["tracks"])
             or any(t not in TRACKS for t in config["tracks"])):
         raise ValueError("invalid_saved_population")
@@ -101,6 +180,44 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
             or [case.id for case in cases] != config["case_ids"]
             or len({r["request_id"] for r in records}) != len(records)):
         raise ValueError("invalid_saved_population")
+    budget = config["max_total_provider_attempts"]
+    maximum = config["settings"]["max_provider_attempts"]
+    if ((budget is not None and (type(budget) is not int or budget < 0))
+            or type(maximum) is not int or maximum < 1
+            or type(config["format_version"]) is not int or config["format_version"] not in {2, 3}
+            or config["schema_version"] != str(config["format_version"]) or type(config["seed"]) is not int
+            or type(config["bootstrap_samples"]) is not int or config["bootstrap_samples"] < 1
+            or config["scorer_version"] != SCORER_VERSION):
+        raise ValueError("invalid_saved_versions_or_budget")
+    if mixed:
+        allocations = Budget.model_validate(config["provider_budgets"])
+        validate_price_book(config["prices"])
+        if budget is None:
+            raise ValueError("missing_hybrid_budget")
+        provider_charged = Counter()
+    stop_on_model_error = config.get("stop_on_model_error", False)
+    initialization_errors = config.get("initialization_errors")
+    if (type(stop_on_model_error) is not bool
+            or (stop_on_model_error and (
+                not isinstance(initialization_errors, dict)
+                or any(approach not in config["approaches"]
+                       or error not in {*ERRORS, "implementation_unavailable"}
+                       for approach, error in initialization_errors.items())))):
+        raise ValueError("invalid_saved_model_stop_policy")
+    expected_jobs = [(a, t, c.id) for c in cases for a in config["approaches"] for t in config["tracks"]]
+    random.Random(config["seed"]).shuffle(expected_jobs)
+    if [(r["approach"], r["track"], r["case_id"]) for r in records] != expected_jobs:
+        raise ValueError("invalid_seeded_job_order")
+    planned = [{"sequence": i, "approach": r["approach"], "track": r["track"],
+                "case_id": r["case_id"]} for i, r in enumerate(records)]
+    if config["execution"]["jobs"] != planned:
+        raise ValueError("invalid_saved_job_order")
+    charged = 0
+    budget_stopped = False
+    quota_stopped, model_error = False, None
+    previous_start = datetime.fromisoformat(config["started_at"])
+    if previous_start.tzinfo is None:
+        raise ValueError("invalid_saved_start")
     for sequence, record in enumerate(records):
         case = lookup[record["case_id"]]
         error = record["error_code"]
@@ -109,8 +226,67 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
             else "ERROR")
         if (record["sequence"] != sequence or record["family_id"] != case.family_id
                 or record["status"] != expected_status
-                or record["attempted"] != (record["elapsed_ms"] is not None)):
+                or record["attempted"] != (record["elapsed_ms"] is not None)
+                or record["attempted"] != (record["started_at"] is not None)):
             raise ValueError("invalid_saved_record_state")
+        if record["started_at"] is not None:
+            started = datetime.fromisoformat(record["started_at"])
+            if started.tzinfo is None or started < previous_start:
+                raise ValueError("invalid_saved_start_order")
+            previous_start = started
+        model_job = record["approach"] != "heuristic"
+        budget_required = model_job and not quota_stopped and (budget_stopped or (
+            budget is not None and charged + maximum > budget))
+        if mixed:
+            needed = operation_providers(record["approach"], config["experiment"])
+            exhausted = any(provider_charged[p] + maximum > allocations.provider_attempts[p]
+                            for p in needed)
+            budget_required |= model_job and not quota_stopped and exhausted
+        if stop_on_model_error and model_job:
+            # AIDEV-NOTE: replay derives the stop from seeded outcomes, not an editable
+            # completion flag. Only saved initialization failures justify an initial skip.
+            expected_error = ("quota_exhausted" if quota_stopped else
+                              "attempt_budget_exhausted" if budget_required else
+                              model_error or initialization_errors.get(record["approach"]))
+            if ((expected_error is None and not record["attempted"])
+                    or (expected_error is not None and (
+                        record["attempted"] or error != expected_error or not record["stats_known"]
+                        or record["rejected_report"] is not None))):
+                raise ValueError("invalid_saved_model_stop")
+        reservation = maximum if model_job and record["attempted"] else 0
+        actual_charge = (record["stats"]["provider_calls"] if record["stats_known"] else reservation)
+        expected_charge = actual_charge if model_job and record["attempted"] else 0
+        if mixed:
+            if record["stats_known"]:
+                validate_attempt_totals(record["stats"])
+                validate_routing(record["stats"], record["report"], config["experiment"], approach=record["approach"])
+            if exhausted and record["attempted"]:
+                raise ValueError("provider_allocation_exhausted")
+            if (not record["attempted"] and error == "attempt_budget_exhausted" and exhausted):
+                budget_required = budget_stopped = True
+            provider_charged.update(provider_charges(record, needed, maximum))
+        if (record["provider_attempts_reserved"] != reservation
+                or record["provider_attempts_charged"] != expected_charge
+                or (model_job and record["stats_known"]
+                    and record["stats"]["provider_calls"] > maximum)
+                or (model_job and record["attempted"] and budget is not None
+                    and (budget_stopped or charged + maximum > budget))):
+            raise ValueError("invalid_saved_attempt_budget")
+        if not record["attempted"] and record["stats_known"]:
+            stats = record["stats"]
+            if (any(stats[key] != 0 for key in ("provider_calls", "retries", "repairs", "latency_ms"))
+                    or stats["response_models"] or not stats["usage"]["complete"]
+                    or any(stats["usage"][key] != 0 for key in (
+                        "input_tokens", "output_tokens", "cached_input_tokens"))):
+                raise ValueError("invalid_saved_uncalled_usage")
+        if model_job and not record["attempted"] and error == "attempt_budget_exhausted":
+            if not stop_on_model_error or budget_required:
+                if budget is None or (charged + maximum <= budget and not (mixed and exhausted)):
+                    raise ValueError("invalid_saved_budget_stop")
+                budget_stopped = True
+        charged += expected_charge
+        if budget is not None and charged > budget:
+            raise ValueError("invalid_saved_budget_overspend")
         if error is None:
             if not record["attempted"] or record["report"] is None or record["rejected_report"] is not None:
                 raise ValueError("invalid_saved_success")
@@ -123,17 +299,26 @@ def validate_saved_state(cases: list[Case], config: dict, records: list[dict],
         elif (error not in {*ERRORS, "oracle_identity_violation", "implementation_unavailable"}
               or record["report"] is not None):
             raise ValueError("invalid_saved_failure")
-        if (record["rejected_report"] is not None) != (error == "oracle_identity_violation"):
+        if (record["rejected_report"] is not None) != (
+            error == "oracle_identity_violation" and (not stop_on_model_error or record["attempted"])
+        ):
             raise ValueError("invalid_saved_rejection")
         expected_score = score_case(case, record["report"]["claims"] if record["report"] else [],
                                     track=record["track"], error=error)
-        if record["score"] != expected_score:
+        if json_text(record["score"]) != json_text(expected_score):
             raise ValueError("invalid_saved_score")
+        if error == "quota_exhausted":
+            quota_stopped = True
+        if model_job and error is not None and model_error is None:
+            model_error = error
     cleanup_approaches = [item.approach for item in completion.cleanup_errors]
     if (len(set(cleanup_approaches)) != len(cleanup_approaches)
             or any(a not in config["approaches"] for a in cleanup_approaches)
             or completion.stopped_after_quota_exhausted != any(r["error_code"] == "quota_exhausted" for r in records)):
         raise ValueError("invalid_saved_completion_metadata")
+    if (completion.provider_attempts_charged != charged
+            or completion.stopped_after_attempt_budget_exhausted != budget_stopped):
+        raise ValueError("invalid_saved_budget_completion")
     # AIDEV-NOTE: completion.json is mutable local metadata, not the source of success.
     # Derive the terminal status from validated records plus typed cleanup/drift facts.
     expected_status = completion_status(records, cleanup_errors=completion.cleanup_errors,
@@ -150,6 +335,99 @@ def write_json(path: Path, value: Any) -> None:
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(json_text(value), encoding="utf-8")
     temporary.replace(path)
+
+
+def save_dataset_snapshot(dataset_path: Path, output: Path, all_cases: list[Case],
+                          selected: list[Case], manifest: Manifest | None) -> DatasetSnapshot:
+    """Retain original bindings and a separately validated selected population."""
+    root = output / "dataset"
+    root.mkdir()
+    snapshot = root / dataset_path.name
+    shutil.copyfile(dataset_path, snapshot)
+    saved_manifest_path = selected_manifest_hash = saved_manifest_hash = None
+    dependencies = []
+    if manifest is not None:
+        original_manifest_path = manifest_path(dataset_path)
+        copied_manifest = root / original_manifest_path.name
+        shutil.copyfile(original_manifest_path, copied_manifest)
+        saved_manifest_path = str(copied_manifest.relative_to(output))
+        saved_manifest_hash = file_hash(copied_manifest)
+        names = sorted({name for source in manifest.sources
+                        for name in (source.raw_path, source.license_path)})
+        for name in names:
+            destination = root / name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(relative_file(dataset_path.parent, name), destination)
+            dependencies.append(SnapshotFile(path=str(destination.relative_to(output)),
+                                             sha256=file_hash(destination)))
+        selected_ids = {case.id for case in selected}
+        selected_sources = {source_id for case in selected for source_id in case.provenance.source_ids}
+        data = manifest.model_dump()
+        data.update({
+            "dataset_file": "cases.jsonl", "dataset_sha256": file_hash(output / "cases.jsonl"),
+            "layout": [LayoutEntry(split=split, category=category, cases=count).model_dump()
+                       for (split, category), count in sorted(
+                           Counter((c.split, c.category) for c in selected).items())],
+            "sources": [{**source.model_dump(), "raw_path": "dataset/" + source.raw_path,
+                         "license_path": "dataset/" + source.license_path}
+                        for source in manifest.sources if source.id in selected_sources],
+            "passage_maps": [mapping.model_dump() for mapping in manifest.passage_maps
+                             if mapping.case_id in selected_ids],
+        })
+        selected_manifest = manifest_path(output / "cases.jsonl")
+        write_json(selected_manifest, data)
+        selected_manifest_hash = file_hash(selected_manifest)
+        verify_manifest(output / "cases.jsonl", selected)
+    # AIDEV-NOTE: validate the copied bytes, not just source paths read before setup.
+    # This also rejects changes between initial validation and snapshot persistence.
+    if ([case.model_dump() for case in load_dataset(snapshot)]
+            != [case.model_dump() for case in all_cases]):
+        raise DatasetError("dataset_changed_before_run")
+    return DatasetSnapshot(path=str(snapshot.relative_to(output)), sha256=file_hash(snapshot),
+                           manifest_path=saved_manifest_path, manifest_sha256=saved_manifest_hash,
+                           selected_manifest_sha256=selected_manifest_hash, dependencies=dependencies)
+
+
+def validate_dataset_snapshot(output: Path, config: dict, selected: list[Case]) -> None:
+    snapshot = DatasetSnapshot.model_validate(config["dataset_snapshot"])
+    path = relative_file(output, snapshot.path)
+    if file_hash(path) != snapshot.sha256 or snapshot.sha256 != config["dataset_sha256"]:
+        raise ValueError("invalid_dataset_snapshot")
+    for dependency in snapshot.dependencies:
+        if file_hash(relative_file(output, dependency.path)) != dependency.sha256:
+            raise ValueError("invalid_dataset_dependency")
+    source_cases = load_dataset(path)
+    lookup = {case.id: case for case in source_cases}
+    if ([lookup[case.id].model_dump() for case in selected]
+            != [case.model_dump() for case in selected]):
+        raise ValueError("selected_cases_differ_from_source")
+    split = config["split"]
+    if split not in {"dev", "test", "all", "diagnostic"}:
+        raise ValueError("invalid_saved_split")
+    available = [case.id for case in source_cases
+                 if case.split == split or (split == "all" and case.split in {"dev", "test"})]
+    selection = config["selection"]
+    if (set(selection) != {"kind", "requested_case_ids"}
+            or not set(config["case_ids"]) <= set(available)
+            or (selection["kind"] == "case_ids"
+                and selection["requested_case_ids"] != config["case_ids"])
+            or (selection["kind"] == "split" and (
+                selection["requested_case_ids"] is not None or config["case_ids"] != available))
+            or selection["kind"] not in {"case_ids", "split"}):
+        raise ValueError("invalid_saved_selection")
+    if snapshot.manifest_path is not None:
+        if (file_hash(relative_file(output, snapshot.manifest_path)) != snapshot.manifest_sha256
+                or relative_file(output, snapshot.manifest_path) != manifest_path(path).resolve()
+                or file_hash(manifest_path(output / "cases.jsonl")) != snapshot.selected_manifest_sha256):
+            raise ValueError("invalid_manifest_snapshot")
+        manifest = verify_manifest(path, source_cases)
+        if (config["dataset_version"] != manifest.dataset_version
+                or config["annotation_version"] != manifest.annotation_version):
+            raise ValueError("invalid_dataset_version")
+    elif (any(case.provenance.kind == "real_source" for case in selected)
+          or snapshot.manifest_sha256 is not None or snapshot.selected_manifest_sha256 is not None
+          or snapshot.dependencies or config["dataset_version"] != "legacy-v1"):
+        raise ValueError("missing_manifest_snapshot")
 
 
 def fingerprints() -> dict:
@@ -179,35 +457,94 @@ def public_settings(settings: Settings) -> dict:
 
 
 def unknown_stats(approach: str, settings: Settings) -> RunStats:
-    return RunStats(provider="heuristic" if approach == "heuristic" else settings.provider,
-                    requested_model=None if approach == "heuristic" else settings.model,
+    return RunStats(provider="heuristic" if approach == "heuristic" else (
+                        "hybrid" if approach in JEV_APPROACHES else settings.provider),
+                    requested_model=None if approach in {"heuristic", *JEV_APPROACHES} else settings.model,
                     usage=TokenUsage(complete=False))
+
+
+def operation_providers(approach: str, experiment: dict) -> set[str]:
+    if approach == "heuristic":
+        return set()
+    if approach not in JEV_APPROACHES:
+        return {experiment["llm"]["provider"]}
+    needed = {"typesafe"}
+    if approach == "jev_optimized" or experiment["jev"]["fallback"]:
+        needed.add(experiment["llm"]["provider"])
+    return needed
+
+
+def provider_charges(record: dict, needed: set[str], maximum: int) -> Counter:
+    if not record["attempted"]:
+        return Counter()
+    stats = record["stats"]
+    if not record["stats_known"]:
+        return Counter({p: maximum for p in needed})
+    if stats["attempts"]:
+        counts = Counter(a["provider"] for a in stats["attempts"])
+        if not set(counts) <= needed:
+            raise ValueError("unexpected_attempt_provider")
+        return counts
+    if stats["provider_calls"]:
+        if stats["provider"] not in needed:
+            raise ValueError("unattributed_provider_attempts")
+        return Counter({stats["provider"]: stats["provider_calls"]})
+    return Counter()
 
 
 async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[str],
                         split: str = "test", track: str = "both", seed: int = 20261015,
                         bootstrap_samples: int = 10_000, settings: Settings | None = None,
                         verifiers: dict[str, Verifier] | None = None,
-                        prices: dict | None = None) -> dict:
+                        prices: dict | list[dict] | None = None, case_ids: list[str] | None = None,
+                        max_total_provider_attempts: int | None = None,
+                        stop_on_model_error: bool = False, format_version: int = 2,
+                        provider_budgets: dict | None = None) -> dict:
     """The optional verifier mapping is an explicitly labeled offline-test seam only."""
-    settings = settings or Settings.from_env()
+    settings = settings or Settings.from_env(include_jev=any(a in JEV_APPROACHES for a in approaches))
     if (not approaches or len(set(approaches)) != len(approaches)
-            or any(a not in APPROACHES for a in approaches)
+            or type(format_version) is not int or format_version not in {2, 3}
+            or any(a not in (ALL_APPROACHES if format_version == 3 else APPROACHES) for a in approaches)
             or split not in {"dev", "test", "all", "diagnostic"} or track not in {*TRACKS, "both"}
-            or type(seed) is not int or type(bootstrap_samples) is not int or bootstrap_samples < 1):
+            or type(seed) is not int or type(bootstrap_samples) is not int or bootstrap_samples < 1
+            or type(stop_on_model_error) is not bool
+            or (max_total_provider_attempts is not None and (
+                type(max_total_provider_attempts) is not int or max_total_provider_attempts < 0))
+            or (verifiers is None and any(a != "heuristic" for a in approaches)
+                and max_total_provider_attempts is None)
+            or (case_ids is not None and (not isinstance(case_ids, list) or not case_ids
+                or any(type(value) is not str or not value.strip() for value in case_ids)
+                or len(set(case_ids)) != len(case_ids)))):
         raise EvaluationError("invalid_arguments")
     try:
-        prices = validate_prices(prices)
+        prices = validate_price_book(prices) if format_version == 3 else validate_prices(prices)
+        allocations = Budget.model_validate(provider_budgets) if format_version == 3 else None
+        source_fingerprints = fingerprints() if format_version == 3 else None
+        experiment = freeze_experiment(settings, source_fingerprints) if format_version == 3 else None
+        if format_version == 3:
+            needed = set().union(*(operation_providers(a, experiment) for a in approaches))
+            if max_total_provider_attempts is None or set(allocations.provider_attempts) != needed:
+                raise ValueError("missing_experiment_allocations")
+        elif provider_budgets is not None:
+            raise ValueError("unexpected_experiment_allocations")
     except ValueError:
         raise EvaluationError("invalid_arguments") from None
-    cases = load_dataset(dataset_path)
-    cases = [c for c in cases if c.split == split or (split == "all" and c.split in {"dev", "test"})]
+    all_cases = load_dataset(dataset_path)
+    manifest = (verify_manifest(dataset_path, all_cases)
+                if any(c.provenance.kind == "real_source" for c in all_cases) else None)
+    cases = [c for c in all_cases if c.split == split or (split == "all" and c.split in {"dev", "test"})]
+    if case_ids is not None:
+        lookup = {case.id: case for case in cases}
+        if any(case_id not in lookup for case_id in case_ids):
+            raise DatasetError("invalid_case_selection")
+        cases = [lookup[case_id] for case_id in case_ids]
     if not cases:
         raise DatasetError("empty_selection")
     tracks = list(TRACKS) if track == "both" else [track]
     jobs = [(a, t, c) for c in cases for a in approaches for t in tracks]
     random.Random(seed).shuffle(jobs)
     with operation(enabled=settings.diagnostics, new=True) as op:
+        started_at = datetime.now(UTC).isoformat()
         emit(op, "eval_run", "start", "started", requested=len(jobs))
         try:
             output.mkdir(parents=True, exist_ok=False)
@@ -218,23 +555,41 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
             emit(op, "eval_run", "end", "failure", error_code="persistence_failed")
             raise EvaluationError("persistence_failed") from None
         records, clients, initialization_errors, cleanup_errors = [], {}, {}, []
-        quota_stopped = False
+        quota_stopped = budget_stopped = False
+        model_error = None
+        attempts_charged = 0
+        provider_charged = Counter()
         try:
             cases_text = "".join(json.dumps(c.model_dump(), ensure_ascii=False, sort_keys=True) + "\n" for c in cases)
             (output / "cases.jsonl").write_text(cases_text, encoding="utf-8")
+            snapshot = save_dataset_snapshot(dataset_path, output, all_cases, cases, manifest)
             config = {
-                "format_version": 1, "created_at": datetime.now(UTC).isoformat(),
+                "format_version": format_version, "schema_version": str(format_version), "scorer_version": SCORER_VERSION,
+                "dataset_version": manifest.dataset_version if manifest else "legacy-v1",
+                "annotation_version": manifest.annotation_version if manifest else "legacy-v1",
+                "created_at": datetime.now(UTC).isoformat(), "started_at": started_at,
                 "request_id": op.request_id,
                 "runtime": {"python": sys.version, "packages": {
                     name: version(name) for name in ("pydantic", "httpx", "fastapi")}},
                 "approaches": approaches, "tracks": tracks, "split": split, "seed": seed,
                 "bootstrap_samples": bootstrap_samples, "case_ids": [c.id for c in cases],
-                "dataset_sha256": file_hash(dataset_path), "selected_cases_sha256": file_hash(output / "cases.jsonl"),
-                "fingerprints": fingerprints(), "settings": public_settings(settings), "prices": prices,
+                "selection": {"kind": "case_ids" if case_ids is not None else "split",
+                              "requested_case_ids": case_ids},
+                "max_total_provider_attempts": max_total_provider_attempts,
+                "stop_on_model_error": stop_on_model_error,
+                "dataset_sha256": snapshot.sha256, "selected_cases_sha256": file_hash(output / "cases.jsonl"),
+                "dataset_snapshot": snapshot.model_dump(),
+                "fingerprints": source_fingerprints if format_version == 3 else fingerprints(),
+                "settings": public_settings(settings), "prices": prices,
                 "measurement_kind": "offline_protocol_fixture" if verifiers is not None else "actual_verifier",
                 "execution": {"concurrency": 1, "order": "seeded_job_shuffle", "cache": "none",
-                              "lifecycle": "one_verifier_per_approach; no_warmup"},
+                              "lifecycle": "one_verifier_per_approach; no_warmup",
+                              "budget_policy": "reserve_operation_max_charge_known_calls_else_reservation",
+                              "jobs": [{"sequence": i, "approach": a, "track": t, "case_id": c.id}
+                                       for i, (a, t, c) in enumerate(jobs)]},
             }
+            if format_version == 3:
+                config.update(experiment=experiment, provider_budgets=allocations.model_dump())
             write_json(output / "config.json", config)
             for approach in approaches:
                 try:
@@ -249,6 +604,9 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                     initialization_errors[approach] = "implementation_unavailable"
                 except Exception:
                     initialization_errors[approach] = "internal_error"
+            if stop_on_model_error:
+                config["initialization_errors"] = initialization_errors
+                write_json(output / "config.json", config)
             with (output / "records.jsonl").open("x", encoding="utf-8") as stream:
                 for sequence, (approach, selected_track, case) in enumerate(jobs):
                     with operation(enabled=settings.diagnostics, new=True) as case_op:
@@ -256,11 +614,31 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                         started = time.perf_counter()
                         report, rejected, error_code = None, None, initialization_errors.get(approach)
                         stats, stats_known = unknown_stats(approach, settings), False
+                        needed = operation_providers(approach, experiment) if format_version == 3 else set()
+                        if stop_on_model_error and error_code is not None:
+                            stats = replace(unknown_stats(approach, settings), usage=TokenUsage())
+                            stats_known = True
                         if quota_stopped and approach != "heuristic":
                             error_code = "quota_exhausted"
-                            stats = RunStats(provider=settings.provider, requested_model=settings.model)
+                            stats = replace(unknown_stats(approach, settings), usage=TokenUsage())
+                            stats_known = True
+                        elif approach != "heuristic" and (budget_stopped or (
+                            max_total_provider_attempts is not None
+                            and attempts_charged + settings.max_provider_attempts > max_total_provider_attempts
+                        ) or (allocations is not None and any(
+                            provider_charged[p] + settings.max_provider_attempts > allocations.provider_attempts[p]
+                            for p in needed))):
+                            budget_stopped = True
+                            error_code = "attempt_budget_exhausted"
+                            stats = replace(unknown_stats(approach, settings), usage=TokenUsage())
+                            stats_known = True
+                        elif approach != "heuristic" and model_error is not None:
+                            error_code = model_error
+                            stats = replace(unknown_stats(approach, settings), usage=TokenUsage())
                             stats_known = True
                         attempted = error_code is None
+                        job_started_at = datetime.now(UTC).isoformat() if attempted else None
+                        reserved = settings.max_provider_attempts if attempted and approach != "heuristic" else 0
                         if error_code is None:
                             try:
                                 # The service owns its attempt budget; this outer bound also protects the protocol seam.
@@ -289,11 +667,31 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                                 error_code = "invalid_model_output"
                             except Exception:
                                 error_code = "internal_error"
+                        try:
+                            stats_data = serialize_stats(stats, format_version=format_version,
+                                                         jev_settings=experiment["jev"] if experiment else None)
+                            validated_stats = (MixedStats if format_version == 3 else SavedStats).model_validate(stats_data)
+                            if format_version == 3 and stats_known:
+                                validate_attempt_totals(stats_data)
+                                validate_routing(stats_data, report, experiment, approach=approach)
+                                provider_charges({"stats": stats_data, "stats_known": True,
+                                                  "attempted": attempted}, needed, reserved)
+                            if approach != "heuristic" and validated_stats.provider_calls > settings.max_provider_attempts:
+                                raise ValueError("invalid_provider_attempt_count")
+                        except (TypeError, ValueError, KeyError):
+                            stats, stats_known = unknown_stats(approach, settings), False
+                            stats_data = serialize_stats(stats, format_version=format_version)
+                            error_code, report, rejected = "provider_protocol_error", None, None
+                        charged = (stats.provider_calls if stats_known else reserved) if reserved else 0
+                        attempts_charged += charged
                         elapsed_ms = (time.perf_counter() - started) * 1000 if attempted else None
                         if error_code == "quota_exhausted":
                             # AIDEV-NOTE: stop this benchmark's shared LLM population only.
                             # Uncalled jobs retain gold denominators but have no fabricated latency/usage.
                             quota_stopped = True
+                        if (stop_on_model_error and approach != "heuristic"
+                                and error_code is not None and model_error is None):
+                            model_error = error_code
                         status = "OK" if error_code is None else (
                             "NOT_RUN" if not attempted or error_code in {"not_configured", "implementation_unavailable"} else "ERROR")
                         record = {
@@ -302,10 +700,14 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                             "approach": approach, "track": selected_track, "status": status,
                             "error_code": error_code, "report": report, "rejected_report": rejected,
                             "elapsed_ms": elapsed_ms, "attempted": attempted,
-                            "stats": asdict(stats), "stats_known": stats_known,
+                            "started_at": job_started_at, "provider_attempts_reserved": reserved,
+                            "provider_attempts_charged": charged,
+                            "stats": stats_data, "stats_known": stats_known,
                             "score": score_case(case, report["claims"] if report else [],
                                                 track=selected_track, error=error_code),
                         }
+                        if format_version == 3:
+                            provider_charged.update(provider_charges(record, needed, settings.max_provider_attempts))
                         stream.write(json.dumps(record, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n")
                         stream.flush()
                         records.append(record)
@@ -327,6 +729,8 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                 "config_sha256": file_hash(output / "config.json"), "cleanup_errors": cleanup_errors,
                 "source_changed_during_run": source_changed,
                 "stopped_after_quota_exhausted": quota_stopped,
+                "stopped_after_attempt_budget_exhausted": budget_stopped,
+                "provider_attempts_charged": attempts_charged,
                 "status": completion_status(records, cleanup_errors=cleanup_errors, source_changed=source_changed),
             }
             summary["completion"] = completion
@@ -354,11 +758,13 @@ async def run_benchmark(*, dataset_path: Path, output: Path, approaches: list[st
                     emit(op, "eval_cleanup", "end", "success", approach=approach)
 
 
-def regenerate_report(output: Path) -> dict:
+def read_saved_run(output: Path) -> tuple[dict, list[dict], list[Case], SavedCompletion]:
     """Recompute from complete, internally consistent saved records; never call a verifier."""
     try:
-        config = json.loads((output / "config.json").read_text())
-        completion = SavedCompletion.model_validate_json((output / "completion.json").read_text())
+        config = strict_json((output / "config.json").read_text())
+        mixed = config["format_version"] == 3
+        completion = (MixedCompletion if mixed else SavedCompletion).model_validate(
+            strict_json((output / "completion.json").read_text()))
         if (file_hash(output / "config.json") != completion.config_sha256
                 or file_hash(output / "records.jsonl") != completion.records_sha256
                 or file_hash(output / "cases.jsonl") != config["selected_cases_sha256"]):
@@ -366,15 +772,30 @@ def regenerate_report(output: Path) -> dict:
         current = fingerprints()["files"]
         # AIDEV-NOTE: preserve original runner fingerprints, but bind replay to the
         # computation modules. Reader/diagnostic repairs need not repeat inference.
-        if any(current.get(name) != config["fingerprints"]["files"][name] for name in SCORING_FILES):
+        bound = (*SCORING_FILES, "grounding_eval/hybrid.py", "grounding_eval/confidence.py") if mixed else SCORING_FILES
+        if any(current.get(name) != config["fingerprints"]["files"][name] for name in bound):
             raise ValueError("scorer_version_changed")
         cases = load_dataset(output / "cases.jsonl")
-        records = [SavedRecord.model_validate_json(line).model_dump()
+        validate_dataset_snapshot(output, config, cases)
+        records = [(MixedRecord if mixed else SavedRecord).model_validate(strict_json(line)).model_dump()
                    for line in (output / "records.jsonl").read_text().splitlines()]
         validate_saved_state(cases, config, records, completion)
-        summary = build_summary(config, records, cases)
-        summary["completion"] = completion.model_dump()
-        write_json(output / "summary.json", summary)
-        return summary
+        if mixed:
+            from grounding_eval.hybrid import validate_experiment
+
+            validate_experiment(config)
+        return config, records, cases, completion
     except (OSError, UnicodeError, ValueError, KeyError, TypeError):
         raise EvaluationError("run_artifact_invalid") from None
+
+
+def regenerate_report(output: Path) -> dict:
+    """Replay validated saved measurements; never call a provider or migrate records."""
+    config, records, cases, completion = read_saved_run(output)
+    summary = build_summary(config, records, cases)
+    summary["completion"] = completion.model_dump()
+    try:
+        write_json(output / "summary.json", summary)
+    except (OSError, UnicodeError):
+        raise EvaluationError("run_artifact_invalid") from None
+    return summary

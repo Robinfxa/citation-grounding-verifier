@@ -1,0 +1,463 @@
+{
+  "dataset_file": "datasets/v2/pilot.jsonl",
+  "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+  "annotation_version": "v2-pilot-reviewed-1",
+  "claim_id_mapping": {
+    "v2-dev-p01-c01": [
+      "v2-dev-p01-c01"
+    ],
+    "v2-dev-p01-c02": [
+      "v2-dev-p01-c02"
+    ],
+    "v2-dev-p01-c03": [
+      "v2-dev-p01-c03"
+    ],
+    "v2-dev-p01-c04": [
+      "v2-dev-p01-c04"
+    ],
+    "v2-dev-p01-c05": [
+      "v2-dev-p01-c05"
+    ],
+    "v2-dev-p01-c06": [
+      "v2-dev-p01-c06"
+    ],
+    "v2-dev-p01-c07": [
+      "v2-dev-p01-c07"
+    ],
+    "v2-dev-p01-c08": [
+      "v2-dev-p01-c08"
+    ],
+    "v2-dev-p02-c01": [
+      "v2-dev-p02-c01"
+    ],
+    "v2-dev-p02-c02": [
+      "v2-dev-p02-c02"
+    ],
+    "v2-dev-p02-c03": [
+      "v2-dev-p02-c03"
+    ],
+    "v2-dev-p02-c04": [
+      "v2-dev-p02-c04"
+    ],
+    "v2-dev-p02-c05": [
+      "v2-dev-p02-c05"
+    ],
+    "v2-dev-p02-c06": [
+      "v2-dev-p02-c06"
+    ],
+    "v2-dev-p02-c07": [
+      "v2-dev-p02-c07"
+    ],
+    "v2-dev-p02-c08": [
+      "v2-dev-p02-c08"
+    ],
+    "v2-dev-p02-c09": [
+      "v2-dev-p02-c09"
+    ],
+    "v2-dev-p03-c01": [
+      "v2-dev-p03-c01"
+    ],
+    "v2-dev-p03-c02": [
+      "v2-dev-p03-c02"
+    ],
+    "v2-dev-p03-c03": [
+      "v2-dev-p03-c03"
+    ],
+    "v2-dev-p03-c04": [
+      "v2-dev-p03-c04"
+    ],
+    "v2-dev-p03-c05": [
+      "v2-dev-p03-c05"
+    ],
+    "v2-dev-p03-c06": [
+      "v2-dev-p03-c06"
+    ],
+    "v2-dev-p03-c07": [
+      "v2-dev-p03-c07"
+    ],
+    "v2-dev-p03-c08": [
+      "v2-dev-p03-c08"
+    ],
+    "v2-dev-p03-c09": [
+      "v2-dev-p03-c09"
+    ],
+    "v2-dev-p04-c01": [
+      "v2-dev-p04-c01"
+    ],
+    "v2-dev-p04-c02": [
+      "v2-dev-p04-c02"
+    ],
+    "v2-dev-p04-c03": [
+      "v2-dev-p04-c03"
+    ],
+    "v2-dev-p04-c04": [
+      "v2-dev-p04-c04"
+    ],
+    "v2-dev-p04-c05": [
+      "v2-dev-p04-c05"
+    ],
+    "v2-dev-p04-c06": [
+      "v2-dev-p04-c06"
+    ],
+    "v2-dev-p04-c07": [
+      "v2-dev-p04-c07"
+    ],
+    "v2-dev-p04-c08": [
+      "v2-dev-p04-c08"
+    ],
+    "v2-dev-p04-c09": [
+      "v2-dev-p04-c09"
+    ],
+    "v2-dev-p04-c10": [
+      "v2-dev-p04-c10a",
+      "v2-dev-p04-c10b"
+    ],
+    "v2-dev-p04-c11": [
+      "v2-dev-p04-c11"
+    ],
+    "v2-dev-p04-c12": [
+      "v2-dev-p04-c12"
+    ],
+    "v2-dev-p05-c01": [
+      "v2-dev-p05-c01"
+    ],
+    "v2-dev-p05-c02": [
+      "v2-dev-p05-c02"
+    ],
+    "v2-dev-p05-c03": [
+      "v2-dev-p05-c03"
+    ],
+    "v2-dev-p05-c04": [
+      "v2-dev-p05-c04"
+    ],
+    "v2-dev-p05-c05": [
+      "v2-dev-p05-c05"
+    ],
+    "v2-dev-p05-c06": [
+      "v2-dev-p05-c06"
+    ],
+    "v2-dev-p05-c07": [
+      "v2-dev-p05-c07"
+    ],
+    "v2-dev-p05-c08": [
+      "v2-dev-p05-c08"
+    ],
+    "v2-dev-p05-c09": [
+      "v2-dev-p05-c09"
+    ],
+    "v2-dev-p05-c10": [
+      "v2-dev-p05-c10"
+    ],
+    "v2-dev-p06-c01": [
+      "v2-dev-p06-c01"
+    ],
+    "v2-dev-p06-c02": [
+      "v2-dev-p06-c02"
+    ],
+    "v2-dev-p06-c03": [
+      "v2-dev-p06-c03"
+    ],
+    "v2-dev-p06-c04": [
+      "v2-dev-p06-c04"
+    ],
+    "v2-dev-p06-c05": [
+      "v2-dev-p06-c05"
+    ],
+    "v2-dev-p06-c06": [
+      "v2-dev-p06-c06"
+    ],
+    "v2-dev-p06-c07": [
+      "v2-dev-p06-c07a",
+      "v2-dev-p06-c07b"
+    ],
+    "v2-dev-p06-c08": [
+      "v2-dev-p06-c08"
+    ],
+    "v2-dev-p06-c09": [
+      "v2-dev-p06-c09"
+    ],
+    "v2-dev-p06-c10": [
+      "v2-dev-p06-c10"
+    ],
+    "v2-dev-p07-c01": [
+      "v2-dev-p07-c01"
+    ],
+    "v2-dev-p07-c02": [
+      "v2-dev-p07-c02"
+    ],
+    "v2-dev-p07-c03": [
+      "v2-dev-p07-c03"
+    ],
+    "v2-dev-p07-c04": [
+      "v2-dev-p07-c04"
+    ],
+    "v2-dev-p07-c05": [
+      "v2-dev-p07-c05"
+    ],
+    "v2-dev-p07-c06": [
+      "v2-dev-p07-c06"
+    ],
+    "v2-dev-p07-c07": [
+      "v2-dev-p07-c07"
+    ],
+    "v2-dev-p07-c08": [
+      "v2-dev-p07-c08"
+    ],
+    "v2-dev-p07-c09": [
+      "v2-dev-p07-c09"
+    ],
+    "v2-dev-p07-c10": [
+      "v2-dev-p07-c10"
+    ],
+    "v2-dev-p07-c11": [
+      "v2-dev-p07-c11"
+    ],
+    "v2-dev-p07-c12": [
+      "v2-dev-p07-c12"
+    ],
+    "v2-dev-p08-c01": [
+      "v2-dev-p08-c01"
+    ],
+    "v2-dev-p08-c02": [
+      "v2-dev-p08-c02"
+    ],
+    "v2-dev-p08-c03": [
+      "v2-dev-p08-c03"
+    ],
+    "v2-dev-p08-c04": [
+      "v2-dev-p08-c04"
+    ],
+    "v2-dev-p08-c05": [
+      "v2-dev-p08-c05"
+    ],
+    "v2-dev-p08-c06": [
+      "v2-dev-p08-c06"
+    ],
+    "v2-dev-p08-c07": [
+      "v2-dev-p08-c07"
+    ],
+    "v2-dev-p08-c08": [
+      "v2-dev-p08-c08"
+    ],
+    "v2-dev-p08-c09": [
+      "v2-dev-p08-c09"
+    ],
+    "v2-dev-p09-c01": [
+      "v2-dev-p09-c01"
+    ],
+    "v2-dev-p09-c02": [
+      "v2-dev-p09-c02"
+    ],
+    "v2-dev-p09-c03": [
+      "v2-dev-p09-c03"
+    ],
+    "v2-dev-p09-c04": [
+      "v2-dev-p09-c04"
+    ],
+    "v2-dev-p09-c05": [
+      "v2-dev-p09-c05"
+    ],
+    "v2-dev-p09-c06": [
+      "v2-dev-p09-c06"
+    ],
+    "v2-dev-p09-c07": [
+      "v2-dev-p09-c07"
+    ],
+    "v2-dev-p09-c08": [
+      "v2-dev-p09-c08"
+    ],
+    "v2-dev-p09-c09": [
+      "v2-dev-p09-c09"
+    ],
+    "v2-dev-p09-c10": [
+      "v2-dev-p09-c10"
+    ],
+    "v2-dev-p09-c11": [
+      "v2-dev-p09-c11"
+    ],
+    "v2-dev-p10-c01": [
+      "v2-dev-p10-c01"
+    ],
+    "v2-dev-p10-c02": [
+      "v2-dev-p10-c02"
+    ],
+    "v2-dev-p10-c03": [
+      "v2-dev-p10-c03"
+    ],
+    "v2-dev-p10-c04": [
+      "v2-dev-p10-c04"
+    ],
+    "v2-dev-p10-c05": [
+      "v2-dev-p10-c05"
+    ],
+    "v2-dev-p10-c06": [
+      "v2-dev-p10-c06"
+    ],
+    "v2-dev-p10-c07": [
+      "v2-dev-p10-c07"
+    ],
+    "v2-dev-p10-c08": [
+      "v2-dev-p10-c08"
+    ],
+    "v2-dev-p10-c09": [
+      "v2-dev-p10-c09"
+    ],
+    "v2-dev-p10-c10": [
+      "v2-dev-p10-c10"
+    ],
+    "v2-dev-p11-c01": [
+      "v2-dev-p11-c01"
+    ],
+    "v2-dev-p11-c02": [
+      "v2-dev-p11-c02"
+    ],
+    "v2-dev-p11-c03": [
+      "v2-dev-p11-c03"
+    ],
+    "v2-dev-p11-c04": [
+      "v2-dev-p11-c04"
+    ],
+    "v2-dev-p11-c05": [
+      "v2-dev-p11-c05"
+    ],
+    "v2-dev-p11-c06": [
+      "v2-dev-p11-c06"
+    ],
+    "v2-dev-p11-c07": [
+      "v2-dev-p11-c07"
+    ],
+    "v2-dev-p11-c08": [
+      "v2-dev-p11-c08"
+    ],
+    "v2-dev-p11-c09": [
+      "v2-dev-p11-c09"
+    ],
+    "v2-dev-p11-c10": [
+      "v2-dev-p11-c10"
+    ],
+    "v2-dev-p11-c11": [
+      "v2-dev-p11-c11"
+    ],
+    "v2-dev-p11-c12": [
+      "v2-dev-p11-c12"
+    ],
+    "v2-dev-p12-c01": [
+      "v2-dev-p12-c01"
+    ],
+    "v2-dev-p12-c02": [
+      "v2-dev-p12-c02"
+    ],
+    "v2-dev-p12-c03": [
+      "v2-dev-p12-c03"
+    ],
+    "v2-dev-p12-c04": [
+      "v2-dev-p12-c04"
+    ],
+    "v2-dev-p12-c05": [
+      "v2-dev-p12-c05"
+    ],
+    "v2-dev-p12-c06": [
+      "v2-dev-p12-c06"
+    ],
+    "v2-dev-p12-c07": [
+      "v2-dev-p12-c07"
+    ],
+    "v2-dev-p12-c08": [
+      "v2-dev-p12-c08a",
+      "v2-dev-p12-c08b"
+    ],
+    "v2-dev-p12-c09": [
+      "v2-dev-p12-c09"
+    ],
+    "v2-dev-p12-c10": [
+      "v2-dev-p12-c10"
+    ],
+    "v2-dev-p12-c11": [
+      "v2-dev-p12-c11"
+    ]
+  },
+  "affected_new_claim_ids": [
+    "v2-dev-p01-c01",
+    "v2-dev-p01-c02",
+    "v2-dev-p01-c03",
+    "v2-dev-p01-c04",
+    "v2-dev-p01-c05",
+    "v2-dev-p01-c07",
+    "v2-dev-p02-c01",
+    "v2-dev-p02-c02",
+    "v2-dev-p02-c03",
+    "v2-dev-p02-c04",
+    "v2-dev-p02-c06",
+    "v2-dev-p02-c07",
+    "v2-dev-p02-c08",
+    "v2-dev-p02-c09",
+    "v2-dev-p03-c01",
+    "v2-dev-p03-c02",
+    "v2-dev-p03-c03",
+    "v2-dev-p03-c04",
+    "v2-dev-p03-c05",
+    "v2-dev-p03-c07",
+    "v2-dev-p03-c08",
+    "v2-dev-p03-c09",
+    "v2-dev-p04-c01",
+    "v2-dev-p04-c02",
+    "v2-dev-p04-c03",
+    "v2-dev-p04-c04",
+    "v2-dev-p04-c05",
+    "v2-dev-p04-c06",
+    "v2-dev-p04-c07",
+    "v2-dev-p04-c08",
+    "v2-dev-p04-c09",
+    "v2-dev-p04-c10a",
+    "v2-dev-p04-c10b",
+    "v2-dev-p04-c11",
+    "v2-dev-p04-c12",
+    "v2-dev-p05-c01",
+    "v2-dev-p05-c02",
+    "v2-dev-p05-c03",
+    "v2-dev-p05-c04",
+    "v2-dev-p05-c05",
+    "v2-dev-p05-c06",
+    "v2-dev-p05-c07",
+    "v2-dev-p05-c08",
+    "v2-dev-p05-c09",
+    "v2-dev-p06-c01",
+    "v2-dev-p06-c04",
+    "v2-dev-p06-c05",
+    "v2-dev-p06-c07a",
+    "v2-dev-p06-c07b",
+    "v2-dev-p07-c01",
+    "v2-dev-p07-c02",
+    "v2-dev-p07-c04",
+    "v2-dev-p07-c06",
+    "v2-dev-p07-c10",
+    "v2-dev-p07-c11",
+    "v2-dev-p07-c12",
+    "v2-dev-p08-c05",
+    "v2-dev-p08-c07",
+    "v2-dev-p08-c09",
+    "v2-dev-p09-c01",
+    "v2-dev-p09-c02",
+    "v2-dev-p09-c03",
+    "v2-dev-p09-c04",
+    "v2-dev-p09-c06",
+    "v2-dev-p09-c08",
+    "v2-dev-p10-c05",
+    "v2-dev-p10-c06",
+    "v2-dev-p10-c07",
+    "v2-dev-p10-c08",
+    "v2-dev-p10-c10",
+    "v2-dev-p11-c02",
+    "v2-dev-p11-c03",
+    "v2-dev-p11-c04",
+    "v2-dev-p11-c12",
+    "v2-dev-p12-c03",
+    "v2-dev-p12-c04",
+    "v2-dev-p12-c06",
+    "v2-dev-p12-c07",
+    "v2-dev-p12-c08a",
+    "v2-dev-p12-c08b",
+    "v2-dev-p12-c09"
+  ],
+  "review_limit": "This is an affected-claim follow-up after original gold exposure, not a new blind review."
+}

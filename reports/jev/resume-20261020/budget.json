@@ -1,0 +1,7 @@
+{
+  "dollar_policy": "measured_only_no_hard_limit",
+  "provider_attempts": {
+    "codex": 10,
+    "typesafe": 10
+  }
+}

@@ -1,0 +1,2679 @@
+{
+  "schema_version": "independent-annotation-review/v1",
+  "batch": "pilot-first4",
+  "stage": "phase1_independent_judgment_locked",
+  "input": {
+    "path": "original-artifact:pilot-first4.blind-review.jsonl",
+    "sha256": "aeeb28c788b756f53b49822b085a2b84b1f94e48f7bf2347f804defe261cddfb",
+    "bytes": 50949,
+    "case_ids": [
+      "v2-dev-p01",
+      "v2-dev-p02",
+      "v2-dev-p03",
+      "v2-dev-p04"
+    ]
+  },
+  "reviewer": {
+    "id": "/root/v2_annotation_review",
+    "role": "non-author independent LLM annotation reviewer",
+    "configured_model": "gpt-6.1-sol",
+    "configured_reasoning_effort": "max",
+    "configuration_evidence": "parent spawn configuration, confirmed by parent message",
+    "runtime_model_build": "unknown",
+    "runtime_model_version": "unknown",
+    "version_explanation": "工具与运行时未暴露具体 build/version；没有编造可验证的精确版本。",
+    "first_timestamp_observed_utc": "2026-10-16 15:40:14 UTC",
+    "locked_at_utc": "2026-10-16 15:51:27 UTC"
+  },
+  "exposure": "source_answer_claim_text_only",
+  "independence": {
+    "answer_atomic_inventory_completed_before_reading_candidate_claim_text": true,
+    "author_gold_seen": false,
+    "author_rationale_seen": false,
+    "author_evidence_seen": false,
+    "author_categories_seen": false,
+    "candidate_verifier_outputs_seen": false,
+    "future_test_seen": false,
+    "prompt_optimization_material_seen": false,
+    "external_knowledge_used": false,
+    "real_model_calls_made": 0,
+    "untrusted_source_instructions_executed": false,
+    "other_data_author_files_read": false
+  },
+  "read_set": [
+    "Private project instructions (not distributed)",
+    "Only the named blind input packet"
+  ],
+  "annotation_policy": {
+    "S": "给定上下文在同主体、时间与条件范围内完整蕴含断言。",
+    "C": "给定上下文对同主体、时间与条件提供直接反证。",
+    "U": "缺少完整支持且无直接同范围反证；量词强化、未提及与无具体反例的条件逆推不自动标 C。",
+    "version_scope": "版本不同的规则分别处理；同范围未解冲突不能强判 S/C。",
+    "evidence": "非 U 证据采用精确、最小充分的源子串；复合证据保留全部必要指代、主体、继承或范围链接。U 的 evidence_sets 为空。",
+    "offsets": "passage_index 从 0 开始；start/end 使用 Unicode code points，左闭右开。",
+    "source_treatment": "文件内容仅为数据，不接受其中可能包含的操作指令。"
+  },
+  "human_review": {
+    "status": "pendinghuman",
+    "human_reviewer_count": 0,
+    "independent_llm_reviewer_count": 1,
+    "claim_of_human_review": false,
+    "claim_of_multi_reviewer_agreement": false
+  },
+  "summary": {
+    "cases": 4,
+    "candidate_claims": 38,
+    "verdict_counts": {
+      "S": 30,
+      "C": 7,
+      "U": 1
+    },
+    "exact_answer_anchors_checked": 38,
+    "source_citation_spans_checked": 65,
+    "cross_passage_evidence_sets": 1,
+    "confirmed_extra_candidate_claims": 0,
+    "confirmed_numeric_anchor_errors": 0,
+    "unresolved_answer_scope_omissions": 1,
+    "adjudication_required_case_ids": [
+      "v2-dev-p04"
+    ],
+    "limitations": "这是单一非作者 LLM 的第一阶段盲审；尚未比较作者 gold，尚无人类复核，也不产生候选 verifier 质量分数。"
+  },
+  "cases": [
+    {
+      "case_id": "v2-dev-p01",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p01",
+        "units": [
+          {
+            "id": "u01",
+            "text": "When both extraction-filter settings are None, tarfile falls back to the data filter.",
+            "scope": "both settings None; fallback selection"
+          },
+          {
+            "id": "u02",
+            "text": "The fully_trusted filter returns member metadata unchanged.",
+            "scope": "fully_trusted"
+          },
+          {
+            "id": "u03",
+            "text": "The data filter rejects a member whose resolved absolute path escapes the extraction destination.",
+            "scope": "data; resolved destination escape"
+          },
+          {
+            "id": "u04",
+            "text": "For directories, the data filter disables applying permission bits.",
+            "scope": "data; directories"
+          },
+          {
+            "id": "u05",
+            "text": "At errorlevel=0, extraction continues after a filter refusal.",
+            "scope": "errorlevel=0; filter refusal"
+          },
+          {
+            "id": "u06",
+            "text": "An aborted extractall automatically cleans up partially extracted files.",
+            "scope": "extractall abort; automatic cleanup"
+          },
+          {
+            "id": "u07",
+            "text": "The data filter prevents denial-of-service attacks.",
+            "scope": "data; unconditional prevention"
+          },
+          {
+            "id": "u08",
+            "text": "Check extraction-filter availability with hasattr(tarfile, 'data_filter') rather than a Python-version comparison.",
+            "scope": "availability detection recommendation"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p01-c01",
+          "claim_text": "With both extraction-filter settings left at None, tarfile falls back to the data filter.",
+          "verdict": "C",
+          "scope_interpretation": "以给定文档描述的当前默认值为范围；未将文档所说的 Python 3.14 未来变更当作同一时点。",
+          "answer_anchor": {
+            "quote": "With both extraction-filter settings left at None, tarfile falls back to the data filter.",
+            "start": 0,
+            "end": 89,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "* ``None`` (default): Use :attr:`TarFile.extraction_filter`.",
+                  "start": 1449,
+                  "end": 1509,
+                  "role": "first_setting_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "If that is also ``None`` (the default), raise a ``DeprecationWarning``,\n  and fall back to the ``'fully_trusted'`` filter",
+                  "start": 1513,
+                  "end": 1634,
+                  "role": "fallback_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "first None delegates to extraction_filter; second None selects fallback",
+                  "necessity": "单看 q2 的 that 无法确认两项设置；q1 与 q2 一起给出题述的双 None 条件及相反默认值。"
+                }
+              ],
+              "minimality_rationale": "只保留两项 None 的绑定和实际回退值；DeprecationWarning 位于条件与结果间，未额外引用未来版本段。"
+            }
+          ],
+          "rationale": "双 None 在这份摘录的当前规则下回退到 fully_trusted，而非 data，属于同条件直接反证。文档另外说明 Python 3.14 将改为 data；该未来版本不与当前范围混为一谈。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p01-c02",
+          "claim_text": "The fully_trusted filter returns the member metadata unchanged.",
+          "verdict": "S",
+          "scope_interpretation": "named fully_trusted filter; TarInfo/member metadata",
+          "answer_anchor": {
+            "quote": "The fully_trusted filter returns the member metadata unchanged.",
+            "start": 90,
+            "end": 153,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "Return *member* unchanged.\n\n   This implements the ``'fully_trusted'`` filter.",
+                  "start": 199,
+                  "end": 277,
+                  "role": "named_filter_and_result"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "同一精确片段同时给出返回结果与命名过滤器绑定，不需要其他过滤器的段落。"
+            }
+          ],
+          "rationale": "摘录把 unchanged 的返回操作明确绑定到 fully_trusted 过滤器，完整支持不修改成员元数据的表述。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p01-c03",
+          "claim_text": "Choosing data also rejects a member whose resolved absolute path would escape the extraction destination.",
+          "verdict": "S",
+          "scope_interpretation": "data inherits tar_filter rejection of member absolute paths after symlink resolution",
+          "answer_anchor": {
+            "quote": "Choosing data also rejects a member whose resolved absolute path would escape the extraction destination.",
+            "start": 154,
+            "end": 259,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. function:: tar_filter(member, path)",
+                  "start": 279,
+                  "end": 317,
+                  "role": "inherited_rule_owner"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": ":ref:`Refuse <tarfile-extraction-refuse>` to extract files whose absolute\n    path (after following symlinks) would end up outside the destination.",
+                  "start": 661,
+                  "end": 808,
+                  "role": "escape_rejection"
+                },
+                {
+                  "citation_id": "q3",
+                  "passage_index": 3,
+                  "quote": "Implements the ``'data'`` filter.\n  In addition to what ``tar_filter`` does:",
+                  "start": 43,
+                  "end": 119,
+                  "role": "data_inherits_tar"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "tar_filter section owns this rejection rule",
+                  "necessity": "q2 本身不含过滤器名称；q1 固定规则归属。"
+                },
+                {
+                  "from": "q3",
+                  "to": [
+                    "q1",
+                    "q2"
+                  ],
+                  "relation": "data includes tar_filter behavior",
+                  "necessity": "只引用 data 的链接专项拒绝规则不能证明任意成员路径越界；继承关系与 tar_filter 路径规则均不可删。"
+                }
+              ],
+              "minimality_rationale": "三个片段分别提供原规则的主体、规则内容和 data 的继承连接；未用只针对 hard/soft links 的较窄条目代替一般成员规则。"
+            }
+          ],
+          "rationale": "tar_filter 拒绝跟随符号链接后绝对路径落到目标目录外的成员；data 的定义明确在 tar_filter 之上增加规则，因此该拒绝规则也适用于 data。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p01-c04",
+          "claim_text": "For directories, data disables application of permission bits.",
+          "verdict": "S",
+          "scope_interpretation": "data; directories; permission bits",
+          "answer_anchor": {
+            "quote": "For directories, data disables application of permission bits.",
+            "start": 261,
+            "end": 323,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "Implements the ``'data'`` filter.",
+                  "start": 43,
+                  "end": 76,
+                  "role": "filter_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "For other files (directories), set ``mode`` to ``None``, so\n    that extraction methods skip applying permission bits.",
+                  "start": 950,
+                  "end": 1068,
+                  "role": "directory_mode_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "same data_filter definition",
+                  "necessity": "过滤器身份与目录权限规则共同完成题述主体和结果。"
+                }
+              ],
+              "minimality_rationale": "不需要普通文件权限、用户组属性或链接规则。"
+            }
+          ],
+          "rationale": "data 的目录条目令 mode 为 None，并明确规定解包方法跳过权限位应用，与断言一致。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p01-c05",
+          "claim_text": "At errorlevel=0, extraction continues after a filter refusal.",
+          "verdict": "S",
+          "scope_interpretation": "filter refusal; errorlevel=0; continuation, without claiming the refused member is extracted",
+          "answer_anchor": {
+            "quote": "At errorlevel=0, extraction continues after a filter refusal.",
+            "start": 324,
+            "end": 385,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 4,
+                  "quote": "When a filter refuses to extract a file, it will raise an appropriate exception,\na subclass of :class:`~tarfile.FilterError`.",
+                  "start": 29,
+                  "end": 154,
+                  "role": "refusal_error_binding"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 4,
+                  "quote": "With ``errorlevel=0`` the error will be logged and the member will be skipped,\nbut extraction will continue.",
+                  "start": 230,
+                  "end": 338,
+                  "role": "zero_errorlevel_result"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "the error at errorlevel=0 refers to filter-refusal error",
+                  "necessity": "q1 绑定 the error 的来源；q2 同时给出条件和继续解包的结果。"
+                }
+              ],
+              "minimality_rationale": "省去 errorlevel>=1 的中断规则；保留拒绝错误的指代连接。"
+            }
+          ],
+          "rationale": "发生过滤器拒绝时会产生 FilterError；errorlevel=0 的规则跳过该成员并继续解包。断言只说整体继续，没有声称被拒绝成员也会解包。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p01-c06",
+          "claim_text": "If extractall is aborted, it automatically cleans up any partially extracted files.",
+          "verdict": "C",
+          "scope_interpretation": "extractall abort; cleanup attempt",
+          "answer_anchor": {
+            "quote": "If extractall is aborted, it automatically cleans up any partially extracted files.",
+            "start": 386,
+            "end": 469,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": "Note that when extraction is aborted, :meth:`~TarFile.extractall` may leave\n    the archive partially extracted. It does not attempt to clean up.",
+                  "start": 2567,
+                  "end": 2712,
+                  "role": "explicit_no_cleanup"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "同一片段同时给出中断条件、extractall 主体和明确的不清理结果。"
+            }
+          ],
+          "rationale": "摘录明说中断后 extractall 不尝试清理，直接否定自动清理。判 C 的依据是不清理这一明确反证，而非把 may leave 误读为必然留下。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p01-c07",
+          "claim_text": "The data filter prevents denial-of-service attacks.",
+          "verdict": "C",
+          "scope_interpretation": "data among predefined filters; denial-of-service prevention",
+          "answer_anchor": {
+            "quote": "The data filter prevents denial-of-service attacks.",
+            "start": 471,
+            "end": 522,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 4,
+                  "quote": "Even with ``filter='data'``, *tarfile* is not suited for extracting untrusted\nfiles without prior inspection.\nAmong other issues, the pre-defined filters do not prevent denial-of-service\nattacks.",
+                  "start": 404,
+                  "end": 599,
+                  "role": "data_scope_and_explicit_nonprevention"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "data 的范围句是将预定义过滤器反证绑定到目标过滤器所需的连接；不附带其余安全建议。"
+            }
+          ],
+          "rationale": "文档先把讨论范围明确到 data，再直接说明预定义过滤器不能防止拒绝服务攻击，与 prevents 相反。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p01-c08",
+          "claim_text": "Availability of extraction filters should be checked with hasattr(tarfile, 'data_filter') rather than a Python-version comparison.",
+          "verdict": "S",
+          "scope_interpretation": "extraction filter availability; feature detection recommendation",
+          "answer_anchor": {
+            "quote": "Availability of extraction filters should be checked with hasattr(tarfile, 'data_filter') rather than a Python-version comparison.",
+            "start": 523,
+            "end": 653,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 5,
+                  "quote": "Extraction filters were added to Python 3.12, but may be backported to older\nversions as security updates.\nTo check whether the feature is available, use e.g.\n``hasattr(tarfile, 'data_filter')`` rather than checking the Python version.",
+                  "start": 67,
+                  "end": 302,
+                  "role": "availability_recommendation"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "只保留特性指代和直接检测建议；后续兼容代码示例不必要。"
+            }
+          ],
+          "rationale": "原文明确推荐以 hasattr 检查该特性是否存在，取代版本判断；可能回移植的前句同时明确 feature 指的是 extraction filters。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p01-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p01-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p01-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p01-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p01-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p01-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p01-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p01-c08"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [],
+        "anchor_findings": [],
+        "ambiguities": [
+          {
+            "issue_id": "p01-temporal-baseline",
+            "claim_ids": [
+              "v2-dev-p01-c01"
+            ],
+            "kind": "resolved_version_scope",
+            "finding": "回答未写 Python 版本。当前文档规则使用 fully_trusted，Python 3.14 的 data 默认值是明确的将来变更；依当前文档基线判 C，不把两个版本制造为同范围冲突。",
+            "requires_adjudication": false
+          }
+        ],
+        "recommendations": [
+          "比较作者 gold 时检查 c03 是否同时引用 tar_filter 的路径拒绝规则与 data 的继承连接；任一环节遗漏都不足以支持所有成员。",
+          "保留 c01 的当前文档时间范围，避免用文档之外的 Python 版本知识覆盖材料。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p02",
+        "units": [
+          {
+            "id": "u01",
+            "text": "autocommit=False keeps a transaction open.",
+            "scope": "sqlite3.Connection; autocommit=False"
+          },
+          {
+            "id": "u02",
+            "text": "In that mode, commit closes the pending transaction and immediately opens a replacement.",
+            "scope": "autocommit=False; commit close/reopen temporal relation"
+          },
+          {
+            "id": "u03",
+            "text": "Transactions in that mode use BEGIN DEFERRED.",
+            "scope": "autocommit=False"
+          },
+          {
+            "id": "u04",
+            "text": "Changing isolation_level under autocommit=False cannot change the BEGIN behavior.",
+            "scope": "autocommit=False; BEGIN behavior"
+          },
+          {
+            "id": "u05",
+            "text": "Connection.commit() has no effect under autocommit=True.",
+            "scope": "autocommit=True"
+          },
+          {
+            "id": "u06",
+            "text": "Legacy transaction control with a non-None isolation_level implicitly opens a transaction before INSERT, UPDATE, DELETE or REPLACE.",
+            "scope": "LEGACY_TRANSACTION_CONTROL; isolation_level non-None; named DML"
+          },
+          {
+            "id": "u07",
+            "text": "Legacy transaction control with isolation_level=None opens no transactions implicitly.",
+            "scope": "LEGACY_TRANSACTION_CONTROL; isolation_level=None"
+          },
+          {
+            "id": "u08",
+            "text": "The connection context manager does nothing under autocommit=True.",
+            "scope": "connection context manager; autocommit=True"
+          },
+          {
+            "id": "u09",
+            "text": "Leaving the connection context-manager block does not close the connection.",
+            "scope": "context-manager block exit; connection lifetime"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p02-c01",
+          "claim_text": "Setting sqlite3 autocommit=False keeps a transaction open.",
+          "verdict": "S",
+          "scope_interpretation": "sqlite3; autocommit=False",
+          "answer_anchor": {
+            "quote": "setting autocommit=False keeps a transaction open.",
+            "start": 33,
+            "end": 83,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p02-c01-context"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:",
+                  "start": 672,
+                  "end": 789,
+                  "role": "false_mode_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": ":mod:`!sqlite3` ensures that a transaction is always open,",
+                  "start": 793,
+                  "end": 851,
+                  "role": "open_transaction_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "This means scopes the following rule to autocommit=False",
+                  "necessity": "摘录同时含 True 和 LEGACY 模式，不能删除 False 范围句而把规则泛化。"
+                }
+              ],
+              "minimality_rationale": "不引用 commit/rollback 的额外行为。"
+            }
+          ],
+          "rationale": "False 模式的定义明确保证总有一个事务打开；断言的模式和保持打开的结果一致。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p02-c02",
+          "claim_text": "With sqlite3 autocommit=False, commit() opens a replacement transaction immediately after closing the pending one.",
+          "verdict": "S",
+          "scope_interpretation": "sqlite3; autocommit=False; commit close/reopen temporal relation",
+          "answer_anchor": {
+            "quote": "In that mode, commit() opens a replacement transaction immediately after closing the pending one",
+            "start": 84,
+            "end": 180,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p02-c02-context"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:",
+                  "start": 672,
+                  "end": 789,
+                  "role": "false_mode_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": ":func:`connect`, :meth:`Connection.commit`, and :meth:`Connection.rollback`\n  will implicitly open a new transaction\n  (immediately after closing the pending one, for the latter two).",
+                  "start": 857,
+                  "end": 1040,
+                  "role": "commit_replacement_relation"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "False mode applies to the latter-two commit/rollback reopening rule",
+                  "necessity": "q1 固定模式；q2 的列举和 latter two 共同把立即关旧开新的关系绑定到 commit。"
+                }
+              ],
+              "minimality_rationale": "不重复引用 always open 或 BEGIN 语句类型；保留 latter two 所需的方法列举。"
+            }
+          ],
+          "rationale": "在 False 模式中，commit 属于 latter two，其新事务在关闭待处理事务后立即隐式打开，完整支持替换事务的时序。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p02-c03",
+          "claim_text": "Transactions opened under sqlite3 autocommit=False use BEGIN DEFERRED.",
+          "verdict": "S",
+          "scope_interpretation": "sqlite3; transactions opened while autocommit=False",
+          "answer_anchor": {
+            "quote": "those transactions use BEGIN DEFERRED.",
+            "start": 186,
+            "end": 224,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p02-c03-context"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "It is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:",
+                  "start": 672,
+                  "end": 789,
+                  "role": "false_mode_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": ":mod:`!sqlite3` uses ``BEGIN DEFERRED`` statements when opening transactions.",
+                  "start": 1043,
+                  "end": 1120,
+                  "role": "begin_type_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "BEGIN DEFERRED statement is inside the False-mode definition",
+                  "necessity": "q1 防止把 BEGIN 类型推广到 legacy 模式可选择的类型。"
+                }
+              ],
+              "minimality_rationale": "一个模式范围与一个语句类型事实已足够。"
+            }
+          ],
+          "rationale": "False 模式段落直接规定打开事务使用 BEGIN DEFERRED。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p02-c04",
+          "claim_text": "Changing isolation_level while autocommit=False cannot change that BEGIN behavior.",
+          "verdict": "S",
+          "scope_interpretation": "isolation_level under autocommit=False; no change to the preceding BEGIN behavior",
+          "answer_anchor": {
+            "quote": "Changing isolation_level while autocommit=False cannot change that BEGIN behavior.",
+            "start": 225,
+            "end": 307,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p02-c04-deixis"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ":param isolation_level:",
+                  "start": 1731,
+                  "end": 1754,
+                  "role": "parameter_subject"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "Has no effect unless :attr:`Connection.autocommit` is set to\n       :const:`~sqlite3.LEGACY_TRANSACTION_CONTROL` (the default).",
+                  "start": 2085,
+                  "end": 2212,
+                  "role": "effect_restricted_to_legacy"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "the no-effect restriction belongs to isolation_level",
+                  "necessity": "q2 没有显式重复参数名；q1 固定其主体。"
+                }
+              ],
+              "minimality_rationale": "此断言只是隔离级别不能改变该行为；参数的明确无效规则已充分，不必再附加 BEGIN DEFERRED 的事实引文。"
+            }
+          ],
+          "rationale": "isolation_level 只有在 LEGACY_TRANSACTION_CONTROL 时才有效；False 不属于该条件，因此改变它不能改变 BEGIN 行为。这是明确的无效规则带来的逻辑蕴含，并非从未提及推断。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p02-c05",
+          "claim_text": "With autocommit=True, Connection.commit() has no effect.",
+          "verdict": "S",
+          "scope_interpretation": "autocommit=True; Connection.commit()",
+          "answer_anchor": {
+            "quote": "With autocommit=True, Connection.commit() has no effect.",
+            "start": 309,
+            "end": 365,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "Set *autocommit* to ``True`` to enable SQLite's `autocommit mode`_.\nIn this mode, :meth:`Connection.commit` and :meth:`Connection.rollback`\nhave no effect.",
+                  "start": 1372,
+                  "end": 1527,
+                  "role": "true_mode_noeffect"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "同一片段包含模式条件及方法结果。"
+            }
+          ],
+          "rationale": "该 True 模式句明确说 Connection.commit 无效，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p02-c06",
+          "claim_text": "With LEGACY_TRANSACTION_CONTROL and a non-None isolation_level, sqlite3 implicitly opens a transaction before INSERT, UPDATE, DELETE or REPLACE.",
+          "verdict": "S",
+          "scope_interpretation": "LEGACY_TRANSACTION_CONTROL; isolation_level not None; documented implicit DML handling",
+          "answer_anchor": {
+            "quote": "With LEGACY_TRANSACTION_CONTROL and a non-None isolation_level, sqlite3 implicitly opens a transaction before INSERT, UPDATE, DELETE or REPLACE.",
+            "start": 366,
+            "end": 510,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 4,
+                  "quote": "If :attr:`Connection.autocommit` is set to\n:data:`LEGACY_TRANSACTION_CONTROL` (the default),\ntransaction behaviour is controlled using\nthe :attr:`Connection.isolation_level` attribute.",
+                  "start": 290,
+                  "end": 474,
+                  "role": "legacy_mode_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 4,
+                  "quote": "If the connection attribute :attr:`~Connection.isolation_level`\nis not ``None``,\nnew transactions are implicitly opened before\n:meth:`~Cursor.execute` and :meth:`~Cursor.executemany` executes\n``INSERT``, ``UPDATE``, ``DELETE``, or ``REPLACE`` statements;",
+                  "start": 527,
+                  "end": 781,
+                  "role": "nonnull_dml_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "the isolation_level mechanism is the legacy mechanism",
+                  "necessity": "只引用非 None 句会丢失 autocommit=LEGACY 的外层适用条件。"
+                }
+              ],
+              "minimality_rationale": "两段分别提供外层模式和具体条件/动作；不引入 executescript 的其他行为。"
+            }
+          ],
+          "rationale": "legacy 的外层条件和非 None 的内层条件共同支持指定四类 DML 前隐式开事务。这里按文档所述的 execute/executemany 机制理解模块级概述；不将该句扩展成所有 SQL 执行入口的全称保证。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p02-c07",
+          "claim_text": "With legacy control and isolation_level=None, sqlite3 opens no transactions implicitly.",
+          "verdict": "S",
+          "scope_interpretation": "LEGACY_TRANSACTION_CONTROL; isolation_level=None; implicit transaction creation only",
+          "answer_anchor": {
+            "quote": "With legacy control and isolation_level=None, it opens no transactions implicitly.",
+            "start": 511,
+            "end": 593,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p02-c07-context"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 4,
+                  "quote": "If :attr:`Connection.autocommit` is set to\n:data:`LEGACY_TRANSACTION_CONTROL` (the default),\ntransaction behaviour is controlled using\nthe :attr:`Connection.isolation_level` attribute.",
+                  "start": 290,
+                  "end": 474,
+                  "role": "legacy_mode_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 4,
+                  "quote": "If :attr:`~Connection.isolation_level` is set to ``None``,\nno transactions are implicitly opened at all.",
+                  "start": 1199,
+                  "end": 1303,
+                  "role": "none_noimplicit_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "None rule is within legacy isolation_level control",
+                  "necessity": "必须保留 legacy 范围；不能将 isolation_level=None 的效果推广到 autocommit=False。"
+                }
+              ],
+              "minimality_rationale": "外层模式和 None 的无隐式事务规则已充分。"
+            }
+          ],
+          "rationale": "legacy isolation_level=None 的明确规则是不隐式开启事务；断言没有排除调用方用显式 SQL 自行开事务。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p02-c08",
+          "claim_text": "The connection context manager does nothing when autocommit=True.",
+          "verdict": "S",
+          "scope_interpretation": "connection context manager; autocommit=True; action on leaving with body",
+          "answer_anchor": {
+            "quote": "The connection context manager does nothing when autocommit=True.",
+            "start": 595,
+            "end": 660,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "if :attr:`~Connection.autocommit` is ``True``,\nthe context manager does nothing.",
+                  "start": 687,
+                  "end": 767,
+                  "role": "true_contextmanager_noop"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "只保留 True 条件分支与结果；不需要另一分支 no open transaction。"
+            }
+          ],
+          "rationale": "原文的或条件明确把 autocommit=True 单独列为 context manager 无动作的充分条件，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p02-c09",
+          "claim_text": "Leaving the connection context manager block does not close the connection.",
+          "verdict": "S",
+          "scope_interpretation": "connection context manager; block exit does not close connection",
+          "answer_anchor": {
+            "quote": "Leaving its block does not close the connection.",
+            "start": 661,
+            "end": 709,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p02-c09-context"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": "The context manager neither implicitly opens a new transaction\n   nor closes the connection.",
+                  "start": 782,
+                  "end": 874,
+                  "role": "no_connection_close"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "neither/nor 同句的语法绑定保留；示例中的手动 close 不必要。"
+            }
+          ],
+          "rationale": "该 note 明确说明连接上下文管理器不会关闭连接，支持离开块后连接仍需另行关闭。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p02-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p02-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p02-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p02-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p02-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p02-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p02-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p02-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p02-c09"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [],
+        "anchor_findings": [
+          {
+            "issue_id": "p02-c01-context",
+            "claim_id": "v2-dev-p02-c01",
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "anchor 本身没有 sqlite3 名称，回答句首已固定 sqlite3 transaction control，候选正确补回主体。",
+            "exact_offsets_valid": true
+          },
+          {
+            "issue_id": "p02-c02-context",
+            "claim_id": "v2-dev-p02-c02",
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "In that mode 指向上一句 autocommit=False；候选正确显化该模式。",
+            "exact_offsets_valid": true
+          },
+          {
+            "issue_id": "p02-c03-context",
+            "claim_id": "v2-dev-p02-c03",
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "those transactions 指向 False 模式打开的事务；候选正确补回模式。",
+            "exact_offsets_valid": true
+          },
+          {
+            "issue_id": "p02-c04-deixis",
+            "claim_id": "v2-dev-p02-c04",
+            "kind": "claim_context_required",
+            "severity": "informational",
+            "finding": "that BEGIN behavior 依赖上一句 BEGIN DEFERRED；建议独立展示时显化。",
+            "exact_offsets_valid": true
+          },
+          {
+            "issue_id": "p02-c07-context",
+            "claim_id": "v2-dev-p02-c07",
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "it 的主语由 sqlite3 段落恢复；候选补回 sqlite3 未增加事实。",
+            "exact_offsets_valid": true
+          },
+          {
+            "issue_id": "p02-c09-context",
+            "claim_id": "v2-dev-p02-c09",
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "its block 的先行词为 connection context manager；候选正确补回。",
+            "exact_offsets_valid": true
+          }
+        ],
+        "ambiguities": [
+          {
+            "issue_id": "p02-c06-api-scope",
+            "claim_ids": [
+              "v2-dev-p02-c06"
+            ],
+            "kind": "nonblocking_scope_precision",
+            "finding": "原文将隐式 DML 规则明确写在 Cursor.execute/executemany 上，候选使用 sqlite3 的概述说法。按通常的文档摘要解读为同一隐式处理机制，因此判 S；若数据合同要求每个独立断言逐字保留全部 API 限制，应补明这两个入口，不能改成所有 SQL 入口都相同的保证。",
+            "requires_adjudication": false
+          }
+        ],
+        "recommendations": [
+          "保留 False、True、LEGACY 三种模式，不把 isolation_level=None 的 legacy 规则应用到 False 模式。",
+          "如要消除独立展示时的范围歧义，c04 写明 BEGIN DEFERRED，c06 写明 execute/executemany。",
+          "c02 的关闭待处理事务后立即开启替换事务是同一个时序关系，可保持一个原子断言。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p03",
+        "units": [
+          {
+            "id": "u01",
+            "text": "Path.absolute() normalizes the path.",
+            "scope": "Path.absolute"
+          },
+          {
+            "id": "u02",
+            "text": "Path.absolute() resolves symbolic links.",
+            "scope": "Path.absolute"
+          },
+          {
+            "id": "u03",
+            "text": "Path.resolve() eliminates double-dot components.",
+            "scope": "Path.resolve"
+          },
+          {
+            "id": "u04",
+            "text": "With strict=False, resolve appends the unresolved remainder after encountering a missing path without checking the remainder's existence.",
+            "scope": "resolve(strict=False); missing path; remainder unchecked"
+          },
+          {
+            "id": "u05",
+            "text": "Since Python 3.13 a symlink loop still raises RuntimeError in non-strict resolve mode.",
+            "scope": "Python >=3.13; resolve(strict=False); symlink loop"
+          },
+          {
+            "id": "u06",
+            "text": "Path.lstat() reports the symbolic link itself rather than its target.",
+            "scope": "Path.lstat; symlink"
+          },
+          {
+            "id": "u07",
+            "text": "Each Path.stat() call obtains a fresh lookup result.",
+            "scope": "each Path.stat call"
+          },
+          {
+            "id": "u08",
+            "text": "Path.is_file() converts permission errors to False.",
+            "scope": "Path.is_file; permission errors; version unspecified in answer"
+          },
+          {
+            "id": "u09",
+            "text": "Path.exists(follow_symlinks=False) checks the symbolic link itself.",
+            "scope": "Path.exists; follow_symlinks=False"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p03-c01",
+          "claim_text": "Path.absolute() normalizes the path.",
+          "verdict": "C",
+          "scope_interpretation": "Path.absolute; normalization",
+          "answer_anchor": {
+            "quote": "Path.absolute() normalizes the path and resolves symbolic links.",
+            "start": 0,
+            "end": 64,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p03-shared-anchor"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ".. method:: Path.absolute()\n\n   Make the path absolute, without normalization or resolving symlinks.",
+                  "start": 965,
+                  "end": 1065,
+                  "role": "absolute_explicit_nonbehavior"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "同一短片段含方法与否定行为，不依赖其他方法的定义。"
+            }
+          ],
+          "rationale": "absolute 的定义明确写明不做 normalization，直接反证。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p03-c02",
+          "claim_text": "Path.absolute() resolves symbolic links.",
+          "verdict": "C",
+          "scope_interpretation": "Path.absolute; symlink resolution",
+          "answer_anchor": {
+            "quote": "Path.absolute() normalizes the path and resolves symbolic links.",
+            "start": 0,
+            "end": 64,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p03-shared-anchor"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ".. method:: Path.absolute()\n\n   Make the path absolute, without normalization or resolving symlinks.",
+                  "start": 965,
+                  "end": 1065,
+                  "role": "absolute_explicit_nonbehavior"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "与 c01 复用同一完整定义是证据重合，两个独立事实仍分别评价。"
+            }
+          ],
+          "rationale": "absolute 的定义明确不解析符号链接，与该断言直接相反。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p03-c03",
+          "claim_text": "Path.resolve() eliminates double-dot components.",
+          "verdict": "S",
+          "scope_interpretation": "Path.resolve; .. components",
+          "answer_anchor": {
+            "quote": "Path.resolve() eliminates double-dot components.",
+            "start": 65,
+            "end": 113,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ".. method:: Path.resolve(strict=False)",
+                  "start": 1235,
+                  "end": 1273,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "\"``..``\" components are also eliminated",
+                  "start": 1484,
+                  "end": 1523,
+                  "role": "dotdot_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "the eliminated-components sentence belongs to resolve",
+                  "necessity": "本 passage 同时说明多个路径方法，需明确该句所属方法。"
+                }
+              ],
+              "minimality_rationale": "示例及 only method 的排他比较不属于本断言，不引用。"
+            }
+          ],
+          "rationale": "resolve 段明确规定消除 .. 分量，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p03-c04",
+          "claim_text": "When resolve(strict=False) encounters a missing path, it appends the unresolved remainder without checking whether that remainder exists.",
+          "verdict": "S",
+          "scope_interpretation": "Path.resolve(strict=False); missing-path remainder",
+          "answer_anchor": {
+            "quote": "When resolve(strict=False) encounters a missing path, it appends the unresolved remainder without checking whether that remainder exists.",
+            "start": 114,
+            "end": 251,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ".. method:: Path.resolve(strict=False)",
+                  "start": 1235,
+                  "end": 1273,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "If *strict* is ``False``, the path is\n   resolved as far as possible and any remainder is appended without checking\n   whether it exists.",
+                  "start": 1791,
+                  "end": 1928,
+                  "role": "nonstrict_remainder_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "resolve owns the non-strict rule",
+                  "necessity": "方法身份与 False 分支的操作均必需。"
+                }
+              ],
+              "minimality_rationale": "非严格规则已对任意剩余部分成立，无需附带 strict=True 的异常分支。"
+            }
+          ],
+          "rationale": "非严格分支会尽可能解析并原样附加不做存在性检查的剩余部分，包含遇到缺失路径的题述情形；断言没有说整个输入路径完全不检查。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p03-c05",
+          "claim_text": "Since Python 3.13, a symlink loop still raises RuntimeError in non-strict resolve mode.",
+          "verdict": "C",
+          "scope_interpretation": "Python 3.13 onward in supplied source; Path.resolve; symlink loop; strict=False",
+          "answer_anchor": {
+            "quote": "Since Python 3.13, a symlink loop still raises RuntimeError in non-strict resolve mode.",
+            "start": 253,
+            "end": 340,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ".. method:: Path.resolve(strict=False)",
+                  "start": 1235,
+                  "end": 1273,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": ".. versionchanged:: 3.13\n      Symlink loops are treated like other errors: :exc:`OSError` is raised in\n      strict mode, and no exception is raised in non-strict mode.",
+                  "start": 2030,
+                  "end": 2199,
+                  "role": "versioned_loop_behavior"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "version-3.13 loop change belongs to resolve",
+                  "necessity": "同 passage 另有 readlink 的 3.13 变更，必须绑定方法及版本化行为。"
+                }
+              ],
+              "minimality_rationale": "只保留方法归属和 3.13 后的无异常规则；旧版本句不用于反证。"
+            }
+          ],
+          "rationale": "3.13 的变更明确规定非严格模式不抛异常，因此直接否定该版本范围下仍抛 RuntimeError。文档的 RuntimeError 描述属于此前版本，不视为同范围证据冲突。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p03-c06",
+          "claim_text": "Path.lstat() reports the symbolic link itself rather than its target.",
+          "verdict": "S",
+          "scope_interpretation": "Path.lstat; symbolic-link path",
+          "answer_anchor": {
+            "quote": "Path.lstat() reports the symbolic link itself rather than its target.",
+            "start": 341,
+            "end": 410,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. method:: Path.lstat()\n\n   Like :meth:`Path.stat` but, if the path points to a symbolic link, return\n   the symbolic link's information rather than its target's.",
+                  "start": 1005,
+                  "end": 1168,
+                  "role": "lstat_link_self"
+                }
+              ],
+              "links": [],
+              "minimality_rationale": "方法与完整条件/结果在同一短片段中。"
+            }
+          ],
+          "rationale": "定义直接说明返回符号链接自身信息而非目标信息。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p03-c07",
+          "claim_text": "Each Path.stat() call looks up a fresh result.",
+          "verdict": "S",
+          "scope_interpretation": "each Path.stat call",
+          "answer_anchor": {
+            "quote": "Each Path.stat() call looks up a fresh result.",
+            "start": 411,
+            "end": 457,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. method:: Path.stat(*, follow_symlinks=True)",
+                  "start": 451,
+                  "end": 497,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "The result is looked up at each call to this method.",
+                  "start": 608,
+                  "end": 660,
+                  "role": "lookup_each_call"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "this method is Path.stat",
+                  "necessity": "q2 是指代句，q1 固定每次查询所指的方法。"
+                }
+              ],
+              "minimality_rationale": "stat 的方法主体和逐次查询句即可。"
+            }
+          ],
+          "rationale": "每次调用都重新查询结果的明文描述完整支持 fresh result，不引入缓存或时延推断。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p03-c08",
+          "claim_text": "Path.is_file() converts permission errors to False.",
+          "verdict": "C",
+          "scope_interpretation": "Path.is_file; permission errors; supplied-source behavior",
+          "answer_anchor": {
+            "quote": "Path.is_file() converts permission errors to False.",
+            "start": 459,
+            "end": 510,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "contradicts",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. method:: Path.is_file(*, follow_symlinks=True)",
+                  "start": 1686,
+                  "end": 1735,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "other errors (such as permission errors) are propagated.",
+                  "start": 1929,
+                  "end": 1985,
+                  "role": "permission_error_propagation"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "permission-error rule belongs to is_file",
+                  "necessity": "相邻方法也有相同措辞；方法头与精确位置共同防止错配。"
+                }
+              ],
+              "minimality_rationale": "不附带不存在路径或损坏链接的 False 情形，因为这些不是该断言的错误类型。"
+            }
+          ],
+          "rationale": "is_file 的权限错误会向外传播，直接否定转换为 False。3.8 的 False 变更针对 OS 无法表示的字符，不能将它移用于权限错误。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p03-c09",
+          "claim_text": "Passing follow_symlinks=False to Path.exists() checks the symlink itself.",
+          "verdict": "S",
+          "scope_interpretation": "Path.exists(follow_symlinks=False); symlink itself",
+          "answer_anchor": {
+            "quote": "Passing follow_symlinks=False to Path.exists() checks the symlink itself.",
+            "start": 511,
+            "end": 584,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. method:: Path.exists(*, follow_symlinks=True)",
+                  "start": 1171,
+                  "end": 1219,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "to check if a symlink exists, add\n   the argument ``follow_symlinks=False``.",
+                  "start": 1336,
+                  "end": 1412,
+                  "role": "exists_link_self_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "the follow_symlinks=False guidance is for Path.exists",
+                  "necessity": "其他方法也有同名参数，需要方法绑定。"
+                }
+              ],
+              "minimality_rationale": "方法身份与目标参数的用途已充分，不引用示例或版本增加说明。"
+            }
+          ],
+          "rationale": "exists 的定义明确以 follow_symlinks=False 检查符号链接自身是否存在，与断言一致。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p03-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p03-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p03-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p03-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p03-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p03-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p03-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p03-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p03-c09"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [],
+        "extra_claims": [],
+        "split_findings": [],
+        "anchor_findings": [
+          {
+            "issue_id": "p03-shared-anchor",
+            "claim_ids": [
+              "v2-dev-p03-c01",
+              "v2-dev-p03-c02"
+            ],
+            "kind": "shared_sentence_anchor",
+            "severity": "informational",
+            "finding": "absolute 的归一化与链接解析已经正确拆为两个可独立判断的事实；共用原句 anchor 合法，全部偏移精确。",
+            "exact_offsets_valid": true
+          }
+        ],
+        "ambiguities": [
+          {
+            "issue_id": "p03-resolve-version",
+            "claim_ids": [
+              "v2-dev-p03-c05"
+            ],
+            "kind": "resolved_version_scope",
+            "finding": "Python 3.13 非严格无异常与此前版本 RuntimeError 是两个已标明范围的规则，没有同范围未解冲突。",
+            "requires_adjudication": false
+          },
+          {
+            "issue_id": "p03-permission-source-scope",
+            "claim_ids": [
+              "v2-dev-p03-c08"
+            ],
+            "kind": "resolved_source_scope",
+            "finding": "只按给定摘录判断权限错误传播；不以外部 Python 文档或后来的版本替换当前材料，也不将不可表示字符的 False 规则套到权限错误。",
+            "requires_adjudication": false
+          }
+        ],
+        "recommendations": [
+          "保留 c05 的方法归属、3.13 版本标记与非严格分支，不能只截出此前版本的 RuntimeError。",
+          "c08 引文必须来自 is_file 段，避免同 passage 中多个方法的相同错误措辞造成主体错配。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "independent_answer_first_inventory": {
+        "id": "v2-dev-p04",
+        "units": [
+          {
+            "id": "u01",
+            "text": "localcontext(ctx) enters its with block using a copy of ctx.",
+            "scope": "localcontext(ctx); temporary current context"
+          },
+          {
+            "id": "u02",
+            "text": "localcontext(ctx) restores the previous context when the with block exits.",
+            "scope": "localcontext(ctx); block exit"
+          },
+          {
+            "id": "u03",
+            "text": "localcontext keyword arguments set attributes of the new context.",
+            "scope": "new localcontext context"
+          },
+          {
+            "id": "u04",
+            "text": "BasicContext precision is nine.",
+            "scope": "BasicContext"
+          },
+          {
+            "id": "u05",
+            "text": "BasicContext rounding is ROUND_HALF_UP.",
+            "scope": "BasicContext"
+          },
+          {
+            "id": "u06",
+            "text": "ExtendedContext precision is nine.",
+            "scope": "ExtendedContext"
+          },
+          {
+            "id": "u07",
+            "text": "ExtendedContext rounding is ROUND_HALF_EVEN.",
+            "scope": "ExtendedContext"
+          },
+          {
+            "id": "u08",
+            "text": "ExtendedContext enables no traps.",
+            "scope": "ExtendedContext"
+          },
+          {
+            "id": "u09",
+            "text": "The Context constructor copies unspecified settings from DefaultContext.",
+            "scope": "Context constructor; unspecified settings"
+          },
+          {
+            "id": "u10",
+            "text": "Context.create_decimal() applies the chosen context precision to the input at conversion.",
+            "scope": "conversion; selected Context"
+          },
+          {
+            "id": "u11",
+            "text": "The Decimal constructor does not apply context precision to input conversion.",
+            "scope": "Decimal constructor contrasted with create_decimal; conversion"
+          },
+          {
+            "id": "u12",
+            "text": "With clamp=1, reducing an exponent and adding coefficient zeros preserves numeric value.",
+            "scope": "clamp=1; exponent/coefficient adjustment"
+          },
+          {
+            "id": "u13",
+            "text": "Such clamping may lose information about significant trailing zeros.",
+            "scope": "clamp=1; may lose information"
+          }
+        ],
+        "scope_ambiguity": "The phrase 'For conversion as well as later arithmetic' is ambiguous: it can be a contrast between conversion and ordinary context-controlled arithmetic, or an extra claim that create_decimal itself binds the later arithmetic context. Inspect candidate coverage and context before assigning that stronger reading."
+      },
+      "claims": [
+        {
+          "claim_id": "v2-dev-p04-c01",
+          "claim_text": "localcontext(ctx) enters with a copy of ctx.",
+          "verdict": "S",
+          "scope_interpretation": "localcontext(ctx); entry to with block; copied context",
+          "answer_anchor": {
+            "quote": "localcontext(ctx) enters with a copy of ctx and restores the previous context when the with block exits.",
+            "start": 43,
+            "end": 147,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-shared-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ".. function:: localcontext(ctx=None, **kwargs)",
+                  "start": 653,
+                  "end": 699,
+                  "role": "function_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "Return a context manager that will set the current context for the active thread\n   to a copy of *ctx* on entry to the with-statement",
+                  "start": 704,
+                  "end": 837,
+                  "role": "context_copy_on_entry"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "localcontext's manager performs this entry action",
+                  "necessity": "功能名和进入时复制的行为共同支持目标断言。"
+                }
+              ],
+              "minimality_rationale": "不需无参时复制 current context 的额外规则。"
+            }
+          ],
+          "rationale": "localcontext 的入口动作明确将当前 context 设置为 ctx 的副本，完整支持。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c02",
+          "claim_text": "localcontext(ctx) restores the previous context when the with block exits.",
+          "verdict": "S",
+          "scope_interpretation": "localcontext(ctx); exit from with block; prior context",
+          "answer_anchor": {
+            "quote": "localcontext(ctx) enters with a copy of ctx and restores the previous context when the with block exits.",
+            "start": 43,
+            "end": 147,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-shared-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ".. function:: localcontext(ctx=None, **kwargs)",
+                  "start": 653,
+                  "end": 699,
+                  "role": "function_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "restore the previous context\n   when exiting the with-statement.",
+                  "start": 842,
+                  "end": 906,
+                  "role": "prior_context_on_exit"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "localcontext's manager performs the restoration",
+                  "necessity": "函数主体与退出恢复结果均必需。"
+                }
+              ],
+              "minimality_rationale": "进入复制行为已由另一个原子断言覆盖；本断言只需函数头与退出恢复片段。"
+            }
+          ],
+          "rationale": "定义明确在退出 with 时恢复之前的 context。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c03",
+          "claim_text": "localcontext keyword arguments set attributes of the new context.",
+          "verdict": "S",
+          "scope_interpretation": "localcontext keyword arguments; attributes of the newly made context",
+          "answer_anchor": {
+            "quote": "Its keyword arguments set attributes of the new context.",
+            "start": 148,
+            "end": 204,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-c03-pronoun"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 1,
+                  "quote": ".. function:: localcontext(ctx=None, **kwargs)",
+                  "start": 653,
+                  "end": 699,
+                  "role": "function_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 1,
+                  "quote": "The *kwargs* argument is used to set the attributes\n   of the new context.",
+                  "start": 978,
+                  "end": 1052,
+                  "role": "kwargs_attribute_assignment"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "kwargs belongs to localcontext and targets its new context",
+                  "necessity": "绑定关键字参数所属函数，避免将其误用于 Context 构造器。"
+                }
+              ],
+              "minimality_rationale": "不附带无效属性或值的异常规则。"
+            }
+          ],
+          "rationale": "kwargs 对新 context 属性赋值的规则与断言一致。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c04",
+          "claim_text": "BasicContext uses precision nine.",
+          "verdict": "S",
+          "scope_interpretation": "BasicContext; precision",
+          "answer_anchor": {
+            "quote": "BasicContext uses precision nine and ROUND_HALF_UP rounding.",
+            "start": 206,
+            "end": 266,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-shared-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. class:: BasicContext",
+                  "start": 149,
+                  "end": 172,
+                  "role": "context_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "Precision is set to nine.",
+                  "start": 265,
+                  "end": 290,
+                  "role": "precision_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "precision statement is inside BasicContext definition",
+                  "necessity": "同 passage 的 ExtendedContext 也有同一句 precision，必须绑定正确上下文。"
+                }
+              ],
+              "minimality_rationale": "仅保留类型头与精度句；不混入 rounding/traps。"
+            }
+          ],
+          "rationale": "BasicContext 的定义明确精度为九。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c05",
+          "claim_text": "BasicContext uses ROUND_HALF_UP rounding.",
+          "verdict": "S",
+          "scope_interpretation": "BasicContext; rounding",
+          "answer_anchor": {
+            "quote": "BasicContext uses precision nine and ROUND_HALF_UP rounding.",
+            "start": 206,
+            "end": 266,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-shared-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. class:: BasicContext",
+                  "start": 149,
+                  "end": 172,
+                  "role": "context_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "Rounding is set to\n   :const:`ROUND_HALF_UP`.",
+                  "start": 292,
+                  "end": 337,
+                  "role": "rounding_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "rounding belongs to BasicContext",
+                  "necessity": "上下文身份与 rounding 规则均必需。"
+                }
+              ],
+              "minimality_rationale": "不附带精度、flags、traps 的独立事实。"
+            }
+          ],
+          "rationale": "BasicContext 的 rounding 明确为 ROUND_HALF_UP。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c06",
+          "claim_text": "ExtendedContext uses precision nine.",
+          "verdict": "S",
+          "scope_interpretation": "ExtendedContext; precision",
+          "answer_anchor": {
+            "quote": "ExtendedContext also uses precision nine, but rounds with ROUND_HALF_EVEN and enables no traps.",
+            "start": 267,
+            "end": 362,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-shared-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. class:: ExtendedContext",
+                  "start": 565,
+                  "end": 591,
+                  "role": "context_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "Precision is set to nine.",
+                  "start": 684,
+                  "end": 709,
+                  "role": "precision_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "precision statement is inside ExtendedContext definition",
+                  "necessity": "和 BasicContext 的相同精度句通过精确位置与类型头区分。"
+                }
+              ],
+              "minimality_rationale": "类型头与精度事实足够。"
+            }
+          ],
+          "rationale": "ExtendedContext 的定义明确精度也为九。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c07",
+          "claim_text": "ExtendedContext uses ROUND_HALF_EVEN rounding.",
+          "verdict": "S",
+          "scope_interpretation": "ExtendedContext; rounding",
+          "answer_anchor": {
+            "quote": "ExtendedContext also uses precision nine, but rounds with ROUND_HALF_EVEN and enables no traps.",
+            "start": 267,
+            "end": 362,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-shared-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. class:: ExtendedContext",
+                  "start": 565,
+                  "end": 591,
+                  "role": "context_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "Rounding is set to\n   :const:`ROUND_HALF_EVEN`.",
+                  "start": 711,
+                  "end": 758,
+                  "role": "rounding_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "rounding belongs to ExtendedContext",
+                  "necessity": "需要上下文身份才能与 BasicContext 的 ROUND_HALF_UP 区分。"
+                }
+              ],
+              "minimality_rationale": "不引用其他 contexts 的 rounding。"
+            }
+          ],
+          "rationale": "ExtendedContext 的定义将 rounding 设置为 ROUND_HALF_EVEN。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c08",
+          "claim_text": "ExtendedContext enables no traps.",
+          "verdict": "S",
+          "scope_interpretation": "ExtendedContext; traps",
+          "answer_anchor": {
+            "quote": "ExtendedContext also uses precision nine, but rounds with ROUND_HALF_EVEN and enables no traps.",
+            "start": 267,
+            "end": 362,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-shared-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 2,
+                  "quote": ".. class:: ExtendedContext",
+                  "start": 565,
+                  "end": 591,
+                  "role": "context_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 2,
+                  "quote": "No traps are enabled",
+                  "start": 784,
+                  "end": 804,
+                  "role": "trap_rule"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "no-traps statement belongs to ExtendedContext",
+                  "necessity": "同 passage 其他 contexts 的 traps 不同，身份不可删。"
+                }
+              ],
+              "minimality_rationale": "结果例子及应用场景不必要。"
+            }
+          ],
+          "rationale": "ExtendedContext 的定义直接说明没有启用任何 trap。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c09",
+          "claim_text": "The Context constructor copies unspecified settings from DefaultContext.",
+          "verdict": "U",
+          "scope_interpretation": "strict unqualified reading of unspecified settings, including flags",
+          "answer_anchor": {
+            "quote": "The Context constructor copies unspecified settings from DefaultContext.",
+            "start": 363,
+            "end": 435,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": []
+          },
+          "evidence_sets": [],
+          "rationale": "严格按未限定的 unspecified settings 理解，摘录只给出普通字段从 DefaultContext 复制的总规则，随后另行规定未给定 flags 时清空全部 flags。因此无法完整支持所有未指定设置都经复制；材料又没有给出 DefaultContext.flags 非空而新对象被清空的具体同条件反例，不能直接判 C。若把 settings 自然限缩为 flags 以外的字段，则可获支持；该范围歧义留待与作者比较时裁决。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c10",
+          "claim_text": "Context.create_decimal() applies the chosen context precision to its input, unlike the Decimal constructor.",
+          "verdict": "S",
+          "scope_interpretation": "Context.create_decimal input conversion; contrast with Decimal constructor; candidate text alone",
+          "answer_anchor": {
+            "quote": "Context.create_decimal() applies the chosen context precision to its input, unlike the Decimal constructor.",
+            "start": 481,
+            "end": 588,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-c10-anchor-scope"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 4,
+                  "quote": ".. method:: create_decimal(num)",
+                  "start": 323,
+                  "end": 354,
+                  "role": "method_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 4,
+                  "quote": "Creates a new Decimal instance from *num* but using *self* as\n      context. Unlike the :class:`Decimal` constructor, the context precision,\n      rounding method, flags, and traps are applied to the conversion.",
+                  "start": 362,
+                  "end": 573,
+                  "role": "conversion_precision_contrast"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "create_decimal uses self for conversion and differs from Decimal construction",
+                  "necessity": "段落还含其他创建方法；需要 method 绑定及 conversion 中的比较规则。"
+                }
+              ],
+              "minimality_rationale": "仅保留方法头与转换比较定义；不引用 float 转换方法或算例。"
+            }
+          ],
+          "rationale": "create_decimal 以 self 为 context，且与 Decimal 构造器不同，会在输入转换时应用 context precision，完整支持候选文本。候选删去了原回答的 later arithmetic 范围修饰；该遗漏不被本条 S 一并背书。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c11",
+          "claim_text": "With clamp=1, reducing an exponent and adding coefficient zeros preserves the number’s value.",
+          "verdict": "S",
+          "scope_interpretation": "clamp=1; when exponent reduction/coefficient-zero adjustment occurs, value is preserved",
+          "answer_anchor": {
+            "quote": "With clamp=1, reducing an exponent and adding coefficient zeros preserves the number’s value, but may lose information about significant trailing zeros.",
+            "start": 589,
+            "end": 741,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-shared-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "When *clamp* is\n   ``1``, a large normal number will, where possible, have its\n   exponent reduced and a corresponding number of zeros added to its\n   coefficient, in order to fit the exponent constraints;",
+                  "start": 1626,
+                  "end": 1831,
+                  "role": "clamp_transformation_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "preserves the value of the number",
+                  "start": 1840,
+                  "end": 1873,
+                  "role": "preserved_value"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "this refers to the clamp exponent/coefficient transformation",
+                  "necessity": "先定义发生的变换，才能绑定 preserves 的主体。"
+                }
+              ],
+              "minimality_rationale": "保留 clamp=1、where possible 的来源范围和数值保持结果，不把尾零信息丢失与数值改变混同。"
+            }
+          ],
+          "rationale": "摘录明确该指数/系数零调整保留数值。断言是在该变换发生时描述其效果，没有声称 clamp=1 对所有数都必然执行这种变换。",
+          "human_review_status": "pendinghuman"
+        },
+        {
+          "claim_id": "v2-dev-p04-c12",
+          "claim_text": "With clamp=1, reducing an exponent and adding coefficient zeros may lose information about significant trailing zeros.",
+          "verdict": "S",
+          "scope_interpretation": "clamp=1; the described exponent/coefficient-zero adjustment may lose significant-trailing-zero information",
+          "answer_anchor": {
+            "quote": "With clamp=1, reducing an exponent and adding coefficient zeros preserves the number’s value, but may lose information about significant trailing zeros.",
+            "start": 589,
+            "end": 741,
+            "coordinate_system": "Unicode code points, start inclusive / end exclusive"
+          },
+          "anchor_check": {
+            "exact_substring_and_offsets": true,
+            "semantic_anchor_issue_ids": [
+              "p04-shared-anchors"
+            ]
+          },
+          "evidence_sets": [
+            {
+              "set_id": "minimal-1",
+              "relation": "supports",
+              "citations": [
+                {
+                  "citation_id": "q1",
+                  "passage_index": 3,
+                  "quote": "When *clamp* is\n   ``1``, a large normal number will, where possible, have its\n   exponent reduced and a corresponding number of zeros added to its\n   coefficient, in order to fit the exponent constraints;",
+                  "start": 1626,
+                  "end": 1831,
+                  "role": "clamp_transformation_scope"
+                },
+                {
+                  "citation_id": "q2",
+                  "passage_index": 3,
+                  "quote": "loses information about\n   significant trailing zeros.",
+                  "start": 1878,
+                  "end": 1932,
+                  "role": "trailing_zero_information_loss"
+                }
+              ],
+              "links": [
+                {
+                  "from": "q1",
+                  "to": "q2",
+                  "relation": "loss is an effect of the described clamp transformation",
+                  "necessity": "变换及损失对象同时出现才支持该范围下的 may lose。"
+                }
+              ],
+              "minimality_rationale": "只保留变换范围和信息损失结果；不会额外加入数值改变的断言。"
+            }
+          ],
+          "rationale": "摘录明确所述调整会丢失有效尾零的信息，因此较弱的 may lose 得到支持。该损失对象是表示中的精度信息，不是数值本身。",
+          "human_review_status": "pendinghuman"
+        }
+      ],
+      "coverage_review": {
+        "mapping": [
+          {
+            "answer_unit_id": "u01",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c01"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u02",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c02"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u03",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c03"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u04",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c04"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u05",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c05"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u06",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c06"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u07",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c07"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u08",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c08"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u09",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c09"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u10",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c10"
+            ],
+            "coverage": "full_candidate_text_conversion_component"
+          },
+          {
+            "answer_unit_id": "u11",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c10"
+            ],
+            "coverage": "full_candidate_text_Decimal_contrast_component"
+          },
+          {
+            "answer_unit_id": "u12",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c11"
+            ],
+            "coverage": "full_candidate_text"
+          },
+          {
+            "answer_unit_id": "u13",
+            "candidate_claim_ids": [
+              "v2-dev-p04-c12"
+            ],
+            "coverage": "full_candidate_text"
+          }
+        ],
+        "omissions": [
+          {
+            "issue_id": "p04-c10-scope-drop",
+            "kind": "answer_scope_modifier_not_in_candidate",
+            "claim_ids": [
+              "v2-dev-p04-c10"
+            ],
+            "answer_anchor": {
+              "quote": "For conversion as well as later arithmetic, ",
+              "start": 437,
+              "end": 481
+            },
+            "status": "ambiguous_requires_adjudication",
+            "finding": "c10 的文本与 anchor 均从 Context.create_decimal 开始，排除了原回答将 conversion 与 later arithmetic 并列的修饰语。因此候选 c10 的 S 不能覆盖原回答整句的较强后续运算读法。",
+            "proposed_missing_claim_if_strong_reading": "Context.create_decimal() also makes later arithmetic apply the chosen context precision.",
+            "strong_reading_verdict": "U",
+            "strong_reading_evidence_sets": [],
+            "rationale": "材料证明 create_decimal 在转换时应用 self 的 context，也证明 contexts 一般控制算术精度；它没有证明一次 create_decimal 调用会把之后的运算绑定到该 context。材料没有直接描述相反的同条件结果，因此是 U 而非 C。"
+          }
+        ],
+        "extra_claims": [],
+        "split_findings": [
+          {
+            "issue_id": "p04-c10-comparison-atomicity",
+            "claim_ids": [
+              "v2-dev-p04-c10"
+            ],
+            "severity": "recommendation",
+            "finding": "该比较同时覆盖 create_decimal 应用转换精度和 Decimal 构造器不这样应用两个可分事实；目前没有漏掉这两个事实，但独立原子评估时建议拆分，或明确允许比较关系作为一个原子。",
+            "suggested_claims": [
+              {
+                "claim_text": "Context.create_decimal() applies its context precision during input conversion.",
+                "verdict": "S"
+              },
+              {
+                "claim_text": "The Decimal constructor does not apply context precision during input conversion.",
+                "verdict": "S"
+              }
+            ]
+          }
+        ],
+        "anchor_findings": [
+          {
+            "issue_id": "p04-c03-pronoun",
+            "claim_ids": [
+              "v2-dev-p04-c03"
+            ],
+            "kind": "anchor_context_required",
+            "severity": "informational",
+            "finding": "Its 的先行词是 localcontext；候选显化 localcontext 正确。",
+            "exact_offsets_valid": true
+          },
+          {
+            "issue_id": "p04-shared-anchors",
+            "claim_ids": [
+              "v2-dev-p04-c01",
+              "v2-dev-p04-c02",
+              "v2-dev-p04-c04",
+              "v2-dev-p04-c05",
+              "v2-dev-p04-c06",
+              "v2-dev-p04-c07",
+              "v2-dev-p04-c08",
+              "v2-dev-p04-c11",
+              "v2-dev-p04-c12"
+            ],
+            "kind": "shared_sentence_anchor",
+            "severity": "informational",
+            "finding": "共用包含多个谓词的句子 anchor 均是精确原文，候选已按大多数独立谓词拆分；anchor 重叠本身不是多余断言或错位。",
+            "exact_offsets_valid": true
+          },
+          {
+            "issue_id": "p04-c10-anchor-scope",
+            "claim_ids": [
+              "v2-dev-p04-c10"
+            ],
+            "kind": "material_scope_exclusion",
+            "severity": "requires_adjudication",
+            "finding": "数值偏移精确，但选中的 anchor 排除了 conversion/later arithmetic 范围修饰，需与遗漏条目 p04-c10-scope-drop 一并裁决。",
+            "exact_offsets_valid": true
+          }
+        ],
+        "ambiguities": [
+          {
+            "issue_id": "p04-c09-flags-exception",
+            "claim_ids": [
+              "v2-dev-p04-c09"
+            ],
+            "kind": "unspecified_settings_scope",
+            "requires_adjudication": true,
+            "source_locator": {
+              "passage_index": 3,
+              "section": "Context constructor default fields and flags exception"
+            },
+            "finding": "原回答与候选没有排除 flags。严格全字段读法不能由普通字段默认复制规则完整支持，独立判断为 U；若作者约定 settings 在这里泛指非 flags 字段，应明确这一限缩后再对比分歧，不能把父/作者意见写成审查者原始判断。"
+          },
+          {
+            "issue_id": "p04-later-arithmetic-meaning",
+            "claim_ids": [
+              "v2-dev-p04-c10"
+            ],
+            "kind": "answer_scope_ambiguity",
+            "requires_adjudication": true,
+            "finding": "较弱读法是上下文精度同时用于通常的算术和 create_decimal 转换；较强读法是 create_decimal 自身保证其后运算使用所选精度。候选未保留这一区别；强读法 U，不把普通 contexts 控制运算的事实当作方法绑定后续运算的证明。"
+          }
+        ],
+        "recommendations": [
+          "先裁决 c09 的 settings 是否包含 flags；不得略去紧邻的 flags 默认清空例外后直接以首句判断全部字段。",
+          "明确回答中 later arithmetic 的原意并保留相应事实或范围修饰；候选文本为 S 不代表回答整句已被覆盖。",
+          "比较性 c10 可拆成两个受支持事实，或在原子性合同中明确比较关系的处理方式。"
+        ]
+      },
+      "case_independent_review_complete": true,
+      "final_adjudication_complete": false,
+      "human_review_status": "pendinghuman"
+    }
+  ],
+  "validation": {
+    "semantic_review": "逐条从源材料人工式阅读判断；由同一 LLM 完成，不冒称人工复核。",
+    "mechanical_review_planned": "落盘后独立核对输入 SHA、全部 claim/anchor、证据精确子串与偏移、U 无引文、链接引用完整性以及目录写入边界。",
+    "important_runtime_logging": "不适用：仅写审查 JSON，未修改或执行产品运行路径。"
+  },
+  "lock": {
+    "policy": "本文件阶段一判断固定；后续 gold 分歧比较另写附件，不改写本文件。",
+    "sha256_sidecar": "first4-independent.json.sha256"
+  }
+}

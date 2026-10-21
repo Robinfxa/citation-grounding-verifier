@@ -1,0 +1,118 @@
+{
+  "status": "MAIN_AND_AUXILIARY_INDEPENDENT_ACCEPTANCE_PASS",
+  "reviewer_role": "Parent Director; separate from evaluation implementation owner",
+  "source_commit": "324559dccba4624dfa803849f5fd26284c7b27f4",
+  "runtime_files_verified": 28,
+  "dependency_scope": "existing project venv; independent source export, not another fresh install",
+  "actual_public_replay": {
+    "started_at": "2026-10-21T02:26:39.760597+00:00",
+    "finished_at": "2026-10-21T02:33:01.584685+00:00",
+    "exit_code": 0,
+    "wall_seconds": 381.8461221586913,
+    "stderr_empty": true,
+    "guards": "public entry blocks network, env-file reads, credential load and verifier construction",
+    "consumer_events": [
+      {
+        "run": "full-test",
+        "byte_identical_files": 98,
+        "new_inference_calls": 0
+      },
+      {
+        "run": "repeat-02",
+        "byte_identical_files": 98,
+        "new_inference_calls": 0
+      },
+      {
+        "run": "repeat-03",
+        "byte_identical_files": 98,
+        "new_inference_calls": 0
+      },
+      {
+        "repeated_groups": 8,
+        "status": "IDENTICAL",
+        "new_inference_calls": 0
+      },
+      {
+        "targeted_correction_sensitivity": "IDENTICAL",
+        "corrections": 2,
+        "semantic_judgments_not_reperformed": true,
+        "new_inference_calls": 0
+      },
+      {
+        "audit_batches": 2,
+        "fixed_cases": 24,
+        "status": "IDENTICAL",
+        "new_inference_calls": 0
+      },
+      {
+        "status": "OFFLINE_REPLAY_COMPLETE",
+        "new_inference_calls": 0
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "experiment-plan.json": "f2e1e9299430897a5a64d5a7e2cbfd490d3be66ca452c3fb5cc9ff31314ee465",
+    "execution-receipt.json": "bf93dc741861c28b154523f6aec6096d8fea5ae8e881c61df803f6f290be0a9a",
+    "repeated-analysis.json": "a2e0656844f8ead84685f0c26d5b90e0e036325e3b5fcc356f7e3b2f2ffc09c0",
+    "semantic-audit-analysis.json": "a7e285302f5a79a0460d170efd11dd6a0c2678fb429e72e6053d5a39fff9f065",
+    "semantic-audit-adjudication.json": "8c322bbc2ba86a1e1808274dccebaa781f59ecb0e3f4d810b0bbad50efeb11e2",
+    "semantic-audit-correction-sensitivity.json": "e74428e6a2baac141fe3a2a7a172b706e371078643c01d57eef10779535770dd",
+    "failure-examples.json": "c2a25a369697ad7415a050b9ad2b6bc08d56a68cd182e4e193543ae6556da4b7",
+    "replay-results.py": "dc58eef441a58d52ce03e398a192a3f0e0d9268e16ea972db0ab04bb2fd825dc",
+    "source-archive-reconstruction.json": "9727a55d50b798cb4cbc61ee748ba7ac58bf0432c366562f3b4d98a296361de9"
+  },
+  "original_archive_independently_rebuilt_sha256": "34563894d163c829f837625ac3d0352f2fbdb8065aa8e8f6cf29a304f93db9a0",
+  "example_locator_checks": {
+    "examples": 8,
+    "locator_occurrences": 15,
+    "distinct_saved_rows": 12,
+    "local_source_files": 7,
+    "checked": "Original row/file hashes, method/track identities, manifest mapping, gold/prediction fields and exact Unicode source slices. Public English index targets/line bounds also checked.",
+    "semantic_scope": "Interpretations read; not a new full semantic annotation or upstream download."
+  },
+  "semantic_review_scope": "Packet coverage/bindings and numerical replay, plus bounded parent spot-checks and two original-reviewer-confirmed corrections. Not a second semantic review of all 371 pairs.",
+  "new_benchmark_provider_calls": 0,
+  "human_review": "not_performed",
+  "remaining_at_this_checkpoint": [
+    "Delivery commit and CI"
+  ],
+  "auxiliary": {
+    "source_commit": "324559dccba4624dfa803849f5fd26284c7b27f4",
+    "started_at": "2026-10-21T02:40:23.432418+00:00",
+    "finished_at": "2026-10-21T02:40:47.270199+00:00",
+    "exit_code": 0,
+    "wall_seconds": 23.83492798404768,
+    "consumer_events": [
+      {
+        "status": "IDENTICAL_PRIVATE_RUN_AND_PUBLIC_AGGREGATE",
+        "byte_identical_private_files": 18,
+        "new_inference_calls": 0
+      }
+    ],
+    "artifact_sha256": {
+      "experiment-plan.json": "e807ea2bac042445e29880a9f6ce6330789358706c0de7dcb354b6d1e0794d80",
+      "execution-receipt.json": "97467114a9aa2ab4ef4bb6df3ba2c3618fdafdf0d001a1723d1d7ac29ab12854",
+      "aggregate-results.json": "33a73fbdf399b94b363ddb81dd3d4bd934b06806fe1172ec8a766d600bab5a84",
+      "replay-aggregate.py": "a41155093af80248bd9c3613cfa1fd7c90dff7893af386baba6ac8b1ea91e611"
+    },
+    "requires_original_private_saved_run": true,
+    "private_raw_materials_published": false,
+    "new_benchmark_provider_calls": 0
+  },
+  "auxiliary_publication_probe": {
+    "status": "PASS",
+    "public_files_scanned": 9,
+    "private_text_chunks_checked": 4062,
+    "numeric_gold_counts_allowed": [
+      125,
+      125,
+      125,
+      125,
+      125,
+      125
+    ],
+    "findings": [],
+    "probe_correction": "Initial field-name-only check falsely flagged six aggregate integer gold_claims counts of125; corrected to distinguish permitted counts from forbidden raw claim structures. Initial result preserved privately.",
+    "scope": "Allowlisted aggregate shapes reviewed in public replay code, plus disallowed-field/credential-pattern and64-character source/response/quote substring probes. Not a formal proof of all possible disclosure."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "validated_at_utc": "2026-10-16T16:14:31.038189+00:00",
+  "status": "passed",
+  "cases": 12,
+  "claims": 123,
+  "all_author_original_records_preserved": true,
+  "source_citation_spans_validated": 302,
+  "source_citation_or_anchor_failures": [],
+  "locked_independent_artifacts_unchanged": {
+    "first4-independent.json": true,
+    "remaining8-independent.json": true
+  },
+  "authorized_author_inputs_unchanged": {
+    "original-artifact:pilot-first4.jsonl": true,
+    "original-artifact:remaining8.jsonl": true,
+    "original-artifact:pilot-12.jsonl": true,
+    "original-artifact:pilot-12.metadata.json": true,
+    "original-artifact:source-manifest.json": true
+  },
+  "human_review_status": "pendinghuman",
+  "artifacts": {
+    "comparison.json": {
+      "sha256": "2e754db07e5e356e30d17f8193626053479f18f82857e1b1932245878fc5be64",
+      "bytes": 927833
+    },
+    "comparison.md": {
+      "sha256": "ca414cf57f763e7d44881ad83311d5c753cef58dfc5041d5d5dfb0ebfb1fe838",
+      "bytes": 3417
+    },
+    "human-review-queue.json": {
+      "sha256": "bb88f0c8650011a7a2abbb8062e1849776d1b8168031966b47813bc5245a8b73",
+      "bytes": 13107
+    },
+    "human-review-queue.md": {
+      "sha256": "3fd72e9202a733ac6cc1fd5088a6e68d565b84ea57a6e3ac23b418caf5d6dade",
+      "bytes": 2361
+    }
+  }
+}

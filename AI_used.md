@@ -1,80 +1,37 @@
-# AI 使用与工作流说明
+# AI use and development workflow
 
-本项目使用 Codex，按我们的 **dev-flow-GPT 工作流**完成引用与事实一致性验证服务。“一次出结果”指同一项目委托持续推进到可运行、可验证、可提交的交付物；内部经历了多轮调研、实现、测试和修复，期间也有用户的授权、配置选择和末轮复核反馈。
+Codex helped research, design, implement, test and document this project. Robin set the goals, supplied configuration, authorized model calls and challenged the results. “One continuous delivery” means carrying the same assignment through review and repair. It does not mean one prompt produced a correct final system.
 
-## 工作流如何运转
+The private **dev-flow-GPT** workflow is not included. These are the rules used here, with enough detail to understand the process without installing it.
 
-工作流本身没有随仓库发布。下面直接说明它的执行规则，读者无需安装或阅读内部工作流文件。内部名称 `/ms-session-loop` 表示项目级协调流程，`/ms-loop` 表示单个领域的开发与验收流程。
+## How the workflow works
 
-### 1. 按长期职责分工，并规定谁能改什么
+**Give each owner a clear responsibility.** A parent Director owns architecture, shared interfaces, integration and delivery. Service, evaluation and provider owners each carry their part through implementation, verification and repairs. A brief names the inputs, permitted files, constraints and acceptance evidence. Shared files have one writer; independent work can proceed in parallel. Bounded assistants research specific questions or review another author's work.
 
-这里的 session 是一个独立 AI 工作会话，Director 是负责决策和交付的会话角色。
+**Define observable behavior before claiming completion.** OpenSpec records the problem, design choices, expected scenarios and unfinished tasks. For example, an empty answer returns no claims without inference; an invalid quotation is rejected; a timeout remains an error rather than becoming UNSUPPORTED. The public [service scenarios](openspec/changes/citation-grounding/specs/grounding-verification/spec.md) and [evaluation scenarios](openspec/changes/evaluation-v2/specs/evaluation-v2/spec.md) show these contracts. Routine repairs reuse existing requirements.
 
-| 角色 | 具体职责 | 本项目的安排 |
-| --- | --- | --- |
-| 用户 | 决定目标、范围和必要授权，处理配置与重大取舍 | 提出作业要求、授权模型接入、给出末轮收尾反馈 |
-| 父 Director | 整合研究、确定架构和共享接口、安排依赖、核验结果、提交交付物 | 维护共同的数据结构、行为规格、最终报告和 Git 提交 |
-| 领域 Director | 连续负责一个领域的调查、实现、测试、修复和回传 | 服务、评测、模型接入三个领域分别由原负责人持续完成 |
-| 有界助手 | 完成范围明确的研究或非作者复核，再交回结果 | 开源研究、数据标注审查、服务与评测的独立检查 |
+**Check the actual consumer and repair the original defect.** Implementation first connects a runnable path, then adds scenarios. HTTP and CLI checks exercise the real entry points. Offline tests may replace an external provider, so their scope is identified separately from live inference. Review findings return to the original owner; affected checks run again after a repair. A written implementation, passing author tests, independent review and integrated acceptance are different states.
 
-每次派工都限定可写文件；共享文件指定唯一负责人。互不重叠且前置条件已满足的工作可以并行，同文件修改和接口依赖则串行交接。审查发现问题后交回原实现者修复。小任务由现有负责人直接完成，不固定拆出一整套代理团队。
+**Make failures diagnosable without retaining secrets.** Important boundaries record safe operation IDs, stages, outcomes and measured usage. For example, a Jev validation error initially identified only that probabilities did not sum correctly. The repair added the option count, computed sum, signed deviation and tolerance, without saving response text or individual probabilities. Regression tests and non-author HTTP probes checked success, failure and recovery. The subsequent live operation succeeded and did not reproduce that error; the earlier deviation remains unknown. Details remain in the [Jev verification record](openspec/changes/jev-grounding/verification.md#numeric-diagnostic-repair--2026-10-20).
 
-### 2. 把需求写成可检查的行为，再给出具体派工说明
+**Resume from evidence, not conversation memory.** Git records code; specifications record intended behavior; a private plan records ownership and next steps; saved runs record observations. Before resuming, the Director checks running processes and completed receipts to avoid duplicate calls. Evidence is reused only while its code, inputs and scope still apply. This is a coordination discipline, not a claim that a background monitor was installed.
 
-父 Director 先确定目标、约束、未知项和完成条件。涉及稳定接口或行为约定时，用 **OpenSpec** 保存变更目的、设计选择、行为场景和任务清单；它是一组可审阅的规格文件，本项目的[行为规格](openspec/changes/citation-grounding/specs/grounding-verification/spec.md)已公开。
+## How this project used it
 
-规格用输入和预期结果消除歧义。例如：空答案返回空 claims 且不调用模型；引用与原文相差一个字符就不能作为合法引用返回；上游超时必须报告操作失败，不能伪装成“证据不足”。实现与测试都要符合这些约定。小型修改复用已有规格与验收条件。
+AI researched grounding methods, evaluation and structured output before implementation. Early Hermes-inspired provider research used the requested Luna 6; later subordinate sessions used `gpt-6.1-sol` with `max` reasoning. Coding-session models and usage are distinct from the provider/model measured in benchmark runs.
 
-派工说明包含目标、事实来源、读写范围、不变量、验收方式和回传要求。本项目末轮“接通诊断集入口”的任务约束可概括为：
+The first [comparison](reports/2026-10-15/README.md) used short fictional cases. It supported retaining the cheaper Minimal default, but did not establish a general accuracy advantage. Reviewer feedback exposed the dataset's limited difficulty. The current [evaluation protocol](reports/eval-v2/protocol.md) therefore prioritizes longer real sources, dense answers, source-family separation and explicit annotation provenance. Natural responses, AI-generated answers and controlled mutations are reported separately.
 
-```text
-目标：让已有六条诊断样本能够通过正式评测命令执行。
-输入：现有诊断数据、CLI/runner 实现和对应行为规格。
-可写范围：评测入口、runner 与评测测试；根文档由父 Director 更新。
-不变量：all 仍只选 dev/test；不改标注、提示词、评分或历史运行记录。
-验收：diagnostic 双轨产生 12 条记录；混合输入的 all 排除诊断样本；
-      历史报告重新生成后逐字节一致。
-回传：改动文件、代码版本、实际命令与退出码、证据位置、未验证事项。
-```
+Data authors are separated from prompt optimization. Non-author AI reviewers lock judgments before seeing the author's labels and evidence; disagreements are resolved before evaluation. The reviewed main dataset now contains 72 real-document cases and 668 claims, with [public review evidence](datasets/v2/realistic-draft/review-evidence/README.md). Test content stayed out of the [controlled development experiment](reports/eval-v2/ablation-20261020/README.md): it changed one citation instruction while preserving data, scoring and model settings. The adopted instruction improved the strict evidence proxy and known citation-condition failures, at a measured cost in output tokens and latency. Strict scores remain separate from the [blinded semantic audit](reports/eval-v2/audit-policy.md); predictions do not justify adding retrospective aliases.
 
-这使负责人拿到任务后可以直接推进，也让审查者有明确依据判断“是否完成”。
+Live failures and unused jobs remain in saved records. Earlier quota errors, timeouts and Jev protocol failures were not converted into successful judgments or discarded. New experiments use frozen inputs, finite attempt caps and actual call accounting. Subscription costs and unavailable usage are unknown, not zero. The [current report](reports/eval-v2/README.md) is the source of truth for which measurements have actually completed; work in progress is not a final result.
 
-### 3. 从可运行骨架推进到真实场景，失败后回原负责人修复
+The final measurement retained 479 successes and one original protocol failure across 480 main jobs, plus a separate 54-job natural-response RAGTruth run. The parent actually [replayed both populations](reports/eval-v2/final-20261020/parent-acceptance.json) from an independent fixed-source export without model calls. Main raw results are public; the RAGTruth aggregate requires the original private saved run for exact replay. No test outcome was used to repair gold or tune the prompt.
 
-项目按以下顺序推进：
+## Why the evidence is checkable
 
-1. **研究与架构**：调查关键未知项，记录采纳的设计和理由，明确模块边界。
-2. **可运行骨架**：连接必要模块，从真正的 HTTP、命令行或库调用入口跑通，并检查关键失败路径。
-3. **场景增量**：加入边界条件、异常处理和运行诊断。复杂逻辑及故障修复先保留能复现缺口的检查，再修复并验证。
-4. **验收与集成**：实施者提交结果，非作者复核关键实现和行为；父 Director 再确认下游调用方确实能够使用这些结果。
+Program checks verify schemas, exact quotations, source hashes, failure denominators and saved-run replay. Live records identify the inputs, provider/model, outputs, errors, latency and known usage. Non-author review can find semantic mistakes that those checks cannot. None of these establishes that every annotation or judgment is correct: AI reviewers can share biases, public sources may occur in training data, and strict matching can undercount valid paraphrases.
 
-“写完代码”“作者检查通过”“非作者复核通过”“实际入口验收通过”分别记录。复核会检查原始要求和实际运行结果，不只阅读作者摘要。例如日志要能定位失败阶段，并通过成功、故障和恢复请求检查；日志本身不得带出输入正文、密钥或原始上游异常。局部检查通过后，还要完成相应集成，才能声称整个功能交付。
+That limitation appeared in the actual output audit: parent spot-checks found two overly strict evidence judgments, and both original reviewers acknowledged the errors. The [original votes, corrections and unchanged denominators](reports/eval-v2/final-20261020/semantic-audit-adjudication.json) are preserved separately. Generated reasoning also sometimes revealed a method's identity despite hidden names. The report treats these as limits of the review, not proof that other judgments are error-free.
 
-如果失败，原负责人依据复现和日志定位、修复，再补受影响检查。连续尝试没有获得新证据时，应缩小复现或改变诊断方法；原因未明和未完成验证的部分保留明确状态。
-
-### 4. 用文件保存状态，按授权和证据决定下一步
-
-每批完成后，负责人回填当前阶段、负责会话、代码提交或差异、证据位置、阻塞和下一动作。**Git 保存实现，规格保存预期行为，Plan 保存协调状态，运行记录保存实际结果。** 会话恢复时先核对这些记录及进程是否仍在运行，复用有效结果，避免重复发起状态未知的调用。
-
-验收证据与代码版本、输入和环境绑定。相关代码或合同改变后，重新检查受影响部分；未受影响的结果可以继续复用。小型文档修改核对事实和链接，运行行为修改则检查对应调用链；集成里程碑再执行必要的完整测试。
-
-一项结果被验收后，父 Director 继续安排授权范围内、依赖已满足的下一项工作。需要用户决定的重要行为歧义、目标变化、权限或资源问题才交回用户；缺少凭据时暂停真实模型测量，其余可行工作继续。目标与验收满足后停止，不为了增加复杂度继续开任务。
-
-这些规则由会话调用工具执行。检查点提供续接依据；本项目没有运行持久后台监控，也没有验证断线后自动唤醒能力。
-
-## 这次如何从需求走到结果
-
-1. **先研究，再设计。** 研究代理分别调查 grounding 方法、评测方法、结构化 API，以及 Hermes/Codex provider 设计，再由父 Director 形成[架构与边界](docs/architecture.md)。早期 provider 研究按用户要求使用 Luna 6；后续下属会话统一使用 `gpt-6.1-sol / max`。
-2. **按职责拆分实现。** 服务、评测、provider 三个领域会话各有明确写入范围；父 Director 维护共享合同和集成。先打通可运行入口，再补充异常、引用校验和本地诊断。实际发现的认证、流式响应和评分问题由原负责人修复，并保留失败证据。
-3. **用真实测量作选择。** 实现 heuristic、minimal、optimized 三种方法，分别测固定参考断言（gold claims）的判断能力和包含抽取的完整链路。在开发集迭代后冻结，再运行留出集；没有根据留出结果补等价表述（alias）或修改评分。两阶段方案没有展示明确总体收益，最终默认采用延迟和 token 开销更低的 minimal。
-4. **通过实际入口交付。** 末轮复核发现诊断集无法执行、Codex 输出上限记录不准确等缺口后，完成小范围修复。随后从干净克隆安装锁定依赖，运行测试、CLI 和 HTTP 示例，公开仓库，并导出不含环境文件的源码包。
-
-## 为什么这些结果值得信任
-
-可信依据是可检查的证据。以下结果绑定功能交付版本 `597ed50`：
-
-- **工程结果可复现**：全新虚拟环境和依赖缓存下安装成功，**426 项离线测试通过**，真实 HTTP/CLI 验收及 [GitHub CI](https://github.com/Robinfxa/citation-grounding-verifier/actions/runs/38719463461) 通过。详见[交付验收记录](reports/2026-10-15/delivery-checks.json)。
-- **模型成绩有原始记录**：主数据集包含 **32 个案例、68 条 gold claims**，开发与留出分开；保留了留出集 **144 条运行记录**、失败分母、延迟、token 和置信区间。新增诊断单独运行 **36 项**，没有混入主榜。参见[实验报告](reports/2026-10-15/README.md)与[诊断记录](reports/2026-10-15/diagnostic-final/README.md)。
-- **复核能追溯到实际结果**：服务、数据和评测接受了非作者代理复核；历史三份报告重新生成后文件逐字节不变。旧失败没有删除，复杂方案没有被强行写成赢家。开发迭代同时改变了标注、调用传输逻辑和提示词，因此没有把收益全部归因于提示词。
-
-这些证据有明确边界：数据由代理编写并复核，样本较小；测试通过、引文逐字匹配都不能保证语义判断永远正确。OpenAI API 通道没有进行真实推理测量；新增 provider 认证与流式处理部分的独立复核曾被平台风险检查中止，仍标记为未完成。完整范围见[验证说明](openspec/changes/citation-grounding/verification.md)。
+Human annotation review remains pending. The [annotation review queue](reports/eval-v2/human-review.md) records the unresolved project questions, and the [code walkthrough](docs/code-walkthrough.zh-CN.md) explains the implementation. Personal interview exercises are stored outside this repository; generating preparation material does not establish completed human review or proficiency. OpenAI API-key inference was not measured live. An earlier provider authentication/streaming review was stopped by a platform risk check and remains incomplete; later evaluator checks do not certify that scope. Private correspondence, workflow files and credentials are excluded.

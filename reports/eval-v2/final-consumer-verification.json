@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "verification_date": "2026-10-20",
+  "status": "PASS",
+  "scope": "Clean-environment actual loopback HTTP and public CLI acceptance on one long development input, heuristic offline only. This is a consumer/integrity check, not a model-quality measurement.",
+  "environment": {
+    "source_export": ".multi-subflow/final-clean-20261020/source",
+    "isolated_cwd": true,
+    "fresh_virtual_environment_confirmed": true,
+    "code_sha256": "cd15430a02b364c2f6ddef034e6ef046b335dd99b3678d3dada5186e31dd89a6",
+    "prompt_sha256": "2bc178dc2996cfb83e4a5f6332b0908d50e92f409e234ad46e50dcc89e80bb59",
+    "source_files_sha256": {
+      "grounding/__init__.py": "1f952e324f8017eb59cf2b76e0eeb4978ff7b3529ab8e93a412a2cc11cf9cc72",
+      "grounding/app.py": "4b4b2a9da7b0ff53ff12a8f55d002956558f1340546dcfc495dd32d23fc2f4d9",
+      "grounding/codex_auth.py": "fddf96299820d7fd24a333ee1c1d8c9638476b1e407a3a8919a78a2b44ea0917",
+      "grounding/codex_provider.py": "303b837e224c92a49876b7633902ac70bf77b1e114791d80c7ac1cf8c5ed7dc7",
+      "grounding/config.py": "efe9880e6f6691702c764654344532af21b39d252dd4392bb69fbc14eb612d81",
+      "grounding/contracts.py": "736c5e1e2db6f9bc0ff42d4ad2f93e502e5927b57f5a07515130537408f52417",
+      "grounding/diagnostics.py": "b29774e3b94587604b02de928932a374de4ac634cd41e5f47e142380f2853921",
+      "grounding/heuristics.py": "4d054b7846b42a121a5fb963a936d28d266a0a44b6cf4881de51c41e39ad94c5",
+      "grounding/jev_evidence.py": "9fa033259e3f9a10bf2f59c5df438984a5d025cd2b3e13c3b3aa3dc3253cbf66",
+      "grounding/jev_provider.py": "b43d13f2a0c792c6f75000bdb0b66c8c15f874086e52bb5e86c6d7f50c06a9c4",
+      "grounding/jev_verifier.py": "c69c1427b57f3d976a61a0d7e8dba6544de412d85b52666580c10b81edda760b",
+      "grounding/prompts.py": "2bc178dc2996cfb83e4a5f6332b0908d50e92f409e234ad46e50dcc89e80bb59",
+      "grounding/providers.py": "6e82d65e3d68a2aabc367dae2b799800e86bc54feaea9597539ba373aaff2a68",
+      "grounding/verifiers.py": "bb68cddb38d1194649448e410e6296d9cc2a9038bfe202dfd0f452e34315ffdf",
+      "grounding_eval/__init__.py": "e4bfbd3f19040c66ef2ed1251a69e52efc70035a0165e9070445255db54c0596",
+      "grounding_eval/__main__.py": "e76dd285b95b86f76496953feff4cbf8e69a5c0c8b63e23d5bc0fd8e59b1c7e9",
+      "grounding_eval/audit.py": "4dc48040e263eab45287d8614c82810bc51bdf3674d0e270aab483cda19e312a",
+      "grounding_eval/cli.py": "079a5f9f1ac45da03d16814a1a87252d57bb2e69aeb0f6eb4d03e825dfc119ab",
+      "grounding_eval/confidence.py": "8b821bc658b14d7a7397e697dc5813e34463d305d00f7e020aa2d776f1e42c5d",
+      "grounding_eval/dataset.py": "1b5aae47a713ad8c71935859fe4e6b6fa6374584780515f6e8d959141aec8df2",
+      "grounding_eval/diagnostics.py": "b07bfe37d9f65abedd9432d3ebf51e2397afdf591d57685abde050b9574ecdb9",
+      "grounding_eval/hybrid.py": "b5f64a823700d120e9b5f6202901a296c5e367671b918e1c39f4c17ae23e2e13",
+      "grounding_eval/provenance.py": "7243c31ea04e8b37e543b56a7d3e96a6701631d6b178ed0576fee47ae801cd33",
+      "grounding_eval/repeated.py": "74c9f3de20d1d61c1715e22180652feae366b65233d681e92672ce1652a2cee8",
+      "grounding_eval/reporting.py": "3f61282bacc04399d3fb876395abe6bfcc68f4f232e83333f96957cfc8369122",
+      "grounding_eval/runner.py": "785db293bf0ba1bb17afdf2e2f7d4b29f8e444d9c0bec9127e37127d17caa40d",
+      "grounding_eval/scoring.py": "de4c3b58ea486376d6b0e14809de0ee4a983a86d78288c8f5204b47ae6ed5e0e",
+      "grounding_eval/uncertainty.py": "c6bfbdcb8155acf2fdfdd31ea74eaea4fa8d7a18750e26ca0c3546f49c85f674"
+    },
+    "uv_lock_sha256": "11756c62fcab5ccf50828739ab9d5bd5b6ba304241e5721600bca8fe0e636b92",
+    "pyproject_sha256": "7878fcb37e55429ae27066cb699cb6794a3bb4dc8785ac0074d018c4ea593d9f",
+    "python": "3.11.9",
+    "packages": {
+      "fastapi": "0.143.1",
+      "httpx": "0.28.1",
+      "pydantic": "2.14.1",
+      "uvicorn": "0.54.0"
+    },
+    "configuration_environment_prefixes_cleared": [
+      "GROUNDING_",
+      "OPENAI_",
+      "TYPESAFE_"
+    ],
+    "effective_approach": "heuristic",
+    "dotenv_loaded": false,
+    "bytecode_writes_disabled": true
+  },
+  "input": {
+    "dataset": "datasets/v2/realistic-draft/dev-reviewed-candidate.jsonl",
+    "dataset_sha256": "5fd2c82df36c824da15c7c3dc0065525ccc447e81a0825fbf58f81afab0b668b",
+    "manifest_sha256": "9cbf69044064631f989690682db4e7d8b321f984a100f67319700b63b88a19c0",
+    "case_id": "v2-dev-r08",
+    "selection": "largest context character count in dev-only file",
+    "available_dev_cases": 24,
+    "passages": 5,
+    "context_characters": 15797,
+    "context_utf8_bytes": 15797,
+    "answer_characters": 856,
+    "request_json_utf8_bytes": 17330,
+    "input_sha256": "cf9e0a5ee08c641b94d1a1750a5a9549dc9edcbe7af26dac8a977327fc863e4b",
+    "annotation_use": "Only the native CLI automatically validates/scores development annotations. No individual gold or held-out data was inspected for this service check."
+  },
+  "http": {
+    "transport": "Real TCP on 127.0.0.1, ephemeral port, separate Uvicorn process, unmodified grounding.app:app",
+    "statuses": [
+      200,
+      422,
+      200
+    ],
+    "invalid_error_code": "invalid_request",
+    "response_bodies_sha256": [
+      "306ddef3b8f51502f9e194d66607aa7ef56f37b24e6527817a7193fe4ec47b45",
+      "abfb58d730f91eac445c986741ac8c4c7f2d93fe45085cf98b210f006940f6c3",
+      "306ddef3b8f51502f9e194d66607aa7ef56f37b24e6527817a7193fe4ec47b45"
+    ],
+    "success_report_schema_and_literal_citations_validated": true,
+    "recovery_body_byte_identical": true,
+    "server_actual_exit_code": 0,
+    "probe_actual_exit_code": 0,
+    "model_provider_calls": 0,
+    "diagnostics": {
+      "records": 13,
+      "request_ids": 3,
+      "stages": {
+        "http": 7,
+        "verification": 4,
+        "heuristic": 2
+      },
+      "max_record_utf8_bytes": 180,
+      "all_groups_have_start_and_end": true
+    }
+  },
+  "cli": {
+    "run_command": [
+      ".multi-subflow/final-clean-20261020/source/.venv/bin/grounding-eval",
+      "run",
+      "--dataset",
+      ".multi-subflow/final-clean-20261020/source/datasets/v2/realistic-draft/dev-reviewed-candidate.jsonl",
+      "--approaches",
+      "heuristic",
+      "--split",
+      "dev",
+      "--track",
+      "both",
+      "--output",
+      ".multi-subflow/service/final-consumer-20261020/cli-run",
+      "--case-ids-file",
+      ".multi-subflow/service/final-consumer-20261020/case-ids.json",
+      "--max-total-provider-attempts",
+      "0",
+      "--bootstrap-samples",
+      "1000"
+    ],
+    "report_command": [
+      ".multi-subflow/final-clean-20261020/source/.venv/bin/grounding-eval",
+      "report",
+      ".multi-subflow/service/final-consumer-20261020/cli-run"
+    ],
+    "run_actual_exit_code": 0,
+    "report_actual_exit_code": 0,
+    "measurement_kind": "actual_verifier",
+    "records": 2,
+    "tracks": [
+      "end-to-end",
+      "oracle"
+    ],
+    "max_total_provider_attempts": 0,
+    "model_provider_calls": 0,
+    "run_stdout_report_stdout_and_summary_file_byte_identical": true,
+    "summary_sha256": "7457c34e7ffdbe6c70b68d102c2b7d66c117b361ca2e4c9f66672d2167ddc29f",
+    "diagnostics_run": {
+      "records": 14,
+      "request_ids": 3,
+      "stages": {
+        "eval_run": 2,
+        "eval_case": 4,
+        "verification": 4,
+        "heuristic": 2,
+        "eval_cleanup": 2
+      },
+      "max_record_utf8_bytes": 215,
+      "all_groups_have_start_and_end": true,
+      "both_case_terminal_correlations_verified": true
+    },
+    "diagnostics_report": {
+      "records": 2,
+      "request_ids": 1,
+      "stages": {
+        "eval_report": 2
+      },
+      "max_record_utf8_bytes": 126,
+      "all_groups_have_start_and_end": true
+    }
+  },
+  "safety": {
+    "source_unchanged": true,
+    "dev_dataset_unchanged": true,
+    "diagnostic_fields_allowlisted": true,
+    "fake_secret_absent": true,
+    "credentials_loaded": false,
+    "model_provider_calls": 0,
+    "source_and_final_test_data_edits": false,
+    "heldout_content_inspected": false
+  },
+  "reused_fault_injection": {
+    "source_code_sha256_match": true,
+    "tested_files_sha256_match": true,
+    "receipt": ".multi-subflow/service/c01-final/service-tests.json",
+    "actual_exit_code": 0,
+    "scope": "Prior accepted actual ASGI deep synthetic exception/redaction, timeout/cancel/recovery and EPIPE subprocess checks in 63-test C01 service scope; not re-executed for this consumer-only probe."
+  },
+  "private_evidence": {
+    "directory": ".multi-subflow/service/final-consumer-20261020",
+    "sha256": {
+      "probe.py": "333af1187b622513d74fa18bf9d901f4cf06ab7ff1e68a4f5ed961cbaa3e257d",
+      "server.py": "82c1f9960fb3803fc682e2d3bbc50d97397e09865ecc8d6131d0ed5f37c90cbe",
+      "probe.receipt.json": "2f2146ae04c57d8faf21870800bf4f7ee8cd4c1a7de25e25d3586b3cd832a8b9",
+      "server.receipt.json": "0d0f405db03c7fa77d10cdfdfd6fddeb406f13ff00d7d218cb3a8437687cb743",
+      "cli-run.receipt.json": "7f03e504cc84b535afebed27b1af68bee6a0765024f0b7447df54067024de10f",
+      "cli-report.receipt.json": "49e0a986481bb4f4f453348b7d61d821dbe65f139f5c391c4738ed0619172728",
+      "outcomes.json": "50aacf3937658245831a47c5c050ce674534df1915eb27dcd8be1a4ed506d252",
+      "diagnostic-audit.json": "67302a77030b0c2cb9558564ae391bfbdf450a6ee9df91f716cdbb020bf026f0",
+      "server.stderr.jsonl": "eb5312636b2822e43d72ae107b17d115953d127342cf438830c781a50b0a6ca0",
+      "cli-run.stderr.jsonl": "d4382d1bb560ddcb42b188e92e0b61fa7bd83cc6d4d29107394b28cc55e77faa",
+      "cli-report.stderr.jsonl": "c73938e0a5490fdfd60b1e3b2166df4fcb6e1b96643650924117e0b26ccd0e4c",
+      "summary-before-replay.json": "7457c34e7ffdbe6c70b68d102c2b7d66c117b361ca2e4c9f66672d2167ddc29f"
+    }
+  },
+  "limitations": [
+    "Heuristic offline path only; no generative/Jev provider compatibility, model quality, latency or dollar-cost measurement.",
+    "One dev input, two tracks; not a full-population quality comparison.",
+    "HTTP 422/recovery and actual shutdown only; prior accepted deeper fault-injection/sink evidence is reused, not rerun here.",
+    "Full fresh pytest, lint and main validation are separate parent gates."
+  ]
+}

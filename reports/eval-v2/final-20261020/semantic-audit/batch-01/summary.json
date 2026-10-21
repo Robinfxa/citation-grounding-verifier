@@ -1,0 +1,281 @@
+{
+  "audit_version": "semantic-audit-1",
+  "groups": {
+    "heuristic": {
+      "case_ids": [
+        "v2-test-r01",
+        "v2-test-r13",
+        "v2-test-r16",
+        "v2-test-r17",
+        "v2-test-r25",
+        "v2-test-r28",
+        "v2-test-r30",
+        "v2-test-r34",
+        "v2-test-r42",
+        "v2-test-r44",
+        "v2-test-r45",
+        "v2-test-r47"
+      ],
+      "counts": {
+        "cases": 12,
+        "equivalent": 53,
+        "evidence_correct": 0,
+        "failed": 0,
+        "gold": 101,
+        "label_correct": 0,
+        "predicted": 76,
+        "redundant_quotes": 0,
+        "relation_equivalent": 53,
+        "relation_merged": 19,
+        "relation_scope_changed": 3,
+        "relation_uncertain": 1,
+        "uncertain_evidence": 0,
+        "uncertain_labels": 0
+      },
+      "joint_evidence": {
+        "f1": {
+          "denominator": 177,
+          "numerator": 0,
+          "value": 0.0
+        },
+        "precision": {
+          "denominator": 76,
+          "numerator": 0,
+          "value": 0.0
+        },
+        "recall": {
+          "denominator": 101,
+          "numerator": 0,
+          "value": 0.0
+        }
+      },
+      "joint_label": {
+        "f1": {
+          "denominator": 177,
+          "numerator": 0,
+          "value": 0.0
+        },
+        "precision": {
+          "denominator": 76,
+          "numerator": 0,
+          "value": 0.0
+        },
+        "recall": {
+          "denominator": 101,
+          "numerator": 0,
+          "value": 0.0
+        }
+      },
+      "semantic_decomposition": {
+        "f1": {
+          "denominator": 177,
+          "numerator": 106,
+          "value": 0.5988700564971752
+        },
+        "precision": {
+          "denominator": 76,
+          "numerator": 53,
+          "value": 0.6973684210526315
+        },
+        "recall": {
+          "denominator": 101,
+          "numerator": 53,
+          "value": 0.5247524752475248
+        }
+      },
+      "source_families": 12
+    },
+    "minimal": {
+      "case_ids": [
+        "v2-test-r01",
+        "v2-test-r13",
+        "v2-test-r16",
+        "v2-test-r17",
+        "v2-test-r25",
+        "v2-test-r28",
+        "v2-test-r30",
+        "v2-test-r34",
+        "v2-test-r42",
+        "v2-test-r44",
+        "v2-test-r45",
+        "v2-test-r47"
+      ],
+      "counts": {
+        "cases": 12,
+        "equivalent": 73,
+        "evidence_correct": 67,
+        "failed": 0,
+        "gold": 101,
+        "label_correct": 72,
+        "predicted": 122,
+        "redundant_quotes": 14,
+        "relation_equivalent": 73,
+        "relation_extra": 3,
+        "relation_merged": 1,
+        "relation_scope_changed": 6,
+        "relation_split": 19,
+        "relation_uncertain": 1,
+        "uncertain_evidence": 0,
+        "uncertain_labels": 0
+      },
+      "joint_evidence": {
+        "f1": {
+          "denominator": 223,
+          "numerator": 134,
+          "value": 0.600896860986547
+        },
+        "precision": {
+          "denominator": 122,
+          "numerator": 67,
+          "value": 0.5491803278688525
+        },
+        "recall": {
+          "denominator": 101,
+          "numerator": 67,
+          "value": 0.6633663366336634
+        }
+      },
+      "joint_label": {
+        "f1": {
+          "denominator": 223,
+          "numerator": 144,
+          "value": 0.6457399103139013
+        },
+        "precision": {
+          "denominator": 122,
+          "numerator": 72,
+          "value": 0.5901639344262295
+        },
+        "recall": {
+          "denominator": 101,
+          "numerator": 72,
+          "value": 0.7128712871287128
+        }
+      },
+      "semantic_decomposition": {
+        "f1": {
+          "denominator": 223,
+          "numerator": 146,
+          "value": 0.6547085201793722
+        },
+        "precision": {
+          "denominator": 122,
+          "numerator": 73,
+          "value": 0.5983606557377049
+        },
+        "recall": {
+          "denominator": 101,
+          "numerator": 73,
+          "value": 0.7227722772277227
+        }
+      },
+      "source_families": 12
+    },
+    "optimized": {
+      "case_ids": [
+        "v2-test-r01",
+        "v2-test-r13",
+        "v2-test-r16",
+        "v2-test-r17",
+        "v2-test-r25",
+        "v2-test-r28",
+        "v2-test-r30",
+        "v2-test-r34",
+        "v2-test-r42",
+        "v2-test-r44",
+        "v2-test-r45",
+        "v2-test-r47"
+      ],
+      "counts": {
+        "cases": 12,
+        "equivalent": 57,
+        "evidence_correct": 45,
+        "failed": 0,
+        "gold": 101,
+        "label_correct": 57,
+        "predicted": 170,
+        "redundant_quotes": 8,
+        "relation_duplicate": 2,
+        "relation_equivalent": 57,
+        "relation_extra": 17,
+        "relation_merged": 1,
+        "relation_scope_changed": 2,
+        "relation_split": 39,
+        "relation_uncertain": 1,
+        "uncertain_evidence": 0,
+        "uncertain_labels": 0
+      },
+      "joint_evidence": {
+        "f1": {
+          "denominator": 271,
+          "numerator": 90,
+          "value": 0.33210332103321033
+        },
+        "precision": {
+          "denominator": 170,
+          "numerator": 45,
+          "value": 0.2647058823529412
+        },
+        "recall": {
+          "denominator": 101,
+          "numerator": 45,
+          "value": 0.44554455445544555
+        }
+      },
+      "joint_label": {
+        "f1": {
+          "denominator": 271,
+          "numerator": 114,
+          "value": 0.42066420664206644
+        },
+        "precision": {
+          "denominator": 170,
+          "numerator": 57,
+          "value": 0.3352941176470588
+        },
+        "recall": {
+          "denominator": 101,
+          "numerator": 57,
+          "value": 0.5643564356435643
+        }
+      },
+      "semantic_decomposition": {
+        "f1": {
+          "denominator": 271,
+          "numerator": 114,
+          "value": 0.42066420664206644
+        },
+        "precision": {
+          "denominator": 170,
+          "numerator": 57,
+          "value": 0.3352941176470588
+        },
+        "recall": {
+          "denominator": 101,
+          "numerator": 57,
+          "value": 0.5643564356435643
+        }
+      },
+      "source_families": 12
+    }
+  },
+  "policy_sha256": "5975b67a16e75f6c71f0f7d2b4d328db01a5bbc622e9cec70764b78f6e2cce82",
+  "reviewers": {
+    "alignment": {
+      "completed_at": "2026-10-21T01:24:07Z",
+      "exposure": "alignment_text_only",
+      "id": "independent-semantic-reviewer-a",
+      "kind": "ai",
+      "model": "gpt-6.1-sol (configured), max reasoning"
+    },
+    "evidence": {
+      "completed_at": "2026-10-21T01:43:39Z",
+      "exposure": "locked_alignment_and_evidence",
+      "id": "independent-semantic-reviewer-a",
+      "kind": "ai",
+      "model": "gpt-6.1-sol (configured), max reasoning"
+    }
+  },
+  "scope": "Selected first-run end-to-end cases only; no full-population rescore; uncertain and non-atomic relations receive no automatic credit.",
+  "selection_sha256": "346b4bd05dadcfc47cdfe4cbc89ed08fce93947b9fe96d95f84f3f43b16aae8f"
+}

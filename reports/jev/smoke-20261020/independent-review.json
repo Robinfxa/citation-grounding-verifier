@@ -1,0 +1,174 @@
+{
+  "outcome": "PASS_SAVED_RECORD_INTEGRITY_REPLAY_AND_PUBLIC_HYGIENE__LIVE_SUCCESS_NOT_ESTABLISHED",
+  "recorded_at_utc": "2026-10-20T11:50:17.648415+00:00",
+  "reviewer": "independent non-author Jev acceptance reviewer",
+  "source_commit_at_consumer_replay": "d951dca92f210b2946f73c7595cd1e97b60c6620",
+  "actual_live_exit_code": 2,
+  "actual_method_results": {
+    "jev_minimal": "NOT_RUN(provider_protocol_error)",
+    "jev_optimized": "ERROR(provider_protocol_error)"
+  },
+  "actual_driver_exit_code": 0,
+  "actual_public_review_exit_code": 0,
+  "record_and_replay_checks": 49,
+  "public_hygiene_and_binding_checks": 13,
+  "guard_synthetic_deny_checks": 5,
+  "live_attempts": {
+    "old_pilot_consumed": 0,
+    "per_operation_limit": 6,
+    "per_provider": {
+      "codex": 1,
+      "typesafe": 1
+    },
+    "remaining_not_relaunch_authorization": 10,
+    "repair": 0,
+    "retry": 0,
+    "shared_limit": 12,
+    "total": 2
+  },
+  "model_identity": {
+    "extraction": "gpt-6.1-sol",
+    "jev_judgment": "jev-1.14.0"
+  },
+  "usage": {
+    "codex": {
+      "cached_input": 0,
+      "complete": true,
+      "input": 462,
+      "output": 378
+    },
+    "total_cached_input": 0,
+    "total_input": 19217,
+    "total_output": 3972,
+    "typesafe": {
+      "cached_input": 0,
+      "complete": true,
+      "input": 18755,
+      "output": 3594
+    }
+  },
+  "dollar_total": null,
+  "extracted_claim_slots": 8,
+  "jev_question_count": 24,
+  "validated_choice_decisions": 0,
+  "gold_each_planned_method": 8,
+  "non_supported_gold_each_planned_method": 3,
+  "original_run_bytes_unchanged": true,
+  "original_author_core_bytes_unchanged": true,
+  "source_bytes_unchanged_during_replay": true,
+  "guard_receipts": {
+    "report": {
+      "codex_auth_module_loaded": false,
+      "command_kind": "report",
+      "events": {
+        "credential_reads_blocked": 0,
+        "network_attempts_blocked": 0,
+        "outside_reads_blocked": 0,
+        "outside_writes_blocked": 0,
+        "process_attempts_blocked": 0,
+        "provider_clients_blocked": 0
+      }
+    },
+    "sweep": {
+      "codex_auth_module_loaded": false,
+      "command_kind": "sweep",
+      "events": {
+        "credential_reads_blocked": 0,
+        "network_attempts_blocked": 0,
+        "outside_reads_blocked": 0,
+        "outside_writes_blocked": 0,
+        "process_attempts_blocked": 0,
+        "provider_clients_blocked": 0
+      }
+    }
+  },
+  "reviewer_private_credentials_read": false,
+  "reviewer_real_model_calls": 0,
+  "parser_subcondition": "unknown",
+  "raw_jev_response_saved": false,
+  "real_confidence_precision_verified": false,
+  "full_task_4_2_complete": false,
+  "task_4_3_calibration_complete": false,
+  "performance_or_quality_advantage_established": false,
+  "limitations": [
+    "Saved traces prove eight extracted claim slots, not independently retained extraction text or atomicity.",
+    "No validated Jev distributions were saved; cannot verify live parser precision or identify the failing condition.",
+    "Jev quote-only and fallback stages were never reached; Minimal was not run.",
+    "No real paired neighboring-question probe or calibration is authorized or established.",
+    "One dev case/one family does not establish success quality or performance; false-support 0/3 accompanies zero coverage.",
+    "Original Codex/auth historical review gap remains outside this task."
+  ],
+  "immutable_run_sha256": {
+    "cases.jsonl": "2bfa5e5b4a8ffa1ee66f583117ce91c5ff13331b431f96301325f3c668ddbf59",
+    "cases.manifest.json": "89a64db5d2ea648e090bbaa5500e1e0d399bd6b1be713c9e21a06bcf347ebfcd",
+    "completion.json": "9d87781aac3a68591806c357c84b581344f0c82f007f5467ca0bb64e30af1ca8",
+    "config.json": "5946985b4796422f1459d98397743cd28aea0327c493e92c3ca0e476ac9a07d6",
+    "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+    "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+    "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+    "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+    "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+    "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+    "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+    "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+    "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+    "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+    "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+    "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+    "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+    "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+    "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+    "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+    "records.jsonl": "60441077b4a1fcaa3897fa09e20dfee55efed2e4e83830c143b1c47c7bb55881",
+    "summary.json": "3716358006f6c2c60a736f91dddf31ac024ee39e2c6bcd5d5b71cddaf39bd5fe"
+  },
+  "public_artifact_sha256": {
+    "README.md": "cd3c63ba97f540dbe4c776d206715f5a92ab47284d4f5bd4a4e80bb5472e3eb4",
+    "budget.json": "6ff6f00dc30655d3cda2fade8af09ff66c24f69a70dca83b63a4cbe6d2c75883",
+    "case-ids.json": "d8e959e56809968563b2f54f150dbabfd84d1a8d012cc854162cc8673a62e268",
+    "run-01/cases.jsonl": "2bfa5e5b4a8ffa1ee66f583117ce91c5ff13331b431f96301325f3c668ddbf59",
+    "run-01/cases.manifest.json": "89a64db5d2ea648e090bbaa5500e1e0d399bd6b1be713c9e21a06bcf347ebfcd",
+    "run-01/completion.json": "9d87781aac3a68591806c357c84b581344f0c82f007f5467ca0bb64e30af1ca8",
+    "run-01/config.json": "5946985b4796422f1459d98397743cd28aea0327c493e92c3ca0e476ac9a07d6",
+    "run-01/dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+    "run-01/dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+    "run-01/dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+    "run-01/dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "run-01/dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+    "run-01/dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+    "run-01/dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+    "run-01/dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+    "run-01/dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+    "run-01/dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+    "run-01/dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+    "run-01/dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+    "run-01/dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+    "run-01/dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+    "run-01/dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+    "run-01/dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+    "run-01/dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+    "run-01/records.jsonl": "60441077b4a1fcaa3897fa09e20dfee55efed2e4e83830c143b1c47c7bb55881",
+    "run-01/summary.json": "3716358006f6c2c60a736f91dddf31ac024ee39e2c6bcd5d5b71cddaf39bd5fe",
+    "smoke-receipt.json": "25a0a62f8c1fa302dc01edf9fe58248c370f21c995cc37002d3508c25a5c1281"
+  },
+  "normalization_note": "Parent-produced public projection of the independent finalized local receipt. Original absolute commands, private workflow paths and raw diagnostics stay private. Command entries below name observed operations and exits; they are not rewritten original argv.",
+  "original_private_receipt_sha256": "56de122f244fb8894fbe597676facc43b3683e340b90206c3eb654bcf7c6a1cd",
+  "observed_commands": [
+    {
+      "name": "guard-selftest",
+      "actual_exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "report",
+      "actual_exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "name": "sweep",
+      "actual_exit_code": 0,
+      "expected_exit_code": 0
+    }
+  ]
+}

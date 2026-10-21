@@ -1,0 +1,3099 @@
+{
+  "audit_version": "semantic-audit-1",
+  "items": [
+    {
+      "answer": "Question: When should I use skip, xfail and strict expected failures, and when is the marked code still executed?\n\nAnswer: skip omits test execution when its conditions are unmet; xfail normally still runs the test and reports an expected failure or unexpected pass. An imperative pytest.xfail stops the rest of that test by raising its internal exception.\n\nWith an xfail raises restriction, an unlisted exception is a regular failure. run=False can mark a crashing test expected-to-fail without executing it. XPASS does not fail the suite by default, but strict=True makes it do so. If several skipif decorators are present, any true condition skips the test. --runxfail ignores xfail behavior, including making an imperative pytest.xfail ineffective.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r35-c01",
+          "text": "skip omits execution while xfail normally executes and reports expected failure or unexpected pass."
+        },
+        {
+          "id": "v2-test-r35-c02",
+          "text": "pytest.xfail stops further test code by raising an internal exception."
+        },
+        {
+          "id": "v2-test-r35-c03",
+          "text": "An exception outside an xfail raises restriction is a normal failure."
+        },
+        {
+          "id": "v2-test-r35-c04",
+          "text": "xfail run=False marks a test without executing it."
+        },
+        {
+          "id": "v2-test-r35-c05",
+          "text": "XPASS does not fail the suite by default."
+        },
+        {
+          "id": "v2-test-r35-c06",
+          "text": "xfail strict=True makes XPASS fail the suite."
+        },
+        {
+          "id": "v2-test-r35-c07",
+          "text": "Any true condition among stacked skipif decorators skips the test."
+        },
+        {
+          "id": "v2-test-r35-c08",
+          "text": "--runxfail ignores xfail and makes imperative pytest.xfail ineffective."
+        }
+      ],
+      "item_id": "item-0000",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "skip omits test execution when its conditions are unmet."
+        },
+        {
+          "index": 1,
+          "text": "xfail normally still runs the test."
+        },
+        {
+          "index": 2,
+          "text": "xfail normally reports an expected failure or unexpected pass."
+        },
+        {
+          "index": 3,
+          "text": "An imperative pytest.xfail stops the rest of that test by raising its internal exception."
+        },
+        {
+          "index": 4,
+          "text": "With an xfail raises restriction, an unlisted exception is a regular failure."
+        },
+        {
+          "index": 5,
+          "text": "run=False can mark a crashing test expected-to-fail without executing it."
+        },
+        {
+          "index": 6,
+          "text": "XPASS does not fail the suite by default."
+        },
+        {
+          "index": 7,
+          "text": "strict=True makes XPASS fail the suite."
+        },
+        {
+          "index": 8,
+          "text": "If several skipif decorators are present, any true condition skips the test."
+        },
+        {
+          "index": 9,
+          "text": "--runxfail ignores xfail behavior."
+        },
+        {
+          "index": 10,
+          "text": "--runxfail makes an imperative pytest.xfail ineffective."
+        }
+      ]
+    },
+    {
+      "answer": "Question: When should I use skip, xfail and strict expected failures, and when is the marked code still executed?\n\nAnswer: skip omits test execution when its conditions are unmet; xfail normally still runs the test and reports an expected failure or unexpected pass. An imperative pytest.xfail stops the rest of that test by raising its internal exception.\n\nWith an xfail raises restriction, an unlisted exception is a regular failure. run=False can mark a crashing test expected-to-fail without executing it. XPASS does not fail the suite by default, but strict=True makes it do so. If several skipif decorators are present, any true condition skips the test. --runxfail ignores xfail behavior, including making an imperative pytest.xfail ineffective.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r35-c01",
+          "text": "skip omits execution while xfail normally executes and reports expected failure or unexpected pass."
+        },
+        {
+          "id": "v2-test-r35-c02",
+          "text": "pytest.xfail stops further test code by raising an internal exception."
+        },
+        {
+          "id": "v2-test-r35-c03",
+          "text": "An exception outside an xfail raises restriction is a normal failure."
+        },
+        {
+          "id": "v2-test-r35-c04",
+          "text": "xfail run=False marks a test without executing it."
+        },
+        {
+          "id": "v2-test-r35-c05",
+          "text": "XPASS does not fail the suite by default."
+        },
+        {
+          "id": "v2-test-r35-c06",
+          "text": "xfail strict=True makes XPASS fail the suite."
+        },
+        {
+          "id": "v2-test-r35-c07",
+          "text": "Any true condition among stacked skipif decorators skips the test."
+        },
+        {
+          "id": "v2-test-r35-c08",
+          "text": "--runxfail ignores xfail and makes imperative pytest.xfail ineffective."
+        }
+      ],
+      "item_id": "item-0001",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: skip omits test execution when its conditions are unmet; xfail normally still runs the test and reports an expected failure or unexpected pass."
+        },
+        {
+          "index": 1,
+          "text": "An imperative pytest.xfail stops the rest of that test by raising its internal exception."
+        },
+        {
+          "index": 2,
+          "text": "With an xfail raises restriction, an unlisted exception is a regular failure."
+        },
+        {
+          "index": 3,
+          "text": "run=False can mark a crashing test expected-to-fail without executing it."
+        },
+        {
+          "index": 4,
+          "text": "XPASS does not fail the suite by default, but strict=True makes it do so."
+        },
+        {
+          "index": 5,
+          "text": "If several skipif decorators are present, any true condition skips the test."
+        },
+        {
+          "index": 6,
+          "text": "--runxfail ignores xfail behavior, including making an imperative pytest.xfail ineffective."
+        }
+      ]
+    },
+    {
+      "answer": "Question: What makes a Rust trait dyn compatible, and how do supertraits affect that requirement?\n\nAnswer: A dyn-compatible trait can serve as a trait-object base. Every supertrait must also be dyn compatible, and Sized cannot be a supertrait. The trait must not contain associated constants or generic associated types.\n\nFor a dispatchable method, both lifetime and type parameters are permitted when they do not mention Self; an async method or a return-position impl Trait is excluded by its opaque return type. A function can instead be explicitly non-dispatchable by requiring Self: Sized. Supertrait requirements are transitive, and bounds by a trait expose only its own associated items, so supertrait methods require an additional explicit bound. An unsafe trait can be used safely when correctly implemented, though its implementation must use unsafe.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r20-c01",
+          "text": "A dyn-compatible trait can be a trait-object base."
+        },
+        {
+          "id": "v2-test-r20-c02",
+          "text": "Dyn compatibility requires dyn-compatible supertraits and excludes Sized as a supertrait."
+        },
+        {
+          "id": "v2-test-r20-c03",
+          "text": "Dyn-compatible traits cannot have associated constants or generic associated types."
+        },
+        {
+          "id": "v2-test-r20-c04",
+          "text": "A dyn-dispatchable trait method may have type parameters if they do not mention Self."
+        },
+        {
+          "id": "v2-test-r20-c05",
+          "text": "An async method or a method returning return-position impl Trait is not dyn-dispatchable because it has an opaque return type."
+        },
+        {
+          "id": "v2-test-r20-c06",
+          "text": "Self: Sized can mark an associated function explicitly non-dispatchable."
+        },
+        {
+          "id": "v2-test-r20-c07",
+          "text": "Supertrait requirements are transitive."
+        },
+        {
+          "id": "v2-test-r20-c08",
+          "text": "A trait bound does not grant access to supertrait associated items without an extra explicit bound."
+        },
+        {
+          "id": "v2-test-r20-c09",
+          "text": "A correctly implemented unsafe trait is safe to use, but implementation requires unsafe."
+        },
+        {
+          "id": "v2-test-r20-c10",
+          "text": "Lifetime parameters are permitted on a dispatchable method when they do not mention Self."
+        }
+      ],
+      "item_id": "item-0002",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "A dyn-compatible trait can serve as a trait-object base."
+        },
+        {
+          "index": 1,
+          "text": "Every supertrait must also be dyn compatible."
+        },
+        {
+          "index": 2,
+          "text": "Sized cannot be a supertrait of a dyn-compatible trait."
+        },
+        {
+          "index": 3,
+          "text": "A dyn-compatible trait must not contain associated constants."
+        },
+        {
+          "index": 4,
+          "text": "A dyn-compatible trait must not contain generic associated types."
+        },
+        {
+          "index": 5,
+          "text": "For a dispatchable method, lifetime parameters are permitted when they do not mention Self."
+        },
+        {
+          "index": 6,
+          "text": "For a dispatchable method, type parameters are permitted when they do not mention Self."
+        },
+        {
+          "index": 7,
+          "text": "An async method is excluded from dispatchable methods because of its opaque return type."
+        },
+        {
+          "index": 8,
+          "text": "A return-position impl Trait is excluded from dispatchable methods because it is an opaque return type."
+        },
+        {
+          "index": 9,
+          "text": "A function can instead be explicitly non-dispatchable by requiring Self: Sized."
+        },
+        {
+          "index": 10,
+          "text": "Supertrait requirements are transitive."
+        },
+        {
+          "index": 11,
+          "text": "Bounds by a trait expose only its own associated items."
+        },
+        {
+          "index": 12,
+          "text": "Supertrait methods require an additional explicit bound."
+        },
+        {
+          "index": 13,
+          "text": "An unsafe trait can be used safely when correctly implemented."
+        },
+        {
+          "index": 14,
+          "text": "An unsafe trait's implementation must use unsafe."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How should cancellation and failures be handled inside an asyncio TaskGroup?\n\nAnswer: Cancellation raises CancelledError in a task at its next opportunity. That exception directly subclasses BaseException; coroutine cleanup should generally propagate it after cleanup, because TaskGroup and timeout use cancellation internally. A TaskGroup waits for all its tasks on exit, and in Python 3.13 an inactive group closes a coroutine passed to create_task.\n\nThe first child failure other than CancelledError cancels the remaining children and prevents new additions. Once all children finish, non-cancellation failures are grouped and raised. KeyboardInterrupt and SystemExit are special: the group still cancels and waits for the other tasks but re-raises the original base exception. A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r09-c01",
+          "text": "Task cancellation raises CancelledError at the next opportunity."
+        },
+        {
+          "id": "v2-test-r09-c02",
+          "text": "CancelledError directly subclasses BaseException."
+        },
+        {
+          "id": "v2-test-r09-c03",
+          "text": "If CancelledError is explicitly caught, it should generally be propagated after cleanup because asyncio.TaskGroup and asyncio.timeout use cancellation internally."
+        },
+        {
+          "id": "v2-test-r09-c04",
+          "text": "TaskGroup awaits all its tasks on exit."
+        },
+        {
+          "id": "v2-test-r09-c05",
+          "text": "In Python 3.13 an inactive TaskGroup closes a coroutine supplied to create_task."
+        },
+        {
+          "id": "v2-test-r09-c06",
+          "text": "A child failure other than CancelledError cancels siblings and prevents additions."
+        },
+        {
+          "id": "v2-test-r09-c07",
+          "text": "After all children finish, TaskGroup groups and raises non-cancellation failures."
+        },
+        {
+          "id": "v2-test-r09-c08",
+          "text": "KeyboardInterrupt or SystemExit causes sibling cancellation and waiting, then the original exception is re-raised."
+        },
+        {
+          "id": "v2-test-r09-c09",
+          "text": "When external cancellation accompanies a required ExceptionGroup, TaskGroup cancels the parent to preserve cancellation."
+        }
+      ],
+      "item_id": "item-0003",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Cancellation raises CancelledError in a task at its next opportunity."
+        },
+        {
+          "index": 1,
+          "text": "CancelledError directly subclasses BaseException."
+        },
+        {
+          "index": 2,
+          "text": "Coroutine cleanup should generally propagate CancelledError after cleanup."
+        },
+        {
+          "index": 3,
+          "text": "TaskGroup and timeout use cancellation internally."
+        },
+        {
+          "index": 4,
+          "text": "A TaskGroup waits for all its tasks on exit."
+        },
+        {
+          "index": 5,
+          "text": "In Python 3.13 an inactive TaskGroup closes a coroutine passed to create_task."
+        },
+        {
+          "index": 6,
+          "text": "The first child failure other than CancelledError cancels the remaining children."
+        },
+        {
+          "index": 7,
+          "text": "The first child failure other than CancelledError prevents new additions to the group."
+        },
+        {
+          "index": 8,
+          "text": "Once all children finish, non-cancellation failures are grouped and raised, subject to the stated KeyboardInterrupt and SystemExit exceptions."
+        },
+        {
+          "index": 9,
+          "text": "For KeyboardInterrupt or SystemExit, the group cancels and waits for the other tasks but re-raises the original base exception."
+        },
+        {
+          "index": 10,
+          "text": "A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How do I load and save curl cookies without mistaking the jar for input or missing a write failure?\n\nAnswer: --cookie treats an argument without = as a filename to read and activates the cookie engine. It is input-only, whereas --cookie-jar writes in-memory cookies after the operation and reads none itself; both options may name the same file. The jar uses Netscape format and is created even when the cookie store is empty.\n\nAn empty cookie input activates the engine without loading cookies. --junk-session-cookies discards session cookies when loading a cookie file. A jar write failure does not fail the whole curl operation, with --verbose providing a warning. A Set-Cookie-format input without a domain is not sent because it never matches a domain, and public-suffix protection depends on a curl build with PSL support.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r37-c01",
+          "text": "--cookie arguments without = are filenames and enable the cookie engine."
+        },
+        {
+          "id": "v2-test-r37-c02",
+          "text": "--cookie is input-only, while --cookie-jar only writes after operations; they may share a filename."
+        },
+        {
+          "id": "v2-test-r37-c03",
+          "text": "The cookie jar uses Netscape format and is created even with no cookies."
+        },
+        {
+          "id": "v2-test-r37-c04",
+          "text": "An empty cookie input activates the cookie engine without loading cookies."
+        },
+        {
+          "id": "v2-test-r37-c05",
+          "text": "--junk-session-cookies discards session cookies while loading a cookie file."
+        },
+        {
+          "id": "v2-test-r37-c06",
+          "text": "A cookie-jar write failure does not fail the transfer; --verbose shows a warning."
+        },
+        {
+          "id": "v2-test-r37-c07",
+          "text": "A Set-Cookie-format input without a domain is not sent because its domain never matches."
+        },
+        {
+          "id": "v2-test-r37-c08",
+          "text": "Cookie public-suffix protection requires PSL build support."
+        }
+      ],
+      "item_id": "item-0004",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: --cookie treats an argument without = as a filename to read and activates the cookie engine."
+        },
+        {
+          "index": 1,
+          "text": "It is input-only, whereas --cookie-jar writes in-memory cookies after the operation and reads none itself; both options may name the same file."
+        },
+        {
+          "index": 2,
+          "text": "The jar uses Netscape format and is created even when the cookie store is empty."
+        },
+        {
+          "index": 3,
+          "text": "An empty cookie input activates the engine without loading cookies."
+        },
+        {
+          "index": 4,
+          "text": "--junk-session-cookies discards session cookies when loading a cookie file."
+        },
+        {
+          "index": 5,
+          "text": "A jar write failure does not fail the whole curl operation, with --verbose providing a warning."
+        },
+        {
+          "index": 6,
+          "text": "A Set-Cookie-format input without a domain is not sent because it never matches a domain, and public-suffix protection depends on a curl build with PSL support."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How do automatically assigned integer enum values and flag operations differ?\n\nAnswer: For IntEnum, auto assigns increasing integers beginning at one. Flag and IntFlag instead receive powers of two beginning at one. A Flag value is truthy when it contains any member, and its length reports the number of contained members.\n\nFlag inversion returns the flags missing from the value. For IntFlag, a valid bitwise result remains an IntFlag, whereas an invalid result depends on FlagBoundary. Arithmetic such as adding an integer loses IntFlag status. Since Python 3.11, IntFlag string conversion uses int.__str__ to support replacing existing constants.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r08-c01",
+          "text": "IntEnum auto assigns increasing integers from one."
+        },
+        {
+          "id": "v2-test-r08-c02",
+          "text": "Flag and IntFlag auto assigns powers of two from one."
+        },
+        {
+          "id": "v2-test-r08-c03",
+          "text": "A Flag is true if it contains any members."
+        },
+        {
+          "id": "v2-test-r08-c04",
+          "text": "len on a Flag reports its number of members."
+        },
+        {
+          "id": "v2-test-r08-c05",
+          "text": "Flag inversion returns absent flags."
+        },
+        {
+          "id": "v2-test-r08-c06",
+          "text": "A valid IntFlag bitwise result is IntFlag; invalid results depend on FlagBoundary."
+        },
+        {
+          "id": "v2-test-r08-c07",
+          "text": "IntFlag arithmetic results lose IntFlag status."
+        },
+        {
+          "id": "v2-test-r08-c08",
+          "text": "Since Python 3.11, IntFlag.__str__ uses int.__str__ to support replacing existing constants."
+        }
+      ],
+      "item_id": "item-0005",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "For IntEnum, auto assigns increasing integers beginning at one."
+        },
+        {
+          "index": 1,
+          "text": "For Flag, auto assigns powers of two beginning at one."
+        },
+        {
+          "index": 2,
+          "text": "For IntFlag, auto assigns powers of two beginning at one."
+        },
+        {
+          "index": 3,
+          "text": "A Flag value is truthy when it contains any member."
+        },
+        {
+          "index": 4,
+          "text": "A Flag value's length reports the number of contained members."
+        },
+        {
+          "index": 5,
+          "text": "Flag inversion returns the flags missing from the value."
+        },
+        {
+          "index": 6,
+          "text": "For IntFlag, a valid bitwise result remains an IntFlag."
+        },
+        {
+          "index": 7,
+          "text": "For IntFlag, an invalid bitwise result depends on FlagBoundary."
+        },
+        {
+          "index": 8,
+          "text": "Arithmetic such as adding an integer loses IntFlag status."
+        },
+        {
+          "index": 9,
+          "text": "Since Python 3.11, IntFlag string conversion uses int.__str__ to support replacing existing constants."
+        }
+      ]
+    },
+    {
+      "answer": "Question: Where do implicit Rust coercions happen, and which unsized conversions are available?\n\nAnswer: Coercions are restricted implicit type changes at specified sites, including explicitly typed let bindings, function arguments and function return values. A method receiver follows separate coercion rules. Coercion sites can propagate through array elements, tuples, parentheses and final block expressions when the surrounding type is known.\n\nA mutable reference can coerce to a shared reference; a noncapturing closure can coerce to a function pointer. Unsized conversions include arrays to slices and a sized implementing type to a dyn-compatible trait object. A trait object may coerce to a supertrait object. Although these unsized conversions are stabilized, Unsize and CoerceUnsized themselves are not stable for direct use in stable Rust.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r21-c01",
+          "text": "Coercions are restricted implicit type changes at specified sites such as typed lets, arguments and returns."
+        },
+        {
+          "id": "v2-test-r21-c02",
+          "text": "Method receivers use different coercion rules."
+        },
+        {
+          "id": "v2-test-r21-c03",
+          "text": "Coercion sites propagate through array elements, tuples, parentheses and final block expressions when types are known."
+        },
+        {
+          "id": "v2-test-r21-c04",
+          "text": "&mut T can coerce to &T."
+        },
+        {
+          "id": "v2-test-r21-c05",
+          "text": "A noncapturing closure can coerce to a function pointer."
+        },
+        {
+          "id": "v2-test-r21-c06",
+          "text": "Arrays can unsize to slices, and a Sized implementing type can unsize to a dyn-compatible trait object."
+        },
+        {
+          "id": "v2-test-r21-c07",
+          "text": "A trait object can coerce to an object of a supertrait."
+        },
+        {
+          "id": "v2-test-r21-c08",
+          "text": "Unsized conversions are stable while Unsize and CoerceUnsized are not directly usable as stable traits."
+        }
+      ],
+      "item_id": "item-0006",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Coercions are restricted implicit type changes at specified sites."
+        },
+        {
+          "index": 1,
+          "text": "Explicitly typed let bindings are coercion sites."
+        },
+        {
+          "index": 2,
+          "text": "Function arguments are coercion sites."
+        },
+        {
+          "index": 3,
+          "text": "Function return values are coercion sites."
+        },
+        {
+          "index": 4,
+          "text": "A method receiver follows separate coercion rules."
+        },
+        {
+          "index": 5,
+          "text": "Coercion sites can propagate through array elements when the surrounding type is known."
+        },
+        {
+          "index": 6,
+          "text": "Coercion sites can propagate through tuples when the surrounding type is known."
+        },
+        {
+          "index": 7,
+          "text": "Coercion sites can propagate through parentheses when the surrounding type is known."
+        },
+        {
+          "index": 8,
+          "text": "Coercion sites can propagate through final block expressions when the surrounding type is known."
+        },
+        {
+          "index": 9,
+          "text": "A mutable reference can coerce to a shared reference."
+        },
+        {
+          "index": 10,
+          "text": "A noncapturing closure can coerce to a function pointer."
+        },
+        {
+          "index": 11,
+          "text": "Unsized conversions include arrays to slices."
+        },
+        {
+          "index": 12,
+          "text": "Unsized conversions include a sized implementing type to a dyn-compatible trait object."
+        },
+        {
+          "index": 13,
+          "text": "A trait object may coerce to a supertrait object."
+        },
+        {
+          "index": 14,
+          "text": "The described unsized conversions are stabilized."
+        },
+        {
+          "index": 15,
+          "text": "Unsize is not stable for direct use in stable Rust."
+        },
+        {
+          "index": 16,
+          "text": "CoerceUnsized is not stable for direct use in stable Rust."
+        }
+      ]
+    },
+    {
+      "answer": "Question: What makes a Rust trait dyn compatible, and how do supertraits affect that requirement?\n\nAnswer: A dyn-compatible trait can serve as a trait-object base. Every supertrait must also be dyn compatible, and Sized cannot be a supertrait. The trait must not contain associated constants or generic associated types.\n\nFor a dispatchable method, both lifetime and type parameters are permitted when they do not mention Self; an async method or a return-position impl Trait is excluded by its opaque return type. A function can instead be explicitly non-dispatchable by requiring Self: Sized. Supertrait requirements are transitive, and bounds by a trait expose only its own associated items, so supertrait methods require an additional explicit bound. An unsafe trait can be used safely when correctly implemented, though its implementation must use unsafe.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r20-c01",
+          "text": "A dyn-compatible trait can be a trait-object base."
+        },
+        {
+          "id": "v2-test-r20-c02",
+          "text": "Dyn compatibility requires dyn-compatible supertraits and excludes Sized as a supertrait."
+        },
+        {
+          "id": "v2-test-r20-c03",
+          "text": "Dyn-compatible traits cannot have associated constants or generic associated types."
+        },
+        {
+          "id": "v2-test-r20-c04",
+          "text": "A dyn-dispatchable trait method may have type parameters if they do not mention Self."
+        },
+        {
+          "id": "v2-test-r20-c05",
+          "text": "An async method or a method returning return-position impl Trait is not dyn-dispatchable because it has an opaque return type."
+        },
+        {
+          "id": "v2-test-r20-c06",
+          "text": "Self: Sized can mark an associated function explicitly non-dispatchable."
+        },
+        {
+          "id": "v2-test-r20-c07",
+          "text": "Supertrait requirements are transitive."
+        },
+        {
+          "id": "v2-test-r20-c08",
+          "text": "A trait bound does not grant access to supertrait associated items without an extra explicit bound."
+        },
+        {
+          "id": "v2-test-r20-c09",
+          "text": "A correctly implemented unsafe trait is safe to use, but implementation requires unsafe."
+        },
+        {
+          "id": "v2-test-r20-c10",
+          "text": "Lifetime parameters are permitted on a dispatchable method when they do not mention Self."
+        }
+      ],
+      "item_id": "item-0007",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "A dyn-compatible Rust trait can serve as a trait-object base."
+        },
+        {
+          "index": 1,
+          "text": "Every supertrait of a dyn-compatible Rust trait must also be dyn compatible."
+        },
+        {
+          "index": 2,
+          "text": "Sized cannot be a supertrait of a dyn-compatible Rust trait."
+        },
+        {
+          "index": 3,
+          "text": "A dyn-compatible Rust trait must not contain associated constants."
+        },
+        {
+          "index": 4,
+          "text": "A dyn-compatible Rust trait must not contain generic associated types."
+        },
+        {
+          "index": 5,
+          "text": "For a dispatchable method, lifetime parameters are permitted when they do not mention Self."
+        },
+        {
+          "index": 6,
+          "text": "For a dispatchable method, type parameters are permitted when they do not mention Self."
+        },
+        {
+          "index": 7,
+          "text": "An async method is excluded from being dispatchable by its opaque return type."
+        },
+        {
+          "index": 8,
+          "text": "A return-position impl Trait is excluded from a dispatchable method by its opaque return type."
+        },
+        {
+          "index": 9,
+          "text": "A function can be explicitly non-dispatchable by requiring Self: Sized."
+        },
+        {
+          "index": 10,
+          "text": "Supertrait requirements are transitive."
+        },
+        {
+          "index": 11,
+          "text": "Bounds by a trait expose only that trait's own associated items."
+        },
+        {
+          "index": 12,
+          "text": "Supertrait methods require an additional explicit bound because bounds by a trait expose only its own associated items."
+        },
+        {
+          "index": 13,
+          "text": "An unsafe trait can be used safely when correctly implemented."
+        },
+        {
+          "index": 14,
+          "text": "An unsafe trait's implementation must use unsafe."
+        }
+      ]
+    },
+    {
+      "answer": "Question: When should I use skip, xfail and strict expected failures, and when is the marked code still executed?\n\nAnswer: skip omits test execution when its conditions are unmet; xfail normally still runs the test and reports an expected failure or unexpected pass. An imperative pytest.xfail stops the rest of that test by raising its internal exception.\n\nWith an xfail raises restriction, an unlisted exception is a regular failure. run=False can mark a crashing test expected-to-fail without executing it. XPASS does not fail the suite by default, but strict=True makes it do so. If several skipif decorators are present, any true condition skips the test. --runxfail ignores xfail behavior, including making an imperative pytest.xfail ineffective.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r35-c01",
+          "text": "skip omits execution while xfail normally executes and reports expected failure or unexpected pass."
+        },
+        {
+          "id": "v2-test-r35-c02",
+          "text": "pytest.xfail stops further test code by raising an internal exception."
+        },
+        {
+          "id": "v2-test-r35-c03",
+          "text": "An exception outside an xfail raises restriction is a normal failure."
+        },
+        {
+          "id": "v2-test-r35-c04",
+          "text": "xfail run=False marks a test without executing it."
+        },
+        {
+          "id": "v2-test-r35-c05",
+          "text": "XPASS does not fail the suite by default."
+        },
+        {
+          "id": "v2-test-r35-c06",
+          "text": "xfail strict=True makes XPASS fail the suite."
+        },
+        {
+          "id": "v2-test-r35-c07",
+          "text": "Any true condition among stacked skipif decorators skips the test."
+        },
+        {
+          "id": "v2-test-r35-c08",
+          "text": "--runxfail ignores xfail and makes imperative pytest.xfail ineffective."
+        }
+      ],
+      "item_id": "item-0008",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "skip omits test execution when its conditions are unmet."
+        },
+        {
+          "index": 1,
+          "text": "xfail normally still runs the test and reports an expected failure or unexpected pass."
+        },
+        {
+          "index": 2,
+          "text": "An imperative pytest.xfail stops the rest of that test by raising its internal exception."
+        },
+        {
+          "index": 3,
+          "text": "With an xfail raises restriction, an unlisted exception is a regular failure."
+        },
+        {
+          "index": 4,
+          "text": "run=False can mark a crashing test expected-to-fail without executing it."
+        },
+        {
+          "index": 5,
+          "text": "XPASS does not fail the suite by default."
+        },
+        {
+          "index": 6,
+          "text": "strict=True makes XPASS fail the suite."
+        },
+        {
+          "index": 7,
+          "text": "If several skipif decorators are present, any true condition skips the test."
+        },
+        {
+          "index": 8,
+          "text": "--runxfail ignores xfail behavior, including making an imperative pytest.xfail ineffective."
+        }
+      ]
+    },
+    {
+      "answer": "Question: What do executor map timeouts and shutdown options guarantee for pending and running work?\n\nAnswer: Executor.submit returns a Future for the scheduled call. map collects its input iterables immediately, and its timeout starts again each time the caller asks for the next result. A callable exception is raised when that result is retrieved. chunksize affects ProcessPoolExecutor but has no effect for ThreadPoolExecutor.\n\nshutdown(wait=False) returns immediately, yet Python still waits for pending futures before exiting. cancel_futures also interrupts futures already executing in worker threads. Using an executor as a context manager waits as shutdown(wait=True) would. Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r12-c01",
+          "text": "Executor.submit returns a Future for the scheduled callable."
+        },
+        {
+          "id": "v2-test-r12-c02",
+          "text": "Executor.map collects input iterables immediately."
+        },
+        {
+          "id": "v2-test-r12-c03",
+          "text": "Executor.map timeout restarts for each next-result request."
+        },
+        {
+          "id": "v2-test-r12-c04",
+          "text": "Executor.map raises a callable exception when its result is retrieved."
+        },
+        {
+          "id": "v2-test-r12-c05",
+          "text": "chunksize affects ProcessPoolExecutor but not ThreadPoolExecutor."
+        },
+        {
+          "id": "v2-test-r12-c06",
+          "text": "shutdown(wait=False) returns immediately but does not allow Python to exit before pending futures finish."
+        },
+        {
+          "id": "v2-test-r12-c07",
+          "text": "shutdown(cancel_futures=True) interrupts already running thread work."
+        },
+        {
+          "id": "v2-test-r12-c08",
+          "text": "Executor context-manager exit waits like shutdown(wait=True)."
+        },
+        {
+          "id": "v2-test-r12-c09",
+          "text": "A thread-pool worker waiting for another Future can deadlock if no worker can execute the dependency."
+        }
+      ],
+      "item_id": "item-0009",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Executor.submit returns a Future for the scheduled call."
+        },
+        {
+          "index": 1,
+          "text": "Executor.map collects its input iterables immediately."
+        },
+        {
+          "index": 2,
+          "text": "Executor.map's timeout starts again each time the caller asks for the next result."
+        },
+        {
+          "index": 3,
+          "text": "A callable exception in Executor.map is raised when that result is retrieved."
+        },
+        {
+          "index": 4,
+          "text": "Executor.map's chunksize affects ProcessPoolExecutor."
+        },
+        {
+          "index": 5,
+          "text": "Executor.map's chunksize has no effect for ThreadPoolExecutor."
+        },
+        {
+          "index": 6,
+          "text": "shutdown(wait=False) returns immediately."
+        },
+        {
+          "index": 7,
+          "text": "Even with shutdown(wait=False), Python waits for pending futures before exiting."
+        },
+        {
+          "index": 8,
+          "text": "cancel_futures interrupts futures already executing in worker threads."
+        },
+        {
+          "index": 9,
+          "text": "Using an executor as a context manager waits as shutdown(wait=True) would."
+        },
+        {
+          "index": 10,
+          "text": "Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How do pytest warning filters, marks and warning assertions interact?\n\nAnswer: pytest sorts the session warning summary by source filename rather than test execution order Its -W option can ignore, display or turn warnings into errors, and filterwarnings can express the same actions in configuration. When several configured filters match, the last matching action wins. A filterwarnings mark is overridden by a matching command-line -W filter\n\nThe message field differs between the two forms: filterwarnings uses a case-insensitive regular expression at the start, while -W uses a literal prefix. --disable-warnings stops warning capture, whereas disabling the warnings plugin only hides the summary pytest.warns fails when its expected warning is absent, and recwarn resets warning filters at the end of a test.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r32-c01",
+          "text": "pytest sorts warning summaries by source filename instead of test execution order."
+        },
+        {
+          "id": "v2-test-r32-c02",
+          "text": "-W and filterwarnings configuration can control whether warnings are ignored, displayed or errors."
+        },
+        {
+          "id": "v2-test-r32-c03",
+          "text": "The last matching configured warning filter wins."
+        },
+        {
+          "id": "v2-test-r32-c04",
+          "text": "Command-line -W overrides a filterwarnings mark."
+        },
+        {
+          "id": "v2-test-r32-c05",
+          "text": "filterwarnings message uses a case-insensitive regex prefix, whereas -W message uses a literal prefix."
+        },
+        {
+          "id": "v2-test-r32-c06",
+          "text": "--disable-warnings disables capture while disabling the warnings plugin only suppresses the summary."
+        },
+        {
+          "id": "v2-test-r32-c07",
+          "text": "pytest.warns fails if the expected warning does not occur."
+        },
+        {
+          "id": "v2-test-r32-c08",
+          "text": "recwarn resets warning filters at test end."
+        }
+      ],
+      "item_id": "item-0010",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "pytest sorts the session warning summary by source filename rather than test execution order."
+        },
+        {
+          "index": 1,
+          "text": "pytest's -W option can ignore, display, or turn warnings into errors."
+        },
+        {
+          "index": 2,
+          "text": "filterwarnings can express the same actions in configuration."
+        },
+        {
+          "index": 3,
+          "text": "When several configured filters match, the last matching action wins."
+        },
+        {
+          "index": 4,
+          "text": "A filterwarnings mark is overridden by a matching command-line -W filter."
+        },
+        {
+          "index": 5,
+          "text": "The message field in filterwarnings uses a case-insensitive regular expression matched at the start of the warning message."
+        },
+        {
+          "index": 6,
+          "text": "The message field in -W uses a literal prefix."
+        },
+        {
+          "index": 7,
+          "text": "--disable-warnings stops warning capture."
+        },
+        {
+          "index": 8,
+          "text": "Disabling the warnings plugin only hides the summary."
+        },
+        {
+          "index": 9,
+          "text": "pytest.warns fails when its expected warning is absent."
+        },
+        {
+          "index": 10,
+          "text": "recwarn resets warning filters at the end of a test."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How should curl peer verification options be chosen across CA files, native stores and OCSP stapling?\n\nAnswer: --cacert selects a PEM file that may contain multiple CA certificates. With a non-Schannel backend it overrides CURL_CA_BUNDLE. --capath selects PEM certificate directories; OpenSSL builds require c_rehash processing for those directories.\n\n--ca-native uses the operating system store, which Schannel already uses by default. --cert-status verifies OCSP stapling and fails if the response is absent, invalid or says the certificate is revoked; the documented support is OpenSSL and GnuTLS. --insecure skips verification, including known_hosts verification for SFTP and SCP. It can also allow malicious-server HSTS or Alt-Svc information to be trusted and reused.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r39-c01",
+          "text": "--cacert takes a PEM file that may contain multiple CAs."
+        },
+        {
+          "id": "v2-test-r39-c02",
+          "text": "--cacert overrides CURL_CA_BUNDLE for non-Schannel backends."
+        },
+        {
+          "id": "v2-test-r39-c03",
+          "text": "OpenSSL capath directories contain PEM certificates and require c_rehash."
+        },
+        {
+          "id": "v2-test-r39-c04",
+          "text": "--ca-native uses the OS CA store, which Schannel uses by default."
+        },
+        {
+          "id": "v2-test-r39-c05",
+          "text": "--cert-status checks OCSP stapling and fails for missing, invalid or revoked responses."
+        },
+        {
+          "id": "v2-test-r39-c06",
+          "text": "cert-status support in the snapshot is limited to OpenSSL and GnuTLS."
+        },
+        {
+          "id": "v2-test-r39-c07",
+          "text": "--insecure skips TLS verification and SFTP/SCP known_hosts verification."
+        },
+        {
+          "id": "v2-test-r39-c08",
+          "text": "--insecure can cause malicious HSTS or Alt-Svc information to be trusted and reused."
+        }
+      ],
+      "item_id": "item-0011",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: --cacert selects a PEM file that may contain multiple CA certificates."
+        },
+        {
+          "index": 1,
+          "text": "With a non-Schannel backend it overrides CURL_CA_BUNDLE."
+        },
+        {
+          "index": 2,
+          "text": "--capath selects PEM certificate directories; OpenSSL builds require c_rehash processing for those directories."
+        },
+        {
+          "index": 3,
+          "text": "--ca-native uses the operating system store, which Schannel already uses by default."
+        },
+        {
+          "index": 4,
+          "text": "--cert-status verifies OCSP stapling and fails if the response is absent, invalid or says the certificate is revoked; the documented support is OpenSSL and GnuTLS."
+        },
+        {
+          "index": 5,
+          "text": "--insecure skips verification, including known_hosts verification for SFTP and SCP."
+        },
+        {
+          "index": 6,
+          "text": "It can also allow malicious-server HSTS or Alt-Svc information to be trusted and reused."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How do automatically assigned integer enum values and flag operations differ?\n\nAnswer: For IntEnum, auto assigns increasing integers beginning at one. Flag and IntFlag instead receive powers of two beginning at one. A Flag value is truthy when it contains any member, and its length reports the number of contained members.\n\nFlag inversion returns the flags missing from the value. For IntFlag, a valid bitwise result remains an IntFlag, whereas an invalid result depends on FlagBoundary. Arithmetic such as adding an integer loses IntFlag status. Since Python 3.11, IntFlag string conversion uses int.__str__ to support replacing existing constants.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r08-c01",
+          "text": "IntEnum auto assigns increasing integers from one."
+        },
+        {
+          "id": "v2-test-r08-c02",
+          "text": "Flag and IntFlag auto assigns powers of two from one."
+        },
+        {
+          "id": "v2-test-r08-c03",
+          "text": "A Flag is true if it contains any members."
+        },
+        {
+          "id": "v2-test-r08-c04",
+          "text": "len on a Flag reports its number of members."
+        },
+        {
+          "id": "v2-test-r08-c05",
+          "text": "Flag inversion returns absent flags."
+        },
+        {
+          "id": "v2-test-r08-c06",
+          "text": "A valid IntFlag bitwise result is IntFlag; invalid results depend on FlagBoundary."
+        },
+        {
+          "id": "v2-test-r08-c07",
+          "text": "IntFlag arithmetic results lose IntFlag status."
+        },
+        {
+          "id": "v2-test-r08-c08",
+          "text": "Since Python 3.11, IntFlag.__str__ uses int.__str__ to support replacing existing constants."
+        }
+      ],
+      "item_id": "item-0012",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: For IntEnum, auto assigns increasing integers beginning at one."
+        },
+        {
+          "index": 1,
+          "text": "Flag and IntFlag instead receive powers of two beginning at one."
+        },
+        {
+          "index": 2,
+          "text": "A Flag value is truthy when it contains any member, and its length reports the number of contained members."
+        },
+        {
+          "index": 3,
+          "text": "Flag inversion returns the flags missing from the value."
+        },
+        {
+          "index": 4,
+          "text": "For IntFlag, a valid bitwise result remains an IntFlag, whereas an invalid result depends on FlagBoundary."
+        },
+        {
+          "index": 5,
+          "text": "Arithmetic such as adding an integer loses IntFlag status."
+        },
+        {
+          "index": 6,
+          "text": "Since Python 3.11, IntFlag string conversion uses int.__str__ to support replacing existing constants."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How can I combine grouping, slicing and combinatorial iterators without losing groups or accidentally exhausting an infinite input?\n\nAnswer: groupby groups consecutive equal keys rather than gathering matching values from every position, so input generally needs sorting with the same key. Its group iterators own independent snapshots, so a previous group remains available after the outer iterator advances. islice accepts selected positions but does not support negative start, stop or step values.\n\nWith fewer than two inputs, pairwise is empty. permutations treats elements as distinct by position and emits tuples in input-defined lexicographic order. product only pulls each new input value as needed for the next tuple, so it can stream an infinite input without building a pool; its rightmost position advances on every iteration.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r06-c01",
+          "text": "groupby groups consecutive equal keys and generally requires input sorted by the same key."
+        },
+        {
+          "id": "v2-test-r06-c02",
+          "text": "groupby groups are independent snapshots that remain available after the outer iterator advances."
+        },
+        {
+          "id": "v2-test-r06-c03",
+          "text": "islice does not support negative start, stop or step values."
+        },
+        {
+          "id": "v2-test-r06-c04",
+          "text": "pairwise is empty for fewer than two input values."
+        },
+        {
+          "id": "v2-test-r06-c05",
+          "text": "permutations distinguishes elements by position rather than value."
+        },
+        {
+          "id": "v2-test-r06-c06",
+          "text": "permutations emits lexicographic tuples according to input order."
+        },
+        {
+          "id": "v2-test-r06-c07",
+          "text": "product streams infinite inputs without storing their pools."
+        },
+        {
+          "id": "v2-test-r06-c08",
+          "text": "product advances its rightmost position on every iteration."
+        },
+        {
+          "id": "v2-test-r06-c09",
+          "text": "islice returns selected positions from an iterable."
+        }
+      ],
+      "item_id": "item-0013",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "groupby groups consecutive equal keys rather than gathering matching values from every position."
+        },
+        {
+          "index": 1,
+          "text": "Input to groupby generally needs sorting with the same key."
+        },
+        {
+          "index": 2,
+          "text": "groupby's group iterators own independent snapshots."
+        },
+        {
+          "index": 3,
+          "text": "A previous group remains available after the outer groupby iterator advances."
+        },
+        {
+          "index": 4,
+          "text": "islice returns selected elements by position."
+        },
+        {
+          "index": 5,
+          "text": "islice does not support negative start, stop, or step values."
+        },
+        {
+          "index": 6,
+          "text": "With fewer than two inputs, pairwise is empty."
+        },
+        {
+          "index": 7,
+          "text": "permutations treats elements as distinct by position."
+        },
+        {
+          "index": 8,
+          "text": "permutations emits tuples in input-defined lexicographic order."
+        },
+        {
+          "index": 9,
+          "text": "product only pulls each new input value as needed for the next tuple."
+        },
+        {
+          "index": 10,
+          "text": "product can stream an infinite input without building a pool."
+        },
+        {
+          "index": 11,
+          "text": "product's rightmost position advances on every iteration."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How do I load and save curl cookies without mistaking the jar for input or missing a write failure?\n\nAnswer: --cookie treats an argument without = as a filename to read and activates the cookie engine. It is input-only, whereas --cookie-jar writes in-memory cookies after the operation and reads none itself; both options may name the same file. The jar uses Netscape format and is created even when the cookie store is empty.\n\nAn empty cookie input activates the engine without loading cookies. --junk-session-cookies discards session cookies when loading a cookie file. A jar write failure does not fail the whole curl operation, with --verbose providing a warning. A Set-Cookie-format input without a domain is not sent because it never matches a domain, and public-suffix protection depends on a curl build with PSL support.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r37-c01",
+          "text": "--cookie arguments without = are filenames and enable the cookie engine."
+        },
+        {
+          "id": "v2-test-r37-c02",
+          "text": "--cookie is input-only, while --cookie-jar only writes after operations; they may share a filename."
+        },
+        {
+          "id": "v2-test-r37-c03",
+          "text": "The cookie jar uses Netscape format and is created even with no cookies."
+        },
+        {
+          "id": "v2-test-r37-c04",
+          "text": "An empty cookie input activates the cookie engine without loading cookies."
+        },
+        {
+          "id": "v2-test-r37-c05",
+          "text": "--junk-session-cookies discards session cookies while loading a cookie file."
+        },
+        {
+          "id": "v2-test-r37-c06",
+          "text": "A cookie-jar write failure does not fail the transfer; --verbose shows a warning."
+        },
+        {
+          "id": "v2-test-r37-c07",
+          "text": "A Set-Cookie-format input without a domain is not sent because its domain never matches."
+        },
+        {
+          "id": "v2-test-r37-c08",
+          "text": "Cookie public-suffix protection requires PSL build support."
+        }
+      ],
+      "item_id": "item-0014",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "--cookie treats an argument without = as a filename to read."
+        },
+        {
+          "index": 1,
+          "text": "--cookie activates the cookie engine."
+        },
+        {
+          "index": 2,
+          "text": "--cookie is input-only."
+        },
+        {
+          "index": 3,
+          "text": "--cookie-jar writes in-memory cookies after the operation."
+        },
+        {
+          "index": 4,
+          "text": "--cookie-jar reads no cookies itself."
+        },
+        {
+          "index": 5,
+          "text": "--cookie and --cookie-jar may name the same file."
+        },
+        {
+          "index": 6,
+          "text": "The cookie jar uses Netscape format."
+        },
+        {
+          "index": 7,
+          "text": "The cookie jar is created even when the cookie store is empty."
+        },
+        {
+          "index": 8,
+          "text": "An empty cookie input activates the cookie engine."
+        },
+        {
+          "index": 9,
+          "text": "An empty cookie input does not load cookies."
+        },
+        {
+          "index": 10,
+          "text": "--junk-session-cookies discards session cookies when loading a cookie file."
+        },
+        {
+          "index": 11,
+          "text": "A jar write failure does not fail the whole curl operation."
+        },
+        {
+          "index": 12,
+          "text": "--verbose provides a warning for a jar write failure."
+        },
+        {
+          "index": 13,
+          "text": "A Set-Cookie-format input without a domain is not sent because it never matches a domain."
+        },
+        {
+          "index": 14,
+          "text": "Public-suffix protection depends on a curl build with PSL support."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How should curl peer verification options be chosen across CA files, native stores and OCSP stapling?\n\nAnswer: --cacert selects a PEM file that may contain multiple CA certificates. With a non-Schannel backend it overrides CURL_CA_BUNDLE. --capath selects PEM certificate directories; OpenSSL builds require c_rehash processing for those directories.\n\n--ca-native uses the operating system store, which Schannel already uses by default. --cert-status verifies OCSP stapling and fails if the response is absent, invalid or says the certificate is revoked; the documented support is OpenSSL and GnuTLS. --insecure skips verification, including known_hosts verification for SFTP and SCP. It can also allow malicious-server HSTS or Alt-Svc information to be trusted and reused.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r39-c01",
+          "text": "--cacert takes a PEM file that may contain multiple CAs."
+        },
+        {
+          "id": "v2-test-r39-c02",
+          "text": "--cacert overrides CURL_CA_BUNDLE for non-Schannel backends."
+        },
+        {
+          "id": "v2-test-r39-c03",
+          "text": "OpenSSL capath directories contain PEM certificates and require c_rehash."
+        },
+        {
+          "id": "v2-test-r39-c04",
+          "text": "--ca-native uses the OS CA store, which Schannel uses by default."
+        },
+        {
+          "id": "v2-test-r39-c05",
+          "text": "--cert-status checks OCSP stapling and fails for missing, invalid or revoked responses."
+        },
+        {
+          "id": "v2-test-r39-c06",
+          "text": "cert-status support in the snapshot is limited to OpenSSL and GnuTLS."
+        },
+        {
+          "id": "v2-test-r39-c07",
+          "text": "--insecure skips TLS verification and SFTP/SCP known_hosts verification."
+        },
+        {
+          "id": "v2-test-r39-c08",
+          "text": "--insecure can cause malicious HSTS or Alt-Svc information to be trusted and reused."
+        }
+      ],
+      "item_id": "item-0015",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "--cacert selects a PEM file that may contain multiple CA certificates."
+        },
+        {
+          "index": 1,
+          "text": "With a non-Schannel backend, --cacert overrides CURL_CA_BUNDLE."
+        },
+        {
+          "index": 2,
+          "text": "--capath selects PEM certificate directories."
+        },
+        {
+          "index": 3,
+          "text": "OpenSSL builds require c_rehash processing for directories selected with --capath."
+        },
+        {
+          "index": 4,
+          "text": "--ca-native uses the operating system store."
+        },
+        {
+          "index": 5,
+          "text": "Schannel already uses the operating system CA store by default."
+        },
+        {
+          "index": 6,
+          "text": "--cert-status verifies OCSP stapling."
+        },
+        {
+          "index": 7,
+          "text": "--cert-status fails verification if the response is absent, invalid, or indicates that the certificate is revoked."
+        },
+        {
+          "index": 8,
+          "text": "The documented backend support for --cert-status is OpenSSL and GnuTLS."
+        },
+        {
+          "index": 9,
+          "text": "--insecure skips verification."
+        },
+        {
+          "index": 10,
+          "text": "--insecure skips known_hosts verification for SFTP and SCP."
+        },
+        {
+          "index": 11,
+          "text": "--insecure can allow malicious-server HSTS or Alt-Svc information to be trusted and reused."
+        }
+      ]
+    },
+    {
+      "answer": "Question: Which safety obligations does unsafe create, and which uses assert that an obligation has been satisfied?\n\nAnswer: An unsafe function has extra conditions that callers must uphold and the compiler does not check. Its documentation should explain those conditions. An unsafe block permits unsafe actions and asserts that their safety obligations have been discharged, rather than making the compiler prove them.\n\nAn unsafe trait puts extra obligations on implementations; writing unsafe impl asserts that those obligations are satisfied. In an unsafe extern block, the declaring programmer must ensure the contained signatures are correct, because incorrect signatures can lead to undefined behavior. Unsafe attributes likewise have conditions the compiler cannot check and are wrapped in unsafe(..) to assert compliance. Before edition 2024, extern blocks were permitted without unsafe.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r23-c01",
+          "text": "Unsafe functions have extra caller obligations not checked by the compiler."
+        },
+        {
+          "id": "v2-test-r23-c02",
+          "text": "Unsafe-function documentation should explain the extra safety conditions."
+        },
+        {
+          "id": "v2-test-r23-c03",
+          "text": "An unsafe block permits unsafe actions and asserts that their safety obligations are satisfied, rather than having the compiler prove them."
+        },
+        {
+          "id": "v2-test-r23-c04",
+          "text": "Unsafe traits impose extra conditions on implementations."
+        },
+        {
+          "id": "v2-test-r23-c05",
+          "text": "unsafe impl asserts that an unsafe trait implementation satisfies its extra conditions."
+        },
+        {
+          "id": "v2-test-r23-c06",
+          "text": "The unsafe extern declarer must ensure correct signatures; incorrect ones can cause undefined behavior."
+        },
+        {
+          "id": "v2-test-r23-c07",
+          "text": "Unsafe attributes have compiler-unchecked conditions and use unsafe(..) to assert compliance."
+        },
+        {
+          "id": "v2-test-r23-c08",
+          "text": "Before edition 2024 extern blocks could omit unsafe."
+        }
+      ],
+      "item_id": "item-0016",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "An unsafe function has extra conditions that callers must uphold."
+        },
+        {
+          "index": 1,
+          "text": "The compiler does not check the extra conditions that callers of an unsafe function must uphold."
+        },
+        {
+          "index": 2,
+          "text": "An unsafe function's documentation should explain its extra conditions."
+        },
+        {
+          "index": 3,
+          "text": "An unsafe block permits unsafe actions."
+        },
+        {
+          "index": 4,
+          "text": "An unsafe block asserts that the safety obligations of its unsafe actions have been discharged."
+        },
+        {
+          "index": 5,
+          "text": "An unsafe block does not make the compiler prove that the safety obligations of its unsafe actions have been discharged."
+        },
+        {
+          "index": 6,
+          "text": "An unsafe trait puts extra obligations on implementations."
+        },
+        {
+          "index": 7,
+          "text": "Writing unsafe impl asserts that the extra obligations imposed by an unsafe trait are satisfied."
+        },
+        {
+          "index": 8,
+          "text": "In an unsafe extern block, the declaring programmer must ensure the contained signatures are correct."
+        },
+        {
+          "index": 9,
+          "text": "Incorrect signatures in an unsafe extern block can lead to undefined behavior."
+        },
+        {
+          "index": 10,
+          "text": "Unsafe attributes have conditions the compiler cannot check."
+        },
+        {
+          "index": 11,
+          "text": "Unsafe attributes are wrapped in unsafe(..) to assert compliance with their conditions."
+        },
+        {
+          "index": 12,
+          "text": "Before edition 2024, extern blocks were permitted without unsafe."
+        }
+      ]
+    },
+    {
+      "answer": "Question: What initialization rules matter when a dataclass uses InitVar, a non-dataclass base and default factories?\n\nAnswer: A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order; a handwritten __init__ still receives that automatic call after it returns. The generated initializer does not call a base-class initializer, so a required non-dataclass base initialization can be done from __post_init__.\n\nClassVar and InitVar pseudo-fields are excluded from fields(). An InitVar is still accepted as an initializer parameter and forwarded to __post_init__. A default_factory receives no arguments when a default is needed. If that field has init=False, the factory is deferred until the first attribute read. frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r04-c01",
+          "text": "A generated dataclass __init__ calls __post_init__."
+        },
+        {
+          "id": "v2-test-r04-c02",
+          "text": "A handwritten dataclass __init__ receives an automatic __post_init__ call after returning."
+        },
+        {
+          "id": "v2-test-r04-c03",
+          "text": "Generated dataclass __init__ does not call base initializers; a needed base initializer can be called in __post_init__."
+        },
+        {
+          "id": "v2-test-r04-c04",
+          "text": "ClassVar pseudo-fields are excluded from fields()."
+        },
+        {
+          "id": "v2-test-r04-c05",
+          "text": "InitVar pseudo-fields are excluded from fields() but accepted as parameters to the generated initializer."
+        },
+        {
+          "id": "v2-test-r04-c06",
+          "text": "A dataclass default_factory is called without arguments when a default value is needed."
+        },
+        {
+          "id": "v2-test-r04-c07",
+          "text": "An init=False dataclass field defers its default_factory until first attribute access."
+        },
+        {
+          "id": "v2-test-r04-c08",
+          "text": "frozen=True emulates immutability using methods that raise FrozenInstanceError."
+        },
+        {
+          "id": "v2-test-r04-c09",
+          "text": "When generated dataclass __init__ passes InitVar arguments to __post_init__, it passes them in declaration order."
+        }
+      ],
+      "item_id": "item-0017",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "A generated dataclass __init__ calls __post_init__."
+        },
+        {
+          "index": 1,
+          "text": "A generated dataclass __init__ passes InitVar arguments to __post_init__ in declaration order."
+        },
+        {
+          "index": 2,
+          "text": "A handwritten __init__ still receives an automatic __post_init__ call after it returns."
+        },
+        {
+          "index": 3,
+          "text": "The generated dataclass initializer does not call a base-class initializer."
+        },
+        {
+          "index": 4,
+          "text": "A required non-dataclass base initialization can be done from __post_init__ because the generated initializer does not call a base-class initializer."
+        },
+        {
+          "index": 5,
+          "text": "ClassVar pseudo-fields are excluded from fields()."
+        },
+        {
+          "index": 6,
+          "text": "InitVar pseudo-fields are excluded from fields()."
+        },
+        {
+          "index": 7,
+          "text": "An InitVar is accepted as an initializer parameter."
+        },
+        {
+          "index": 8,
+          "text": "An InitVar is forwarded to __post_init__."
+        },
+        {
+          "index": 9,
+          "text": "A default_factory receives no arguments when a default is needed."
+        },
+        {
+          "index": 10,
+          "text": "If a field with a default_factory has init=False, the factory is deferred until the first attribute read."
+        },
+        {
+          "index": 11,
+          "text": "frozen=True emulates immutability with methods that raise FrozenInstanceError."
+        },
+        {
+          "index": 12,
+          "text": "frozen=True does not create a truly immutable Python object."
+        }
+      ]
+    },
+    {
+      "answer": "Question: Where do implicit Rust coercions happen, and which unsized conversions are available?\n\nAnswer: Coercions are restricted implicit type changes at specified sites, including explicitly typed let bindings, function arguments and function return values. A method receiver follows separate coercion rules. Coercion sites can propagate through array elements, tuples, parentheses and final block expressions when the surrounding type is known.\n\nA mutable reference can coerce to a shared reference; a noncapturing closure can coerce to a function pointer. Unsized conversions include arrays to slices and a sized implementing type to a dyn-compatible trait object. A trait object may coerce to a supertrait object. Although these unsized conversions are stabilized, Unsize and CoerceUnsized themselves are not stable for direct use in stable Rust.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r21-c01",
+          "text": "Coercions are restricted implicit type changes at specified sites such as typed lets, arguments and returns."
+        },
+        {
+          "id": "v2-test-r21-c02",
+          "text": "Method receivers use different coercion rules."
+        },
+        {
+          "id": "v2-test-r21-c03",
+          "text": "Coercion sites propagate through array elements, tuples, parentheses and final block expressions when types are known."
+        },
+        {
+          "id": "v2-test-r21-c04",
+          "text": "&mut T can coerce to &T."
+        },
+        {
+          "id": "v2-test-r21-c05",
+          "text": "A noncapturing closure can coerce to a function pointer."
+        },
+        {
+          "id": "v2-test-r21-c06",
+          "text": "Arrays can unsize to slices, and a Sized implementing type can unsize to a dyn-compatible trait object."
+        },
+        {
+          "id": "v2-test-r21-c07",
+          "text": "A trait object can coerce to an object of a supertrait."
+        },
+        {
+          "id": "v2-test-r21-c08",
+          "text": "Unsized conversions are stable while Unsize and CoerceUnsized are not directly usable as stable traits."
+        }
+      ],
+      "item_id": "item-0018",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: Coercions are restricted implicit type changes at specified sites, including explicitly typed let bindings, function arguments and function return values."
+        },
+        {
+          "index": 1,
+          "text": "A method receiver follows separate coercion rules."
+        },
+        {
+          "index": 2,
+          "text": "Coercion sites can propagate through array elements, tuples, parentheses and final block expressions when the surrounding type is known."
+        },
+        {
+          "index": 3,
+          "text": "A mutable reference can coerce to a shared reference; a noncapturing closure can coerce to a function pointer."
+        },
+        {
+          "index": 4,
+          "text": "Unsized conversions include arrays to slices and a sized implementing type to a dyn-compatible trait object."
+        },
+        {
+          "index": 5,
+          "text": "A trait object may coerce to a supertrait object."
+        },
+        {
+          "index": 6,
+          "text": "Although these unsized conversions are stabilized, Unsize and CoerceUnsized themselves are not stable for direct use in stable Rust."
+        }
+      ]
+    },
+    {
+      "answer": "Question: What makes a Rust trait dyn compatible, and how do supertraits affect that requirement?\n\nAnswer: A dyn-compatible trait can serve as a trait-object base. Every supertrait must also be dyn compatible, and Sized cannot be a supertrait. The trait must not contain associated constants or generic associated types.\n\nFor a dispatchable method, both lifetime and type parameters are permitted when they do not mention Self; an async method or a return-position impl Trait is excluded by its opaque return type. A function can instead be explicitly non-dispatchable by requiring Self: Sized. Supertrait requirements are transitive, and bounds by a trait expose only its own associated items, so supertrait methods require an additional explicit bound. An unsafe trait can be used safely when correctly implemented, though its implementation must use unsafe.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r20-c01",
+          "text": "A dyn-compatible trait can be a trait-object base."
+        },
+        {
+          "id": "v2-test-r20-c02",
+          "text": "Dyn compatibility requires dyn-compatible supertraits and excludes Sized as a supertrait."
+        },
+        {
+          "id": "v2-test-r20-c03",
+          "text": "Dyn-compatible traits cannot have associated constants or generic associated types."
+        },
+        {
+          "id": "v2-test-r20-c04",
+          "text": "A dyn-dispatchable trait method may have type parameters if they do not mention Self."
+        },
+        {
+          "id": "v2-test-r20-c05",
+          "text": "An async method or a method returning return-position impl Trait is not dyn-dispatchable because it has an opaque return type."
+        },
+        {
+          "id": "v2-test-r20-c06",
+          "text": "Self: Sized can mark an associated function explicitly non-dispatchable."
+        },
+        {
+          "id": "v2-test-r20-c07",
+          "text": "Supertrait requirements are transitive."
+        },
+        {
+          "id": "v2-test-r20-c08",
+          "text": "A trait bound does not grant access to supertrait associated items without an extra explicit bound."
+        },
+        {
+          "id": "v2-test-r20-c09",
+          "text": "A correctly implemented unsafe trait is safe to use, but implementation requires unsafe."
+        },
+        {
+          "id": "v2-test-r20-c10",
+          "text": "Lifetime parameters are permitted on a dispatchable method when they do not mention Self."
+        }
+      ],
+      "item_id": "item-0019",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: A dyn-compatible trait can serve as a trait-object base."
+        },
+        {
+          "index": 1,
+          "text": "Every supertrait must also be dyn compatible, and Sized cannot be a supertrait."
+        },
+        {
+          "index": 2,
+          "text": "The trait must not contain associated constants or generic associated types."
+        },
+        {
+          "index": 3,
+          "text": "For a dispatchable method, both lifetime and type parameters are permitted when they do not mention Self; an async method or a return-position impl Trait is excluded by its opaque return type."
+        },
+        {
+          "index": 4,
+          "text": "A function can instead be explicitly non-dispatchable by requiring Self: Sized."
+        },
+        {
+          "index": 5,
+          "text": "Supertrait requirements are transitive, and bounds by a trait expose only its own associated items, so supertrait methods require an additional explicit bound."
+        },
+        {
+          "index": 6,
+          "text": "An unsafe trait can be used safely when correctly implemented, though its implementation must use unsafe."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How do pytest warning filters, marks and warning assertions interact?\n\nAnswer: pytest sorts the session warning summary by source filename rather than test execution order Its -W option can ignore, display or turn warnings into errors, and filterwarnings can express the same actions in configuration. When several configured filters match, the last matching action wins. A filterwarnings mark is overridden by a matching command-line -W filter\n\nThe message field differs between the two forms: filterwarnings uses a case-insensitive regular expression at the start, while -W uses a literal prefix. --disable-warnings stops warning capture, whereas disabling the warnings plugin only hides the summary pytest.warns fails when its expected warning is absent, and recwarn resets warning filters at the end of a test.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r32-c01",
+          "text": "pytest sorts warning summaries by source filename instead of test execution order."
+        },
+        {
+          "id": "v2-test-r32-c02",
+          "text": "-W and filterwarnings configuration can control whether warnings are ignored, displayed or errors."
+        },
+        {
+          "id": "v2-test-r32-c03",
+          "text": "The last matching configured warning filter wins."
+        },
+        {
+          "id": "v2-test-r32-c04",
+          "text": "Command-line -W overrides a filterwarnings mark."
+        },
+        {
+          "id": "v2-test-r32-c05",
+          "text": "filterwarnings message uses a case-insensitive regex prefix, whereas -W message uses a literal prefix."
+        },
+        {
+          "id": "v2-test-r32-c06",
+          "text": "--disable-warnings disables capture while disabling the warnings plugin only suppresses the summary."
+        },
+        {
+          "id": "v2-test-r32-c07",
+          "text": "pytest.warns fails if the expected warning does not occur."
+        },
+        {
+          "id": "v2-test-r32-c08",
+          "text": "recwarn resets warning filters at test end."
+        }
+      ],
+      "item_id": "item-0020",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "pytest sorts the session warning summary by source filename rather than test execution order."
+        },
+        {
+          "index": 1,
+          "text": "pytest's -W option can ignore warnings."
+        },
+        {
+          "index": 2,
+          "text": "pytest's -W option can display warnings."
+        },
+        {
+          "index": 3,
+          "text": "pytest's -W option can turn warnings into errors."
+        },
+        {
+          "index": 4,
+          "text": "filterwarnings can express an action to ignore warnings in configuration."
+        },
+        {
+          "index": 5,
+          "text": "filterwarnings can express an action to display warnings in configuration."
+        },
+        {
+          "index": 6,
+          "text": "filterwarnings can express an action to turn warnings into errors in configuration."
+        },
+        {
+          "index": 7,
+          "text": "When several configured filters match, the last matching action wins."
+        },
+        {
+          "index": 8,
+          "text": "A filterwarnings mark is overridden by a matching command-line -W filter."
+        },
+        {
+          "index": 9,
+          "text": "The filterwarnings message field uses a case-insensitive regular expression at the start."
+        },
+        {
+          "index": 10,
+          "text": "The -W message field uses a literal prefix."
+        },
+        {
+          "index": 11,
+          "text": "--disable-warnings stops warning capture."
+        },
+        {
+          "index": 12,
+          "text": "Disabling the warnings plugin only hides the summary."
+        },
+        {
+          "index": 13,
+          "text": "pytest.warns fails when its expected warning is absent."
+        },
+        {
+          "index": 14,
+          "text": "recwarn resets warning filters at the end of a test."
+        }
+      ]
+    },
+    {
+      "answer": "Question: Where do implicit Rust coercions happen, and which unsized conversions are available?\n\nAnswer: Coercions are restricted implicit type changes at specified sites, including explicitly typed let bindings, function arguments and function return values. A method receiver follows separate coercion rules. Coercion sites can propagate through array elements, tuples, parentheses and final block expressions when the surrounding type is known.\n\nA mutable reference can coerce to a shared reference; a noncapturing closure can coerce to a function pointer. Unsized conversions include arrays to slices and a sized implementing type to a dyn-compatible trait object. A trait object may coerce to a supertrait object. Although these unsized conversions are stabilized, Unsize and CoerceUnsized themselves are not stable for direct use in stable Rust.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r21-c01",
+          "text": "Coercions are restricted implicit type changes at specified sites such as typed lets, arguments and returns."
+        },
+        {
+          "id": "v2-test-r21-c02",
+          "text": "Method receivers use different coercion rules."
+        },
+        {
+          "id": "v2-test-r21-c03",
+          "text": "Coercion sites propagate through array elements, tuples, parentheses and final block expressions when types are known."
+        },
+        {
+          "id": "v2-test-r21-c04",
+          "text": "&mut T can coerce to &T."
+        },
+        {
+          "id": "v2-test-r21-c05",
+          "text": "A noncapturing closure can coerce to a function pointer."
+        },
+        {
+          "id": "v2-test-r21-c06",
+          "text": "Arrays can unsize to slices, and a Sized implementing type can unsize to a dyn-compatible trait object."
+        },
+        {
+          "id": "v2-test-r21-c07",
+          "text": "A trait object can coerce to an object of a supertrait."
+        },
+        {
+          "id": "v2-test-r21-c08",
+          "text": "Unsized conversions are stable while Unsize and CoerceUnsized are not directly usable as stable traits."
+        }
+      ],
+      "item_id": "item-0021",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Coercions are restricted implicit type changes at specified sites."
+        },
+        {
+          "index": 1,
+          "text": "Explicitly typed let bindings are coercion sites."
+        },
+        {
+          "index": 2,
+          "text": "Function arguments are coercion sites."
+        },
+        {
+          "index": 3,
+          "text": "Function return values are coercion sites."
+        },
+        {
+          "index": 4,
+          "text": "A method receiver follows separate coercion rules."
+        },
+        {
+          "index": 5,
+          "text": "Coercion sites can propagate through array elements, tuples, and parentheses when the surrounding type is known."
+        },
+        {
+          "index": 6,
+          "text": "Coercion sites can propagate through final block expressions when the surrounding type is known."
+        },
+        {
+          "index": 7,
+          "text": "A mutable reference can coerce to a shared reference."
+        },
+        {
+          "index": 8,
+          "text": "A noncapturing closure can coerce to a function pointer."
+        },
+        {
+          "index": 9,
+          "text": "Unsized conversions include arrays to slices."
+        },
+        {
+          "index": 10,
+          "text": "Unsized conversions include a sized implementing type to a dyn-compatible trait object."
+        },
+        {
+          "index": 11,
+          "text": "A trait object may coerce to a supertrait object."
+        },
+        {
+          "index": 12,
+          "text": "Unsized conversions are stabilized."
+        },
+        {
+          "index": 13,
+          "text": "Unsize and CoerceUnsized themselves are not stable for direct use in stable Rust."
+        }
+      ]
+    },
+    {
+      "answer": "Question: Which safety obligations does unsafe create, and which uses assert that an obligation has been satisfied?\n\nAnswer: An unsafe function has extra conditions that callers must uphold and the compiler does not check. Its documentation should explain those conditions. An unsafe block permits unsafe actions and asserts that their safety obligations have been discharged, rather than making the compiler prove them.\n\nAn unsafe trait puts extra obligations on implementations; writing unsafe impl asserts that those obligations are satisfied. In an unsafe extern block, the declaring programmer must ensure the contained signatures are correct, because incorrect signatures can lead to undefined behavior. Unsafe attributes likewise have conditions the compiler cannot check and are wrapped in unsafe(..) to assert compliance. Before edition 2024, extern blocks were permitted without unsafe.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r23-c01",
+          "text": "Unsafe functions have extra caller obligations not checked by the compiler."
+        },
+        {
+          "id": "v2-test-r23-c02",
+          "text": "Unsafe-function documentation should explain the extra safety conditions."
+        },
+        {
+          "id": "v2-test-r23-c03",
+          "text": "An unsafe block permits unsafe actions and asserts that their safety obligations are satisfied, rather than having the compiler prove them."
+        },
+        {
+          "id": "v2-test-r23-c04",
+          "text": "Unsafe traits impose extra conditions on implementations."
+        },
+        {
+          "id": "v2-test-r23-c05",
+          "text": "unsafe impl asserts that an unsafe trait implementation satisfies its extra conditions."
+        },
+        {
+          "id": "v2-test-r23-c06",
+          "text": "The unsafe extern declarer must ensure correct signatures; incorrect ones can cause undefined behavior."
+        },
+        {
+          "id": "v2-test-r23-c07",
+          "text": "Unsafe attributes have compiler-unchecked conditions and use unsafe(..) to assert compliance."
+        },
+        {
+          "id": "v2-test-r23-c08",
+          "text": "Before edition 2024 extern blocks could omit unsafe."
+        }
+      ],
+      "item_id": "item-0022",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: An unsafe function has extra conditions that callers must uphold and the compiler does not check."
+        },
+        {
+          "index": 1,
+          "text": "Its documentation should explain those conditions."
+        },
+        {
+          "index": 2,
+          "text": "An unsafe block permits unsafe actions and asserts that their safety obligations have been discharged, rather than making the compiler prove them."
+        },
+        {
+          "index": 3,
+          "text": "An unsafe trait puts extra obligations on implementations; writing unsafe impl asserts that those obligations are satisfied."
+        },
+        {
+          "index": 4,
+          "text": "In an unsafe extern block, the declaring programmer must ensure the contained signatures are correct, because incorrect signatures can lead to undefined behavior."
+        },
+        {
+          "index": 5,
+          "text": "Unsafe attributes likewise have conditions the compiler cannot check and are wrapped in unsafe(..) to assert compliance."
+        },
+        {
+          "index": 6,
+          "text": "Before edition 2024, extern blocks were permitted without unsafe."
+        }
+      ]
+    },
+    {
+      "answer": "Question: What initialization rules matter when a dataclass uses InitVar, a non-dataclass base and default factories?\n\nAnswer: A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order; a handwritten __init__ still receives that automatic call after it returns. The generated initializer does not call a base-class initializer, so a required non-dataclass base initialization can be done from __post_init__.\n\nClassVar and InitVar pseudo-fields are excluded from fields(). An InitVar is still accepted as an initializer parameter and forwarded to __post_init__. A default_factory receives no arguments when a default is needed. If that field has init=False, the factory is deferred until the first attribute read. frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r04-c01",
+          "text": "A generated dataclass __init__ calls __post_init__."
+        },
+        {
+          "id": "v2-test-r04-c02",
+          "text": "A handwritten dataclass __init__ receives an automatic __post_init__ call after returning."
+        },
+        {
+          "id": "v2-test-r04-c03",
+          "text": "Generated dataclass __init__ does not call base initializers; a needed base initializer can be called in __post_init__."
+        },
+        {
+          "id": "v2-test-r04-c04",
+          "text": "ClassVar pseudo-fields are excluded from fields()."
+        },
+        {
+          "id": "v2-test-r04-c05",
+          "text": "InitVar pseudo-fields are excluded from fields() but accepted as parameters to the generated initializer."
+        },
+        {
+          "id": "v2-test-r04-c06",
+          "text": "A dataclass default_factory is called without arguments when a default value is needed."
+        },
+        {
+          "id": "v2-test-r04-c07",
+          "text": "An init=False dataclass field defers its default_factory until first attribute access."
+        },
+        {
+          "id": "v2-test-r04-c08",
+          "text": "frozen=True emulates immutability using methods that raise FrozenInstanceError."
+        },
+        {
+          "id": "v2-test-r04-c09",
+          "text": "When generated dataclass __init__ passes InitVar arguments to __post_init__, it passes them in declaration order."
+        }
+      ],
+      "item_id": "item-0023",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "A generated dataclass __init__ calls __post_init__ when defined, passing InitVar arguments in declaration order."
+        },
+        {
+          "index": 1,
+          "text": "A handwritten __init__ still receives an automatic __post_init__ call after it returns."
+        },
+        {
+          "index": 2,
+          "text": "The generated dataclass initializer does not call a base-class initializer."
+        },
+        {
+          "index": 3,
+          "text": "Required initialization of a non-dataclass base can be done from __post_init__."
+        },
+        {
+          "index": 4,
+          "text": "ClassVar pseudo-fields are excluded from fields()."
+        },
+        {
+          "index": 5,
+          "text": "InitVar pseudo-fields are excluded from fields()."
+        },
+        {
+          "index": 6,
+          "text": "An InitVar is accepted as a generated initializer parameter and forwarded to the optional __post_init__."
+        },
+        {
+          "index": 7,
+          "text": "A default_factory receives no arguments when a default value is needed."
+        },
+        {
+          "index": 8,
+          "text": "For a field with default_factory and init=False, the factory is deferred until the first attribute read."
+        },
+        {
+          "index": 9,
+          "text": "frozen=True emulates immutability rather than creating a truly immutable Python object."
+        },
+        {
+          "index": 10,
+          "text": "frozen=True adds methods that raise FrozenInstanceError."
+        }
+      ]
+    },
+    {
+      "answer": "Question: Which safety obligations does unsafe create, and which uses assert that an obligation has been satisfied?\n\nAnswer: An unsafe function has extra conditions that callers must uphold and the compiler does not check. Its documentation should explain those conditions. An unsafe block permits unsafe actions and asserts that their safety obligations have been discharged, rather than making the compiler prove them.\n\nAn unsafe trait puts extra obligations on implementations; writing unsafe impl asserts that those obligations are satisfied. In an unsafe extern block, the declaring programmer must ensure the contained signatures are correct, because incorrect signatures can lead to undefined behavior. Unsafe attributes likewise have conditions the compiler cannot check and are wrapped in unsafe(..) to assert compliance. Before edition 2024, extern blocks were permitted without unsafe.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r23-c01",
+          "text": "Unsafe functions have extra caller obligations not checked by the compiler."
+        },
+        {
+          "id": "v2-test-r23-c02",
+          "text": "Unsafe-function documentation should explain the extra safety conditions."
+        },
+        {
+          "id": "v2-test-r23-c03",
+          "text": "An unsafe block permits unsafe actions and asserts that their safety obligations are satisfied, rather than having the compiler prove them."
+        },
+        {
+          "id": "v2-test-r23-c04",
+          "text": "Unsafe traits impose extra conditions on implementations."
+        },
+        {
+          "id": "v2-test-r23-c05",
+          "text": "unsafe impl asserts that an unsafe trait implementation satisfies its extra conditions."
+        },
+        {
+          "id": "v2-test-r23-c06",
+          "text": "The unsafe extern declarer must ensure correct signatures; incorrect ones can cause undefined behavior."
+        },
+        {
+          "id": "v2-test-r23-c07",
+          "text": "Unsafe attributes have compiler-unchecked conditions and use unsafe(..) to assert compliance."
+        },
+        {
+          "id": "v2-test-r23-c08",
+          "text": "Before edition 2024 extern blocks could omit unsafe."
+        }
+      ],
+      "item_id": "item-0024",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "An unsafe function has extra safety conditions that callers must uphold and the compiler does not check."
+        },
+        {
+          "index": 1,
+          "text": "An unsafe function's documentation should explain its extra safety conditions."
+        },
+        {
+          "index": 2,
+          "text": "An unsafe block permits unsafe actions."
+        },
+        {
+          "index": 3,
+          "text": "An unsafe block asserts that its operations' safety obligations have been discharged, rather than making the compiler prove them."
+        },
+        {
+          "index": 4,
+          "text": "An unsafe trait puts extra safety obligations on implementations."
+        },
+        {
+          "index": 5,
+          "text": "Writing unsafe impl asserts that the unsafe trait's safety obligations are satisfied."
+        },
+        {
+          "index": 6,
+          "text": "In an unsafe extern block, the declaring programmer must ensure that the contained signatures are correct."
+        },
+        {
+          "index": 7,
+          "text": "Incorrect signatures in an external block can lead to undefined behavior."
+        },
+        {
+          "index": 8,
+          "text": "Unsafe attributes have safety conditions that the compiler cannot check."
+        },
+        {
+          "index": 9,
+          "text": "Unsafe attributes are wrapped in unsafe(..) to assert compliance with their safety conditions."
+        },
+        {
+          "index": 10,
+          "text": "Before edition 2024, extern blocks were permitted without unsafe."
+        }
+      ]
+    },
+    {
+      "answer": "Question: What do executor map timeouts and shutdown options guarantee for pending and running work?\n\nAnswer: Executor.submit returns a Future for the scheduled call. map collects its input iterables immediately, and its timeout starts again each time the caller asks for the next result. A callable exception is raised when that result is retrieved. chunksize affects ProcessPoolExecutor but has no effect for ThreadPoolExecutor.\n\nshutdown(wait=False) returns immediately, yet Python still waits for pending futures before exiting. cancel_futures also interrupts futures already executing in worker threads. Using an executor as a context manager waits as shutdown(wait=True) would. Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r12-c01",
+          "text": "Executor.submit returns a Future for the scheduled callable."
+        },
+        {
+          "id": "v2-test-r12-c02",
+          "text": "Executor.map collects input iterables immediately."
+        },
+        {
+          "id": "v2-test-r12-c03",
+          "text": "Executor.map timeout restarts for each next-result request."
+        },
+        {
+          "id": "v2-test-r12-c04",
+          "text": "Executor.map raises a callable exception when its result is retrieved."
+        },
+        {
+          "id": "v2-test-r12-c05",
+          "text": "chunksize affects ProcessPoolExecutor but not ThreadPoolExecutor."
+        },
+        {
+          "id": "v2-test-r12-c06",
+          "text": "shutdown(wait=False) returns immediately but does not allow Python to exit before pending futures finish."
+        },
+        {
+          "id": "v2-test-r12-c07",
+          "text": "shutdown(cancel_futures=True) interrupts already running thread work."
+        },
+        {
+          "id": "v2-test-r12-c08",
+          "text": "Executor context-manager exit waits like shutdown(wait=True)."
+        },
+        {
+          "id": "v2-test-r12-c09",
+          "text": "A thread-pool worker waiting for another Future can deadlock if no worker can execute the dependency."
+        }
+      ],
+      "item_id": "item-0025",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Executor.submit returns a Future for the scheduled call."
+        },
+        {
+          "index": 1,
+          "text": "map collects its input iterables immediately."
+        },
+        {
+          "index": 2,
+          "text": "The timeout for map starts again each time the caller asks for the next result."
+        },
+        {
+          "index": 3,
+          "text": "A callable exception is raised when that result is retrieved."
+        },
+        {
+          "index": 4,
+          "text": "chunksize affects ProcessPoolExecutor."
+        },
+        {
+          "index": 5,
+          "text": "chunksize has no effect for ThreadPoolExecutor."
+        },
+        {
+          "index": 6,
+          "text": "shutdown(wait=False) returns immediately."
+        },
+        {
+          "index": 7,
+          "text": "Python still waits for pending futures before exiting when shutdown(wait=False) is used."
+        },
+        {
+          "index": 8,
+          "text": "cancel_futures interrupts futures already executing in worker threads."
+        },
+        {
+          "index": 9,
+          "text": "Using an executor as a context manager waits as shutdown(wait=True) would."
+        },
+        {
+          "index": 10,
+          "text": "Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How do pytest warning filters, marks and warning assertions interact?\n\nAnswer: pytest sorts the session warning summary by source filename rather than test execution order Its -W option can ignore, display or turn warnings into errors, and filterwarnings can express the same actions in configuration. When several configured filters match, the last matching action wins. A filterwarnings mark is overridden by a matching command-line -W filter\n\nThe message field differs between the two forms: filterwarnings uses a case-insensitive regular expression at the start, while -W uses a literal prefix. --disable-warnings stops warning capture, whereas disabling the warnings plugin only hides the summary pytest.warns fails when its expected warning is absent, and recwarn resets warning filters at the end of a test.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r32-c01",
+          "text": "pytest sorts warning summaries by source filename instead of test execution order."
+        },
+        {
+          "id": "v2-test-r32-c02",
+          "text": "-W and filterwarnings configuration can control whether warnings are ignored, displayed or errors."
+        },
+        {
+          "id": "v2-test-r32-c03",
+          "text": "The last matching configured warning filter wins."
+        },
+        {
+          "id": "v2-test-r32-c04",
+          "text": "Command-line -W overrides a filterwarnings mark."
+        },
+        {
+          "id": "v2-test-r32-c05",
+          "text": "filterwarnings message uses a case-insensitive regex prefix, whereas -W message uses a literal prefix."
+        },
+        {
+          "id": "v2-test-r32-c06",
+          "text": "--disable-warnings disables capture while disabling the warnings plugin only suppresses the summary."
+        },
+        {
+          "id": "v2-test-r32-c07",
+          "text": "pytest.warns fails if the expected warning does not occur."
+        },
+        {
+          "id": "v2-test-r32-c08",
+          "text": "recwarn resets warning filters at test end."
+        }
+      ],
+      "item_id": "item-0026",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: pytest sorts the session warning summary by source filename rather than test execution order Its -W option can ignore, display or turn warnings into errors, and filterwarnings can express the same actions in configuration."
+        },
+        {
+          "index": 1,
+          "text": "When several configured filters match, the last matching action wins."
+        },
+        {
+          "index": 2,
+          "text": "A filterwarnings mark is overridden by a matching command-line -W filter"
+        },
+        {
+          "index": 3,
+          "text": "The message field differs between the two forms: filterwarnings uses a case-insensitive regular expression at the start, while -W uses a literal prefix."
+        },
+        {
+          "index": 4,
+          "text": "--disable-warnings stops warning capture, whereas disabling the warnings plugin only hides the summary pytest.warns fails when its expected warning is absent, and recwarn resets warning filters at the end of a test."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How should cancellation and failures be handled inside an asyncio TaskGroup?\n\nAnswer: Cancellation raises CancelledError in a task at its next opportunity. That exception directly subclasses BaseException; coroutine cleanup should generally propagate it after cleanup, because TaskGroup and timeout use cancellation internally. A TaskGroup waits for all its tasks on exit, and in Python 3.13 an inactive group closes a coroutine passed to create_task.\n\nThe first child failure other than CancelledError cancels the remaining children and prevents new additions. Once all children finish, non-cancellation failures are grouped and raised. KeyboardInterrupt and SystemExit are special: the group still cancels and waits for the other tasks but re-raises the original base exception. A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r09-c01",
+          "text": "Task cancellation raises CancelledError at the next opportunity."
+        },
+        {
+          "id": "v2-test-r09-c02",
+          "text": "CancelledError directly subclasses BaseException."
+        },
+        {
+          "id": "v2-test-r09-c03",
+          "text": "If CancelledError is explicitly caught, it should generally be propagated after cleanup because asyncio.TaskGroup and asyncio.timeout use cancellation internally."
+        },
+        {
+          "id": "v2-test-r09-c04",
+          "text": "TaskGroup awaits all its tasks on exit."
+        },
+        {
+          "id": "v2-test-r09-c05",
+          "text": "In Python 3.13 an inactive TaskGroup closes a coroutine supplied to create_task."
+        },
+        {
+          "id": "v2-test-r09-c06",
+          "text": "A child failure other than CancelledError cancels siblings and prevents additions."
+        },
+        {
+          "id": "v2-test-r09-c07",
+          "text": "After all children finish, TaskGroup groups and raises non-cancellation failures."
+        },
+        {
+          "id": "v2-test-r09-c08",
+          "text": "KeyboardInterrupt or SystemExit causes sibling cancellation and waiting, then the original exception is re-raised."
+        },
+        {
+          "id": "v2-test-r09-c09",
+          "text": "When external cancellation accompanies a required ExceptionGroup, TaskGroup cancels the parent to preserve cancellation."
+        }
+      ],
+      "item_id": "item-0027",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Cancellation raises CancelledError in a task at its next opportunity."
+        },
+        {
+          "index": 1,
+          "text": "CancelledError directly subclasses BaseException."
+        },
+        {
+          "index": 2,
+          "text": "Coroutine cleanup should generally propagate CancelledError after cleanup because TaskGroup and timeout use cancellation internally."
+        },
+        {
+          "index": 3,
+          "text": "TaskGroup uses cancellation internally."
+        },
+        {
+          "index": 4,
+          "text": "timeout uses cancellation internally."
+        },
+        {
+          "index": 5,
+          "text": "A TaskGroup waits for all its tasks on exit."
+        },
+        {
+          "index": 6,
+          "text": "In Python 3.13, an inactive TaskGroup closes a coroutine passed to create_task."
+        },
+        {
+          "index": 7,
+          "text": "The first child failure other than CancelledError cancels the remaining children."
+        },
+        {
+          "index": 8,
+          "text": "The first child failure other than CancelledError prevents new additions."
+        },
+        {
+          "index": 9,
+          "text": "Once all children finish, non-cancellation failures are grouped."
+        },
+        {
+          "index": 10,
+          "text": "Once all children finish, non-cancellation failures are raised."
+        },
+        {
+          "index": 11,
+          "text": "For KeyboardInterrupt, the TaskGroup cancels the other tasks."
+        },
+        {
+          "index": 12,
+          "text": "For KeyboardInterrupt, the TaskGroup waits for the other tasks."
+        },
+        {
+          "index": 13,
+          "text": "For KeyboardInterrupt, the TaskGroup re-raises the original base exception."
+        },
+        {
+          "index": 14,
+          "text": "For SystemExit, the TaskGroup cancels the other tasks."
+        },
+        {
+          "index": 15,
+          "text": "For SystemExit, the TaskGroup waits for the other tasks."
+        },
+        {
+          "index": 16,
+          "text": "For SystemExit, the TaskGroup re-raises the original base exception."
+        },
+        {
+          "index": 17,
+          "text": "A simultaneous external cancellation is preserved by cancelling the parent task when the TaskGroup must also raise an ExceptionGroup."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How should cancellation and failures be handled inside an asyncio TaskGroup?\n\nAnswer: Cancellation raises CancelledError in a task at its next opportunity. That exception directly subclasses BaseException; coroutine cleanup should generally propagate it after cleanup, because TaskGroup and timeout use cancellation internally. A TaskGroup waits for all its tasks on exit, and in Python 3.13 an inactive group closes a coroutine passed to create_task.\n\nThe first child failure other than CancelledError cancels the remaining children and prevents new additions. Once all children finish, non-cancellation failures are grouped and raised. KeyboardInterrupt and SystemExit are special: the group still cancels and waits for the other tasks but re-raises the original base exception. A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r09-c01",
+          "text": "Task cancellation raises CancelledError at the next opportunity."
+        },
+        {
+          "id": "v2-test-r09-c02",
+          "text": "CancelledError directly subclasses BaseException."
+        },
+        {
+          "id": "v2-test-r09-c03",
+          "text": "If CancelledError is explicitly caught, it should generally be propagated after cleanup because asyncio.TaskGroup and asyncio.timeout use cancellation internally."
+        },
+        {
+          "id": "v2-test-r09-c04",
+          "text": "TaskGroup awaits all its tasks on exit."
+        },
+        {
+          "id": "v2-test-r09-c05",
+          "text": "In Python 3.13 an inactive TaskGroup closes a coroutine supplied to create_task."
+        },
+        {
+          "id": "v2-test-r09-c06",
+          "text": "A child failure other than CancelledError cancels siblings and prevents additions."
+        },
+        {
+          "id": "v2-test-r09-c07",
+          "text": "After all children finish, TaskGroup groups and raises non-cancellation failures."
+        },
+        {
+          "id": "v2-test-r09-c08",
+          "text": "KeyboardInterrupt or SystemExit causes sibling cancellation and waiting, then the original exception is re-raised."
+        },
+        {
+          "id": "v2-test-r09-c09",
+          "text": "When external cancellation accompanies a required ExceptionGroup, TaskGroup cancels the parent to preserve cancellation."
+        }
+      ],
+      "item_id": "item-0028",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: Cancellation raises CancelledError in a task at its next opportunity."
+        },
+        {
+          "index": 1,
+          "text": "That exception directly subclasses BaseException; coroutine cleanup should generally propagate it after cleanup, because TaskGroup and timeout use cancellation internally."
+        },
+        {
+          "index": 2,
+          "text": "A TaskGroup waits for all its tasks on exit, and in Python 3.13 an inactive group closes a coroutine passed to create_task."
+        },
+        {
+          "index": 3,
+          "text": "The first child failure other than CancelledError cancels the remaining children and prevents new additions."
+        },
+        {
+          "index": 4,
+          "text": "Once all children finish, non-cancellation failures are grouped and raised."
+        },
+        {
+          "index": 5,
+          "text": "KeyboardInterrupt and SystemExit are special: the group still cancels and waits for the other tasks but re-raises the original base exception."
+        },
+        {
+          "index": 6,
+          "text": "A simultaneous external cancellation is preserved by cancelling the parent task when the group must also raise an ExceptionGroup."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How should curl peer verification options be chosen across CA files, native stores and OCSP stapling?\n\nAnswer: --cacert selects a PEM file that may contain multiple CA certificates. With a non-Schannel backend it overrides CURL_CA_BUNDLE. --capath selects PEM certificate directories; OpenSSL builds require c_rehash processing for those directories.\n\n--ca-native uses the operating system store, which Schannel already uses by default. --cert-status verifies OCSP stapling and fails if the response is absent, invalid or says the certificate is revoked; the documented support is OpenSSL and GnuTLS. --insecure skips verification, including known_hosts verification for SFTP and SCP. It can also allow malicious-server HSTS or Alt-Svc information to be trusted and reused.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r39-c01",
+          "text": "--cacert takes a PEM file that may contain multiple CAs."
+        },
+        {
+          "id": "v2-test-r39-c02",
+          "text": "--cacert overrides CURL_CA_BUNDLE for non-Schannel backends."
+        },
+        {
+          "id": "v2-test-r39-c03",
+          "text": "OpenSSL capath directories contain PEM certificates and require c_rehash."
+        },
+        {
+          "id": "v2-test-r39-c04",
+          "text": "--ca-native uses the OS CA store, which Schannel uses by default."
+        },
+        {
+          "id": "v2-test-r39-c05",
+          "text": "--cert-status checks OCSP stapling and fails for missing, invalid or revoked responses."
+        },
+        {
+          "id": "v2-test-r39-c06",
+          "text": "cert-status support in the snapshot is limited to OpenSSL and GnuTLS."
+        },
+        {
+          "id": "v2-test-r39-c07",
+          "text": "--insecure skips TLS verification and SFTP/SCP known_hosts verification."
+        },
+        {
+          "id": "v2-test-r39-c08",
+          "text": "--insecure can cause malicious HSTS or Alt-Svc information to be trusted and reused."
+        }
+      ],
+      "item_id": "item-0029",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "--cacert selects a PEM file."
+        },
+        {
+          "index": 1,
+          "text": "The PEM file selected by --cacert may contain multiple CA certificates."
+        },
+        {
+          "index": 2,
+          "text": "With a non-Schannel backend, --cacert overrides CURL_CA_BUNDLE."
+        },
+        {
+          "index": 3,
+          "text": "--capath selects PEM certificate directories."
+        },
+        {
+          "index": 4,
+          "text": "OpenSSL builds require c_rehash processing for the PEM certificate directories selected by --capath."
+        },
+        {
+          "index": 5,
+          "text": "--ca-native uses the operating system store."
+        },
+        {
+          "index": 6,
+          "text": "Schannel uses the operating system store by default."
+        },
+        {
+          "index": 7,
+          "text": "--cert-status verifies OCSP stapling."
+        },
+        {
+          "index": 8,
+          "text": "--cert-status fails if the OCSP stapling response is absent."
+        },
+        {
+          "index": 9,
+          "text": "--cert-status fails if the OCSP stapling response is invalid."
+        },
+        {
+          "index": 10,
+          "text": "--cert-status fails if the OCSP stapling response says the certificate is revoked."
+        },
+        {
+          "index": 11,
+          "text": "OpenSSL is documented as supporting --cert-status."
+        },
+        {
+          "index": 12,
+          "text": "GnuTLS is documented as supporting --cert-status."
+        },
+        {
+          "index": 13,
+          "text": "--insecure skips verification."
+        },
+        {
+          "index": 14,
+          "text": "--insecure skips known_hosts verification for SFTP."
+        },
+        {
+          "index": 15,
+          "text": "--insecure skips known_hosts verification for SCP."
+        },
+        {
+          "index": 16,
+          "text": "--insecure can allow malicious-server HSTS information to be trusted."
+        },
+        {
+          "index": 17,
+          "text": "--insecure can allow malicious-server HSTS information to be reused."
+        },
+        {
+          "index": 18,
+          "text": "--insecure can allow malicious-server Alt-Svc information to be trusted."
+        },
+        {
+          "index": 19,
+          "text": "--insecure can allow malicious-server Alt-Svc information to be reused."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How can I combine grouping, slicing and combinatorial iterators without losing groups or accidentally exhausting an infinite input?\n\nAnswer: groupby groups consecutive equal keys rather than gathering matching values from every position, so input generally needs sorting with the same key. Its group iterators own independent snapshots, so a previous group remains available after the outer iterator advances. islice accepts selected positions but does not support negative start, stop or step values.\n\nWith fewer than two inputs, pairwise is empty. permutations treats elements as distinct by position and emits tuples in input-defined lexicographic order. product only pulls each new input value as needed for the next tuple, so it can stream an infinite input without building a pool; its rightmost position advances on every iteration.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r06-c01",
+          "text": "groupby groups consecutive equal keys and generally requires input sorted by the same key."
+        },
+        {
+          "id": "v2-test-r06-c02",
+          "text": "groupby groups are independent snapshots that remain available after the outer iterator advances."
+        },
+        {
+          "id": "v2-test-r06-c03",
+          "text": "islice does not support negative start, stop or step values."
+        },
+        {
+          "id": "v2-test-r06-c04",
+          "text": "pairwise is empty for fewer than two input values."
+        },
+        {
+          "id": "v2-test-r06-c05",
+          "text": "permutations distinguishes elements by position rather than value."
+        },
+        {
+          "id": "v2-test-r06-c06",
+          "text": "permutations emits lexicographic tuples according to input order."
+        },
+        {
+          "id": "v2-test-r06-c07",
+          "text": "product streams infinite inputs without storing their pools."
+        },
+        {
+          "id": "v2-test-r06-c08",
+          "text": "product advances its rightmost position on every iteration."
+        },
+        {
+          "id": "v2-test-r06-c09",
+          "text": "islice returns selected positions from an iterable."
+        }
+      ],
+      "item_id": "item-0030",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: groupby groups consecutive equal keys rather than gathering matching values from every position, so input generally needs sorting with the same key."
+        },
+        {
+          "index": 1,
+          "text": "Its group iterators own independent snapshots, so a previous group remains available after the outer iterator advances."
+        },
+        {
+          "index": 2,
+          "text": "islice accepts selected positions but does not support negative start, stop or step values."
+        },
+        {
+          "index": 3,
+          "text": "With fewer than two inputs, pairwise is empty."
+        },
+        {
+          "index": 4,
+          "text": "permutations treats elements as distinct by position and emits tuples in input-defined lexicographic order."
+        },
+        {
+          "index": 5,
+          "text": "product only pulls each new input value as needed for the next tuple, so it can stream an infinite input without building a pool; its rightmost position advances on every iteration."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How can I combine grouping, slicing and combinatorial iterators without losing groups or accidentally exhausting an infinite input?\n\nAnswer: groupby groups consecutive equal keys rather than gathering matching values from every position, so input generally needs sorting with the same key. Its group iterators own independent snapshots, so a previous group remains available after the outer iterator advances. islice accepts selected positions but does not support negative start, stop or step values.\n\nWith fewer than two inputs, pairwise is empty. permutations treats elements as distinct by position and emits tuples in input-defined lexicographic order. product only pulls each new input value as needed for the next tuple, so it can stream an infinite input without building a pool; its rightmost position advances on every iteration.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r06-c01",
+          "text": "groupby groups consecutive equal keys and generally requires input sorted by the same key."
+        },
+        {
+          "id": "v2-test-r06-c02",
+          "text": "groupby groups are independent snapshots that remain available after the outer iterator advances."
+        },
+        {
+          "id": "v2-test-r06-c03",
+          "text": "islice does not support negative start, stop or step values."
+        },
+        {
+          "id": "v2-test-r06-c04",
+          "text": "pairwise is empty for fewer than two input values."
+        },
+        {
+          "id": "v2-test-r06-c05",
+          "text": "permutations distinguishes elements by position rather than value."
+        },
+        {
+          "id": "v2-test-r06-c06",
+          "text": "permutations emits lexicographic tuples according to input order."
+        },
+        {
+          "id": "v2-test-r06-c07",
+          "text": "product streams infinite inputs without storing their pools."
+        },
+        {
+          "id": "v2-test-r06-c08",
+          "text": "product advances its rightmost position on every iteration."
+        },
+        {
+          "id": "v2-test-r06-c09",
+          "text": "islice returns selected positions from an iterable."
+        }
+      ],
+      "item_id": "item-0031",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "groupby groups consecutive equal keys rather than gathering matching values from every position."
+        },
+        {
+          "index": 1,
+          "text": "Input to groupby generally needs sorting with the same key because groupby groups consecutive equal keys."
+        },
+        {
+          "index": 2,
+          "text": "The group iterators produced by groupby own independent snapshots."
+        },
+        {
+          "index": 3,
+          "text": "A previous group from groupby remains available after the outer iterator advances."
+        },
+        {
+          "index": 4,
+          "text": "islice accepts selected positions."
+        },
+        {
+          "index": 5,
+          "text": "islice does not support negative start values."
+        },
+        {
+          "index": 6,
+          "text": "islice does not support negative stop values."
+        },
+        {
+          "index": 7,
+          "text": "islice does not support negative step values."
+        },
+        {
+          "index": 8,
+          "text": "With fewer than two inputs, pairwise is empty."
+        },
+        {
+          "index": 9,
+          "text": "permutations treats elements as distinct by position."
+        },
+        {
+          "index": 10,
+          "text": "permutations emits tuples in input-defined lexicographic order."
+        },
+        {
+          "index": 11,
+          "text": "product only pulls each new input value as needed for the next tuple."
+        },
+        {
+          "index": 12,
+          "text": "product can stream an infinite input without building a pool because it only pulls each new input value as needed for the next tuple."
+        },
+        {
+          "index": 13,
+          "text": "The rightmost position of product advances on every iteration."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How do I load and save curl cookies without mistaking the jar for input or missing a write failure?\n\nAnswer: --cookie treats an argument without = as a filename to read and activates the cookie engine. It is input-only, whereas --cookie-jar writes in-memory cookies after the operation and reads none itself; both options may name the same file. The jar uses Netscape format and is created even when the cookie store is empty.\n\nAn empty cookie input activates the engine without loading cookies. --junk-session-cookies discards session cookies when loading a cookie file. A jar write failure does not fail the whole curl operation, with --verbose providing a warning. A Set-Cookie-format input without a domain is not sent because it never matches a domain, and public-suffix protection depends on a curl build with PSL support.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r37-c01",
+          "text": "--cookie arguments without = are filenames and enable the cookie engine."
+        },
+        {
+          "id": "v2-test-r37-c02",
+          "text": "--cookie is input-only, while --cookie-jar only writes after operations; they may share a filename."
+        },
+        {
+          "id": "v2-test-r37-c03",
+          "text": "The cookie jar uses Netscape format and is created even with no cookies."
+        },
+        {
+          "id": "v2-test-r37-c04",
+          "text": "An empty cookie input activates the cookie engine without loading cookies."
+        },
+        {
+          "id": "v2-test-r37-c05",
+          "text": "--junk-session-cookies discards session cookies while loading a cookie file."
+        },
+        {
+          "id": "v2-test-r37-c06",
+          "text": "A cookie-jar write failure does not fail the transfer; --verbose shows a warning."
+        },
+        {
+          "id": "v2-test-r37-c07",
+          "text": "A Set-Cookie-format input without a domain is not sent because its domain never matches."
+        },
+        {
+          "id": "v2-test-r37-c08",
+          "text": "Cookie public-suffix protection requires PSL build support."
+        }
+      ],
+      "item_id": "item-0032",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "--cookie treats an argument without = as a filename to read and activates the cookie engine."
+        },
+        {
+          "index": 1,
+          "text": "--cookie is input-only."
+        },
+        {
+          "index": 2,
+          "text": "--cookie-jar writes in-memory cookies after the operation."
+        },
+        {
+          "index": 3,
+          "text": "--cookie-jar reads no cookies itself."
+        },
+        {
+          "index": 4,
+          "text": "--cookie and --cookie-jar may name the same file."
+        },
+        {
+          "index": 5,
+          "text": "The cookie jar uses Netscape format."
+        },
+        {
+          "index": 6,
+          "text": "The cookie jar is created even when the cookie store is empty."
+        },
+        {
+          "index": 7,
+          "text": "An empty cookie input activates the engine without loading cookies."
+        },
+        {
+          "index": 8,
+          "text": "--junk-session-cookies discards session cookies when loading a cookie file."
+        },
+        {
+          "index": 9,
+          "text": "A jar write failure does not fail the whole curl operation."
+        },
+        {
+          "index": 10,
+          "text": "--verbose provides a warning for a jar write failure."
+        },
+        {
+          "index": 11,
+          "text": "A Set-Cookie-format input without a domain is not sent because it never matches a domain."
+        },
+        {
+          "index": 12,
+          "text": "Public-suffix protection depends on a curl build with PSL support."
+        }
+      ]
+    },
+    {
+      "answer": "Question: What do executor map timeouts and shutdown options guarantee for pending and running work?\n\nAnswer: Executor.submit returns a Future for the scheduled call. map collects its input iterables immediately, and its timeout starts again each time the caller asks for the next result. A callable exception is raised when that result is retrieved. chunksize affects ProcessPoolExecutor but has no effect for ThreadPoolExecutor.\n\nshutdown(wait=False) returns immediately, yet Python still waits for pending futures before exiting. cancel_futures also interrupts futures already executing in worker threads. Using an executor as a context manager waits as shutdown(wait=True) would. Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r12-c01",
+          "text": "Executor.submit returns a Future for the scheduled callable."
+        },
+        {
+          "id": "v2-test-r12-c02",
+          "text": "Executor.map collects input iterables immediately."
+        },
+        {
+          "id": "v2-test-r12-c03",
+          "text": "Executor.map timeout restarts for each next-result request."
+        },
+        {
+          "id": "v2-test-r12-c04",
+          "text": "Executor.map raises a callable exception when its result is retrieved."
+        },
+        {
+          "id": "v2-test-r12-c05",
+          "text": "chunksize affects ProcessPoolExecutor but not ThreadPoolExecutor."
+        },
+        {
+          "id": "v2-test-r12-c06",
+          "text": "shutdown(wait=False) returns immediately but does not allow Python to exit before pending futures finish."
+        },
+        {
+          "id": "v2-test-r12-c07",
+          "text": "shutdown(cancel_futures=True) interrupts already running thread work."
+        },
+        {
+          "id": "v2-test-r12-c08",
+          "text": "Executor context-manager exit waits like shutdown(wait=True)."
+        },
+        {
+          "id": "v2-test-r12-c09",
+          "text": "A thread-pool worker waiting for another Future can deadlock if no worker can execute the dependency."
+        }
+      ],
+      "item_id": "item-0033",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: Executor.submit returns a Future for the scheduled call."
+        },
+        {
+          "index": 1,
+          "text": "map collects its input iterables immediately, and its timeout starts again each time the caller asks for the next result."
+        },
+        {
+          "index": 2,
+          "text": "A callable exception is raised when that result is retrieved."
+        },
+        {
+          "index": 3,
+          "text": "chunksize affects ProcessPoolExecutor but has no effect for ThreadPoolExecutor."
+        },
+        {
+          "index": 4,
+          "text": "shutdown(wait=False) returns immediately, yet Python still waits for pending futures before exiting."
+        },
+        {
+          "index": 5,
+          "text": "cancel_futures also interrupts futures already executing in worker threads."
+        },
+        {
+          "index": 6,
+          "text": "Using an executor as a context manager waits as shutdown(wait=True) would."
+        },
+        {
+          "index": 7,
+          "text": "Thread pools can deadlock when a worker waits for another Future that cannot obtain a worker."
+        }
+      ]
+    },
+    {
+      "answer": "Question: What initialization rules matter when a dataclass uses InitVar, a non-dataclass base and default factories?\n\nAnswer: A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order; a handwritten __init__ still receives that automatic call after it returns. The generated initializer does not call a base-class initializer, so a required non-dataclass base initialization can be done from __post_init__.\n\nClassVar and InitVar pseudo-fields are excluded from fields(). An InitVar is still accepted as an initializer parameter and forwarded to __post_init__. A default_factory receives no arguments when a default is needed. If that field has init=False, the factory is deferred until the first attribute read. frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r04-c01",
+          "text": "A generated dataclass __init__ calls __post_init__."
+        },
+        {
+          "id": "v2-test-r04-c02",
+          "text": "A handwritten dataclass __init__ receives an automatic __post_init__ call after returning."
+        },
+        {
+          "id": "v2-test-r04-c03",
+          "text": "Generated dataclass __init__ does not call base initializers; a needed base initializer can be called in __post_init__."
+        },
+        {
+          "id": "v2-test-r04-c04",
+          "text": "ClassVar pseudo-fields are excluded from fields()."
+        },
+        {
+          "id": "v2-test-r04-c05",
+          "text": "InitVar pseudo-fields are excluded from fields() but accepted as parameters to the generated initializer."
+        },
+        {
+          "id": "v2-test-r04-c06",
+          "text": "A dataclass default_factory is called without arguments when a default value is needed."
+        },
+        {
+          "id": "v2-test-r04-c07",
+          "text": "An init=False dataclass field defers its default_factory until first attribute access."
+        },
+        {
+          "id": "v2-test-r04-c08",
+          "text": "frozen=True emulates immutability using methods that raise FrozenInstanceError."
+        },
+        {
+          "id": "v2-test-r04-c09",
+          "text": "When generated dataclass __init__ passes InitVar arguments to __post_init__, it passes them in declaration order."
+        }
+      ],
+      "item_id": "item-0034",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "Answer: A generated dataclass __init__ calls __post_init__, passing InitVar arguments in declaration order; a handwritten __init__ still receives that automatic call after it returns."
+        },
+        {
+          "index": 1,
+          "text": "The generated initializer does not call a base-class initializer, so a required non-dataclass base initialization can be done from __post_init__."
+        },
+        {
+          "index": 2,
+          "text": "ClassVar and InitVar pseudo-fields are excluded from fields()."
+        },
+        {
+          "index": 3,
+          "text": "An InitVar is still accepted as an initializer parameter and forwarded to __post_init__."
+        },
+        {
+          "index": 4,
+          "text": "A default_factory receives no arguments when a default is needed."
+        },
+        {
+          "index": 5,
+          "text": "If that field has init=False, the factory is deferred until the first attribute read."
+        },
+        {
+          "index": 6,
+          "text": "frozen=True emulates immutability with methods that raise FrozenInstanceError rather than creating a truly immutable Python object."
+        }
+      ]
+    },
+    {
+      "answer": "Question: How do automatically assigned integer enum values and flag operations differ?\n\nAnswer: For IntEnum, auto assigns increasing integers beginning at one. Flag and IntFlag instead receive powers of two beginning at one. A Flag value is truthy when it contains any member, and its length reports the number of contained members.\n\nFlag inversion returns the flags missing from the value. For IntFlag, a valid bitwise result remains an IntFlag, whereas an invalid result depends on FlagBoundary. Arithmetic such as adding an integer loses IntFlag status. Since Python 3.11, IntFlag string conversion uses int.__str__ to support replacing existing constants.",
+      "gold_claims": [
+        {
+          "id": "v2-test-r08-c01",
+          "text": "IntEnum auto assigns increasing integers from one."
+        },
+        {
+          "id": "v2-test-r08-c02",
+          "text": "Flag and IntFlag auto assigns powers of two from one."
+        },
+        {
+          "id": "v2-test-r08-c03",
+          "text": "A Flag is true if it contains any members."
+        },
+        {
+          "id": "v2-test-r08-c04",
+          "text": "len on a Flag reports its number of members."
+        },
+        {
+          "id": "v2-test-r08-c05",
+          "text": "Flag inversion returns absent flags."
+        },
+        {
+          "id": "v2-test-r08-c06",
+          "text": "A valid IntFlag bitwise result is IntFlag; invalid results depend on FlagBoundary."
+        },
+        {
+          "id": "v2-test-r08-c07",
+          "text": "IntFlag arithmetic results lose IntFlag status."
+        },
+        {
+          "id": "v2-test-r08-c08",
+          "text": "Since Python 3.11, IntFlag.__str__ uses int.__str__ to support replacing existing constants."
+        }
+      ],
+      "item_id": "item-0035",
+      "predictions": [
+        {
+          "index": 0,
+          "text": "For IntEnum, auto assigns increasing integers beginning at one."
+        },
+        {
+          "index": 1,
+          "text": "Flag receives powers of two beginning at one for automatically assigned values."
+        },
+        {
+          "index": 2,
+          "text": "IntFlag receives powers of two beginning at one for automatically assigned values."
+        },
+        {
+          "index": 3,
+          "text": "A Flag value is truthy when it contains any member."
+        },
+        {
+          "index": 4,
+          "text": "A Flag value's length reports the number of contained members."
+        },
+        {
+          "index": 5,
+          "text": "Flag inversion returns the flags missing from the value."
+        },
+        {
+          "index": 6,
+          "text": "For IntFlag, a valid bitwise result remains an IntFlag."
+        },
+        {
+          "index": 7,
+          "text": "For IntFlag, an invalid bitwise result depends on FlagBoundary."
+        },
+        {
+          "index": 8,
+          "text": "Arithmetic such as adding an integer loses IntFlag status."
+        },
+        {
+          "index": 9,
+          "text": "Since Python 3.11, IntFlag string conversion uses int.__str__."
+        },
+        {
+          "index": 10,
+          "text": "IntFlag string conversion uses int.__str__ to support replacing existing constants."
+        }
+      ]
+    }
+  ],
+  "policy_sha256": "5975b67a16e75f6c71f0f7d2b4d328db01a5bbc622e9cec70764b78f6e2cce82",
+  "selection_sha256": "478ab8929ac6d0ad367790cd2bee0ec34fc537a8c654c7ee6365f55d78a69f3c"
+}

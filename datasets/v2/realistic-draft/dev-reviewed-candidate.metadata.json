@@ -1,0 +1,484 @@
+{
+  "format_version": 1,
+  "dataset_file": "dev-reviewed-candidate.jsonl",
+  "dataset_sha256": "5fd2c82df36c824da15c7c3dc0065525ccc447e81a0825fbf58f81afab0b668b",
+  "annotation_version": "v2-realistic-candidate-1",
+  "status": "annotation_accepted_candidate_ready_for_parent_freeze",
+  "components": [
+    {
+      "name": "legacy_pilot",
+      "dataset_path": "datasets/v2/pilot.jsonl",
+      "dataset_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "manifest_path": "datasets/v2/pilot.manifest.json",
+      "manifest_sha256": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+      "original_annotation_version": "v2-pilot-reviewed-1",
+      "cases": 12
+    },
+    {
+      "name": "new_dev",
+      "dataset_path": "datasets/v2/realistic-draft/dev-revised-2.jsonl",
+      "dataset_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "manifest_path": "datasets/v2/realistic-draft/dev-revised-2.manifest.json",
+      "manifest_sha256": "b560cc522d3b0ec65d71f67034e4762d392f580d0a820d5e5e34cffe30cef701",
+      "original_annotation_version": "v2-realistic-author-draft-1",
+      "cases": 12
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "v2-dev-p01",
+      "family_id": "v2-cpython-tarfile",
+      "split": "dev",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "cpython-tarfile"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "5aed44bbc21785b6efd98c301d578b2e38614ddcdfd6b9a84e96c49d27c1abd5"
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "family_id": "v2-cpython-sqlite3",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "cpython-sqlite3"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "20fb6cf4155598bf06f4aa836ae9a66a193f636b01ec009b84982c2e6f86459b"
+    },
+    {
+      "case_id": "v2-dev-p03",
+      "family_id": "v2-cpython-pathlib",
+      "split": "dev",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "cpython-pathlib"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "f9524ba5f37d431b6f4bb229aa2718a3a3b7c846a8bbfda049869ea6d7df793d"
+    },
+    {
+      "case_id": "v2-dev-p04",
+      "family_id": "v2-cpython-decimal",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "cpython-decimal"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "93d8265e6c19e55594c0b4bff2e79346583699eaa8d964c65eef977a4fac2ded"
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "family_id": "v2-cpython-queue",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "cpython-queue"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "bae2683459210125b472215fbdfbc51ae2374f1b8bbf668c8c601e3031c3af32"
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "family_id": "v2-cpython-metadata",
+      "split": "dev",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "cpython-metadata"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "eac8626fa03146ee61cfd225433876548054e4ec4c02461f1365c056ee49ab24"
+    },
+    {
+      "case_id": "v2-dev-p07",
+      "family_id": "v2-rust-visibility",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "rust-visibility"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "254b2850be38d0ed3afc704a282e730d0db4b6822aa06a1aca0fa4a34e853c65"
+    },
+    {
+      "case_id": "v2-dev-p08",
+      "family_id": "v2-rust-destructors",
+      "split": "dev",
+      "category": "subtle_distortion",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "rust-destructors"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "012713beeeab2be70122bb4033105bdc13ca4340d8467e41f82bca7980147e28"
+    },
+    {
+      "case_id": "v2-dev-p09",
+      "family_id": "v2-rust-testing",
+      "split": "dev",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "rust-testing"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "566ca99de111fc150e27f42203a67c6353c3778c74f9c99b42f39d3ba9c4ff62"
+    },
+    {
+      "case_id": "v2-dev-p10",
+      "family_id": "v2-postgres-isolation",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "postgres-isolation"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "be3631357b3eb0c6d177a393009f1d006dfd736e134b379f36ff084aac548c31"
+    },
+    {
+      "case_id": "v2-dev-p11",
+      "family_id": "v2-postgres-backup",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "postgres-backup"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "8f02dc5d6a8bc1171264e0b08a4e2f5607b28d5e6b259da8512864fe4fd98e9c"
+    },
+    {
+      "case_id": "v2-dev-p12",
+      "family_id": "v2-postgres-privileges",
+      "split": "dev",
+      "category": "extrinsic",
+      "origin": "controlled_mutation",
+      "source_ids": [
+        "postgres-privileges"
+      ],
+      "component": "legacy_pilot",
+      "source_component_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "source_annotation_version": "v2-pilot-reviewed-1",
+      "gold_payload_sha256": "e7dbcf9738b4e9319b3c8f5b26768a49faa8eab12520ff202c59d940d8d1aab0"
+    },
+    {
+      "case_id": "v2-dev-r01",
+      "family_id": "v2-real-python-bisect",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-bisect-bisect"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "27d390d025b79558d6470aa6b153503d0c8034660cb2a4637228699e82fb2b42"
+    },
+    {
+      "case_id": "v2-dev-r02",
+      "family_id": "v2-real-python-copy",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-copy-copy"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "ecc018789e0848bda910a8db331b6655a15e9f58a65ab0bb8732fb5fbb89c6cb"
+    },
+    {
+      "case_id": "v2-dev-r03",
+      "family_id": "v2-real-python-graphlib",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-graphlib-graphlib"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "dd6676e77af8a199a81f0ff22b998b01fb8eae718fc7733541341494e84d9431"
+    },
+    {
+      "case_id": "v2-dev-r04",
+      "family_id": "v2-real-python-functools",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-functools-functools"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "cbd21fc47f2cb839cb4ffe32c17233e2b362271335e5d1904bd6eb7592bed4c1"
+    },
+    {
+      "case_id": "v2-dev-r05",
+      "family_id": "v2-real-python-weakref",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-weakref-weakref"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "ebd46294d24a5fc3dbd51ea394943fdc807c9adaf5b000f0683babfc9f587297"
+    },
+    {
+      "case_id": "v2-dev-r06",
+      "family_id": "v2-real-python-heapq",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "python-heapq-heapq"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "a08aee99bd9fd51232174680eefd52ac3d661cdab7dc1018e2ecbee849183e19"
+    },
+    {
+      "case_id": "v2-dev-r07",
+      "family_id": "v2-real-pytest-parametrize",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-parametrize-parametrize"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "f9120e58f755ffb13fc9a4fdff391ee1b2f7624fa5762579738d0734f3108000"
+    },
+    {
+      "case_id": "v2-dev-r08",
+      "family_id": "v2-real-pytest-monkeypatch",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-monkeypatch-monkeypatch"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "64a81454172d65b4c91cfd5dc19afc8d8ca7e8b25fdb98da91b4b32a6c72882c"
+    },
+    {
+      "case_id": "v2-dev-r09",
+      "family_id": "v2-real-pytest-tmp_path",
+      "split": "dev",
+      "category": "supported",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "pytest-tmp_path-tmp_path"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "b35021813d8e1aff6351f2b6a9640e4cf28bcebde1162f857e469b4d855b561a"
+    },
+    {
+      "case_id": "v2-dev-r10",
+      "family_id": "v2-real-curl-retry",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-retry-fail-with-body",
+        "curl-retry-fail",
+        "curl-retry-retry-all-errors",
+        "curl-retry-retry-connrefused",
+        "curl-retry-retry-delay",
+        "curl-retry-retry-max-time",
+        "curl-retry-retry"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "34071d20e28fa2408734f2d9635dc07d5357a926e4801b519cdd2f8febcd1b58"
+    },
+    {
+      "case_id": "v2-dev-r11",
+      "family_id": "v2-real-curl-redirect",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-redirect-location-trusted",
+        "curl-redirect-location",
+        "curl-redirect-max-redirs",
+        "curl-redirect-post301",
+        "curl-redirect-post302",
+        "curl-redirect-post303",
+        "curl-redirect-proto-redir"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "fb8f62b601137a434129cacd6ec85d549603770e32fafefba8862507a419ef6c"
+    },
+    {
+      "case_id": "v2-dev-r12",
+      "family_id": "v2-real-curl-upload",
+      "split": "dev",
+      "category": "synthesis",
+      "origin": "generated_from_real_source",
+      "source_ids": [
+        "curl-upload-data-binary",
+        "curl-upload-get",
+        "curl-upload-header",
+        "curl-upload-request",
+        "curl-upload-upload-file"
+      ],
+      "component": "new_dev",
+      "source_component_sha256": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "source_annotation_version": "v2-realistic-author-draft-1",
+      "gold_payload_sha256": "764d0d2d8bdad659cfb1a9c054b336d9e051b05d76f8ee498c19e90d9aabef25"
+    }
+  ],
+  "statistics": {
+    "cases": 24,
+    "families": 24,
+    "splits": {
+      "dev": 24
+    },
+    "categories": {
+      "extrinsic": 3,
+      "subtle_distortion": 3,
+      "supported": 9,
+      "synthesis": 9
+    },
+    "claims_by_split": {
+      "dev": {
+        "SUPPORTED": 242,
+        "CONTRADICTED": 10,
+        "UNSUPPORTED": 6
+      }
+    },
+    "origins": {
+      "controlled_mutation": 6,
+      "generated_from_real_source": 18
+    },
+    "claims": 258,
+    "verdict_counts": {
+      "CONTRADICTED": 10,
+      "SUPPORTED": 242,
+      "UNSUPPORTED": 6
+    },
+    "verdict_family_counts": {
+      "SUPPORTED": 24,
+      "CONTRADICTED": 3,
+      "UNSUPPORTED": 3
+    }
+  },
+  "assembly_change": "Only the derived provenance.annotation_version is unified; every other original case field, including pilot gold payload, is exactly preserved from its named component.",
+  "source_mapping": "Original source IDs, revisions, URL, hashes and exact Unicode passage maps retained. Pilot assets copied byte-for-byte under pilot-import so this manifest loads offline within its directory.",
+  "review_evidence": [
+    {
+      "path": "reports/eval-v2/annotation-review/affected-review.json",
+      "sha256": "3cbcb776c313ae9640c4c31ba9f6711637f9799a87546e3ae412faf2060501ba"
+    },
+    {
+      "path": "reports/eval-v2/annotation-review/affected-review.md",
+      "sha256": "ba93132e5113c341960d3034801b5d3ff59d5810b4d9d74f8e6f92375597f3e2"
+    },
+    {
+      "path": "reports/eval-v2/annotation-review/affected-review-receipt.json",
+      "sha256": "77d82e9c0634a3c6205b0f7950b2168f1d8c85249a04f92c8e925f1b03524578"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/dev-revised-1-followup.json",
+      "sha256": "caff32e566bcf13dfdacc969c9b9580061b11fb57a8c85092a531bf7c1f4d424"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/dev-revised-2-DR01-followup.json",
+      "sha256": "82b6342be7b0999abdf28f9cee3c109c05451136e9fb1fa1c56c256ff3bcb1ca"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/test-first24-revised-1-followup.private.json",
+      "sha256": "25db286d739b6b012ae6abc9678abc70576f12da143c2222a5be4d8576ad2d53"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/test-first24-revised-2-followup.private.json",
+      "sha256": "d5f3729cc14851eb5e019b95d95926d0f8e00983ddd5854f9d834beeef5755b3"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-a/formal-batches-annotation-readiness.json",
+      "sha256": "4c6ac0bfb31b791e5bdab01fdff5c6e2c6bd03f64430738451415183186ad409"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-b/affected-review-1.json",
+      "sha256": "ed3c4375c624f84483680b79daae09d6205691eab36a352786aaf61ea4d33f8d"
+    },
+    {
+      "path": ".multi-subflow/eval-v2/realistic-review-b/source-separation-review.json",
+      "sha256": "85c31c6126830cf2cfc0f61394a38d92573475318a336e8c5f6a46d1619cb93e"
+    }
+  ],
+  "inherited_pilot_review": "Later affected-review acceptance supersedes old preserved pilot handoff pending status: 81 affected claims accepted; 45 unchanged fields reused. Old pilot files are not edited.",
+  "independent_review_type": "AI blind extraction before sealed gold plus affected revision review; no human signoff and no measured verifier accuracy.",
+  "pending_review": null,
+  "open_annotation_requests": 0,
+  "provenance_review": "Independent source/assembly checks passed; final report and metadata-only auxiliary scoring recipe checks are separately linked in the final handoff.",
+  "naturality": "Main answers are AI-authored from real licensed documentation, with explicit controlled mutations. None are claimed as recorded natural benchmark responses. RAGTruth12 is separate private-acquisition auxiliary.",
+  "original_preservation": [
+    {
+      "component": "legacy_pilot",
+      "path": "datasets/v2/pilot.jsonl",
+      "sha256_before": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "sha256_after": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+      "original_unchanged": true,
+      "all_case_fields_equal_except_derived_annotation_version": true
+    },
+    {
+      "component": "new_dev",
+      "path": "datasets/v2/realistic-draft/dev-revised-2.jsonl",
+      "sha256_before": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "sha256_after": "b40dc0feb75752e333490c8ca71260f2d2cdc158adf97cb4ebfaaf79cd8cba8f",
+      "original_unchanged": true,
+      "all_case_fields_equal_except_derived_annotation_version": true
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "Portable prespecified examples; original absolute argv is privately frozen.",
+  "source_commit": "324559dccba4624dfa803849f5fd26284c7b27f4",
+  "environment": {
+    "GROUNDING_PROVIDER": "codex",
+    "GROUNDING_MODEL": "gpt-6.1-sol",
+    "GROUNDING_PROVIDER_TIMEOUT": "120",
+    "GROUNDING_OPERATION_TIMEOUT": "240",
+    "GROUNDING_MAX_PROVIDER_ATTEMPTS": "6",
+    "GROUNDING_TRANSPORT_RETRIES": "0",
+    "GROUNDING_DIAGNOSTICS": "true",
+    "GROUNDING_RETRY_DELAY": "0.25",
+    "GROUNDING_MAX_OUTPUT_TOKENS": "8192",
+    "OPENAI_BASE_URL": "https://api.openai.com/v1"
+  },
+  "commands": {
+    "full-test": "env GROUNDING_PROVIDER=codex GROUNDING_MODEL=gpt-6.1-sol GROUNDING_PROVIDER_TIMEOUT=120 GROUNDING_OPERATION_TIMEOUT=240 GROUNDING_MAX_PROVIDER_ATTEMPTS=6 GROUNDING_TRANSPORT_RETRIES=0 GROUNDING_DIAGNOSTICS=true GROUNDING_RETRY_DELAY=0.25 GROUNDING_MAX_OUTPUT_TOKENS=8192 OPENAI_BASE_URL=https://api.openai.com/v1 PYTHONPATH=\"$final_checkpoint_dir/src\" python -m grounding_eval run --dataset \"$final_checkpoint_dir/datasets/main.jsonl\" --split test --format-version 2 --approaches heuristic,minimal,optimized --track both --case-ids-file reports/eval-v2/final-20261020/full-case-ids.json --seed 20261015 --bootstrap-samples 10000 --max-total-provider-attempts 360 --output reports/eval-v2/final-20261020/full-test",
+    "repeat-02": "env GROUNDING_PROVIDER=codex GROUNDING_MODEL=gpt-6.1-sol GROUNDING_PROVIDER_TIMEOUT=120 GROUNDING_OPERATION_TIMEOUT=240 GROUNDING_MAX_PROVIDER_ATTEMPTS=6 GROUNDING_TRANSPORT_RETRIES=0 GROUNDING_DIAGNOSTICS=true GROUNDING_RETRY_DELAY=0.25 GROUNDING_MAX_OUTPUT_TOKENS=8192 OPENAI_BASE_URL=https://api.openai.com/v1 PYTHONPATH=\"$final_checkpoint_dir/src\" python -m grounding_eval run --dataset \"$final_checkpoint_dir/datasets/main.jsonl\" --split test --format-version 2 --approaches heuristic,minimal,optimized --track both --case-ids-file reports/eval-v2/final-20261020/repeat-case-ids.json --seed 20261015 --bootstrap-samples 10000 --max-total-provider-attempts 120 --output reports/eval-v2/final-20261020/repeat-02",
+    "repeat-03": "env GROUNDING_PROVIDER=codex GROUNDING_MODEL=gpt-6.1-sol GROUNDING_PROVIDER_TIMEOUT=120 GROUNDING_OPERATION_TIMEOUT=240 GROUNDING_MAX_PROVIDER_ATTEMPTS=6 GROUNDING_TRANSPORT_RETRIES=0 GROUNDING_DIAGNOSTICS=true GROUNDING_RETRY_DELAY=0.25 GROUNDING_MAX_OUTPUT_TOKENS=8192 OPENAI_BASE_URL=https://api.openai.com/v1 PYTHONPATH=\"$final_checkpoint_dir/src\" python -m grounding_eval run --dataset \"$final_checkpoint_dir/datasets/main.jsonl\" --split test --format-version 2 --approaches heuristic,minimal,optimized --track both --case-ids-file reports/eval-v2/final-20261020/repeat-case-ids.json --seed 20261015 --bootstrap-samples 10000 --max-total-provider-attempts 120 --output reports/eval-v2/final-20261020/repeat-03"
+  },
+  "credential_requirement": "Reuse the same already authorized Codex profile; private auth selection is frozen without publishing credentials.",
+  "stop_on_model_error": false,
+  "block_gate": {
+    "quota_or_attempt_budget_stop": "Pause all later blocks after the current CLI finishes.",
+    "model_error_ratio": "ERROR model records / all requested model jobs in the block; pause when >= 0.10. Heuristic is excluded.",
+    "comparison": "integer ERROR_count * 10 >= requested_model_jobs",
+    "other_integrity_stop": "Unknown/missing/invalid terminal artifacts, source/data/settings drift, cleanup failure, or any model NOT_RUN.",
+    "ordinary_errors_below_threshold": "Retain every ERROR and continue the next fixed block.",
+    "external_kill": false,
+    "automatic_relaunch_or_failure_replacement": false,
+    "native_deadlines_only": "provider120s/operation240s; interrupted/unknown outcomes are never relaunched."
+  },
+  "new_total_ceiling": 600,
+  "block_ceilings": [
+    360,
+    120,
+    120
+  ]
+}

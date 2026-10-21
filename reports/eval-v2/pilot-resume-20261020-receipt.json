@@ -1,0 +1,198 @@
+{
+  "recorded_at": "2026-10-20T07:00:38.944652+00:00",
+  "status": "completed_with_errors",
+  "plan": "reports/eval-v2/pilot-resume-20261020-plan.json",
+  "plan_sha256": "d39dd2d4a969d4d63de495c57d424d9e417888c2a3d70999077ce4f3a06adbb8",
+  "execution": {
+    "command": [
+      "uv",
+      "run",
+      "--frozen",
+      "grounding-eval",
+      "run",
+      "--dataset",
+      "datasets/v2/pilot.jsonl",
+      "--approaches",
+      "heuristic,minimal,optimized",
+      "--split",
+      "dev",
+      "--track",
+      "both",
+      "--seed",
+      "20261016",
+      "--bootstrap-samples",
+      "10000",
+      "--max-total-provider-attempts",
+      "59",
+      "--output",
+      "reports/eval-v2/pilot-resume-20261020"
+    ],
+    "exit_code": 2,
+    "started_at": "2026-10-20T06:48:11.444987+00:00",
+    "finished_at": "2026-10-20T06:51:55.150171+00:00",
+    "source_changed": false,
+    "cleanup_errors": [],
+    "stop_reason": "attempt_budget_exhausted"
+  },
+  "runtime_sha256": "4a10accbe110808bcf63025204af444fe75195ea291efb655ffda2261209f992",
+  "data_sha256": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+  "matrix": {
+    "requested_jobs": 72,
+    "heuristic_ok": 24,
+    "model_outcomes": {
+      "OK": 5,
+      "ERROR": 24,
+      "NOT_RUN": 19
+    },
+    "model_errors": {
+      "upstream_timeout": 2,
+      "upstream_unavailable": 22,
+      "attempt_budget_exhausted": 19
+    },
+    "claims_per_method_track": 126,
+    "paired_comparison": "NOT_RUN; both methods did not measure the same population"
+  },
+  "allowance_at_completion": {
+    "original_ceiling": 60,
+    "prior_attempts": 1,
+    "this_run_attempts": 54,
+    "cumulative_attempts": 55,
+    "remaining_attempts": 5,
+    "minimum_reservation": 6,
+    "retries_this_run": 23,
+    "repairs_this_run": 0
+  },
+  "later_authorization": {
+    "date": "2026-10-20",
+    "additional_attempts": 90,
+    "new_cumulative_ceiling": 150,
+    "balance_at_approval": 95,
+    "plan": "reports/eval-v2/pilot-recovery-budget.md",
+    "status": "approved; implementation and independent offline acceptance must precede calls"
+  },
+  "usage": {
+    "known_subtotals": {
+      "input_tokens": 17017,
+      "output_tokens": 5087,
+      "cached_input_tokens": 0
+    },
+    "complete": false,
+    "total": null,
+    "attempted_jobs_with_unknown_usage": 25,
+    "subscription_dollar_cost": null
+  },
+  "successful_jobs": [
+    {
+      "case_id": "v2-dev-p01",
+      "approach": "optimized",
+      "track": "end-to-end",
+      "elapsed_ms": 34800.16329605132,
+      "provider_attempts": 2,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": true,
+        "input_tokens": 3509,
+        "output_tokens": 1460
+      },
+      "returned_models": [
+        "gpt-6.1-sol"
+      ]
+    },
+    {
+      "case_id": "v2-dev-p02",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "elapsed_ms": 25365.21426588297,
+      "provider_attempts": 1,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": true,
+        "input_tokens": 3197,
+        "output_tokens": 1133
+      },
+      "returned_models": [
+        "gpt-6.1-sol"
+      ]
+    },
+    {
+      "case_id": "v2-dev-p01",
+      "approach": "minimal",
+      "track": "oracle",
+      "elapsed_ms": 15477.011153008789,
+      "provider_attempts": 1,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": true,
+        "input_tokens": 2719,
+        "output_tokens": 692
+      },
+      "returned_models": [
+        "gpt-6.1-sol"
+      ]
+    },
+    {
+      "case_id": "v2-dev-p06",
+      "approach": "minimal",
+      "track": "end-to-end",
+      "elapsed_ms": 14688.081363681704,
+      "provider_attempts": 1,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": true,
+        "input_tokens": 3644,
+        "output_tokens": 666
+      },
+      "returned_models": [
+        "gpt-6.1-sol"
+      ]
+    },
+    {
+      "case_id": "v2-dev-p05",
+      "approach": "minimal",
+      "track": "oracle",
+      "elapsed_ms": 16045.355930924416,
+      "provider_attempts": 2,
+      "usage": {
+        "cached_input_tokens": 0,
+        "complete": false,
+        "input_tokens": 3461,
+        "output_tokens": 661
+      },
+      "returned_models": [
+        "gpt-6.1-sol"
+      ]
+    }
+  ],
+  "review": "reports/eval-v2/pilot-resume-20261020-review.json",
+  "run_artifact_sha256": {
+    "cases.jsonl": "f1778e794b8f964f8d0ea70cc0d79dbdcf7a22fee98799295221e47c32a4b6cf",
+    "cases.manifest.json": "43b39b666e40fdc25dcca23dd1de33648448d8d034ca1b719756648134a39b56",
+    "completion.json": "1b450af18a040bedc5bf4aa7bff0a6fd10d365dc1fff269ebe72f9608df0b50f",
+    "config.json": "6b3233253414b2bab954c96c6f6b759484b39040c45050bab6d659d2cb865113",
+    "dataset/licenses/cpython/LICENSE.txt": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb",
+    "dataset/licenses/postgresql/COPYRIGHT": "9bf20ee493926a7e17a74bc7f05089fbc014269667b1540bc35a6b194a40c9de",
+    "dataset/licenses/rust/LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
+    "dataset/pilot.jsonl": "701fe4bf85bb745824d460399b6dd6efd8302856e48cea4e751bb09f8ca040df",
+    "dataset/pilot.manifest.json": "4c4aada225c24c9e78cd655964828845c7be5741eb1f921e50838622a60361aa",
+    "dataset/sources/cpython-decimal/raw.rst": "5d119e89332fc7c096c5b9dbcee0965914504d9623904596d6409bd565fab7ca",
+    "dataset/sources/cpython-metadata/raw.rst": "6af47bc95499b7518f337127d7448e816259020d7f00828d554f94b4074f1ceb",
+    "dataset/sources/cpython-pathlib/raw.rst": "c1d6793810ecd9a20d75030ce5489cd94151a1b71063b3052e4ae529351eda4c",
+    "dataset/sources/cpython-queue/raw.rst": "b5079e5d58c36582f7cce6154785a0c2e614b1b598e33e787d14bf2cc95138c0",
+    "dataset/sources/cpython-sqlite3/raw.rst": "47ad881a6484d4eb0dd1cc8231f68675edbfe4d31c65596221113c3bc1060520",
+    "dataset/sources/cpython-tarfile/raw.rst": "2a5d77804c99adf74c86c6504e82cad8bd5fbad1961c43f08f640d3e02fbaad3",
+    "dataset/sources/postgres-backup/raw.sgml": "21381e47eafc27dea12cb8500e4ffa5aa26156002517a3b2f3dc265ef1395458",
+    "dataset/sources/postgres-isolation/raw.sgml": "b0dafb2a3fd2d9204deb075ed2cb2d74b6496523bb5d4867a2f4a3d9758a6314",
+    "dataset/sources/postgres-privileges/raw.sgml": "92aa923f0a4470f3bbe3239fac07e8429ed35504fcd885ec64c6ca9ff5991012",
+    "dataset/sources/rust-destructors/raw.md": "ad27c026ae2e2a23f25909f269a176c050f0101d3de6ec45c6de22b0849a6bd2",
+    "dataset/sources/rust-testing/raw.md": "fb218d9c5a4f35b6c2fa31ed456beabcef782c45f517ccabcbe69cfd1d6d3855",
+    "dataset/sources/rust-visibility/raw.md": "6c188645970168efd11cfb397708a9641220c3c72921ca9d82a8fe13fa7072a5",
+    "records.jsonl": "1a33aabff8e3fafe903c206ebdaf1d2841b72326709af9d3b0c88db39caaab9d",
+    "summary.json": "0184a3c26999823b2479dd6a96bda16cc287ddd4d285139ec88437fabe226bf5"
+  },
+  "interpretation": [
+    "Five successful development outputs, not a complete comparison.",
+    "Upstream-unavailable root cause is unknown; do not relabel as quota or semantic error.",
+    "Known token subtotals are not complete consumption.",
+    "No prompt/gold/scorer/provider/transport changes occurred during this run."
+  ]
+}

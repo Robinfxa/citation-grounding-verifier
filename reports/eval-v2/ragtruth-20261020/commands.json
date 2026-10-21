@@ -1,0 +1,18 @@
+{
+  "kind": "Portable reproduction example; original absolute argv stays private.",
+  "source_commit": "324559dccba4624dfa803849f5fd26284c7b27f4",
+  "reproduction_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=\"$ragtruth_checkpoint_dir/src\" python -m grounding_eval run --dataset \"$ragtruth_private_dir/scoring-cases.jsonl\" --split dev --format-version 2 --approaches heuristic,minimal,optimized --track both --case-ids-file reports/eval-v2/ragtruth-20261020/case-ids.json --seed 20261015 --bootstrap-samples 10000 --max-total-provider-attempts 90 --output \"$ragtruth_new_private_output\"",
+  "environment": {
+    "GROUNDING_PROVIDER": "codex",
+    "GROUNDING_MODEL": "gpt-6.1-sol",
+    "GROUNDING_PROVIDER_TIMEOUT": "120",
+    "GROUNDING_OPERATION_TIMEOUT": "240",
+    "GROUNDING_MAX_PROVIDER_ATTEMPTS": "6",
+    "GROUNDING_TRANSPORT_RETRIES": "0",
+    "GROUNDING_DIAGNOSTICS": "true",
+    "GROUNDING_RETRY_DELAY": "0.25",
+    "GROUNDING_MAX_OUTPUT_TOKENS": "8192",
+    "OPENAI_BASE_URL": "https://api.openai.com/v1"
+  },
+  "note": "Reuse the already authorized profile privately. Codex requested output-token cap is not applied. Reproduction consumes new calls and requires a fresh private output; never overwrite evidence."
+}
